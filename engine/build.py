@@ -56,6 +56,11 @@ for path in sorted(glob.glob(f"{MD}/*/posts/week-*.md")):
                      "date": date, "url": f"posts/{slug}.html"})
     print(f"  built {out}")
 
+# keep index.html at the output root
+if os.path.exists("index.html"):
+    import shutil as _sh
+    _sh.copy("index.html", f"{OUT}/index.html")
+
 manifest.sort(key=lambda p: (p["week"], p["author"]))
 os.makedirs(OUT, exist_ok=True)
 json.dump(manifest, open(f"{OUT}/manifest.json", "w"), indent=1)

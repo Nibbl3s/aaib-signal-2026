@@ -31,7 +31,7 @@
 <main id="feed"><p class="empty">Loading…</p></main>
 <footer>Powered by student reasoning · <a href="https://github.com/Nibbl3s/aaib-signal-2026">the repository</a> · <a href="https://advanced-ai-in-business.vercel.app">course site</a></footer>
 <script>
-fetch('./manifest.json').then(r=>r.json()).then(manifest => {
+fetch('manifest.json').then(r=>r.json()).then(manifest => {
   const feed = document.getElementById('feed');
   if (!manifest.length) { feed.innerHTML = '<p class="empty">No posts yet — the first batch lands after Week 1.</p>'; return; }
   const weeks = {};
