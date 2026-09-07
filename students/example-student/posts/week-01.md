@@ -34,3 +34,5 @@ invoice.
 
 Whether the multilingual tax (French/Dutch costing more tokens than English) shows up in real
 Belgian retail support queues — and whether anyone buying these systems ever asks.
+
+*One number I want before Week 2: what the warehouse paid per answered email, all-in. If anyone has a figure from their own part-time job, bring it to class.*
