@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAIB Signal — Fall 2026</title>
+<style>
+  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.6; }
+  header { padding:3rem 1.5rem 2rem; max-width:860px; margin:0 auto; }
+  header h1 { color:var(--amber); font-size:2rem; letter-spacing:-0.02em; }
+  header p { color:var(--dim); margin-top:.5rem; }
+  main { max-width:860px; margin:0 auto; padding:0 1.5rem 4rem; }
+  .week { margin-bottom:2.5rem; }
+  .week h2 { color:var(--amber); font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); padding-bottom:.4rem; margin-bottom:1rem; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:.75rem; padding:1rem 1.25rem; margin-bottom:.75rem; text-decoration:none; color:var(--txt); transition:border-color .15s; }
+  .card:hover { border-color:var(--amber); }
+  .card .t { font-weight:600; }
+  .card .m { color:var(--dim); font-size:.85rem; margin-top:.3rem; }
+  .empty { color:var(--dim); font-style:italic; }
+  footer { max-width:860px; margin:0 auto; padding:0 1.5rem 3rem; color:var(--dim); font-size:.85rem; }
+  footer a { color:var(--amber); }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Signal</h1>
+  <p>Advanced AI for Business · Arteveldehogeschool IBM · Fall 2026 · Twelve posts, one beat each, all public.</p>
+</header>
+<main id="feed"><p class="empty">Loading…</p></main>
+<footer>Powered by student reasoning · <a href="https://github.com/Nibbl3s/aaib-signal-2026">the repository</a> · <a href="https://advanced-ai-in-business.vercel.app">course site</a></footer>
+<script>
+fetch('./manifest.json').then(r=>r.json()).then(manifest => {
+  const feed = document.getElementById('feed');
+  if (!manifest.length) { feed.innerHTML = '<p class="empty">No posts yet — the first batch lands after Week 1.</p>'; return; }
+  const weeks = {};
+  manifest.forEach(p => { (weeks[p.week] = weeks[p.week] || []).push(p); });
+  Object.keys(weeks).sort((a,b)=>a-b).forEach(w => {
+    const div = document.createElement('div'); div.className = 'week';
+    div.innerHTML = `<h2>Week ${w}</h2>`;
+    weeks[w].forEach(p => {
+      const a = document.createElement('a'); a.className = 'card'; a.href = p.url;
+      a.innerHTML = `<div class="t"></div><div class="m"></div>`;
+      a.querySelector('.t').textContent = p.title;
+      a.querySelector('.m').textContent = p.author + ' · ' + p.beat + ' · ' + p.date;
+      div.appendChild(a);
+    });
+    feed.appendChild(div);
+  });
+}).catch(() => { document.getElementById('feed').innerHTML = '<p class="empty">Manifest not found — the first push will fix this.</p>'; });
+</script>
+</body>
+</html>

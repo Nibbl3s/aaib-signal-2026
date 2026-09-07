@@ -1,0 +1,22 @@
+name: build-site
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 engine/build.py
+      - name: Commit built site
+        run: |
+          git config user.name "signal-bot"
+          git config user.email "signal-bot@users.noreply.github.com"
+          git add site/
+          git diff --cached --quiet || git commit -m "build: regenerate site"
+          git push
