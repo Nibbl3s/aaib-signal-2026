@@ -19,6 +19,8 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 ## Checkpoint 2 — end of Week 8
 
+| # | Skill | Rating | Evidence |
+|---|-------|--------|----------|
 | 5 | Market mechanism thinking | — | |
 | 6 | Cost projection | — | |
 | 7 | Lock-in detection | — | |
@@ -27,6 +29,8 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 ## Checkpoint 3 — end of Week 12
 
+| # | Skill | Rating | Evidence |
+|---|-------|--------|----------|
 | 10 | Regulatory reasoning | — | |
 | 11 | Cross-domain transfer | — | |
 | 12 | Synthesis | — | |
