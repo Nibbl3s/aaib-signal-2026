@@ -1,9 +1,12 @@
+---
 week: 1
 title: "The €5 Comps Run and the €400 Check"
 author: "Tim Lampe"
 beat: "AI in M&A Valuation"
 skill: "Cost literacy"
 date: 2026-09-21
+---
+
 #  The €5 Comps Run and the €400 Check
 
 Everyone asks what AI costs per token. For an M&A company, the better question should be the costs per verified number. I ran the math and the answer is different than what you expect.
