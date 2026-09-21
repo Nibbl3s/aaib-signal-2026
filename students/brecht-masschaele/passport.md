@@ -1,4 +1,4 @@
-# Skills Passport — Brecht Masschaele *(example)*
+# Skills Passport — Brecht Masschaele 
 
 Thirteen skills. Three checkpoints: end of Weeks 4, 8 and 12.
 Rating: 🟢 Confident / 🟡 Getting there / 🔴 Need practice — plus **one sentence of evidence**
