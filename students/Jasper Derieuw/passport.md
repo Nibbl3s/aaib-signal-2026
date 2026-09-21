@@ -1,16 +1,16 @@
 ---
 type: passport
-student: "Your Name"
-beat: "Your Signal beat"
+student: "Jasper Derieuw"
+beat: "EU and China Trade Compliance in the AI Era"
 track: "4 ECTS"
 ---
-
+ 
 # Skills Passport
-
-**Student:** Your Name
-**Beat:** Your Signal beat
-**Track:** 4 ECTS *(or 6 ECTS)*
-
+ 
+**Student:** Jasper Derieuw
+**Beat:** EU and China Trade Compliance in the AI Era
+**Track:** 4 ECTS
+ 
 > Copy this file to `students/your-name/passport.md` in the Signal repository in Week 1.
 > Update it at three checkpoints — end of Week 4, Week 8 and Week 12 — and commit each time.
 > **Commit it separately each checkpoint.** The Git history is the point: it shows what you thought you knew in Week 4 next to what you actually knew by Week 12. Nobody can reconstruct that afterwards.
