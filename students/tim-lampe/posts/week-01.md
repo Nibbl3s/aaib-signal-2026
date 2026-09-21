@@ -45,3 +45,5 @@ This changes the perspective on how to read vendor prices. Valutico starts at ro
 **The Question**
 
 If checking is the real cost what would a vendor have to prove for me to believe its data halves review time? And how could I measure that in a test next week?
+
+AI disclosure: I used Claude to help build the cost model (token volumes, price calculations and error-correction scenario) and to stress-test whether my beat can support 13 distinct topics. The use case, assumptions and final wording are my own responsibility.
