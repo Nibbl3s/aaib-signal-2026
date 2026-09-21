@@ -1,4 +1,4 @@
-# Brecht Masschaele *(example student — copy this file, then make it yours)*
+# Brecht Masschaele
 
 - **Name:** Brecht Masschaele
 - **Track:** 4 ECTS
