@@ -1,3 +1,4 @@
-Tim Lampe
-Beat: AI Use in Trading
-6 ECTS
+#Tim Lampe
+**Beat: How M&A Consultants use AI to value enterprises**
+*6 ECTS*
+
