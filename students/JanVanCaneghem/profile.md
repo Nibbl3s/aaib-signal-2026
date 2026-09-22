@@ -1,3 +1,6 @@
-*Jan Van Caneghem
-ECTS 4
+# Jan Van Caneghem
 
+- **Name:** Jan Van Caneghem
+- **Track:** 4 ECTS
+- **Beat:** 
+- **Why this beat:** 
