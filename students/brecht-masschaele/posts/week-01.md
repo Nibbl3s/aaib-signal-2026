@@ -54,14 +54,15 @@ That's the actual week 1 lesson: not "AI is cheap," but that a cost estimate is 
 and neither one is obvious enough to eyeball.
 I'd have published a wrong number with total confidence if nobody had asked me to check it.
 
-Even corrected, €82.80/year for 3,000 emails is still trivial next to a €4,000/month "AI platform" line.
-The AI bill was never the risk — the wrapper is, and that's where week 3's vendor-claims lesson is going to land.
+Even corrected, €82.80/year for 36,000 emails/year is still trivial.
 
 ## The Question
 
-Before I automate anything: is this a job for a €4,000/month AI platform,
+Before I automate anything: is this a job for a €4,000/month human, a €82.80/year AI subscription
 or for Power Automate with a Haiku-tier API call bolted on where it's actually needed —
 and how would I tell the difference before signing anything?
+And what's this "Power Automate with a Haiku-tier API" all about anyway?
+Thanks Claude for supporting/feeding/inspiring me.
 
 ---
 
