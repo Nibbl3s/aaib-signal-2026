@@ -1,6 +1,14 @@
 [
  {
   "week": 1,
+  "title": "Week 1",
+  "author": "JanVanCaneghem",
+  "beat": "",
+  "date": "",
+  "url": "posts/JanVanCaneghem-week-01.html"
+ },
+ {
+  "week": 1,
   "title": "AI Sanctions Screening Costs \u20ac166 a Year: The Number That Decides Everything Isn't on Any Pricing Page",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
