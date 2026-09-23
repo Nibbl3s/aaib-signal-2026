@@ -86,5 +86,13 @@
   "beat": "",
   "date": "",
   "url": "posts/thibaut-bogaert-week-02.html"
+ },
+ {
+  "week": 3,
+  "title": "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "date": "2026-10-07",
+  "url": "posts/jasper-derieuw-week-03.html"
  }
 ]
