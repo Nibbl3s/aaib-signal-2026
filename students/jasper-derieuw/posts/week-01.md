@@ -1,6 +1,6 @@
 ---
 week: 1
-title: "AI Sanctions Screening Costs €166 a Year: The Number That Decides Everything Isn't on Any Pricing Page"
+title: "The €250,000 Number No Sanctions-Screening Vendor Will Quote You"
 author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Cost literacy"
