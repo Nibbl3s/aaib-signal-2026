@@ -356,3 +356,7 @@ The approximate break-even volume is 29,489 emails per month.
 
 The main lesson from the EuroShop case is that the cheapest token price does not necessarily produce the cheapest overall system. Error costs can dominate the total cost, so the important business metric is the cost per correctly handled query rather than the token price alone.
 
+
+
+Tier recommendation: Based on the total cost and cost per correctly handled email, I would choose the Premium tier for EuroShop under these assumptions.
+
