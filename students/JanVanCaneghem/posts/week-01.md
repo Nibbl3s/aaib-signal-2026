@@ -1,4 +1,5 @@
 **The Hook**
+
 MOOCs solved the wrong problem. They made content abundant. They never made feedback abundant, and feedback is where learning happens.
 
 That's why only about 5 to 13% of enrolled learners finish a typical MOOC. It's also why "peer review" in most courses comes down to "grade three strangers so you can get your certificate."
@@ -12,6 +13,7 @@ So what does it cost? Less than the coffee at your last workshop.
 
 
 **The insights**
+
 Cost is not the bottleneck anymore. At under a euro per learner, the AI budget is a rounding error. The real investment is designing good assignments and rubrics.
 The value is in the cohort, not the grade. Individual peer graders are unreliable (ICC 0.26 in a 49,000-learner MOOC), but five peer grades together become fairly reliable (0.64). AI can do that aggregation for everyone, every time, and give the patterns back to learners and designers alike.
 Grading is the weak spot. Feedback is the strong one. Recent research found that LLMs score essays well below human agreement levels. They squeeze everyone toward the middle and go easy on thin work. But in a randomised trial with 354 students, AI-assisted feedback led to clearly better revisions (d = 0.50). So let AI coach, and be careful not to let it judge.
@@ -19,6 +21,7 @@ The course designer gets a mirror. A synthesis of 1,000 submissions tells you ex
 
 
 **The questions (the unknowns)**
+
 Validity: Who checks the checker? How much human calibration does a rubric need before AI feedback can be trusted?
 Credentials: Would you accept a certificate when no human ever looked at the work?
 Peer context and privacy: Can learners' work feed other learners' feedback without consent issues or a flattening effect where everyone drifts toward the average answer?
