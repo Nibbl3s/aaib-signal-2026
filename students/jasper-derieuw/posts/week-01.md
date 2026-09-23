@@ -9,7 +9,7 @@ date: 2026-09-25
 
 # The €250,000 Number No Sanctions-Screening Vendor Will Quote You
 
-*I chose this beat because trade compliance sits exactly where AI's language capability either earns its keep or quietly fails — and unlike most AI use cases, getting it wrong here isn't a bad customer experience, it's a criminal liability event. It's also where I want to work: compliance-adjacent roles in international trade are exactly the kind of "AI plus regulation" intersection this programme is training us for.*
+*I chose this beat because trade compliance sits exactly where AI's language capability either earns its keep or quietly fails, and unlike most AI use cases, getting it wrong here isn't a bad customer experience, it's a criminal liability event. It's also where I want to work: compliance-adjacent roles in international trade are exactly the kind of "AI plus regulation" intersection this programme is training us for.*
 
 **Hook**
 
