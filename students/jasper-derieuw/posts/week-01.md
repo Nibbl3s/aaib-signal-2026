@@ -7,37 +7,47 @@ skill: "Cost literacy"
 date: 2026-09-25
 ---
 
-Every EU company buying from China has to screen its counterparties against sanctions and denied party lists. It isn't optional, and getting it wrong is a criminal liability problem, not a rounding error. AI vendors now sell automated screening, and the token price looks almost free. I priced it out for a mid sized Belgian importer. The token bill is real, and it is also the least important number in the whole calculation.
+# The €250,000 Number No Sanctions-Screening Vendor Will Quote You
 
-## The numbers
+*I chose this beat because trade compliance sits exactly where AI's language capability either earns its keep or quietly fails — and unlike most AI use cases, getting it wrong here isn't a bad customer experience, it's a criminal liability event. It's also where I want to work: compliance-adjacent roles in international trade are exactly the kind of "AI plus regulation" intersection this programme is training us for.*
 
-Take a Belgian importer running around 150 shipments a month from China. Each shipment has parties to screen: supplier, manufacturer, beneficial owners, freight forwarder, consignee. Call it 8 per shipment, which gives 1,200 screens. Add a monthly re screen of roughly 300 standing counterparties against updated lists. That comes to 1,500 screening checks a month.
+**Hook**
 
-Each check feeds a model the counterparty record (name, aliases, romanisation variants, address, registration number, beneficial owners) plus retrieved candidate list matches and adverse media snippets. Call it 2,500 input tokens, and 500 output tokens for a structured risk assessment with reasoning.
+Every EU company buying from China has to screen its counterparties against sanctions and denied party lists. It isn't optional, and getting it wrong is a criminal liability problem, not a rounding error. AI vendors now sell automated screening, and the token price looks almost free. I priced it out for a mid-sized Belgian importer. The token bill is real, and it is also the least important number in the whole calculation.
 
-```
-Model: Claude Sonnet 5 · $2.00 per 1M input · $10.00 per 1M output
-Input:  1,500 × 2,500 = 3.75M tokens → 3.75 × $2.00  = $7.50
-Output: 1,500 ×   500 = 0.75M tokens → 0.75 × $10.00 = $7.50
-Token cost: $15 / month → €13.80 / month → about €166 / year  ($1 = €0.92)
-```
+**The Numbers**
 
-€166 a year. You could run this screening at ten times the volume and still not clear €1,700. But token cost isn't the decision. Assume a true hit base rate of **0.2%**, which is 3 genuinely concerning parties a month, and a model recall of **95%**, so it misses 1 in 20. That is about 1.8 missed hits a year. Cost of a single missed hit, meaning a sanctions or export control breach, I assume at **€250,000** all in: fine, legal, remediation, disruption.
+A Belgian importer running ~150 shipments/month from China screens 8 parties per shipment (supplier, manufacturer, beneficial owners, freight forwarder, consignee) plus a monthly re-screen of ~300 standing counterparties — 1,500 checks/month total. Each check feeds the model 2,500 input tokens and generates 500 output tokens for a structured risk assessment.
 
-Per year:
+Model: Claude Sonnet 5 · $2.00/1M input · $10.00/1M output
+Input:  1,500 x 2,500 = 3.75M tokens -> $7.50
+Output: 1,500 x   500 = 0.75M tokens -> $7.50
+Token cost: $15/month -> €13.80/month -> ~€166/year ($1 = €0.92)
 
-* Tokens: €166
-* Missed hit cost: about €450,000
-* False positive review: about €9,400
+€166 a year — run this at 10x volume and it still doesn't clear €1,700. But token cost isn't the decision. Assume a true hit rate of 0.2% (3 genuine matches/month) and 95% model recall (misses 1 in 20) → ~1.8 missed hits/year, at an assumed €250,000/miss (fine, legal, remediation, disruption):
 
-That €250,000 per miss is the weakest number in this post, and it is the one that decides everything. At €50,000 the case looks relaxed. At €1M it is an emergency. Before I trusted this I would calibrate it against real EU enforcement figures, not a guess.
+Non-hit screens/month = 1,497
+False positive rate: 4% (tightening the match threshold to cut false positives would also cut recall on genuine hits — the one error that can't be afforded)
+False positives/month ≈ 60 -> 720/year
+Review time: 15 min/FP x €50/hr loaded analyst rate = €12.50/FP
+Annual false positive cost: 720 x €12.50 = €9,000
 
-## The insight
+**Per year: tokens €166 · missed hits ~€450,000 · false positives €9,000 → total ≈ €459,166**
 
-The token line is €166, around 0.03% of the total, and it is the only figure with a pricing page behind it. Everything that actually decides the investment lives off that page. And screening has a twist that inventory doesn't: the two errors aren't the same size. A false positive costs €13 of analyst time. A false negative costs a quarter of a million and possibly a director's criminal referral. Any vendor who quotes a single accuracy percentage is averaging those two together, hiding the only asymmetry that matters. The China angle sharpens it further: the misses cluster exactly where a naive string match fails, on transliteration variants (张伟 becomes Zhang Wei, or Chang Wei, or Cheung Wai). That is where a language aware model earns its keep, or quietly doesn't. Cost literacy here isn't reading the token price. It is knowing that the vendor priced the cheap error and stayed silent on the expensive one.
+That €250,000-per-miss figure is the weakest number in this post, and it's the one that decides everything. At €50,000 the case looks relaxed; at €1M it's an emergency. Before trusting this I'd calibrate it against real EU enforcement figures, not a guess.
 
-## What I want to learn next
+**The Insight**
 
-> At what missed hit rate does language aware AI screening stop being cheaper than simply paying a second analyst to review every China transaction by hand?
+The token line is €166 — 0.04% of the total — and it's the only figure with a pricing page behind it. Everything that actually decides the investment lives off that page. Screening has a twist inventory AI doesn't: the two errors aren't the same size. A false positive costs €12.50 of analyst time; a false negative costs a quarter-million euros and possibly a criminal referral. Any vendor quoting one accuracy percentage is averaging those two together — hiding the only asymmetry that matters. The misses cluster exactly where naive string-matching fails: Chinese name transliteration variants. That's where a language-aware model earns its keep, or quietly doesn't. Cost literacy here isn't reading the token price — it's knowing the vendor priced the cheap error and stayed silent on the expensive one.
 
-*One figure I want before Week 2: the real all in cost of a single EU sanctions breach for an SME. If anyone has a number from an enforcement case, bring it to class, because it is the figure my whole calculation turns on.*
+**The Question**
+
+At what missed-hit rate does language-aware AI screening stop being cheaper than paying a second analyst to review every China transaction by hand? One figure I want before Week 2: the real all-in cost of a single EU sanctions breach for an SME — if anyone has a number from an enforcement case, bring it to class, because it's the figure my whole calculation turns on.
+
+---
+
+*AI disclosure: I used Claude to sanity-check the token cost calculation and stress-test the false-positive/false-negative cost model before publishing.*
+
+---
+
+Full EuroShop cost model and token-count workings: [week-01-evidence.md](./week-01-evidence.md)
