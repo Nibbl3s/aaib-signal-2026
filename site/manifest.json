@@ -1,10 +1,66 @@
 [
  {
   "week": 1,
+  "title": "Week 1",
+  "author": "JanVanCaneghem",
+  "beat": "",
+  "date": "",
+  "url": "posts/JanVanCaneghem-week-01.html"
+ },
+ {
+  "week": 1,
   "title": "The \u20ac0.0000356 Email: What One AI Answer Actually Costs",
   "author": "Lena Devos",
   "beat": "AI in European Retail Logistics",
   "date": "2026-09-25",
   "url": "posts/example-student-week-01.html"
+ },
+ {
+  "week": 1,
+  "title": "AI Customer Quotation at O&D 3D Costs Under a Dollar a Month: The Number That Isn't the Question",
+  "author": "Max",
+  "beat": "AI Automation Cost Literacy at O&D Impression 3D",
+  "date": "2026-09-25",
+  "url": "posts/Max-Moor-week-01.html"
+ },
+ {
+  "week": 1,
+  "title": "The \u20ac5 Comps Run and the \u20ac400 Check",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "date": "2026-09-21",
+  "url": "posts/tim-lampe-week-01.html"
+ },
+ {
+  "week": 1,
+  "title": "Week 1",
+  "author": "brecht-masschaele",
+  "beat": "",
+  "date": "",
+  "url": "posts/brecht-masschaele-week-01.html"
+ },
+ {
+  "week": 1,
+  "title": "Week 1",
+  "author": "luna-van-der-heyden",
+  "beat": "",
+  "date": "",
+  "url": "posts/luna-van-der-heyden-week-1.html"
+ },
+ {
+  "week": 1,
+  "title": "Week 1",
+  "author": "thibaut-bogaert",
+  "beat": "",
+  "date": "",
+  "url": "posts/thibaut-bogaert-week-01.html"
+ },
+ {
+  "week": 2,
+  "title": "Week 2",
+  "author": "thibaut-bogaert",
+  "beat": "",
+  "date": "",
+  "url": "posts/thibaut-bogaert-week-02.html"
  }
 ]
