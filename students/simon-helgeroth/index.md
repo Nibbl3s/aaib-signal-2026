@@ -1,8 +1,6 @@
-# AI Biases in Hiring
+# AI in Recruitment
 
-*A blog on how algorithms shape who gets hired*
 
-Notes on how automated hiring tools can reproduce and amplify bias — and what that means for candidates and employers.
 
 ---
 
