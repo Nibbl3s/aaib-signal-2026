@@ -1,7 +1,7 @@
 ---
 week: 1
 title: "The DJ Quote Bot Costs Nothing to Run — Until It Sends the Wrong Price"
-author: "Thor Tackbruneel"
+author: "Thor Tack"
 beat: "AI Cost Decisions for a One-Person DJ & Events Business"
 skill: "Cost literacy"
 date: 2026-09-24
