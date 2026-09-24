@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The DJ Quote Bot Costs Nothing to Run — Until It Sends the Wrong Price — AAIB Signal</title>
+<style>
+  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.7; }
+  article { max-width:760px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--amber); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+  h1 { font-size:1.9rem; margin:.6rem 0 1rem; letter-spacing:-0.02em; }
+  .byline { color:var(--dim); margin-bottom:2.5rem; }
+  h2 { color:var(--amber); margin:2rem 0 .8rem; font-size:1.3rem; }
+  p { margin-bottom:1rem; }
+  ul,ol { margin:0 0 1rem 1.5rem; }
+  code { background:var(--card); padding:.1rem .35rem; border-radius:.3rem; font-size:.9em; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:.5rem; padding:1rem; overflow-x:auto; margin-bottom:1rem; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:3px solid var(--amber); padding-left:1rem; color:var(--dim); margin:1rem 0; }
+  table { border-collapse:collapse; margin-bottom:1rem; width:100%; }
+  th,td { border:1px solid var(--line); padding:.4rem .7rem; text-align:left; }
+  a { color:var(--amber); }
+  .back { display:inline-block; margin-bottom:2rem; color:var(--dim); text-decoration:none; }
+  .back:hover { color:var(--amber); }
+</style>
+</head>
+<body>
+<article>
+<a class="back" href="/">← All posts</a>
+<div class="meta">Week 1 · AI Cost Decisions for a One-Person DJ & Events Business</div>
+<h1>The DJ Quote Bot Costs Nothing to Run — Until It Sends the Wrong Price</h1>
+<div class="byline">Thor Tack · 2026-09-24</div>
+<p><br><strong>Hook:</strong> I get under 10 booking inquiries a month for DJ gigs and XDJ RX3 rentals, so auto-drafting replies with AI sounds like an obvious win — it's cheap, right? I ran the actual numbers on my own beat, and the token bill turned out to be the least interesting number in the whole model.</p>
+<strong>The Numbers:</strong> The use case: AI auto-drafts a personalized quote reply to each booking inquiry — reads the customer's message (event date, type, gear needed), pulls in my pricing rules, and drafts a reply with a price and terms. At roughly 8 inquiries/month, each needing ~400 input tokens (their message + my pricing context) and ~300 output tokens (the drafted reply), at Standard tier pricing ($2.00/1M input, $12.00/1M output):
+<ul><li>Input: 8 × 400 = 3,200 tokens → 0.0032M × $2.00 = $0.0064</li></ul>
+<ul><li>Output: 8 × 300 = 2,400 tokens → 0.0024M × $12.00 = $0.0288</li></ul>
+<ul><li><strong>Token cost: $0.035/month → €0.03/month at $1 = €0.92, or about €0.39/year</strong></li></ul>
+<em>Prices: AI Pricing Reference, course snapshot 7 September 2026.</em>
+<p>But token cost isn't the real cost. If the AI gets one detail wrong — underprices a gig, misses a travel fee, mixes up a date — that either eats my margin or loses the booking outright. Assume that happens on roughly 1 in 8 replies if I'm not reviewing every draft, and that a bad quote costs me on average €150 in lost or underpriced business. That's 1 error × €150 = <strong>€150/month</strong>.</p>
+<strong>Total: €0.03 tokens + €150 error ≈ €150/month (~€1,800/year).</strong>
+<strong>The Insight:</strong> What surprised me is that the AI itself is basically free at my volume — I'm not paying for compute, I'm paying for the absence of a review step. That €150/month isn't really an "AI cost" at all; it's the cost of trusting an unreviewed draft with money on the line. It's also the weakest number in this post — I estimated it from a rough sense of what a gig or rental is worth to me, not from actual data. At €75 it halves; if a bad quote costs me a full private event instead of a small rental, it could triple. Before trusting this unsupervised, I'd want a few months of AI drafts logged next to what I'd actually have sent, to see how often I'd catch myself correcting it. The broader lesson: the token bill almost never decides whether a small operation should automate something. The error cost does.
+<strong>The Question:</strong> At what point does adding a manual review step cost me more in delay — a slow reply loses bookings too — than it saves in avoided mistakes?
+<em>AI helped draft and check the cost calculations in this post.</em>
+
+</article>
+</body>
+</html>
