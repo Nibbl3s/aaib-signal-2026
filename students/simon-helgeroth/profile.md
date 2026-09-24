@@ -2,4 +2,4 @@ Simon Helgeroth
 
 Track: 6 ECTS
 
-Beat: 
+Beat: AI in Recruitment
