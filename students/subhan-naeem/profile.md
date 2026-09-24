@@ -1,4 +1,4 @@
-# Subhan Naeem *(example student — copy this file, then make it yours)*
+# Subhan Naeem
 
 - **Name:** Subhan Naeem
 - **Track:** 4 ECTS
