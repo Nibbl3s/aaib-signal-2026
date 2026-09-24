@@ -1,0 +1,35 @@
+# Week 1: Cost Models, Token Economics, and Finding My Beat
+*By Malvi Bilikwa Sophia*
+## Part 1: The EuroShop Cost Model
+I compared three AI tiers for handling 30,000 customer service emails/month (200 input / 400 output tokens each):
+| Metric | Budget | Standard | Premium |
+|---|---|---|---|
+| Token cost/month | $300.00 | $900.00 | $1,800.00 |
+| Error cost/month | €45,000.00 | €22,500.00 | €7,500.00 |
+| Cost per email | $1.51 | $0.78 | $0.31 |
+| Cost per *correctly handled* email | $2.16 | $0.92 | $0.33 |
+
+**Recommendation:** Premium. Its token cost is highest, but the 95% success rate cuts human-correction costs so sharply that its cost per correctly handled email ($0.33) beats both other tiers. The Budget tier looks cheap on paper but is actually the most expensive system overall, because its 30% error rate generates human-fix costs that dwarf the token savings.
+
+**If presenting to the CFO:** lead with *total cost per email*, not token cost. Token cost alone is misleading — human error correction is over 95% of real spend in the Budget case, so the "cheapest" tier by token price is the most expensive in practice.
+
+*(Note on my own working: I initially mixed USD and EUR in the annual cost totals without converting — a reminder that the token cost and error cost lines are in different currencies and need to be reconciled before adding.)*
+## Part 2: Token Count Table — Multilingual Comparison
+
+Calculated at $0.03 per 1,000 input tokens, English vs. French:
+
+| Document | English Tokens | English Cost | French Tokens | French Cost | Difference | % Increase |
+|---|---|---|---|---|---|---|
+| Doc 1 | 149 | $0.00447 | 186 | $0.00558 | $0.00111 | 24.83% |
+| Doc 2 | 98 | $0.00294 | 151 | $0.00453 | $0.00159 | 54.08% |
+| Doc 3 | 164 | $0.00492 | 225 | $0.00675 | $0.00183 | 37.20% |
+
+**Biggest increase:** Doc 2, at 54.08% more tokens in French than English.
+**Trade-off question — should a customer service chatbot force English to cut costs?**
+Given a 54% cost increase for French isn't a small margin — it's more than half again the cost of the English version. Forcing customers into English to save on tokens would trade a real, ongoing cost saving against a real, ongoing service quality cost: customers who aren't fluent in English get worse support, which risks churn, complaints, and brand damage that likely outweighs the token savings.
+## Part 3: My Beat
+
+**Beat:** Women, Bias & the Human Impact of AI
+I chose ths beat because women are underrepresented in the AI field, and I have already been researchign this area. I eve wrote a paper on it. This felt like the right opportuity to go deeper into a topic I am already invested in, rather than picking something I think I should cover. 
+----
+AI assistande disclosure: AI was used to format and structure this post from my notes and worksheets answers. The calculations, recommendatios, and anaysis above are my own. 
