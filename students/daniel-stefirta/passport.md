@@ -6,15 +6,11 @@ Thirteen skills. Three checkpoints: end of Weeks 4, 8 and 12.
 Rating: 🟢 Confident / 🟡 Getting there / 🔴 Need practice — plus **one sentence of evidence**
 (something you did, not how you feel).
 
-This is not a grade. Nobody marks it. Your teacher reads it and tells you where they see it
-differently — the disagreement is the entire point. Commit it **on its own**, not bundled
-with a post. In Week 12 you will open this file's history and see three versions of yourself.
-
 ## Checkpoint 1 — end of Week 4
 
 | # | Skill | Rating | Evidence |
 |---|-------|--------|----------|
-| 1 | Cost literacy | — | |
+| 1 | Cost literacy | 🟢 | Priced the five production layers of Death Stranding in € with the formula printed under every number, and ran the EuroShop tier comparison that showed Premium (€9,156/month) beats Budget (€45,276/month) once the €5 error cost is counted. |
 | 2 | Capability skepticism | — | |
 | 3 | Vendor claim detection | — | |
 | 4 | Value quantification | — | |
