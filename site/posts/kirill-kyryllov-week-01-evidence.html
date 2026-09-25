@@ -34,30 +34,111 @@
 <div class="byline">kirill-kyryllov · </div>
 <h2>Week 1 — Evidence</h2>
 <h2>1. Cost Model for EuroShop</h2>
-<strong>Scenario:</strong> AI-powered customer service chatbot, 30,000 emails/month (1,000/day × 30 days).
-Input: 200 tokens/email, Output: 400 tokens/email → 6M input tokens/month, 12M output tokens/month.
-<p>| Tier | Token Cost (EUR) | Error Cost | Total/Month | Total/Year | Cost/Email |<br>|---|---|---|---|---|---|<br>| Budget | €276 | €45,000 | €45,276 | €543,312 | €1.51 |<br>| Standard | €828 | €22,500 | €23,328 | €279,936 | €0.78 |<br>| Premium | €1,656 | €7,500 | €9,156 | €109,872 | €0.31 |</p>
-<strong>Cost per correctly handled email:</strong> Budget €2.16 · Standard €0.91 · Premium €0.32
-<strong>Recommendation:</strong> Premium. It has the highest token price but the lowest total cost per
-email, because its 5% error rate keeps human-correction costs low. To the CFO, I'd lead with
-cost per correctly handled email, not token cost — token cost alone (€1,656 vs €276 for
-Budget) makes Premium look worse than it is once error costs are factored in.
-<strong>Scale check (Month 6, ~111,000 emails):</strong> cost per email stays identical at every tier
-(€1.51 / €0.78 / €0.31), since both token cost and error cost scale linearly. Premium AI
-(€9,156/month at current volume) is already roughly on par with 3 human agents at €9,000/month
-fixed, and stays cheaper than that fixed team only below ~29,500 emails/month.
+<h3>The Scenario</h3>
+AI-powered customer service chatbot for EuroShop, a mid-sized European e-commerce company.
+1,000 customer emails/day × 30 business days/month = 30,000 emails/month.
+Average email: 200 tokens in (customer question), 400 tokens out (AI response).
+<h3>Part 1 — Step-by-Step Calculations</h3>
+<strong>Step 1: Monthly token volume</strong>
+<ul><li>Total input tokens/month = 200 × 30,000 = <strong>6,000,000 (6M)</strong></li></ul>
+<ul><li>Total output tokens/month = 400 × 30,000 = <strong>12,000,000 (12M)</strong></li></ul>
+<strong>Step 2: Token cost per tier</strong>
+<em>Budget ($0.01/1K input, $0.02/1K output):</em>
+<ul><li>Input cost = (6,000,000 ÷ 1,000) × $0.01 = 6,000 × $0.01 = <strong>$60</strong></li></ul>
+<ul><li>Output cost = (12,000,000 ÷ 1,000) × $0.02 = 12,000 × $0.02 = <strong>$240</strong></li></ul>
+<ul><li>Token cost = $60 + $240 = <strong>$300</strong> → × 0.92 (USD→EUR) = <strong>€276</strong></li></ul>
+<em>Standard ($0.03/1K input, $0.06/1K output):</em>
+<ul><li>Input cost = 6,000 × $0.03 = <strong>$180</strong></li></ul>
+<ul><li>Output cost = 12,000 × $0.06 = <strong>$720</strong></li></ul>
+<ul><li>Token cost = $180 + $720 = <strong>$900</strong> → <strong>€828</strong></li></ul>
+<em>Premium ($0.06/1K input, $0.12/1K output):</em>
+<ul><li>Input cost = 6,000 × $0.06 = <strong>$360</strong></li></ul>
+<ul><li>Output cost = 12,000 × $0.12 = <strong>$1,440</strong></li></ul>
+<ul><li>Token cost = $360 + $1,440 = <strong>$1,800</strong> → <strong>€1,656</strong></li></ul>
+<strong>Step 3: Error cost per tier</strong> (error rate × 30,000 emails × €5/error)
+<ul><li>Budget: 30% × 30,000 × €5 = <strong>€45,000</strong></li></ul>
+<ul><li>Standard: 15% × 30,000 × €5 = <strong>€22,500</strong></li></ul>
+<ul><li>Premium: 5% × 30,000 × €5 = <strong>€7,500</strong></li></ul>
+<strong>Step 4: Total monthly cost</strong> (token cost + error cost)
+<ul><li>Budget: €276 + €45,000 = <strong>€45,276</strong></li></ul>
+<ul><li>Standard: €828 + €22,500 = <strong>€23,328</strong></li></ul>
+<ul><li>Premium: €1,656 + €7,500 = <strong>€9,156</strong></li></ul>
+<strong>Step 5: Business metrics</strong>
+<p>| Tier | Total/Month | Total/Year (×12) | Cost/Email (÷30,000) | Cost/Correctly Handled Email |<br>|---|---|---|---|---|<br>| Budget | €45,276 | €543,312 | €1.51 | €45,276 ÷ (30,000×0.70=21,000) = <strong>€2.16</strong> |<br>| Standard | €23,328 | €279,936 | €0.78 | €23,328 ÷ (30,000×0.85=25,500) = <strong>€0.91</strong> |<br>| Premium | €9,156 | €109,872 | €0.31 | €9,156 ÷ (30,000×0.95=28,500) = <strong>€0.32</strong> |</p>
+<strong>Step 6: Recommendation</strong>
+Premium. It has the highest per-token price but the lowest total cost per email (€0.31 vs
+€1.51 for Budget) because its 5% error rate keeps human-correction costs low. If presenting to
+the CFO, I would lead with <strong>total cost per correctly handled email</strong>, not token cost — token
+cost alone makes Premium look 6× more expensive than Budget ($1,800 vs $300), when in reality
+Premium is 5× cheaper overall once error costs are included.
+<h3>Part 3 — Analysis Questions</h3>
+<strong>Q1 — The Paradox:</strong> Why is Budget the most expensive system despite the lowest token cost?
+Budget's 30% error rate generates €45,000/month in human-correction costs, which dwarfs the
+roughly €1,380 it saves in token spend compared to Premium (€1,656 − €276).
+<strong>Q2 — Business Insight:</strong> Premium costs €0.31/email, Budget costs €1.51/email. Why would any
+company choose Budget? A company might choose Budget if it only looks at the invoice line item
+("AI platform: $300/month") without asking about error rates, if email volume is very low so
+the absolute error cost stays small, or if it already has spare internal staff capacity to
+absorb corrections at no visible marginal cost.
+<strong>Q3 — The Reality Check:</strong> Which number would you lead with to the CFO — token cost or total
+cost? Total cost per correctly handled email. Token cost understates Budget's real cost by
+over 99% (€276 vs €45,276 total) — leading with token cost alone would be actively misleading
+to a decision-maker.
+<h3>Part 4 — The Scale Question</h3>
+<p>Month 6 volume at 30% month-over-month growth: 30,000 × (1.30)⁵ ≈ <strong>111,000 emails/month</strong><br>(new input tokens ≈ 22.2M, output tokens ≈ 44.4M)</p>
+<p>| Tier | Token Cost (EUR) | Error Cost | Total/Month | Cost/Email |<br>|---|---|---|---|---|<br>| Budget | €1,021 | €166,500 | €167,521 | €1.51 |<br>| Standard | €3,064 | €83,250 | €86,314 | €0.78 |<br>| Premium | €6,127 | €27,750 | €33,877 | <strong>€0.31</strong> |</p>
+<strong>What happens to cost/email as volume grows?</strong> Nothing changes — it stays identical at every
+tier (€1.51 / €0.78 / €0.31), because both token cost and error cost scale linearly with
+volume. There's no economy of scale in this model, since neither cost component has a fixed
+component.
+<strong>Does the tier recommendation change?</strong> No. Premium remains cheapest per email at every
+volume tested, since the ratio between tiers is volume-independent here.
+<strong>At what volume does Premium beat 3 human agents (€3,000/month each = €9,000/month fixed)?</strong>
+Premium cost per email = (€1,656 + €7,500) ÷ 30,000 = <strong>€0.3052/email</strong>
+Solve: €0.3052 × V = €9,000 → <strong>V ≈ 29,500 emails/month</strong>
+<p>At the current volume (30,000/month), Premium AI (€9,156) is already roughly at parity with<br>3 human agents (€9,000) — Premium only stays cheaper than a fixed 3-agent team below ~29,500<br>emails/month. Caveat: this comparison assumes 3 agents can absorb higher volume without adding<br>headcount, which in reality they can't past a certain capacity, so the real crossover depends<br>on how agent staffing itself would need to scale.</p>
+<h3>The Key Insight</h3>
+The cheapest tokens (Budget) produced the most expensive system. The most expensive tokens
+(Premium) produced the cheapest system. Token cost is not total cost — the business metric
+that matters is cost per correctly handled query, not cost per token.
+<p>---</p>
 <h2>2. Token Count Table — English vs. Ukrainian</h2>
+<strong>Methodology:</strong>
+<ul><li>Cost = (tokens ÷ 1,000) × $0.03</li></ul>
+<ul><li>Difference = Ukrainian cost − English cost</li></ul>
+<ul><li>% Increase = (Ukrainian tokens − English tokens) ÷ English tokens × 100</li></ul>
 <p>| Document | English Tokens | English Cost | Ukrainian Tokens | Ukrainian Cost | Difference | % Increase |<br>|---|---|---|---|---|---|---|<br>| Doc 1 | 149 | $0.00447 | 254 | $0.00762 | $0.00315 | 70.47% |<br>| Doc 2 | 98 | $0.00294 | 217 | $0.00651 | $0.00357 | 121.43% |<br>| Doc 3 | 157 | $0.00471 | 308 | $0.00924 | $0.00453 | 96.18% |<br>| Doc 4 | 136 | $0.00408 | 472 | $0.01416 | $0.01008 | 247.06% |<br>| Doc 5 | 147 | $0.00441 | 234 | $0.00702 | $0.00261 | 59.18% |<br>| <strong>Total</strong> | <strong>687</strong> | <strong>$0.02061</strong> | <strong>1,485</strong> | <strong>$0.04455</strong> | <strong>$0.02394</strong> | <strong>116.16%</strong> |</p>
-<p>Ukrainian text costs <strong>116.16% more</strong> in tokens than English on average (roughly 2.2×), ranging<br>from 59% (Doc 5) to 247% (Doc 4).</p>
-<strong>Trade-off question — should you force English for a customer service chatbot?</strong>
-No, generally. The token premium is small in absolute terms (a few cents per interaction) and
-usually outweighed by lost customer satisfaction, lower first-contact resolution accuracy, and
-trust/accessibility concerns if customers aren't comfortable in English. The better fix is to
-keep customer-facing chat in Ukrainian, but write system prompts in English, cache repeated
-context, and route simple queries to cheaper models — this captures most of the benefit while
-shrinking the premium. The premium is clearly worth paying for high-stakes interactions
-(banking, healthcare, complaints) where trust and retention matter, and less clearly worth it
-for high-volume, low-stakes, low-margin queries with an English-comfortable audience.
+<h3>Q&A</h3>
+<strong>1. Largest token increase:</strong>
+Doc 4: 136 → 472 tokens, a <strong>247.06% increase</strong> (~3.5× more tokens) — the largest jump of any
+document in the set.
+<strong>2. Annual cost difference (most expensive document, 1,000 runs/year):</strong>
+Doc 4 — English: $0.00408 × 1,000 = <strong>$4.08/year</strong> vs. Ukrainian: $0.01416 × 1,000 =
+<strong>$14.16/year</strong> → <strong>$10.08/year difference</strong> for this single document alone.
+<strong>3. Should you force English for a customer service chatbot?</strong>
+No, generally. The token premium is small in absolute terms (fractions of a cent per message)
+and is usually outweighed by:
+<ul><li>Lost customers/satisfaction if they're uncomfortable responding in English</li></ul>
+<ul><li>Lower first-contact resolution accuracy when customers can't fully express their issue</li></ul>
+<ul><li>Trust, accessibility, and possible regulatory expectations around language access</li></ul>
+<p>Better fix: keep customer-facing chat in Ukrainian, but write system prompts in English, cache<br>repeated context, and route simple queries to cheaper models — this captures most of the<br>savings without sacrificing the customer experience.</p>
+<strong>4. The % premium:</strong>
+<strong>116.16%</strong> overall (~2.2× the English cost), ranging from <strong>59.18%</strong> (Doc 5, smallest
+premium) to <strong>247.06%</strong> (Doc 4, largest premium) depending on the document.
+<strong>5. Is the premium worth it?</strong>
+<em>Worth it when:</em>
+<ul><li>Customers mostly speak Ukrainian and are uncomfortable in English</li></ul>
+<ul><li>Interactions are high-stakes (banking, healthcare, legal, complaints)</li></ul>
+<ul><li>Trust/retention matter, or local-language support is a requirement</li></ul>
+<ul><li>Margin per conversation comfortably exceeds the token cost premium</li></ul>
+<em>Maybe not worth it when:</em>
+<ul><li>Volume is huge and margins are razor-thin</li></ul>
+<ul><li>Queries are simple and low-stakes (hours, order status) with an English-comfortable audience</li></ul>
+<ul><li>The audience is mostly technical/international and already defaults to English</li></ul>
+<em>Middle ground:</em> Ukrainian for customer-facing text, English for system prompts, caching for
+repeated context, and cheaper models for simple queries — this captures most of the benefit of
+native-language support while shrinking the token premium that drives it.
+<p>---</p>
 <h2>3. Declared Beat</h2>
 <strong>Beat:</strong> The Fake Analyst: When AI-Generated Business Reports Get It Wrong
 <p>I keep asking myself how close AI actually is to replacing human analysts, not the marketing<br>version, the real one. I want to dig into where AI-generated business analysis actually breaks,<br>and what that tells us about what still needs a human.</p>
