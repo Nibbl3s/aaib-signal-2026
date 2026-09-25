@@ -1,1 +1,55 @@
+## Hook
 
+Why should we care about AI costs when talking about women, bias and digital ethics?
+
+When we think about the cost of AI, we usually think about things like server costs, API fees or the number of tokens used. However, there are also hidden costs that are harder to measure, such as discrimination, biased decisions and the time and money needed to correct these problems.
+
+This becomes especially important when companies use AI in areas that directly affect people, such as recruitment. If companies focus too much on choosing the cheapest AI system without checking how it affects different groups, they could end up creating bigger financial and social problems later.
+
+---
+
+## The Numbers
+
+To understand this better, we can look at a real business example: an **AI recruitment tool used to screen CVs**.
+
+AI recruitment systems can sometimes disadvantage women or other diverse candidates. For example, the system might see career gaps, certain education backgrounds or specific language patterns as negative factors, even when these do not actually mean that someone is less qualified.
+
+Imagine that a multinational company uses an AI recruitment system to process **15,000 applications per month**.
+
+* **Input per applicant:** 400 tokens, including the CV, work experience and cover letter.
+* **Output per applicant:** 100 tokens, including the ranking and automated feedback.
+* **Total monthly input:** 6,000,000 tokens.
+* **Total monthly output:** 1,500,000 tokens.
+
+Using a standard API provider charging $0.03 per 1,000 input tokens and $0.06 per 1,000 output tokens:
+
+* Input cost = **$180**
+* Output cost = **$90**
+* Total AI token cost = **$270 per month**
+
+Now imagine that around **15% of applications** are affected by errors or bias and need human review. If each case costs around €50 in HR and legal work:
+
+* 15% of 15,000 applications = **2,250 cases**
+* 2,250 × €50 = **€112,500 per month**
+
+This shows that the actual cost of using AI is not only the price of the technology itself. The costs of dealing with mistakes, bias and possible legal issues can be much higher.
+
+---
+
+## The Insight
+
+What I found most interesting is the difference between the **direct cost of AI** and the potential cost of its consequences.
+
+The company in this example only spends around $270 on the AI tokens, but dealing with biased or incorrect decisions could cost much more. This is similar to what we discussed in class about errors in business processes: saving money at the beginning does not always mean that the company will save money in the long term.
+
+For me, the main takeaway is that companies should not only ask, *“Which AI system is the cheapest?”* They should also ask, *“How reliable and fair is this system, and what could happen if it makes mistakes?”*
+
+This is especially important when AI is used for recruitment because its decisions can directly affect people's careers. If a system learns from biased historical data, it can potentially reproduce those same patterns on a much larger scale.
+
+---
+
+## The Question
+
+How can companies be encouraged to invest in bias auditing and ethical AI when their main focus is still on reducing upfront AI and API costs?
+---
+**Disclaimer:** The token calculations and financial figures in this exercise are illustrative estimations designed to model the relationship between API usage, operational error overhead, and algorithmic bias. AI assistance was used to structure these approximate figures.
