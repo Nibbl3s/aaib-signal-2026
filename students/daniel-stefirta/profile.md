@@ -12,6 +12,3 @@
   that AI is strongest exactly where the money isn't. That is the question I want to keep asking
   for twelve weeks: not whether AI can make a game, but which layer of the budget it actually
   touches.
-
-*(One paragraph on the beat is enough. Narrow enough to sustain 12 posts; specific enough
-that post #7 has an answer.)*
