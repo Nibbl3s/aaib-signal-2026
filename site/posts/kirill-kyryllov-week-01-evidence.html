@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 — AAIB Signal</title>
+<style>
+  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.7; }
+  article { max-width:760px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--amber); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+  h1 { font-size:1.9rem; margin:.6rem 0 1rem; letter-spacing:-0.02em; }
+  .byline { color:var(--dim); margin-bottom:2.5rem; }
+  h2 { color:var(--amber); margin:2rem 0 .8rem; font-size:1.3rem; }
+  p { margin-bottom:1rem; }
+  ul,ol { margin:0 0 1rem 1.5rem; }
+  code { background:var(--card); padding:.1rem .35rem; border-radius:.3rem; font-size:.9em; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:.5rem; padding:1rem; overflow-x:auto; margin-bottom:1rem; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:3px solid var(--amber); padding-left:1rem; color:var(--dim); margin:1rem 0; }
+  table { border-collapse:collapse; margin-bottom:1rem; width:100%; }
+  th,td { border:1px solid var(--line); padding:.4rem .7rem; text-align:left; }
+  a { color:var(--amber); }
+  .back { display:inline-block; margin-bottom:2rem; color:var(--dim); text-decoration:none; }
+  .back:hover { color:var(--amber); }
+</style>
+</head>
+<body>
+<article>
+<a class="back" href="/">← All posts</a>
+<div class="meta">Week 1 · </div>
+<h1>Week 1</h1>
+<div class="byline">kirill-kyryllov · </div>
+<h2>Week 1 — Evidence</h2>
+<h2>1. Cost Model for EuroShop</h2>
+<strong>Scenario:</strong> AI-powered customer service chatbot, 30,000 emails/month (1,000/day × 30 days).
+Input: 200 tokens/email, Output: 400 tokens/email → 6M input tokens/month, 12M output tokens/month.
+<p>| Tier | Token Cost (EUR) | Error Cost | Total/Month | Total/Year | Cost/Email |<br>|---|---|---|---|---|---|<br>| Budget | €276 | €45,000 | €45,276 | €543,312 | €1.51 |<br>| Standard | €828 | €22,500 | €23,328 | €279,936 | €0.78 |<br>| Premium | €1,656 | €7,500 | €9,156 | €109,872 | €0.31 |</p>
+<strong>Cost per correctly handled email:</strong> Budget €2.16 · Standard €0.91 · Premium €0.32
+<strong>Recommendation:</strong> Premium. It has the highest token price but the lowest total cost per
+email, because its 5% error rate keeps human-correction costs low. To the CFO, I'd lead with
+cost per correctly handled email, not token cost — token cost alone (€1,656 vs €276 for
+Budget) makes Premium look worse than it is once error costs are factored in.
+<strong>Scale check (Month 6, ~111,000 emails):</strong> cost per email stays identical at every tier
+(€1.51 / €0.78 / €0.31), since both token cost and error cost scale linearly. Premium AI
+(€9,156/month at current volume) is already roughly on par with 3 human agents at €9,000/month
+fixed, and stays cheaper than that fixed team only below ~29,500 emails/month.
+<h2>2. Token Count Table — English vs. Ukrainian</h2>
+<p>| Document | English Tokens | English Cost | Ukrainian Tokens | Ukrainian Cost | Difference | % Increase |<br>|---|---|---|---|---|---|---|<br>| Doc 1 | 149 | $0.00447 | 254 | $0.00762 | $0.00315 | 70.47% |<br>| Doc 2 | 98 | $0.00294 | 217 | $0.00651 | $0.00357 | 121.43% |<br>| Doc 3 | 157 | $0.00471 | 308 | $0.00924 | $0.00453 | 96.18% |<br>| Doc 4 | 136 | $0.00408 | 472 | $0.01416 | $0.01008 | 247.06% |<br>| Doc 5 | 147 | $0.00441 | 234 | $0.00702 | $0.00261 | 59.18% |<br>| <strong>Total</strong> | <strong>687</strong> | <strong>$0.02061</strong> | <strong>1,485</strong> | <strong>$0.04455</strong> | <strong>$0.02394</strong> | <strong>116.16%</strong> |</p>
+<p>Ukrainian text costs <strong>116.16% more</strong> in tokens than English on average (roughly 2.2×), ranging<br>from 59% (Doc 5) to 247% (Doc 4).</p>
+<strong>Trade-off question — should you force English for a customer service chatbot?</strong>
+No, generally. The token premium is small in absolute terms (a few cents per interaction) and
+usually outweighed by lost customer satisfaction, lower first-contact resolution accuracy, and
+trust/accessibility concerns if customers aren't comfortable in English. The better fix is to
+keep customer-facing chat in Ukrainian, but write system prompts in English, cache repeated
+context, and route simple queries to cheaper models — this captures most of the benefit while
+shrinking the premium. The premium is clearly worth paying for high-stakes interactions
+(banking, healthcare, complaints) where trust and retention matter, and less clearly worth it
+for high-volume, low-stakes, low-margin queries with an English-comfortable audience.
+<h2>3. Declared Beat</h2>
+<strong>Beat:</strong> The Fake Analyst: When AI-Generated Business Reports Get It Wrong
+<p>I keep asking myself how close AI actually is to replacing human analysts, not the marketing<br>version, the real one. I want to dig into where AI-generated business analysis actually breaks,<br>and what that tells us about what still needs a human.</p>
+</article>
+</body>
+</html>
