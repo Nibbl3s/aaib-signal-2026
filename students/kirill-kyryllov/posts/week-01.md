@@ -7,11 +7,13 @@ skill: "Cost literacy"
 date: 2026-09-25
 ---
 
-I found an FT piece this week that put an actual price tag on AI getting things wrong. A firm
-called Saturn ran over 10,000 financial questions through 18 AI models, including ChatGPT,
-Claude, Gemini, Copilot and Grok. On average, the models gave the wrong answer to money
-questions 57% of the time. On questions with more than one calculation, that jumped to 88%,
-and some models were wrong 99% of the time on the harder ones.
+The Financial Times reported this week on research by technology firm Saturn, which put an
+actual price tag on AI getting things wrong. Saturn ran over 10,000 financial questions
+through 18 AI models, including ChatGPT, Claude, Gemini, Copilot and Grok. On average, the
+models gave the wrong answer to money questions 57% of the time. On questions with more than
+one calculation, that jumped to 88%, and some models were wrong 99% of the time on the harder
+ones. ([Financial Times, Sept 19 2026](https://www.ft.com/content/c0cd359d-df84-4208-a789-ffa864b43666)
+— Aliya Shibli, "AI chatbots give wrong answers to financial queries 'most of the time'")
 
 One case stood out: Claude Haiku 4.5, a free model, got a pension tax rule wrong in a way that
 could have left a saver facing a **£17,500 charge from HMRC**. Another model invented a rule
