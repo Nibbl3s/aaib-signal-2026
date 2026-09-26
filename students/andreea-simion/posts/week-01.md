@@ -7,7 +7,7 @@ skill: "Cost literacy"
 date: 2026-09-26
 ---
 
-Your post starts here. Plain Markdown.
+
 # AI Adoption Is Cheap. Getting People to Use It Is Not.
 
 Companies can spend thousands implementing an AI tool and still fail to get employees to use it effectively. I’m interested in the psychology behind that problem: trust, resistance, uncertainty, and motivation all affect whether employees actually adopt AI. But before thinking about those behavioral factors, I wanted to know something simpler: **what would an AI adoption assistant actually cost to run?**
