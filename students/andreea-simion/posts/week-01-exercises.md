@@ -1,11 +1,13 @@
-# Week: 1: Token Economics & Cost Frameworks — Lab Results & Submission
+---
+week: 1
+title: AI Adoption Is Cheap. Getting People to Use It Is Not.
 author: Andreea Simion
-beat: The Psychology of AI Adoption in the Workplace[cite: 2]
+beat: The Psychology of AI Adoption in the Workplace.
 skill: "Cost literacy"
 date: 2026-09-26
-
 ---
 
+# Week: 1: Token Economics & Cost Frameworks — Lab Results & Submission
 ## 2. EuroShop Cost Model Calculations
 
 *Note: As assumed in the notes, currency conversion is simplified as $1 = €1[cite: 2].*
