@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 — AAIB Signal</title>
+<style>
+  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.7; }
+  article { max-width:760px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--amber); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+  h1 { font-size:1.9rem; margin:.6rem 0 1rem; letter-spacing:-0.02em; }
+  .byline { color:var(--dim); margin-bottom:2.5rem; }
+  h2 { color:var(--amber); margin:2rem 0 .8rem; font-size:1.3rem; }
+  p { margin-bottom:1rem; }
+  ul,ol { margin:0 0 1rem 1.5rem; }
+  code { background:var(--card); padding:.1rem .35rem; border-radius:.3rem; font-size:.9em; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:.5rem; padding:1rem; overflow-x:auto; margin-bottom:1rem; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:3px solid var(--amber); padding-left:1rem; color:var(--dim); margin:1rem 0; }
+  table { border-collapse:collapse; margin-bottom:1rem; width:100%; }
+  th,td { border:1px solid var(--line); padding:.4rem .7rem; text-align:left; }
+  a { color:var(--amber); }
+  .back { display:inline-block; margin-bottom:2rem; color:var(--dim); text-decoration:none; }
+  .back:hover { color:var(--amber); }
+</style>
+</head>
+<body>
+<article>
+<a class="back" href="/">← All posts</a>
+<div class="meta">Week 1 · </div>
+<h1>Week 1</h1>
+<div class="byline">blerta-memisi · </div>
+<p>week:1</p>
+<p>title: Why AI mistakes cost ECB 1.2M/year?</p>
+<p>author:"Blerta Memisi"</p>
+<p>beat:"The European Central Bank in an AI-driven economy" </p>
+<p>skill:"Cost literacy" </p>
+<p>date:2026-09-26 </p>
+<p>The European Central Bank has been adopting AI in many fields as it has expanded all over the world: inflation nowcasting and forecasting, banking supervision, data processing, cybersecurity defense and more. It is important to understand the cost of this service in terms of tokens, as it is a matter of accountability for public money. </p>
+<p>The ECB directly supervises around 110 banking groups in the Eurozone, which means it has to analyze approximately 10 000 documents per month. Let's take it as our AI use case. Each document analysis requires 8000 tokens in due to its complexity and 500 tokens out (you have to pay a fee for both the input you provide to the artificial intelligence and the output). The AI ​​will have to read, analyze, and verify a large amount of complex data contained in these documents, that's why it requires more tokens in than out. At standard tier pricing ($2.00/1M input, $12.00/1M output): </p>
+<p>Input: 10 000 x 8000 = 80 000 000 tokens → 80 x $2 = $160/month </p>
+<p>Output: 10 000 x 500 = 5 000 000 tokens → 5 x $12 = $60/month</p>
+<p>Token cost: $220/month → €193,12/month at $1=€0,88</p>
+<p>At first glance €193,12 to process 10000 documents appears remarkably inexpensive, however token cost doesn't represent the total cost of the service, it is almost the 0.2% of it. We must acknowledge that artificial intelligence can also make mistakes, in fact, we can assume that it has a 5% margin of error. Language models can make up details, rules, or data that aren’t in the original document to fill in gaps, moreover banking documentation is full of structured financial statements, footnotes, and non-standardized formats. AI can associate numbers with the wrong columns or rows. Making mistakes, forgetting something or transposing data entails an administrative charge of €200 per error.  </p>
+<p>10 000 x 5% = 500 errors per month </p>
+<p>Error cost: 500 x €200 = €100 000 </p>
+<p>Total cost: €100 000 error + €193,12 tokens = €100 193,12 (1,2M/year). </p>
+<p>What is fascinating is the huge gap between total cost and token cost, as the pure AI commitment costs few cents per document. However in an institution such as the European Central Bank accuracy matters and the real expense lies behind the time and the money spent on human labour to  adjust the errors. It would be misleading to focus only on the token cost, because an AI model that lets you save money will make you spend a hundred thousand euros in human work as well. Choosing a cheaper AI model often turns out to be the most expensive choice, because the cost of tokens is merely the tip of the iceberg.</p>
+<p>Is it fair to spend public money to fund AI, while having also to bear additional costs to remedy its errors? It is true that most of the cost is due to the error cost, however AI automation makes it possible to save so much time of manual work related to the document first reading. Benjamin Franklin once said "Time is money" and that time can be relocated to high-added value activities such as thinking about new strategic analysis of risk.  </p>
+<p>So, is it true that the right course of action is to invest in AI and treat it as a resource rather than an additional cost?</p>
+</article>
+</body>
+</html>
