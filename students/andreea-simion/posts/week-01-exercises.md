@@ -1,6 +1,6 @@
 ---
 week: 1
-title: AI Adoption Is Cheap. Getting People to Use It Is Not.
+title: Token Economics & Cost Frameworks — Lab Results & Submission
 author: Andreea Simion
 beat: The Psychology of AI Adoption in the Workplace.
 skill: "Cost literacy"
