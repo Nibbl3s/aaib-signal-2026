@@ -1,53 +1,129 @@
-# Week 1: Token Economics & Cost Frameworks — Evidence Submission
+# Week 1: Token Economics & Cost Frameworks — Lab Results & Submission
 
-**Beat:** The Psychology of AI Adoption in the Workplace  
+**Beat:** The Psychology of AI Adoption in the Workplace[cite: 2]  
 **Author:** Andreea Simion[cite: 2]  
 
 ---
 
-## 1. Declared Beat & Rationale
+## 1. Declared Beat
 
-* **Declared Beat:** The Psychology of AI Adoption in the Workplace[cite: 2].
-* **Rationale:** I chose this beat because the technical implementation of AI tools is only half the battle; the true determinant of success is how human employees perceive, trust, and adapt to these tools in daily workflows[cite: 2]. Understanding the psychological barriers to adoption—such as job displacement anxiety and automation bias—is essential for leading effective organizational change[cite: 2].
+* **Beat:** The Psychology of AI Adoption in the Workplace[cite: 2]
+* **Rationale:** I chose this beat because understanding how human teams react to and trust AI tools is essential for successful adoption[cite: 2]. Technical capability matters little if workplace psychology, employee resistance, or misuse hinder actual deployment[cite: 2].
 
 ---
 
-## 2. EuroShop Cost Model & Recommendation
+## 2. EuroShop Cost Model Calculations
 
-### Recommendation for CMO & CFO
-* **CMO Recommendation:** I recommend implementing the **Premium Tier**[cite: 2]. Despite having the highest monthly token cost ($1,800), its **95% accuracy rate** minimizes costly human intervention, resulting in the lowest overall monthly operating cost of **€9,300**[cite: 2].
-* **CFO Lead Metric:** When presenting to the CFO, I will lead with **Cost per Correctly Handled Email (€0.33)** rather than raw token prices[cite: 2]. Raw token fees account for under 20% of total operational cost, whereas total cost per resolved email reflects actual bottom-line business impact[cite: 2].
+*Note: As assumed in the notes, currency conversion is simplified as $1 = €1[cite: 2].*
 
-### Cost Calculations Summary
-*(Calculated assuming $1.00 = €1.00 for unified currency analysis[cite: 2])*
+### Step 1: Monthly Token Volume
+* **Emails per month:** 30,000 (1,000 emails/day × 30 business days)[cite: 2]
+* **Input tokens per email:** 200 tokens[cite: 2]
+* **Output tokens per email:** 400 tokens[cite: 2]
 
-* **Monthly Email Volume:** 30,000 emails (1,000 emails/day × 30 days)[cite: 2]
-* **Monthly Input Tokens:** 6,000,000 tokens (30,000 × 200 tokens)[cite: 2]
-* **Monthly Output Tokens:** 12,000,000 tokens (30,000 × 400 tokens)[cite: 2]
-* **Human Error Correction Cost:** €5.00 per error[cite: 2]
+| Metric | Monthly Volume |
+| :--- | :--- |
+| **Emails** | 30,000 |
+| **Input tokens** | 6,000,000 |
+| **Output tokens** | 12,000,000 |
+| **Total tokens** | 18,000,000 |
 
-| Metric | Budget Tier | Standard Tier | Premium Tier |
+[cite: 2]
+
+---
+
+### Step 2: Monthly Token Costs
+* **Formula:** $\text{Token cost} = \left(\frac{\text{Token volume}}{1,000}\right) \times \text{Price per 1,000 tokens}$[cite: 2]
+
+* **Budget Tier:**
+  * Input cost: $(6,000,000 \div 1,000) \times \$0.01 = \$60$[cite: 2]
+  * Output cost: $(12,000,000 \div 1,000) \times \$0.02 = \$240$[cite: 2]
+  * **Total monthly token cost:** $\$300$[cite: 2]
+* **Standard Tier:**
+  * Input cost: $(6,000,000 \div 1,000) \times \$0.03 = \$180$[cite: 2]
+  * Output cost: $(12,000,000 \div 1,000) \times \$0.06 = \$720$[cite: 2]
+  * **Total monthly token cost:** $\$900$[cite: 2]
+* **Premium Tier:**
+  * Input cost: $(6,000,000 \div 1,000) \times \$0.06 = \$360$[cite: 2]
+  * Output cost: $(12,000,000 \div 1,000) \times \$0.12 = \$1,440$[cite: 2]
+  * **Total monthly token cost:** $\$1,800$[cite: 2]
+
+| Tier | Input cost/month | Output cost/month | Total token cost/month |
 | :--- | :--- | :--- | :--- |
-| **Success / Error Rate** | 70% / 30%[cite: 2] | 85% / 15%[cite: 2] | 95% / 5%[cite: 2] |
-| **Monthly Token Cost** | €300.00[cite: 2] | €900.00[cite: 2] | €1,800.00[cite: 2] |
-| **Monthly Error Cost** | €45,000.00[cite: 2] | €22,500.00[cite: 2] | €7,500.00[cite: 2] |
-| **Total Monthly Cost** | **€45,300.00**[cite: 2] | **€23,400.00**[cite: 2] | **€9,300.00**[cite: 2] |
-| **Annualized Cost** | **€543,600.00**[cite: 2] | **€280,800.00**[cite: 2] | **€111,600.00**[cite: 2] |
-| **Cost per Email** | €1.51[cite: 2] | €0.78[cite: 2] | **€0.31**[cite: 2] |
-| **Cost per Correct Email** | €2.16[cite: 2] | €0.92[cite: 2] | **€0.33**[cite: 2] |
+| **Budget** | $60 | $240 | $300 |
+| **Standard** | $180 | $720 | $900 |
+| **Premium** | $360 | $1,440 | $1,800 |
+
+[cite: 2]
 
 ---
 
-## 3. Token Count Table & Multilingual Trade-off
+### Step 3: Monthly Error Costs
+* **Formula:** $\text{Error cost} = \text{Error rate} \times 30,000 \text{ emails} \times €5$[cite: 2]
 
-### Multilingual Token Comparison Table
+* **Budget Tier:** $30\% \times 30,000 \times €5 = €45,000/\text{month}$[cite: 2]
+* **Standard Tier:** $15\% \times 30,000 \times €5 = €22,500/\text{month}$[cite: 2]
+* **Premium Tier:** $5\% \times 30,000 \times €5 = €7,500/\text{month}$[cite: 2]
 
-| Prompt Language | Input Text Sample | Token Count | Character Count | Ratio (Tokens/Char) |
+| Tier | Success rate | Error rate | Incorrectly handled emails/month | Error cost/month |
 | :--- | :--- | :--- | :--- | :--- |
-| **English** | *[Insert English prompt used in lab]* | *[Count]* | *[Char Count]* | *[Ratio]* |
-| **German / French / Dutch** | *[Insert Translated prompt used in lab]* | *[Count]* | *[Char Count]* | *[Ratio]* |
-| **Non-Latin Language (e.g., Chinese/Arabic)** | *[Insert Non-Latin prompt used in lab]* | *[Count]* | *[Char Count]* | *[Ratio]* |
+| **Budget** | 70% | 30% | 9,000 | €45,000 |
+| **Standard** | 85% | 15% | 4,500 | €22,500 |
+| **Premium** | 95% | 5% | 1,500 | €7,500 |
 
-### Trade-off Analysis Question
-* **Findings:** Non-English languages often require significantly more tokens for the exact same message due to byte-pair encoding (BPE) tokenizers being optimized primarily for English text.
-* **Strategic Trade-off:** For international customer support like EuroShop, operating in non-English languages inflates raw token expenditure. However, using lower-cost model tiers or forced English translation pipelines to cut token costs risks increasing error rates, which dramatically increases human intervention costs. Thus, maintaining higher-tier model quality remains the most cost-effective choice regardless of language token density.
+[cite: 2]
+
+---
+
+### Step 4: Total Monthly Cost
+* **Formula:** $\text{Token cost} + \text{Error cost}$ (assuming $\$1 = €1$)[cite: 2]
+
+| Tier | Calculation | Total/month |
+| :--- | :--- | :--- |
+| **Budget** | €300 + €45,000 | **€45,300** |
+| **Standard** | €900 + €22,500 | **€23,400** |
+| **Premium** | €1,800 + €7,500 | **€9,300** |
+
+[cite: 2]
+
+---
+
+### Step 5: Business Metrics
+* **Formulas:**
+  * $\text{Annual cost} = \text{Monthly cost} \times 12$[cite: 2]
+  * $\text{Cost per email} = \text{Monthly cost} \div 30,000$[cite: 2]
+  * $\text{Cost per correctly handled email} = \text{Monthly cost} \div (30,000 \times \text{success rate})$[cite: 2]
+
+| Metric | Budget | Standard | Premium |
+| :--- | :--- | :--- | :--- |
+| **Annual cost** | €45,300 × 12 = **€543,600** | €23,400 × 12 = **€280,800** | €9,300 × 12 = **€111,600** |
+| **Cost per email** | €45,300 ÷ 30,000 = **€1.51** | €23,400 ÷ 30,000 = **€0.78** | €9,300 ÷ 30,000 = **€0.31** |
+| **Cost per correct email** | €45,300 ÷ 21,000 = **€2.16** | €23,400 ÷ 25,500 = **€0.92** | €9,300 ÷ 28,500 = **€0.33** |
+
+[cite: 2]
+
+---
+
+### Step 6: Recommendation
+I would recommend the **Premium tier** because its 95% success rate means fewer mistakes and less work for human agents[cite: 2]. Although the AI costs $1,800 per month, the total monthly cost is only **€9,300**, compared to **€23,400** for Standard and **€45,300** for Budget (assuming $\$1 = €1$)[cite: 2]. For the CFO, I would focus on the **€0.33 cost per successfully handled email**, as it gives a clearer picture of the overall cost[cite: 2].
+
+---
+
+## 3. Analysis & Scale Questions
+
+### Part 3: Analysis Answers
+* **Question 1 (The Paradox):** The Budget tier has the lowest token cost ($300/month), but its 30% error rate leads to €45,000 in human correction costs, making it the most expensive overall at €45,300/month[cite: 2].
+* **Question 2 (Business Insight):** A company might choose Budget if it has a very tight budget, handles simple queries, or has enough in-house staff to fix errors cheaply, but in EuroShop's case, the €45,300 monthly total makes it much more expensive than Premium[cite: 2].
+* **Question 3 (The Reality Check):** I would lead with the total cost, because the CFO needs to see the full business impact, not just the AI token price; Premium costs €9,300/month overall compared to Budget's €45,300[cite: 2].
+
+---
+
+### Part 4: Scale Questions (111,000 Emails/Month)
+1. **What happens to the cost per email as volume grows?**  
+   The cost per email stays roughly the same because token and error costs increase proportionally with volume[cite: 2]. Premium remains **€0.31/email**, Standard **€0.78/email**, and Budget **€1.51/email**[cite: 2].
+2. **Does your tier recommendation change? At what volume?**  
+   No, I would still recommend Premium[cite: 2]. At 111,000 emails/month, Premium costs approximately **€34,410**, compared to **€86,580** for Standard and **€167,610** for Budget[cite: 2]. Premium has the lowest cost per email, regardless of volume, so there is no break-even volume where another tier becomes cheaper under these assumptions[cite: 2].
+3. **At what volume does Premium become cheaper than hiring 3 human agents?**  
+   Three human agents cost **€9,000/month**[cite: 2]. Premium costs approximately **€0.31/email**[cite: 2].  
+   $$\text{Break-even volume} = \frac{€9,000}{€0.31} = 29,032 \text{ emails/month}$$  
+   So Premium is cheaper than the €9,000 fixed cost below approximately **29,032 emails/month**[cite: 2]. Above that volume, Premium costs more than €9,000/month[cite: 2]. This comparison assumes the three agents can handle the same volume and service scope[cite: 2].
