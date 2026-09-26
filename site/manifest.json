@@ -1,6 +1,14 @@
 [
  {
   "week": 1,
+  "title": "AI Adoption Is Cheap. Getting People to Use It Is Not.",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace.",
+  "date": "2026-09-26",
+  "url": "posts/andreea-simion-week-01.html"
+ },
+ {
+  "week": 1,
   "title": "The Cheapest Part of Making a Game Is the Part AI Can Already Do",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
@@ -118,14 +126,6 @@
   "beat": "",
   "date": "",
   "url": "posts/andreea-simion-week-01-exercises.html"
- },
- {
-  "week": 1,
-  "title": "Week 1",
-  "author": "andreea-simion",
-  "beat": "",
-  "date": "",
-  "url": "posts/andreea-simion-week-01.html"
  },
  {
   "week": 1,
