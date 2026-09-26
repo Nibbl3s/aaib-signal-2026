@@ -32,7 +32,30 @@
 <div class="meta">Week 1 · </div>
 <h1>Week 1</h1>
 <div class="byline">andreea-simion · </div>
-
+<h2>AI Adoption Is Cheap. Getting People to Use It Is Not.</h2>
+<p>Companies can spend thousands implementing an AI tool and still fail to get employees to use it effectively. I’m interested in the psychology behind that problem: trust, resistance, uncertainty, and motivation all affect whether employees actually adopt AI. But before thinking about those behavioral factors, I wanted to know something simpler: <strong>what would an AI adoption assistant actually cost to run?</strong></p>
+<h2>The Numbers</h2>
+<p>Imagine a company with <strong>5,000 employees</strong> introducing a new generative AI tool. The company creates an AI “adoption coach” that employees can ask questions such as: <em>“How should I use AI to summarize this report?”</em>, <em>“Can AI help me with this task?”</em>, or <em>“Why did the AI give me this answer?”</em></p>
+<p>Assume each employee has <strong>20 interactions per month</strong>.</p>
+<p>That gives:<br><ul><li>5,000 employees × 20 interactions = <strong>100,000 interactions/month</strong></li></ul><br><ul><li>Each interaction uses approximately <strong>1,000 input tokens</strong></li></ul><br><ul><li>Each response uses approximately <strong>300 output tokens</strong></li></ul></p>
+<p>So the monthly token volume is:</p>
+<strong>Input:</strong>
+100,000 × 1,000 = <strong>100 million input tokens</strong>
+<strong>Output:</strong>
+100,000 × 300 = <strong>30 million output tokens</strong>
+<p>I used OpenAI's current <strong>GPT-5.4 mini</strong> API pricing as the model-cost reference: <strong>$0.75 per 1 million input tokens</strong> and <strong>$4.50 per 1 million output tokens</strong>.</p>
+<p>That gives:<br><ul><li>Input: 100 × $0.75 = <strong>$75/month</strong></li></ul><br><ul><li>Output: 30 × $4.50 = <strong>$135/month</strong></li></ul><br><ul><li><strong>Total token cost = $210/month</strong></li></ul><br><ul><li><strong>Annual token cost = $2,520</strong></li></ul></p>
+<p>The class exercise made a similar distinction between token cost and the full business cost. In the EuroShop example, the cheapest token tier actually became the most expensive option because errors created much larger human correction costs.</p>
+<p>My €210-equivalent figure is therefore <strong>not the total cost of the AI adoption program</strong>. It excludes the software interface, integration, employee training, monitoring, administration, and the cost of employees dealing with bad AI answers.</p>
+<h2>The Insight</h2>
+<p>The surprising part is how small the token bill is.</p>
+<p>A company serving 5,000 employees could theoretically generate <strong>130 million tokens every month for only about $210 in raw model usage</strong> under these assumptions. The expensive part may not be the AI at all.</p>
+<p>This changes how I think about the psychology of AI adoption. If the technology itself is relatively inexpensive, the important business question becomes: <strong>why aren't employees using it effectively?</strong></p>
+<p>An employee who distrusts AI, doesn't understand how to prompt it, or is afraid that using it makes their work less valuable can create far more organizational friction than the underlying token bill.</p>
+<p>My biggest lesson from Week 1 is therefore the same one I saw in the EuroShop exercise: <strong>token cost is only one part of AI economics</strong>. The real cost of AI adoption may sit in the human behavior surrounding the technology.</p>
+<h2>The Question</h2>
+<p>If the token cost of workplace AI is this small, <strong>how much should companies actually spend on the psychological and organizational side of AI adoption?</strong></p>
+<p>Next, I want to investigate whether better AI adoption is mainly a technology problem—or a human behavior problem.<br></p>
 </article>
 </body>
 </html>
