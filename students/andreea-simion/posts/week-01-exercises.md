@@ -1,14 +1,8 @@
-# Week 1: Token Economics & Cost Frameworks — Lab Results & Submission
-
-**Beat:** The Psychology of AI Adoption in the Workplace[cite: 2]  
-**Author:** Andreea Simion[cite: 2]  
-
----
-
-## 1. Declared Beat
-
-* **Beat:** The Psychology of AI Adoption in the Workplace[cite: 2]
-* **Rationale:** I chose this beat because understanding how human teams react to and trust AI tools is essential for successful adoption[cite: 2]. Technical capability matters little if workplace psychology, employee resistance, or misuse hinder actual deployment[cite: 2].
+# Week: 1: Token Economics & Cost Frameworks — Lab Results & Submission
+author: Andreea Simion
+beat: The Psychology of AI Adoption in the Workplace[cite: 2]
+skill: "Cost literacy"
+date: 2026-09-26
 
 ---
 
