@@ -4,6 +4,7 @@
   "title": "Token Economics & Cost Frameworks \u2014 Lab Results & Submission",
   "author": "Andreea Simion",
   "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Cost literacy",
   "date": "2026-09-26",
   "url": "posts/andreea-simion-week-01-exercises.html"
  },
@@ -12,14 +13,25 @@
   "title": "AI Adoption Is Cheap. Getting People to Use It Is Not.",
   "author": "Andreea Simion",
   "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Cost literacy",
   "date": "2026-09-26",
   "url": "posts/andreea-simion-week-01.html"
+ },
+ {
+  "week": 1,
+  "title": "The \u20ac0.0023 Email \u2014 and the 5x Mistake That Got Me There",
+  "author": "Brecht Masschaele",
+  "beat": "AI in International Management",
+  "skill": "Cost literacy",
+  "date": "2026-09-25",
+  "url": "posts/brecht-masschaele-week-01.html"
  },
  {
   "week": 1,
   "title": "The Cheapest Part of Making a Game Is the Part AI Can Already Do",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/daniel-stefirta-week-01.html"
  },
@@ -28,6 +40,7 @@
   "title": "Week 1",
   "author": "JanVanCaneghem",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/JanVanCaneghem-week-01.html"
  },
@@ -36,6 +49,7 @@
   "title": "The True Cost of Email Chaos in Freight Forwarding",
   "author": "Janis Krainis",
   "beat": "AI and Communication Automation in European Freight Forwarding",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/janis-krainis-week-01.html"
  },
@@ -44,6 +58,7 @@
   "title": "The \u20ac250,000 Number No Sanctions-Screening Vendor Will Quote You",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/jasper-derieuw-week-01.html"
  },
@@ -52,6 +67,7 @@
   "title": "Freight Quotes: Cheap AI Tokens, Expensive Responsibility",
   "author": "Kiril Boyakov",
   "beat": "AI in European Freight Cost Estimation",
+  "skill": "Cost literacy",
   "date": "2026-09-27",
   "url": "posts/kiril-boyakov-week-01.html"
  },
@@ -60,6 +76,7 @@
   "title": "57% Wrong, One Number Real: What an AI Tax Error Actually Costs",
   "author": "Kirill Kyryllov",
   "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/kirill-kyryllov-week-01.html"
  },
@@ -68,6 +85,7 @@
   "title": "The \u20ac0.0005 Campaign: What One AI Marketing Generation Actually Costs",
   "author": "Ksenija Maruscaka",
   "beat": "AI in Marketing and Consumer Personalization",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/ksenija-maruscaka-week-01.html"
  },
@@ -76,6 +94,7 @@
   "title": "The \u20ac0.0000356 Email: What One AI Answer Actually Costs",
   "author": "Lena Devos",
   "beat": "AI in European Retail Logistics",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/example-student-week-01.html"
  },
@@ -84,6 +103,7 @@
   "title": "The \u20ac0.0000356 Email: What One AI Answer Actually Costs",
   "author": "Lena Devos",
   "beat": "AI in European Retail Logistics",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/lander-rutten-week-01.html"
  },
@@ -92,6 +112,7 @@
   "title": "The \u20ac5 Marketing Department: Why Cheap Tokens Still Break Small Hospitality",
   "author": "Levente Sinka",
   "beat": "Killing the Retainer: How 1-Person AI Operations Replace Traditional Agencies in Small Hospitality",
+  "skill": "Cost literacy",
   "date": "2026-09-27",
   "url": "posts/levente-sinka-week-01.html"
  },
@@ -100,6 +121,7 @@
   "title": "AI Customer Quotation at O&D 3D Costs Under a Dollar a Month: The Number That Isn't the Question",
   "author": "Max",
   "beat": "AI Automation Cost Literacy at O&D Impression 3D",
+  "skill": "Cost literacy",
   "date": "2026-09-25",
   "url": "posts/Max-Moor-week-01.html"
  },
@@ -108,6 +130,7 @@
   "title": "Signal Post Week 1 | Cost Literacy | AI costs in creative agencies",
   "author": "Nina Deiter",
   "beat": "Dein Beat",
+  "skill": "How, and under what conditions, does generative AI adoption affect productivity and work quality in creative brand agencies?",
   "date": "2026-09-26",
   "url": "posts/nina-deiter-week-01.html"
  },
@@ -116,6 +139,7 @@
   "title": "An AI Coach Costs \u20ac6 a Month. One Mistake Costs \u20ac60,000.",
   "author": "Osama Daoud",
   "beat": "AI in Sports Performance \u2013 Scouting, Player Tracking and Injury Prevention",
+  "skill": "Cost literacy",
   "date": "2026-09-27",
   "url": "posts/osama-daoud-week-01.html"
  },
@@ -124,6 +148,7 @@
   "title": "The DJ Quote Bot Costs Nothing to Run \u2014 Until It Sends the Wrong Price",
   "author": "Thor Tack",
   "beat": "AI Cost Decisions for a One-Person DJ & Events Business",
+  "skill": "Cost literacy",
   "date": "2026-09-24",
   "url": "posts/tackbruneel-week-01.html"
  },
@@ -132,6 +157,7 @@
   "title": "The \u20ac5 Comps Run and the \u20ac400 Check",
   "author": "Tim Lampe",
   "beat": "AI in M&A Valuation",
+  "skill": "Cost literacy",
   "date": "2026-09-21",
   "url": "posts/tim-lampe-week-01.html"
  },
@@ -140,22 +166,16 @@
   "title": "Week 1",
   "author": "blerta-memisi",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/blerta-memisi-week-01.html"
  },
  {
   "week": 1,
   "title": "Week 1",
-  "author": "brecht-masschaele",
-  "beat": "",
-  "date": "",
-  "url": "posts/brecht-masschaele-week-01.html"
- },
- {
-  "week": 1,
-  "title": "Week 1",
   "author": "kirill-kyryllov",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/kirill-kyryllov-week-01-evidence.html"
  },
@@ -164,6 +184,7 @@
   "title": "Week 1",
   "author": "kirill-kyryllov",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/kirill-kyryllov-week-01-submission.html"
  },
@@ -172,6 +193,7 @@
   "title": "Week 1",
   "author": "luna-van-der-heyden",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/luna-van-der-heyden-week-1.html"
  },
@@ -180,6 +202,7 @@
   "title": "Week 1",
   "author": "thibaut-bogaert",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/thibaut-bogaert-week-01.html"
  },
@@ -188,6 +211,7 @@
   "title": "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Capability skepticism",
   "date": "2026-09-23",
   "url": "posts/jasper-derieuw-week-02.html"
  },
@@ -196,6 +220,7 @@
   "title": "Week 2",
   "author": "thibaut-bogaert",
   "beat": "",
+  "skill": "",
   "date": "",
   "url": "posts/thibaut-bogaert-week-02.html"
  },
@@ -204,6 +229,7 @@
   "title": "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Vendor claim detection",
   "date": "2026-09-23",
   "url": "posts/jasper-derieuw-week-03.html"
  }

@@ -4,51 +4,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Week 1 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.7; }
-  article { max-width:760px; margin:0 auto; padding:3rem 1.5rem 4rem; }
-  .meta { color:var(--amber); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
-  h1 { font-size:1.9rem; margin:.6rem 0 1rem; letter-spacing:-0.02em; }
-  .byline { color:var(--dim); margin-bottom:2.5rem; }
-  h2 { color:var(--amber); margin:2rem 0 .8rem; font-size:1.3rem; }
-  p { margin-bottom:1rem; }
-  ul,ol { margin:0 0 1rem 1.5rem; }
-  code { background:var(--card); padding:.1rem .35rem; border-radius:.3rem; font-size:.9em; }
-  pre { background:var(--card); border:1px solid var(--line); border-radius:.5rem; padding:1rem; overflow-x:auto; margin-bottom:1rem; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
   pre code { background:none; padding:0; }
-  blockquote { border-left:3px solid var(--amber); padding-left:1rem; color:var(--dim); margin:1rem 0; }
-  table { border-collapse:collapse; margin-bottom:1rem; width:100%; }
-  th,td { border:1px solid var(--line); padding:.4rem .7rem; text-align:left; }
-  a { color:var(--amber); }
-  .back { display:inline-block; margin-bottom:2rem; color:var(--dim); text-decoration:none; }
-  .back:hover { color:var(--amber); }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
 </style>
 </head>
 <body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
-<a class="back" href="/">← All posts</a>
 <div class="meta">Week 1 · </div>
 <h1>Week 1</h1>
 <div class="byline">JanVanCaneghem · </div>
-<strong>The Hook</strong>
+<p><strong>The Hook</strong></p>
 <p>MOOCs made knowledge and content abundant. But that already is. What they didn't do, however, was make feedback abundant. Applying what you learn and getting feedback on it is what helps you progress. </p>
 <p>That's why only 5 to 13% of students enrolled finish a typical MOOC (Jordan, K. (2015)). </p>
 <p>Imagine MOOCs giving feedback within seconds after submission. Not only based on the course content, but also on the submissions and context of peer students.</p>
 <p>Learning would multiply and become more relevant to students' context.</p>
 <p>So what does it cost? Less than the coffee at your last workshop.</p>
-<strong>The insights</strong>
+<p><strong>The insights</strong></p>
 <p>Cost is not the bottleneck anymore. At under a euro per learner, the AI budget is a rounding error. The real investment is designing good assignments and rubrics.</p>
 <p>The value is in the cohort, not the grade. Individual peer graders are unreliable (ICC 0.26 in a 49,000-learner MOOC) (Luo, H. et al. (2014)), but five peer grades together become fairly reliable (0.64). AI can do that aggregation for everyone, every time, and give the patterns back to learners and designers alike.</p>
 <p>Grading is the weak spot. Feedback is the strong one. Recent research found that LLMs score essays well below human agreement levels. They squeeze everyone toward the middle and go easy on thin work. But in a randomised trial with 354 students, AI-assisted feedback led to clearly better revisions (d = 0.50)(Lu, X. et al (2026)). D=0.50 means that students who get AI assisted feedback end up with better revised submissions. So let AI coach, and be careful not to let it judge.</p>
 <p>The course designer gets a mirror. A synthesis of 1,000 submissions tells you exactly where your content fails. That's design research you never had at this scale.</p>
-<strong>The questions (the unknowns)</strong>
-<p>Validity: Who checks the checker? How much human calibration does a rubric need before AI feedback can be trusted?<br>Credentials: Would you accept a certificate when no human ever looked at the work?<br>Peer context and privacy: Can learners' work feed other learners' feedback without consent issues or a flattening effect where everyone drifts toward the average answer?<br>Motivation: Does completion come from feedback, or from belonging? AI can close the feedback gap. Can it close the community gap?<br>Gaming: What happens when learners use AI to write the submissions that AI evaluates?<br>Cost drift: Token prices keep falling, but learners will want more dialogue. Which way does the bill actually move?<br>Output vs impact or learning: The referenced literature provides evidence on output. One remaining question is whether AI feedback and coaching will also produce a motivated cohort. </p>
-<strong>The Numbers</strong>
-<p>| Step  | What happens | Calculation  | Cost | <br>| ------------- | ------------- | ------------- | ------------- |<br>| 1. The AI reads  | Course material, grading rubric, the student's work and a few peer examples  | ≈ 3 cents per evaluation  | $0.03  |<br>| 2. The AI writes  | About 1,500 words of personal feedback, including how the work compares with peers  | ≈ 4 cents per evaluation  | $0.04  |<br>|   |   | Total cost  | $0.07  |</p>
-<p>| Evaluations  |   | Calculation  | Cost | <br>| ------------- | ------------- | ------------- | ------------- |<br>| 3. Number of evaluations  | 1,000 students × 5 assignments, and half of them revise once  | 1,000 × 5 × 1.5 = 7,500n  |    |<br>| 4. All feedback  | Every evaluation in the course  | 7,500 × $0.07  | $537  |<br>| 5. Cohort insights  | The AI summarizes all submissions into one report per assignment (common patterns, blind spots, standout ideas)  | 5 reports  | $67  |<br>| Total  |    | $537 + $67  | ≈ $600  |<br>|  Total per student |   | $600 ÷ 1,000  | $0.60  |</p>
-<p>Sources<br>1. Jordan, K. (2015). Massive open online course completion rates revisited: Assessment, length and attrition. The International Review of Research in Open and Distributed Learning, 16(3). https://doi.org/10.19173/irrodl.v16i3.2112<br>2. Luo, H., Robinson, A. C., & Park, J.-Y. (2014). Peer Grading in a MOOC: Reliability, Validity, and Perceived Effects. Journal of Asynchronous Learning Networks (now Online Learning), 18(2).<br>3. Lu, X., Ju, K. P., Dudley, M., Sano, L., & Wang, X. (2026). AI-Mediated Feedback Improves Student Revisions: A Randomized Trial with FeedbackWriter in a Large Undergraduate Course. Proceedings of the CHI 2026 Conference on Human Factors in Computing Systems.<br></p>
+<p><strong>The questions (the unknowns)</strong></p>
+<p>Validity: Who checks the checker? How much human calibration does a rubric need before AI feedback can be trusted?<br />
+Credentials: Would you accept a certificate when no human ever looked at the work?<br />
+Peer context and privacy: Can learners' work feed other learners' feedback without consent issues or a flattening effect where everyone drifts toward the average answer?<br />
+Motivation: Does completion come from feedback, or from belonging? AI can close the feedback gap. Can it close the community gap?<br />
+Gaming: What happens when learners use AI to write the submissions that AI evaluates?<br />
+Cost drift: Token prices keep falling, but learners will want more dialogue. Which way does the bill actually move?<br />
+Output vs impact or learning: The referenced literature provides evidence on output. One remaining question is whether AI feedback and coaching will also produce a motivated cohort. </p>
+<p><strong>The Numbers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What happens</th>
+<th>Calculation</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. The AI reads</td>
+<td>Course material, grading rubric, the student's work and a few peer examples</td>
+<td>≈ 3 cents per evaluation</td>
+<td>$0.03</td>
+</tr>
+<tr>
+<td>2. The AI writes</td>
+<td>About 1,500 words of personal feedback, including how the work compares with peers</td>
+<td>≈ 4 cents per evaluation</td>
+<td>$0.04</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Total cost</td>
+<td>$0.07</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Evaluations</th>
+<th></th>
+<th>Calculation</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3. Number of evaluations</td>
+<td>1,000 students × 5 assignments, and half of them revise once</td>
+<td>1,000 × 5 × 1.5 = 7,500n</td>
+<td></td>
+</tr>
+<tr>
+<td>4. All feedback</td>
+<td>Every evaluation in the course</td>
+<td>7,500 × $0.07</td>
+<td>$537</td>
+</tr>
+<tr>
+<td>5. Cohort insights</td>
+<td>The AI summarizes all submissions into one report per assignment (common patterns, blind spots, standout ideas)</td>
+<td>5 reports</td>
+<td>$67</td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td>$537 + $67</td>
+<td>≈ $600</td>
+</tr>
+<tr>
+<td>Total per student</td>
+<td></td>
+<td>$600 ÷ 1,000</td>
+<td>$0.60</td>
+</tr>
+</tbody>
+</table>
+<p>Sources<br />
+1. Jordan, K. (2015). Massive open online course completion rates revisited: Assessment, length and attrition. The International Review of Research in Open and Distributed Learning, 16(3). https://doi.org/10.19173/irrodl.v16i3.2112<br />
+2. Luo, H., Robinson, A. C., &amp; Park, J.-Y. (2014). Peer Grading in a MOOC: Reliability, Validity, and Perceived Effects. Journal of Asynchronous Learning Networks (now Online Learning), 18(2).<br />
+3. Lu, X., Ju, K. P., Dudley, M., Sano, L., &amp; Wang, X. (2026). AI-Mediated Feedback Improves Student Revisions: A Randomized Trial with FeedbackWriter in a Large Undergraduate Course. Proceedings of the CHI 2026 Conference on Human Factors in Computing Systems.</p>
+<a class="back" href="/">← All posts</a>
 </article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
 </body>
 </html>
