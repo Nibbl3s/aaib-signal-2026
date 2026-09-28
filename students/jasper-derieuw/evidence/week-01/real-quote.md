@@ -1,12 +1,3 @@
----
-week: 1
-title: "Get a Real Quote: Vendor Outreach Evidence"
-author: "Jasper Derieuw"
-beat: "EU and China Trade Compliance in the AI Era"
-skill: "Cost literacy"
-date: 2026-09-23
----
-
 # Get a Real Quote (6 ECTS Extension)
 
 ## Scenario Sent to Both Vendors

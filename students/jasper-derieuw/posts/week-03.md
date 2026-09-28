@@ -39,3 +39,7 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 ---
 
 *AI disclosure: I used Claude to search for and help structure the ComplyAdvantage claims used here, and to help organise the deconstruction table. The tagging judgments, the FOMO framework answers, and the verdict were mine.*
+
+---
+
+Full workings (Claim Gauntlet, NexusAI deconstruction, FOMO framework, case comparison): [Week 3 Evidence](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/claims-and-fomo.md)

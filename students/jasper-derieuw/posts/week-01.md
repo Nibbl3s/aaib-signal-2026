@@ -50,4 +50,6 @@ At what missed-hit rate does language-aware AI screening stop being cheaper than
 
 ---
 
-Full EuroShop cost model and token-count workings: [week-01-evidence.md](./week-01-evidence.md)
+Full EuroShop cost model and token-count workings: [Cost Modeling Lab & Token Discovery Lab](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-01/cost-model-and-token-lab.md)
+
+6 ECTS extension, vendor outreach to ComplyAdvantage and World-Check: [Get a Real Quote](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-01/real-quote.md)
