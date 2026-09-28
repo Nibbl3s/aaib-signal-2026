@@ -1,8 +1,8 @@
 ---
 type: passport
-student: "Your Name"
-beat: "Your Signal beat"
-track: "4 ECTS"
+student: "Tim Lampe"
+beat: "AI in Finance: How M&A Consultants use AI to value enterprises"
+track: "6 ECTS"
 ---
 
 # Skills Passport
