@@ -4,7 +4,7 @@ title: "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's A
 author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Vendor claim detection"
-date: 2026-10-07
+date: 2026-09-23
 ---
 
 # Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims
@@ -19,14 +19,12 @@ ComplyAdvantage sells AI powered sanctions, watchlist, and adverse media screeni
 
 **The Deconstruction**
 
-| # | Claim | Tag | Reasoning |
-|---|---|---|---|
-| 1 | Named customers: ABInBev, AJ Bell, Zoopla, Plaid | Fact | Named, checkable companies, unlike NexusAI's unnamed "200+ companies" |
-| 2 | AJ Bell, 82% reduction in alert volumes | Fact, weaker than it looks | Named client, specific figure, but no stated period or baseline volume |
-| 3 | Automate 95% of reviews, cut onboarding by 50% | Avoidance | Present tense, no client named, no denominator, no study cited |
-| 4 | Identify sanctioned individuals before official notifications | Aspiration | A forward looking capability claim with no case example or test attached |
-| 5 | Tens of thousands of global data sources | Avoidance | Vague quantifier standing in for an actual number, no sources named |
-| 6 | Mapping to EU and FATF crimes is market leading | Avoidance | Unfalsifiable superlative, no comparison offered |
+- **1. Named customers: ABInBev, AJ Bell, Zoopla, Plaid** → **Fact.** Named, checkable companies, unlike NexusAI's unnamed "200+ companies".
+- **2. AJ Bell, 82% reduction in alert volumes** → **Fact, weaker than it looks.** Named client, specific figure, but no stated period or baseline volume.
+- **3. Automate 95% of reviews, cut onboarding by 50%** → **Avoidance.** Present tense, no client named, no denominator, no study cited.
+- **4. Identify sanctioned individuals before official notifications** → **Aspiration.** A forward looking capability claim with no case example or test attached.
+- **5. Tens of thousands of global data sources** → **Avoidance.** Vague quantifier standing in for an actual number, no sources named.
+- **6. Mapping to EU and FATF crimes is market leading** → **Avoidance.** Unfalsifiable superlative, no comparison offered.
 
 Two of six claims here are genuinely strong, named clients and a specific, attributable result. That is a meaningfully better ratio than the fictional NexusAI proposal, where ten of sixteen claims were avoidance. Real vendors are not uniformly hollow, they mix strong evidence with vague marketing in the same paragraph, and the skill is separating one from the other rather than distrusting the whole page.
 

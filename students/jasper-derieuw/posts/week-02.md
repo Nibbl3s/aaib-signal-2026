@@ -4,7 +4,7 @@ title: "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of 
 author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Capability skepticism"
-date: 2026-09-30
+date: 2026-09-23
 ---
 
 # I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.

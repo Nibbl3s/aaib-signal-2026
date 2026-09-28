@@ -1,5 +1,7 @@
 # Build Log
 
+> Summary log for prompt v1, plus the sections filled in during later weeks. The full raw output of every run is in [log.md](log.md).
+
 ## The job
 
 **What it does, in one sentence:**

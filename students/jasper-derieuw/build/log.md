@@ -1,5 +1,7 @@
 # Build: Log
 
+> Run-by-run record for prompt v1: the full output of every input, both runs. The summary table, failure analysis and the later-week sections (deployment probe, cost, second model, attack, regulatory, checkpoints) live in [log-v1.md](log-v1.md). Both files are kept because the brief says never delete a failure.
+
 Every input run twice, per the Build brief. Failure codes: F1 wrong · F2 fabricated · F3 missed · F4 format · F5 refused · F6 inconsistent.
 
 Model used: Claude (run directly against the v1 prompt in prompt.md, executed here rather than via a separate chat window)

@@ -29,7 +29,7 @@ Thank you for your time,
 Jasper Derieuw
 jasper.derieuw@hotmail.com
 
-**Response received:** None, as of 2026-09-23 through the six business day window.
+**Response received:** None as of 2026-09-28, five days after sending. I will update this if a reply arrives.
 
 ---
 
@@ -49,13 +49,13 @@ Thank you for your time,
 Jasper Derieuw
 jasper.derieuw@hotmail.com
 
-**Response received:** None, as of 2026-09-23 through the six business day window.
+**Response received:** None as of 2026-09-28, five days after sending. I will update this if a reply arrives.
 
 ---
 
 ## What This Tells Me About Pricing Above the Self Serve Tier
 
-Both ComplyAdvantage and Refinitiv World Check were contacted with identical scenarios and neither responded within the window. This itself is a finding rather than an absence of one. Published, self serve pricing exists for consumer grade AI tools, but at the point where a real compliance use case is described, with actual volume and a specific screening scenario, even the more API first, mid market vendor (ComplyAdvantage) did not engage. Silence from both is consistent with an enterprise, sales led pricing model in this sector: quotes appear to be produced only after a qualified sales conversation, not generated from an inbound email describing scope and volume. This mirrors the argument in my Week 1 Signal post itself: the number that actually decides a compliance AI investment rarely sits on any page a buyer can read without first going through a gatekeeper.
+Both ComplyAdvantage and Refinitiv World Check were contacted with identical scenarios and neither had responded five days later. This itself is a finding rather than an absence of one. Published, self serve pricing exists for consumer grade AI tools, but at the point where a real compliance use case is described, with actual volume and a specific screening scenario, even the more API first, mid market vendor (ComplyAdvantage) did not engage. Silence from both is consistent with an enterprise, sales led pricing model in this sector: quotes appear to be produced only after a qualified sales conversation, not generated from an inbound email describing scope and volume. This mirrors the argument in my Week 1 Signal post itself: the number that actually decides a compliance AI investment rarely sits on any page a buyer can read without first going through a gatekeeper.
 
 ## What This Changes
 

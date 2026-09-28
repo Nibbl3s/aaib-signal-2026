@@ -2,14 +2,14 @@
 type: passport
 student: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
-track: "4 ECTS"
+track: "6 ECTS"
 ---
  
 # Skills Passport
  
 **Student:** Jasper Derieuw
 **Beat:** EU and China Trade Compliance in the AI Era
-**Track:** 4 ECTS
+**Track:** 6 ECTS
  
 > Copy this file to `students/your-name/passport.md` in the Signal repository in Week 1.
 > Update it at three checkpoints — end of Week 4, Week 8 and Week 12 — and commit each time.

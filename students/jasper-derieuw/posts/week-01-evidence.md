@@ -26,13 +26,11 @@ I chose this beat because trade compliance sits exactly where AI's language capa
 
 Tokenizer used: TikToken Tokenizer. Cost basis: $0.03 per 1,000 tokens, quoted per 1,000 documents processed (matching the AI Bill activity convention).
 
-| Document | English Tokens | English Cost | Dutch Tokens | Dutch Cost | Difference | % Increase |
-|---|---|---|---|---|---|---|
-| Doc 1 — Customer Support Email | 151 | $4.53 | 170 | $5.10 | $0.57 | +12.6% |
-| Doc 2 — Product Description | 98 | $2.94 | 144 | $4.32 | $1.38 | +46.9% |
-| Doc 3 — Meeting Transcript | 157 | $4.71 | 228 | $6.84 | $2.13 | +45.2% |
-| Doc 4 — Legal Contract Clause | 136 | $4.08 | 188 | $5.64 | $1.56 | +38.2% |
-| Doc 5 — Invoice | 146 | $4.38 | 168 | $5.04 | $0.66 | +15.1% |
+- **Doc 1 — Customer Support Email:** English 151 tokens ($4.53) · Dutch 170 tokens ($5.10) · difference $0.57, **+12.6%**
+- **Doc 2 — Product Description:** English 98 tokens ($2.94) · Dutch 144 tokens ($4.32) · difference $1.38, **+46.9%**
+- **Doc 3 — Meeting Transcript:** English 157 tokens ($4.71) · Dutch 228 tokens ($6.84) · difference $2.13, **+45.2%**
+- **Doc 4 — Legal Contract Clause:** English 136 tokens ($4.08) · Dutch 188 tokens ($5.64) · difference $1.56, **+38.2%**
+- **Doc 5 — Invoice:** English 146 tokens ($4.38) · Dutch 168 tokens ($5.04) · difference $0.66, **+15.1%**
 
 **Average increase across all 5 documents: ~31.6%** — in the same range as the course reference table for Dutch (+40%), lower but same order of magnitude. Per the instructions, the measured figure is trusted over the reference table.
 
@@ -60,11 +58,9 @@ Total output tokens/month = 30,000 x 400 = 12,000,000
 
 ### Step 2 — Token Cost per Tier (USD)
 
-| Tier | Input $/1K | Output $/1K | Input Cost | Output Cost | Token Cost/Month |
-|---|---|---|---|---|---|
-| Budget | $0.01 | $0.02 | 6,000 x $0.01 = $60 | 12,000 x $0.02 = $240 | $300 |
-| Standard | $0.03 | $0.06 | 6,000 x $0.03 = $180 | 12,000 x $0.06 = $720 | $900 |
-| Premium | $0.06 | $0.12 | 6,000 x $0.06 = $360 | 12,000 x $0.12 = $1,440 | $1,800 |
+- **Budget** ($0.01 input / $0.02 output per 1K): input 6,000 x $0.01 = $60 · output 12,000 x $0.02 = $240 · **$300/month**
+- **Standard** ($0.03 input / $0.06 output per 1K): input 6,000 x $0.03 = $180 · output 12,000 x $0.06 = $720 · **$900/month**
+- **Premium** ($0.06 input / $0.12 output per 1K): input 6,000 x $0.06 = $360 · output 12,000 x $0.12 = $1,440 · **$1,800/month**
 
 ### Step 3 — Error Costs (EUR)
 
@@ -74,19 +70,15 @@ Premium:  30,000 x  5% x €5 =  €7,500
 
 ### Step 4 — Total Monthly Cost (converted to EUR at $1 = €0.92)
 
-| Tier | Token Cost (USD) | Token Cost (EUR) | Error Cost (EUR) | **Total/Month (EUR)** |
-|---|---|---|---|---|
-| Budget | $300 | €276 | €45,000 | **€45,276** |
-| Standard | $900 | €828 | €22,500 | **€23,328** |
-| Premium | $1,800 | €1,656 | €7,500 | **€9,156** |
+- **Budget:** tokens $300 = €276 · errors €45,000 · **total €45,276/month**
+- **Standard:** tokens $900 = €828 · errors €22,500 · **total €23,328/month**
+- **Premium:** tokens $1,800 = €1,656 · errors €7,500 · **total €9,156/month**
 
 ### Step 5 — Business Metrics
 
-| Tier | Annual Cost | Cost/Email | Cost per Correctly Handled Email |
-|---|---|---|---|
-| Budget | €543,312 | €1.509 | €45,276 / (30,000x0.70) = €2.156 |
-| Standard | €279,936 | €0.778 | €23,328 / (30,000x0.85) = €0.915 |
-| Premium | €109,872 | €0.305 | €9,156 / (30,000x0.95) = €0.321 |
+- **Budget:** €543,312/year · €1.509 per email · €45,276 / (30,000 x 0.70) = **€2.156 per correctly handled email**
+- **Standard:** €279,936/year · €0.778 per email · €23,328 / (30,000 x 0.85) = **€0.915 per correctly handled email**
+- **Premium:** €109,872/year · €0.305 per email · €9,156 / (30,000 x 0.95) = **€0.321 per correctly handled email**
 
 ### Step 6 — Recommendation
 
