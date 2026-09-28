@@ -1,11 +1,11 @@
-# Build — Test Set
+## Input 1, Run 1
+Output: Flag: Total Revenue — Values: 4.2M vs 5.8M — Type: unexplained swing — Note: 38% increase with no footnote
+Expected: No inconsistencies found (swing explained in footnote 3, which wasn't in excerpt)
+Classification: F1 (wrong) — flagged something that was actually explained, just not in the excerpt I gave it
 
-## Input 1
-Source: [Link oder Dokumentbezeichnung, z. B. "Firma XY, Jahresbericht 2023 und 2024, Bilanz S. 12"]
-Statement Year N: [Auszug oder Zusammenfassung der relevanten Zeilen]
-Statement Year N+1: [Auszug oder Zusammenfassung der relevanten Zeilen]
-Expected answer: [was dein Prompt korrekterweise flaggen sollte, oder "No inconsistencies found"]
-Why awkward: [z. B. "enthält eine erklärte Restatement, testet ob der Prompt sie fälschlich flaggt"]
+## Input 1, Run 2
+Output: No inconsistencies found.
+Expected: No inconsistencies found
+Classification: correct
 
-## Input 2
-...
+## → F6 flag: Input 1 gave different answers across two runs
