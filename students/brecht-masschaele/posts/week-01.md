@@ -1,5 +1,3 @@
-
-```markdown
 ---
 week: 1
 title: "The €0.0023 Email — and the 5x Mistake That Got Me There"
