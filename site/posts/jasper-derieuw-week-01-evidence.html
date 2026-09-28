@@ -41,8 +41,7 @@
 <strong>Track:</strong> 6 ECTS
 <p>---</p>
 <h2>2. Token Discovery Lab — English vs. Dutch</h2>
-<p>Tokenizer used: TikToken Tokenizer. Cost basis: $0.03 per 1,000 tokens, quoted per 1,000 documents processed (matching the AI Bill activity convention).</p>
-<p>| Document | English Tokens | English Cost | Dutch Tokens | Dutch Cost | Difference | % Increase |<br>|---|---|---|---|---|---|---|<br>| Doc 1 — Customer Support Email | 151 | $4.53 | 170 | $5.10 | $0.57 | +12.6% |<br>| Doc 2 — Product Description | 98 | $2.94 | 144 | $4.32 | $1.38 | +46.9% |<br>| Doc 3 — Meeting Transcript | 157 | $4.71 | 228 | $6.84 | $2.13 | +45.2% |<br>| Doc 4 — Legal Contract Clause | 136 | $4.08 | 188 | $5.64 | $1.56 | +38.2% |<br>| Doc 5 — Invoice | 146 | $4.38 | 168 | $5.04 | $0.66 | +15.1% |</p>
+<p>Tokenizer used: TikToken Tokenizer. Cost basis: $0.03 per 1,000 tokens, quoted per 1,000 documents processed (matching the AI Bill activity convention).<br><ul><li><strong>Doc 1 — Customer Support Email:</strong> English 151 tokens ($4.53) · Dutch 170 tokens ($5.10) · difference $0.57, <strong>+12.6%</strong></li></ul><br><ul><li><strong>Doc 2 — Product Description:</strong> English 98 tokens ($2.94) · Dutch 144 tokens ($4.32) · difference $1.38, <strong>+46.9%</strong></li></ul><br><ul><li><strong>Doc 3 — Meeting Transcript:</strong> English 157 tokens ($4.71) · Dutch 228 tokens ($6.84) · difference $2.13, <strong>+45.2%</strong></li></ul><br><ul><li><strong>Doc 4 — Legal Contract Clause:</strong> English 136 tokens ($4.08) · Dutch 188 tokens ($5.64) · difference $1.56, <strong>+38.2%</strong></li></ul><br><ul><li><strong>Doc 5 — Invoice:</strong> English 146 tokens ($4.38) · Dutch 168 tokens ($5.04) · difference $0.66, <strong>+15.1%</strong></li></ul></p>
 <strong>Average increase across all 5 documents: ~31.6%</strong> — in the same range as the course reference table for Dutch (+40%), lower but same order of magnitude. Per the instructions, the measured figure is trusted over the reference table.
 <h3>Reflection Questions</h3>
 <strong>1. Which document increased the most in tokens, and by what %?</strong>
@@ -57,13 +56,19 @@ It depends on the criteria. Forcing English reduces token cost by roughly 30–4
 <h3>Step 1 — Monthly Token Volume</h3>
 <p>Total input tokens/month = 30,000 x 200 = 6,000,000<br>Total output tokens/month = 30,000 x 400 = 12,000,000</p>
 <h3>Step 2 — Token Cost per Tier (USD)</h3>
-<p>| Tier | Input $/1K | Output $/1K | Input Cost | Output Cost | Token Cost/Month |<br>|---|---|---|---|---|---|<br>| Budget | $0.01 | $0.02 | 6,000 x $0.01 = $60 | 12,000 x $0.02 = $240 | $300 |<br>| Standard | $0.03 | $0.06 | 6,000 x $0.03 = $180 | 12,000 x $0.06 = $720 | $900 |<br>| Premium | $0.06 | $0.12 | 6,000 x $0.06 = $360 | 12,000 x $0.12 = $1,440 | $1,800 |</p>
+<ul><li><strong>Budget</strong> ($0.01 input / $0.02 output per 1K): input 6,000 x $0.01 = $60 · output 12,000 x $0.02 = $240 · <strong>$300/month</strong></li></ul>
+<ul><li><strong>Standard</strong> ($0.03 input / $0.06 output per 1K): input 6,000 x $0.03 = $180 · output 12,000 x $0.06 = $720 · <strong>$900/month</strong></li></ul>
+<ul><li><strong>Premium</strong> ($0.06 input / $0.12 output per 1K): input 6,000 x $0.06 = $360 · output 12,000 x $0.12 = $1,440 · <strong>$1,800/month</strong></li></ul>
 <h3>Step 3 — Error Costs (EUR)</h3>
 <p>Budget:   30,000 x 30% x €5 = €45,000<br>Standard: 30,000 x 15% x €5 = €22,500<br>Premium:  30,000 x  5% x €5 =  €7,500</p>
 <h3>Step 4 — Total Monthly Cost (converted to EUR at $1 = €0.92)</h3>
-<p>| Tier | Token Cost (USD) | Token Cost (EUR) | Error Cost (EUR) | <strong>Total/Month (EUR)</strong> |<br>|---|---|---|---|---|<br>| Budget | $300 | €276 | €45,000 | <strong>€45,276</strong> |<br>| Standard | $900 | €828 | €22,500 | <strong>€23,328</strong> |<br>| Premium | $1,800 | €1,656 | €7,500 | <strong>€9,156</strong> |</p>
+<ul><li><strong>Budget:</strong> tokens $300 = €276 · errors €45,000 · <strong>total €45,276/month</strong></li></ul>
+<ul><li><strong>Standard:</strong> tokens $900 = €828 · errors €22,500 · <strong>total €23,328/month</strong></li></ul>
+<ul><li><strong>Premium:</strong> tokens $1,800 = €1,656 · errors €7,500 · <strong>total €9,156/month</strong></li></ul>
 <h3>Step 5 — Business Metrics</h3>
-<p>| Tier | Annual Cost | Cost/Email | Cost per Correctly Handled Email |<br>|---|---|---|---|<br>| Budget | €543,312 | €1.509 | €45,276 / (30,000x0.70) = €2.156 |<br>| Standard | €279,936 | €0.778 | €23,328 / (30,000x0.85) = €0.915 |<br>| Premium | €109,872 | €0.305 | €9,156 / (30,000x0.95) = €0.321 |</p>
+<ul><li><strong>Budget:</strong> €543,312/year · €1.509 per email · €45,276 / (30,000 x 0.70) = <strong>€2.156 per correctly handled email</strong></li></ul>
+<ul><li><strong>Standard:</strong> €279,936/year · €0.778 per email · €23,328 / (30,000 x 0.85) = <strong>€0.915 per correctly handled email</strong></li></ul>
+<ul><li><strong>Premium:</strong> €109,872/year · €0.305 per email · €9,156 / (30,000 x 0.95) = <strong>€0.321 per correctly handled email</strong></li></ul>
 <h3>Step 6 — Recommendation</h3>
 <p>Premium is cheapest on every real metric — total monthly cost, cost per email, and cost per correctly handled email — despite having the highest token price. If presenting to a CFO, I would lead with <strong>cost per correctly handled email</strong>, not token cost, because that is the number that actually reflects what EuroShop pays to get a customer issue resolved.</p>
 <p>---</p>
