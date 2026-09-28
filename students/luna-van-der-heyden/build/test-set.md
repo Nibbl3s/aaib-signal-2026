@@ -68,7 +68,8 @@ He turned with a goofy smile; icy eyes arched into crescents.
   - Structural Rhythm & Pacing: Conversational, distinct character dialogue and idiosyncratic observations without sterile templates.
 
 ## Input 3: Speculative Fiction / Reddit Short Story (Expected: Natural)
-- **Source:** Public forum fiction excerpt ("The City of Damockles").
+- **Source:** Public forum fiction excerpt ("The City of Damockles") by Patient_Ad8850 from r/shortstories on reddit.com
+
 - **Text:** The City of Damokles
 I am going out for a walk with my dog, for a quick cigarette, trying not to look up. 
 
