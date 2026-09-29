@@ -7,7 +7,6 @@
 ---
 
 ## Part 1: Signal Post 1
-**File Path in Repo:** `students/your-name/signal/post-1.md`  
 
 ### Screening AI Costs More Than You Think: A Global Recruiter's Real Numbers
 
