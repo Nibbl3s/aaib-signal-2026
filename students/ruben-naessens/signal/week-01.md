@@ -117,7 +117,7 @@ How can we accurately measure the cost of an AI screening error across different
 > Dear Enterprise Sales Team,  
 > We are evaluating automated screening tools to process approximately 1,000 international candidate applications per month across multiple languages. Could you provide a volume-based quote or details on custom pricing tiers for enterprise API access or automated candidate ranking workflows?  
 > Best regards,  
-> [Your Name]  
+> Ruben Naessens 
 
 **Email 2 (Sent to Vendor B - Workable AI Assistant):**  
 > *Date Sent:* September 22, 2026  
@@ -126,7 +126,7 @@ How can we accurately measure the cost of an AI screening error across different
 > Hello Workable Team,  
 > Our recruitment agency processes around 1,000 candidate profiles monthly (CVs and cover letters in various EU languages). We are looking for custom enterprise pricing for your AI parsing and candidate matching features. What is your typical monthly or annual rate for this volume?  
 > Best regards,  
-> [Your Name]  
+> Ruben Naessens 
 
 ### 2. Vendor Responses Received
 * **Vendor A:** Received an automated reply on September 22, 2026, redirecting to a sales calendar link to book a 30-minute discovery call. No direct pricing figures were provided via email.  
