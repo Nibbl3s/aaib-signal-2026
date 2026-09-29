@@ -1,7 +1,7 @@
-# Week 1 Deliverables (6 ECTS Track)
+# Week 1
 **Course:** Advanced AI for Business  
-**Beat:** Global Recruitment / International Tech Candidate Screening  
-**Student Name:** [Your Name]  
+**Beat:** AI in International Recruitment / International Tech Candidate Screening  
+**Student Name:** Ruben Naessens  
 **Track:** 6 ECTS  
 
 ---
