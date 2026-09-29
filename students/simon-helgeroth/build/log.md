@@ -3,10 +3,10 @@
 ## The job
 
 **What it does, in one sentence:**
-> —
+> An automated pre-publication audit tool that checks job advertisements for clarity and missing details across seven criteria.
 
-**Input:** —  
-**Output:** —  
+**Input:** Raw text of a job advertisement (e.g. copied from LinkedIn or Arbetsförmedlingen). 
+**Output:** A structured 7-point audit report highlighting clarity issues, missing details, and vague phrasing.
 **Who would use it, and instead of what?** —
 
 **Is the answer checkable?** Could two people independently agree whether a given output is right?
@@ -16,9 +16,9 @@
 
 ## The test set
 
-**Where the inputs came from:** —  
-**Real, or written by me?** —  
-**Anonymised?** —  
+**Where the inputs came from:** Copied directly from public job boards
+**Real, or written by me?** Real
+**Anonymised?** No
 
 **Awkward cases deliberately included** — tick what you covered:
 
