@@ -89,3 +89,36 @@ Everybody is terrified, but what can you do about it? Life goes on while we wait
   - Verdict: Natural
   - Flagged AI-isms: None (or minor common words used natively).
   - Structural Rhythm & Pacing: Atmospheric narrative flow, driven by personal voice.
+ 
+## Input 4: AI-Polished Version of Novel Excerpt (Expected: Homogenized)
+- **Source:** A version of Input 1 run through an LLM with a generic "polish for clarity" prompt.
+- **Text:** “Don’t let go…”
+Once again, my hand strained toward his. Shattered glass bit deep into my skin, the sharp sting forcing my fingers to claw at empty air. I mouthed help, but the sound died in my throat. My legs scrabbled frantically against the freezing wall, desperately trying to haul my weight upward.
+“P-please… don’t…” I whispered.
+He held on, suspending me in the agonizing space between life and death. Then, in the blink of an eye, our grip failed. A single, slipping motion sealed my fate forever. I watched his silhouette shrink against the massive night sky as gravity claimed me, pulling my body down into the dark until—crack.
+I gasped, bolting upright.
+My hand flew to my chest, my heart battering violently against my ribs. I frantically scanned the dim cabin for him, half-expecting to see his face. Then a sharp train whistle blasted through the air, snapping me back to reality.
+The train. Right. I collapsed back into the scratchy cloth seat, exhaling slowly. It was just a dream.
+- **Expected Answer:** 
+  - Verdict: Homogenized
+  - Flagged AI-isms: [List added smoothing buzzwords like 'delve', 'tapestry', etc.]
+  - Structural Rhythm & Pacing: Overly symmetrical, smoothed out, and lacking emotional friction.
+
+## Input 5: Heavy Corporate/AI Text (Expected: Homogenized)
+- **Source:** Strongly generated Google AI text.
+- **Text:** The streetlamp outside the cafe flickered with a rhythmic hum, casting a warm amber glow over Maya as she waited out the sudden autumn downpour. She was thoroughly engrossed in a worn, vintage paperback, oblivious to the storm outside.
+When the heavy glass door swung open, a gust of wind brought Julian inside. Dripping wet and breathless, he held a completely ruined, inside-out umbrella. He looked around the crowded cafe for an empty seat, but every table was taken—except for the small wooden chair directly across from Maya.
+"Mind if I sit here?" Julian asked, gesturing to the empty chair. "Everywhere else is soaked or occupied."
+Maya looked up from her book, her eyes dropping to his mangled umbrella. A small smile tugged at her lips. "Only if you promise not to shake like a wet dog," she teased, closing her book.
+Julian laughed, a low, easy sound that instantly cut through the chill of the evening. "Deal. I’m Julian."
+"Maya."
+What began as a polite necessity quickly dissolved into an effortless conversation. They talked about everything and nothing—the terrible local weather, their favorite hidden spots in the city, and the books that shaped them. Julian ordered two hot chocolates, and by the time the mugs were empty, the rain had completely stopped.
+The city outside was now quiet, the wet pavement reflecting the neon signs like a mirror. Julian stood up, suddenly hyper-aware that their accidental sanctuary was closing for the night.
+"I know this is forward," Julian said, rubbing the back of his neck nervously. "But my umbrella is broken, and I have a feeling I’m going to need someone to share a dry path with from now on. Would you want to get coffee again tomorrow? Somewhere drier?"
+Maya looked at him, her heart doing a soft, unfamiliar flip. She picked up her pen, opened the back cover of her paperback, and quickly scribbled her number. She tore the page out and handed it to him.
+"Only if it rains again," Maya whispered, her eyes shining.
+Julian smiled, tucking the paper safely into his jacket pocket. "Then I'll pray for a storm."
+- **Expected Answer:** 
+  - Verdict: Homogenized
+  - Flagged AI-isms: "landscape", "delve", "multifaceted", "tapestry", "seamless", "groundbreaking"
+  - Structural Rhythm & Pacing: Classic AI buzzword density and predictable rule-of-three flow.
