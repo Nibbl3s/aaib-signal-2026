@@ -18,7 +18,7 @@ Train...Right... I sank into the scratchy cloth seat. It was just a dream.
   - Structural Rhythm & Pacing: Grounded, authentic human pacing with uneven, emotionally driven sentence lengths.
 
 ## Input 2: Second Novel Excerpt / Father Scene (Expected: Natural)
-- **Source:** Direct excerpt from your draft ("After class, I walked outside...").
+- **Source:** Direct excerpt from my draft ("After class, I walked outside...").
 - **Text:**  After class, I walked outside in the courtyard. The gate up ahead open wide, cars passing by and students pulling out their bicycle and drove off---- few of them.
 
 I heard shouting and cheering from the football field- students were kicking the ball, passing it to one another. But Brendon stood tall among them, bragging, pushing others away with his strong shoulder like a bloody bull.
