@@ -7,6 +7,7 @@
 
 **Input:** Raw text of a job advertisement (e.g. copied from LinkedIn or Arbetsförmedlingen). 
 **Output:** A structured 7-point audit report highlighting clarity issues, missing details, and vague phrasing.
+
 **Who would use it, and instead of what?** —
 
 **Is the answer checkable?** Could two people independently agree whether a given output is right?
@@ -23,7 +24,7 @@
 **Awkward cases deliberately included** — tick what you covered:
 
 - [ ] Ambiguous — a human would have to ask a follow-up
-- [ ] Another language
+- [x] Another language
 - [ ] Very short input
 - [ ] Very long input
 - [ ] One where the correct answer is "I don't know"
