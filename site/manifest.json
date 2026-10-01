@@ -226,6 +226,15 @@
  },
  {
   "week": 2,
+  "title": "Why Your HR Department Shouldn't Buy an AI Sentiment Oracle",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Capability Skepticism",
+  "date": "2026-10-01",
+  "url": "posts/andreea-simion-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
@@ -241,15 +250,6 @@
   "skill": "Capability skepticism",
   "date": "2026-10-01",
   "url": "posts/osama-daoud-week-02.html"
- },
- {
-  "week": 2,
-  "title": "Week 2",
-  "author": "andreea-simion",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/andreea-simion-week-02.html"
  },
  {
   "week": 2,
