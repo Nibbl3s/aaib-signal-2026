@@ -114,6 +114,19 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 - **I cannot report a success rate on someone else's inputs.** The comparison "my inputs vs theirs" does not exist in this submission. My measured result (2 of 10 correct) is for inputs I chose myself, and I state it as such.
 - **I dropped the assumption that a practitioner set was obtainable within the term.** With two unanswered requests I cannot tell whether the cause is the channel, the timing, or the request itself. Two attempts is too few to say anything about the market. It only shows that this route did not deliver in the time I had.
 
+### The Email
+- **Subject: Test cases for a student project on spotting inconsistencies in annual reports**
+
+Dear Sir or Madam,
+
+I'm a business student at Arteveldehogeschool in Ghent, working on a course project that tests an AI prompt for comparing two years of a company's annual report and flagging inconsistencies (restated figures, items that don't foot, unexplained swings). I'm writing to you at Deloitte Belgium because your team reviews financial statements across years as part of transaction work.
+
+One request: could someone on your team share 8 to 10 examples of company and year pairs where a reviewer would be expected to flag something, with one line on what they would flag? Public annual reports are fine, so no client data is needed. If it's easier, I can anonymise anything you send before I use it.
+
+This is for coursework, not a commercial evaluation. I would like to test the prompt on cases chosen by someone who does this work, not only on cases I picked myself. Happy to send you the results.
+
+Thanks,
+
 ---
 
 ## Changes
