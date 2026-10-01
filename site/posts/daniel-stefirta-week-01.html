@@ -61,25 +61,25 @@
 <h1>The Cheapest Part of Making a Game Is the Part AI Can Already Do</h1>
 <div class="byline">Daniel Stefirta · 2026-09-25</div>
 <h2>Hook</h2>
-<p>Death Stranding has a photoreal digital actor with a famous performer's face, hundreds of minutes of recorded voice, a traversal system nobody had ever coded before, and an enormous hand-built world. It's the perfect test case for the claim being sold to every studio right now: <em>AI can make your game.</em> So I built a tool to score it. This week I fed a Death Stranding-scale production into my own feasibility analyzer, across all five production layers — voice, digital actors, narrative, code, and world art. It came back at <strong>33/100: human required.</strong></p>
+<p>Death Stranding has a photoreal digital actor with a famous performer's face, hundreds of minutes of recorded voice, a traversal system nobody had ever coded before, and an enormous hand-built world. It's the perfect test case for the claim being sold to every studio right now: <em>AI can make your game.</em> So I built a tool to score it. This week I fed a Death Stranding-scale production into my own feasibility analyzer, across all five production layers: voice, digital actors, narrative, code, and world art. It came back at <strong>33/100: human required.</strong></p>
 <h2>The Numbers</h2>
-<p>What made that score interesting wasn't the total — it was the shape of it. Per layer, AI-pipeline cost vs. traditional cost:</p>
+<p>What made that score interesting wasn't the total. It was the shape of it. Per layer, AI-pipeline cost vs. traditional cost:</p>
 <ul>
-<li><strong>Voice acting:</strong> €130 vs. €136,800 for 720 voiced minutes — a 99.9% saving. Feasibility score: 48.</li>
-<li><strong>Narrative &amp; dialogue:</strong> €680 vs. €242,000 for 22,000 lines — 99.7% saving. Score: 48.</li>
-<li><strong>Digital actors:</strong> €7,650 vs. €288,000 for 9 characters — 97.3% saving. Score: 35.</li>
-<li><strong>Code &amp; gameplay systems:</strong> €8.8M vs. €10.4M — a 15% saving. Score: <strong>29</strong>.</li>
-<li><strong>World &amp; art assets:</strong> €29,000 vs. €2.3M. Score: <strong>19</strong> — the lowest of all.</li>
+<li><strong>Voice acting:</strong> €130 vs. €136,800 for 720 voiced minutes, a 99.9% saving. Feasibility score: 48.</li>
+<li><strong>Narrative &amp; dialogue:</strong> €680 vs. €242,000 for 22,000 lines, a 99.7% saving. Score: 48.</li>
+<li><strong>Digital actors:</strong> €7,650 vs. €288,000 for 9 characters, a 97.3% saving. Score: 35.</li>
+<li><strong>Code &amp; gameplay systems:</strong> €8.8M vs. €10.4M, a 15% saving. Score: <strong>29</strong>.</li>
+<li><strong>World &amp; art assets:</strong> €29,000 vs. €2.3M. Score: <strong>19</strong>, the lowest of all.</li>
 </ul>
 <p>Total: €8.85M with AI against €13.3M traditional. A 33.7% saving that sounds like a business case until you notice where it comes from.</p>
 <h2>The Insight</h2>
-<p>Read those two columns together and the pattern is brutal: <strong>the layers where AI saves the most money are the layers that cost the least to begin with.</strong> Voice and dialogue collapse by 99% — and they were a rounding error against an eight-figure budget. The layers that actually consume the budget, code and world-building, barely move: 15% and a feasibility score of 29 and 19, because a novel physics system and a coherent art direction are the two things a model averaging its training data is worst at.</p>
+<p>Read those two columns together and the pattern is brutal: <strong>the layers where AI saves the most money are the layers that cost the least to begin with.</strong> Voice and dialogue collapse by 99%, and they were a rounding error against an eight-figure budget. The layers that actually consume the budget, code and world-building, barely move: 15% and a feasibility score of 29 and 19, because a novel physics system and a coherent art direction are the two things a model averaging its training data is worst at.</p>
 <p>AI didn't reduce the cost of making Death Stranding. It reduced the cost of the parts that were never the hard part. And every euro it "saved" came with a bill that has no pricing page: a voice director to catch uncanny takes, an animator fixing eyelines, a narrative lead writing the spine the AI fills in around, an engineer who can debug what they didn't write, an art director stopping generated assets from turning into sludge. My tool prints that line under every layer on purpose, because it's the number the vendor slide always omits.</p>
 <h2>The Question</h2>
-<p>If AI can already handle the cheap 1% of a game's budget and barely touches the expensive 99%, then "AI will make games" isn't a cost argument at all — so what is actually being sold, and to whom?</p>
+<p>If AI can already handle the cheap 1% of a game's budget and barely touches the expensive 99%, then "AI will make games" isn't a cost argument at all. So what is actually being sold, and to whom?</p>
 <hr />
 <p><em>Assumptions: the Death Stranding-scale figures are my own model of an AAA production of that shape (9 hero characters, 22,000 dialogue lines, 720 voiced minutes, open world, photoreal), not internal numbers from Kojima Productions. Traditional-cost rates are industry-published ranges; the AI-pipeline rates are current vendor list prices. Currency converted at $1.00 = €0.92.</em></p>
-<p><em>Tool built this week: the Strand Feasibility Analyzer — five-layer scoring, transparent rule-based math, saved analyses.</em></p>
+<p><em>Tool built this week: the Strand Feasibility Analyzer (five-layer scoring, transparent rule-based math, saved analyses).</em></p>
 <p><em>AI disclosure: token counts were produced with the <code>tiktoken</code> library (<code>cl100k_base</code>) rather than estimated, and the cost arithmetic was run in code to avoid errors. An AI coding tool was used for the mechanics of building the analyzer and publishing this post. The beat, the tool's design, the scoring assumptions and the analysis are my own.</em></p>
 <a class="back" href="/">← All posts</a>
 </article>
