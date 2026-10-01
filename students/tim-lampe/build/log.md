@@ -65,31 +65,31 @@ to specify — revise the brief, then re-run. A brief is a hypothesis, not a con
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
-| 1 | | | | | ✓ / ✗ | |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
-| 6 | | | | | | |
-| 7 | | | | | | |
-| 8 | | | | | | |
-| 9 | | | | | | |
-| 10 | | | | | | |
+| 1 | Siemens GB 2019 & 2020 | Siemens excluding Siemens Energy | 3 Flags | 11 Flags | ✗ | F3 |
+| 2 | Wirecard GB 2017 & 2018 | a lot of flags | 10 Flags | 11 Flags | ✗ | F3 |
+| 3 | Rheinmetall GB 2024 & 2025 | Nothing really | 3 Flags | 3 Flags | ✓ | |
+| 4 | Thyssenkrupp GB 2024 & 2025 | I don't know what to expect | 7 Flags | 3 Flags | ✗ | F6 |
+| 5 | Apple 2024 & 2025 | No Flags | 4 Flags | 4 Flags | ✗ | F6 |
+| 6 | ASML 2024 & 2025 | I don't know what to expect | 9 Flags | 16 Flags | ✗ | F6 |
+| 7 | Telekom 2024 & 2025 | No flags | 5 Flags | 2 Flags | ✓ | |
+| 8 | Allianz 2024 & 2025 | No flags | 5 Flags | 5 Flags | ✗ | F6 |
+| 9 | Münchener Rück 2024 & 2025 | No flags | 8 Flags | 2 Flags | ✗ | F6 |
+| 10 | SAP 2024 & 2025 | No flags | 6 Flags | Fail | ✗ | F6 |
 
 Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
 
-**Result:** — correct out of — → **—%**
+**Result:** 2 correct out of 10 → **20%**
 
 **Failures by type:**
 
 | Code | Count | Notes |
 |---|---:|---|
-| F1 Wrong | | |
-| F2 Fabricated | | |
-| F3 Missed | | |
-| F4 Format | | |
-| F5 Refused | | |
-| F6 Inconsistent | | |
+| F1 Wrong | 0 | |
+| F2 Fabricated | 0 | |
+| F3 Missed | 2 | Siemens, Wirecard: A and B used different methods, A missed a lot that B found |
+| F4 Format | 0 | |
+| F5 Refused | 0 | |
+| F6 Inconsistent | 6 | Thyssenkrupp, Apple, ASML, Allianz, Münchener Rück, SAP: runs differ in flags, in what counts as explained, or in one case failed |
 
 **What surprised me:**
 > —
