@@ -100,6 +100,21 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 
 *This one line is the most valuable thing in the log. Not the success rate — which failure would have caused actual damage.*
 
+**Someone elses test set**
+## Primary research: Someone Else's Test Set (practitioner request)
+
+### The record
+- 29.09, email 1 to KPMG. Asked for 8 to 10 company-and-year pairs with one line on what a reviewer should flag in each.
+- 29.09, email 2 to a Deloitte. Asked for a list of 8 to 10 pairs a practitioner would use to test a reviewer.
+
+### What came back
+- Firm A: no reply as of 02.10
+- Firm B: no reply as of 02.10 
+
+### What it changed
+- **I cannot report a success rate on someone else's inputs.** The comparison "my inputs vs theirs" does not exist in this submission. My measured result (2 of 10 correct) is for inputs I chose myself, and I state it as such.
+- **I dropped the assumption that a practitioner set was obtainable within the term.** With two unanswered requests I cannot tell whether the cause is the channel, the timing, or the request itself. Two attempts is too few to say anything about the market. It only shows that this route did not deliver in the time I had.
+
 ---
 
 ## Changes
