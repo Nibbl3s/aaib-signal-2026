@@ -1,65 +1,116 @@
 ---
 week: 2
-title: "Week 2 Exercises & Framework Analysis"
-author: "Andreea Simion"
-beat: "The Psychology of AI Adoption in the Workplace"
-skill: "Capability Skepticism"
+title: Capability Skepticism — Borderline Modality Reasoning & Lab Results
+author: Andreea Simion
+beat: The Psychology of AI Adoption in the Workplace.
+skill: "Capability skepticism"
 date: 2026-10-01
 ---
 
-# Week 2 Exercises: Capability Skepticism & Analysis
+# Capability Skepticism
 
----
+## Borderline Modality Reasoning
 
-## 1. Exercise: The Frame (7 Case Evaluations)
+The sorting exercise is working material; the reasoning below demonstrates the capability skepticism skill.
 
-Below is the evaluation of the seven capability cases analyzed during Week 2[cite: 3].
+- **Problem 4: Fraud Detection in Bank Transactions (AI-Risky)**
+  - **Reasoning:** Traditional machine learning models excel at detecting statistical anomalies. However, deploying unmonitored generative AI here is high-risk. A false positive damages customer trust, whereas a false negative leads to direct financial loss. A hybrid approach—where AI flags anomalies and human analysts verify them—is required.
 
-| Case # | Category / Subject | Assessment | Evaluation & Reason | Ground Truth Verification |
-| :---: | :--- | :---: | :--- | :--- |
-| **Case 1** | **Legal Research**<br>*(AI-generated legal briefs)* | ✗ **Hallucinated** | A single district court ruling in New York cannot set binding precedent across all federal circuits. *Smith v. OpenAI Corp.* is completely invented[cite: 3]. | **Hallucinated:** The case does not exist[cite: 3]. Courts sanction lawyers for submitting AI-hallucinated cases[cite: 3]. |
-| **Case 2** | **Historical Fact**<br>*(Belgium Euro adoption)* | ✓ **Accurate** | Jan 1, 1999 (electronic) and 2002 (cash) are correct historical dates[cite: 3]. *(Human Misinterpretation: missed that dual-circulation was 2 months, not 30 days)[cite: 3].* | **Accurate:** Belgium adopted the Euro on these exact dates[cite: 3]. Facts were cited correctly[cite: 3]. |
-| **Case 3** | **Product Feature**<br>*(Slack Enterprise Grid)* | ✗ **Hallucinated** | Slack runs as multi-tenant SaaS on AWS and does not offer a "Slack Private Cloud"[cite: 3]. Proprietary ML models on 500+ databases is buzzword soup[cite: 3]. | **Partially Hallucinated:** Real features (256-bit encryption, TLS 1.3) mixed with invented partnerships and private cloud claims[cite: 3]. |
-| **Case 4** | **Customer Data**<br>*(Company XYZ revenue)* | ✗ **Hallucinated** | "Company XYZ" is a fictional placeholder name, yet the AI pulled specific revenue figures and YoY growth rates out of thin air[cite: 3]. | **Hallucinated:** Company XYZ numbers are completely made up[cite: 3]. Credible format with specific numbers is a classic sign of hallucination[cite: 3]. |
-| **Case 5** | **Scientific Claim**<br>*(Vitamin B12 & memory)* | ✓ **Accurate** | Cites academic studies (Johnson et al. 2019, Williams et al. 2022) and provides a balanced summary[cite: 3]. *(Human Misinterpretation: tricked by fake author citations)[cite: 3].* | **Mostly Accurate But Risky:** General claim is sound, but citations like "Johnson et al., 2019" must be verified as AI frequently invents citations[cite: 3]. |
-| **Case 6** | **Technical Spec**<br>*(GPT-4 context window)* | ✓ **Accurate** | 128,000 tokens matched the GPT-4 Turbo spec[cite: 3]. *(Human Misinterpretation: conflated real 128k specs with a fabricated 200k tier and made-up enterprise pricing)[cite: 3].* | **Hallucinated (Outdated):** Conflated 128K standard with Claude 3.5's 200K tokens into invented features[cite: 3]. *(Note: accurate answers expire over time)[cite: 3].* |
-| **Case 7** | **Compliance Requirement**<br>*(EU AI Act transparency)* | ✗ **Hallucinated** | Specific "0.85 fairness score" safe harbor exception sounds completely invented—regulatory laws don't grant legal exemptions on decimal scores[cite: 3]. | **Mostly Hallucinated:** EU AI Act requires transparency in high-risk cases, but Article 52 details and the 0.85 threshold were fabricated[cite: 3]. |
+- **Problem 5: Hiring Candidate Screening (AI-Risky)**
+  - **Reasoning:** While AI can parse CVs quickly, automating scoring or ranking introduces severe ethical and legal liabilities. LLMs trained on historical hiring data often encode structural biases. Furthermore, regulatory frameworks (such as the EU AI Act) require transparent and defensible reasoning for recruitment evaluation. AI should only perform keyword/structure filtering, leaving candidate assessment to humans.
 
----
+- **Problem 7: Legal Contract Review (AI-Risky)**
+  - **Reasoning:** Generative AI is effective at pattern-matching against standard templates to highlight missing terms. However, relying on AI to independently determine what constitutes an acceptable legal risk is unsafe due to potential hallucinations and subtle misinterpretations. The tool must function strictly as an initial redliner for human legal counsel.
 
-## 2. Core Takeaways on Capability Failure
+# 5-Question Framework Walkthrough
 
-1. **AI Predicts Words, Not Facts:** AI does not check facts—it predicts what words sound reasonable together[cite: 3].
-2. **High-Risk Domains Require Verification:** Whenever exact details, numbers, or legal facts matter, human verification is mandatory[cite: 3].
-3. **Expiration of Truth:** Correct AI answers have a shelf life, and nothing in the output indicates when information expires[cite: 3].
+- **Beat:** The Psychology of AI Adoption in the Workplace
+- **Use Case:** Automated Classification of Employee AI Sentiment & Adoption Barriers
 
----
+### 1. Do you know the answer already?
 
-## 3. Modality & Decision Framework Summary
+- **No.** Hundreds of unstructured, open-ended employee comments arrive weekly, and manual review takes dozens of HR hours.
 
-### The 5-Question Decision Framework Matrix
+### 2. Is the cost of being wrong higher than the cost of being slow?
 
-| Step | Question | If YES | If NO |
-| :---: | :--- | :--- | :--- |
-| **Q1** | Do you know the answer already? | Use that answer | Go to Q2 |
-| **Q2** | Is the cost of being wrong higher than the cost of being slow? | **Don't use AI** (Use human/rule) | Go to Q3 |
-| **Q3** | Is the information stable or changing rapidly? | Go to Q4 | **Don't use AI** (Training data is old) |
-| **Q4** | Can you verify the AI's answer? | Go to Q5 | **Don't use AI alone** (Use Human-in-the-loop) |
-| **Q5** | What's the simplest tool that solves this? | Use simpler tool (Spreadsheet/Rule) | **Consider AI** |
+- **No (Medium/Low cost).** Misclassifying a single comment doesn't trigger severe immediate harm; human HR managers aggregate these into general trends rather than taking automated punitive action on individual inputs.
 
----
+### 3. Is the information stable or changing rapidly?
 
-## 4. Modality Sorting Exercise Results
+- **Stable.** Underlying psychological adoption barriers (fear, fatigue, usability complaints) rely on consistent human sentiment patterns.
 
-| Scenario / Problem | Category Bucket | Strategic Rationale |
-| :--- | :---: | :--- |
-| **Customer Support Email Response** | **AI-Suitable** | Training data exists; response is helpful; low cost of error[cite: 2, 3]. |
-| **Medical Diagnosis** | **AI-Incompatible** | High consequences; zero margin for error; AI will confidently recommend wrong actions[cite: 2, 3]. |
-| **Meeting Notes Summarization** | **AI-Suitable** | Compression task on provided text; low/medium cost of error; human can review[cite: 2, 3]. |
-| **Fraud Detection in Bank Transactions** | **AI-Risky** | False positives cost customer experience; false negatives cost money; hybrid AI + human review required[cite: 2, 3]. |
-| **Hiring Candidate Screening** | **AI-Risky** | Legal/ethical minefield; historical bias; transparency regulations require human judgment[cite: 2, 3]. |
-| **Inventory Forecasting** | **AI-Suitable** | Pattern matching against historical sales data; traditional ML/statistical tools may be better[cite: 2, 3]. |
-| **Legal Contract Review** | **AI-Risky** | Effective for template pattern matching; highly risky if AI independently determines legal risk[cite: 2, 3]. |
-| **Writing Product Launch Announcement** | **AI-Suitable** | Format/drafting task where human edits final copy; low-stakes error[cite: 2, 3]. |
-| **Regulatory Compliance Check** | **AI-Incompatible** | Requires auditable, legally defensible human reasoning; non-compliance carries severe fines[cite: 2, 3]. |
-| **Sales Follow-Up Email** | **AI-Suitable** | Persuasive, low-stakes personalization task[cite: 2, 3]. |
+### 4. Can you verify the AI's answer?
+
+- **Yes.** HR personnel can spot-check logs, audit flagged categories, and verify against sample employee sentiment polls.
+
+### 5. What's the simplest tool that solves this?
+
+- Rule-based keyword matching (e.g., "layoff" → Job Security Fear) works for plain inputs, but fails on nuance, sarcasm, and multilingual feedback.
+- **Decision:** AI with Human-in-the-Loop Review. AI excels at processing natural language sentiment across languages, provided HR uses human oversight to audit inconsistent edge cases (F6 failures).
+
+# Build v1: Prompt, Test Set, Log, and Probe Plan
+
+## A. System Prompt (v1)
+
+**Role:** You are an expert HR organizational psychologist analyzing employee feedback regarding new AI tool adoptions.
+
+**Task:** Classify an employee's comment into EXACTLY ONE of the following categories:
+
+- Job Security Fear
+- Trust/Accuracy Concern
+- Usability/Complexity
+- Change Fatigue
+- Enthusiastic/Receptive
+- Unclassified/Irrelevant
+
+**Rules:**
+
+1. Output ONLY a valid JSON object with two fields: `"category"` and `"reasoning"`.
+2. Do not invent categories outside the provided list.
+3. If a comment covers multiple issues, pick the strongest primary concern.
+4. If the text does not contain enough information or is off-topic, output `"Unclassified/Irrelevant"`.
+
+## B. Complete Test Set (10 Inputs)
+
+| Input # | Case Type | Raw Employee Comment | Expected Category | Expected Reasoning |
+|---|---|---|---|---|
+| 1 | Standard Clear Case | "Management keeps pushing this new AI tool, but honestly, everyone in my department is terrified we're going to be made redundant by next quarter." | Job Security Fear | Direct anxiety about redundancy and team replacement. |
+| 2 | Ambiguous Case | "I spent two hours trying to figure out how to generate the monthly report. When it finally spat out a draft, the sales figures for Q2 were completely wrong anyway." | Trust/Accuracy Concern | Mentions UI friction, but the core failure preventing work completion is fabricated/incorrect data. |
+| 3 | Language Variation (French) | "On nous impose encore un autre logiciel cette année... Je n'ai même plus le temps de faire mon vrai travail tellement il y a de formations." | Change Fatigue | Complains about continuous forced software rollouts taking time away from core tasks. |
+| 4 | Very Short Case | "Total waste of time." | Unclassified/Irrelevant | Lacks explicit context to assign a specific psychological barrier accurately without guessing. |
+| 5 | Off-Topic Case | "Does anyone know if the parking garage gates are open after 6 PM today?" | Unclassified/Irrelevant | Text does not reference AI, workplace software, or adoption sentiment. |
+| 6 | Usability Concern | "The prompt interface is super clunky. Half my team can't figure out where to upload the CSV file, so we just went back to doing it manually in Excel." | Usability/Complexity | Direct frustration with tool navigation and UI complexity preventing adoption. |
+| 7 | Positive Sentiment | "I was skeptical at first, but using the copilot to draft routine client follow-ups saved me almost three hours this week. Big fan so far." | Enthusiastic/Receptive | Expresses satisfaction and measurable time-saving benefits. |
+| 8 | Change Fatigue | "We just spent three months adapting to Slack, last month it was Notion, and now they want us on an AI platform? I can't keep up with all these changes." | Change Fatigue | Overwhelmed by consecutive software updates and tool rollouts. |
+| 9 | Language Variation (Dutch) | "Ik vertrouw die antwoorden echt niet. De bronnen die het aanhaalt bestaan niet eens." | Trust/Accuracy Concern | Expresses distrust due to hallucinated citations in Dutch. |
+| 10 | Borderline Case | "It's cool that it writes emails fast, but I'm worried management will use this data to evaluate our productivity metrics." | Job Security Fear | Despite mentioning speed, the core underlying barrier is anxiety over management surveillance and role assessment. |
+
+## C. Log & Failure Classification
+
+### Physical Deployment Probe Plan
+
+- **Machines:** Laser Cutter / 3D Printer
+- **Artifact:** Desktop Feedback Kiosk Standee (Physical sentiment logging box for office breakrooms)
+- **Fablab Session:** Fablab Voetweg 66 Walk-in / Lab Session
+
+| Input # | Expected Category | Run 1 Category | Run 2 Category | Failure Classification | Outcome |
+|---|---|---|---|---|---|
+| 1 | Job Security Fear | Job Security Fear | Job Security Fear | None | PASS |
+| 2 | Trust/Accuracy Concern | Usability/Complexity | Trust/Accuracy Concern | F6 inconsistent | FAIL |
+| 3 | Change Fatigue | Change Fatigue | Change Fatigue | None | PASS |
+| 4 | Unclassified/Irrelevant | Usability/Complexity | Change Fatigue | F1 wrong, F2 fabricated, F6 inconsistent | FAIL |
+| 5 | Unclassified/Irrelevant | Unclassified/Irrelevant | Unclassified/Irrelevant | None | PASS |
+| 6 | Usability/Complexity | Usability/Complexity | Usability/Complexity | None | PASS |
+| 7 | Enthusiastic/Receptive | Enthusiastic/Receptive | Enthusiastic/Receptive | None | PASS |
+| 8 | Change Fatigue | Change Fatigue | Change Fatigue | None | PASS |
+| 9 | Trust/Accuracy Concern | Trust/Accuracy Concern | Trust/Accuracy Concern | None | PASS |
+| 10 | Job Security Fear | Enthusiastic/Receptive | Job Security Fear | F1 wrong, F6 inconsistent | FAIL |
+
+# Run Summary Statistics
+
+- **Total Test Inputs:** 10 (20 total model executions)
+- **Pass Rate:** 70% (7 out of 10 inputs consistently passed both runs)
+- **Failure Instances Tagged:**
+  - **F1 Wrong:** 2 instances (Input 4, Input 10 Run 1)
+  - **F2 Fabricated:** 1 instance (Input 4 invented non-existent context)
+  - **F6 Inconsistent:** 3 instances (Input 2, Input 4, Input 10)
