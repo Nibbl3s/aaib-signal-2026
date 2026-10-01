@@ -65,12 +65,12 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 
 | Code | Count | Notes |
 |---|---:|---|
-| F1 Wrong |5| |
-| F2 Fabricated | | |
-| F3 Missed | | |
-| F4 Format |1 | |
-| F5 Refused | | |
-| F6 Inconsistent |5| |
+| F1 Wrong | 5 | Row 3: misunderstood required vs. wanted skills. Row 4: wrong deadline in both runs. Row 5: wrong deadline. Row 7: guessed workplace location. Row 10: missed workplace location in run B. |
+| F2 Fabricated | 0 | |
+| F3 Missed | 0 | |
+| F4 Format | 1 | Row 6: run B did not answer in the correct format. |
+| F5 Refused | 0 | |
+| F6 Inconsistent | 5 | Row 2: run B missed the language requirement. Row 3: different answers between runs. Row 5: different answer in requirements. Row 7: different workplace location in run B. Row 10: run B missed the workplace location. |
 
 **What surprised me:**
 > I was surprised by how big the differences were between the two runs. The same prompt and the same input gave different answers in 5 of 10 ads.
