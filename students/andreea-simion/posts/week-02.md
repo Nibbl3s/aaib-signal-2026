@@ -1,9 +1,10 @@
-# Why Your HR Department Shouldn't Buy an AI Sentiment Oracle
-
-**Beat:** The Psychology of AI Adoption in the Workplace  
-**Author:** Andreea Simion  
-**Date:** October 2026  
-
+---
+week: 2
+title: Why Your HR Department Shouldn't Buy an AI Sentiment Oracle
+author: Andreea Simion
+beat: The Psychology of AI Adoption in the Workplace.
+skill: "Capability Skepticism"
+date: 2026-10-01
 ---
 
 When organizations roll out new enterprise AI tools, employee reactions range from quiet enthusiasm to active resistance. HR leaders, eager to measure adoption friction, are increasingly targeted by software vendors selling "AI-driven sentiment intelligence." The pitch is alluring: feed unstructured employee feedback into a black-box model and receive automated real-time dashboards telling leadership exactly why staff are struggling to adopt new technology.
