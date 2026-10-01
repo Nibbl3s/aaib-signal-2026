@@ -271,6 +271,15 @@
  },
  {
   "week": 2,
+  "title": "The Part of My Build Where AI Is the Wrong Tool",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Knowing when not to use AI",
+  "date": "2026-10-01",
+  "url": "posts/tim-lampe-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "Week 2",
   "author": "simon-helgeroth",
   "beat": "",
@@ -286,15 +295,6 @@
   "skill": "",
   "date": "",
   "url": "posts/thibaut-bogaert-week-02.html"
- },
- {
-  "week": 2,
-  "title": "Week 2",
-  "author": "tim-lampe",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/tim-lampe-week-02.html"
  },
  {
   "week": 3,
