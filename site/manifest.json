@@ -244,6 +244,15 @@
  },
  {
   "week": 2,
+  "title": "My Own Classifier Says AI Can Help Balance a Game. The Framework Says No.",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Capability skepticism",
+  "date": "2026-10-01",
+  "url": "posts/daniel-stefirta-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
