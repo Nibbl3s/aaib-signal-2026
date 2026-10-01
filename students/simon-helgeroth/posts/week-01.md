@@ -28,4 +28,4 @@ The estimate of 3 extra hours, as well as the €30/hour per recruiter, is the w
 
 So basically the real understanding of AI in screening is not about the price for the tokens themselves, but rather if the trade-off is actually worth it. Say for example that it is the same kind of resumes that keeps getting rejected, and that the recruiter repeatedly must double-check the work. That cost does not show up on an invoice and may also lead to inefficiency instead. Further a pattern of missorted candidates raises risk of discrimination and adds to the questions regarding AI bias in recruitment. 
 
-Next weeks topic and question: When does an AI's assessments stop being trustworthy?
+Next weeks topic and question: Why AI is the Wrong Tool for Resume Screening
