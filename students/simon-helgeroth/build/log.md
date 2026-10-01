@@ -24,13 +24,13 @@
 
 **Awkward cases deliberately included** — tick what you covered:
 
-- [ ] Ambiguous — a human would have to ask a follow-up
+- [x] Ambiguous — a human would have to ask a follow-up
 - [x] Another language
 - [ ] Very short input
 - [ ] Very long input
-- [ ] One where the correct answer is "I don't know"
+- [x] One where the correct answer is "I don't know"
 - [ ] One near the boundary between two categories
-- [ ] One with a typo, or written badly
+- [x] One with a typo, or written badly
 
 ---
 
