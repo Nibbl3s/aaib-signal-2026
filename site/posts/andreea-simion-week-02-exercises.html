@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 2 Exercises &amp; Framework Analysis — AAIB Signal</title>
+<title>Capability Skepticism — Borderline Modality Reasoning &amp; Lab Results — AAIB Signal</title>
 <script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,190 +57,267 @@
 <body>
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
-<div class="meta">Week 2 · The Psychology of AI Adoption in the Workplace</div>
-<h1>Week 2 Exercises &amp; Framework Analysis</h1>
+<div class="meta">Week 2 · The Psychology of AI Adoption in the Workplace.</div>
+<h1>Capability Skepticism — Borderline Modality Reasoning &amp; Lab Results</h1>
 <div class="byline">Andreea Simion · 2026-10-01</div>
-<h2>Week 2 Exercises: Capability Skepticism &amp; Analysis</h2>
-<hr />
-<h2>1. Exercise: The Frame (7 Case Evaluations)</h2>
-<p>Below is the evaluation of the seven capability cases analyzed during Week 2[cite: 3].</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Case #</th>
-<th style="text-align: left;">Category / Subject</th>
-<th style="text-align: center;">Assessment</th>
-<th style="text-align: left;">Evaluation &amp; Reason</th>
-<th style="text-align: left;">Ground Truth Verification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>Case 1</strong></td>
-<td style="text-align: left;"><strong>Legal Research</strong><br><em>(AI-generated legal briefs)</em></td>
-<td style="text-align: center;">✗ <strong>Hallucinated</strong></td>
-<td style="text-align: left;">A single district court ruling in New York cannot set binding precedent across all federal circuits. <em>Smith v. OpenAI Corp.</em> is completely invented[cite: 3].</td>
-<td style="text-align: left;"><strong>Hallucinated:</strong> The case does not exist[cite: 3]. Courts sanction lawyers for submitting AI-hallucinated cases[cite: 3].</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Case 2</strong></td>
-<td style="text-align: left;"><strong>Historical Fact</strong><br><em>(Belgium Euro adoption)</em></td>
-<td style="text-align: center;">✓ <strong>Accurate</strong></td>
-<td style="text-align: left;">Jan 1, 1999 (electronic) and 2002 (cash) are correct historical dates[cite: 3]. <em>(Human Misinterpretation: missed that dual-circulation was 2 months, not 30 days)[cite: 3].</em></td>
-<td style="text-align: left;"><strong>Accurate:</strong> Belgium adopted the Euro on these exact dates[cite: 3]. Facts were cited correctly[cite: 3].</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Case 3</strong></td>
-<td style="text-align: left;"><strong>Product Feature</strong><br><em>(Slack Enterprise Grid)</em></td>
-<td style="text-align: center;">✗ <strong>Hallucinated</strong></td>
-<td style="text-align: left;">Slack runs as multi-tenant SaaS on AWS and does not offer a "Slack Private Cloud"[cite: 3]. Proprietary ML models on 500+ databases is buzzword soup[cite: 3].</td>
-<td style="text-align: left;"><strong>Partially Hallucinated:</strong> Real features (256-bit encryption, TLS 1.3) mixed with invented partnerships and private cloud claims[cite: 3].</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Case 4</strong></td>
-<td style="text-align: left;"><strong>Customer Data</strong><br><em>(Company XYZ revenue)</em></td>
-<td style="text-align: center;">✗ <strong>Hallucinated</strong></td>
-<td style="text-align: left;">"Company XYZ" is a fictional placeholder name, yet the AI pulled specific revenue figures and YoY growth rates out of thin air[cite: 3].</td>
-<td style="text-align: left;"><strong>Hallucinated:</strong> Company XYZ numbers are completely made up[cite: 3]. Credible format with specific numbers is a classic sign of hallucination[cite: 3].</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Case 5</strong></td>
-<td style="text-align: left;"><strong>Scientific Claim</strong><br><em>(Vitamin B12 &amp; memory)</em></td>
-<td style="text-align: center;">✓ <strong>Accurate</strong></td>
-<td style="text-align: left;">Cites academic studies (Johnson et al. 2019, Williams et al. 2022) and provides a balanced summary[cite: 3]. <em>(Human Misinterpretation: tricked by fake author citations)[cite: 3].</em></td>
-<td style="text-align: left;"><strong>Mostly Accurate But Risky:</strong> General claim is sound, but citations like "Johnson et al., 2019" must be verified as AI frequently invents citations[cite: 3].</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Case 6</strong></td>
-<td style="text-align: left;"><strong>Technical Spec</strong><br><em>(GPT-4 context window)</em></td>
-<td style="text-align: center;">✓ <strong>Accurate</strong></td>
-<td style="text-align: left;">128,000 tokens matched the GPT-4 Turbo spec[cite: 3]. <em>(Human Misinterpretation: conflated real 128k specs with a fabricated 200k tier and made-up enterprise pricing)[cite: 3].</em></td>
-<td style="text-align: left;"><strong>Hallucinated (Outdated):</strong> Conflated 128K standard with Claude 3.5's 200K tokens into invented features[cite: 3]. <em>(Note: accurate answers expire over time)[cite: 3].</em></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Case 7</strong></td>
-<td style="text-align: left;"><strong>Compliance Requirement</strong><br><em>(EU AI Act transparency)</em></td>
-<td style="text-align: center;">✗ <strong>Hallucinated</strong></td>
-<td style="text-align: left;">Specific "0.85 fairness score" safe harbor exception sounds completely invented—regulatory laws don't grant legal exemptions on decimal scores[cite: 3].</td>
-<td style="text-align: left;"><strong>Mostly Hallucinated:</strong> EU AI Act requires transparency in high-risk cases, but Article 52 details and the 0.85 threshold were fabricated[cite: 3].</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>2. Core Takeaways on Capability Failure</h2>
+<h2>Capability Skepticism</h2>
+<h2>Borderline Modality Reasoning</h2>
+<p>The sorting exercise is working material; the reasoning below demonstrates the capability skepticism skill.</p>
+<ul>
+<li><strong>Problem 4: Fraud Detection in Bank Transactions (AI-Risky)</strong></li>
+<li>
+<p><strong>Reasoning:</strong> Traditional machine learning models excel at detecting statistical anomalies. However, deploying unmonitored generative AI here is high-risk. A false positive damages customer trust, whereas a false negative leads to direct financial loss. A hybrid approach—where AI flags anomalies and human analysts verify them—is required.</p>
+</li>
+<li>
+<p><strong>Problem 5: Hiring Candidate Screening (AI-Risky)</strong></p>
+</li>
+<li>
+<p><strong>Reasoning:</strong> While AI can parse CVs quickly, automating scoring or ranking introduces severe ethical and legal liabilities. LLMs trained on historical hiring data often encode structural biases. Furthermore, regulatory frameworks (such as the EU AI Act) require transparent and defensible reasoning for recruitment evaluation. AI should only perform keyword/structure filtering, leaving candidate assessment to humans.</p>
+</li>
+<li>
+<p><strong>Problem 7: Legal Contract Review (AI-Risky)</strong></p>
+</li>
+<li><strong>Reasoning:</strong> Generative AI is effective at pattern-matching against standard templates to highlight missing terms. However, relying on AI to independently determine what constitutes an acceptable legal risk is unsafe due to potential hallucinations and subtle misinterpretations. The tool must function strictly as an initial redliner for human legal counsel.</li>
+</ul>
+<h2>5-Question Framework Walkthrough</h2>
+<ul>
+<li><strong>Beat:</strong> The Psychology of AI Adoption in the Workplace</li>
+<li><strong>Use Case:</strong> Automated Classification of Employee AI Sentiment &amp; Adoption Barriers</li>
+</ul>
+<h3>1. Do you know the answer already?</h3>
+<ul>
+<li><strong>No.</strong> Hundreds of unstructured, open-ended employee comments arrive weekly, and manual review takes dozens of HR hours.</li>
+</ul>
+<h3>2. Is the cost of being wrong higher than the cost of being slow?</h3>
+<ul>
+<li><strong>No (Medium/Low cost).</strong> Misclassifying a single comment doesn't trigger severe immediate harm; human HR managers aggregate these into general trends rather than taking automated punitive action on individual inputs.</li>
+</ul>
+<h3>3. Is the information stable or changing rapidly?</h3>
+<ul>
+<li><strong>Stable.</strong> Underlying psychological adoption barriers (fear, fatigue, usability complaints) rely on consistent human sentiment patterns.</li>
+</ul>
+<h3>4. Can you verify the AI's answer?</h3>
+<ul>
+<li><strong>Yes.</strong> HR personnel can spot-check logs, audit flagged categories, and verify against sample employee sentiment polls.</li>
+</ul>
+<h3>5. What's the simplest tool that solves this?</h3>
+<ul>
+<li>Rule-based keyword matching (e.g., "layoff" → Job Security Fear) works for plain inputs, but fails on nuance, sarcasm, and multilingual feedback.</li>
+<li><strong>Decision:</strong> AI with Human-in-the-Loop Review. AI excels at processing natural language sentiment across languages, provided HR uses human oversight to audit inconsistent edge cases (F6 failures).</li>
+</ul>
+<h2>Build v1: Prompt, Test Set, Log, and Probe Plan</h2>
+<h2>A. System Prompt (v1)</h2>
+<p><strong>Role:</strong> You are an expert HR organizational psychologist analyzing employee feedback regarding new AI tool adoptions.</p>
+<p><strong>Task:</strong> Classify an employee's comment into EXACTLY ONE of the following categories:</p>
+<ul>
+<li>Job Security Fear</li>
+<li>Trust/Accuracy Concern</li>
+<li>Usability/Complexity</li>
+<li>Change Fatigue</li>
+<li>Enthusiastic/Receptive</li>
+<li>Unclassified/Irrelevant</li>
+</ul>
+<p><strong>Rules:</strong></p>
 <ol>
-<li><strong>AI Predicts Words, Not Facts:</strong> AI does not check facts—it predicts what words sound reasonable together[cite: 3].</li>
-<li><strong>High-Risk Domains Require Verification:</strong> Whenever exact details, numbers, or legal facts matter, human verification is mandatory[cite: 3].</li>
-<li><strong>Expiration of Truth:</strong> Correct AI answers have a shelf life, and nothing in the output indicates when information expires[cite: 3].</li>
+<li>Output ONLY a valid JSON object with two fields: <code>"category"</code> and <code>"reasoning"</code>.</li>
+<li>Do not invent categories outside the provided list.</li>
+<li>If a comment covers multiple issues, pick the strongest primary concern.</li>
+<li>If the text does not contain enough information or is off-topic, output <code>"Unclassified/Irrelevant"</code>.</li>
 </ol>
-<hr />
-<h2>3. Modality &amp; Decision Framework Summary</h2>
-<h3>The 5-Question Decision Framework Matrix</h3>
+<h2>B. Complete Test Set (10 Inputs)</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Question</th>
-<th style="text-align: left;">If YES</th>
-<th style="text-align: left;">If NO</th>
+<th>Input #</th>
+<th>Case Type</th>
+<th>Raw Employee Comment</th>
+<th>Expected Category</th>
+<th>Expected Reasoning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><strong>Q1</strong></td>
-<td style="text-align: left;">Do you know the answer already?</td>
-<td style="text-align: left;">Use that answer</td>
-<td style="text-align: left;">Go to Q2</td>
+<td>1</td>
+<td>Standard Clear Case</td>
+<td>"Management keeps pushing this new AI tool, but honestly, everyone in my department is terrified we're going to be made redundant by next quarter."</td>
+<td>Job Security Fear</td>
+<td>Direct anxiety about redundancy and team replacement.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>Q2</strong></td>
-<td style="text-align: left;">Is the cost of being wrong higher than the cost of being slow?</td>
-<td style="text-align: left;"><strong>Don't use AI</strong> (Use human/rule)</td>
-<td style="text-align: left;">Go to Q3</td>
+<td>2</td>
+<td>Ambiguous Case</td>
+<td>"I spent two hours trying to figure out how to generate the monthly report. When it finally spat out a draft, the sales figures for Q2 were completely wrong anyway."</td>
+<td>Trust/Accuracy Concern</td>
+<td>Mentions UI friction, but the core failure preventing work completion is fabricated/incorrect data.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>Q3</strong></td>
-<td style="text-align: left;">Is the information stable or changing rapidly?</td>
-<td style="text-align: left;">Go to Q4</td>
-<td style="text-align: left;"><strong>Don't use AI</strong> (Training data is old)</td>
+<td>3</td>
+<td>Language Variation (French)</td>
+<td>"On nous impose encore un autre logiciel cette année... Je n'ai même plus le temps de faire mon vrai travail tellement il y a de formations."</td>
+<td>Change Fatigue</td>
+<td>Complains about continuous forced software rollouts taking time away from core tasks.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>Q4</strong></td>
-<td style="text-align: left;">Can you verify the AI's answer?</td>
-<td style="text-align: left;">Go to Q5</td>
-<td style="text-align: left;"><strong>Don't use AI alone</strong> (Use Human-in-the-loop)</td>
+<td>4</td>
+<td>Very Short Case</td>
+<td>"Total waste of time."</td>
+<td>Unclassified/Irrelevant</td>
+<td>Lacks explicit context to assign a specific psychological barrier accurately without guessing.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>Q5</strong></td>
-<td style="text-align: left;">What's the simplest tool that solves this?</td>
-<td style="text-align: left;">Use simpler tool (Spreadsheet/Rule)</td>
-<td style="text-align: left;"><strong>Consider AI</strong></td>
+<td>5</td>
+<td>Off-Topic Case</td>
+<td>"Does anyone know if the parking garage gates are open after 6 PM today?"</td>
+<td>Unclassified/Irrelevant</td>
+<td>Text does not reference AI, workplace software, or adoption sentiment.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Usability Concern</td>
+<td>"The prompt interface is super clunky. Half my team can't figure out where to upload the CSV file, so we just went back to doing it manually in Excel."</td>
+<td>Usability/Complexity</td>
+<td>Direct frustration with tool navigation and UI complexity preventing adoption.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Positive Sentiment</td>
+<td>"I was skeptical at first, but using the copilot to draft routine client follow-ups saved me almost three hours this week. Big fan so far."</td>
+<td>Enthusiastic/Receptive</td>
+<td>Expresses satisfaction and measurable time-saving benefits.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Change Fatigue</td>
+<td>"We just spent three months adapting to Slack, last month it was Notion, and now they want us on an AI platform? I can't keep up with all these changes."</td>
+<td>Change Fatigue</td>
+<td>Overwhelmed by consecutive software updates and tool rollouts.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Language Variation (Dutch)</td>
+<td>"Ik vertrouw die antwoorden echt niet. De bronnen die het aanhaalt bestaan niet eens."</td>
+<td>Trust/Accuracy Concern</td>
+<td>Expresses distrust due to hallucinated citations in Dutch.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Borderline Case</td>
+<td>"It's cool that it writes emails fast, but I'm worried management will use this data to evaluate our productivity metrics."</td>
+<td>Job Security Fear</td>
+<td>Despite mentioning speed, the core underlying barrier is anxiety over management surveillance and role assessment.</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2>4. Modality Sorting Exercise Results</h2>
+<h2>C. Log &amp; Failure Classification</h2>
+<h3>Physical Deployment Probe Plan</h3>
+<ul>
+<li><strong>Machines:</strong> Laser Cutter / 3D Printer</li>
+<li><strong>Artifact:</strong> Desktop Feedback Kiosk Standee (Physical sentiment logging box for office breakrooms)</li>
+<li><strong>Fablab Session:</strong> Fablab Voetweg 66 Walk-in / Lab Session</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Scenario / Problem</th>
-<th style="text-align: center;">Category Bucket</th>
-<th style="text-align: left;">Strategic Rationale</th>
+<th>Input #</th>
+<th>Expected Category</th>
+<th>Run 1 Category</th>
+<th>Run 2 Category</th>
+<th>Failure Classification</th>
+<th>Outcome</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Customer Support Email Response</strong></td>
-<td style="text-align: center;"><strong>AI-Suitable</strong></td>
-<td style="text-align: left;">Training data exists; response is helpful; low cost of error[cite: 2, 3].</td>
+<td>1</td>
+<td>Job Security Fear</td>
+<td>Job Security Fear</td>
+<td>Job Security Fear</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Medical Diagnosis</strong></td>
-<td style="text-align: center;"><strong>AI-Incompatible</strong></td>
-<td style="text-align: left;">High consequences; zero margin for error; AI will confidently recommend wrong actions[cite: 2, 3].</td>
+<td>2</td>
+<td>Trust/Accuracy Concern</td>
+<td>Usability/Complexity</td>
+<td>Trust/Accuracy Concern</td>
+<td>F6 inconsistent</td>
+<td>FAIL</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Meeting Notes Summarization</strong></td>
-<td style="text-align: center;"><strong>AI-Suitable</strong></td>
-<td style="text-align: left;">Compression task on provided text; low/medium cost of error; human can review[cite: 2, 3].</td>
+<td>3</td>
+<td>Change Fatigue</td>
+<td>Change Fatigue</td>
+<td>Change Fatigue</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Fraud Detection in Bank Transactions</strong></td>
-<td style="text-align: center;"><strong>AI-Risky</strong></td>
-<td style="text-align: left;">False positives cost customer experience; false negatives cost money; hybrid AI + human review required[cite: 2, 3].</td>
+<td>4</td>
+<td>Unclassified/Irrelevant</td>
+<td>Usability/Complexity</td>
+<td>Change Fatigue</td>
+<td>F1 wrong, F2 fabricated, F6 inconsistent</td>
+<td>FAIL</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Hiring Candidate Screening</strong></td>
-<td style="text-align: center;"><strong>AI-Risky</strong></td>
-<td style="text-align: left;">Legal/ethical minefield; historical bias; transparency regulations require human judgment[cite: 2, 3].</td>
+<td>5</td>
+<td>Unclassified/Irrelevant</td>
+<td>Unclassified/Irrelevant</td>
+<td>Unclassified/Irrelevant</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Inventory Forecasting</strong></td>
-<td style="text-align: center;"><strong>AI-Suitable</strong></td>
-<td style="text-align: left;">Pattern matching against historical sales data; traditional ML/statistical tools may be better[cite: 2, 3].</td>
+<td>6</td>
+<td>Usability/Complexity</td>
+<td>Usability/Complexity</td>
+<td>Usability/Complexity</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Legal Contract Review</strong></td>
-<td style="text-align: center;"><strong>AI-Risky</strong></td>
-<td style="text-align: left;">Effective for template pattern matching; highly risky if AI independently determines legal risk[cite: 2, 3].</td>
+<td>7</td>
+<td>Enthusiastic/Receptive</td>
+<td>Enthusiastic/Receptive</td>
+<td>Enthusiastic/Receptive</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Writing Product Launch Announcement</strong></td>
-<td style="text-align: center;"><strong>AI-Suitable</strong></td>
-<td style="text-align: left;">Format/drafting task where human edits final copy; low-stakes error[cite: 2, 3].</td>
+<td>8</td>
+<td>Change Fatigue</td>
+<td>Change Fatigue</td>
+<td>Change Fatigue</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Regulatory Compliance Check</strong></td>
-<td style="text-align: center;"><strong>AI-Incompatible</strong></td>
-<td style="text-align: left;">Requires auditable, legally defensible human reasoning; non-compliance carries severe fines[cite: 2, 3].</td>
+<td>9</td>
+<td>Trust/Accuracy Concern</td>
+<td>Trust/Accuracy Concern</td>
+<td>Trust/Accuracy Concern</td>
+<td>None</td>
+<td>PASS</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Sales Follow-Up Email</strong></td>
-<td style="text-align: center;"><strong>AI-Suitable</strong></td>
-<td style="text-align: left;">Persuasive, low-stakes personalization task[cite: 2, 3].</td>
+<td>10</td>
+<td>Job Security Fear</td>
+<td>Enthusiastic/Receptive</td>
+<td>Job Security Fear</td>
+<td>F1 wrong, F6 inconsistent</td>
+<td>FAIL</td>
 </tr>
 </tbody>
 </table>
+<h2>Run Summary Statistics</h2>
+<ul>
+<li><strong>Total Test Inputs:</strong> 10 (20 total model executions)</li>
+<li><strong>Pass Rate:</strong> 70% (7 out of 10 inputs consistently passed both runs)</li>
+<li><strong>Failure Instances Tagged:</strong></li>
+<li><strong>F1 Wrong:</strong> 2 instances (Input 4, Input 10 Run 1)</li>
+<li><strong>F2 Fabricated:</strong> 1 instance (Input 4 invented non-existent context)</li>
+<li><strong>F6 Inconsistent:</strong> 3 instances (Input 2, Input 4, Input 10)</li>
+</ul>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
