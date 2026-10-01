@@ -27,8 +27,6 @@ In thyssenkrupp nucera's report, the investing cash flow lines (−3.2, −6.1, 
 
 The arithmetic and matching half of my build should be a script, and AI is the wrong tool there. What remains for AI is narrow: reading the text and judging whether a change is explained, with a human checking every such call. I picked a job where the easy part never needed AI, and the hard part is exactly where AI is least reliable.
 
-I should have asked these five questions before choosing the job. Next time I will.
-
 ---
 
 *AI disclosure: I used Claude Sonnet 5.5 (Anthropic) to run and compare the test prompts, to draft and format this post and the outreach emails, and to format my log; the test design, the results and the conclusions are mine.*
