@@ -21,7 +21,7 @@ Stable. Annual reports are historical.
 For a footing error, yes: recompute it. For an "unexplained swing", the model is claiming that it found no explanation. That is a claim about absence, and the runs themselves said their search covered only the sections they checked. To verify it, I would have to read the original pages, which is the work I wanted to automate.
 
 **5. What's the simplest tool that solves this?**
-In thyssenkrupp nucera's report, the investing cash flow lines (−3.2, −6.1, −6.8, +0.1) add up to −16.0, while the reported total is −16.4. Both runs caught it. But a spreadsheet formula catches it in a second, every time, the same way. A script that compares each line of the prior-year column with last year's statement does the same job for restated figures. Neither needs a model, and neither gives a different answer on the second run.
+A spreadsheet formula catches a mistake in a second, every time, the same way. A script that compares each line of the prior-year column with last year's statement does the same job for restated figures. Neither needs a model, and neither gives a different answer on the second run.
 
 ## My finding
 
