@@ -100,7 +100,6 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 
 *This one line is the most valuable thing in the log. Not the success rate — which failure would have caused actual damage.*
 
-**Someone elses test set**
 ## Primary research: Someone Else's Test Set (practitioner request)
 
 ### The record
