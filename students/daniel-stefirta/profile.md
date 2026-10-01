@@ -4,7 +4,7 @@
 - **Track:** 4 ECTS
 - **Beat:** AI in Game Production
 - **Why this beat:** Every claim about AI replacing game development gets made at the level of
-  "the whole game" — which is unanswerable, so nobody has to defend it. I want to break one real
+  "the whole game", which is unanswerable, so nobody has to defend it. I want to break one real
   production into five layers that get costed separately: voice acting, digital actors, narrative
   and dialogue, code and gameplay systems, and world and art. Death Stranding is my test case,
   because it is the kind of game people point at when they say AI could never. My Build is a
