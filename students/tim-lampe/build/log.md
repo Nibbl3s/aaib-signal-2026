@@ -11,14 +11,14 @@ Fill it in *as you go*, not the night before a checkpoint. A log reconstructed f
 ## The job
 
 **What it does, in one sentence:**
-> —
+> Compares to annual reports of the same company from consecutive years and flags inconsistencies naming the line items and values involved
 
-**Input:** —
-**Output:** —
-**Who would use it, and instead of what?** —
+**Input:** two financial reports year N, year N+1
+**Output:** A list of flags in the format Flag / Values / Type
+**Who would use it, and instead of what?** Analysts or auditors who would otherwise reconcile prior year comparatives by hand
 
 **Is the answer checkable?** Could two people independently agree whether a given output is right?
-> —
+> Partly. Footing errors and mismatched prior-year values are objectively checkable. "Unexplained swing" depends on the 25% threshold, and whether something is "explained" is a judgement call. Missing items are hard to separate from legitimate changes caused by divestments and restructuring
 
 *If the honest answer is "not really," change the job now. Week 2 is the cheapest time to do it and Week 6 is the most expensive.*
 
@@ -60,8 +60,8 @@ to specify — revise the brief, then re-run. A brief is a hypothesis, not a con
 ### Run 1 — prompt v1 — *date*
 
 **Brief:** —
-**Model used:** —
-**Inputs tested:** —
+**Model used:** Claude Sonnet 5.5
+**Inputs tested:** Siemens AR 2019 vs AR 2020
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
