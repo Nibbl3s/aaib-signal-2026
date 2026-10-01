@@ -32,12 +32,12 @@ Fill it in *as you go*, not the night before a checkpoint. A log reconstructed f
 
 **Awkward cases deliberately included** — tick what you covered:
 
-- [ ] Ambiguous — a human would have to ask a follow-up
-- [ ] Another language
+- [x] Ambiguous — a human would have to ask a follow-up
+- [x] Another language
 - [ ] Very short input
-- [ ] Very long input
+- [x] Very long input
 - [ ] One where the correct answer is "I don't know"
-- [ ] One near the boundary between two categories
+- [x] One near the boundary between two categories
 - [ ] One with a typo, or written badly
 
 *A test set with none of these will tell you your tool is excellent. It isn't; your test set is.*
@@ -92,10 +92,11 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 | F6 Inconsistent | 6 | Thyssenkrupp, Apple, ASML, Allianz, Münchener Rück, SAP: runs differ in flags, in what counts as explained, or in one case failed |
 
 **What surprised me:**
-> —
+> I was surprised how big the difference is. The same prombt, the same data, still different output most of the times
+
 
 **The failure that would have mattered most in real use, and why:**
-> —
+> A missed real inconsistency (F3) that only became visible through F6. On Wirecard, run A never flagged that the 2018 capex table  does not match the cash flow statement nor that the free cash flow. Run B found it. In a deal that gap moves free cash flow, so it feeds straight into a valuation.
 
 *This one line is the most valuable thing in the log. Not the success rate — which failure would have caused actual damage.*
 
