@@ -1,3 +1,13 @@
+---
+week: 2
+title: "The Part of My Build Where AI Is the Wrong Tool"
+author: "Tim Lampe"
+beat: "AI in M&A Valuation"
+skill: "Knowing when not to use AI"
+date: 2026-10-01
+---
+
+
 # The part of my build where AI is the wrong tool
 
 My beat is AI in financial due diligence. My build is a prompt that reads two annual reports from the same company and flags inconsistencies between the years. I ran it twice on each of ten report pairs, then ran the "no AI" framework against it. The honest result is that for most of what the prompt does, AI is the wrong tool.
