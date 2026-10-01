@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 2 · </div>
+<h1>Week 2</h1>
+<div class="byline">andreea-simion · </div>
+<h2>Why Your HR Department Shouldn't Buy an AI Sentiment Oracle</h2>
+<p><strong>Beat:</strong> The Psychology of AI Adoption in the Workplace<br />
+<strong>Author:</strong> Andreea Simion<br />
+<strong>Date:</strong> October 2026  </p>
+<hr />
+<p>When organizations roll out new enterprise AI tools, employee reactions range from quiet enthusiasm to active resistance. HR leaders, eager to measure adoption friction, are increasingly targeted by software vendors selling "AI-driven sentiment intelligence." The pitch is alluring: feed unstructured employee feedback into a black-box model and receive automated real-time dashboards telling leadership exactly why staff are struggling to adopt new technology.</p>
+<p>However, applying our "no AI" decision framework reveals why pure AI is the wrong tool for automated HR decision-making in workplace psychology.</p>
+<hr />
+<h2>Applying the "No AI" Decision Framework</h2>
+<h3>1. Do you know the answer already?</h3>
+<p><strong>No.</strong> Hundreds of unstructured, open-ended employee feedback comments arrive weekly across internal communication channels, making manual review time-consuming.</p>
+<h3>2. Is the cost of being wrong higher than the cost of being slow?</h3>
+<p><strong>Yes.</strong> In workplace psychology, misinterpreting employee feedback carries significant organizational risks. If a language model misclassifies legitimate anxiety about deskilling or job security as simple "usability frustration," leadership responds with software training webinars instead of addressing structural job security fears. The cost of being confidently wrong is eroded trust, heightened change fatigue, and increased employee turnover.</p>
+<h3>3. Is the information stable or changing rapidly?</h3>
+<p><strong>Stable.</strong> Underlying psychological adoption barriers—such as fear of redundancy, tool overload, or lack of trust—follow consistent human behavioral patterns rather than volatile real-time data feeds.</p>
+<h3>4. Can you verify the AI's answer?</h3>
+<p><strong>Partially.</strong> While HR personnel can spot-check logs, validating whether a model correctly captured subtle employee intent requires continuous human audit.</p>
+<h3>5. What's the simplest tool that solves this?</h3>
+<p><strong>Pulse surveys and structured quantitative feedback.</strong> Basic rule-based keyword flags combined with short, single-question quantitative rating scales capture baseline workplace sentiment cleanly without the hallucination and consistency risks of generative NLP.</p>
+<hr />
+<h2>Why Generative AI Fails Alone</h2>
+<p>During our studio stress tests on workplace feedback prompts, our classification tool exhibited persistent capability failures. Most notably, the model demonstrated <strong>inconsistency ($F6$ failures)</strong> across dual runs and <strong>hallucinated context ($F2$ failures)</strong> when presented with short or ambiguous inputs. </p>
+<p>For instance, when given a brief input like <em>"Total waste of time,"</em> the model fabricated non-existent background details, inventing specific interface complaints to force the text into a neat category. In an organizational setting, an AI that invents employee motives creates organizational noise rather than executive clarity.</p>
+<hr />
+<h2>The Verdict</h2>
+<p>Does this mean AI has no place in workplace psychology? Not entirely. Generative models excel at pattern extraction when given bounded tasks and large volumes of multilingual text. But it should function strictly as a supportive assistant—summarizing raw feedback blocks while leaving categorical judgment and intervention planning to human HR professionals.</p>
+<p>Before purchasing an AI workplace sentiment engine, ask the core question of capability skepticism: <em>Can it actually do what you are paying for without human oversight?</em> If an error misdiagnoses your organizational culture, the answer is no. Walk away from the black box, keep a human in the loop, and let simple tools do the simple work.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
