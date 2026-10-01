@@ -78,15 +78,18 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 **The failure that would have mattered most in real use, and why:**
 > The wrong application deadline (rows 4 and 5). The tool gave a wrong date, in both runs on the English teacher ad. A reviewer would trust the date and report the ad as clear, while a real applicant could miss the deadline or apply too late. A wrong date looks just as confident as a correct one, so it is hard to spot without reading the ad.
 
+---
+
 ## Someone else's test set
 
 Due to time constraints late in the project, I was unable to source a private dataset directly from an HR practitioner. However, to compensate for this, my entire main test set consists of 100% real, public job advertisements scraped from Platsbanken (The Swedish Public Employment Service). These were written by actual HR practitioners and recruiters. Additionally, since I currently work as a recruiter myself, I feel as though I already have good experience on how to do the job. But unfortunately, I don't have another practitioner's raw data for more input. 
 
-**Success rate gap:** 
+Success rate gap: 
 My measured success rate on my Platsbanken test set is 30%. However, since I don't have access to an external practitioner's raw, unedited drafts, it is difficult to accurately guess an estimated success rate for those 10 extra inputs. 
 
-**Why the gap exists:**
+Why the gap exists:
 Since my success rate on the Platsbanken ads was already as low as 30%, I think the biggest gap depends on my prompt and not on the actual ads. The instructions I gave the AI just weren't structured well enough for real-world texts. Because the prompt is what's limiting the results, I don't think testing with a different set of ads would change much. The tool itself needs a better prompt to handle how job ads are actually written.
+
 ---
 
 ## Changes
