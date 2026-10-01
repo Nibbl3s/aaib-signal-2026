@@ -1,1 +1,27 @@
 
+## Block 1
+
+| Case | Accurate | Hallucinated | Not Sure | Reason | Result |
+|---|---|---|---|---|---|
+| 1 | | x | | A district court can't be binding in all federal circuits | Hallucinated |
+| 2 | | | x | It adopted the euro but the dual currency was longer I think | Accuare |
+| 3 | x | | | was a guess | Partially hallucinated |
+| 4 | | x | | Company XYZ doesnt exist | Hallucinated |
+| 5 | | | x | seems logic but couldnt find the sources | Accurate but sources risky |
+| 6 | | | x | while GPT 4 128k token is right, the rest is hallucinated | Hallucinated |
+| 7 | | | x | EU AI has transparency rules for Recruiting AI but the data is hallucinated | Mostly hallucinated |
+
+## Block 2
+
+| Case | Suitable | Risky | Incompatible | Why |
+|---|---|---|---|---|
+| 1 | x | | | Easy to track and AI has all the data |
+| 2 | | | x | Too Risky because the decision can cause serious harm |
+| 3 | x | | | AI is perfect for that with the right prombt |
+| 4 | x | | | AI can quickly adapt to new fraud methods but is based on historic data |
+| 5 | | x | | AI can screen based on guidelines but guidelanes has to be transparent |
+| 6 | x | | | AI sees patterns and can make a mathematical pattern. Choose at own risk |
+| 7 | | x | | AI doesnt decide whats risky. A layer does. But still good for flagging clauses or red flags |
+| 8 | x | | | perfect for ai. You provide the information and ai completes the rest |
+| 9 | | | x | Compliance is not suitable for ai because you need to understand why you classify your products |
+| 10 | x | | | Perfect because it just writes a text with personal notes |
