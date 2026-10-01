@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Built an AI That Reads Injury News. It Scored 96%. I Still Wouldn&#x27;t Use It First. — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 2 · AI in Sports Performance – Scouting, Player Tracking and Injury Prevention</div>
+<h1>I Built an AI That Reads Injury News. It Scored 96%. I Still Wouldn&#x27;t Use It First.</h1>
+<div class="byline">Osama Daoud · 2026-10-01</div>
+<p>I thought that if I gave an AI the same instructions and the same article twice, I would get the same answer twice. It's a computer, after all. Most of the time that was true. But not always, and the one time it changed was exactly the time it mattered.</p>
+<h2>What I built</h2>
+<p>My tool reads a real news article about an injured athlete and fills in a simple player card: name, body part, injury type (muscle, ligament, bone, head or unknown) and expected time out. I tested it on 10 real articles from HLN, the BBC, ESPN, Le Monde and others, in English, Dutch and French, with 12 injured players in total. Before running anything, I read every article myself and wrote down the correct answers. Then I ran every article twice in ChatGPT, each time in a new chat.</p>
+<p>I also added traps on purpose: a one-sentence article that never says what the injury is, an article that mentions a second player who is not injured, and an article about a cyclist even though my prompt says "football players".</p>
+<h2>The result</h2>
+<p>23 out of 24 answers were correct: 95.8%. The tool passed every trap. It wrote "unknown" instead of inventing an injury, it ignored the extra player and it did not refuse the cyclist.</p>
+<p>The one failure was Kylian Mbappé. The French article describes a "hyperextension of the knee capsule", which does not fit any of my categories. The first time, the AI correctly answered "unknown". The second time, with exactly the same input, it answered "ligament", a word that appears nowhere in the article, even though my prompt says "Do not guess". The same input gave a different answer, and that answer was invented.</p>
+<h2>Is AI the right tool here?</h2>
+<p>I ran my tool through the five-question framework, and the honest answer is: not as the first tool.</p>
+<p>The information already exists. Injury news is published by journalists and listed on sites like Transfermarkt, which already shows every injured player in a clear table. It also changes quickly: Joel Ordóñez went from "a few weeks out" to surgery to "out until the end of December", so any answer is only as fresh as the article behind it. And for the decisions that really matter, like buying a player, a mistake is far more expensive than being slow. That is why clubs do their own medical test, as Crystal Palace did before dropping its move for Ordóñez.</p>
+<p>So the simplest tool wins. For quick injury news, I would follow a trusted journalist like Fabrizio Romano and check Transfermarkt. AI is useful one step later, as an assistant: when I find a real article about a player I'm interested in, especially in another language, it can pull out the key facts fast. But a human picks the article, and a human checks the answer.</p>
+<h2>The insight</h2>
+<p>A 96% score sounds like a tool you can trust. But the one mistake did not happen on an easy case. It happened on the hardest, most unclear injury, which is exactly where a club would need the right answer most. Testing each article twice is what caught it. If I had run everything once, I would have reported 100% and believed it.</p>
+<h2>The question</h2>
+<p>If an AI can give two different answers to the same question, how many times should a club test it before trusting it with a decision worth millions?</p>
+<p><em>AI disclosure: I used Claude to help me plan my test set, compare the AI's answers with my expected answers, and structure and polish the wording of this post. The tool, the articles I chose, the expected answers and the conclusions are my own.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
