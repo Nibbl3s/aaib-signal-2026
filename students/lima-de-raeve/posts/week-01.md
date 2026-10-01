@@ -1,6 +1,12 @@
-My Beat is: How AI Is Changing Real Estate Investment Decisions
+---
+week: 1
+title: What Does AI Actually Cost in Real Estate Investment?
+author: Lima 
+beat: How AI Is Changing Real Estate Investment Decisions
+skill: "Cost literacy"
+date: 2026-09-26
+---
 
-What Does AI Actually Cost in Real Estate Investment?
 Imagine a real estate investment company using an AI assistant to perform a first analysis of properties listed for sale. Instead of an analyst manually reviewing every listing, the AI receives information such as the asking price, location, property size, expected rental income and other characteristics. It then produces a short investment analysis highlighting potential returns, risks and whether the property deserves further investigation.
 Suppose the company analyses 1,000 properties per month. For each property, the system uses approximately 1,000 input tokens for the property information and 500 output tokens for the AI-generated analysis.
 This means that every month the company processes:
