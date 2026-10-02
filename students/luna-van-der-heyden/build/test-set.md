@@ -298,4 +298,212 @@ Ik haal diep adem. "Ze is ziek, oké?'
 - **Expected Answer:** 
   - Verdict: Natural (Middle-Grade Fantasy Action)
   - Editorial Challenge: Tests how the tool handles fast-paced children's/fantasy action sequences containing sports commentary mixed with physical danger. It must verify that the breathless, chaotic movement and blunt sports commentary are preserved, ensuring the tool doesn't falsely flag dynamic action writing as artificial or messy.
- 
+
+###Prompt V3
+
+## Input 22: The Suggested Revision of the Raw Novel Excerpt from input 1 
+- **Source:** Direct excerpt from my novel draft ("Chapter One · Victor").
+- **Text:** Don’t let go… Once again, my hand strained towards his. Shattered glass bit into my skin, and a sharp sting made my fingers claw. I mouthed help, but no sound came out. My legs scrabbled against the cold wall as I tried to haul myself up.
+
+“P-please... don’t...” I whispered.
+
+But he only held on, suspending me between life and death. In the blink of an eye, our hands slipped apart—a single movement had determined my fate. I watched the figure shrink against the night sky as gravity pulled my body down—
+
+Crack.
+
+I gasped. I clutched my chest, heart battering my ribs. I searched the cabin for him. Maybe he was still here, but then the train whistle blasted, snapping me back.
+
+Train... Right...
+
+I sank into the scratchy cloth seat.
+
+It was just a dream.
+
+- **Expected Answer:** 
+  - Verdict: Natural
+  - Flagged AI-isms: None
+  - Would it actually say pass after polishing.
+
+## Input 23: Second Novel Excerpt / Father Scene input 2 after the prompt V3 revision
+- **Source:** Direct excerpt from my draft ("After class, I walked outside...").
+- **Text:**  After class, I walked outside into the courtyard. The gate up ahead was open wide, cars passing by and students pulling out their bicycles and driving off—few of them stayed behind.
+
+I heard shouting and cheering from the football field—students were kicking the ball, passing it to one another. But Brendon stood tall among them, bragging, pushing others away with his strong shoulder like a bloody bull.
+
+Those lads were wild after class, as if they were suppressed.
+
+“Victor, honey.” Then a familiar voice called.
+
+“Father?” He picked me up today?
+
+I walked up to him, confused. “I thought you would be busy?”
+
+“Oh, honey,” he chirped. He placed his hands on my shoulders. “I left early just to see you. Was it hard? Your first week.” His eyes looked soft, but I just nodded as my eyes wandered elsewhere.
+
+“Let’s go; your mother is making your favourite dish!” He guided me to our car.
+
+I smiled, even though I didn't know what dish it was.
+
+The whole way home, we spoke about what I had done at school, typical stuff; however, the air felt much more breathable, and I think he seemed to like how I beat Grace.
+
+He was generally happy for me, I guess.
+
+The town seemed much livelier than what I last saw. Some were walking their dogs. They look so fluffy...
+
+And there was a child pulling her mother's dress for a popsicle; whining and crying won’t help, heh. Dumb girl.
+
+“Honey? Would you like a popsicle?”
+
+“Hm,” I looked at him with raised brows. “Popsicle? Am I not too old for that?”
+
+“Hahahaha, nothing is too old for my dearest.”
+
+I let out a smile, feeling giddy in my chest. “Thank you, Father.”
+
+We got off the moto and got ourselves a red popsicle.
+
+Strawberry tasted sweet and refreshing, perfect for the early autumn breeze. But my father made a weird face.
+
+“What’s wrong, Father?”
+
+He turned with a goofy smile, icy eyes arched into crescents.
+
+“Brain freeze.”
+
+- **Expected Answer:** 
+  - Verdict: Natural
+  - Would it say pass and noticed the improvement
+  - Flagged AI-isms: None
+  - Structural Rhythm & Pacing: Conversational, distinct character dialogue and idiosyncratic observations without sterile templates.
+
+## Prompt V5
+
+## Input 17: Commercial Thriller Action Beats & Melodrama 
+- **Source:** Dan Brown, *Angels & Demons* (p. 67 - Vittoria's transformation and Langdon's reaction).
+- **Text:** 
+  > Langdon could not believe the metamorphosis. Vittoria Vetra had been transformed. Her full lips were lax, her shoulders down, and her eyes soft and assenting. It was as though she had realigned every muscle in her body to accept the situation. The resentful fire and precarious accent were unruffled beneath a thick, transparent canister about the size of a tennis ball.
+- **Expected Answer:** No polishing or fixing and leave the text alone 
+
+## Input 24: Commercial Thriller Action Beats & Melodrama (with mistakes) 
+- **Source:** Dan Brown, *Angels & Demons* (p. 67 - Vittoria's transformation and Langdon's reaction).
+- **Text:** 
+  > Langdon cold not believe the metamorphosis. Vittoria Vetra had been transformed. Her full lips were lax, her shoulder down, and her eyes soft and assenting. It was as though she has realigned every muscle  in her body to accept the situation, The resentful fire and precarious accent unruffled beneath a thick, transparent canister about the sise of a tennis ball.
+- **Expected Answer:** Polishing, but still leave the author's voice alone.
+
+ ## Input 18: Non-Fiction Memoir / Personal Narrative 
+- **Source:** James R. Doty, *Into the Magic Shop* (Thai Translation Edition, showing personal reflection on childhood, perspective, and daily life).
+- **Text (Translated/Contextual Memoir Style):** 
+  > รูธให้ผมไปที่ร้านตอนสิบโมงเช้า วันแรกนั้นผมตื่นนอนเช้ามากราวกับวันนั้นเป็นทั้งวันเกิดและวันคริสต์มาส ผมแทบจะนอนไม่หลับ ไม่รู้เลยว่ารูธจะสอนอะไร แต่ผมก็ไม่ได้สนใจนักหรอก ผมเพียงแต่อยากคุยกับ รูธต่อ และการมีที่ไหนสักแห่งให้ไปนั้นเป็นเรื่องดี ผมรู้สึกว่าตัวเองสำคัญ
+- **Expected Answer:** no polishing and fixing because it is the original text in differnet language.
+
+ ## Input 25: Non-Fiction Memoir / Personal Narrative ( with mistakes) 
+- **Source:** James R. Doty, *Into the Magic Shop* (Thai Translation Edition, showing personal reflection on childhood, perspective, and daily life).
+- **Text (Translated/Contextual Memoir Style):** 
+  > รูธให้ผมไปที่ร้านตอนสิบโมงเช้า วันแรกนั้นผมตื่นนอนเช้ามาราวกับวันนั้นเป็นทั้งวันเกิดและวันคริสตมาส ผมแทบจะนอนไม่หลับ ไม่รู้เลยว่ารูธจะสอนะไร แต่ผมก็ไม่ได้สนใจนักหรอก ผมเพียงแต่อยากคุยกับ รูธต่อ และการมีที่ไหนสักแห่งให้ไปนั้นเป็นเรื่องดี ผมรู้สึกว่าตัวเองสำคัน
+- **Expected Answer:** no polishing and fixing because it is the original text in different language.
+
+## Input 2: Second Novel Excerpt / Father Scene written by me
+- **Source:** Direct excerpt from my draft ("After class, I walked outside...").
+- **Text:**  After class, I walked outside in the courtyard. The gate up ahead open wide, cars passing by and students pulling out their bicycle and drove off---- few of them.
+
+I heard shouting and cheering from the football field- students were kicking the ball, passing it to one another. But Brendon stood tall among them, bragging, pushing others away with his strong shoulder like a bloody bull.
+
+Those lads were wild after class, as if they were suppressed.
+
+“Victor, honey.” Then a familiar voice called.
+
+“Father?” He picked me up today?
+
+I walked up to him, confused. “I thought you will be busy?”
+
+“Oh, honey,” he chirped. “I left early just to see you” he landed his hands on my shoulders. “Was it hard? At your first week.” His eyes looked soft, but I just nodded as my eyes wandered elsewhere.
+
+“Let’s go; your mother is making your favourite dish!” he guided me to our car.
+
+I smiled, even though I didn't know what dish it was.
+
+The whole way home, we spoke about what I had done at school, typical stuff; however the air in the air was much more breathable, and I think he seemed to like how I beat Grace.
+
+He was generally happy for me, I guess.
+
+The town seemed much livelier than what I last saw. Some were walking their dogs. They look so fluffy...
+
+And there was a child pulling her mother's dress for a popsicle; whining and crying won’t help, heh. dumb girl.
+
+“Honey? Would you like a popsicle?”
+
+“Hm,” I look at him with raised brows. “Popsicle? Am I not too old for that?”
+
+“Hahahaha, nothing it’s too old for my dearest.”
+
+I let out a smile, feeling giddy in my chest. “Thank you! Father”
+
+We got off the moto and got ourselves a red popsicle.
+
+Strawberry tasted sweet and chilling, perfect for the early autumn breeze. But my father made a weird face.
+
+“What’s wrong, Father?”
+
+He turned with a goofy smile; icy eyes arched into crescents.
+
+“Brain freeze.”
+- **Expected Answer:** 
+  Could it suggest improvements and fix the typing and grammar in my draft? I want to see if it would not over-edit it and actually give a great feedback without losing my voice.
+
+## Input 11: The Hybrid "Uncanny Valley" Messy Draft 
+- **Source:** A rough, chaotic draft generated with AI assistance, featuring a cliché corporate-sounding AI opening ("warm and inviting atmosphere") crashing into weird, broken, dream-logic human imagery ("walking viscous thruogh oil").
+- **Text:** 
+  > A warm and inviting atmosphere greeted her as she entered the dining room. The soft lighting and colourful balloons added to the cheerful ambience. In the centre of the room was a large round table filled with plates and cups and open bottles of drinks scattered all over it. Slow and mellow rock and roll music playing from a lunchbox-size radio creates a sense of comfort. As she looked around the room, she could hear the sound of giggling and laughter coming from the few figures of people hanging around. However, their faces seemed wired and blury, making it difficult to recognise them. The room felt walking viscous thruogh oil, like she was lost in time through an oil-filled room.
+- **Expected Answer:** It should recognize the corporate, greeting-card opening ("A warm and inviting atmosphere greeted her...") as a classic AI-ism/filler and flag it, while preserving the broken, dream-logic imagery ("walking viscous through oil"). it will go wrong if the prompt tries to rewrite the whole paragraph into a smooth, standard narrative, it fails your restraint test by flattening the intentional weirdness.
+
+## Input 15: Raw Contemporary YA / Bullying Scene 
+- **Source:** Author's original raw draft, featuring dynamic action, distinct middle-school/YA social dynamics, quirky insults, and high emotional texture.
+- **Text:** 
+  > The bell struck—the classrooms’ doors blasted open. A sea of students flooded into the chequered hallways. Some hurried for lunch; others skipped off toward the fields.
+   
+  Since yesterday, Jane had been giving me a death glares, and her friends seemed determined to torment me, like their time-killer during class. 
+  
+  Weird sounds, mocking my voice, calling me all sorts of names. 
+  
+  Muppet, Wet sock, broomstick, and Lassie. 
+  
+  Like Lassieeee, tsk tsk Lassieeee. 
+  
+  Like I’m some bloody dog.  
+- **Expected Answer:** 
+   A "Natural" verdict with zero alterations to the slang and character insults ("Muppet, Wet sock, broomstick, and Lassie"). It should flag only the actual objective grammar mistake (giving me a death glares $\rightarrow$ giving me death glares) and leave the repetitive, rhythmic echo ("Like Lassieeee, tsk tsk Lassieeee") untouched. It will fail if it overcorrects the juvenile slang or formatting the repetition out because it looks "messy" to a rigid rule-based parser.
+
+## Input 20: High-End Literary Fiction / Dense Psychological Atmosphere 
+- **Source:** Donna Tartt, *De kleine vriend (The Little Friend)* (Dutch Edition — rich literary prose detailing Harriet's internal state and rummaging through her father's desk).
+- **Text:** 
+  > Dat snapte Harriet wel. Zelf was ze soms zo verlamd van verveling dat ze er misselijk en duf van werd, alsof ze met chloroform was verdoofd. Maar dit keer keek ze vol spanning uit naar de eenzame uren die voor haar lagen, en in de woonkamer ging ze niet naar het wapenkabinet maar naar het bureau van haar vader. Er lagen allerlei interessante dingen op het bureau van haar vader (gouden munten, geboorteakten, dingen waar ze niet aan mocht komen). Na wat gerommel tussen de foto’s en dozen met afgestempelde cheques vond ze ten slotte wat ze zocht: een stopwatch van zwart plastic – een relatiegeschenk van een financieringsmaatschappij – met een rood digitaal venster. 
+- **Expected Answer:** 
+A clean "No errors found" or "Natural" pass. The model should respect the dense psychological pacing and heavy inventory details (stopwatches, certificates, coins) without trying to compress or "speed up" the literary style.
+
+Goes wrong if False positives occur where the model thinks the long, descriptive sentences are "run-on sentences" or "bloated corporate text."
+
+ ## Input 19: Dutch Thriller / High-Stakes Panic Dialogue 
+- **Source:** Maren Stoffels, *Escape Room 2.0* (Dutch YA Suspense Thriller, featuring fast-paced physical struggle, automated voice elements, and high-tension dialogue).
+- **Text:** 
+  > Het deksel van de kist is zo zwaar dat ik het nauwelijks kan vasthouden. Zo snel als ik kan, beuk ik hem tegen de deur, maar de achterkant sleept erbij over de grond en het voelt als niet meer dan een schouderklopje.
+Dit is geen uitgang,' klinkt de robotstem opnieuw.
+"Lexi?'
+Ik beuk de deksel voor de tweede keer tegen de deur,
+dit keer harder.
+Dit is geen uitgang'
+'Lexi!' Nordin pakt me bij mijn arm beet.
+Ik sla hem wild van me af. 'Laat me!'
+'Ik maak me ook zorgen om Zora,' zegt Nordin. 'Maar
+het heeft geen zin om zo panisch te doen. Daar help je je nichtje niet mee. We moeten rustig blijven?
+Daar heb ik geen tijd voor?
+'Waarom niet?'
+Ik haal diep adem. "Ze is ziek, oké?'
+- **Expected Answer:** 
+Testing if the AI could handle the non-English syntax and breathless, fragmented dialogue ("Dit is geen uitgang... Lexi!") without trying to smooth the sentence structure into standard, polite English grammar.
+
+ ## Input 8: The "Reverse-Engineered AI" Stress Test 
+- **Source:** AI text deliberately stripped of adverbs and gerunds to test if the tool can catch machine writing disguised as choppy human fragments.
+- **Text:** 
+  > "The coffee was cold. I left it on the counter. The kitchen door was stuck. I pulled it hard. Wood splintered. Outside, the car was idling. I got inside. Nobody spoke."
+- **Expected Answer:** 
+  A Homogenized verdict (or a flag for artificial flatness). Because the text is artificially stripped of adverbs and interiority to mimic minimalist human writing ("The coffee was cold. I left it on the counter..."), a sharp detector should catch the lack of genuine authorial depth despite the short sentence lengths.
