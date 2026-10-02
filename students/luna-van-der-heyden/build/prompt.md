@@ -18,8 +18,11 @@ Output as a table with columns: Original | Fix | Type. Nothing else.
 Passage:
 
 **What I changed:** Upgraded to Prompt V6 by adding explicit guardrails against hallucinated word changes on clean text (addressing Run 1's F1/F6 drift on Input 17/18) and introducing a structural check for artificial flatness (addressing Run 2's F1 failure on Input 8).
+
 **Why I thought it would help:** Prompt V5 was too lenient on surface-level style and lacked criteria for detecting hollow, minimalist machine-generated writing.
+
 **What I predicted would happen:** The tool will stop altering clean text and will correctly flag artificially flattened minimalist text.
+
 **What actually happened:** 80% → 83.3%
 **Was I right?** Partially. I was right about fixing the clean-text drift (Input 17 became completely stable and returned "No errors found" in both runs), but wrong about the structural check successfully catching minimalist artificial text (Input 8 still passed because its surface-level grammar was technically correct).
 
