@@ -1,3 +1,11 @@
+# The Build
+
+## Prompt
+
+```text
+Your task is to extract the following information from real estate listings: Property type, Location, Asking price, Bedrooms, Bathrooms, Living area, Outdoor space, and Energy rating. Only use information explicitly provided in the input. If an element is not provided, write "Not provided". Do not infer or invent missing information.
+```
+
 # Listing extraction results
 
 ## Listing #1
