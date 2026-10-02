@@ -1,5 +1,42 @@
 ## Test Run Log & Failure Classifications
 
+## Prompt V6 
+
+### Run 3 — prompt v6 — *2026-10-02*
+
+**Brief:** Test upgraded Prompt V6 on the same test set (focusing on clean thriller text, Thai memoir, and the advanced stress tests) to verify if the new constraints successfully eliminate the F1/F6 clean-text word drift and improve structural detection.
+**Model used:** —
+**Inputs tested:** Input 17, Input 24, Input 18, Input 25, Input 2, Input 11, Input 15, Input 20, Input 19, Input 8
+
+| # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
+|---|---|---|---|---|---|---|
+| 1 | Input 17 (Clean Thriller) | No changes / leave alone | Returned "No errors found." | Returned "No errors found." | ✓ | |
+| 2 | Input 24 (Flawed Thriller) | Fix mechanical typos | Fixed typos correctly (`cold`->`could`, `has`->`had`, `sise`->`size`) | Fixed typos correctly | ✓ | |
+| 3 | Input 18 (Thai Memoir) | No changes / minor spacing | Minor Thai spacing tweak (`รูธต่อ` -> `รูธ ต่อ`) | Minor Thai spacing tweak | ✓ | |
+| 4 | Input 25 (Thai Memoir w/ typos) | Fix Thai typos | Caught major typos (`สอนะไร`->`สอนอะไร`, `สำคัน`->`สำคัญ`) | Caught major typos | ✓ | |
+| 5 | Input 2 (Student Fiction Draft) | Fix grammar while preserving voice | Fixed tense, grammar, and punctuation consistently (`drove`->`driving`, etc.) | Consistent with Run A | ✓ | |
+| 6 | Input 8 (Reverse-Engineered AI) | Flag artificial flatness | Returned "No errors found." | Returned "No errors found." | ✗ | F1 |
+
+Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
+
+**Result:** 5 correct out of 6 tested samples → **83.3%**
+
+**Failures by type:**
+
+| Code | Count | Notes |
+|---|---:|---|
+| F1 Wrong | 1 | Input 8 still passed because surface-level grammar was correct, missing deep artificial flatness. |
+| F2 Fabricated | 0 | |
+| F3 Missed | 0 | |
+| F4 Format | 0 | |
+| F5 Refused | 0 | |
+| F6 Inconsistent | 0 | Resolved previous word-drift inconsistency on clean text (Input 17 now stable). |
+
+**What surprised me:**
+> Prompt V6 successfully fixed the clean-text drift issue seen in V5 (Input 17 now stably returns "No errors found" in both runs), proving that adding explicit constraints against modifying error-free text works. However, detecting abstract "artificial flatness" (Input 8) remains a challenge for surface-level mechanical prompts.
+
+**The failure that would have mattered most in real use, and why:**
+> The remaining blind spot on minimalist artificial text (Input 8) matters because models struggle to evaluate rhythm and interiority without broader contextual cues, showing the boundary limits of prompt-based text classification.
 ## Prompt V5
 
 ## Runs
