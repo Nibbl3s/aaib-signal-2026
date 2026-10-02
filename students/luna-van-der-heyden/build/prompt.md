@@ -17,6 +17,8 @@ Output as a table with columns: Original | Fix | Type. Nothing else.
 
 Passage:
 
+
+### Change — 2026-10-02
 **What I changed:** Upgraded to Prompt V6 by adding explicit guardrails against hallucinated word changes on clean text (addressing Run 1's F1/F6 drift on Input 17/18) and introducing a structural check for artificial flatness (addressing Run 2's F1 failure on Input 8).
 
 **Why I thought it would help:** Prompt V5 was too lenient on surface-level style and lacked criteria for detecting hollow, minimalist machine-generated writing.
