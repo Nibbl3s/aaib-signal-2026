@@ -1,3 +1,11 @@
+## Physical Deployment Probe Plan
+
+| Category | Details |
+| :--- | :--- |
+| **Machines** | 3D Printer (for the tactile base/holder) and Laser Cutter (for the clear acrylic display panel) |
+| **Artifact** | A cute companion standee to display on the desk |
+| **Fablab Session** | Unsure maybe on week 4?|
+
 ## Test Run Log & Failure Classifications
 
 ## Prompt V6 
