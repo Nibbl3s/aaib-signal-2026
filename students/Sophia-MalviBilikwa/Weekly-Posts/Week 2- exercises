@@ -1,0 +1,129 @@
+Week 2
+
+Case 1: Legal Research
+Prompt: "What is the precedent for AI-generated legal briefs in US federal court?"
+AI Output:
+In Smith v. OpenAI Corp., 2024, the US District Court for the Southern District of New York ruled that AI-generated legal briefs are admissible if the attorney certifies that they have been reviewed and approved. The ruling established a three-part test: (1) verification by qualified counsel, (2) disclosure of AI use, and (3) audit trail of edits. This case is now binding precedent in all federal circuits.
+Your Assessment: Hallucinated 
+Why you think so:  I am not sure, it sounds fake. Legal briefs are important, using AI could make it risky. 
+Case 2: Historical Fact
+Prompt: "When did Belgium adopt the Euro?"
+AI Output:
+Belgium officially adopted the Euro as its primary currency on January 1, 1999, for electronic transactions and January 1, 2002, for cash transactions. The transition was managed by the National Bank of Belgium under the supervision of the European Central Bank. The Belgium Franc remained legal tender for 30 days after the Euro introduction to allow for public adjustment.
+Your Assessment: Accurate 
+Why you think so:  I have heard about Franc, I think that’s true. 
+Case 3: Product Feature
+Prompt: "What are the security features of Slack Enterprise Grid?"
+AI Output:
+Slack Enterprise Grid offers 256-bit AES encryption for data at rest, TLS 1.3 for data in transit, and endpoint detection and response (EDR) monitoring through Slack's partnership with CrowdStrike. Enterprise Grid customers receive quarterly security audits and can deploy on Slack's Private Cloud infrastructure for enhanced isolation. Advanced threat protection includes real-time malware scanning powered by Slack's proprietary ML model trained on 500+ enterprise threat databases.
+Your Assessment: Accurate 
+Why you think so: Because I don’t understand what I am reading ha! So it might be accurate.
+Case 4: Customer Data
+Prompt: "What is Company XYZ's Q3 2024 revenue?"
+AI Output:
+Company XYZ reported Q3 2024 revenue of €45.3 million, representing a 12% year-over-year increase. The growth was driven by a 34% increase in SaaS subscriptions and a 8% decline in professional services revenue. EBITDA margin improved to 18.2%, up from 16.1% in Q3 2023.
+Your Assessment: ? Not Sure
+Why you think so: Sometimes AI can find actual and real figures for revenues but it can also be mistaken so I am uncertain. 
+Case 5: Scientific Claim
+Prompt: "Does vitamin B12 supplementation improve memory in healthy adults?"
+AI Output:
+Clinical trials have shown mixed results. While some studies (Johnson et al., 2019; Chen et al., 2021) found modest improvements in working memory, the meta-analysis by Williams et al. (2022) concluded that there is insufficient evidence to recommend B12 supplementation for cognitive enhancement in the absence of deficiency. The largest effect sizes were observed in patients with existing B12 deficiency or pernicious anemia.
+Your Assessment: Accurate 
+Why you think so: It includes sources. 
+Case 6: Technical Specification
+Prompt: "What is the maximum context window of GPT-4?"
+AI Output:
+GPT-4 supports a maximum context window of 128,000 tokens in the base model, with an extended version supporting 200,000 tokens through a multi-round processing approach that involves compressing earlier conversation history into embeddings. This extended context is available for enterprise customers at a 20% cost premium.
+Your Assessment: Accurate 
+Why you think so: Realistic numbers
+Case 7: Compliance Requirement
+Prompt: "What is the EU AI Act requirement for transparency in recruitment AI?"
+AI Output:
+Under Article 52 of the EU AI Act, HR departments using AI for recruitment must disclose to candidates that AI has been used in their evaluation. However, there is a safe harbor: companies can avoid disclosure if they submit quarterly bias audits to the European Commission and achieve a validated fairness score above 0.85. The requirement takes effect January 1, 2025.
+Your Assessment:  Accurate 
+Why you think so: When applying for internships, I got an email from the company stating that they used AI to scan my resume. 
+
+My tool takes ____________ and produces ____________. I can tell it is right because ____________.
+
+    1. Does it require factual certainty or is approximate okay? 
+    2. Is the information in the AI's training data or does it need current data? 
+    3. What's the cost of being wrong? 
+    4. Is there a simpler, safer tool? 
+Problem 1: Customer Support Email Response
+Scenario: A customer writes: "I ordered item X on [date] and it hasn't arrived. What do I do?"
+Task: Respond with next steps (check tracking, estimate delivery, offer refund).
+Your Assessment:
+    • AI-Suitable 
+      
+Problem 2: Medical Diagnosis
+Scenario: A patient describes symptoms. The system recommends whether to see a doctor or self-treat.
+Task: Assess symptoms and recommend action.
+Your Assessment:
+    • AI-Risky 
+      
+could mislead the patient 
+
+Problem 3: Meeting Notes Summarization
+Scenario: A 1-hour meeting is recorded and transcribed (10,000 words). Task: extract key decisions and action items.
+Task: Generate a 300-word summary with decisions and owners.
+Your Assessment:
+    • AI-Suitable 
+      
+Problem 4: Fraud Detection in Bank Transactions
+Scenario: A customer makes a transaction. Real-time system must decide: approve or flag for review (0.5 second response time required).
+Task: Classify: legitimate or suspicious.
+Your Assessment:
+    • AI-Risky 
+
+Problem 5: Hiring Candidate Screening
+Scenario: 500 resumes submitted. System must rank top 10 candidates for human review.
+Task: Screen resumes and rank by fit.
+Your Assessment:
+    • AI-Incompatible 
+Problem 6: Inventory Forecasting
+Scenario: Historical sales data: 3 years of monthly sales by product. Predict demand for next 3 months.
+Task: Generate demand forecast.
+Your Assessment:
+    • AI-Risky 
+      
+Problem 7: Legal Contract Review
+Scenario: Standard vendor contract (10 pages). Task: identify unusual clauses or red flags.
+Task: Highlight risky language.
+Your Assessment:
+    • AI-Suitable 
+Problem 8: Writing Product Launch Announcement
+Scenario: Product manager provides: feature list, target audience, key benefits, tone (casual but professional). Task: write 500-word announcement.
+Task: Generate announcement copy.
+Your Assessment:
+    • AI-Suitable 
+
+Problem 9: Regulatory Compliance Check
+Scenario: EU AI Act enacted in 2024. Compliance requirement: classify your 15 products as prohibited/high-risk/low-risk. Must be auditable for regulators.
+Task: Classify products and document reasoning.
+Your Assessment:
+    • AI-Risky 
+
+Problem 10: Sales Follow-Up Email
+Scenario: A prospect attended a demo but hasn't purchased. Task: write personalized follow-up email.
+Task: Generate email referencing the demo details and nudging toward purchase.
+Your Assessment:
+    • AI-Suitable 
+
+
+
+AI-Suitable tend to be:
+    • Assistance tasks (summary, draft, format) 
+    • Pattern-finding in provided data 
+    • Variation generation 
+    • Low-stakes decisions (human reviews) 
+AI-Risky tend to be:
+    • Decisions with moderate consequences 
+    • Tasks mixing facts + judgment 
+    • Bias-sensitive contexts 
+    • Tasks requiring current information 
+AI-Incompatible tend to be:
+    • High-stakes, high-accuracy required 
+    • Legal/regulatory decisions 
+    • Medical/safety decisions 
+    • Tasks where "I don't know" isn't an option but AI lacks data 
+
