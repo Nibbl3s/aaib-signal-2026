@@ -37,6 +37,15 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 
 **The failure that would have mattered most in real use, and why:**
 > The remaining blind spot on minimalist artificial text (Input 8) matters because models struggle to evaluate rhythm and interiority without broader contextual cues, showing the boundary limits of prompt-based text classification.
+
+### Change 1 — 2026-10-02
+
+**What I changed:** Upgraded to Prompt V6 by adding explicit guardrails against hallucinated word changes on clean text (addressing Run 1's F1/F6 drift on Input 17/18) and introducing a structural check for artificial flatness (addressing Run 2's F1 failure on Input 8).
+**Why I thought it would help:** Prompt V5 was too lenient on surface-level style and lacked criteria for detecting hollow, minimalist machine-generated writing.
+**What I predicted would happen:** The tool will stop altering clean text and will correctly flag artificially flattened minimalist text.
+**What actually happened:** 80% → 83.3%
+**Was I right?** Partially. I was right about fixing the clean-text drift (Input 17 became completely stable and returned "No errors found" in both runs), but wrong about the structural check successfully catching minimalist artificial text (Input 8 still passed because its surface-level grammar was technically correct).
+
 ## Prompt V5
 
 ## Runs
