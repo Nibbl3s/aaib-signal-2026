@@ -19,6 +19,15 @@
  },
  {
   "week": 1,
+  "title": "What Does AI Actually Cost?",
+  "author": "Bentil Benoah Boakye",
+  "beat": "AI in ERP and Business Process Automation",
+  "skill": "Cost literacy",
+  "date": "2026-10-02",
+  "url": "posts/bentil-benoah-week-01.html"
+ },
+ {
+  "week": 1,
   "title": "The \u20ac0.0023 Email \u2014 and the 5x Mistake That Got Me There",
   "author": "Brecht Masschaele",
   "beat": "AI in International Management",
@@ -250,6 +259,15 @@
   "skill": "Capability Skepticism",
   "date": "2026-10-01",
   "url": "posts/andreea-simion-week-02.html"
+ },
+ {
+  "week": 2,
+  "title": "When AI Is Not the Right Tool",
+  "author": "Bentil Benoah Boakye",
+  "beat": "AI in ERP and Business Process Automation",
+  "skill": "Capability skepticism",
+  "date": "2026-10-02",
+  "url": "posts/bentil-benoah-week-02.html"
  },
  {
   "week": 2,
