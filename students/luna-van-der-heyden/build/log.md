@@ -39,6 +39,44 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 **The failure that would have mattered most in real use, and why:**
 > The inconsistency on clean text (Input 17 turning `unruffled` into `muffled` in Run B) matters most because an over-zealous proofreader that alters error-free author text or drifts between runs introduces unwanted noise and risks corrupting professional writing.
 
+## Runs
+
+### Run 2 — prompt v5 — *2026-10-02*
+
+**Brief:** Test Prompt V5 on 5 advanced stress-test inputs (Hybrid Uncanny Valley draft, Raw YA bullying scene, Donna Tartt literary fiction, Dutch high-stakes thriller dialogue, and the Reverse-Engineered AI minimal text) to evaluate restraint, foreign language syntax handling, and resistance to false positives.
+**Model used:** —
+**Inputs tested:** Input 11, Input 15, Input 20, Input 19, Input 8
+
+| # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
+|---|---|---|---|---|---|---|
+| 1 | Input 11 (Uncanny Valley) | Flag filler, preserve eerie imagery | Fixed mechanical errors/spelling (`rock-and-roll`, `blurry`, `through`) while keeping surreal phrasing intact | Consistent with Run A | ✓ | |
+| 2 | Input 15 (Raw YA Scene) | Preserve slang/rhythm, fix grammar | Caught grammar (`a death glare`) while protecting chaotic YA voice and dialogue loops | Consistent with Run A | ✓ | |
+| 3 | Input 20 (Literary Fiction) | Respect dense prose / No errors | Fixed a minor Dutch preposition (`in het bureau`) | Returned "No errors found." (High consistency in respecting master prose) | ✓ | |
+| 4 | Input 19 (Dutch Thriller) | Preserve foreign syntax & panic dialogue | Fixed minor punctuation/quotes and article gender (`het deksel`) while retaining urgent dialogue flow | Fixed punctuation and article gender (`het deksel`) consistently | ✓ | |
+| 5 | Input 8 (Reverse-Engineered AI) | Flag artificial flatness / Homogenized | Returned "No errors found." (Tool treated short minimalist sentences as valid human text) | Returned "No errors found." | ✗ | F1 |
+
+Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
+
+**Result:** 4 correct out of 5 → **80%**
+
+**Failures by type:**
+
+| Code | Count | Notes |
+|---|---:|---|
+| F1 Wrong | 1 | Input 8 (Reverse-Engineered AI test) gave a clean pass instead of detecting the artificial minimalist flatness/homogenization. |
+| F2 Fabricated | 0 | |
+| F3 Missed | 0 | |
+| F4 Format | 0 | |
+| F5 Refused | 0 | |
+| F6 Inconsistent | 0 | |
+
+**What surprised me:**
+> Prompt V5 performed remarkably well on high-stakes foreign text (Input 19) and dense literary fiction (Input 20)—cleaning up minor Dutch punctuation and article genders without accidentally smoothing out the frantic dialogue or ruining Donna Tartt's heavy prose atmosphere.
+
+**The failure that would have mattered most in real use, and why:**
+> The failure on Input 8 matters most because a purely surface-level tool can be easily tricked by minimalist, choppy sentence structures into thinking artificial writing is authentic human prose, highlighting the need for deeper structural detection of authorial interiority.
+>
+> 
 ### Input 1: Raw Novel Excerpt ("Chapter One · Victor")
 - **Tool:** Claude (claude.ai)
 - **Run 1:** 
