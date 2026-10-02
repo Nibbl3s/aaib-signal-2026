@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 2 · </div>
+<h1>Week 2</h1>
+<div class="byline">lander-rutten · </div>
+<p>1)<br />
+Problem 1: Customer Support Email Response<br />
+Scenario: A customer writes: "I ordered item X on [date] and it hasn't arrived. What do I do?"<br />
+Task: Respond with next steps (check tracking, estimate delivery, offer refund).<br />
+Your Assessment:<br />
+•    x  AI-Suitable<br />
+•       AI-Risky<br />
+•       AI-Incompatible<br />
+Why:  AI is trained in customer service and the worst thing that can happen is that the customer doesn’t find it. <br />
+Problem 2: Medical Diagnosis<br />
+Scenario: A patient describes symptoms. The system recommends whether to see a doctor or self-treat.<br />
+Task: Assess symptoms and recommend action.<br />
+Your Assessment:<br />
+•       AI-Suitable<br />
+•    x  AI-Risky<br />
+•       AI-Incompatible<br />
+Why: Because symptoms are different for everyone and it can cause bad consequences<br />
+Problem 3: Meeting Notes Summarization<br />
+Scenario: A 1-hour meeting is recorded and transcribed (10,000 words). Task: extract key decisions and action items.<br />
+Task: Generate a 300-word summary with decisions and owners.<br />
+Your Assessment:<br />
+•    x  AI-Suitable<br />
+•       AI-Risky<br />
+•       AI-Incompatible<br />
+Why: Because AI can consume information much faster than humans and it is trained to gather information an explain it to us.</p>
+<p>2) Use Case: Job Requirement Extraction Tool (HR Beat)<br />
+Problem: Extract explicit minimum qualifications (Degree, Years of Experience, Required Hard Skills) from unstructured job descriptions into a structured JSON format.<br />
+1. Do you know the answer already?<br />
+•   Answer: No.<br />
+•   Reasoning: Each incoming job description is unformatted, unique raw text that must be processed individually to structure its data.<br />
+2. Is the cost of being wrong higher than the cost of being slow?<br />
+•   Answer: No.<br />
+•   Reasoning: The tool functions as an initial triage assistant for recruiters. If the tool extracts a skill incorrectly, a human recruiter will spot it during review. The error cost is low (a few seconds of human correction time) compared to the time saved manually scanning hundreds of job ads.<br />
+3. Is the information stable or changing rapidly?<br />
+•   Answer: Stable.<br />
+•   Reasoning: Once a job description text is pasted into the prompt, the source text remains static. The requirements inside that specific document do not change while being processed.<br />
+4. Can you verify the AI's answer?<br />
+•   Answer: Yes.<br />
+•   Reasoning: We have the original job description text as our ground truth. Every extracted item can be verified word-for-word against the source text to ensure no facts were fabricated or missed.<br />
+5. What's the simplest tool that solves this?<br />
+•   Answer: AI (Large Language Model) with Human Verification.<br />
+•   Reasoning: Traditional rules or Regular Expressions break easily because job ads variate wildly in syntax, language, and formatting. AI handles unstructured text extraction exceptionally well. Since the cost of error is low and the output is fully verifiable against the source text, AI is the optimal tool for this job.<br />
+Decision: Use AI with a human-in-the-loop</p>
+<p>Signal post2:</p>
+<p>Week 2 – Capability Skepticism<br />
+During week 2, we learned about the limitations of AI and why we should not always trust the answers it gives us. I found this lesson interesting because I already use AI quite often, but I did not always think about the fact that AI can give an answer that sounds very convincing while still being completely wrong. The examples from the lesson made this clear. AI can give specific numbers, sources, names and explanations that look correct, even when the information is made up. This showed me that checking the output of AI is very important.<br />
+One of the most interesting parts of the lesson was learning about hallucinations. A hallucination happens when AI generates information that is not correct but presents it as if it were true. We looked at several examples, such as fake legal cases, incorrect company information and made-up sources. What surprised me was that these mistakes can be difficult to notice because the answer can look very professional and detailed. This taught me that I should not only look at how confident or professional an answer sounds, but also check whether the information can actually be verified.<br />
+We also learned about different types of AI errors. The error codes F1 to F6 were useful because they give a clear way to classify what went wrong. F1 means an error, F2 means fabricated information, F3 means something was missed, F4 is a formatting error, F5 means the AI refused the task, and F6 means that the AI gave inconsistent results. I think this is useful because it makes it easier to analyse an AI tool instead of simply saying that the answer was "wrong".<br />
+I also applied what we learned to my own beat. My beat focuses on using AI in HR, more specifically on extracting the most important qualifications from a job vacancy. I created a test set with different vacancies and used my prompt to analyse them. I then compared the results with the expected answers and looked at where the AI made mistakes. This was interesting because the AI was able to identify many qualifications correctly, but it was not always consistent. In some cases, it focused on information that was less important or missed certain qualifications. This showed me that even when an AI tool seems to work well, it is still necessary to test it with different inputs.<br />
+Another important lesson was that AI is not always the best solution. We learned that we should first ask whether the problem really needs AI, whether mistakes would have serious consequences, whether the information is up to date and whether the result can be checked. Sometimes a simple rule, spreadsheet or human decision can be a better solution.<br />
+Overall, I found this lesson useful and interesting. I learned that AI can be very helpful, but that we should remain critical when using it. Testing my own beat made the lesson more practical because I could see the limitations of AI in my own project. In the future, I will pay more attention to checking AI outputs instead of automatically assuming that a detailed answer is correct.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
