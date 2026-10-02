@@ -1,11 +1,6 @@
-# Lena Devos *(example student — copy this file, then make it yours)*
+# Bentil Benoah Boakye
 
-- **Name:** Lena Devos
+- **Name:** Bentil Benoah Boakye
 - **Track:** 4 ECTS
-- **Beat:** AI in European Retail Logistics
-- **Why this beat:** I worked part-time in a warehouse during my Erasmus year and watched the
-  picking software get replaced twice. Nobody asked the people using it. I want to understand
-  what actually decides these purchases.
-
-*(One paragraph on the beat is enough. Narrow enough to sustain 12 posts; specific enough
-that post #7 has an answer.)*
+- **Beat:** AI in ERP and Business Process Automation
+- **Why this beat:** I am interested in ERP systems, especially Odoo, and I want to develop my knowledge in this area. I want to explore how AI can improve and automate real business processes, while also understanding when AI is not the right solution.
