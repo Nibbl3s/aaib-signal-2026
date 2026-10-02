@@ -1,4 +1,4 @@
-# Build Test Set: AI Homogenization Detector & Voice Restoration Tool
+# Build Test Set
 
 ## Input 1: Raw Novel Excerpt (Expected: Natural)
 - **Source:** Direct excerpt from my novel draft ("Chapter One · Victor").
@@ -381,7 +381,7 @@ He turned with a goofy smile, icy eyes arched into crescents.
 ## Input 17: Commercial Thriller Action Beats & Melodrama 
 - **Source:** Dan Brown, *Angels & Demons* (p. 67 - Vittoria's transformation and Langdon's reaction).
 - **Text:** 
-  > Langdon could not believe the metamorphosis. Vittoria Vetra had been transformed. Her full lips were lax, her shoulders down, and her eyes soft and assenting. It was as though she had realigned every muscle in her body to accept the situation. The resentful fire and precarious accent were unruffled beneath a thick, transparent canister about the size of a tennis ball.
+  > Langdon could not believe the metamorphosis. Vittoria Vetra had been transformed. Her full lips were lax, her shoulders down, and her eyes soft and assenting. It was as though she had realigned every muscle in her body to accept the situation. The resentful fire and personal anguish had been quelled somehow beneath a deeper, watery cool.
 - **Expected Answer:** No polishing or fixing and leave the text alone 
 
 ## Input 24: Commercial Thriller Action Beats & Melodrama (with mistakes) 
