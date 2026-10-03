@@ -60,43 +60,45 @@
 <div class="meta">Week 2 · </div>
 <h1>Week 2</h1>
 <div class="byline">levente-sinka · </div>
-<p>Stress-Testing an LLM Triage Engine Against Live Operational Feedback<br />
-1. System Context &amp; Operational Objective<br />
-Building automated intake pipelines for hospitality operations sounds deceptively simple: take an unstructured guest review, extract sentiment, assign a department tag, and flag urgent tickets for management. In practice, offloading operational triage to an unconstrained LLM creates silent failure points.</p>
-<p>Prompt v1 was designed to enforce a rigid JSON schema, classifying incoming customer feedback across four operational categories (Food/Hygiene, Service/Staff, Facility/Maintenance, General/Experience) while identifying root causes and setting a binary escalation_flag. To evaluate reliability before deployment, the prompt was benchmarked across two distinct environments: a controlled 10-case internal test set and an 8-case practitioner dataset scraped from Google Maps.</p>
-<ol start="2">
-<li>Methodology: Synthetic Control vs. Live Noise<br />
-Testing focused on both semantic accuracy (Ground Truth alignment) and non-deterministic drift (running identical inputs twice across fresh execution contexts):</li>
-</ol>
-<p>Internal Test Suite (10 inputs x 2 runs): Structured boundary cases testing edge behaviors, including bilingual phrases, sarcasm, legal threats, and mixed sentiment.</p>
-<p>Practitioner Dataset (8 inputs x 2 runs): Anonymized, live customer reviews from Clouds in my coffee (a local specialty café in Ghent, Belgium). Sourced directly from public Google Maps records to capture unfiltered customer syntax, multi-clause complaints, and organic linguistic noise (English, Dutch, and Hungarian).</p>
-<ol start="3">
-<li>Failure Mode Breakdown: The Anatomy of F1 and F6<br />
-Across 36 total prompt runs, two dominant failure modes surfaced:</li>
-</ol>
-<p>F1: The Boundary Masking Error (Mixed Sentiment Bias)<br />
-In both testing tiers, the model struggled when positive atmospheric remarks coexisted with specific operational flaws.</p>
-<p>The Incident: When parsing a review stating that the garden and cheesecakes were delicious but multiple menu choices were unavailable, the model defaulted to General/Experience with a Positive sentiment.</p>
-<p>Root Mechanism: The LLM exhibited a classic semantic "halo effect." The positive emotional valence of words like "cozy" and "delicious" statistically overpowered the operational defect ("menu choices not available"). In an operational setting, this error is critical: kitchen inventory bottlenecks remain invisible to management because the ticket was swallowed by general praise.</p>
-<p>F6: Non-Deterministic Category Drift<br />
-Without an explicit priority ladder, the model fluctuated between equally valid operational tags across identical runs.</p>
-<p>The Incident: An enthusiastic review praising both floor staff attention and food quality was tagged as General/Experience on Run 1, but drifted to Service/Staff on Run 2.</p>
-<p>Root Mechanism: Natural temperature jitter caused the model's attention heads to shift weight between competing clauses. Because prompt v1 did not specify a tie-breaking rule for multifaceted praise, the system produced unpredictable telemetry for the manager dashboard.</p>
-<ol start="4">
-<li>The Practitioner Gap: Why Synthetic Tests Lie<br />
-Comparing test environments demonstrated why internal developer tests consistently inflate performance metrics:</li>
-</ol>
-<p>Internal Test Suite Pass Rate: 80% (8/10 clean passes across both runs)</p>
-<p>Practitioner Dataset Pass Rate: 75% (6/8 clean passes across both runs)</p>
-<p>While a 5% drop appears modest on paper, the qualitative gap was substantial. Developer-authored test sets unconsciously isolate single variables (e.g., a sentence exclusively about a cold steak or a broken air conditioner). In contrast, real guests at Clouds in my coffee filed reviews combining slow table turns, missing condiments, beverage serving temperatures, and unexpected surcharges into single run-on paragraphs.</p>
+<h2>Signal Post 2: Stress-Testing an LLM Triage Engine Against Live Operational Feedback</h2>
+<h2>1. System Context &amp; Operational Objective</h2>
+<p>Building automated intake pipelines for hospitality operations sounds deceptively simple: take an unstructured guest review, extract sentiment, assign a department tag, and flag urgent tickets for management. In practice, offloading operational triage to an unconstrained LLM creates silent failure points. </p>
+<p>Prompt v1 was designed to enforce a rigid JSON schema, classifying incoming customer feedback across four operational categories (<code>Food/Hygiene</code>, <code>Service/Staff</code>, <code>Facility/Maintenance</code>, <code>General/Experience</code>) while identifying root causes and setting a binary <code>escalation_flag</code>. To evaluate reliability before deployment, the prompt was benchmarked across two distinct environments: a controlled 10-case internal test set and an 8-case practitioner dataset scraped from Google Maps.</p>
+<h2>2. Methodology: Synthetic Control vs. Live Noise</h2>
+<p>Testing focused on both semantic accuracy (Ground Truth alignment) and non-deterministic drift (running identical inputs twice across fresh execution contexts):</p>
+<ul>
+<li><strong>Internal Test Suite (10 inputs x 2 runs):</strong> Structured boundary cases testing edge behaviors, including bilingual phrases, sarcasm, legal threats, and mixed sentiment.</li>
+<li><strong>Practitioner Dataset (8 inputs x 2 runs):</strong> Anonymized, live customer reviews from <em>Clouds in my coffee</em> (a local specialty café in Ghent, Belgium). Sourced directly from public Google Maps records to capture unfiltered customer syntax, multi-clause complaints, and organic linguistic noise (English, Dutch, and Hungarian).</li>
+</ul>
+<h2>3. Failure Mode Breakdown: The Anatomy of F1 and F6</h2>
+<p>Across 36 total prompt runs, two dominant failure modes surfaced:</p>
+<h3>F1: The Boundary Masking Error (Mixed Sentiment Bias)</h3>
+<p>In both testing tiers, the model struggled when positive atmospheric remarks coexisted with specific operational flaws. </p>
+<ul>
+<li><strong>The Incident:</strong> When parsing a review stating that the garden and cheesecakes were delicious but multiple menu choices were unavailable, the model defaulted to <code>General/Experience</code> with a <code>Positive</code> sentiment.</li>
+<li><strong>Root Mechanism:</strong> The LLM exhibited a classic semantic "halo effect." The positive emotional valence of words like "cozy" and "delicious" statistically overpowered the operational defect ("menu choices not available"). In an operational setting, this error is critical: kitchen inventory bottlenecks remain invisible to management because the ticket was swallowed by general praise.</li>
+</ul>
+<h3>F6: Non-Deterministic Category Drift</h3>
+<p>Without an explicit priority ladder, the model fluctuated between equally valid operational tags across identical runs.</p>
+<ul>
+<li><strong>The Incident:</strong> An enthusiastic review praising both floor staff attention and food quality was tagged as <code>General/Experience</code> on Run 1, but drifted to <code>Service/Staff</code> on Run 2.</li>
+<li><strong>Root Mechanism:</strong> Natural temperature jitter caused the model's attention heads to shift weight between competing clauses. Because prompt v1 did not specify a tie-breaking rule for multifaceted praise, the system produced unpredictable telemetry for the manager dashboard.</li>
+</ul>
+<h2>4. The Practitioner Gap: Why Synthetic Tests Lie</h2>
+<p>Comparing test environments demonstrated why internal developer tests consistently inflate performance metrics:</p>
+<ul>
+<li><strong>Internal Test Suite Pass Rate:</strong> 80% (8/10 clean passes across both runs)</li>
+<li><strong>Practitioner Dataset Pass Rate:</strong> 75% (6/8 clean passes across both runs)</li>
+</ul>
+<p>While a 5% drop appears modest on paper, the qualitative gap was substantial. Developer-authored test sets unconsciously isolate single variables (e.g., a sentence exclusively about a cold steak or a broken air conditioner). In contrast, real guests at <em>Clouds in my coffee</em> filed reviews combining slow table turns, missing condiments, beverage serving temperatures, and unexpected surcharges into single run-on paragraphs. </p>
 <p>The model handled raw multilingual translations cleanly (normalizing Dutch pricing complaints and Hungarian culinary terms into standardized English root causes). However, it stumbled whenever a guest presented multiple distinct grievances without establishing a primary complaint.</p>
-<ol start="5">
-<li>Architectural Takeaways for Prompt v2<br />
-Treating prompt design as software engineering requires resolving these edge cases structurally rather than hoping for better probabilistic outputs:</li>
+<h2>5. Architectural Takeaways for Prompt v2</h2>
+<p>Treating prompt design as software engineering requires resolving these edge cases structurally rather than hoping for better probabilistic outputs:</p>
+<ol>
+<li><strong>Deterministic Tie-Breaking Ladder:</strong> Prompt v2 must introduce an explicit hierarchy rule. When multiple departments are implicated in a single review, priority must follow operational severity: <code>Food/Hygiene (Safety)</code> &gt; <code>Facility/Maintenance</code> &gt; <code>Service/Staff</code> &gt; <code>General/Experience</code>.</li>
+<li><strong>Decoupled Sentiment and Root Cause:</strong> Category assignment must be decoupled from general emotional tone. A review can carry an overall <code>Positive</code> sentiment while still generating a discrete operational ticket for inventory shortages.</li>
+<li><strong>Multi-Tag Extraction:</strong> Moving from a single categorical string to an array of identified operational tags will prevent complex feedback from being artificially compressed into a single department bucket.</li>
 </ol>
-<p>Deterministic Tie-Breaking Ladder: Prompt v2 must introduce an explicit hierarchy rule. When multiple departments are implicated in a single review, priority must follow operational severity: Food/Hygiene (Safety) &gt; Facility/Maintenance &gt; Service/Staff &gt; General/Experience.</p>
-<p>Decoupled Sentiment and Root Cause: Category assignment must be decoupled from general emotional tone. A review can carry an overall Positive sentiment while still generating a discrete operational ticket for inventory shortages.</p>
-<p>Multi-Tag Extraction: Moving from a single categorical string to an array of identified operational tags will prevent complex feedback from being artificially compressed into a single department bucket.</p>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
