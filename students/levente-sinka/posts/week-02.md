@@ -1,3 +1,8 @@
+---
+title: "Stress-Testing an LLM Triage Engine Against Live Operational Feedback"
+description: "AI IN GUEST REVIEW TRIAGE FOR BOUTIQUE HOSPITALITY"
+date: "2026-10-03"
+---
 # Signal Post 2: Stress-Testing an LLM Triage Engine Against Live Operational Feedback
 
 ## 1. System Context & Operational Objective
