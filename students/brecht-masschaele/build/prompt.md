@@ -14,7 +14,7 @@ The mentor email says the progress call is in week 8. The briefing says week 7.
 The guide still names the Canvas course 2025-26 S2.
 If every product draws from one source, these mismatches stop happening.
 
-What the hub would contain
+What the Coordination hub would contain:
 
 1. Overview (all three roles)
 One row per student: programme, track (INT/BAP/both), coach, expert, company, country, mentor.
