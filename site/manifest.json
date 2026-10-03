@@ -271,6 +271,15 @@
  },
  {
   "week": 2,
+  "title": "Why You Shouldn't Let AI Grade Your Practice Exams",
+  "author": "Dalia El-Ghalid",
+  "beat": "AI as a Personal Study Coach",
+  "skill": "Capability skepticism",
+  "date": "2026-10-02",
+  "url": "posts/dalia-el-ghalid-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "My Own Classifier Says AI Can Help Balance a Game. The Framework Says No.",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
