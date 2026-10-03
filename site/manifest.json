@@ -326,6 +326,15 @@
  {
   "week": 2,
   "title": "Week 2",
+  "author": "example-student",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/example-student-week-02.html"
+ },
+ {
+  "week": 2,
+  "title": "Week 2",
   "author": "janis-krainis",
   "beat": "",
   "skill": "",
