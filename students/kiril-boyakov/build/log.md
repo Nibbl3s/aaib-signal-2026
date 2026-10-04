@@ -538,3 +538,14 @@ This result does not establish 100% accuracy on unseen freight descriptions. The
 The combined result also covers two prompt versions and two execution methods. Tests 02–10 shared context within each batch, so their results should not be described as independent individual-chat tests. The repeated batches produced identical responses, but two repetitions provide limited evidence of reliability.
 
 Further testing should use unseen, more ambiguous descriptions in individual chats and compare the classifier with a simple keyword or rules-based approach. These tests assess transport-mode classification only; they do not show that the model can calculate or approve freight prices.
+
+
+## Physical deployment probe — proposed plan
+
+Status: Planned, not yet built or tested.
+
+| Planning item | Proposed approach |
+|---|---|
+| Machine | Laser cutter, subject to confirmation with fablab staff about availability, suitable materials, and required training. |
+| Artifact | A small tabletop freight-intake stand with a printed mock interface showing the source description, predicted transport mode, quoted evidence, and a human confirmation step. Use it to observe whether a tester checks the evidence before accepting the classification, particularly when the result is NOT ENOUGH INFORMATION. |
+| Fablab session | Session date not yet selected or booked. Check the fablab agenda, choose an available supervised session, and record its date
