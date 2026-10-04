@@ -46,3 +46,10 @@ Initial version. OUT OF SCOPE distinguishes an explicitly stated unsupported mod
 ### Success criteria
 
 A response passes only if it uses the expected label, provides accurate supporting evidence without inventing facts, and follows the three-field format.
+
+
+## v1b — 2026-10-04 — Batch testing
+
+Tests 02–10 were submitted together in two separate new chats using GPT-6 Astra with Medium reasoning effort. Expected answers were not included.
+
+### Exact submitted batch prompt
