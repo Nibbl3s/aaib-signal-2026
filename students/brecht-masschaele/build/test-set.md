@@ -1,7 +1,9 @@
 # Test set — INT & BAP Coordination Hub
 
 **Product:** Coordination Hub for the internship coordinator, BAP coordinator and administrator (IBM/IOM, Artevelde University of Applied Sciences)
+
 **Data source:** worklist (status 3 Oct 2026) + Key dates
+
 **Version tested:** hub v9 (Outlook zip export)
 
 ## How to use this test set
