@@ -147,9 +147,12 @@ classification option, "Insufficient context," so vague or too-short inputs aren
 a binary choice they don't fit.
 
 ### 4.6 Fablab Probe Plan (planning rows)
-- **Machine:** Laser cutter (tentative)
-- **Artifact:** A small standee or kiosk face showing the claim classifier in a simulated
-  "analyst's desk" deployment context
-- **Session:** Fablab intro attended Monday 28 September during the Week 2 session; a follow-up
-  booked visit to be scheduled during independent build hours, with the deployment observation
-  logged before Week 8 (CP2)
+- **Machine:** 3D printer
+- **Artifact:** A small 3D-printed desk stand that holds a phone or tablet at an analyst's desk.
+  The stand itself is just a physical holder — the claim classifier keeps running as a chat tool
+  (prompt.md) on the device it holds. The point of the stand is to simulate the tool being kept
+  visibly open and within reach during real report-checking work, instead of living in an
+  unused browser tab.
+- **Session:** Fablab intro attended Monday 28 September (Week 2 session); a follow-up booked
+  visit to the fablab's 3D printing sessions to be scheduled during independent build hours,
+  with the deployment observation logged before Week 8 (CP2)
