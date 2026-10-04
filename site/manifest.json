@@ -280,6 +280,15 @@
  },
  {
   "week": 2,
+  "title": "A Freight Quote Needs a Calculator Before It Needs AI",
+  "author": "Kiril Boyakov",
+  "beat": "AI in European Freight Cost Estimation",
+  "skill": "Capability skepticism",
+  "date": "2026-10-04",
+  "url": "posts/kiril-boyakov-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "No, Don't Let AI Build the Whole Model: Running the 'No AI' Framework",
   "author": "Kirill Kyryllov",
   "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
