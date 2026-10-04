@@ -1,6 +1,3 @@
-The latest version (the classifier) already contains no real names. The first version, with the 24 hub tests, did. Here it is again with every name replaced: lecturers become lecturer1, lecturer2, …, students become student1, student2, …, and the coordinators become coordinator1 and coordinator2.
-
-````markdown
 # Test set — INT & BAP Coordination Hub
 
 **Product:** Coordination Hub for the internship coordinator, BAP coordinator and administrator (IBM/IOM, Artevelde University of Applied Sciences)
