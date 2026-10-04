@@ -298,6 +298,15 @@
  },
  {
   "week": 2,
+  "title": "No, Don't Let AI Build the Whole Model: Running the 'No AI' Framework",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Capability skepticism",
+  "date": "2026-10-10",
+  "url": "posts/kirill-kyryllov-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "The Quote Price at O&D 3D Should Come From a Spreadsheet, Not an AI: Where the 'No AI' Test Says Stop",
   "author": "Max",
   "beat": "AI Automation Cost Literacy at O&D Impression 3D",
