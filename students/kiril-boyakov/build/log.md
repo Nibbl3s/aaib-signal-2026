@@ -548,4 +548,4 @@ Status: Planned, not yet built or tested.
 |---|---|
 | Machine | Laser cutter, subject to confirmation with fablab staff about availability, suitable materials, and required training. |
 | Artifact | A small tabletop freight-intake stand with a printed mock interface showing the source description, predicted transport mode, quoted evidence, and a human confirmation step. Use it to observe whether a tester checks the evidence before accepting the classification, particularly when the result is NOT ENOUGH INFORMATION. |
-| Fablab session | Session date not yet selected or booked. Check the fablab agenda, choose an available supervised session, and record its date
+| Fablab session | I missed the introductory session. A future supervised session has not yet been arranged. I will ask the teacher or fablab staff about a catch-up opportunity. |
