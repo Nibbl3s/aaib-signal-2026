@@ -75,3 +75,42 @@
   color:#07070d; font:800 .8rem Inter,sans-serif; display:flex; align-items:center; justify-content:flex-end; padding-right:.5rem; min-width:3.5rem; }
 .nz-foot { max-width:760px; margin:0 auto; padding:1.2rem 1.25rem 3rem; border-top:1px solid rgba(255,255,255,.12); font-size:.8rem; color:#8d8da3; }
 @media (max-width:560px) { .nz-bar { grid-template-columns:1fr; gap:.2rem; } .nz-letter { padding:1.4rem 1.1rem; } }
+
+/* ---------- certificate page ---------- */
+.nz-counter { display:inline-block; margin:.4rem 0 .6rem; padding:.3rem .9rem; border:2px solid var(--c); border-radius:6px; background:#000;
+  font:800 2rem Orbitron,Inter,monospace; letter-spacing:.12em; color:var(--c); text-shadow:0 0 10px var(--c); box-shadow:0 0 14px var(--c); }
+.nz-claim { margin:1.4rem 0; }
+.nz-claim label { display:block; font:600 1rem Inter,sans-serif; margin-bottom:.5rem; color:#fff; }
+.nz-claim-row { display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; }
+.nz-claim input { flex:1; min-width:12rem; padding:.7rem .9rem; border-radius:10px; border:2px solid var(--c); background:#000; color:#fff; font:500 1rem Inter,sans-serif; }
+.nz-claim input:focus { outline:none; box-shadow:0 0 12px var(--c); }
+.nz-claim .nz-btn { margin:0; }
+.nz-small { font:400 .8rem Inter,sans-serif !important; color:#8d8da3; margin-top:.5rem !important; }
+.nz-claim[hidden], .nz-cert-wrap[hidden] { display:none; }
+.nz-cert { margin:1.6rem 0 1rem; padding:2.2rem 1.8rem; text-align:center; color:#2b2416; background:#fbf6e9;
+  border:10px double #b8892c; border-radius:6px; box-shadow:0 0 30px rgba(0,240,255,.25); }
+.nz-cert p { color:#2b2416; margin:.4rem 0; font:400 1.05rem/1.5 "Source Serif 4",Georgia,serif; }
+.nz-cert strong { color:#2b2416; } .nz-cert em { color:#6b5a36; }
+.nz-cert-title { font:800 clamp(1.1rem,3.6vw,1.6rem) Orbitron,Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:#8a6a1f; margin-bottom:1rem; }
+.nz-cert-name { margin:.6rem 0; font:italic 500 clamp(1.8rem,6vw,2.6rem)/1.15 "Source Serif 4",Georgia,serif; color:#1d1b18; border-bottom:2px solid #b8892c;
+  display:inline-block; padding:0 1.2rem .2rem; overflow-wrap:anywhere; }
+.nz-cert-facts { margin:1.2rem 0; font:500 .9rem/1.6 Inter,sans-serif; color:#3b3222; }
+.nz-cert-sign { display:flex; justify-content:space-around; gap:1rem; flex-wrap:wrap; margin-top:1.4rem; font:400 .8rem Inter,sans-serif; color:#6b5a36; }
+.nz-cert-sign span { display:block; font:italic 500 1.2rem "Source Serif 4",Georgia,serif; color:#1d1b18; border-top:1px solid #b8892c; padding-top:.3rem; min-width:10rem; }
+.nz-cert-actions { display:flex; gap:.6rem; flex-wrap:wrap; }
+@media print {
+  .nz-page { background:#fff !important; }
+  .nz-top, .nz-kicker, .nz-main h1, .nz-counter, .nz-sub, .nz-cert-actions, .nz-note, .nz-foot { display:none !important; }
+  .nz-cert { box-shadow:none; margin:0; }
+}
+
+/* ---------- buzzword bingo ---------- */
+.nz-bingo { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; margin:1.4rem 0 1rem; }
+.nz-cell { aspect-ratio:1; min-width:0; padding:4px; border:2px solid rgba(0,240,255,.45); border-radius:8px; background:#0b0b16; color:#e8e8f2; cursor:pointer;
+  font:600 clamp(.56rem,1.9vw,.82rem)/1.2 Inter,sans-serif; display:grid; place-items:center; text-align:center; overflow-wrap:break-word; hyphens:auto; transition:background .15s, box-shadow .15s; }
+.nz-cell:hover { border-color:var(--c); }
+.nz-cell[aria-pressed="true"] { background:var(--n); border-color:var(--n); color:#07070d; box-shadow:0 0 12px var(--n); }
+.nz-cell:disabled { cursor:default; opacity:1; }
+.nz-cell.nz-line { background:var(--c); border-color:var(--c); box-shadow:0 0 16px var(--c); color:#07070d; }
+.nz-win { min-height:1.5em; font:400 1.15rem/1.5 "Source Serif 4",Georgia,serif; color:var(--c); }
+.nz-win strong { color:#fff; font-family:Orbitron,Inter,sans-serif; letter-spacing:.04em; }
