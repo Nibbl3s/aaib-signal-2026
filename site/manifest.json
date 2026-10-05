@@ -283,6 +283,15 @@
  },
  {
   "week": 2,
+  "title": "Where is my claim? The best answer is a database field, not a chatbot",
+  "author": "Guillaume Vandenweghe",
+  "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
+  "skill": "Capability skepticism",
+  "date": "2026-10-09",
+  "url": "posts/guillaume-vandenweghe-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
