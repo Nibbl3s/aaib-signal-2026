@@ -1,3 +1,5 @@
+# Would it be better to just let it be?
+
 ## week: 2
 title: Is AI the right tool?
 
@@ -9,8 +11,7 @@ skill: Capablility skepticism
 
 date: 2026-02-10
 
-## Would it be better to just let it be?
-
+----
 Nowadays in commercial publishing, everyone would use anything to minimise the overloaded tasks, like speeding up manuscript reviews. AI would be everyone's hero in streamlining the headache of checking every single word for spelling mistakes or typos.
 
 But some of us have fallen into the trap of efficiency and the perfection that AI gives, accidentally fixing things again and again, smoothing sentences until the human soul is gone. The meaning and emotional feeling of that moment when the writer decided to write that sentence vanishes entirely.
