@@ -6,9 +6,6 @@ beat: "What AI really costs in the insurance sector, with a focus on claims hand
 skill: "Cost literacy"
 date: 2026-10-05
 ---
-
-What does AI cost in claims handling? The token bill is the smallest number
-
 Insurers are testing AI to read and answer claim emails. In tokens it looks almost free. I priced a realistic case to see where the money actually goes.
 
 The numbers
