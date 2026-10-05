@@ -12,7 +12,7 @@
     { icon: '⚠️', title: '69 VIRUSES DETECTED!', sub: 'Clean your laptop NOW', href: '?play=runner', c: 'r', ready: true },
     { icon: '🎉', title: 'YOU ARE THE 1,000,000th VISITOR!', sub: 'Claim your prize', href: 'noise/certificate.html', c: 'c', ready: true },
     { icon: '📈', title: '€5,000/DAY', sub: 'with this ONE AI trick', href: 'noise/bingo.html', c: 'y', ready: true },
-    { icon: '🎰', title: 'JACKPOT GUARANTEED*', sub: '*not guaranteed', href: 'noise/casino.html', c: 'm', ready: false },
+    { icon: '🎰', title: 'JACKPOT GUARANTEED*', sub: '*not guaranteed', href: 'noise/casino.html', c: 'm', ready: true },
   ];
   const RAIL_W = 160, GAP = 18, MIN_GUTTER = RAIL_W + GAP + 12;
 
