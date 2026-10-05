@@ -4,25 +4,35 @@
   const GAMES = {
     runner: { title: 'Signal Runner', file: 'runner.js', ready: true,
       help: '<span><kbd>Space</kbd> / <kbd>↑</kbd> / tap — jump</span><span><kbd>↓</kbd> / swipe down — duck</span><span class="k"><kbd>Esc</kbd> — close</span>' },
-    sudoku: { title: 'Sudoku', ready: false },
+    sudoku: { title: 'Sudoku', file: 'sudoku.js', ready: true, time: true, variants: true, label: 'Time',
+      help: '<span class="k"><kbd>1</kbd>–<kbd>9</kbd> enter</span><span class="k"><kbd>N</kbd> notes</span><span class="k"><kbd>⌫</kbd> erase</span><span class="k"><kbd>←↑→↓</kbd> move</span><span>Your game is saved when you close it</span>' },
     '2048': { title: '2048', ready: false },
     snake: { title: 'Snake', ready: false },
   };
   const factories = {};
   const loading = {};
   const base = document.currentScript.src.replace(/[^/]*$/, '');
-  let current = null, opener = null;
+  let current = null, opener = null, currentId = null, variant = '';
 
   const store = {
-    get(id) { try { return Number(localStorage.getItem('signal-best-' + id)) || 0; } catch (e) { return 0; } },
-    set(id, v) { try { localStorage.setItem('signal-best-' + id, String(v)); } catch (e) {} },
+    get(key) { try { return Number(localStorage.getItem('signal-best-' + key)) || 0; } catch (e) { return 0; } },
+    set(key, v) { try { localStorage.setItem('signal-best-' + key, String(v)); } catch (e) {} },
+    text(key, v) { try { if (v === undefined) return localStorage.getItem('signal-' + key) || ''; localStorage.setItem('signal-' + key, v); } catch (e) { return ''; } },
   };
-  const fmt = n => Math.floor(n).toLocaleString('en');
+  const num = n => Math.floor(n).toLocaleString('en');
+  const time = s => { s = Math.floor(s); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+  const fmt = (id, n) => (GAMES[id].time ? time(n) : num(n));
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+  // best key: per variant (e.g. a Sudoku difficulty) where a game has variants
+  const bestKey = (id, v) => (GAMES[id].variants ? id + '-' + (v || store.text('last-' + id) || 'medium') : id);
+  // a time is better when lower; a score when higher
+  const better = (id, n, old) => (GAMES[id].time ? !old || n < old : n > old);
 
   function showBests() {
     document.querySelectorAll('[data-best]').forEach(el => {
-      const b = store.get(el.dataset.best);
-      el.textContent = b ? 'Your best: ' + fmt(b) : 'Your best: —';
+      const id = el.dataset.best, b = store.get(bestKey(id));
+      const label = GAMES[id].variants ? 'Your best (' + cap(store.text('last-' + id) || 'medium') + '): ' : 'Your best: ';
+      el.textContent = label + (b ? fmt(id, b) : '—');
     });
   }
 
@@ -40,15 +50,18 @@
   const stage = overlay.querySelector('.g-stage');
   const scoreEl = overlay.querySelector('[data-score]');
   const bestEl = overlay.querySelector('[data-overlay-best]');
+  const labelEl = scoreEl.previousSibling;
+  const showBest = () => { const b = store.get(bestKey(currentId, variant)); bestEl.textContent = b ? fmt(currentId, b) : '—'; };
 
   async function open(id, from) {
     const g = GAMES[id];
     if (!g || !g.ready) return;
-    opener = from || null;
+    opener = from || null; currentId = id; variant = '';
     overlay.querySelector('h3').textContent = g.title;
     overlay.querySelector('.g-help').innerHTML = g.help;
-    scoreEl.textContent = '0';
-    bestEl.textContent = fmt(store.get(id));
+    labelEl.textContent = (g.label || 'Score') + ' ';
+    scoreEl.textContent = fmt(id, 0);
+    showBest();
     overlay.hidden = false;
     document.body.classList.add('g-open');
     overlay.querySelector('.g-close').focus();
@@ -56,10 +69,12 @@
     if (overlay.hidden) return;   // closed while loading
     stage.innerHTML = '';
     current = factories[id](stage, {
-      score(n) { scoreEl.textContent = fmt(n); },
-      best: () => store.get(id),
+      score(n) { scoreEl.textContent = fmt(id, n); },
+      best: () => store.get(bestKey(id, variant)),
+      variant(v) { variant = v; store.text('last-' + id, v); showBest(); showBests(); },
       gameOver(n) {   // the single place every game reports a final score (leaderboard hooks in here later)
-        if (n > store.get(id)) { store.set(id, Math.floor(n)); bestEl.textContent = fmt(n); showBests(); return true; }
+        const key = bestKey(id, variant);
+        if (better(id, n, store.get(key))) { store.set(key, Math.floor(n)); showBest(); showBests(); return true; }
         return false;
       },
     });
