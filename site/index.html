@@ -48,6 +48,7 @@
   footer a { color:var(--accent); }
   @media (max-width:700px) { .wrap { padding:0 1rem; } header { padding:2.5rem 0 1.5rem; } .grid { grid-template-columns:1fr; } .top .sub { display:none; } }
 </style>
+<link rel="stylesheet" href="games/games.css">
 </head>
 <body>
 <div class="hero"><div class="wrap">
@@ -57,14 +58,46 @@
     <p>Advanced AI for Business · Arteveldehogeschool IBM · Fall 2026. Twelve posts, one beat each, all public.</p>
   </header>
 </div><div class="hero-photo" role="img" aria-label="Group photo"></div></div>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="gi-runner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.3" fill="currentColor" stroke="none"/><circle cx="9.5" cy="13" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="13" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="gi-sudoku" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+  <symbol id="gi-2048" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></symbol>
+  <symbol id="gi-snake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 17c3 0 3-5 6-5s3 5 6 5 3-6 5-9"/><circle cx="20" cy="7" r="1.8" fill="currentColor" stroke="none"/></symbol>
+</svg>
+<div class="launcher"><div class="wrap">
+  <strong>Take a break</strong>
+  <button class="g-btn" type="button" data-game="runner"><svg class="g-icon"><use href="#gi-runner"/></svg>Signal Runner</button>
+  <button class="g-btn" type="button" disabled><svg class="g-icon"><use href="#gi-sudoku"/></svg>Sudoku <span class="g-soon">Soon</span></button>
+  <button class="g-btn" type="button" disabled><svg class="g-icon"><use href="#gi-2048"/></svg>2048 <span class="g-soon">Soon</span></button>
+  <button class="g-btn" type="button" disabled><svg class="g-icon"><use href="#gi-snake"/></svg>Snake <span class="g-soon">Soon</span></button>
+</div></div>
 <div class="wrap">
   <div class="filters">
     <div class="row" id="weeks"><span>Week</span></div>
     <div class="row" id="skills"><span>Skill</span></div>
   </div>
   <main id="feed"><p class="empty">Loading…</p></main>
+  <section class="break" id="games">
+    <h2>Take a break</h2>
+    <p>Quick games between posts. Your best scores are saved on this device.</p>
+    <div class="g-cards">
+      <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-runner"/></svg></div><div class="body"><h3>Signal Runner</h3><p>Jump over computers, duck under viruses. How many tokens can you process?</p><div class="best" data-best="runner">Your best: —</div><button class="g-play" type="button" data-game="runner">Play</button></div></div>
+      <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-sudoku"/></svg></div><div class="body"><h3>Sudoku</h3><p>Classic 9×9 in four difficulty levels, with notes and hints.</p><div class="best">&nbsp;</div><button class="g-play" type="button" disabled>Coming soon</button></div></div>
+      <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-2048"/></svg></div><div class="body"><h3>2048</h3><p>Slide and merge tiles until you reach 2048, or further.</p><div class="best">&nbsp;</div><button class="g-play" type="button" disabled>Coming soon</button></div></div>
+      <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-snake"/></svg></div><div class="body"><h3>Snake</h3><p>Eat, grow, don't bite yourself. Gets faster as you grow.</p><div class="best">&nbsp;</div><button class="g-play" type="button" disabled>Coming soon</button></div></div>
+    </div>
+    <div class="g-lb">Class leaderboard: coming soon</div>
+  </section>
   <footer>Powered by student reasoning · <a href="https://github.com/Nibbl3s/aaib-signal-2026">the repository</a> · <a href="https://advanced-ai-in-business.vercel.app">course site</a></footer>
 </div>
+<div class="g-overlay" id="g-overlay" hidden>
+  <div class="g-win" role="dialog" aria-modal="true" aria-labelledby="g-title">
+    <div class="g-bar"><h3 id="g-title"></h3><span class="g-stat">Score <b data-score>0</b></span><span class="g-stat">Best <b data-overlay-best>0</b></span><button class="g-close" type="button" aria-label="Close game">✕</button></div>
+    <div class="g-stage"></div>
+    <div class="g-help"></div>
+  </div>
+</div>
+<script src="games/games.js" defer></script>
 <script>
 document.querySelector('.theme').onclick = () => {
   const root = document.documentElement;
