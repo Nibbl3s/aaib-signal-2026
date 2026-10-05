@@ -20,3 +20,7 @@ However, raw token prices are only part of the equation. If a cheap or poorly fi
 The raw token expense (€165.60) is less than 0.5% of the total cost profile when accuracy fails. A cheap AI tutor that hallucinates study material creates a massive downstream burden for university support staff. True cost literacy for EdTech isn't reading the token rate—it's accounting for the cost of incorrect learning.
 
 At what point does a human tutor auditing AI-generated study guides become cheaper than letting students revise with unverified AI outputs?
+
+---
+### AI Disclosure Statement
+In line with course guidelines, I used an AI study assistant (Gemini) as a sounding board during this assignment to brainstorm ideas, review my framework reasoning, and check document formatting. All core analysis, beat application, failure classifications, and final evaluation decisions are my own original work.
