@@ -5,6 +5,10 @@ author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Capability skepticism"
 date: 2026-09-23
+verdict: "AI must not decide alone"
+stamp: "HELD FOR REVIEW"
+kpis: "70.8% | runs correct (17 of 24) ; 58% | inputs changed answer on a re-run ; 1 | invented supplier on the 'I don't know' test"
+takeaways: "Inconsistency is a bigger risk than hallucination ; Primary engine: a deterministic rule match ; AI only flags cross-script name matches for a human"
 ---
 
 # I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.

@@ -5,6 +5,10 @@ author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Vendor claim detection"
 date: 2026-10-07
+verdict: "Pilot, not buy"
+stamp: "CLEARED · PILOT"
+kpis: "2/6 | claims are verifiable facts ; 82% | fewer alerts (AJ Bell), no period stated ; € ? | total cost: vendor won't quote"
+takeaways: "Real vendors mix evidence and marketing ; The 95% automation claim has no source ; No self-serve price = blank cost of ownership"
 ---
 
 # Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims

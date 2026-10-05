@@ -5,6 +5,10 @@ author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Cost literacy"
 date: 2026-09-25
+verdict: "Price the expensive error, not the tokens"
+stamp: "ASSESSED"
+kpis: "€166 | token cost per year ; ~€450K | missed matches per year (assumed €250K each) ; 0.04% | share of total cost that is tokens"
+takeaways: "The token bill is real but almost irrelevant ; A missed sanctions match costs ~20,000× a false positive ; One accuracy % hides the only asymmetry that matters"
 ---
 
 # The €250,000 Number No Sanctions-Screening Vendor Will Quote You
