@@ -8,7 +8,8 @@
       help: '<span class="k"><kbd>1</kbd>–<kbd>9</kbd> enter</span><span class="k"><kbd>N</kbd> notes</span><span class="k"><kbd>⌫</kbd> erase</span><span class="k"><kbd>←↑→↓</kbd> move</span><span>Your game is saved when you close it</span>' },
     '2048': { title: '2048', file: '2048.js', ready: true,
       help: '<span><kbd>←↑→↓</kbd> / swipe — slide tiles</span><span class="k"><kbd>Z</kbd> undo</span><span>Your game is saved when you close it</span>' },
-    snake: { title: 'Snake', ready: false },
+    snake: { title: 'Snake', file: 'snake.js', ready: true,
+      help: '<span><kbd>←↑→↓</kbd> / swipe — steer</span><span><kbd>Space</kbd> / tap — pause</span><span class="k"><kbd>Esc</kbd> — close</span>' },
   };
   const factories = {};
   const loading = {};
