@@ -1,3 +1,5 @@
+
+# Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer’s Automated Slush Pile
 ## week: 3
 title: Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer’s Automated Slush Pile
 
@@ -9,7 +11,7 @@ skill: Vendor claim detection
 
 date: 2026-05-10
 
-# Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer’s Automated Slush Pile
+
 
 ## Hook
 Commercial publishers are drowning in digital submissions, leading many to adopt automated evaluation portals that promise instant sorting. But when software starts judging "style fit" and "sales potential," publishers aren't just buying administrative efficiency—they are outsourcing their cultural gatekeeping to homogenizing algorithms.
