@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds site/ from students/*/posts/*.md — run by GitHub Action on every push."""
-import os, re, json, glob, html
+import os, re, json, glob, html, shutil
 from pathlib import Path
 import markdown
 
@@ -31,9 +31,36 @@ def md_to_html(md):
     # the post title is the page's only <h1>, so "# Heading" in a post renders as <h2>
     return out.replace("<h1>", "<h2>").replace("</h1>", "</h2>")
 
+def theme_of(folder):
+    """A student may style their own posts with students/<folder>/theme/theme.css (and optionally theme.js)."""
+    src = f"{MD}/{folder}/theme"
+    return src if os.path.isfile(f"{src}/theme.css") else None
+
+def apply_theme(page, folder, data):
+    """Link a student's theme into one of their pages, and hand the theme the post's frontmatter."""
+    base = f"../themes/{folder}"
+    page = page.replace("</head>", f'<link rel="stylesheet" href="{base}/theme.css">\n</head>', 1)
+    page = page.replace("<body>", f'<body class="themed theme-{folder}">', 1)
+    meta = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")   # safe inside <script>
+    tail = f'<script type="application/json" id="post-meta">{meta}</script>\n'
+    if os.path.isfile(f"{MD}/{folder}/theme/theme.js"):
+        tail += f'<script src="{base}/theme.js" defer></script>\n'
+    return page.replace("</body>", tail + "</body>", 1)
+
 template = open(TEMPLATE, encoding="utf-8").read()
 manifest = []
 built = set()
+
+# student themes: copied fresh on every build, so a removed theme disappears from the site too
+shutil.rmtree(f"{OUT}/themes", ignore_errors=True)
+for src in sorted(glob.glob(f"{MD}/*/theme")):
+    folder = Path(src).parts[1]
+    if not theme_of(folder):
+        continue
+    os.makedirs(f"{OUT}/themes/{folder}", exist_ok=True)
+    for f in glob.glob(f"{src}/*.css") + glob.glob(f"{src}/*.js"):
+        shutil.copy(f, f"{OUT}/themes/{folder}/")
+    print(f"  theme {OUT}/themes/{folder}")
 
 for path in sorted(glob.glob(f"{MD}/*/posts/week-*.md")):
     folder = Path(path).parts[1]
@@ -49,13 +76,19 @@ for path in sorted(glob.glob(f"{MD}/*/posts/week-*.md")):
     page = template.replace("__TITLE__", e(title)).replace("__CONTENT__",
         f'<div class="meta">Week {week} · {e(beat)}</div>\n<h1>{e(title)}</h1>\n'
         f'<div class="byline">{e(author)} · {e(date)}</div>\n' + md_to_html(body))
+    themed = theme_of(folder)
+    if themed:
+        page = apply_theme(page, folder, {**meta, "week": week, "folder": folder, "slug": slug})
     outdir = f"{OUT}/posts"
     os.makedirs(outdir, exist_ok=True)
     out = f"{outdir}/{slug}.html"
     open(out, "w", encoding="utf-8").write(page)
     built.add(f"{slug}.html")
-    manifest.append({"week": week, "title": title, "author": author, "beat": beat, "skill": meta.get("skill", ""),
-                     "date": date, "url": f"posts/{slug}.html"})
+    entry = {"week": week, "title": title, "author": author, "beat": beat, "skill": meta.get("skill", ""),
+             "date": date, "url": f"posts/{slug}.html"}
+    if themed:
+        entry["meta"] = meta   # lets a theme show the student's other weeks (e.g. their verdicts)
+    manifest.append(entry)
     print(f"  built {out}")
 
 # remove pages whose source post no longer exists
