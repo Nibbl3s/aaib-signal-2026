@@ -1,0 +1,77 @@
+/* The Noise: neon "not an ad" cards on the homepage, and the satire pages they link to. */
+
+/* ---------- ad cards ---------- */
+.nz-rail { position:absolute; width:160px; display:flex; flex-direction:column; gap:12px; z-index:5; }
+.nz-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:1.4rem 0 .4rem; }
+.nz-row[hidden], .nz-rail[hidden] { display:none; }
+.nz-ad { --n:#ff2bd6; position:relative; display:block; min-height:178px; padding:10px 10px 42px; overflow:hidden; border-radius:10px;
+  border:2px solid var(--n); color:#fff; text-decoration:none;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px),
+    linear-gradient(color-mix(in srgb, var(--n) 22%, transparent) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(90deg, color-mix(in srgb, var(--n) 22%, transparent) 1px, transparent 1px) 0 0 / 16px 16px,
+    radial-gradient(circle at 70% 20%, color-mix(in srgb, var(--n) 30%, transparent), transparent 60%),
+    #07070d;
+  box-shadow:0 0 10px var(--n), inset 0 0 12px color-mix(in srgb, var(--n) 35%, transparent);
+  animation:nz-pulse 1.6s ease-in-out infinite alternate; transition:transform .15s; }
+.nz-row .nz-ad { min-height:132px; }
+.nz-ad:hover, .nz-ad:focus-visible { transform:translateY(-2px); outline:none; }
+.nz-ad.c { --n:#00f0ff; } .nz-ad.y { --n:#f5ff3b; } .nz-ad.r { --n:#ff3b3b; }
+.nz-tag { position:absolute; top:6px; right:7px; font:600 8px Inter,sans-serif; letter-spacing:.06em; color:#9a9ab0; }
+.nz-ic { font-size:26px; line-height:1; filter:drop-shadow(0 0 6px var(--n)); }
+.nz-t { margin-top:8px; font:800 13px/1.15 Orbitron,Inter,sans-serif; color:var(--n); text-shadow:0 0 8px var(--n); text-transform:uppercase; }
+.nz-s { margin-top:6px; font:500 11px/1.3 Inter,sans-serif; color:#d8d8e6; }
+.nz-go { position:absolute; left:10px; right:10px; bottom:9px; padding:3px 0; border-radius:4px; text-align:center;
+  font:700 10px Inter,sans-serif; letter-spacing:.08em; color:#07070d; background:var(--n); }
+.nz-ad.flick .nz-t { animation:nz-flick 4s infinite; }
+@keyframes nz-pulse {
+  from { box-shadow:0 0 6px var(--n), inset 0 0 8px color-mix(in srgb, var(--n) 25%, transparent); }
+  to { box-shadow:0 0 18px var(--n), inset 0 0 16px color-mix(in srgb, var(--n) 45%, transparent); } }
+/* a short flicker every 4 seconds: far below the 3-flashes-per-second safety limit */
+@keyframes nz-flick { 0%, 92%, 100% { opacity:1; } 94% { opacity:.35; } 96% { opacity:1; } 98% { opacity:.5; } }
+@media (prefers-reduced-motion: reduce) { .nz-ad, .nz-ad .nz-t { animation:none !important; } }
+
+/* ---------- satire pages ---------- */
+.nz-page { --n:#ff2bd6; --c:#00f0ff; margin:0; min-height:100vh; background:#07070d; color:#e8e8f2; font-family:Inter,system-ui,sans-serif;
+  background-image:linear-gradient(rgba(255,43,214,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,240,255,.05) 1px, transparent 1px);
+  background-size:32px 32px; }
+.nz-page * { box-sizing:border-box; }
+.nz-top { max-width:760px; margin:0 auto; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; gap:1rem;
+  border-bottom:1px solid rgba(255,255,255,.12); font:600 .78rem Inter,sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+.nz-top a { color:#cfcfe0; text-decoration:none; }
+.nz-top a:hover { color:var(--c); }
+.nz-label { color:#07070d; background:var(--n); padding:.2rem .55rem; border-radius:4px; box-shadow:0 0 12px var(--n); }
+.nz-main { max-width:760px; margin:0 auto; padding:2.5rem 1.25rem 3rem; }
+.nz-kicker { font:700 .75rem Orbitron,Inter,sans-serif; letter-spacing:.14em; color:var(--c); text-shadow:0 0 8px var(--c); text-transform:uppercase; }
+.nz-main h1 { margin:.6rem 0 .8rem; font:800 clamp(1.7rem,5vw,2.6rem)/1.12 Orbitron,Inter,sans-serif; color:#fff; text-shadow:0 0 14px var(--n); }
+.nz-sub { font:400 1.15rem/1.5 "Source Serif 4",Georgia,serif; color:#c9c9da; margin:0 0 .6rem; }
+.nz-by { font-size:.8rem; color:#8d8da3; padding-bottom:1.4rem; margin-bottom:1.6rem; border-bottom:1px solid rgba(255,255,255,.12); }
+.nz-main p, .nz-main li { font:400 1.08rem/1.75 "Source Serif 4",Georgia,serif; }
+.nz-main p { margin:0 0 1.1rem; }
+.nz-main ul, .nz-main ol { margin:0 0 1.2rem 1.3rem; padding:0; }
+.nz-main strong { color:#fff; }
+.nz-main em { color:#d6d6ea; }
+.nz-main code { font:.9em ui-monospace,Consolas,monospace; color:var(--c); background:rgba(0,240,255,.08); padding:.1rem .35rem; border-radius:4px; }
+.nz-main blockquote { margin:1.6rem 0; padding:.4rem 0 .4rem 1.1rem; border-left:3px solid var(--n); font:500 1.25rem/1.45 "Source Serif 4",Georgia,serif; color:#fff; }
+.nz-note { margin-top:2rem; padding:1rem 1.1rem; border:1px dashed rgba(255,255,255,.25); border-radius:10px; font-size:.95rem; color:#cfcfe0; }
+.nz-btn { display:inline-block; margin:.6rem 0 1rem; padding:.7rem 1.4rem; border:2px solid var(--n); border-radius:999px; background:#07070d; color:#fff;
+  font:800 .9rem Orbitron,Inter,sans-serif; letter-spacing:.06em; cursor:pointer; box-shadow:0 0 14px var(--n); }
+.nz-btn:hover { background:var(--n); color:#07070d; }
+.nz-reply { min-height:1.4em; font:600 1rem Inter,sans-serif; color:var(--c); }
+.nz-table { width:100%; border-collapse:collapse; margin:1.2rem 0 1.4rem; font:500 1rem Inter,sans-serif; }
+.nz-table td { padding:.6rem .4rem; border-bottom:1px solid rgba(255,255,255,.12); }
+.nz-table td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
+.nz-table tr:last-child td { border-bottom:2px solid var(--n); font-weight:800; color:#fff; }
+.nz-letter { background:#fbf6e9; color:#2b2416; border-radius:6px; padding:2rem 1.6rem; box-shadow:0 0 30px rgba(245,255,59,.25); position:relative; }
+.nz-letter p, .nz-letter li { color:#2b2416; }
+.nz-letter strong { color:#2b2416; }
+.nz-letter em { color:#6b5a36; }
+.nz-stamp { position:absolute; left:50%; top:45%; transform:translate(-50%,-50%) rotate(-12deg); width:min(90%,460px); padding:1rem; text-align:center;
+  border:5px solid #d11; color:#d11; background:rgba(251,246,233,.92); font:800 1.05rem/1.35 Orbitron,Inter,sans-serif; text-transform:uppercase; border-radius:8px; }
+.nz-stamp[hidden] { display:none; }
+.nz-chart { margin:1.4rem 0 1.6rem; display:grid; gap:.55rem; }
+.nz-bar { display:grid; grid-template-columns:11rem 1fr; align-items:center; gap:.6rem; font:500 .9rem Inter,sans-serif; }
+.nz-bar span:last-child { height:26px; border-radius:4px; background:linear-gradient(90deg, var(--n), var(--c)); box-shadow:0 0 10px var(--n);
+  color:#07070d; font:800 .8rem Inter,sans-serif; display:flex; align-items:center; justify-content:flex-end; padding-right:.5rem; min-width:3.5rem; }
+.nz-foot { max-width:760px; margin:0 auto; padding:1.2rem 1.25rem 3rem; border-top:1px solid rgba(255,255,255,.12); font-size:.8rem; color:#8d8da3; }
+@media (max-width:560px) { .nz-bar { grid-template-columns:1fr; gap:.2rem; } .nz-letter { padding:1.4rem 1.1rem; } }
