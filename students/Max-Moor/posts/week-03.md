@@ -2,12 +2,12 @@
 week: 3
 title: "Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry's AI Claims"
 author: "Max"
-beat: "AI Automation Cost Literacy at O&D Impression 3D"
+beat: "How can AI automation transform the workflow of a digital manufacturing company?"
 skill: "Vendor claim detection"
 date: 2026-10-09
 ---
 
-When a manufacturing vendor says "AI-powered," a buyer hears cheaper, faster and safer. In digital manufacturing the claim costs nothing to make and a lot to check, and a small company like O&D 3D is the one who pays when a price or a lead time turns out wrong.
+When a digital manufacturing vendor says "AI-powered," a buyer hears cheaper, faster and safer. In digital manufacturing the claim costs nothing to make and a lot to check, and a small company like O&D 3D is the one who pays when a price or a lead time turns out wrong.
 
 ## The claim
 
@@ -42,7 +42,7 @@ The strongest claim is the one that is easiest to test. The weakest are the ones
 
 ## The verdict
 
-This is real AI delivering real value, but at a scale that is not O&D's. The evidence on offer is speed and investor confidence, not accuracy.
+This is real AI delivering real value, but at a scale that is not O&D's. The evidence on offer is speed and investor confidence, not accuracy. For my beat, the lesson is that AI transforms one step of the workflow, quoting at scale, not the whole workflow.
 
 **Pilot, don't copy.** O&D should not buy this approach or try to rebuild it. A cheap and honest test would be to upload 10 of our own past parts and compare the quote and lead time with what we actually charged and delivered. If they are close, the claim holds. If they are not, we have found the gap the press release avoided.
 

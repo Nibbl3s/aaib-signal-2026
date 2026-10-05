@@ -2,12 +2,12 @@
 week: 2
 title: "The Quote Price at O&D 3D Should Come From a Spreadsheet, Not an AI: Where the 'No AI' Test Says Stop"
 author: "Max"
-beat: "AI Automation Cost Literacy at O&D Impression 3D"
+beat: "How can AI automation transform the workflow of a digital manufacturing company?"
 skill: "Capability skepticism"
 date: 2026-10-02
 ---
 
-Last week I argued that AI could handle O&D 3D's customer requests for under a dollar a month. This week I'm asking the opposite question: which part of that workflow should AI never touch?
+Last week I argued that AI could handle customer requests at O&D 3D, my digital manufacturing case study, for under a dollar a month. This week I'm asking the opposite question: which part of a digital manufacturer's workflow should AI never touch?
 
 ## The "no AI" test
 
@@ -50,6 +50,8 @@ Last week I ended by asking what it would cost to "connect AI to O&D 3D's pricin
 - **A human** approves unusual jobs.
 
 That cuts the integration cost, because the AI only has to hand over clean fields. It also changes how to read "we automated quoting with AI": often the AI covers only the email-reading step, and the rest is ordinary software. Counting the whole workflow as AI makes the business case look better than it is and hides where the risk sits.
+
+The pattern applies across digital manufacturing: wherever a step follows a known rule (price formulas, material rates, machine costs), a spreadsheet beats a model. AI earns its place where the input is messy.
 
 ## What would change my mind
 

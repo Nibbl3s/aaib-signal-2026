@@ -2,16 +2,16 @@
 week: 1
 title: "AI Customer Quotation at O&D 3D Costs Under a Dollar a Month: The Number That Isn't the Question"
 author: "Max"
-beat: "AI Automation Cost Literacy at O&D Impression 3D"
+beat: "How can AI automation transform the workflow of a digital manufacturing company?"
 skill: "Cost literacy"
 date: 2026-09-25
 ---
 
-What if a customer could send O&D 3D a simple message describing what they need, and AI could turn that request into a structured manufacturing brief in seconds? For a small digital manufacturing company working across 3D printing, resin, SLS, CNC and laser cutting, AI automation could save real time — but how much would that intelligence actually cost?
+What if a customer could send a digital manufacturer a simple message describing what they need, and AI could turn that request into a structured manufacturing brief in seconds? My case study is O&D 3D, a small company working across 3D printing, resin, SLS, CNC and laser cutting. AI automation could save real time in this industry — but how much would that intelligence actually cost?
 
 ## The numbers
 
-One of the first processes I would automate at O&D 3D is the initial customer request and quotation preparation. Today, a customer explains what they need by email or through a form, and someone has to understand the request, spot the missing information, decide on the right manufacturing technology and put together what's needed for a quote.
+One of the first workflow steps I would automate at O&D 3D is the initial customer request and quotation preparation. In custom manufacturing every request is different, so this step is usually done by hand. Today, a customer explains what they need by email or through a form, and someone has to understand the request, spot the missing information, decide on the right manufacturing technology and put together what's needed for a quote.
 
 An AI assistant could handle that first stage automatically: read the customer's message, identify quantity, dimensions, material, application, tolerances and deadline, and ask follow-up questions when something is missing.
 
@@ -32,12 +32,12 @@ The surprising part is that the AI itself may not be the expensive piece of this
 
 So the real question isn't "can we afford AI?" — it's "can we integrate AI correctly into the business?"
 
-For O&D 3D, the value comes from connecting the AI to actual manufacturing knowledge: the differences between FDM, SLS, resin, CNC and laser cutting, material data, machine capabilities, pricing rules and production constraints. That's what turns AI from a chatbot into a digital manufacturing assistant.
+For O&D 3D, the value comes from connecting the AI to actual manufacturing knowledge: the differences between FDM, SLS, resin, CNC and laser cutting, material data, machine capabilities, pricing rules and production constraints. That's what turns AI from a chatbot into a digital manufacturing assistant. This holds well beyond O&D 3D: for any digital manufacturer, the model is the cheap part and the manufacturing knowledge is the hard part.
 
 The biggest benefit may not even be the money saved on tokens — it could be the time saved by employees, faster replies to customers, fewer repetitive tasks, and more consistent quotes. AI becomes interesting once it's wired into the company's existing processes, not simply because it can generate text.
 
 ## What I want to learn next
 
-> If AI can analyse a customer request for less than one dollar a month at this scale, how far could we automate the complete journey from customer request to finished product at O&D 3D?
+> If AI can analyse a customer request for less than one dollar a month at this scale, how far could we automate the complete journey from customer request to finished product in a digital manufacturing company like O&D 3D?
 
 *One thing I want before Week 2: a real estimate of what it costs, in hours or euros, to connect an AI assistant to O&D 3D's actual pricing rules and material data — since that integration cost, not the token cost, is what will decide whether this is worth building.*
