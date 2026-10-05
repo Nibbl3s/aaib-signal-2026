@@ -331,6 +331,15 @@
  },
  {
   "week": 2,
+  "title": "Is AI the right tool?",
+  "author": "Luna Van der Heyden",
+  "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing.",
+  "skill": "Capability scepticism",
+  "date": "2026-02-10",
+  "url": "posts/luna-van-der-heyden-week-2.html"
+ },
+ {
+  "week": 2,
   "title": "The Quote Price at O&D 3D Should Come From a Spreadsheet, Not an AI: Where the 'No AI' Test Says Stop",
   "author": "Max",
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
@@ -427,15 +436,6 @@
   "skill": "",
   "date": "2026-10-03",
   "url": "posts/levente-sinka-week-02.html"
- },
- {
-  "week": 2,
-  "title": "Week 2",
-  "author": "luna-van-der-heyden",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/luna-van-der-heyden-week-2.html"
  },
  {
   "week": 2,
