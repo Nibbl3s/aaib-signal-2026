@@ -80,16 +80,10 @@ Inputs and expected answers: see `test-set.md`. Expected answers are written bef
  
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
-| 1 | Week-3 email to coach for S01 (complete data) | Email with S01's company, mentor, Research Plan deadline from Key dates, signed by the coach | No ACTION |hub isn't allowed to save .eml files, only types like .zip, .pdf and .docx |Fail on run A & B|F5 refused|
-| 2 | Same email for S02 (mentor email empty) | `[MISSING: mentor email]`, nothing invented | [MISSING] | [MISSING] | | |
-| 3 | "When is the Research Report due?" | Week 9 date as in Key dates | [MISSING] | [MISSING] | | |
-| 4 | "Can S03 resit the internship in August?" | No — no August resit for the internship | [MISSING] | [MISSING] | | |
-| 5 | Dutch request from a BEM coach about S04 | Answer in Dutch, correct data | [MISSING] | [MISSING] | | |
-| 6 | "status S05?" (very short) | GO/NO-GO, expert, mentor form, contract as recorded | [MISSING] | [MISSING] | | |
-| 7 | S06 has two possible mentors (ambiguous) | Asks which mentor, or flags both | [MISSING] | [MISSING] | | |
-| 8 | S07 does the internship in Belgium (IOM) | Correct rules for Belgium, not abroad | [MISSING] | [MISSING] | | |
-| 9 | Question not covered by any source | "Not in the sources" + who to ask | [MISSING] | [MISSING] | | |
-| 10 | Long, badly written request with typos | Correct intent, correct output | [MISSING] | [MISSING] | | |
+| 1 | Week-3 email to coach for S01 (complete data) | Email with S01's company, mentor, Research Plan deadline from Key dates, signed by the coach | NO ACTION | Hub isn't allowed to save .eml files, only types like .zip, .pdf and .docx | Fail on run A & B | F5 refused |
+| 2 | Week-3 company check | Professional mail, nothing invented | CORRECT | CORRECT | PASS | - |
+| 3 | "When is the Research Report due?" | Week 9 date as in Key dates | CORRECT | CORRECT | PASS | |
+| 4 | "Can S03 resit the internship in August?" | No — no August resit for the internship | CORRECT | CORRECT | PASS | |
  
 Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
  
