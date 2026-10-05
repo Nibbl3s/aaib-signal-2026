@@ -3,7 +3,7 @@
 ## v1 — 2026-10-05
 
 **Job:** classify one incoming customer email to a Belgian non-life insurer into exactly one of six categories, and name its language.
-**Model used for runs:** _(fill in: e.g. ChatGPT GPT-x / Claude …, date)_ · fresh chat for every run · no other files or memory in the chat.
+**Model used for runs: (claude, 05/10/2026)_ · fresh chat for every run · no other files or memory in the chat.
 
 ```
 You are the first-line mail sorter in the claims department of a Belgian non-life insurer.
