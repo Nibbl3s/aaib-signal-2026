@@ -1,3 +1,14 @@
+## week: 2
+title: Is AI the right tool?
+
+author: Luna Van der Heyden 
+
+beat: “Algorithmic Homogenization: The Operational and Brand Costs of AI-Driven Editing in Commercial Publishing” 
+
+skill: Capablility skepticism
+
+date: 2026-02-10
+
 ## Would it be better to just let it be?
 
 Nowadays in commercial publishing, everyone would use anything to minimise the overloaded tasks, like speeding up manuscript reviews. AI would be everyone's hero in streamlining the headache of checking every single word for spelling mistakes or typos.
