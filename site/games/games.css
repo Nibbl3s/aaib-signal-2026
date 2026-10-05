@@ -26,7 +26,35 @@
 .g-play { margin-top:.5rem; align-self:flex-start; background:var(--ink); color:var(--bg); border:0; border-radius:999px; padding:.45rem 1.1rem; font:600 .82rem Inter,sans-serif; cursor:pointer; }
 .g-play:hover:not(:disabled) { background:var(--accent); }
 .g-play:disabled { background:none; border:1px solid var(--rule); color:var(--faint); cursor:default; }
-.g-lb { margin-top:1.2rem; border:1px dashed var(--rule); border-radius:12px; padding:.9rem; color:var(--faint); font-size:.85rem; text-align:center; }
+/* class leaderboard */
+.g-lb { margin-top:1.4rem; border:1px solid var(--rule); border-radius:12px; padding:1rem 1.1rem; }
+.g-lb h3 { font:700 1.15rem Fraunces,serif; }
+.g-lb-head { display:flex; align-items:center; justify-content:space-between; gap:.6rem; flex-wrap:wrap; }
+.g-lb-tabs, .g-lb-levels { display:flex; flex-wrap:wrap; gap:.35rem; }
+.g-lb-levels { margin-top:.6rem; }
+.g-lb-levels[hidden] { display:none; }
+.g-lb button { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.25rem .75rem; font:500 .78rem Inter,sans-serif; cursor:pointer; }
+.g-lb button:hover { border-color:var(--accent); color:var(--accent); }
+.g-lb button[aria-pressed="true"] { background:var(--ink); border-color:var(--ink); color:var(--bg); }
+.g-lb-list { list-style:none; margin:.8rem 0 0; }
+.g-lb-list li { display:flex; align-items:baseline; gap:.8rem; padding:.45rem 0; border-bottom:1px solid var(--rule); font-size:.92rem; }
+.g-lb-list li:last-child { border-bottom:0; }
+.g-lb-rank { width:1.4rem; font:700 1rem Fraunces,serif; color:var(--accent); }
+.g-lb-name { flex:1; font-weight:500; overflow-wrap:anywhere; }
+.g-lb-score { font-variant-numeric:tabular-nums; font-weight:600; }
+.g-lb-list .g-lb-note { color:var(--faint); font-style:italic; border:0; }
+
+/* "add your score" panel in the game window */
+.g-submit { padding:.75rem 1rem; border-top:1px solid var(--rule); background:color-mix(in srgb, var(--accent) 8%, var(--bg)); }
+.g-submit[hidden] { display:none; }
+.g-submit-title { font:600 .9rem Inter,sans-serif; margin-bottom:.45rem; }
+.g-submit-row { display:flex; gap:.4rem; flex-wrap:wrap; }
+.g-submit input { flex:1; min-width:9rem; font:500 .9rem Inter,sans-serif; padding:.4rem .7rem; border:1px solid var(--rule); border-radius:8px; background:var(--bg); color:var(--ink); }
+.g-submit input:focus { outline:2px solid var(--accent); outline-offset:-1px; }
+.g-submit button { font:600 .82rem Inter,sans-serif; border-radius:999px; padding:.4rem .9rem; cursor:pointer; border:1px solid var(--rule); background:none; color:var(--ink); }
+.g-submit button[type="submit"] { background:var(--ink); border-color:var(--ink); color:var(--bg); }
+.g-submit button[type="submit"]:disabled { opacity:.5; cursor:default; }
+.g-submit-msg { font-size:.78rem; color:var(--muted); margin-top:.35rem; min-height:1em; }
 
 /* game window */
 .g-overlay { position:fixed; inset:0; z-index:100; background:rgba(10,9,7,.62); display:grid; place-items:center; padding:1.5rem; }

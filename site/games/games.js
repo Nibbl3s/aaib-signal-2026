@@ -59,6 +59,7 @@
     const g = GAMES[id];
     if (!g || !g.ready) return;
     opener = from || null; currentId = id; variant = '';
+    if (window.SignalBoard) SignalBoard.hideOffer();
     overlay.querySelector('h3').textContent = g.title;
     overlay.querySelector('.g-help').innerHTML = g.help;
     labelEl.textContent = (g.label || 'Score') + ' ';
@@ -71,11 +72,12 @@
     if (overlay.hidden) return;   // closed while loading
     stage.innerHTML = '';
     current = factories[id](stage, {
-      score(n) { scoreEl.textContent = fmt(id, n); },
+      score(n) { scoreEl.textContent = fmt(id, n); if (!n && window.SignalBoard) SignalBoard.hideOffer(); },
       best: () => store.get(bestKey(id, variant)),
       variant(v) { variant = v; store.text('last-' + id, v); showBest(); showBests(); },
-      gameOver(n) {   // the single place every game reports a final score (leaderboard hooks in here later)
+      gameOver(n) {   // the single place every game reports a final score 
         const key = bestKey(id, variant);
+        if (window.SignalBoard) SignalBoard.offer(key, Math.floor(n));   // shows "add to leaderboard" if it's a Top 5 score
         if (better(id, n, store.get(key))) { store.set(key, Math.floor(n)); showBest(); showBests(); return true; }
         return false;
       },
