@@ -1,3 +1,14 @@
+## week: 3
+title: Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer’s Automated Slush Pile
+
+author: Luna Van der Heyden
+
+beat: “Algorithmic Homogenization: The Operational and Brand Costs of AI-Driven Editing in Commercial Publishing”
+
+skill: Vendor claim detection 
+
+date: 2026-05-10
+
 # Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer’s Automated Slush Pile
 
 ## Hook
