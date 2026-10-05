@@ -4,7 +4,7 @@ title: "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's A
 author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Vendor claim detection"
-date: 2026-09-23
+date: 2026-10-07
 ---
 
 # Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims
@@ -19,14 +19,16 @@ ComplyAdvantage sells AI powered sanctions, watchlist, and adverse media screeni
 
 **The Deconstruction**
 
-- **1. Named customers: ABInBev, AJ Bell, Zoopla, Plaid** → **Fact.** Named, checkable companies, unlike NexusAI's unnamed "200+ companies".
-- **2. AJ Bell, 82% reduction in alert volumes** → **Fact, weaker than it looks.** Named client, specific figure, but no stated period or baseline volume.
-- **3. Automate 95% of reviews, cut onboarding by 50%** → **Avoidance.** Present tense, no client named, no denominator, no study cited.
-- **4. Identify sanctioned individuals before official notifications** → **Aspiration.** A forward looking capability claim with no case example or test attached.
-- **5. Tens of thousands of global data sources** → **Avoidance.** Vague quantifier standing in for an actual number, no sources named.
-- **6. Mapping to EU and FATF crimes is market leading** → **Avoidance.** Unfalsifiable superlative, no comparison offered.
+| # | Claim | Tag | Reasoning |
+|---|---|---|---|
+| 1 | Named customers: ABInBev, AJ Bell, Zoopla, Plaid | Fact | Named, checkable companies, unlike NexusAI's unnamed "200+ companies" |
+| 2 | AJ Bell, 82% reduction in alert volumes | Fact, weaker than it looks | Named client, specific figure, but no stated period or baseline volume |
+| 3 | Automate 95% of reviews, cut onboarding by 50% | Avoidance | Present tense, no client named, no denominator, no study cited |
+| 4 | Identify sanctioned individuals before official notifications | Aspiration | A forward looking capability claim with no case example or test attached |
+| 5 | Tens of thousands of global data sources | Avoidance | Vague quantifier standing in for an actual number, no sources named |
+| 6 | Mapping to EU and FATF crimes is market leading | Avoidance | Unfalsifiable superlative, no comparison offered |
 
-Two of six claims here are genuinely strong, named clients and a specific, attributable result. That is a meaningfully better ratio than the fictional NexusAI proposal, where ten of sixteen claims were avoidance. Real vendors are not uniformly hollow, they mix strong evidence with vague marketing in the same paragraph, and the skill is separating one from the other rather than distrusting the whole page.
+Two of six claims here are genuinely strong, named clients and a specific, attributable result. That is a meaningfully better ratio than the fictional NexusAI proposal, where at least twelve of sixteen claims were aspirations or avoidances, however the borderline ones are tagged. Real vendors are not uniformly hollow, they mix strong evidence with vague marketing in the same paragraph, and the skill is separating one from the other rather than distrusting the whole page.
 
 **The FOMO Test**
 
@@ -38,8 +40,8 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 
 ---
 
-*AI disclosure: I used Claude to search for and help structure the ComplyAdvantage claims used here, and to help organise the deconstruction table. The tagging judgments, the FOMO framework answers, and the verdict were mine.*
+*AI disclosure: I used Claude to search for ComplyAdvantage's public claims, to draft a first tagging of them and the structure of this post, and to check my NexusAI tagging against the official answer key. I reviewed and kept the results; the final tags and the verdict are mine.*
 
 ---
 
-Full workings (Claim Gauntlet, NexusAI deconstruction, FOMO framework, case comparison): [Week 3 Evidence](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/claims-and-fomo.md)
+Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [week-03-evidence.md](./week-03-evidence.md)
