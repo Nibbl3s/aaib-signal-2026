@@ -5,7 +5,7 @@ week: 2
 ---
 # Why AI Should Never Handle Exam Panic: When 'No AI' is the Best Study Coach
 
-As AI study tools proliferate across higher education, EdTech startups promise all-in-one conversational coaches capable of handling everything from routine flashcard creation to late-night study advice. But when a student faces acute exam anxiety or an urgent academic deadline dispute, relying on a generative AI assistant is not just inefficient—it is a dangerous operational failure.
+As AI study tools proliferate across higher education, EdTech startups promise all-in-one conversational coaches capable of handling everything from routine flashcard creation to late-night study advice. But when a student faces acute exam anxiety or an urgent academic deadline dispute, relying on a generative AI assistant is not just inefficient,it is a dangerous operational failure.
 
 Consider a common crisis scenario: a student sitting at their desk at 23:00, panicking over conflicting exam locations, or seeking formal clarification on whether missing a mandatory deadline results in an automatic failing mark. Prompters often expect an AI study coach to evaluate university policy and provide immediate, reassuring guidance.
 
