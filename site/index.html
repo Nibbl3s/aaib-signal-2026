@@ -79,14 +79,14 @@
   <main id="feed"><p class="empty">Loading…</p></main>
   <section class="break" id="games">
     <h2>Take a break</h2>
-    <p>Quick games between posts. Your best scores are saved on this device.</p>
+    <p>Quick games between posts. Your best scores are saved on this device; beat the class Top 5 below.</p>
     <div class="g-cards">
       <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-runner"/></svg></div><div class="body"><h3>Signal Runner</h3><p>Jump over computers, duck under viruses. How many tokens can you process?</p><div class="best" data-best="runner">Your best: —</div><button class="g-play" type="button" data-game="runner">Play</button></div></div>
       <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-sudoku"/></svg></div><div class="body"><h3>Sudoku</h3><p>Classic 9×9 in four difficulty levels, with notes and hints.</p><div class="best" data-best="sudoku">Your best: —</div><button class="g-play" type="button" data-game="sudoku">Play</button></div></div>
       <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-2048"/></svg></div><div class="body"><h3>2048</h3><p>Slide and merge tiles until you reach 2048, or further.</p><div class="best" data-best="2048">Your best: —</div><button class="g-play" type="button" data-game="2048">Play</button></div></div>
       <div class="g-card"><div class="art"><svg class="g-icon"><use href="#gi-snake"/></svg></div><div class="body"><h3>Snake</h3><p>Eat, grow, don't bite yourself. Gets faster as you grow.</p><div class="best" data-best="snake">Your best: —</div><button class="g-play" type="button" data-game="snake">Play</button></div></div>
     </div>
-    <div class="g-lb">Class leaderboard: coming soon</div>
+    <div class="g-lb" id="g-lb"><h3>Class leaderboard</h3></div>
   </section>
   <footer>Powered by student reasoning · <a href="https://github.com/Nibbl3s/aaib-signal-2026">the repository</a> · <a href="https://advanced-ai-in-business.vercel.app">course site</a></footer>
 </div>
@@ -94,10 +94,12 @@
   <div class="g-win" role="dialog" aria-modal="true" aria-labelledby="g-title">
     <div class="g-bar"><h3 id="g-title"></h3><span class="g-stat">Score <b data-score>0</b></span><span class="g-stat">Best <b data-overlay-best>0</b></span><button class="g-close" type="button" aria-label="Close game">✕</button></div>
     <div class="g-stage"></div>
+    <form class="g-submit" id="g-submit" hidden><p class="g-submit-title"></p><div class="g-submit-row"><input type="text" name="name" maxlength="12" autocomplete="nickname" placeholder="Your nickname" aria-label="Nickname"><button type="submit">Add to leaderboard</button><button type="button" class="g-submit-skip">Skip</button></div><p class="g-submit-msg" aria-live="polite"></p></form>
     <div class="g-help"></div>
   </div>
 </div>
 <script src="games/games.js" defer></script>
+<script src="games/leaderboard.js" defer></script>
 <script>
 document.querySelector('.theme').onclick = () => {
   const root = document.documentElement;
