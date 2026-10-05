@@ -53,8 +53,9 @@
   footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
   @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
 </style>
+<link rel="stylesheet" href="../themes/jasper-derieuw/theme.css">
 </head>
-<body>
+<body class="themed theme-jasper-derieuw">
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
 <div class="meta">Week 1 · EU and China Trade Compliance in the AI Era</div>
@@ -98,5 +99,7 @@ document.querySelector('.theme').onclick = () => {
   try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
 };
 </script>
+<script type="application/json" id="post-meta">{"week": 1, "title": "The €250,000 Number No Sanctions-Screening Vendor Will Quote You", "author": "Jasper Derieuw", "beat": "EU and China Trade Compliance in the AI Era", "skill": "Cost literacy", "date": "2026-09-25", "verdict": "Price the expensive error, not the tokens", "stamp": "ASSESSED", "kpis": "€166 | token cost per year ; ~€450K | missed matches per year (assumed €250K each) ; 0.04% | share of total cost that is tokens", "takeaways": "The token bill is real but almost irrelevant ; A missed sanctions match costs ~20,000× a false positive ; One accuracy % hides the only asymmetry that matters", "folder": "jasper-derieuw", "slug": "jasper-derieuw-week-01"}</script>
+<script src="../themes/jasper-derieuw/theme.js" defer></script>
 </body>
 </html>

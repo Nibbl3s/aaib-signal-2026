@@ -78,7 +78,19 @@
   "beat": "EU and China Trade Compliance in the AI Era",
   "skill": "Cost literacy",
   "date": "2026-09-25",
-  "url": "posts/jasper-derieuw-week-01.html"
+  "url": "posts/jasper-derieuw-week-01.html",
+  "meta": {
+   "week": "1",
+   "title": "The \u20ac250,000 Number No Sanctions-Screening Vendor Will Quote You",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Cost literacy",
+   "date": "2026-09-25",
+   "verdict": "Price the expensive error, not the tokens",
+   "stamp": "ASSESSED",
+   "kpis": "\u20ac166 | token cost per year ; ~\u20ac450K | missed matches per year (assumed \u20ac250K each) ; 0.04% | share of total cost that is tokens",
+   "takeaways": "The token bill is real but almost irrelevant ; A missed sanctions match costs ~20,000\u00d7 a false positive ; One accuracy % hides the only asymmetry that matters"
+  }
  },
  {
   "week": 1,
@@ -276,7 +288,19 @@
   "beat": "EU and China Trade Compliance in the AI Era",
   "skill": "Capability skepticism",
   "date": "2026-09-23",
-  "url": "posts/jasper-derieuw-week-02.html"
+  "url": "posts/jasper-derieuw-week-02.html",
+  "meta": {
+   "week": "2",
+   "title": "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Capability skepticism",
+   "date": "2026-09-23",
+   "verdict": "AI must not decide alone",
+   "stamp": "HELD FOR REVIEW",
+   "kpis": "70.8% | runs correct (17 of 24) ; 58% | inputs changed answer on a re-run ; 1 | invented supplier on the 'I don't know' test",
+   "takeaways": "Inconsistency is a bigger risk than hallucination ; Primary engine: a deterministic rule match ; AI only flags cross-script name matches for a human"
+  }
  },
  {
   "week": 2,
@@ -438,7 +462,19 @@
   "beat": "EU and China Trade Compliance in the AI Era",
   "skill": "Vendor claim detection",
   "date": "2026-10-07",
-  "url": "posts/jasper-derieuw-week-03.html"
+  "url": "posts/jasper-derieuw-week-03.html",
+  "meta": {
+   "week": "3",
+   "title": "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Vendor claim detection",
+   "date": "2026-10-07",
+   "verdict": "Pilot, not buy",
+   "stamp": "CLEARED \u00b7 PILOT",
+   "kpis": "2/6 | claims are verifiable facts ; 82% | fewer alerts (AJ Bell), no period stated ; \u20ac ? | total cost: vendor won't quote",
+   "takeaways": "Real vendors mix evidence and marketing ; The 95% automation claim has no source ; No self-serve price = blank cost of ownership"
+  }
  },
  {
   "week": 3,

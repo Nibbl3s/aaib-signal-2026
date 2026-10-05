@@ -53,8 +53,9 @@
   footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
   @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
 </style>
+<link rel="stylesheet" href="../themes/jasper-derieuw/theme.css">
 </head>
-<body>
+<body class="themed theme-jasper-derieuw">
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
 <div class="meta">Week 2 · EU and China Trade Compliance in the AI Era</div>
@@ -86,5 +87,7 @@ document.querySelector('.theme').onclick = () => {
   try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
 };
 </script>
+<script type="application/json" id="post-meta">{"week": 2, "title": "I Built a Sanctions Screening Tool. It Was Wrong or Inconsistent 58% of the Time.", "author": "Jasper Derieuw", "beat": "EU and China Trade Compliance in the AI Era", "skill": "Capability skepticism", "date": "2026-09-23", "verdict": "AI must not decide alone", "stamp": "HELD FOR REVIEW", "kpis": "70.8% | runs correct (17 of 24) ; 58% | inputs changed answer on a re-run ; 1 | invented supplier on the 'I don't know' test", "takeaways": "Inconsistency is a bigger risk than hallucination ; Primary engine: a deterministic rule match ; AI only flags cross-script name matches for a human", "folder": "jasper-derieuw", "slug": "jasper-derieuw-week-02"}</script>
+<script src="../themes/jasper-derieuw/theme.js" defer></script>
 </body>
 </html>

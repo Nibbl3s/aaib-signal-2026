@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap");
+
+/* Jasper Derieuw · EU–China Trade Compliance: a briefing report on a container-stack background,
+   with the Shanghai → Antwerp route on the cover. Only used on Jasper's post pages. */
+
+body.theme-jasper-derieuw {
+  --jd-deep:#1c1d21; --jd-accent:#ffd400; --jd-accent-ink:#7a6400; --jd-page:#ecebe7; --jd-card:#fff;
+  --jd-text:#222327; --jd-muted:#666970; --jd-line:#dddcd7; --jd-stamp:#c0262d; --jd-tint:#fff8d6;
+  --jd-stripe-a:rgba(255,212,0,.16); --jd-stripe-b:rgba(28,29,33,.08); --jd-stripe-c:rgba(255,212,0,.08); --jd-rib:rgba(28,29,33,.06);
+}
+/* dark: follows the site's theme button (and the device setting when the button was never used) */
+:root[data-theme="dark"] body.theme-jasper-derieuw {
+  --jd-page:#141518; --jd-card:#1f2024; --jd-text:#e7e5df; --jd-muted:#a3a39c; --jd-line:#33343a; --jd-accent-ink:#ffd400;
+  --jd-stamp:#ff6b6b; --jd-tint:rgba(255,212,0,.07);
+  --jd-stripe-a:rgba(255,212,0,.07); --jd-stripe-b:rgba(255,255,255,.04); --jd-stripe-c:rgba(255,212,0,.035); --jd-rib:rgba(255,255,255,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body.theme-jasper-derieuw {
+    --jd-page:#141518; --jd-card:#1f2024; --jd-text:#e7e5df; --jd-muted:#a3a39c; --jd-line:#33343a; --jd-accent-ink:#ffd400;
+    --jd-stamp:#ff6b6b; --jd-tint:rgba(255,212,0,.07);
+    --jd-stripe-a:rgba(255,212,0,.07); --jd-stripe-b:rgba(255,255,255,.04); --jd-stripe-c:rgba(255,212,0,.035); --jd-rib:rgba(255,255,255,.05);
+  }
+}
+
+/* ---------- page: container stack ---------- */
+body.theme-jasper-derieuw { background-color:var(--jd-page); color:var(--jd-text); font-family:Inter,system-ui,sans-serif;
+  background-image:repeating-linear-gradient(90deg, var(--jd-rib) 0 3px, transparent 3px 9px),
+    repeating-linear-gradient(0deg, var(--jd-stripe-a) 0 70px, var(--jd-stripe-b) 70px 140px, var(--jd-stripe-c) 140px 210px); }
+body.theme-jasper-derieuw .top { max-width:none; margin:0; padding:.9rem max(1rem, calc((100% - 1120px) / 2)); background:var(--jd-deep);
+  color:#f2f0ea; border-bottom:1px solid #2c2d33; }
+body.theme-jasper-derieuw .top a { color:#f2f0ea; }
+body.theme-jasper-derieuw .top .brand { font-family:"Space Grotesk",Inter,sans-serif; }
+body.theme-jasper-derieuw .theme { color:#f2f0ea; border-color:#45464d; }
+body.theme-jasper-derieuw footer { background:var(--jd-deep); color:#a3a39c; max-width:none; padding:1.4rem max(1rem, calc((100% - 1120px) / 2)); border:0; }
+
+/* ---------- cover with the route ---------- */
+.jd-cover { background:var(--jd-deep); color:#fff; padding:1.1rem 1rem 3rem; }
+.jd-in { max-width:1120px; margin:0 auto; }
+.jd-route-top { display:flex; justify-content:space-between; gap:1rem; font:600 .7rem "IBM Plex Mono",monospace; letter-spacing:.1em; text-transform:uppercase; color:#9a9ba3; }
+.jd-route svg { width:100%; height:auto; display:block; margin:.3rem 0 1.1rem; }
+.jd-route .lbl { font:600 9px "IBM Plex Mono",monospace; fill:#9a9ba3; }
+.jd-route .lbl.now { fill:var(--jd-accent); }
+/* published weeks: the port links to that week's post */
+.jd-port.linked { cursor:pointer; }
+.jd-port.linked .lbl { fill:#d8d8d2; }
+.jd-port.linked:hover .lbl, .jd-port.linked:focus-visible .lbl { fill:var(--jd-accent); text-decoration:underline; }
+.jd-port.linked:hover .dot, .jd-port.linked:focus-visible .dot { stroke:var(--jd-accent); stroke-width:4; }
+.jd-port:focus { outline:none; }
+.jd-port:focus-visible .dot { stroke-width:5; }
+.jd-eyebrow { font:600 .72rem Inter,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--jd-accent); }
+.jd-cover h1 { font:700 clamp(1.6rem,4vw,2.5rem)/1.12 "Space Grotesk",Inter,sans-serif; margin:.6rem 0 1rem; max-width:820px; color:#fff; letter-spacing:-.01em; }
+.jd-who { display:flex; gap:1.2rem; flex-wrap:wrap; align-items:center; font:500 .88rem Inter,sans-serif; color:#c5c5bf; }
+.jd-badge { background:var(--jd-accent); color:#1c1d21; font-weight:700; padding:.18rem .65rem; border-radius:999px; }
+
+/* ---------- report card + sidebar ---------- */
+.jd-layout { max-width:1120px; margin:-1.8rem auto 3rem; padding:0 1rem; display:grid; grid-template-columns:minmax(0,1fr) 280px; gap:1.4rem; align-items:start; }
+body.theme-jasper-derieuw article { max-width:none; margin:0; background:var(--jd-card); border-radius:12px; padding:2rem 2.2rem 2.4rem;
+  box-shadow:0 10px 40px rgba(0,0,0,.16); position:relative; }
+body.theme-jasper-derieuw article > .meta, body.theme-jasper-derieuw article > h1, body.theme-jasper-derieuw article > .byline,
+body.theme-jasper-derieuw article > h2.jd-dup { display:none; }
+.jd-stamp { position:absolute; right:1.6rem; top:1.3rem; transform:rotate(-10deg); border:4px double var(--jd-stamp); color:var(--jd-stamp);
+  padding:.3rem .8rem; border-radius:6px; font:700 .95rem "IBM Plex Mono",monospace; letter-spacing:.14em; text-transform:uppercase; opacity:.88; z-index:2;
+  background:color-mix(in srgb, var(--jd-card) 70%, transparent); max-width:45%; text-align:center; }
+.jd-kpis { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:.8rem; margin:0 0 1.4rem; }
+article.jd-stamped .jd-kpis { padding-right:9rem; }
+.jd-kpi { border:1px solid var(--jd-line); border-top:3px solid var(--jd-accent); border-radius:10px; padding:.8rem 1rem; }
+.jd-kpi b { display:block; font:700 1.55rem/1.2 "Space Grotesk",Inter,sans-serif; color:var(--jd-text); }
+.jd-kpi span { font:500 .78rem/1.4 Inter,sans-serif; color:var(--jd-muted); }
+.jd-takeaways { border-left:4px solid var(--jd-accent); background:var(--jd-tint); padding:1rem 1.2rem; border-radius:0 10px 10px 0; margin:0 0 1.8rem; }
+.jd-takeaways h3 { font:700 .75rem Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--jd-accent-ink); margin:0 0 .5rem; }
+.jd-takeaways ul { margin:0 0 0 1.1rem; }
+.jd-takeaways li { font:500 .95rem/1.55 Inter,sans-serif; margin:0 0 .3rem; color:var(--jd-text); }
+article.jd-stamped:not(:has(.jd-kpis)) .jd-takeaways { margin-top:3.2rem; }
+
+/* ---------- the post text ---------- */
+body.theme-jasper-derieuw article { counter-reset:jdsec; }
+body.theme-jasper-derieuw article p, body.theme-jasper-derieuw article li { font:400 1.03rem/1.75 Inter,system-ui,sans-serif; color:var(--jd-text); }
+body.theme-jasper-derieuw article h2 { font:700 1.3rem "Space Grotesk",Inter,sans-serif; color:var(--jd-text); }
+body.theme-jasper-derieuw article p:has(> strong:only-child) { font:700 1.2rem "Space Grotesk",Inter,sans-serif; margin:2rem 0 .7rem; padding-bottom:.35rem; border-bottom:2px solid var(--jd-line); }
+body.theme-jasper-derieuw article p:has(> strong:only-child)::before { counter-increment:jdsec; content:counter(jdsec, decimal-leading-zero) "  "; color:var(--jd-accent-ink); }
+body.theme-jasper-derieuw article a { color:var(--jd-text); text-decoration-color:var(--jd-accent); text-decoration-thickness:2px; font-weight:600; }
+body.theme-jasper-derieuw article table { display:table; width:100%; font:400 .88rem/1.45 Inter,sans-serif; }
+body.theme-jasper-derieuw article th { color:var(--jd-muted); font:700 .72rem Inter,sans-serif; letter-spacing:.08em; text-transform:uppercase; border-bottom:2px solid var(--jd-text); }
+body.theme-jasper-derieuw article td { border-bottom:1px solid var(--jd-line); }
+body.theme-jasper-derieuw article hr { border-top-color:var(--jd-line); }
+body.theme-jasper-derieuw article code { background:var(--jd-tint); }
+body.theme-jasper-derieuw article blockquote { border-left-color:var(--jd-accent); }
+body.theme-jasper-derieuw .back { color:var(--jd-muted); }
+.jd-pill { display:inline-block; font:700 .72rem Inter,sans-serif; padding:.15rem .55rem; border-radius:999px; white-space:nowrap; }
+.jd-pill.fact { background:#dcf3ef; color:#0d6e62; } .jd-pill.aspiration { background:#fff1d6; color:#8a5a00; } .jd-pill.avoidance { background:#fde2e2; color:#a11d24; }
+:root[data-theme="dark"] .jd-pill.fact { background:#12382f; color:#7fe0c6; }
+:root[data-theme="dark"] .jd-pill.aspiration { background:#3a2e08; color:#ffd36b; }
+:root[data-theme="dark"] .jd-pill.avoidance { background:#3d1518; color:#ff9b9b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .jd-pill.fact { background:#12382f; color:#7fe0c6; }
+  :root:not([data-theme="light"]) .jd-pill.aspiration { background:#3a2e08; color:#ffd36b; }
+  :root:not([data-theme="light"]) .jd-pill.avoidance { background:#3d1518; color:#ff9b9b; }
+}
+
+/* ---------- sidebar ---------- */
+.jd-side { display:flex; flex-direction:column; gap:1rem; position:sticky; top:1rem; }
+.jd-card { background:var(--jd-card); border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,.12); padding:1rem 1.1rem; }
+.jd-card h4 { font:700 .7rem Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--jd-accent-ink); margin:0 0 .55rem; }
+.jd-card p { font:400 .86rem/1.5 Inter,sans-serif; color:var(--jd-text); margin:0; }
+.jd-card ul { list-style:none; margin:0; padding:0; }
+.jd-card li { border-bottom:1px solid var(--jd-line); }
+.jd-card li:last-child { border-bottom:0; }
+.jd-card li a, .jd-card li span.jd-next { display:flex; justify-content:space-between; gap:.6rem; padding:.45rem 0; text-decoration:none; color:var(--jd-text); font:600 .84rem/1.35 Inter,sans-serif; }
+.jd-card li a:hover b { text-decoration:underline; text-decoration-color:var(--jd-accent); }
+.jd-card li small { font:500 .74rem/1.35 Inter,sans-serif; color:var(--jd-muted); text-align:right; max-width:52%; }
+.jd-card li.now b { color:var(--jd-accent-ink); }
+.jd-card li span.jd-next { color:var(--jd-muted); }
+.jd-card dt { font:700 .8rem Inter,sans-serif; color:var(--jd-text); margin-top:.55rem; }
+.jd-card dt:first-child { margin-top:0; }
+.jd-card dd { font:400 .8rem/1.45 Inter,sans-serif; color:var(--jd-muted); margin:0; }
+.jd-card .jd-links a { display:block; padding:.3rem 0; color:var(--jd-text); font:600 .84rem Inter,sans-serif; text-decoration-color:var(--jd-accent); }
+
+@media (max-width:960px) {
+  .jd-layout { grid-template-columns:minmax(0,1fr); }
+  .jd-side { position:static; }
+}
+@media (max-width:640px) {
+  body.theme-jasper-derieuw article { padding:1.3rem 1.1rem 1.8rem; }
+  article.jd-stamped .jd-kpis { padding-right:0; margin-top:3rem; }
+  .jd-stamp { right:1rem; top:1rem; font-size:.8rem; }
+  body.theme-jasper-derieuw article table { display:block; overflow-x:auto; }
+  .jd-route .lbl { font-size:12px; }
+}

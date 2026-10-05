@@ -53,8 +53,9 @@
   footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
   @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
 </style>
+<link rel="stylesheet" href="../themes/jasper-derieuw/theme.css">
 </head>
-<body>
+<body class="themed theme-jasper-derieuw">
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
 <div class="meta">Week 3 · EU and China Trade Compliance in the AI Era</div>
@@ -134,5 +135,7 @@ document.querySelector('.theme').onclick = () => {
   try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
 };
 </script>
+<script type="application/json" id="post-meta">{"week": 3, "title": "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims", "author": "Jasper Derieuw", "beat": "EU and China Trade Compliance in the AI Era", "skill": "Vendor claim detection", "date": "2026-10-07", "verdict": "Pilot, not buy", "stamp": "CLEARED · PILOT", "kpis": "2/6 | claims are verifiable facts ; 82% | fewer alerts (AJ Bell), no period stated ; € ? | total cost: vendor won't quote", "takeaways": "Real vendors mix evidence and marketing ; The 95% automation claim has no source ; No self-serve price = blank cost of ownership", "folder": "jasper-derieuw", "slug": "jasper-derieuw-week-03"}</script>
+<script src="../themes/jasper-derieuw/theme.js" defer></script>
 </body>
 </html>
