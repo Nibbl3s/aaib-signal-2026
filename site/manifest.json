@@ -487,6 +487,15 @@
  },
  {
   "week": 3,
+  "title": "Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer\u2019s Automated Slush Pile",
+  "author": "Luna Van der Heyden",
+  "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing.",
+  "skill": "Cost literacy",
+  "date": "2026-05-10",
+  "url": "posts/luna-van-der-heyden-week-3.html"
+ },
+ {
+  "week": 3,
   "title": "Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry's AI Claims",
   "author": "Max",
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
@@ -520,14 +529,5 @@
   "skill": "",
   "date": "2026-10-05",
   "url": "posts/dalia-el-ghalid-week-03.html"
- },
- {
-  "week": 3,
-  "title": "Week 3",
-  "author": "luna-van-der-heyden",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/luna-van-der-heyden-week-3.html"
  }
 ]
