@@ -100,4 +100,8 @@
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   showBests();
+
+  // a link like ?play=runner opens that game on arrival (used by the "69 viruses" ad)
+  const play = new URLSearchParams(location.search).get('play');
+  if (play && GAMES[play]) { history.replaceState(null, '', location.pathname); open(play); }
 })();
