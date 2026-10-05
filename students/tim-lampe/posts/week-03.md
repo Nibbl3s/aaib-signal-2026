@@ -41,4 +41,4 @@ Two Facts, one Aspiration, four Avoidances. The testable claims (2, 6) concern d
 
 Real product, unproven AI claims. Valutico is not a chatbot on a rules engine: its data and reports are testable. But AI-picked comps, the claim that matters most, has no definition of "relevant" and no accuracy figure, and its proof is testimonials without baselines. Buyers should pilot, not buy or walk away: re-run one past valuation, compare time and comps with your own, and get the price in writing. If the comps hold up and total cost beats Excel plus a data source, buy. If the vendor refuses a trial on your data, walk away.
 
-*AI disclosure: drafted with Claude Sonnet 5.5; claims taken from valutico.com as of 5 October 2026 and not independently verified.*
+*AI disclosure: drafted with Claude Sonnet 5.5; claims taken from valutico.com as of 5 October 2026 by me.*
