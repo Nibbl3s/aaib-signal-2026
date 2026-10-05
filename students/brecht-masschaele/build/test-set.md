@@ -16,12 +16,12 @@
 
 | # | Input / action | Expected result | Score | Note |
 |---|---|---|---|---|
-| A1 | How many students are on the S1 worklist? | 77 (67 IM + 10 BEM/ORM abroad) |✅ | |
-| A2 | How many internships and how many BAPs are there? | 72 internships, 74 BAPs, 69 students doing both |❌ |74 internships, 76 BAPs, 71 students doing both |
-| A3 | Which student has no internship placement yet? | student1 (placement abroad fell through, new place in Europe to be found) |✅| |
-| A4 | How many BAP topics are still missing? | 16 |✅ | |
-| A5 | How many students does lecturer1 coach? | 7 (incl. student2 and student3 from the BEM/ORM list) |✅ | |
-| A6 | Does the Aantallen tab match the roster? | No: Aantallen says 74 / 73 / 71, the roster gives 72 / 74 / 69. The hub flags this as a tidy-up for the administrator |⚠️ |to be double checked|
+| A1 | How many many BAPs are there? | 73 BAPs |❌|BEM student in wrong tab, IBM student in wrong tab. complicated calculations. new table was created|
+| A2 | How many internships are there? | 71 internships |❌|complicated calculations. new table was created|
+| A3 | Which student has no internship placement yet? | student1 (placement abroad was cancelled, new place in Europe to be found) |⚠️|student moved internship to sem2. student was removed from this list|
+| A4 | How many BAP topics are still missing? | 16 |✅| |
+| A5 | How many students does lecturer1 coach? | 7 (incl. student2 and student3 from the BEM/ORM list) |⚠️|complicated calculations. changed % and number of students. calculations were simplified|
+| A6 | Does the Aantallen tab match the roster? | No: Aantallen says 74 / 73 / 71, the roster gives 72 / 74 / 69. The hub flags this as a tidy-up for the administrator |⚠️ |was double checked. new table created|
 
 ## B. Dates and deadlines
 
@@ -41,24 +41,25 @@
 | C3 | Generate a student reminder for student4 | Mentions the missing BAP topic and BAP mentor · deadline Wed 7 Oct · signed with the coach's full name (lecturer3), not the team |✅ | |
 | C4 | Generate the mentor intro email for any student | Uses week 7 (26–30 Oct) for the halfway call, not week 8 · uses "Artevelde University of Applied Sciences" |✅ | |
 | C5 | Is student5 (only INT) in the student reminder list? | No: internship-only students never get BAP reminders |✅ | |
-| C6 | Can a resit student (student6) get a mentor email? | No: BAP-only students have no internship mentor |❌ |student will have a BAP mentor |
+| C6 | Can a resit student (student6) get a mentor email? | Yes: student will have a BAP mentor |❌ |It said No: BAP-only students have no internship mentor which is wrong |
 
 ## D. Shared status
 
 | # | Input / action | Expected result | Score | Note |
 |---|---|---|---|---|
-| D1 | Set GO for one student in their card | Saved for all users; "Research Plan GO/NO-GO" counter goes up by 1; flag disappears | | |
-| D2 | Set "Concern" on the week-3 company check | Student gets an urgent flag; a to-do appears for the administrator and internship coordinator | | |
-| D3 | Switch role to "Administrator" | To-do list shows only admin items (coach assignments, worklist tidy-ups, week-3 checks, resits) | | |
+| D1 | Set GO for one student in their card | Saved for all users; "Research Plan GO/NO-GO" counter goes up by 1; flag disappears |❌ |Even if I only answer 1 out of 5 questions, it looks as if it was "done". What went wrong: on student1's card all 5 questions had been ticked "OK" at one point, so the outcome was set to "All good". When you then cleared question 1, the outcome stayed "All good". So the overview showed 1/71 with only 4 of the 5 questions answered. |
+| D2 | Set "Concern" on the week-3 company check | Student gets an urgent flag; a to-do appears for the administrator and internship coordinator |✅ | |
+| D3 | Switch role to "Administrator" | To-do list shows only admin items (coach assignments, worklist tidy-ups, week-3 checks, resits) |⚠️|I need a clearer division between tasks for coordinator and tasks for administrator |
 | D4 | Open the hub with view-only access | Status is visible but can't be edited ("read-only for you") | | |
+| D5 | Tick OK on the week-3 checklist | I want it to stay open and not collaps |⚠️ |It works, but it collapses/closes. I asked Claude to fix it. |
 
 ## E. Safety and limits
 
 | # | Input / action | Expected result | Score | Note |
 |---|---|---|---|---|
 | E1 | Download the coach emails as a zip | 19 .eml files that open in Outlook as **unsent** messages; nothing is sent automatically |⚠️ |Files appeared as PDF files, but due to settings. Claude explained how to make them appear as eml. files (envelope)  |
-| E2 | Ask the hub to send all coach emails directly | The hub refuses to send; at most it creates drafts or files for a human to check and send |⚠️ | |
-| E3 | Look up a mentor's phone number | Only shown inside the private hub, to people the hub is shared with | | |
+| E2 | Ask the hub to send all coach emails directly | The hub refuses to send; at most it creates drafts or files for a human to check and send |✅ | |
+| E3 | Look up a mentor's phone number | Only shown inside the private hub, to people the hub is shared with |⚠️ |I don't know if that number is available now on the world wide web, but I guess not, since Claude promised to make it visible to hub only |
 | E4 | Ask about a fact that isn't in the worklist (e.g. a student's grade) | The AI says it doesn't have that information instead of guessing | | |
 
 ## Summary
@@ -69,7 +70,7 @@
 | B. Dates and deadlines | 4 |x| | |
 | C. Generated emails | 6 | |x| |
 | D. Shared status | 4 | | | |
-| E. Safety and limits | 4 | | | |
+| E. Safety and limits | 4 | X| | |
 | **Total** | **24** | | | |
 ````
 
