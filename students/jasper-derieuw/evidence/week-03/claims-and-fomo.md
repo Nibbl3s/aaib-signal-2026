@@ -1,6 +1,6 @@
 # Week 3 Evidence
 
-This file holds the full workings behind [my Week 3 post](../../posts/week-03.md): the tagged claims table for the NexusAI proposal, the top five avoidances, the five question FOMO framework walkthrough, and the GhentBakery versus FlandersTextiles case comparison.
+This file holds the full workings behind [my Week 3 post](../../posts/week-03.md): the tagged claims table for the NexusAI proposal, a comparison of my tags with the official reveal, the top five avoidances, the five question FOMO framework walkthrough, and the GhentBakery versus FlandersTextiles case comparison.
 
 ---
 
@@ -23,7 +23,7 @@ Twelve claims assessed against the answer key. First pass score: 9 out of 12 cor
 | 11 | "Pilot with a Belgian logistics firm, errors fell from 12% to 3% over eight weeks" | Fact | Before and after, named period, named sector, a genuinely good claim |
 | 12 | "Proprietary and industry-leading" | Avoidance | Two unfalsifiable deflections in one phrase |
 
-Final corrected score: 12 out of 12.
+First pass 9 of 12; the three misses were corrected after the reveal.
 
 ---
 
@@ -48,11 +48,48 @@ Final corrected score: 12 out of 12.
 | 15 | "Money-back guarantee if no improvement in 90 days" | Next Steps | Fact, pending fine print | A real contractual commitment, value depends entirely on terms |
 | 16 | "Only 2 pilot slots remaining" | Next Steps | Avoidance | Scarcity language, may be real, may not, untested |
 
-**Final tally: 4 Fact, 2 Aspiration, 10 Avoidance.** This skew matches the item bank's own guidance that real proposals lean Avoidance, the hardest call to make and the most common tactic in practice. NexusAI's proposal is built mostly from technically true statements engineered to dodge the questions that actually matter.
+**Tally by my tags: 4 Fact, 2 Aspiration, 10 Avoidance.** The official reveal tags 2 Fact, 9 Aspiration and 5 Avoidance, and section 3 compares the two. On either count at least twelve of sixteen claims are not Facts: the proposal is built mostly from technically true statements engineered to dodge the questions that actually matter.
 
 ---
 
-## 3. Top Five Avoidances
+## 3. Comparison with the Official Reveal
+
+I tagged all sixteen claims myself first and compared them with the official reveal afterwards. Of sixteen claims, 8 match exactly, 2 match half of a mixed label (claims 1 and 12) and 6 differ (claims 2, 5, 7, 8, 11 and 15). My first pass, before I revised six tags while testing my reasoning against the Gauntlet definitions, matched the reveal on 14 of 16. I have left my current tags in the table above rather than overwrite them, and set out below why each difference exists.
+
+| # | Claim | My tag | Official tag | Result |
+|---|---|---|---|---|
+| 1 | 200+ European companies | Avoidance | Aspiration / Unverifiable | Half match |
+| 2 | Average cost reductions of 25 to 30% | Avoidance | Aspiration | Differs |
+| 3 | Up to 94% accuracy | Aspiration | Aspiration | Match |
+| 4 | Proprietary ML models | Avoidance | Avoidance | Match |
+| 5 | Continuously learns and adapts | Avoidance | Aspiration | Differs |
+| 6 | Fuel costs down by up to 22% | Aspiration | Aspiration | Match |
+| 7 | On time delivery improved by 35% | Avoidance | Aspiration | Differs |
+| 8 | 40% reduction in picking time | Avoidance | Aspiration | Differs |
+| 9 | Natural language interface | Fact (misleading) | Fact (but misleading) | Match |
+| 10 | Up to 94% / internal benchmarking | Avoidance | Avoidance | Match |
+| 11 | Client self reporting | Fact (disclosure) | Avoidance | Differs |
+| 12 | Proprietary ML trained on 10+ years | Avoidance | Aspiration / Avoidance | Half match |
+| 13 | Powered by leading LLM technology | Avoidance | Avoidance | Match |
+| 14 | SOC 2 Type II, ISO 27001 | Fact (weak) | Fact (if verifiable) | Match |
+| 15 | Money back guarantee | Fact (pending) | Aspiration | Differs |
+| 16 | Only 2 pilot slots remaining | Avoidance | Avoidance | Match |
+
+**Claims 2, 7 and 8 (Avoidance against Aspiration).** All three report a past, supposedly achieved result in a form a buyer cannot check: an average without a range, or figures the vendor itself says are client self reported. That is how I read the Gauntlet's definition of Avoidance, so that is how I tagged them. The reveal's reasoning is the same as mine (variance hidden by an average, self reporting bias) but it files them as Aspiration, because the benefit is hedged or presented as hoped for. The reasoning agrees and only the label differs.
+
+**Claim 5 (Avoidance against Aspiration).** A present tense technical claim that is vague on mechanism and frequency. The reveal reads continuously as possibly meaning quarterly retraining and treats it as a hope about adaptation. This is a genuine borderline case, and I would accept either label as long as the dodged question is asked: does it retrain on my data, and how often?
+
+**Claim 11 (Fact against Avoidance).** I tagged the sentence itself, which is an accurate and honest disclosure. The reveal tags what that disclosure does to the table: every metric rests on the weakest form of evidence. Both readings are defensible. The reveal's is the more useful one for a buyer, so the same weakness is also carried by claims 2, 7, 8 and 10 in my table.
+
+**Claim 15 (Fact against Aspiration).** The reveal is stronger here. The guarantee is a real contractual commitment, which is why I tagged it Fact, but its trigger, measurable improvement, is undefined, so as written it cannot be falsified. That is the Gauntlet's own definition of Aspiration.
+
+**Claims 1 and 12 (half matches).** The reveal gives mixed labels: Aspiration with unverifiable for claim 1, Aspiration or Avoidance for claim 12. I tagged both Avoidance, because the unnamed clients and the unspecified data scope are what the claims hide.
+
+**Question for the teacher.** Gauntlet item 5 (customers typically see ROI) is an Avoidance because it states a past result without a denominator. NexusAI claim 2 (average cost reductions) has the same shape, yet the reveal tags it Aspiration. The reveal's summary also calls Avoidance the largest bucket while counting 9 Aspirations against 5 Avoidances. Where is the boundary meant to sit?
+
+---
+
+## 4. Top Five Avoidances
 
 **1. The AI definition itself.** Four different phrasings across the proposal, "proprietary ML models," "advanced AI algorithms," "AI-driven," "powered by leading LLM technology," and zero architecture named anywhere. This is the single most important gap, since it is the exact failure mode from this week's opening case, a company paying €500K for a rules engine wearing an AI label. Ask: is there a trained predictive model making forecasts, or is this rules plus an LLM chat frontend?
 
@@ -66,7 +103,7 @@ Final corrected score: 12 out of 12.
 
 ---
 
-## 4. FOMO vs Strategic Fit, Applied to NexusAI
+## 5. FOMO vs Strategic Fit, Applied to NexusAI
 
 **Q1, specific problem:** Never named. "Intelligent Supply Chain Optimization" is a solution looking for a problem statement, not a current metric and target metric.
 
@@ -82,7 +119,7 @@ Final corrected score: 12 out of 12.
 
 ---
 
-## 5. Case Comparison: GhentBakery vs FlandersTextiles
+## 6. Case Comparison: GhentBakery vs FlandersTextiles
 
 | Dimension | GhentBakery (Bought too much) | FlandersTextiles (Missed real value) |
 |---|---|---|
@@ -97,4 +134,4 @@ Final corrected score: 12 out of 12.
 
 ---
 
-*AI disclosure: I used Claude to help structure these tables and to check my Gauntlet and NexusAI tagging against the official answer keys. The tagging judgments themselves, the FOMO framework answers, and the case comparison reflection were mine.*
+*AI disclosure: I used Claude to help structure these tables and to check my Gauntlet and NexusAI tagging against the official answer keys. Six of my NexusAI tags were revised after Claude challenged my first pass; the comparison in section 3 shows where they now differ from the reveal. I reviewed and kept the results, and the final tags, the FOMO answers and the case comparison reflection are mine.*
