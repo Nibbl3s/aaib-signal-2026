@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry&#x27;s AI Claims — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 3 · AI Automation Cost Literacy at O&amp;D Impression 3D</div>
+<h1>Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry&#x27;s AI Claims</h1>
+<div class="byline">Max · 2026-10-09</div>
+<p>When a manufacturing vendor says "AI-powered," a buyer hears cheaper, faster and safer. In digital manufacturing the claim costs nothing to make and a lot to check, and a small company like O&amp;D 3D is the one who pays when a price or a lead time turns out wrong.</p>
+<h2>The claim</h2>
+<p>Xometry (NASDAQ: XMTR) runs an on-demand marketplace that connects buyers with suppliers for CNC machining, 3D printing, injection molding and more. Its main product is the Instant Quoting Engine, which takes a CAD file and returns a price, lead times, process suggestions and matched suppliers within seconds.</p>
+<p>Three claims stood out in its 2026 communications:</p>
+<ul>
+<li>The company calls itself an <strong>"AI-native marketplace"</strong> (March 2026 press release).</li>
+<li>A new machining lead-time model shows a <strong>significant improvement</strong> in forecasting error over the previous version, with no figure given.</li>
+<li>Siemens is buying about <strong>$50 million of Xometry stock</strong>, which the company presents as conviction that AI will define industrial software.</li>
+</ul>
+<h2>The deconstruction</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Tag</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The engine returns price, lead time, process and supplier in seconds</td>
+<td><strong>Fact</strong></td>
+<td>Anyone can upload a file and time it. Speed is verifiable; correctness is not shown.</td>
+</tr>
+<tr>
+<td>"AI-native marketplace"</td>
+<td><strong>Aspiration</strong></td>
+<td>A brand label. It does not say which parts are machine learning and which are ordinary software.</td>
+</tr>
+<tr>
+<td>Lead-time model: "significant improvement"</td>
+<td><strong>Avoidance</strong></td>
+<td>Compared with its own previous version, with no number, no baseline and no customer outcome.</td>
+</tr>
+<tr>
+<td>Trained on millions of manufacturing data points</td>
+<td><strong>Avoidance</strong></td>
+<td>The amount of data says nothing about accuracy.</td>
+</tr>
+<tr>
+<td>Siemens buys about $50M of stock</td>
+<td><strong>Fact + Aspiration</strong></td>
+<td>The purchase is a fact. The belief that AI will define the industry is not performance evidence.</td>
+</tr>
+<tr>
+<td>Price tailored per quote by a conversion-rate model using customer history</td>
+<td><strong>Fact</strong> (disclosed)</td>
+<td>Real machine learning. My reading: it prices for the chance of winning the order, not for cost.</td>
+</tr>
+</tbody>
+</table>
+<p>The strongest claim is the one that is easiest to test. The weakest are the ones with the biggest words.</p>
+<h2>The FOMO test</h2>
+<p><strong>Q1: Is there a specific problem?</strong> Yes, and this is the pitch's best part: quoting custom parts used to take days of emails. "AI-native" is vague, but "instant quote for a CAD file" is a concrete job.</p>
+<p><strong>Q3: Can we verify it?</strong> Only half. I can test speed myself. But in the sources I read, there was no public accuracy figure for prices or lead times, and no named customer outcome. "Better than before" is not "right."</p>
+<p><strong>Q5: Is there a simpler solution?</strong> For Xometry's scale (thousands of suppliers, many processes, millions of parts), machine learning makes sense. For a company with a few machines and materials, my Week 2 post showed a spreadsheet formula does the pricing reliably, with every line auditable.</p>
+<h2>The verdict</h2>
+<p>This is real AI delivering real value, but at a scale that is not O&amp;D's. The evidence on offer is speed and investor confidence, not accuracy.</p>
+<p><strong>Pilot, don't copy.</strong> O&amp;D should not buy this approach or try to rebuild it. A cheap and honest test would be to upload 10 of our own past parts and compare the quote and lead time with what we actually charged and delivered. If they are close, the claim holds. If they are not, we have found the gap the press release avoided.</p>
+<hr />
+<p><strong>Sources:</strong> Xometry press release (3 March 2026) · Xometry Q1 2026 results (7 May 2026) · Digital Commerce 360, "Xometry tightens grip on AI sourcing" (3 March 2026) · Design News, "AI Tools for Engineers: Xometry" (2 January 2026) · Digital Engineering 24/7, Xometry and Google Cloud.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
