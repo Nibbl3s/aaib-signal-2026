@@ -1,5 +1,4 @@
-
-title: "The Hidden Cost of an AI Study Coach: What Personalized Learning Actually Costs"
+"The Hidden Cost of an AI Study Coach: What Personalized Learning Actually Costs"
 date: 2026-10-05
 week: 1
 
