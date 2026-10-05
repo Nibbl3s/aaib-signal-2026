@@ -19,11 +19,11 @@ Valutico is a Vienna-based valuation platform for advisory, audit, banking and p
 | # | Claim | Tag | Reasoning |
 |---|---|---|---|
 | 1 | "Trusted by 850+ teams" | Avoidance | No names, no definition of "trusted"; other pages cite lower counts. |
-| 2 | 1.1M+ deals, 53K+ companies | Fact | Specific; checkable in a trial, including sector coverage. |
+| 2 | 1.1M+ deals, 53K+ companies | Avoidance | only checkable after buying the product |
 | 3 | "Suggests the most relevant comps" | Aspiration | "Relevant" is undefined; no accuracy figure. |
 | 4 | "Half the time, twice the confidence" | Avoidance | No baseline; confidence is unmeasurable. |
 | 5 | "Pays out 10 times over" | Avoidance | Testimonial with no baseline or method. |
-| 6 | "Client-ready reports in seconds" | Fact | Timeable in a demo; "client-ready" depends on editing needed. |
+| 6 | "Client-ready reports in seconds" | Avoidance | Timeable in a demo; "client-ready" depends on editing needed. |
 | 7 | Price: "Book Your Demo" | Avoidance | Withholds the first number a buyer needs. |
 
 Two Facts, one Aspiration, four Avoidances. The testable claims (2, 6) concern data volume and report speed. The claim about AI judgment (3), the one that matters for comps, cannot be tested from the page, and the evidence of value (1, 4, 5) is testimonial. Row 4 also conflicts with its own page, which quotes a customer saving "a third" of the time, not half. Valutico is not hollow, but its strongest-sounding claims are its least checkable.
