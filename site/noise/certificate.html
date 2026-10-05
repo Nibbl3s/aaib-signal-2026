@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>You are the 1,000,000th visitor — The Noise (satire)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="noise.css">
+</head>
+<body class="nz-page">
+<nav class="nz-top"><a href="../">← Back to The Signal</a><span class="nz-label">Joke</span></nav>
+<main class="nz-main">
+<div class="nz-kicker">You won!</div>
+<h1>🎉 CONGRATULATIONS! YOU ARE THE 1,000,000th VISITOR!</h1>
+<div class="nz-counter" aria-label="Visitor counter: 1,000,000">1,000,000</div>
+<p class="nz-sub">(Every visitor is the 1,000,000th visitor. We believe in equality.)</p>
+
+<form class="nz-claim" id="claim">
+  <label for="who">Enter your name to claim your prize</label>
+  <div class="nz-claim-row"><input id="who" type="text" maxlength="40" autocomplete="name" placeholder="Your name" required><button class="nz-btn" type="submit">Claim my certificate</button></div>
+  <p class="nz-small">Your name is only shown on your screen. It isn't saved or sent anywhere.</p>
+</form>
+
+<div class="nz-cert-wrap" id="cert" hidden>
+  <div class="nz-cert">
+    <div class="nz-cert-title">Certificate of Excellence</div>
+    <p>This certifies that</p>
+    <div class="nz-cert-name" id="cert-name"></div>
+    <p>is a <strong>Certified Prompt Engineer</strong> <em>(unverified)</em></p>
+    <p>for successfully clicking an ad that said "You are the 1,000,000th visitor."</p>
+    <div class="nz-cert-facts">
+      <div><strong>Skills demonstrated:</strong> clicking · believing · typing own name</div>
+      <div><strong>Valid until:</strong> the next model update</div>
+    </div>
+    <div class="nz-cert-sign">
+      <div><span>Dr. GPT, MD</span>Machine Doctor</div>
+      <div><span>The Institute</span>for Things That Sound Like Statistics</div>
+    </div>
+  </div>
+  <div class="nz-cert-actions"><button class="nz-btn" type="button" id="print">Print certificate</button><button class="nz-btn" type="button" id="again">Try another name</button></div>
+</div>
+<p class="nz-note"><em>Not accredited by anyone. Do not put this on LinkedIn. (Okay, maybe put it on LinkedIn.)</em></p>
+</main>
+<footer class="nz-foot">The Noise is the satire section of The Signal. All companies, people and quotes on this page are made up. Any resemblance to a real AI sales deck is, sadly, not a coincidence.</footer>
+<script>
+const form = document.getElementById('claim'), cert = document.getElementById('cert'), who = document.getElementById('who');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = who.value.trim();
+  if (!name) return;
+  document.getElementById('cert-name').textContent = name;   // shown on screen only, never stored or sent
+  form.hidden = true; cert.hidden = false;
+});
+document.getElementById('print').onclick = () => window.print();
+document.getElementById('again').onclick = () => { cert.hidden = true; form.hidden = false; who.select(); };
+</script>
+</body>
+</html>

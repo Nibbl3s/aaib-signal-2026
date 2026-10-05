@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Buzzword Bingo — The Noise (satire)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="noise.css">
+</head>
+<body class="nz-page">
+<nav class="nz-top"><a href="../">← Back to The Signal</a><span class="nz-label">Joke</span></nav>
+<main class="nz-main">
+<div class="nz-kicker">€5,000 a day, guaranteed*</div>
+<h1>📈 THE ONE AI TRICK: BUZZWORD BINGO</h1>
+<p class="nz-sub">Consultants earn €5,000 a day by saying these words in the right order. Click every buzzword you heard this week. Five in a row and you're one of them.</p>
+<div class="nz-bingo" id="card" role="grid" aria-label="Buzzword bingo card"></div>
+<p class="nz-win" id="win" aria-live="polite"></p>
+<button class="nz-btn" type="button" id="new">New card</button>
+<p class="nz-note"><em>*Not guaranteed. Neither is anything else in this sentence.</em></p>
+</main>
+<footer class="nz-foot">The Noise is the satire section of The Signal. All companies, people and quotes on this page are made up. Any resemblance to a real AI sales deck is, sadly, not a coincidence.</footer>
+<script>
+const WORDS = ['synergy', 'game-changer', '"up to 94%"', 'proprietary', 'leverage', 'paradigm shift', 'disruptive', 'end-to-end',
+  'seamless', 'best-in-class', 'industry-leading', "let's circle back", 'low-hanging fruit', 'move the needle', 'AGI', 'blockchain',
+  'hallucination', '"it depends"', "let's take this offline", 'ROI', 'digital transformation', 'cutting-edge', 'next-gen', 'holistic',
+  '"trusted by 200+ companies"', '"only 2 pilot slots left"', '"transparent pricing"', '"continuously learns"', 'deep dive',
+  'single source of truth', 'copilot', 'agentic'];
+const FREE = 12;   // the middle square
+const LINES = [];
+for (let i = 0; i < 5; i++) {
+  LINES.push([0, 1, 2, 3, 4].map(k => i * 5 + k));   // rows
+  LINES.push([0, 1, 2, 3, 4].map(k => k * 5 + i));   // columns
+}
+LINES.push([0, 6, 12, 18, 24], [4, 8, 12, 16, 20]);   // diagonals
+
+const card = document.getElementById('card'), win = document.getElementById('win');
+let marked;
+
+function deal() {
+  const words = WORDS.map(w => [Math.random(), w]).sort((a, b) => a[0] - b[0]).map(p => p[1]).slice(0, 24);
+  words.splice(FREE, 0, 'AI-POWERED ⭐');
+  marked = new Set([FREE]);
+  win.textContent = '';
+  card.innerHTML = '';
+  words.forEach((w, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'nz-cell'; b.textContent = w;
+    b.setAttribute('aria-pressed', i === FREE);
+    if (i === FREE) b.disabled = true;
+    b.onclick = () => toggle(i, b);
+    card.appendChild(b);
+  });
+}
+
+function toggle(i, b) {
+  if (marked.has(i)) marked.delete(i); else marked.add(i);
+  b.setAttribute('aria-pressed', marked.has(i));
+  const line = LINES.find(l => l.every(k => marked.has(k)));
+  card.querySelectorAll('.nz-cell').forEach((c, k) => c.classList.toggle('nz-line', !!line && line.includes(k)));
+  win.innerHTML = line ? '🎉 <strong>BINGO! You are now a consultant.</strong><br><em>Your new day rate: €5,000. Your deliverable: this bingo card.</em>' : '';
+}
+
+document.getElementById('new').onclick = deal;
+deal();
+</script>
+</body>
+</html>
