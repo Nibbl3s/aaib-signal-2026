@@ -1,11 +1,10 @@
----
 week: 1
 title: The Cost of Sameness: Why Cheap AI Tokens Are Hiding a Higher Price for Publishers
 author: Luna Van der Heyden 
 beat: “Algorithmic Homogenization: The Operational and Brand Costs of AI-Driven Editing in Commercial Publishing” 
 skill: "Cost literacy"
 date: 2026-09-26
----
+
 
 
 # The Cost of Sameness: Why Cheap AI Tokens Are Hiding a Higher Price for Publishers
