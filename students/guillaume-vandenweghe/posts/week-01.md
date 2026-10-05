@@ -1,8 +1,8 @@
-# What does AI cost in claims handling? The token bill is the smallest number
+What does AI cost in claims handling? The token bill is the smallest number
 
 Insurers are testing AI to read and answer claim emails. In tokens it looks almost free. I priced a realistic case to see where the money actually goes.
 
-## The numbers
+The numbers
 
 Use case: a mid-sized Belgian insurer uses an AI model to read incoming Dutch claim emails and draft a first reply. All assumptions below are mine, not measured.
 
@@ -14,15 +14,15 @@ Use case: a mid-sized Belgian insurer uses an AI model to read incoming Dutch cl
 Token cost:
 - Input: 20,000 × 700 = 14M tokens → 14 × $2.00 = $28
 - Output: 20,000 × 350 = 7M tokens → 7 × $12.00 = $84
-- Total: $112 → **€103 per month**
+- Total: $112 → €103 per month
 
 The Dutch premium: in English the same emails would cost 11.6M input and 5.8M output tokens = $92.80 → €85. So writing in Dutch costs about €18 more per month.
 
 Error cost: I assume 12% of replies need a human claims handler to fix them, taking 15 minutes at €32 per hour = €8 per error. That is 2,400 errors × €8 = €19,200.
 
-**Total: €103 + €19,200 = €19,303 per month (about €232,000 per year).**
+Total: €103 + €19,200 = €19,303 per month (about €232,000 per year).**
 
-## The insight
+The insight
 
 Tokens are 0.5% of the total bill. The Dutch language premium (€18) equals roughly two wrong answers. And every percentage point of error rate costs 200 errors × €8 = €1,600 per month, about 15 times the entire token bill.
 
@@ -30,7 +30,7 @@ The weakest numbers in this post are the 12% error rate and the €8 per error, 
 
 Cost literacy is not reading the vendor's price. It is finding the number the vendor did not give you.
 
-## The question
+The question
 
 How accurate must a claims-triage AI be before it beats a human handler on cost per correctly handled claim?
 
