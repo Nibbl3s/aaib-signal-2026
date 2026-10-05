@@ -3,8 +3,10 @@
 **Student:** Brecht Masschaele · `students/brecht-masschaele/build/log.md`
 **Case:** coordination of the Internship (abroad) & individual Bachelor Project (BAP), ENW Business & Management, Artevelde University of Applied Sciences, AY 2026-27 S1
  
-> Run tables are mirrored in [`prompt-test-harness.xlsx`](/resources/prompt-test-harness.xlsx). The narrative sections stay here.
-> **Privacy:** all student, mentor and company data in this log is anonymised (S01, S02 …). No real names, emails or companies go into this repo.
+> Run tables are mirrored in [`prompt-test-harness.xlsx`](/resources/prompt-test-harness.xlsx).
+> The narrative sections stay here.
+> **Privacy:** all student, mentor and company data in this log is anonymised (S01, S02 …).
+> No real names, emails or companies go into this repo.
  
 ---
  
@@ -52,7 +54,7 @@ Inputs and expected answers: see `test-set.md`. Expected answers are written bef
 | # | Input (short label) | Expected | Got | Verdict | Failure code |
 |---|---|---|---|---|---|
 | 1 | Count students per programme in the Numbers tab | Counts match the list rows | Claude's recount found the manual table was **1 student short** | ✓ (caught a human error) | — |
-| 2 | Find all BAP rubrics in the coach folders and check version | 73 rubrics, all on v7-corrected | 73 found, versions reported, copies moved and re-checked | ✓ | — |
+| 2 | Find all BAP rubrics in the coach folders and check version | 73 rubrics, all on v7-corrected | 73 found, versions reported, copies moved and re-checked because of a human mistake| ✓ | — |
 | 3 | Write a plain-text cell that starts with "=" into Excel | Text shown as text | Excel read it as a formula → `#VALUE!` | ✗ | F4 |
 | 4 | Save the worklist with a script, then refresh the hub | Colleague/expert counts unchanged | Formula values lost on save → counts showed **0** in the hub, silently | ✗ | F1 |
 | 5 | Week-3 quality checklist: clear one answer after "All good" | Outcome goes back to "not complete" | Outcome stayed "All good" | ✗ | F1 |
