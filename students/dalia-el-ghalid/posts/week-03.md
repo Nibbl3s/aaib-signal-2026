@@ -25,3 +25,7 @@ Applying the 5-Question FOMO Test exposes severe implementation gaps:
 **Verdict: WALK AWAY** from full institutional rollout. University buyers should refuse multi-year contracts and demand a 60-day pilot on a single course module, evaluating the tool against a pre-defined ground-truth test set before committing budget.
 
 Where is the boundary in your study routine between tasks that benefit from AI iteration and decisions where a rule-based system is required?
+
+---
+### AI Disclosure Statement
+In line with course guidelines, I used an AI study assistant (Gemini) as a sounding board during this assignment to brainstorm ideas, review my framework reasoning, and check document formatting. All core analysis, beat application, failure classifications, and final evaluation decisions are my own original work.
