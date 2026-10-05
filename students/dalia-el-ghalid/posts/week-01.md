@@ -1,9 +1,8 @@
-"The Hidden Cost of an AI Study Coach: What Personalized Learning Actually Costs"
-
+---
+titel: "The Hidden Cost of an AI Study Coach: What Personalized Learning Actually Costs"
 date: 2026-10-05
-
 week: 1
-
+---
 Higher education students increasingly turn to AI as a study coach,to break down complex lecture notes, generate active recall flashcards, and structure assignment outlines. While students see instant answers, any university or EdTech provider building an automated AI study coach faces a stark financial reality: interactive tutoring burns through context windows fast, and cheap models can quickly become expensive failures.
 
 Consider a college operating an AI study coach for a cohort of 1,000 active students. Each student uses the assistant to review notes and generate practice quizzes 20 times a month, resulting in 20,000 monthly study sessions.
