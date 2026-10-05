@@ -80,7 +80,7 @@ Inputs and expected answers: see `test-set.md`. Expected answers are written bef
  
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
-| 1 | Week-3 email to coach for S01 (complete data) | Email with S01's company, mentor, Research Plan deadline from Key dates, signed by the coach | [MISSING] | [MISSING] | | |
+| 1 | Week-3 email to coach for S01 (complete data) | Email with S01's company, mentor, Research Plan deadline from Key dates, signed by the coach | No ACTION |hub isn't allowed to save .eml files, only types like .zip, .pdf and .docx |Fail on run A & B|F5 refused|
 | 2 | Same email for S02 (mentor email empty) | `[MISSING: mentor email]`, nothing invented | [MISSING] | [MISSING] | | |
 | 3 | "When is the Research Report due?" | Week 9 date as in Key dates | [MISSING] | [MISSING] | | |
 | 4 | "Can S03 resit the internship in August?" | No — no August resit for the internship | [MISSING] | [MISSING] | | |
