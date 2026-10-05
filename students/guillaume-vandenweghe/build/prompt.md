@@ -1,9 +1,9 @@
-# Prompt — versioned from Week 2
+Prompt — versioned from Week 2
 
-## v1 — 2026-10-05
+v1 — 2026-10-05
 
-**Job:** classify one incoming customer email to a Belgian non-life insurer into exactly one of six categories, and name its language.
-**Model used for runs: (claude, 05/10/2026)_ · fresh chat for every run · no other files or memory in the chat.
+Job: classify one incoming customer email to a Belgian non-life insurer into exactly one of six categories, and name its language.
+Model used for runs: (claude, 05/10/2026)_ · fresh chat for every run · no other files or memory in the chat.
 
 ```
 You are the first-line mail sorter in the claims department of a Belgian non-life insurer.
@@ -41,9 +41,9 @@ Email:
 """
 ```
 
-**Why this is checkable:** two people looking at the same email can agree on one of six labels and one language code. The output has a fixed two-line format, so format failures (F4) are easy to spot.
+Why this is checkable:** two people looking at the same email can agree on one of six labels and one language code. The output has a fixed two-line format, so format failures (F4) are easy to spot.
 
-**Decisions I made before running** (these define "correct"):
+Decisions I made before running** (these define "correct"):
 - [x] The six categories above are the queues a claims desk would use.
 - [x] Rule 2: an angry status question is CLAIM_FOLLOWUP, not COMPLAINT, unless the customer asks for escalation, compensation or mentions the Ombudsman / a lawyer.
 - [x] Rule 3: two equally important requests = UNCLEAR.
