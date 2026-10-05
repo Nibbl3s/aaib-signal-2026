@@ -44,4 +44,4 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 
 ---
 
-Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [week-03-evidence.md](./week-03-evidence.md)
+Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [Week 3 Evidence](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/claims-and-fomo.md)

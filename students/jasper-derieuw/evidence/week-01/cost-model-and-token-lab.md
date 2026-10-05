@@ -126,7 +126,7 @@ Premium cost per email = (200 x $0.06 + 400 x $0.12)/1,000 tokens-equivalent x �
 Solve for volume V where 0.3052 x V = €9,000:
 V ≈ 29,490 emails/month
 
-**Breakeven is ~29,500 emails/month — essentially EuroShop's current Month 1 volume (30,000).** At Month 1, Premium AI (€9,156/month) is already running almost level with 3 human agents. By Month 6 (111,000/month), Premium is clearly and increasingly cheaper (€33,877 vs. a flat €9,000 for agents) — though at that volume, 3 human agents could very likely not physically handle 111,000 emails/month regardless of cost, which is itself worth noting.
+**Breakeven is ~29,500 emails/month — essentially EuroShop's current Month 1 volume (30,000).** Because Premium's cost grows with every email while 3 agents cost a flat €9,000, Premium is only the cheaper option below that volume. At Month 1 the two are almost level (€9,156 vs. €9,000). By Month 6 (111,000 emails/month), Premium costs €33,877, roughly 3.8 times the agents' €9,000, so on paper the agents win. But that comparison breaks down: 3 agents could not physically handle 111,000 emails a month. Handling that volume would take far more than 3 agents, so the real comparison at Month 6 is Premium against the number of agents actually needed. That is where the case for AI sits: capacity, not a lower price per email.
 
 ---
 
