@@ -114,3 +114,38 @@
 .nz-cell.nz-line { background:var(--c); border-color:var(--c); box-shadow:0 0 16px var(--c); color:#07070d; }
 .nz-win { min-height:1.5em; font:400 1.15rem/1.5 "Source Serif 4",Georgia,serif; color:var(--c); }
 .nz-win strong { color:#fff; font-family:Orbitron,Inter,sans-serif; letter-spacing:.04em; }
+
+/* ---------- the Hype Casino ---------- */
+.nz-slot { margin:1.4rem 0; padding:1.4rem; border:2px solid var(--n); border-radius:16px; text-align:center;
+  background:radial-gradient(circle at 50% 0%, rgba(255,43,214,.18), transparent 60%), #0a0812; box-shadow:0 0 22px rgba(255,43,214,.45); }
+.nz-balance { font:700 1rem Inter,sans-serif; color:#cfcfe0; }
+.nz-balance b { font:800 1.4rem Orbitron,Inter,sans-serif; color:#f5ff3b; text-shadow:0 0 10px #f5ff3b; }
+.nz-reels { display:grid; grid-template-columns:repeat(3,1fr); gap:.7rem; margin:1.1rem auto; max-width:420px; }
+.nz-reel { aspect-ratio:3/4; border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.35rem;
+  background:linear-gradient(#11101c, #07070d 45%, #11101c); border:2px solid var(--c); box-shadow:inset 0 0 18px rgba(0,240,255,.25), 0 0 10px rgba(0,240,255,.35); }
+.nz-reel span { font-size:clamp(2.4rem,9vw,3.6rem); line-height:1; }
+.nz-reel small { font:700 .7rem Inter,sans-serif; letter-spacing:.06em; text-transform:uppercase; color:#cfcfe0; }
+.nz-reel.nz-rolling span { filter:blur(1.5px); }
+.nz-bets { display:flex; justify-content:center; align-items:center; gap:.45rem; margin-bottom:.4rem; }
+.nz-bets span { font:700 .75rem Inter,sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#8d8da3; margin-right:.3rem; }
+.nz-bets button { min-width:3.2rem; padding:.4rem .7rem; border-radius:999px; border:2px solid var(--c); background:#000; color:#fff; font:800 .85rem Orbitron,Inter,sans-serif; cursor:pointer; }
+.nz-bets button[aria-pressed="true"] { background:var(--c); color:#07070d; box-shadow:0 0 12px var(--c); }
+.nz-bets button:disabled { opacity:.35; cursor:default; }
+.nz-spin { font-size:1.3rem; padding:.85rem 2.6rem; margin:.8rem 0 .4rem; }
+.nz-spin:disabled { opacity:.45; cursor:default; }
+.nz-spin:disabled:hover { background:#07070d; color:#fff; }
+.nz-result { min-height:3em; margin:.4rem auto 0 !important; max-width:520px; font:500 1rem/1.5 Inter,sans-serif !important; color:#e8e8f2; }
+.nz-result.nz-good { color:#f5ff3b; text-shadow:0 0 8px rgba(245,255,59,.6); font-weight:700 !important; }
+.nz-result.nz-meh { color:var(--c); }
+.nz-result.nz-bad { color:#ff8fe5; }
+.nz-broke[hidden] { display:none; }
+.nz-broke p { margin:.8rem 0 0 !important; }
+.nz-truth { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:.6rem; margin:1rem 0; }
+.nz-truth div { padding:.7rem .9rem; border:1px solid rgba(255,255,255,.14); border-radius:10px; background:rgba(0,0,0,.4); }
+.nz-truth span { display:block; font:600 .7rem Inter,sans-serif; letter-spacing:.08em; text-transform:uppercase; color:#8d8da3; }
+.nz-truth b { font:800 1.05rem Orbitron,Inter,sans-serif; color:#fff; }
+.nz-fine { margin:1.4rem 0; padding:.8rem 1rem; border:1px dashed rgba(255,255,255,.25); border-radius:10px; }
+.nz-fine summary { cursor:pointer; font:700 .95rem Inter,sans-serif; color:var(--c); }
+.nz-fine .nz-table tr:last-child td { border-bottom:1px solid rgba(255,255,255,.12); font-weight:500; color:inherit; }
+.nz-fine .nz-table td:last-child { text-align:left; }
+@media (max-width:560px) { .nz-slot { padding:1rem .8rem; } .nz-spin { width:100%; } }

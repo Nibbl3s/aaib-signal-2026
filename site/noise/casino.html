@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The Hype Casino — The Noise (satire)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="noise.css">
+</head>
+<body class="nz-page">
+<nav class="nz-top"><a href="../">← Back to The Signal</a><span class="nz-label">Parody</span></nav>
+<main class="nz-main">
+<div class="nz-kicker">Fake tokens only</div>
+<h1>🎰 THE HYPE CASINO</h1>
+<p class="nz-sub">Where every spin is powered by AI.* <em>*Random numbers.</em></p>
+
+<section class="nz-slot" aria-label="Slot machine">
+  <div class="nz-balance">Balance: <b id="tokens">1,000</b> Hype Tokens</div>
+  <div class="nz-reels" aria-live="polite">
+    <div class="nz-reel"><span>🤖</span><small>AGI</small></div>
+    <div class="nz-reel"><span>🦄</span><small>Unicorn</small></div>
+    <div class="nz-reel"><span>📈</span><small>Up to 94%</small></div>
+  </div>
+  <div class="nz-bets" role="group" aria-label="Bet">
+    <span>Bet</span>
+    <button type="button" data-bet="10" aria-pressed="true">10</button>
+    <button type="button" data-bet="50" aria-pressed="false">50</button>
+    <button type="button" data-bet="100" aria-pressed="false">100</button>
+  </div>
+  <button class="nz-btn nz-spin" type="button" id="spin">SPIN</button>
+  <p class="nz-result" id="result" aria-live="polite">Pick a bet and spin. The house is ready.</p>
+  <div class="nz-broke" id="broke" hidden>
+    <p><strong>Out of tokens. Classic.</strong></p>
+    <button class="nz-btn" type="button" id="bailout">Request a bailout</button>
+  </div>
+</section>
+
+<section class="nz-truth" aria-label="The truth">
+  <div><span>Expected result per spin</span><b id="ev">−10% of your bet</b></div>
+  <div><span>The house has taken from you</span><b id="taken">0 tokens</b></div>
+  <div><span>Spins</span><b id="spins">0</b></div>
+  <div><span>Total bet · total won</span><b id="totals">0 · 0</b></div>
+  <div><span>Your real return so far</span><b id="ret">—</b></div>
+  <div><span>Promised return</span><b>"up to 94%"</b></div>
+</section>
+<button class="nz-btn" type="button" id="reset">Start over (1,000 tokens)</button>
+
+<details class="nz-fine">
+  <summary>The fine print (the real odds)</summary>
+  <p>Each reel shows each symbol with a fixed chance. These are the exact odds and payouts, calculated by this page:</p>
+  <table class="nz-table" id="odds"></table>
+  <p id="rtp"></p>
+</details>
+
+<p class="nz-note"><em>In the long run, the house always wins. Just like a pricing page that says "contact sales".</em></p>
+<p class="nz-small">This is a parody with fake tokens. Real gambling can become a real problem. If it ever stops being a joke for you, talk to someone. In Flanders, Druglijn (druglijn.be) also helps with gambling.</p>
+</main>
+<footer class="nz-foot">The Noise is the satire section of The Signal. All companies, people and quotes on this page are made up. Any resemblance to a real AI sales deck is, sadly, not a coincidence.</footer>
+<script>
+(() => {
+  // symbols, how often each appears on a reel (weight), and what 3 or 2 in a row pay (× bet). Return: 90.0%.
+  const SYMBOLS = [
+    { id: 'agi', icon: '🤖', name: 'AGI', weight: 1, three: 500, two: 3,
+      win: 'AGI ACHIEVED! JACKPOT! Investors have been notified. The AI will now take your job.' },
+    { id: 'unicorn', icon: '🦄', name: 'Unicorn', weight: 2, three: 100, two: 2,
+      win: 'UNICORN STATUS! Valuation: up to €1 billion. Profit: not yet.' },
+    { id: 'upto', icon: '📈', name: 'Up to 94%', weight: 3, three: 50, two: 1,
+      win: 'Win up to 94× your bet! (You won less. That\'s how "up to" works.)' },
+    { id: 'chain', icon: '⛓️', name: 'Blockchain', weight: 4, three: 20, two: 0.5,
+      win: 'Blockchain win! Your tokens are now decentralised, and also in our wallet.' },
+    { id: 'synergy', icon: '✨', name: 'Synergy', weight: 5, three: 10, two: 0.5,
+      win: 'Synergy! Your bet and our margin have aligned.' },
+    { id: 'trial', icon: '💸', name: 'Free Trial', weight: 6, three: 1, two: 0.5,
+      win: 'Free trial unlocked! You got your bet back. Auto-renewal starts in 14 days.' },
+  ];
+  const PAIR = 'Partial match. Our model is "up to" confident this counts as a win.';
+  const LOSSES = [
+    'Our model is continuously learning. From your tokens.',
+    'Thank you for your contribution to our Series B.',
+    'Result: it depends.',
+    'A sales rep will contact you shortly.',
+    'The algorithm has decided. The algorithm is never wrong. (The algorithm is often wrong.)',
+  ];
+  const START = 1000, BAILOUT = 500, SAVE = 'signal-casino';
+  const TOTAL = SYMBOLS.reduce((s, x) => s + x.weight, 0);
+
+  // ---------- the real maths ----------
+  const p = s => s.weight / TOTAL;
+  const pThree = s => p(s) ** 3;
+  const pTwo = s => 3 * p(s) ** 2 * (1 - p(s));   // exactly two of this symbol, the third one different
+  const RTP = SYMBOLS.reduce((r, s) => r + pThree(s) * s.three + pTwo(s) * s.two, 0);
+
+  // ---------- state (only in this browser) ----------
+  let st = { tokens: START, spins: 0, bet: 0, won: 0 };
+  try { const saved = JSON.parse(localStorage.getItem(SAVE)); if (saved && typeof saved.tokens === 'number') st = saved; } catch (e) {}
+  const save = () => { try { localStorage.setItem(SAVE, JSON.stringify(st)); } catch (e) {} };
+
+  const $ = id => document.getElementById(id);
+  const fmt = n => Math.round(n).toLocaleString('en');
+  const reels = [...document.querySelectorAll('.nz-reel')];
+  let bet = 10, spinning = false;
+
+  function render() {
+    $('tokens').textContent = fmt(st.tokens);
+    $('spins').textContent = fmt(st.spins);
+    $('totals').textContent = fmt(st.bet) + ' · ' + fmt(st.won);
+    const taken = st.bet - st.won;
+    $('taken').textContent = taken > 0 ? fmt(taken) + ' tokens' : taken < 0 ? 'nothing yet (you are ahead, for now)' : '0 tokens';
+    $('ret').textContent = st.bet ? Math.round(st.won / st.bet * 100) + '%' : '—';
+    const broke = st.tokens < 10;
+    $('broke').hidden = !broke;
+    $('spin').disabled = spinning || broke || st.tokens < bet;
+    document.querySelectorAll('[data-bet]').forEach(b => {
+      b.setAttribute('aria-pressed', +b.dataset.bet === bet);
+      b.disabled = spinning || +b.dataset.bet > st.tokens;
+    });
+  }
+
+  function pick() {
+    let r = Math.random() * TOTAL;
+    for (const s of SYMBOLS) { if ((r -= s.weight) < 0) return s; }
+    return SYMBOLS[SYMBOLS.length - 1];
+  }
+  function show(reel, s) { reel.firstElementChild.textContent = s.icon; reel.lastElementChild.textContent = s.name; }
+
+  function spin() {
+    if (spinning || st.tokens < bet) return;
+    spinning = true;
+    st.tokens -= bet; st.bet += bet; st.spins++;
+    const outcome = [pick(), pick(), pick()];
+    $('result').textContent = 'Spinning… (consulting the model)';
+    $('result').className = 'nz-result';
+    render();
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const stops = calm ? [0, 0, 0] : [600, 850, 1100];
+    reels.forEach(r => r.classList.add('nz-rolling'));
+    const shuffle = calm ? 0 : setInterval(() => reels.forEach((r, i) => { if (r.classList.contains('nz-rolling')) show(r, SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)]); }), 70);
+    stops.forEach((ms, i) => setTimeout(() => {
+      reels[i].classList.remove('nz-rolling'); show(reels[i], outcome[i]);
+      if (i === 2) finish(outcome, shuffle);
+    }, ms));
+  }
+
+  function finish(o, shuffle) {
+    clearInterval(shuffle);
+    let pay = 0, msg;
+    if (o[0] === o[1] && o[1] === o[2]) { pay = bet * o[0].three; msg = o[0].win; }
+    else {
+      const pair = o[0] === o[1] || o[0] === o[2] ? o[0] : o[1] === o[2] ? o[1] : null;
+      if (pair) { pay = bet * pair.two; msg = PAIR; }
+      else msg = LOSSES[Math.floor(Math.random() * LOSSES.length)];
+    }
+    st.tokens += pay; st.won += pay;
+    $('result').textContent = pay ? `+${fmt(pay)} tokens. ${msg}` : msg;
+    $('result').className = 'nz-result ' + (pay > bet ? 'nz-good' : pay ? 'nz-meh' : 'nz-bad');
+    spinning = false; save(); render();
+  }
+
+  document.querySelectorAll('[data-bet]').forEach(b => b.onclick = () => { bet = +b.dataset.bet; render(); });
+  $('spin').onclick = spin;
+  $('bailout').onclick = () => {
+    st.tokens += BAILOUT; save();
+    $('result').textContent = 'Bailout approved: +500 tokens. No questions asked, like most AI pilots.';
+    $('result').className = 'nz-result nz-meh';
+    render();
+  };
+  $('reset').onclick = () => {
+    st = { tokens: START, spins: 0, bet: 0, won: 0 }; save();
+    $('result').textContent = 'Fresh start. The house remembers nothing. (The house remembers everything.)';
+    $('result').className = 'nz-result';
+    render();
+  };
+
+  // ---------- the fine print ----------
+  const oneIn = x => '1 in ' + fmt(1 / x);
+  $('odds').innerHTML = '<tr><td><b>Symbol</b></td><td><b>3 in a row</b></td><td><b>2 in a row</b></td></tr>' +
+    SYMBOLS.map(s => `<tr><td>${s.icon} ${s.name}</td><td>${s.three}× · ${oneIn(pThree(s))}</td><td>${s.two}× · ${oneIn(pTwo(s))}</td></tr>`).join('');
+  $('rtp').innerHTML = `On average this casino pays back <b>${(RTP * 100).toFixed(1)}%</b> of everything you bet. ` +
+    `The other <b>${(100 - RTP * 100).toFixed(1)}%</b> is the house edge: on average you lose ${(100 - RTP * 100).toFixed(1)} tokens for every 100 you bet.`;
+  $('ev').textContent = `−${(100 - RTP * 100).toFixed(0)}% of your bet`;
+
+  render();
+})();
+</script>
+</body>
+</html>
