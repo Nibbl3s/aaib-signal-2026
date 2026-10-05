@@ -1,8 +1,9 @@
 ---
 week: 3
 title: "AI in M&A Valuation: Real Value or FOMO? Deconstructing Valutico's AI Claims"
-author: Tim Lampe
-beat: AI in M&A Valuation
+author: "Tim Lampe"
+beat: "AI in M&A Valuation"
+skill: "Vendor Claim Detection"
 date: 2026-10-05
 ---
 
