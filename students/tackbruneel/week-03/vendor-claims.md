@@ -43,6 +43,31 @@ Tags: **F** = Fact (specific, checkable) · **A** = Aspiration (future promise o
 
 ---
 
+## Part 1b — FOMO walkthrough: NexusAI for EuroLogistics BV
+
+I read this as the EuroLogistics decision-maker. The proposal: €85k implementation + €15k data integration + €8k training + €12k/month licence = **€252k in year 1**, then €144k/year.
+
+| # | Question | Answer for EuroLogistics | → |
+|---|---|---|---|
+| 1 | What specific business problem will this solve? | **Not named.** The proposal sells three products (forecasting, routing, warehouse) and never says which problem EuroLogistics has. It doesn't state our current forecast error, fuel bill, on-time rate or picking time, so there's no current metric and no target metric. "Up to 94%" and "+35%" have nothing to be measured against. This is the FOMO pattern: the solution came first and the problem is assumed. | Red flag |
+| 2 | What happens if we do nothing for 6 months? | **Unknown, and the proposal doesn't help us find out.** The only urgency in the document is "2 pilot slots remaining", and that's the vendor's urgency, not ours. Before signing we'd have to calculate what inaction really costs. One quick sanity check: just to earn back year 1 on fuel alone at the best case "up to 22%", our fuel bill would need to be at least €252k ÷ 0.22 ≈ **€1.15M a year**. If it's well below that, routing can't pay for the deal by itself. | No proven urgency |
+| 3 | Can we verify the claims independently? | **Almost none of them.** Every performance number rests on "internal benchmarking" or "client self-reporting". Only the Dutch/French interface and the SOC 2 / ISO 27001 certificates can be checked (claims 9 and 14), and neither says whether the AI works. A pilot is offered (3-month deployment, money back if no "measurable improvement" in 90 days), but "measurable improvement" is undefined, the pilot price isn't stated, and there are no named references. | Pilot only, on our terms |
+| 4 | What's the total cost, not the licence cost? | Missing from the €252k: our own staff time for implementation and data clean-up, IT time for the integrations, training beyond the €8k (drivers, planners, warehouse staff), possible LLM usage costs on top of the licence (avoidance 2), and the exit cost if we stop (avoidance 4). With the course rule of thumb (licence = 30–50% of total cost), year 1 could realistically cost **€500k–840k**. Year 2 adds another €144k in licence alone. | Licence is the smaller half |
+| 5 | Is there a simpler, cheaper solution for 80% of the problem? | **Probably, for each module separately.** Forecasting: a statistical forecast in Excel on our own history, as a baseline (GhentBakery's "AI" turned out to be a moving average). Routing: standard non-AI route-planning software, which is a mature, much cheaper category. Warehouse: a process audit of the picking layout, since a 40% gain in 3 months points to a bad layout more than to AI. Each can be tested separately for a fraction of €252k. | Try simpler first |
+
+### Verdict: **pilot, but only on our terms; otherwise walk away**
+
+Don't sign the €252k proposal as written. NexusAI may well have something real: route optimisation and demand forecasting are mature uses of AI, and refusing on principle would be the FlandersTextiles mistake. But nothing in the proposal lets us check that it works *for us*, and we haven't even named our own problem yet.
+
+Steps in order:
+1. **Name the problem first.** Measure our current forecast error, fuel cost, on-time rate and picking time, and pick the one module that addresses the biggest cost.
+2. **Run the cheap baseline.** An Excel forecast, a quote for standard route software, or a layout audit, depending on which module we picked.
+3. **Offer NexusAI a pilot of that one module on our terms.** It runs on our last 12 months of data. Success is defined in writing as an improvement over the baseline from step 2. The pilot has a capped price, and we get named references and written exit terms.
+
+If NexusAI refuses to pilot on our data or to define "measurable improvement", walk away. The course rule is "If the vendor won't let you pilot on your data, walk away." The "2 slots remaining" is not a reason to skip these steps.
+
+---
+
 ## Part 2 — Case reflection: GhentBakery vs FlandersTextiles
 
 | Dimension | GhentBakery (bought too much) | FlandersTextiles (missed a real opportunity) |
