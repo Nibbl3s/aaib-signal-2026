@@ -172,7 +172,7 @@ Missing an important market-entry risk could lead to a costly recommendation for
 
 The information is **constantly changing**.
 
-Political conditions, regulations, exchange rates, inflation and other market conditions can change over time. This means research may need to be updated regularly.
+Political conditions, regulations, exchange rates, inflation and other market conditions can change over time. This means research may need to be updated regularly.The wider job of finding current market information is where AI would go wrong, because it can't look up live data and can invent facts that sound believable.
 
 ### Can you verify the AI's answer?
 
@@ -193,7 +193,9 @@ This makes it possible for a consultant to verify whether the identified risk is
 
 A spreadsheet or rules-based system could classify clearly defined risks using predetermined criteria.
 
-AI becomes more useful when the information is unstructured or requires interpretation. Therefore, AI is not automatically necessary for every part of the market-entry risk assessment.
+AI becomes more useful when the information is unstructured or requires interpretation. Therefore, AI is not automatically necessary for every part of the market-entry risk assessment.  
+
+## Conclusion: Use AI only as a first-pass sorter, never as the decision-maker. Because the cost of being wrong is high (Q2), a consultant must verify every classification against a source (Q4). I would not use AI to find market information, because that is where it hallucinates, so AI is only worth its cost on messy, unstructured inputs, and on multi-risk inputs a human should decide, since my test showed the tool forces a single category.
 
 ---
 
