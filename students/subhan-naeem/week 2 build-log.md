@@ -225,4 +225,9 @@ The tool performed consistently on the cases I tested, but its single-category d
 
 ### After the Intro Session
 
+- **Machine(s) I expect to use, and why:** I have not decided yet.
+- **The artifact I'm aiming for:** I will decide according to the facilities available at the Fablab.
+- **Which weekly session or OPEN block I'll visit for file-prep, and when:** The next session we will have.# Deployment Probe — Week 2
+
+
 
