@@ -1,15 +1,15 @@
 ---
 type: passport
-student: "Your Name"
-beat: "Your Signal beat"
+student: "Viktor De Ganck"
+beat: "AI as a retail investor's research desk"
 track: "4 ECTS"
 ---
 
 # Skills Passport
 
-**Student:** Your Name
-**Beat:** Your Signal beat
-**Track:** 4 ECTS *(or 6 ECTS)*
+**Student:** Viktor De Ganck
+**Beat:** AI as a retail investor's research desk
+**Track:** 4 ECTS
 
 > Copy this file to `students/your-name/passport.md` in the Signal repository in Week 1.
 > Update it at three checkpoints — end of Week 4, Week 8 and Week 12 — and commit each time.
