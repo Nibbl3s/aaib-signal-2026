@@ -1,40 +1,48 @@
-# Build — Prompt History
+# Build: Comp Screen Prompt v1
 
-## v1 — 2026-09-28
+## Purpose
+Screens candidate companies for a trading-multiples peer group and labels each one Comparable / Not comparable / Unclear. It does not calculate a valuation.
 
-**Job:** Flag inconsistencies between two financial statements from different years (same company).
+## Prompt
 
-**Input:** two financial statements (e.g. income statement, balance sheet extracts) for the same company, one from year N and one from year N+1.
+ROLE
+You are a valuation analyst at an M&A advisory boutique. Your job is to screen candidate companies for a trading-multiples peer group. You do not calculate a valuation.
 
-**Output:** a list of flagged inconsistencies, each naming the specific line items and values involved.
+INPUT
+TARGET: [name, country, business description, revenue, EBITDA margin, growth]
+CANDIDATES: [list of companies, optionally with notes]
+If no candidates are given, propose up to 10 yourself and label them "PROPOSED BY MODEL, UNVERIFIED".
 
-**Prompt:**
+TASK
+For each candidate, check these five criteria against the target:
+1. Business model (what they sell and how they earn money)
+2. Customer segment and end market
+3. Size (revenue, roughly within 0.3x to 3x of the target)
+4. Geography / market exposure
+5. Growth and margin profile
 
----
-You are reviewing two financial statements from the same company, from different years, for inconsistencies.
+RULES
+- Use only facts given in the input or facts you are certain of.
+- Never invent financial figures. If a figure is missing, write "not provided".
+- Do not state or estimate valuation multiples.
+- When evidence is thin, use "Unclear". Do not guess.
 
-STATEMENT YEAR N:
-{{statement_year_n}}
+OUTPUT
+A table with the columns:
+Candidate | Business model | Size | Geography | Growth/margin | Verdict | Reason (1 sentence) | What to verify
 
-STATEMENT YEAR N+1:
-{{statement_year_n_plus_1}}
+Verdict is exactly one of: Comparable / Not comparable / Unclear.
 
-Compare the two statements and flag inconsistencies. An inconsistency is any of the following:
-- The same line item (e.g. total revenue, total assets) reported with different values in places where it should match (e.g. a prior-year comparative column in the newer statement doesn't match the actual prior-year statement).
-- A figure that doesn't foot correctly (e.g. subtotals or totals that don't sum from their components) within either statement.
-- A material year-over-year change (more than 25%) in a line item with no explanation present in either statement.
-- A line item present in one year's statement but missing, without explanation, in the other.
+Then:
+- Recommended peer group (only "Comparable" candidates)
+- Top 3 risks in this peer set (e.g. too few peers, size gap, one dominant player)
+- Confidence: High / Medium / Low, with one sentence of reasoning
 
-Respond in exactly this format, one entry per inconsistency found:
-Flag: [line item name]
-Values: [year N value] vs [year N+1 value]
-Type: [restated figure / footing error / unexplained swing / missing item]
-Note: [one sentence on why this is flagged]
+## What changed from the annual-report version
+- The task is now selection and classification, not number analysis.
+- New rule: no invented figures (main risk: fabricated data, F2).
+- "Unclear" verdict prevents guessing.
+- Output can later be compared with Valutico's AI peer suggestions (link to Capstone).
 
-If no inconsistencies are found, respond: "No inconsistencies found."
-Do not flag a normal, explained change (e.g. one with a footnote or note in the statement) as an inconsistency. Do not invent figures that are not present in either statement.
----
-
-**Why this version:** v1 uses four concrete inconsistency types instead of a vague "check for issues", so two people reading the same output can agree whether a flag is correct. The 25%-threshold rule is a placeholder — arbitrary but explicit, so it's testable and adjustable once I see real results. The last line is a direct guardrail against F2 (fabrication), since inventing a mismatched number would be the most dangerous failure here.
-
-**Known risks going in:** likely to struggle on (1) statements using different line-item naming/structure between years, (2) restatements that are legitimate and explained but easy to mistake for errors, (3) currency or unit changes (e.g. thousands vs millions) that look like huge swings but aren't.
+## Next step
+Test with 2 cases (1 target + about 6 candidates each) where the correct answer is known. Log the results as Build Checkpoint evidence.
