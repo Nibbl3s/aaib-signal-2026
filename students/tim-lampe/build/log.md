@@ -131,17 +131,15 @@ Thanks,
 
 ## Changes
 
-Every time you change the prompt, record it here **before** you re-run. Predicting the effect first, then checking, is what separates a change from a guess.
+Every time you change the prompt, record it here before you re-run. Predicting the effect first, then checking, is what separates a change from a guess.
 
-### Change 1 — *date*
+### Change 1 — 2026-10-07
 
-**What I changed:** —
-**Why I thought it would help:** —
-**What I predicted would happen:** —
-**What actually happened:** — % → — %
-**Was I right?** —
+**What I changed:** Replaced the annual-report analysis task with a peer-group screen. The prompt now classifies each candidate company as Comparable / Not comparable / Unclear against 5 criteria (business model, customer segment, size, geography, growth/margin) and adds a rule "never invent financial figures, write 'not provided'".
 
-*Being wrong here is fine and common. Not noticing you were wrong is the problem.*
+**Why I thought it would help:** In M&A valuation the peer group drives the multiple, so the screen sits closer to the real decision than summarising financial statements. The "Unclear" option and the no-invented-figures rule should reduce fabricated answers.
+
+**What I predicted would happen:** On 2 test cases where I know the correct peer set, at least 5 of 6 verdicts per case match my own (about 80%+). No invented financial figures (0 fabricated). Weak spot: the model labels borderline candidates "Comparable" instead of "Unclear".
 
 ---
 
