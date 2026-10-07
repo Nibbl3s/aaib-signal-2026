@@ -57,50 +57,52 @@ earlier — applied to the task itself.) Read in sequence at the checkpoints, yo
 your thinking sharpening: v1 vague, v3 sharp. The first output reveals what the brief failed
 to specify — revise the brief, then re-run. A brief is a hypothesis, not a contract.
 
-### Run 1 — prompt v1 — 
+### Run 1 — prompt v1 — 7 October 2026
 
-**Brief:** —
-**Model used:** —
-**Inputs tested:** 15
+**Brief:** I expect v1 to get the event type mostly right but disagree with me on fact or opinion, because that's the hardest field.
+**Model used:** Claude Sonnet 5.5 (claude.ai)
+**Inputs tested:** 15, each run twice (A and B)
+
+**Deviation:** in run A, items 1 to 6 each ran in a new chat; items 7 to 15 ran in one shared chat to save time, so they may be influenced by earlier items. Run B: every item in a new chat. Labels were checked with Claude for consistency, and the tested model is also Claude; noted as a possible bias.
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
-| 1 | Fed FOMC rate hike statement | rate decision / FX, bonds / fact | | | | |
-| 2 | Eurostat inflation flash estimate (X) | macro data / FX / fact | | | | |
-| 3 | Option Care Health buyout report (TheStreet) | company news / equities / opinion | | | | |
-| 4 | Constellation Energy–Google power deal (TheStreet) | company news / equities / fact | | | | |
-| 5 | G7 oil reserve release (TheStreet) | regulation / commodities / fact | | | | |
-| 6 | Treasury yields move lower (TheStreet) | market move / FX, equities, bonds / fact | | | | |
-| 7 | Trump executive order on red-dyed diesel (TheStreet) | regulation / commodities / fact | | | | |
-| 8 | SAP neemt TechWolf over (VEB, Dutch) | company news / equities / fact | | | | |
-| 9 | Amerikaans handelstekort (VEB, Dutch) | macro data / FX / fact | | | | |
-| 10 | Seagate overnamestrijd Toshiba/TDK (VEB, Dutch) | company news / equities / opinion | | | | |
-| 11 | Jefferies koersdoel Magnum Ice (VEB, Dutch) | company news / equities / opinion | | | | |
-| 12 | Beursagenda buitenlandse fondsen (VEB, Dutch) | none / none / fact | | | | |
-| 13 | X post, crypto analyst, Bitcoin bottom (sarcasm) | opinion only / crypto / opinion | | | | |
-| 14 | X post, macro commentator, rate hike odds | opinion only / FX / opinion | | | | |
-| 15 | X post, crypto media, BTC drop warning | opinion only / crypto / opinion | | | | |
+| 1 | Fed raises rates | rate decision / FX, bonds / fact | rate decision / bonds / fact | rate decision / bonds / fact | ✗ | F3 (missed FX) |
+| 2 | Eurostat inflation 3.8% (X) | macro data / FX / fact | macro data / bonds / fact | macro data / bonds, FX, commodities / fact | ✗ | F1, F6 |
+| 3 | Option Care buyout (unconfirmed) | company news / equities / opinion | same | same | ✓ | |
+| 4 | Google–Constellation deal | company news / equities / fact | same | same | ✓ | |
+| 5 | G7 oil reserve release | regulation / commodities / fact | market move / commodities / fact | market move / commodities / fact | ✗ | F1 |
+| 6 | Treasury yields lower | market move / FX, equities, bonds / fact | market move / bonds / fact | market move / bonds / fact | ✗ | F3 (missed FX, equities) |
+| 7 | Red-dyed diesel order | regulation / commodities / fact | same | same | ✓ | |
+| 8 | SAP neemt TechWolf over (NL) | company news / equities / fact | same | same | ✓ | |
+| 9 | US handelstekort (NL) | macro data / FX / fact | same | same | ✓ | |
+| 10 | Seagate overnamestrijd (NL) | company news / equities / opinion | same | same | ✓ | |
+| 11 | Jefferies koersdoel (NL) | company news / equities / opinion | opinion only / equities / opinion | opinion only / equities / opinion | ✗ | F1 |
+| 12 | Beursagenda (NL) | none / none / fact | same | same | ✓ | |
+| 13 | Crypto analyst, sarcasm (X) | opinion only / crypto / opinion | same | same | ✓ | |
+| 14 | Macro commentator, rate odds (X) | opinion only / FX / opinion | rate decision / bonds / fact | macro data / bonds / fact | ✗ | F1, F6 |
+| 15 | Coin Bureau BTC -30% (X) | opinion only / crypto / opinion | same | same | ✓ | |
 
 Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
 
-**Result:** — correct out of — → **—%**
+**Result:** Run A 9 of 15 → 60%. Run B 9 of 15 → 60%. Same answer in both runs: 13 of 15 (87%). Per field over both runs: fact or opinion 93%, event 80%, asset 73%.
 
 **Failures by type:**
 
 | Code | Count | Notes |
 |---|---:|---|
-| F1 Wrong | | |
-| F2 Fabricated | | |
-| F3 Missed | | |
-| F4 Format | | |
-| F5 Refused | | |
-| F6 Inconsistent | | |
+| F1 Wrong | 4 | items 2, 5, 11, 14 |
+| F2 Fabricated | 0 | |
+| F3 Missed | 2 | items 1, 6: incomplete asset list |
+| F4 Format | 0 | all 30 answers followed the 3-line format |
+| F5 Refused | 0 | |
+| F6 Inconsistent | 2 | items 2 and 14 differ between A and B |
 
 **What surprised me:**
-> —
+> My Brief was wrong. I expected fact or opinion to be the hardest field, but it was the best (93%), probably because I wrote four explicit rules for it. Asset was the worst field (73%): the model chose "bonds" in 4 of 6 failures and almost always gave only one asset, while my prompt never says when to list more than one. The field without rules failed most. Running items 7 to 15 in a shared chat changed little: in the clean run B only item 14 gave a different answer.
 
 **The failure that would have mattered most in real use, and why:**
-> —
+> Item 14. An opinion post on X full of percentages was classified as an official rate decision (run A) and as macro data (run B), and both times as fact. For a retail investor, that is the most dangerous mistake possible: speculation that looks like hard news because it contains numbers. It was also inconsistent, so the same post can be labelled differently tomorrow.
 
 *This one line is the most valuable thing in the log. Not the success rate — which failure would have caused actual damage.*
 
@@ -247,3 +249,4 @@ Write these at Weeks 4, 8 and 12. Five lines each — they are what gets marked,
 *Never delete a failure. A log full of successes is a log that has been curated, and a curated log is worth nothing.*
 
 Labels written by me and checked with Claude for consistency with my own rules; prompt v1 drafted with Claude from my rules.
+Run results entered and summarised with Claude; verdicts and conclusions are my own.
