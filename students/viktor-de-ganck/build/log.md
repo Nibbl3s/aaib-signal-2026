@@ -135,9 +135,9 @@ logged before Week 8 so it can feed your CP2 revision delta.
 
 | | |
 |---|---|
-| Machine(s) I expect to use, and why | — |
-| The artifact I'm aiming for (kiosk face, counter mock, standee…) | — |
-| Which weekly session or OPEN block I'll visit for file-prep, and when | — |
+| Machine(s) I expect to use, and why | Laser cutter: fast and cheap for flat parts in plywood or acrylic, which suits a small desk object. |
+| The artifact I'm aiming for (kiosk face, counter mock, standee…) | A desk stand holding a printed "morning briefing" card with three classified headlines and a QR code to the tool, placed on a desk to simulate a retail investor's morning routine. |
+| Which weekly session or OPEN block I'll visit for file-prep, and when | A fablab OPEN block in week 5. I missed the intro session (28 Sep) because I started in the wrong course group. |
 
 **When the artifact exists — the deployment observation (the evidence, not the prop):**
 
