@@ -1,20 +1,29 @@
 ---
 week: 1
-title: What Does AI Actually Cost in Real Estate Investment?
-author: Lima 
-beat: How AI Is Changing Real Estate Investment Decisions
+title: "How Much Does an AI Customer Service Employee Actually Cost a Solo Entrepreneur?"
+author: "Lima"
+beat: "How AI Enables the One-Person Business"
 skill: "Cost literacy"
-date: 2026-09-26
+date: 2026-09-25
 ---
 
-Imagine a real estate investment company using an AI assistant to perform a first analysis of properties listed for sale. Instead of an analyst manually reviewing every listing, the AI receives information such as the asking price, location, property size, expected rental income and other characteristics. It then produces a short investment analysis highlighting potential returns, risks and whether the property deserves further investigation.
-Suppose the company analyses 1,000 properties per month. For each property, the system uses approximately 1,000 input tokens for the property information and 500 output tokens for the AI-generated analysis.
-This means that every month the company processes:
-Input: 1,000 × 1,000 = 1,000,000 tokens
-Output: 1,000 × 500 = 500,000 tokens
-If we hypothetically assume an AI model costs $0.03 per 1,000 input tokens and $0.06 per 1,000 output tokens, the calculation becomes:
-Input cost: (1,000,000 ÷ 1,000) × $0.03 = $30
-Output cost: (500,000 ÷ 1,000) × $0.06 = $30
-The direct AI cost would therefore be only $60 per month, or approximately $0.06 per property analysed.
-At first sight, this makes AI look extremely cheap. However, token cost is not the same as total cost. A real estate company would also need to consider the cost of obtaining reliable property data, integrating the AI into its existing systems and having professionals verify its conclusions. An incorrect estimate of rental income or property value could have a much greater financial impact than the few cents spent generating the AI analysis.
-This shows why understanding AI costs requires looking beyond the price of tokens. In real estate investment, the more important question may not be “How much does the AI cost to run?” but rather “Does using AI lead to better investment decisions?”
+Hook: Imagine an unusually successful e-commerce business run by a solo entrepreneur, serving around 50,000 customers per month. Managing customer communication manually would become almost impossible. To save the time of handling customer's questions and reviews, an Ai tool like ChatGPT is to help the solo entrepeneur overview and answer these mails.
+
+
+The numbers: The entrepeneur has around 50.000 clients per month and around 2.000 emails per week, 8.000 per month. These emails are questions, reviews, or sometimes spams. The received emails are between 100 and 500 tokens while the responses can be between 400 and 1000 tokens per email. These emails typically come in every language. (gpt-5.4 input is $2,50, output is $15 per 1M tokens)
+- Input: 300 x 8.000 = 600.000 tokens -> $6
+- Output: 700 x 8.000 = 1.400.000 tokens -> $90
+So 2.000 emails would cost $22,50 average
+
+
+The insight: 
+
+What suprised me the most is how low the token cost is compared with the amount of work the AI could handle. In this example, the entrepeneur receives around 8.000 emails per month. Processing these emails with AI would cost only around $20 per month in token usage, based on my assumptions. 
+
+For a Solo entrepreneur, the bigger value is therefore not necessarily the low price of AI itself, but the amount of time it could save IF its answers are correct. The real cost starts to change when AI cannot solve a request independently. If we assume that 5% of the 8,000 emails require human intervention, that means 400 interventions per month. At an estimated cost of €8 per intervention, this adds €3,200 per month. Suddenly, the cost of the AI tokens themselves becomes almost insignificant compared with the cost of the cases AI cannot handle.
+
+If manually reading and answering one email takes an average of only three minutes, 8,000 emails would require around 400 hours of work per month. This would be impossible for one entrepreneur to manage alone.
+
+However, this does not mean that AI could completely replace a customer service emplyee. Some complaints, refunds or unusual customer problems may still require human judgement. There would also be other costs beyond tokens, such as building or paying for the system that connects the AI to the entrepeneur's email, customer and order information.
+
+That actually gives you a more inteesting conclusion than "AI is really cheap". Your conslusion becomes: the important cost isn't necessarily how much the AI costs, but how often it fails and requires expensive human intervention.
