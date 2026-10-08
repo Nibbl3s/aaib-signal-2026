@@ -1,139 +1,172 @@
-# Test Set v1 — SoloShop
+# Test Set — SoloShop Customer Enquiry Classifier
 
-Source: Fictional customer emails written for controlled testing.
-Expected answers were defined before model testing.
+**Date:** 8 October 2026  
+**Prompt version:** v1  
+**Test platform:** Google AI Studio (Gemini)  
+**Purpose:** Evaluate whether AI can accurately classify real-world customer enquiries for a one-person online business.
 
-## Test 1 — Tracking request
+## Methodology
 
-Input:
-Hello, I placed an order three days ago, but I haven't received a tracking number. Could you tell me how to track my package?
+The test set consists of ten publicly sourced customer messages and questions. Some come from businesses other than SoloShop and are used as realistic examples of incoming enquiries.
 
-Expected: AUTOMATE
+Each message is classified into one of three categories:
 
-Reason: Routine tracking enquiry.
+- **AUTOMATE:** Routine enquiries that can be handled through standard customer-service processes.
+- **HUMAN INTERVENTION:** Situations requiring escalation according to SoloShop's policies.
+- **INSUFFICIENT INFORMATION:** Messages where the request cannot be identified clearly enough.
 
-## Test 2 — Repeated damaged deliveries
+Expected answers are recorded below separately from the model's results. Each input is tested twice using the same prompt.
 
-Input:
-This is the third time my package has arrived damaged. I don't want another replacement. I expect additional compensation for all the inconvenience.
+**Source note:** Add the original URL for each message before submission. Remove personal details, including names, usernames and contact information.
 
-Expected: HUMAN INTERVENTION
+---
 
-Reason: Damaged item, repeated complaint and compensation.
+## Input 1 — Missing delivery and guest checkout
 
-## Test 3 — Very vague message
+**Customer message:**
 
-Input:
-Hi, it doesn't work. Please help.
+> My item hasn't arrived but I can't find a way to report this. I couldn't remember my password to my ebay account so purchased as a guest. The item hasn't arrived. EBay doesn't recognise my order in my account so i can't escalate to the buyer. Any help appreciated.
 
-Expected: INSUFFICIENT INFORMATION
+**Expected:** AUTOMATE
 
-Reason: The request is unclear; 'it' is not identified as a product.
+**Reasoning:** The main problem is a missing order and difficulty accessing tracking or support. The customer could initially receive automated instructions for guest orders. Human intervention may become necessary if the automated process cannot resolve the issue.
 
-## Test 4 — Spanish enquiry
 
-Input:
-Hola, quisiera saber si hacen envíos a Argentina y cuánto tiempo tarda la entrega.
+## Input 2 — Missing tracking and dispute with seller
 
-Expected: AUTOMATE
+**Customer message:**
 
-Reason: Identifiable routine shipping question.
+> I recently ordered an item and it got to be about 5 days past the estimated arrival date. I checked the order details and there was no tracking number or link to track like most items have. It was reported as shipped, but no tracking info was visible to me.
+>
+> It's the holidays, things get delayed, no big deal. I'd still like the item and it's not so much money that I'm going to get freaked out over it. I clicked the 'Item hasn't arrived yet' link, said I wanted the item (not a refund yet) and asked for a tracking number.
+>
+> Now the seller claims that because I filed a complaint, he has no access to the tracking number or his funds on eBay. He says eBay has blocked his access. This makes zero sense because according to the eBay articles on 'items not arrived', seller is supposed to either give me a tracking number or give me refund. How could he do either if that's true? But is it? eBay doesn't always make perfect sense from the outside.
 
-## Test 5 — Size exchange
+**Expected:** HUMAN INTERVENTION
 
-Input:
-I received the wrong size. Could you explain how I can exchange it? I still have the receipt.
+**Reasoning:** The enquiry has developed beyond a standard tracking request into an unresolved dispute involving the seller and access to funds.
 
-Expected: AUTOMATE
 
-Reason: Routine exchange instructions, no exception requested.
+## Input 3 — Undelivered international order and rejected refund
 
-## Test 6 — Return policy
+**Customer message:**
 
-Input:
-I received my shirt last week but changed my mind. It's unused. Can I return it?
+> I am from Europe and I ordered some PVC glue from the US in value of 120USD, on the 20th of November 2024 and then got an information on the 2nd of December that the order was shipped to the international hub.
+>
+> If I track the order, the status is still shown as "Shipped to our international hub" and doesn't seem to be "Arrived at our international hub"
+>
+> The order never arrived so I asked for a refund on the 10th of February but e-bay declined the refund and said that they received information from the seller that the order was delivered or will be delivered shortly.
+>
+> I didn't agree with that, so on the 12th of February I appealed but they refused again, saying the they do not change the outcome.
+>
+> So what are my options here? Can anyone help me with suggestions?
 
-Expected: AUTOMATE
+**Expected:** HUMAN INTERVENTION
 
-Reason: Standard return enquiry within 30 days.
+**Reasoning:** The customer is disputing a rejected refund and has already exhausted standard support procedures.
 
-## Test 7 — Damaged zipper
 
-Input:
-The zipper on my new jacket broke the first time I wore it. What are you going to do about this?
+## Input 4 — Inactive link (Dutch)
 
-Expected: HUMAN INTERVENTION
+**Customer message:**
 
-Reason: Defective product.
+> Wat kan ik doen als de link niet actief is?
 
-## Test 8 — Exception request
+**Expected:** AUTOMATE
 
-Input:
-I bought these shoes 45 days ago. I know your return window is 30 days, but could you make an exception?
+**Reasoning:** A basic technical-support question that could initially receive standard troubleshooting instructions.
 
-Expected: HUMAN INTERVENTION
 
-Reason: Explicit request for a policy exception.
+## Input 5 — Premium shipping (Dutch)
 
-## Test 9 — Short question
+**Customer message:**
 
-Input:
-Do you sell belts?
+> Wat houdt premium verzending in?
 
-Expected: AUTOMATE
+**Expected:** AUTOMATE
 
-Reason: Clear routine product enquiry, despite being short.
+**Reasoning:** A straightforward request for information about a shipping option.
 
-## Test 10 — Legal threat
 
-Input:
-I still haven't received my order. If this isn't resolved, I will contact my lawyer.
+## Input 6 — Clothing size and fit (Dutch)
 
-Expected: HUMAN INTERVENTION
+**Customer message:**
 
-Reason: Legal threat takes priority over delivery enquiry.
+> Hoe vind ik de juiste maat of pasvorm?
 
-## Test 11 — Dutch with typo
+**Expected:** AUTOMATE
 
-Input:
-Hoi, ik wil mijn broek retuneren. Hij is nog nieuw en ik heb hem gisteren gekregen. Hoe moet dat?
+**Reasoning:** A routine product question that could be answered using a size guide.
 
-Expected: AUTOMATE
 
-Reason: Routine return instructions, even with typo and Dutch language.
+## Input 7 — Security breach complaint (Spanish)
 
-## Test 12 — Unclear request
+**Customer message:**
 
-Input:
-About my order from last month... you know what I mean.
+> No estoy de acuerdo ustedes deben responder no tuve ninguna responsabilidad en qué hayan vulnerando su seguridad confié mi dinero en sus servicios, yo adjunte la denuncia encuentro bastante poco profesional que ni siquiera hayan revisado el documento que adjunte, necesito contactarme con alguien que me de una solución
 
-Expected: INSUFFICIENT INFORMATION
+**Expected:** HUMAN INTERVENTION
 
-Reason: No identifiable request or problem.
+**Reasoning:** The customer reports a security incident, references a formal complaint and explicitly requests contact with someone who can resolve the situation.
 
-## Test 13 — Mixed request
 
-Input:
-Can you tell me where my parcel is? Also, I was charged twice for the same order.
+## Input 8 — Instructions about survey responses (Spanish)
 
-Expected: HUMAN INTERVENTION
+**Customer message:**
 
-Reason: Payment dispute takes priority over routine tracking.
+> Donde dice "tu perfil", respondan a todas las preguntas positivamente. Por ejemplo, respondan que tienen trabajo, que tienen una carrera terminada, que están bien económicamente, etc. Eso porque son más encuestas para las personas que tienen dinero ya que eso busca la app.
 
-## Test 14 — Long message
+**Original expected:** HUMAN INTERVENTION
 
-Input:
-Hi SoloShop team, I ordered two shirts and a scarf last week. I received an email confirming my purchase and another saying that my order was shipped. I checked the tracking page twice, but I can't see an estimated arrival date. I have a birthday party next weekend and would like to know whether my package is likely to arrive before then. I'm not asking for a refund or compensation. I just want to know where I can find the delivery estimate. Thanks for your help!
+**Original reasoning:** The message does not fit routine customer-service categories and may require human review.
 
-Expected: AUTOMATE
+**Boundary issue:** This is not a clear customer-service request. The existing prompt does not explicitly define how to classify unrelated messages or instructions about another service. INSUFFICIENT INFORMATION is also defensible under the current rules.
 
-Reason: Long but still a routine tracking and delivery-estimate enquiry.
 
-## Test 15 — Boundary: defective or vague?
+## Input 9 — Content creator collaboration request
 
-Input:
-My jacket arrived yesterday and the sleeve has a hole in it. Can you tell me how to return it?
+**Customer message (anonymised):**
 
-Expected: HUMAN INTERVENTION
+> Hi Team,
+>
+> My name is [Name], and I'm interested in collaborating with Solo as a content creator, I'd love the opportunity to create fashion and lifestyle content featuring Solo products.
+>
+> Instagram: [Removed]
+>
+> TikTok: [Removed]
+>
+> Contact: [Removed]
+>
+> I'd love to hear about any current collaboration opportunities.
+>
+> Best,
+>
+> [Name]
 
-Reason: Damaged product overrides routine return question.
+**Original expected:** INSUFFICIENT INFORMATION
+
+**Original reasoning:** The request falls outside the standard customer-service tasks covered by the classifier.
+
+**Boundary issue:** The request itself is clear, so the information is not actually insufficient. The current prompt lacks a specific category for business partnerships. Human review may be more appropriate operationally.
+
+
+## Input 10 — Review sweepstakes
+
+**Customer message:**
+
+> How are the review sweepstakes winners notified?
+
+**Expected:** AUTOMATE
+
+**Reasoning:** A straightforward informational question that could be answered using the company's official sweepstakes rules.
+
+
+---
+
+## Test set limitations
+
+- Some inputs originate from businesses other than SoloShop.
+- Several messages concern processes that SoloShop's fictional policy does not explicitly address.
+- Some examples are public forum posts rather than direct customer-service emails.
+- Inputs #8 and #9 expose ambiguities in the classification categories.
+- Expected labels should remain visible in their original form so that subsequent prompt improvements can be evaluated transparently.
