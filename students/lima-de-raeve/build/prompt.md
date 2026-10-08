@@ -1,7 +1,7 @@
 # Prompt v1 — Customer Service Intervention Classifier
 
 **Date:** 8 October 2026  
-**Model to test:** Google Gemini
+**Model to test:** Google AI Studio
 
 ## Prompt
 
