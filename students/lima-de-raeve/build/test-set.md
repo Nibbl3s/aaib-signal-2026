@@ -31,6 +31,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** The main problem is a missing order and difficulty accessing tracking or support. The customer could initially receive automated instructions for guest orders. Human intervention may become necessary if the automated process cannot resolve the issue.
 
+**Source:** [https://community.ebay.com/forum/ask-a-mentor-57913/topic/help-with-an-item-not-arrived-when-buying-as-a-guest-276427/]
 
 ## Input 2 — Missing tracking and dispute with seller
 
@@ -46,6 +47,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** The enquiry has developed beyond a standard tracking request into an unresolved dispute involving the seller and access to funds.
 
+**Source:** [https://community.ebay.com/forum/ask-a-mentor-57913/topic/another-item-hasn%C3%A2tmt-arrived-question-202604/]
 
 ## Input 3 — Undelivered international order and rejected refund
 
@@ -65,6 +67,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** The customer is disputing a rejected refund and has already exhausted standard support procedures.
 
+**Source:** [https://community.ebay.com/forum/returns-57918/topic/order-never-arrived-ebay-refuses-refund-142591/]
 
 ## Input 4 — Inactive link (Dutch)
 
@@ -76,6 +79,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** A basic technical-support question that could initially receive standard troubleshooting instructions.
 
+**Source:** [https://www.zalando.be/faq/where-is-my-parcel.html]
 
 ## Input 5 — Premium shipping (Dutch)
 
@@ -87,6 +91,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** A straightforward request for information about a shipping option.
 
+**Source:** [https://www.zalando.be/faq/Zalando-Plus]
 
 ## Input 6 — Clothing size and fit (Dutch)
 
@@ -98,6 +103,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** A routine product question that could be answered using a size guide.
 
+**Source:** [https://www.zalando.be/faq/Sizing]
 
 ## Input 7 — Security breach complaint (Spanish)
 
@@ -109,6 +115,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** The customer reports a security incident, references a formal complaint and explicitly requests contact with someone who can resolve the situation.
 
+**Source:** [https://www.google.com/search?q=mercado+pago+ejemplos+de+correos+de+preguntas&sca_esv=e9d66db87c24774f&rlz=1C1RXQR_en-GBBE1102BE1102&udm=2&biw=1280&bih=791&sxsrf=APpeQnsrrpvG9j6qloxE0DJSKcGoAUZSyg%3A1791476701819&ei=3cPHasO6Me6ukdUPwKSm8AY&ved=2ahUKEwiDnb3j6qqXAxVuV6QEHUCSCW4Q4dUDegQIBhAN&uact=5&oq=mercado+pago+ejemplos+de+correos+de+preguntas&gs_lp=Egtnd3Mtd2l6LWltZyItbWVyY2FkbyBwYWdvIGVqZW1wbG9zIGRlIGNvcnJlb3MgZGUgcHJlZ3VudGFzSM8dULsFWN0ccAF4AJABAJgB-gGgAY4HqgEFOS4xLjG4AQPIAQD4AQGYAgCgAgCYAwCIBgGSBwCgB4QBsgcAuAcAwgcAyAcAgAgB&sclient=gws-wiz-img#sv=CAMSUxoyKhBlLWJjOEVEcnZzR3dySUpNMg5iYzhFRHJ2c0d3cklKTToOWDRhX05wOE5ydHZRWk0gBCoXCgFzEhBlLWJjOEVEcnZzR3dySUpNGAEwAVACGAcgxqf11wxKCBACGAEgAigB]
 
 ## Input 8 — Instructions about survey responses (Spanish)
 
@@ -122,6 +129,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Boundary issue:** This is not a clear customer-service request. The existing prompt does not explicitly define how to classify unrelated messages or instructions about another service. INSUFFICIENT INFORMATION is also defensible under the current rules.
 
+**Source:** [https://www.google.com/search?q=mercado+pago+ejemplos+de+correos+de+preguntas&sca_esv=e9d66db87c24774f&rlz=1C1RXQR_en-GBBE1102BE1102&udm=2&biw=1280&bih=791&sxsrf=APpeQnsrrpvG9j6qloxE0DJSKcGoAUZSyg%3A1791476701819&ei=3cPHasO6Me6ukdUPwKSm8AY&ved=2ahUKEwiDnb3j6qqXAxVuV6QEHUCSCW4Q4dUDegQIBhAN&uact=5&oq=mercado+pago+ejemplos+de+correos+de+preguntas&gs_lp=Egtnd3Mtd2l6LWltZyItbWVyY2FkbyBwYWdvIGVqZW1wbG9zIGRlIGNvcnJlb3MgZGUgcHJlZ3VudGFzSM8dULsFWN0ccAF4AJABAJgB-gGgAY4HqgEFOS4xLjG4AQPIAQD4AQGYAgCgAgCYAwCIBgGSBwCgB4QBsgcAuAcAwgcAyAcAgAgB&sclient=gws-wiz-img#sv=CAMSUxoyKhBlLW9FSWxvaUJjbTBrXzlNMg5vRUlsb2lCY20wa185TToOQzRvX3FqbE9aUXRwWk0gBCoXCgFzEhBlLW9FSWxvaUJjbTBrXzlNGAEwAVACGAcg6bGrlA5KCBACGAEgAigB]
 
 ## Input 9 — Content creator collaboration request
 
@@ -149,6 +157,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Boundary issue:** The request itself is clear, so the information is not actually insufficient. The current prompt lacks a specific category for business partnerships. Human review may be more appropriate operationally.
 
+**Source:** [https://www.google.com/search?q=example+of+question+email+shein&sca_esv=e9d66db87c24774f&rlz=1C1RXQR_en-GBBE1102BE1102&udm=2&biw=1280&bih=791&sxsrf=APpeQnuqAvYK6mSx3SXfRcv1xNqwIgXlrw%3A1791476728234&ei=-MPHaqTtDcfy7M8Pz6GCoAs&ved=2ahUKEwikyYnw6qqXAxVHOfsDHc-QALQQ4dUDegQIBhAN&uact=5&oq=example+of+question+email+shein&gs_lp=Egtnd3Mtd2l6LWltZyIfZXhhbXBsZSBvZiBxdWVzdGlvbiBlbWFpbCBzaGVpbkjATFChCljJSnACeACQAQCYAYgCoAHoEaoBBjI4LjEuMrgBA8gBAPgBAZgCF6AChQuoAgrCAgoQIxjJAhjqAhgnwgIHECMYyQIYJ8ICCxAAGIAEGLEDGIMBwgIIEAAYgAQYsQPCAg4QABiABBiKBRixAxiDAcICBRAAGIAEwgIKEAAYgAQYigUYQ8ICBxAAGIAEGArCAgkQABiABBgKGAvCAgQQABgewgIGEAAYHhgKwgIHEAAYgAQYE8ICBhAAGAgYHpgDCpIHAjIzoAfTdLIHAjIxuAf1CsIHCDAuOS4xMi4yyAddgAgB&sclient=gws-wiz-img#sv=CAMSUxoyKhBlLTRBX1Z0SWV2OHVkQjhNMg40QV9WdElldjh1ZEI4TToObXJiZ2QtbUpqQkVlV00gBCoXCgFzEhBlLTRBX1Z0SWV2OHVkQjhNGAEwAVACGAcg7JH7mgFKCBACGAEgAigB]
 
 ## Input 10 — Review sweepstakes
 
@@ -160,6 +169,7 @@ Expected answers are recorded below separately from the model's results. Each in
 
 **Reasoning:** A straightforward informational question that could be answered using the company's official sweepstakes rules.
 
+**Source:** [https://www.fashionnova.com/pages/faq#sizing-fit]
 
 ---
 
