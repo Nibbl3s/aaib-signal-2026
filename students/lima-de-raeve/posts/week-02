@@ -1,14 +1,64 @@
-Week 2 – Is AI the Right Tool?
-My Beat: Real Estate
-Artificial intelligence is becoming increasingly present in real estate. It can analyse property data, estimate prices, recommend properties to buyers, generate descriptions and even help investors identify opportunities. Because of this, it is tempting to think that almost every problem in real estate could be improved with AI. However, this week’s “No AI” framework made me look at the opposite question: when is AI actually not the right tool?
-One problem where I believe AI is not the answer is the final decision of whether someone should buy or rent a particular home.
-At first, this seems like a perfect problem for AI. A system could analyse the buyer’s budget, income, preferred location, property size, energy efficiency, historical prices and expected market development. It could then compare hundreds of properties and recommend the one that appears to be the best match. AI can definitely support this process, but I would not want it to make the final decision.
-Why not AI?
-The first reason is that choosing a home is not only a data problem. A property can look perfect according to measurable criteria and still feel completely wrong when you visit it. Maybe the street is noisier than expected, the apartment feels dark, the neighbourhood does not feel comfortable, or you simply cannot imagine yourself living there. On the other hand, someone might immediately connect with a property that does not receive the highest score from an algorithm.
-Secondly, buying a home is a high-impact financial decision. For most people, it is one of the largest purchases they will ever make. An AI recommendation could be based on incomplete information or predictions that turn out to be wrong. For example, AI can analyse previous property prices, but it cannot know with certainty how interest rates, the neighbourhood or the housing market will develop.
-There is also the question of personal priorities. Two people with exactly the same budget may make completely different choices. One person might prefer a small apartment in the centre of Ghent because they value being able to walk everywhere. Another might prefer a larger house outside the city because they value space and quietness. There is no objectively “correct” answer for AI to discover.
-What should we use instead?
-I think the better solution is AI-assisted human decision-making rather than AI decision-making. AI could filter listings, calculate affordability, compare prices per square metre, identify unusual prices and summarize relevant property information. This could save buyers a huge amount of time.
-After that, however, the buyer should visit the property, research the neighbourhood, ask questions and potentially consult professionals such as a real-estate agent, bank or property expert before deciding.
-Conclusion
-For my real-estate beat, the “No AI” framework showed me an important distinction: just because AI can help with a problem does not mean it should make the decision. In real estate, AI is especially valuable when there is a large amount of information to process. But when a decision involves personal preferences, uncertainty and major financial consequences, AI should remain a supporting tool. The final choice of where to live should stay human.
+---
+week: 2
+title: "Can AI Really Replace a Customer Service Employee?"
+author: "Lima"
+beat: "How AI Enables the One-Person Business"
+skill: "Cost literacy"
+date: 2026-10-08
+---
+
+Last week, I explored the financial potential of replacing traditional customer service with AI. The calculations suggested that AI could significantly reduce operational costs for a solo entrepreneur. However, one important question remained: how reliable is AI when dealing with actual customer enquiries?
+
+This week, I decided to test that question myself.
+
+Building an AI Customer Service Classifier
+
+I created a fictional online clothing store called SoloShop, operated by a single entrepreneur. The goal was to develop a simple AI tool that classifies incoming customer messages into three categories:
+
+AUTOMATE: Routine enquiries that can potentially be handled automatically.
+
+HUMAN INTERVENTION: More complicated or sensitive cases requiring personal attention.
+
+INSUFFICIENT INFORMATION: Messages that are too unclear to classify.
+
+Using Google AI Studio and Gemini, I developed a prompt containing the company's customer service policies and classification rules.
+
+Initially, I tested the classifier with fictional customer enquiries. The result was impressive: 100% accuracy. But I quickly realised that these messages were relatively straightforward and had been written specifically for my test.
+
+Would the results be the same with real customer messages?
+
+Testing with Real Customer Enquiries
+
+I collected ten publicly available customer questions and complaints, including messages in English, Dutch and Spanish. Each message was tested twice to examine both accuracy and consistency.
+
+The results were different from my first experiment.
+
+Accuracy: 70% — 7 out of 10 messages matched my expected classifications.
+
+Consistency: 100% — Gemini returned the same classification in both tests for every message.
+
+Three disagreements — The model differed from my expected answer for three inputs.
+
+One customer reported that an order had not arrived and that they could not access their account because they had purchased as a guest. I expected the AI to classify this as AUTOMATE, since automated troubleshooting could be the first step. Gemini instead selected HUMAN INTERVENTION.
+
+Another message involved a content creator proposing a collaboration. I initially expected INSUFFICIENT INFORMATION, but Gemini selected HUMAN INTERVENTION.
+
+Looking more closely, I realised that Gemini's answer was arguably more appropriate. The request was perfectly understandable, but it required a business decision rather than standard customer support.
+
+What Did I Learn?
+
+My biggest discovery was that an AI classification can disagree with my expected answer without necessarily being wrong.
+
+Some of my classification rules were incomplete. I had defined how to handle shipping, returns and complaints, but not collaboration requests or messages unrelated to customer service.
+
+I also learned that consistency and accuracy are different. Gemini produced identical responses in both runs, even when they disagreed with my expectations.
+
+For a solo entrepreneur, this matters. An AI tool that consistently escalates too many enquiries could create unnecessary work, while one that fails to escalate serious complaints could damage customer relationships.
+
+My Conclusion
+
+AI has potential to support customer service in a one-person business, particularly when interpreting messages written in different languages and styles. However, my experiment showed that clear policies and well-designed tests are just as important as the AI model itself.
+
+My next step is to improve the classification rules and retest the same messages to see whether accuracy increases without sacrificing consistency.
+
+The question is no longer simply whether AI can automate customer service, but how much human judgement is still needed to make that automation reliable.
