@@ -1,52 +1,120 @@
-## Run 1 — Prompt v1 — 8 October 2026
+# Build Log — SoloShop Customer Enquiry Classifier
 
-**Brief:** Test whether Gemini can accurately and consistently classify customer service enquiries into AUTOMATE, HUMAN INTERVENTION, or INSUFFICIENT INFORMATION, following SoloShop's predefined company policies.
+## Test Run 1 — Real Customer Messages
 
-**Model used:** Google Gemini (Google AI Studio — exact model version to be recorded)
+**Date:** 8 October 2026  
+**Prompt:** v1  
+**Platform:** Google AI Studio  
+**Model:** Gemini (exact model version to be added)  
+**Inputs:** 10  
+**Runs per input:** 2  
+**Total responses:** 20
 
-**Inputs tested:** 10 of 15 planned inputs. Each input was tested twice.
+### Results
 
-| # | Input (short label) | Expected | Got (Run A) | Got (Run B) | Verdict | Failure code |
-|---|---|---|---|---|---|---|
-| 1 | Tracking request | AUTOMATE | AUTOMATE | AUTOMATE | ✓ | — |
-| 2 | Repeated damaged deliveries | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | ✓ | — |
-| 3 | Very vague message | INSUFFICIENT INFORMATION | INSUFFICIENT INFORMATION | INSUFFICIENT INFORMATION | ✓ | — |
-| 4 | Spanish enquiry | AUTOMATE | AUTOMATE | AUTOMATE | ✓ | — |
-| 5 | Size exchange | AUTOMATE | AUTOMATE | AUTOMATE | ✓ | — |
-| 6 | Return policy | AUTOMATE | AUTOMATE | AUTOMATE | ✓ | — |
-| 7 | Damaged zipper | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | ✓ | — |
-| 8 | Exception request | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | ✓ | — |
-| 9 | Short product question | AUTOMATE | AUTOMATE | AUTOMATE | ✓ | — |
-| 10 | Legal threat | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | ✓ | — |
+| # | Expected | Gemini Run A | Gemini Run B | Result |
+|---|---|---|---|---|
+| 1 | AUTOMATE | HUMAN INTERVENTION | HUMAN INTERVENTION | Incorrect |
+| 2 | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | Correct |
+| 3 | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | Correct |
+| 4 | AUTOMATE | AUTOMATE | AUTOMATE | Correct |
+| 5 | AUTOMATE | AUTOMATE | AUTOMATE | Correct |
+| 6 | AUTOMATE | AUTOMATE | AUTOMATE | Correct |
+| 7 | HUMAN INTERVENTION | HUMAN INTERVENTION | HUMAN INTERVENTION | Correct |
+| 8 | HUMAN INTERVENTION | INSUFFICIENT INFORMATION | INSUFFICIENT INFORMATION | Disagreement |
+| 9 | INSUFFICIENT INFORMATION | HUMAN INTERVENTION | HUMAN INTERVENTION | Disagreement |
+| 10 | AUTOMATE | AUTOMATE | AUTOMATE | Correct |
 
-### Preliminary results
+### Performance
 
-- **Classification accuracy:** 10/10 inputs correct (100%).
-- **Consistency:** 10/10 inputs received identical classifications in both runs (100%).
-- **Total responses evaluated:** 20.
-- **Remaining:** Inputs #11–15, each to be tested twice.
+**Accuracy against original expected labels:** 7/10 = 70%
 
-### Failures by type
+**Response-level accuracy:** 14/20 = 70%
 
-| Failure code | Count | Notes |
+**Consistency:** 10/10 = 100%
+
+**Observed disagreements:** 3 inputs (#1, #8 and #9).
+
+**Output format:** All 20 responses followed the required single-label format.
+
+### Failure classification
+
+| Code | Count | Explanation |
 |---|---|---|
-| F1 Wrong | 0 | No incorrect classifications |
-| F2 Fabricated | 0 | No fabricated information observed |
-| F3 Missed | 0 | No missed escalation triggers |
-| F4 Format | 0 | All outputs followed the required format |
-| F5 Refused | 0 | No refusals |
-| F6 Inconsistent | 0 | Both runs produced identical classifications |
+| F1 — Wrong | 3 provisional | Outputs for #1, #8 and #9 differed from the expected labels |
+| F2 — Fabricated | 0 | No invented information observed in the label-only outputs |
+| F3 — Missed | 0 confirmed | No separately verified missed details |
+| F4 — Format | 0 | All outputs followed the required format |
+| F5 — Refused | 0 | No refusals |
+| F6 — Inconsistent | 0 | Every input received the same answer in both runs |
 
-### What surprised me
+**Important:** The three F1 cases are provisional. Inputs #8 and #9 reveal possible weaknesses in the original expected answers and classification policy, not necessarily model mistakes.
 
-Gemini correctly classified all ten customer enquiries, including messages in another language, vague questions, defective products and legal threats. I expected at least some difficulties with distinguishing routine requests from situations requiring human intervention. However, no classification errors or inconsistencies have appeared so far.
+### Failure analysis
 
-This result is promising, but the test set is relatively small and consists of fictional messages. It does not yet demonstrate how reliably the tool would perform with real customer enquiries.
+**Input 1 — Missing order through guest checkout**
 
-### The failure that would have mattered most in real use, and why
+- Expected: AUTOMATE
+- Actual: HUMAN INTERVENTION (twice)
+- Provisional failure: F1 Wrong
 
-Although no failures have occurred, the most dangerous potential error would be classifying a serious customer complaint as AUTOMATE when it actually requires HUMAN INTERVENTION. This could lead to unresolved complaints, customer dissatisfaction and additional costs for the entrepreneur.
+Gemini escalated a missing-delivery enquiry that I expected to be handled initially through automated troubleshooting. The message mentions that the customer cannot access the usual support process, which may have influenced the classification.
+
+This could indicate overly cautious escalation, although a human may eventually be required if the automated instructions do not work.
+
+**Input 8 — Spanish survey instructions**
+
+- Original expected: HUMAN INTERVENTION
+- Actual: INSUFFICIENT INFORMATION (twice)
+- Provisional failure: F1 Wrong
+
+The message describes how to answer survey questions rather than requesting customer support. My original expectation was human intervention because the message falls outside routine enquiries.
+
+However, the current prompt does not explicitly state that unrelated messages must be escalated. Gemini's response is therefore defensible.
+
+**Input 9 — Content creator collaboration**
+
+- Original expected: INSUFFICIENT INFORMATION
+- Actual: HUMAN INTERVENTION (twice)
+- Provisional failure: F1 Wrong
+
+Gemini escalated a collaboration proposal rather than classifying it as insufficient information.
+
+The request is understandable and contains enough information to identify its purpose. This suggests that the original expected label may have been inappropriate.
+
+A better policy would explicitly route partnership and collaboration requests to human review.
+
+### What surprised me?
+
+My original fictional test set produced 100% accuracy, but the new real-world examples produced only 70% accuracy against my expected labels.
+
+The model remained completely consistent across repeated tests. However, consistency did not guarantee agreement with the expected classifications.
+
+I also discovered that some errors may originate from my own test design rather than from Gemini. In particular, the current prompt does not clearly explain what should happen when a message is unrelated to customer service or concerns a business collaboration.
+
+### Most costly potential failure
+
+The most costly potential failure would be incorrectly classifying a serious customer complaint as AUTOMATE instead of HUMAN INTERVENTION.
+
+For a solo entrepreneur, this could lead to unresolved disputes, additional expenses and reputational damage.
+
+In the current test, the most notable potential error was the opposite: Gemini escalated a routine enquiry (#1). This would increase the entrepreneur's workload but is generally less dangerous than failing to escalate a serious complaint.
+
+### Proposed improvement — Prompt v2
+
+**Hypothesis:** Adding explicit rules for business enquiries, unrelated messages and cases where automated support is blocked will reduce disagreements on boundary cases.
+
+**Predicted effect:** More reliable classification of messages outside the standard return, delivery and product-information categories.
+
+**Possible trade-off:** Additional escalation rules may increase the number of messages routed to a human, reducing the time savings of automation.
+
+**Status:** Proposed only. Prompt v1 has not yet been modified or retested.
 
 ### Next steps
 
-Complete both runs for inputs #11–15. If the tool continues to achieve 100% accuracy, investigate its limitations using more challenging real-world enquiries while keeping the original test results unchanged.
+1. Confirm the original source URLs for all ten messages.
+2. Review the ambiguous expected labels without erasing the original expectations.
+3. Complete the remaining five test inputs.
+4. Create Prompt v2 and document its changes.
+5. Retest the same inputs twice using Prompt v2.
+6. Compare both versions using the same test set.
