@@ -25,3 +25,7 @@ Your task is to read incoming customer emails and classify each message into exa
 **Customer message:**
 
 [INSERT CUSTOMER EMAIL HERE]
+"Hello, I ordered a jacket last week but haven't received a tracking number. Could you check the delivery status?"
+
+[EXPECTED OUTPUT]
+AUTOMATE
