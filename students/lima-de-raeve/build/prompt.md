@@ -2,6 +2,7 @@
 
 **Date:** 8 October 2026  
 **Model to test:** Google AI Studio
+** Link to model:** https://soloshop-customer-enquiry-classifier.ai.studio/
 
 ## Prompt
 
