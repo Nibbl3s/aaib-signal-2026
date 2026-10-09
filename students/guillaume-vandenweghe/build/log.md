@@ -79,7 +79,7 @@ A real complaint sorted as something else. In this test that happened in #10: an
 Week 3 — test-set swap (partner input through my prompt)
 Setup: I ran a classmate's input through my prompt v1, unchanged. Same method as Week 2: a new chat per run, run A and run B, one email per chat.
 	•	Partner / source: Janis Krainis — students/janis-krainis/build/test-set.md, input 1 (freight booking email)
-	•	Model and version: [MODEL] · Date of runs: 2026-10-09
+	•	Model and version: Claude Opus 5.5 · Date of runs: 2026-10-09
 	•	Expected answer written before running: yes. I used the rules of my own prompt: the email is not about insurance, so the correct answer is UNCLEAR.
 	•	Why this input: it is out of scope for my tool, but it contains words that could pull it into a claims category ("auto spare parts", "shipment", "warehouse"). A real claims inbox also receives emails that are not about insurance, such as wrong-address mail, supplier mail and spam.
 #
