@@ -7,7 +7,7 @@ skill: "Vendor claim detection"
 date: 2026-10-09
 ---
 
-A game character that answers instantly feels alive. One that pauses mid-scene feels broken. Inworld sells infrastructure for spoken, interactive characters, but its pitch moves from a credible technical feature to a much stronger promise: “a scene never stalls on a provider outage.” That difference matters when a studio is deciding what can safely ship.
+A game character that answers instantly feels alive. One that pauses mid-scene feels broken. Inworld sells infrastructure for spoken, interactive characters, but its pitch moves from a credible technical feature to a stronger promise: “a scene never stalls on a provider outage.” That difference matters when a studio is deciding what can safely ship.
 
 ## The claim
 
