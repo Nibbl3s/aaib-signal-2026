@@ -1,5 +1,15 @@
 # Signal Post 2 — The Cost of Getting AI Wrong
 
+| Field | Details |
+|---|---|
+| Week | Week 2 |
+| Title | The Cost of Getting AI Wrong |
+| Author | Subhan Naeem |
+| Beat | AI in Business Consulting |
+| Skill | Capability skepticism |
+| Date | 2026-01-10 |
+# Signal Post 2 — The Cost of Getting AI Wrong
+
 Last week, I looked at the cost of AI in business consulting. My main question was simple: **how much does AI cost a consulting firm?**
 
 I found that the direct AI cost can be surprisingly small, but that does not necessarily mean AI is cheap. If consultants have to spend time checking and correcting unreliable outputs, the real cost can become much higher.
@@ -32,7 +42,7 @@ A tool does not necessarily have to give a factually wrong answer to be problema
 
 I also considered whether AI was even necessary for this task.
 
-For simple, structured rules, a **spreadsheet or rules-based system** could perform the classification without AI. AI becomes more interesting when the information is unstructured, large in volume, or requires interpretation.
+For simple, structured rules, a **spreadsheet or rules-based system** could perform the classification without AI. For example, a spreadsheet could flag a tax increase above a chosen threshold or a currency decline beyond a defined percentage. The rules would be transparent, repeatable, and easier to audit, without the additional cost and uncertainty of AI-generated classifications. AI becomes more interesting when the information is unstructured, large in volume, or requires interpretation.
 
 ## Connecting Back to Week 1
 
