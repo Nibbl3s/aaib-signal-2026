@@ -95,4 +95,4 @@ A real complaint sorted as something else. In this test that happened in #10: an
 
 **Change planned for prompt v2 (not made yet):** none from this input. Prompt v2 will focus on the COMPLAINT boundary found in Week 2: first decide whether my rule 2 or my expected answers are wrong, then change only that.
 
-**Updated total (Week 2 + swap):** 10 correct out of 13 inputs → 77%. 77%.
+**Updated total (Week 2 + swap):** 10 correct out of 13 inputs → 77%.
