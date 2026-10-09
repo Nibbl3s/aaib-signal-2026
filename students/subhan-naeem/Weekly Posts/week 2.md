@@ -7,7 +7,7 @@
 | Author | Subhan Naeem |
 | Beat | AI in Business Consulting |
 | Skill | Capability skepticism |
-| Date | 2026-01-10 |
+| Date | 2026-10-01 |
 # Signal Post 2 — The Cost of Getting AI Wrong
 
 Last week, I looked at the cost of AI in business consulting. My main question was simple: **how much does AI cost a consulting firm?**
