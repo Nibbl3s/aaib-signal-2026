@@ -1,7 +1,7 @@
 | Field | Details |
 |---|---|
 | Week | 1 |
-| Title | An AI Coach Costs €6 a Month. One Mistake Costs €60,000. |
+| Title | An AI Research Assistant Costs €276 a Month. But What's the Real Business Cost? |
 | Author | Subhan Naeem |
 | Beat | AI in Business Consulting |
 | Skill | Cost literacy |
