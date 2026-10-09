@@ -24,7 +24,7 @@ Yes. I created predefined classification rules and expected answers before runni
 
 ### Where the inputs came from
 
-I wrote the test cases myself based on realistic international market-entry situations.
+I wrote the test cases myself based on realistic international market-entry situations with the help of AI.
 
 **Real, or written by me?**
 
