@@ -76,22 +76,27 @@ A real complaint sorted as something else. In this test that happened in #10: an
 | **Artifact** | A small desk mock of a claims mail desk: six labelled trays, one per category (NEW_CLAIM, CLAIM_FOLLOWUP, POLICY_CHANGE, CANCELLATION, COMPLAINT, UNCLEAR), with printed test emails on cards. A claims handler or classmate sorts the cards by hand next to the tool's label, to see whether they trust the label at a glance and where the COMPLAINT tray gets missed. |
 | **Fablab session** | An open fablab session before Week 4 (CP1). The agenda link on the course page returned a 404 on 5 October, so I will ask fablab@arteveldehs.be for the next open slot and note the date here. |
 
-
 Week 3 — test-set swap (partner input through my prompt)
-
 Setup: I ran a classmate's input through my prompt v1, unchanged. Same method as Week 2: a new chat per run, run A and run B, one email per chat.
-
-Partner / source: Janis Krainis — students/janis-krainis/build/test-set.md, input 1 (freight booking email)
-Model and version: [MODEL] · Date of runs: 2026-10-09
-Expected answer written before running: yes. I used the rules of my own prompt: the email is not about insurance, so the correct answer is UNCLEAR.
-Why this input: it is out of scope for my tool, but it contains words that could pull it into a claims category ("auto spare parts", "shipment", "warehouse"). A real claims inbox also receives emails that are not about insurance, such as wrong-address mail, supplier mail and spam.
-#	Input (short label)	Expected	Got A	Got B	Verdict	Failure code
-S1	Freight booking, 1,200 kg auto spare parts Antwerp → Vienna (EN)	UNCLEAR, EN	UNCLEAR, EN	UNCLEAR, EN	✅	—
-
+	•	Partner / source: Janis Krainis — students/janis-krainis/build/test-set.md, input 1 (freight booking email)
+	•	Model and version: [MODEL] · Date of runs: 2026-10-09
+	•	Expected answer written before running: yes. I used the rules of my own prompt: the email is not about insurance, so the correct answer is UNCLEAR.
+	•	Why this input: it is out of scope for my tool, but it contains words that could pull it into a claims category ("auto spare parts", "shipment", "warehouse"). A real claims inbox also receives emails that are not about insurance, such as wrong-address mail, supplier mail and spam.
+#
+Input (short label)
+Expected
+Got A
+Got B
+Verdict
+Failure code
+S1
+Freight booking, 1,200 kg auto spare parts Antwerp → Vienna (EN)
+UNCLEAR, EN
+UNCLEAR, EN
+UNCLEAR, EN
+✅
+—
 Result: 1 correct out of 1 → 100%. Both runs gave the same answer (no F6), in the exact two-line format (no F4).
-
 What broke and why it matters: nothing broke. The tool did not force the out-of-scope email into a claims queue, even though it mentions car parts. This shows rule "UNCLEAR = not about insurance" works for a clear case. It does not show the tool is robust in general: the swap tested a boundary that was easy for my prompt. My weakest boundary is still COMPLAINT (Week 2: #1, #3 and #10 failed there). A harder swap input would be an email that is partly about insurance, for example a garage asking about payment for a repair.
-
 Change planned for prompt v2 (not made yet): none from this input. Prompt v2 will focus on the COMPLAINT boundary found in Week 2: first decide whether my rule 2 or my expected answers are wrong, then change only that.
-
 Updated total (Week 2 + swap): 10 correct out of 13 inputs → 77%.
