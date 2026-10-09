@@ -12,7 +12,7 @@ Rating: 🟢 Confident / 🟡 Getting there / 🔴 Need practice, plus **one sen
 |---|-------|--------|----------|
 | 1 | Cost literacy | 🟢 | Priced the five production layers of Death Stranding in € with the formula printed under every number, and ran the EuroShop tier comparison that showed Premium (€9,156/month) beats Budget (€45,276/month) once the €5 error cost is counted. |
 | 2 | Capability skepticism | 🟡 | Built a 15-input test set from Kojima Productions job postings with the answers written before the first run, measured my own classifier at 46.7% (7/15 inputs, 30 calls), and found that a no-AI constant beats it on exposure (66.7% vs 60.0%) and that my two-pass protocol could not detect F6 at temperature 0. |
-| 3 | Vendor claim detection | - | |
+| 3 | Vendor claim detection | 🟡 | Tagged 24 NexusAI claims with reasons and identified five avoidances, applied the FOMO framework to reach a walk-away verdict, and deconstructed Inworld’s game-production pitch to recommend a bounded pilot while separating documented features from untested promises. |
 | 4 | Value quantification | - | |
 
 ## Checkpoint 2, end of Week 8
