@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Value or FOMO? Deconstructing Inworld’s AI Claims — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 3 · AI in Game Production</div>
+<h1>Real Value or FOMO? Deconstructing Inworld’s AI Claims</h1>
+<div class="byline">Daniel Stefirta · 2026-10-09</div>
+<p>A game character that answers instantly feels alive. One that pauses mid-scene feels broken. Inworld sells infrastructure for spoken, interactive characters, but its pitch moves from a credible technical feature to a much stronger promise: “a scene never stalls on a provider outage.” That difference matters when a studio is deciding what can safely ship.</p>
+<h2>The claim</h2>
+<p>Inworld’s Games &amp; Media page describes speech generation, speech recognition, real-time conversation and routing between language models. Its Router can select models using metadata such as scene, platform and language.</p>
+<p>The pitch connects those capabilities to production outcomes. It promises automatic fallback across more than 100 models, describes integration as requiring “only a base-URL change,” and states that buyers “will never get better price-performance elsewhere.”</p>
+<p>These are three different claims: resilience, integration effort and economic superiority. A functioning API does not establish all three.</p>
+<h2>The deconstruction</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Tag</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automatic model fallback</td>
+<td>Fact about the documented feature</td>
+<td>Inworld’s technical documentation describes fallback when a provider fails. This establishes a documented capability, not measured reliability in my game.</td>
+</tr>
+<tr>
+<td>“A scene never stalls on a provider outage”</td>
+<td>Aspiration</td>
+<td>Fallback may reduce interruptions, but an absolute promise needs evidence about detection time, recovery time and failure conditions.</td>
+</tr>
+<tr>
+<td>Integration with “only a base-URL change”</td>
+<td>Avoidance</td>
+<td>Endpoint compatibility leaves unanswered the work required for game-state integration, security, testing and handling different model behaviour.</td>
+</tr>
+<tr>
+<td>“You will never get better price-performance elsewhere”</td>
+<td>Aspiration</td>
+<td>No defined workload, quality threshold or universal comparison supports this absolute claim.</td>
+</tr>
+</tbody>
+</table>
+<p>The most important avoidance is what happens <em>after</em> the model changes. A replacement model might answer successfully while contradicting established lore, revealing a quest solution or changing a character’s personality.</p>
+<p>That is my production-risk inference, not an observed failure of Inworld. It explains why availability and correctness need separate tests. Returning something is not the same as returning something shippable.</p>
+<h2>The FOMO test</h2>
+<p><strong>What specific problem does this solve?</strong> For a studio already building conversational NPCs, the problem could be interruptions when one model provider fails. For a game built around authored dialogue, the pitch has not established a need. “More intelligent characters” is not a measurable business target.</p>
+<p><strong>Can we verify the claims?</strong> I would pilot one optional NPC. Deliberately interrupt its primary provider, then measure recovery time, successful responses and character consistency. I would also record whether the replacement exposes information the character should not know. I have not run this test, so the result remains unknown.</p>
+<p><strong>Is there a simpler solution?</strong> For fixed scenes, prerecorded dialogue avoids runtime model calls. For optional conversation, authored fallback lines could keep the game moving during an outage. These alternatives offer less conversational freedom, but that trade-off might suit the design.</p>
+<h2>The verdict</h2>
+<p><strong>Pilot, not buy for full production.</strong> Inworld documents genuine infrastructure rather than merely attaching “AI” to a vague promise. However, its strongest marketing statements exceed what those documents establish.</p>
+<p>A bounded pilot should compare model fallback with authored fallback, counting integration work, review time and operating costs alongside responsiveness. Story-critical scenes should remain outside that pilot.</p>
+<p>My own Classifier reinforces the distinction: valid output can still contain a wrong judgement. For game production, the purchasing question is not whether the system can generate dialogue. It is whether the studio can reliably control what reaches the player.</p>
+<p><em>Sources: <a href="https://inworld.ai/gaming-media">Inworld Games &amp; Media</a>, <a href="https://inworld.ai/router">Router</a>, and <a href="https://docs.inworld.ai/router/introduction">technical overview</a>, accessed 9 October 2026.</em></p>
+<p><em>AI disclosure: an AI assistant helped research and draft this analysis. No Inworld API calls or gameplay tests were performed.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
