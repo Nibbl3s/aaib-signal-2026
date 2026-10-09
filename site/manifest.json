@@ -529,6 +529,15 @@
  },
  {
   "week": 3,
+  "title": "Insurance Claims: Real Value or FOMO? Deconstructing Tractable's AI Claims",
+  "author": "Guillaume Vandenweghe",
+  "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
+  "skill": "Vendor claim detection",
+  "date": "2026-10-09",
+  "url": "posts/guillaume-vandenweghe-week-03.html"
+ },
+ {
+  "week": 3,
   "title": "Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
