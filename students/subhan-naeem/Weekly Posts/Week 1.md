@@ -1,11 +1,13 @@
-week	1
-title	An AI Coach Costs €6 a Month. One Mistake Costs €60,000.
-author	Subhan Naeem
-beat	AI in Business Consulting
-skill	Cost literacy
-date	2026-09-27
-# AI in Business Consulting: The Cost of AI
+| Field | Details |
+|---|---|
+| Week | 1 |
+| Title | An AI Coach Costs €6 a Month. One Mistake Costs €60,000. |
+| Author | Subhan Naeem |
+| Beat | AI in Business Consulting |
+| Skill | Cost literacy |
+| Date | 2026-09-27 |
 
+# AI in Business Consulting: The Cost of AI
 ## Hook
 
 **How much does AI actually cost a consulting firm?**
