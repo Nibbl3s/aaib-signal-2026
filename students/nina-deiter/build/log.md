@@ -1,16 +1,17 @@
 ## The job
 
 **What it does, in one sentence:**
-> Extracts discipline, name, location, email, phone and clients from a freelancer's website text.
+> Classifies real UI design feedback into predefined categories and converts it into actionable tasks for creative project teams.
 
-**Input:** Text of a freelancer's or studio's website 
-**Output:** Structured profile with 6 fields 
-**Who would use it, and instead of what?** A project manager at a creative agency, 
-instead of manually copying details from each website.
+**Input:** Individual design feedback comments from the publicly available Google UICrit dataset.
+**Output:** A structured response containing:
+- Design issue category
+- Whether action is required
+- One concise, actionable design task
+  
+**Who would use it, and instead of what?** Project managers at creative agencies, instead of manually categorising design feedback and translating each comment into an actionable task for designers.
 
-**Is the answer checkable?** Could two people independently agree whether a given output is right?
-> Yes. Each field either appears literally on the page or does not. 
-Two people reading the same page would write the same value.
+**Is the answer checkable?** Yes, within defined evaluation criteria. Classification can be compared against manually established reference labels, and generated tasks can be checked against the original feedback for factual accuracy. However, some design comments are subjective or ambiguous, so two human evaluators may disagree. These limitations must be documented.
 
 *If the honest answer is "not really," change the job now. Week 2 is the cheapest time to do it and Week 6 is the most expensive.*
 
@@ -18,9 +19,9 @@ Two people reading the same page would write the same value.
 
 ## The test set
 
-**Where the inputs came from:** Public freelancer websites 
-**Real, or written by me?** Real 
-**Anonymised?** No — public websites, no private data
+**Where the inputs came from:** Google Research UICrit, a publicly available dataset containing critiques of mobile user interface designs. https://github.com/google-research-datasets/uicrit/blob/main/uicrit_public.csv 
+**Real, or written by me?** Real dataset comments, including feedback from human reviewers.
+**Anonymised?** The dataset is publicly available. Only relevant design feedback will be used, without adding personal or confidential client information.
 
 **Awkward cases deliberately included** — tick what you covered:
 
@@ -51,9 +52,9 @@ to specify — revise the brief, then re-run. A brief is a hypothesis, not a con
 
 ### Run 1 — prompt v1 — *date*
 
-**Brief:** —
-**Model used:** —
-**Inputs tested:** —
+**Brief:** Test whether a basic prompt can consistently classify publicly available design feedback and generate actionable design tasks without inventing information.
+**Model used:** To be recorded during testing.
+**Inputs tested:** 15 selected UICrit comments.
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
