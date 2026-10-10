@@ -41,7 +41,7 @@
 | **4. Is the price worth the benefits?** | It is difficult to say without knowing the full price, including implementation, maintenance and AI usage costs. |
 | **5. Are there simpler alternatives?** | Yes. The company could improve its existing forecasting tools or warehouse processes first, before paying for a new AI system. |
 
-I think I would run a small pilot rather than buy the full system immediately. NexusAI might be useful, but the company needs proof of its results and total costs first.
+Verdict: I think I would run a small pilot rather than buy the full system immediately. NexusAI might be useful, but the company needs proof of its results and total costs first.
 
 ## 3. GhentBakery vs. FlandersTextiles
 
