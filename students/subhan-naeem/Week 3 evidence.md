@@ -21,6 +21,16 @@
 | 15 | Money-back guarantee if there is no improvement after 90 days | Fact | They are offering a guarantee, but the conditions need to be checked in the contract. |
 | 16 | Only two pilot slots are left for Q2 2026 | Avoidance | This creates pressure to decide quickly, but they don't prove that only two places are left. |
 
+### Top 5 Avoidances in the NexusAI Proposal
+
+| # | What the proposal avoids | Why it matters | Question I'd ask NexusAI |
+|---|---|---|---|
+| 1 | **Internal benchmarking:** The 94% forecast accuracy is mentioned, but the testing methodology is not explained. | "Up to 94%" from the vendor's own tests says nothing about the accuracy a client would actually get. | "What was the average accuracy on a held-out test set, and can an independent party verify it?" |
+| 2 | **Client-reported results:** The results come from clients themselves, with no independent verification. | Clients who are unhappy may not report, and clients who want to justify the purchase may over-report. | "Can I speak to three named clients and see before-and-after data?" |
+| 3 | **Unspecified LLM technology:** The proposal says it uses "leading LLM technology" but doesn't say which model. | The model affects quality, cost and data privacy, so the buyer can't judge the platform without knowing it. | "Which LLM do you use, who hosts it, and who pays for the usage?" |
+| 4 | **Limited pilot availability:** Only two pilot slots are said to remain, with no evidence that this is true. | It creates pressure to decide quickly and skip proper due diligence. | "When does the next pilot slot open, and why is the offer limited?" |
+| 5 | **Missing costs beyond the €252,000:** The proposal quotes Year 1 pricing but doesn't say who pays for LLM usage, model retraining, support after onboarding, or switching costs. | The real total cost is higher than the quoted figure, so the buyer can't compare it with the expected benefits. | "What is the full cost over three years, including everything not listed?" |
+
 ## 2. Applying the FOMO Framework
 
 | **Question** | **Answer** |
