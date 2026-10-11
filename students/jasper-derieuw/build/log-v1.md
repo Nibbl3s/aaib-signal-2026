@@ -82,9 +82,23 @@ The raw success rate, 70.8%, looked acceptable in isolation. The inconsistency r
 **The failure that would have mattered most in real use, and why:**
 Input 12, the corrupted invoice. On one run the tool correctly reported the fields as not found. On the other, it fabricated a plausible sounding supplier name and an estimated HS code rather than admitting it could not tell. This is the single most dangerous failure in the log, because it occurred on the one input deliberately built so the honest answer was I do not know, and a fabricated field looks identical to a real one to anyone who has not seen the source document.
 
+## Test-set swap, from Week 3
+
+Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two runs each, full record in [test-set-swap.md](test-set-swap.md). The in-class swap was not recorded, so this is a fresh run after the session.
+
+**Result:** 10 of 10 inputs consistent across runs, 0 fabrications. Supplier, HS code and value were correctly "not found" 60 of 60 times. Origin was missed on 3 inputs (F3 × 6 runs), cautiously: "likely, but not stated". The flag was "needs review" on every run, against an expected "cannot be determined", which is a value prompt v1 does not offer.
+
+**What broke:** not the tool, but my specification. My expected answers used an output value the prompt does not allow, and my prompt asks to screen countries against a list that contains none.
+
 ## Changes
 
-No changes made yet. First revision planned before the Week 3 Gauntlet gate, once feedback from a second person's test set is available, per the Build brief's guidance that a second person's inputs will break the prompt in ways my own never did.
+No prompt changes yet; v1 is still the measured version. Three inputs now drive v2, planned for Week 4:
+
+1. **Origin rule, written into the prompt.** A port, airport, terminal, warehouse or hub is a routing point, not an origin; if they cannot be told apart, report "unclear". Source: the Week 2 extension (F1 on transshipped inputs D and E) and swap Input 9, where the tool got it right by judgement only.
+2. **A fourth flag value, "cannot be determined"**, for when there is no supplier name to screen. Source: Week 2 Input 12 and all ten swap inputs.
+3. **Make the reference list match the prompt**: either add flagged countries, or remove "and countries" from the prompt. Source: swap Run B.
+
+Measured rates stay as logged for v1: 70.8% per run on my own set, 58.3% of inputs inconsistent, 75% on the practitioner-pattern set. Any v2 rate gets its own run section, and nothing above is overwritten.
 
 ## Deployment probe, from Week 2
 
