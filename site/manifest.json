@@ -550,7 +550,11 @@
    "author": "Jasper Derieuw",
    "beat": "EU and China Trade Compliance in the AI Era",
    "skill": "Vendor claim detection",
-   "date": "2026-10-07"
+   "date": "2026-10-07",
+   "verdict": "Walk away for now",
+   "stamp": "VERDICT REVISED",
+   "kpis": "2 of 6 | claims that held up as Facts ; 82% | AJ Bell alert cut, the only attributable figure ; 0 of 3 | follow-up questions answered",
+   "takeaways": "Named clients beat vague quantifiers ; An unsourced % is marketing until someone names whose numbers they are ; A vendor's silence on price is itself a finding"
   }
  },
  {
