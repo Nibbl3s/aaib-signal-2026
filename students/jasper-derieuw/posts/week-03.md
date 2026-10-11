@@ -5,10 +5,6 @@ author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Vendor claim detection"
 date: 2026-10-07
-verdict: "Pilot, not buy"
-stamp: "CLEARED · PILOT"
-kpis: "2/6 | claims are verifiable facts ; 82% | fewer alerts (AJ Bell), no period stated ; € ? | total cost: vendor won't quote"
-takeaways: "Real vendors mix evidence and marketing ; The 95% automation claim has no source ; No self-serve price = blank cost of ownership"
 ---
 
 # Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims
@@ -44,8 +40,12 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 
 ---
 
+**Update, 11 October 2026: verdict revised to walk away for now.** After this post I put three single question emails to the vendors (5, 7 and 9 October), one of them asking what data the 95 percent automation figure rests on. None has been answered. An unverifiable claim stays an Aspiration, and the cost and fit questions are also still open, so I no longer recommend a pilot at this point. The original verdict above is left as I wrote it. Full record of what was sent, when, what came back and what it changed: [week-03-vendor-questions.md](./week-03-vendor-questions.md)
+
+---
+
 *AI disclosure: I used Claude to search for ComplyAdvantage's public claims, to draft a first tagging of them and the structure of this post, and to check my NexusAI tagging against the official answer key. I reviewed and kept the results; the final tags and the verdict are mine.*
 
 ---
 
-Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [Week 3 Evidence](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/claims-and-fomo.md)
+Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [week-03-evidence.md](./week-03-evidence.md)
