@@ -568,6 +568,15 @@
  },
  {
   "week": 3,
+  "title": "The Fake Analyst: Real Value or FOMO? Deconstructing Dataiku's AI Claims",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Vendor claim detection",
+  "date": "2026-10-09",
+  "url": "posts/kirill-kyryllov-week-03.html"
+ },
+ {
+  "week": 3,
   "title": "Algorithmic Homogenization: Real Value or FOMO? Deconstructing MyPoolitzer\u2019s Automated Slush Pile",
   "author": "Luna Van der Heyden",
   "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing.",
