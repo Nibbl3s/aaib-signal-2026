@@ -5,6 +5,10 @@ author: "Jasper Derieuw"
 beat: "EU and China Trade Compliance in the AI Era"
 skill: "Vendor claim detection"
 date: 2026-10-07
+verdict: "Walk away for now"
+stamp: "VERDICT REVISED"
+kpis: "2 of 6 | claims that held up as Facts ; 82% | AJ Bell alert cut, the only attributable figure ; 0 of 3 | follow-up questions answered"
+takeaways: "Named clients beat vague quantifiers ; An unsourced % is marketing until someone names whose numbers they are ; A vendor's silence on price is itself a finding"
 ---
 
 # Trade Compliance: Real Value or FOMO? Deconstructing ComplyAdvantage's AI Claims
@@ -40,7 +44,7 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 
 ---
 
-**Update, 11 October 2026: verdict revised to walk away for now.** After this post I put three single question emails to the vendors (5, 7 and 9 October), one of them asking what data the 95 percent automation figure rests on. None has been answered. An unverifiable claim stays an Aspiration, and the cost and fit questions are also still open, so I no longer recommend a pilot at this point. The original verdict above is left as I wrote it. Full record of what was sent, when, what came back and what it changed: [week-03-vendor-questions.md](./week-03-vendor-questions.md)
+**Update, 11 October 2026: verdict revised to walk away for now.** After this post I put three single question emails to the vendors (5, 7 and 9 October), one of them asking what data the 95 percent automation figure rests on. None has been answered. An unverifiable claim stays an Aspiration, and the cost and fit questions are also still open, so I no longer recommend a pilot at this point. The original verdict above is left as I wrote it. Full record of what was sent, when, what came back and what it changed: [vendor-questions.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/vendor-questions.md)
 
 ---
 
@@ -48,4 +52,4 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 
 ---
 
-Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [week-03-evidence.md](./week-03-evidence.md)
+Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [week-03-evidence.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/week-03-evidence.md)

@@ -9,7 +9,7 @@ date: 2026-10-07
 
 # Week 3 Evidence
 
-This file holds the full workings behind [week-03.md](./week-03.md): the tagged claims table for the NexusAI proposal, a comparison of my tags with the official reveal, the top five avoidances, the five question FOMO framework walkthrough, and the GhentBakery versus FlandersTextiles case comparison.
+This file holds the full workings behind [week-03.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/posts/week-03.md): the tagged claims table for the NexusAI proposal, a comparison of my tags with the official reveal, the top five avoidances, the five question FOMO framework walkthrough, and the GhentBakery versus FlandersTextiles case comparison.
 
 ---
 
@@ -143,7 +143,7 @@ I tagged all sixteen claims myself first and compared them with the official rev
 
 ---
 
-Vendor outreach for the 6 ECTS extension, including the revised ComplyAdvantage verdict: [week-03-vendor-questions.md](./week-03-vendor-questions.md)
+Vendor outreach for the 6 ECTS extension, including the revised ComplyAdvantage verdict: [vendor-questions.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/vendor-questions.md)
 
 ---
 
