@@ -13,7 +13,7 @@ Fill it in *as you go*, not the night before a checkpoint. A log reconstructed f
 **What it does, in one sentence:**
 > Classifies one financial news item for a retail investor into event type, asset class, and fact or opinion.
 
-**Input:** one headline plus lead, or one X post, in English or Dutch.
+**Input:** one headline plus lead, or one opinion piece, in English or Dutch.
 **Output:** three labelled lines.
 **Who would use it, and instead of what?** a retail investor, instead of reading and sorting every source by hand.
 
@@ -26,9 +26,9 @@ Fill it in *as you go*, not the night before a checkpoint. A log reconstructed f
 
 ## The test set
 
-**Where the inputs came from:** public news sites (Federal Reserve, Eurostat, TheStreet, VEB) and X.
+**Where the inputs came from:** public news sites (Federal Reserve, Eurostat, TheStreet, VEB, The Economist, Financial Times).
 **Real, or written by me?** all real.
-**Anonymised?** individuals on X anonymised.
+**Anonymised?** individuals named in opinion pieces anonymised.
 
 **Awkward cases deliberately included** — tick what you covered:
 
@@ -68,7 +68,7 @@ to specify — revise the brief, then re-run. A brief is a hypothesis, not a con
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
 | 1 | Fed raises rates | rate decision / FX, bonds / fact | rate decision / bonds / fact | rate decision / bonds / fact | ✗ | F3 (missed FX) |
-| 2 | Eurostat inflation 3.8% (X) | macro data / FX / fact | macro data / bonds / fact | macro data / bonds, FX, commodities / fact | ✗ | F1, F6 |
+| 2 | Eurostat inflation 3.8% (The Economist) | macro data / FX / fact | macro data / bonds / fact | macro data / bonds, FX, commodities / fact | ✗ | F1, F6 |
 | 3 | Option Care buyout (unconfirmed) | company news / equities / opinion | same | same | ✓ | |
 | 4 | Google–Constellation deal | company news / equities / fact | same | same | ✓ | |
 | 5 | G7 oil reserve release | regulation / commodities / fact | market move / commodities / fact | market move / commodities / fact | ✗ | F1 |
@@ -79,9 +79,9 @@ to specify — revise the brief, then re-run. A brief is a hypothesis, not a con
 | 10 | Seagate overnamestrijd (NL) | company news / equities / opinion | same | same | ✓ | |
 | 11 | Jefferies koersdoel (NL) | company news / equities / opinion | opinion only / equities / opinion | opinion only / equities / opinion | ✗ | F1 |
 | 12 | Beursagenda (NL) | none / none / fact | same | same | ✓ | |
-| 13 | Crypto analyst, sarcasm (X) | opinion only / crypto / opinion | same | same | ✓ | |
-| 14 | Macro commentator, rate odds (X) | opinion only / FX / opinion | rate decision / bonds / fact | macro data / bonds / fact | ✗ | F1, F6 |
-| 15 | Coin Bureau BTC -30% (X) | opinion only / crypto / opinion | same | same | ✓ | |
+| 13 | Crypto analyst, sarcasm (Financial Times) | opinion only / crypto / opinion | same | same | ✓ | |
+| 14 | Macro commentator, rate odds (Financial Times) | opinion only / FX / opinion | rate decision / bonds / fact | macro data / bonds / fact | ✗ | F1, F6 |
+| 15 | Coin Bureau BTC -30% (Financial Times) | opinion only / crypto / opinion | same | same | ✓ | |
 
 Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
 
@@ -102,7 +102,7 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 > My Brief was wrong. I expected fact or opinion to be the hardest field, but it was the best (93%), probably because I wrote four explicit rules for it. Asset was the worst field (73%): the model chose "bonds" in 4 of 6 failures and almost always gave only one asset, while my prompt never says when to list more than one. The field without rules failed most. Running items 7 to 15 in a shared chat changed little: in the clean run B only item 14 gave a different answer.
 
 **The failure that would have mattered most in real use, and why:**
-> Item 14. An opinion post on X full of percentages was classified as an official rate decision (run A) and as macro data (run B), and both times as fact. For a retail investor, that is the most dangerous mistake possible: speculation that looks like hard news because it contains numbers. It was also inconsistent, so the same post can be labelled differently tomorrow.
+> Item 14. An opinion piece in the Financial Times full of percentages was classified as an official rate decision (run A) and as macro data (run B), and both times as fact. For a retail investor, that is the most dangerous mistake possible: speculation that looks like hard news because it contains numbers. It was also inconsistent, so the same post can be labelled differently tomorrow.
 
 *This one line is the most valuable thing in the log. Not the success rate — which failure would have caused actual damage.*
 
@@ -112,12 +112,12 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 
 Every time you change the prompt, record it here **before** you re-run. Predicting the effect first, then checking, is what separates a change from a guess.
 
-### Change 1 — *date*
+### Change 1 - 12 October 2026 (planned, not yet run)
 
-**What I changed:** —
-**Why I thought it would help:** —
-**What I predicted would happen:** —
-**What actually happened:** — % → — %
+**What I changed:** nothing in the prompt yet. Planned: add to the rules in v1 the line "Expectations, odds or forecasts by an individual or a market are opinion, even when they contain numbers. Official statistics and central bank decisions are fact." This becomes v2.
+**Why I thought it would help:** item 14 failed on fact or opinion in both runs because the percentages made it look like data, and the prompt has no rule for numbers inside an opinion.
+**What I predicted would happen:** the fact or opinion label of item 14 flips to opinion in both runs (that field goes from 93% to 100% on the original items), while items 1, 2 and 9 (official figures and decisions) stay fact. The overall fully-correct rate stays near 60%, because item 14 also has a wrong event and asset, which this rule does not touch. Risk: item 2 (Eurostat "expected") could wrongly flip to opinion.
+**What actually happened:** re-run still to do; result goes here as % → %
 **Was I right?** —
 
 *Being wrong here is fine and common. Not noticing you were wrong is the problem.*
@@ -137,7 +137,7 @@ logged before Week 8 so it can feed your CP2 revision delta.
 |---|---|
 | Machine(s) I expect to use, and why | Laser cutter: fast and cheap for flat parts in plywood or acrylic, which suits a small desk object. |
 | The artifact I'm aiming for (kiosk face, counter mock, standee…) | A desk stand holding a printed "morning briefing" card with three classified headlines and a QR code to the tool, placed on a desk to simulate a retail investor's morning routine. |
-| Which weekly session or OPEN block I'll visit for file-prep, and when | A fablab OPEN block in week 5. I missed the intro session (28 Sep) because I started in the wrong course group. |
+| Which weekly session or OPEN block I'll visit for file-prep, and when | A fablab OPEN block in week 5 (week of 19 October 2026); exact slot still to be booked. I missed the intro session (28 Sep) because I started in the wrong course group. |
 
 **When the artifact exists — the deployment observation (the evidence, not the prop):**
 
@@ -224,11 +224,11 @@ logged before Week 8 so it can feed your CP2 revision delta.
 Write these at Weeks 4, 8 and 12. Five lines each — they are what gets marked, and what you will copy into the memo.
 
 ### Checkpoint 1 — Week 4
-> **What it does:** —
-> **Measured:** — % on — inputs
-> **Dominant failure type:** —
-> **The failure that would matter most:** —
-> **What I'd change first:** —
+> **What it does:** Classifies one financial news item (English or Dutch) into event type, asset class, and fact or opinion, for a retail investor.
+> **Measured:** 60% on 15 inputs (9 of 15 fully correct in each of two runs; the same answer in both runs on 13 of 15). With 15 inputs the 95% interval is 36% to 80%.
+> **Dominant failure type:** F1 wrong, 4 of the 6 failing items. The weakest field is asset class (73%); fact or opinion is the strongest (93%).
+> **The failure that would matter most:** item 14, an FT opinion piece full of rate-hike percentages, labelled as an official rate decision (run A) and as macro data (run B), both times as fact.
+> **What I'd change first:** add one rule to the prompt: an individual's or a market's expectations, odds or forecasts are opinion even when they contain numbers, while official statistics and central bank decisions stay fact. Then re-test on the 15 items plus 5 fresh opinion-piece items, so the rule is not just fitted to item 14.
 
 ### Checkpoint 2 — Week 8
 > **Changed since CP1:** —
@@ -250,3 +250,4 @@ Write these at Weeks 4, 8 and 12. Five lines each — they are what gets marked,
 
 Labels written by me and checked with Claude for consistency with my own rules; prompt v1 drafted with Claude from my rules.
 Run results entered and summarised with Claude; verdicts and conclusions are my own.
+Checkpoint 1 summary lines drafted with Claude from my logged results; the data and the failure judgements are my own.
