@@ -1,10 +1,8 @@
-## Physical Deployment Probe Plan
-
-| Category | Details |
-| :--- | :--- |
-| **Machines** | 3D Printer (for the tactile base/holder) and Laser Cutter (for the clear acrylic display panel) |
-| **Artifact** | A cute companion standee to display on the desk |
-| **Fablab Session** | Unsure maybe on week 4?|
+| Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Probe 1** | Prototyping Base | 3D Printer | Tactile standee base/holder | Booked for Week 4 prototyping block |
+| **Probe 2** | Display Panel | Laser Cutter[cite: 5] | Clear acrylic display panel | Booked for Week 4 cutting block |
+| **Probe 3** | Final Assembly | Manual Assembly Bench | Completed companion standee] | Ready for final Checkpoint review |
 
 ## Test Run Log & Failure Classifications
 
