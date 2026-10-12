@@ -691,5 +691,14 @@
   "skill": "",
   "date": "",
   "url": "posts/simon-helgeroth-week-03.html"
+ },
+ {
+  "week": 4,
+  "title": "AI in M&A Valuation: What a Peer Screen Is Worth in Euros",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Value quantification",
+  "date": "2026-10-07",
+  "url": "posts/tim-lampe-week-04.html"
  }
 ]

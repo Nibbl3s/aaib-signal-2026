@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in M&amp;A Valuation: What a Peer Screen Is Worth in Euros — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · AI in M&amp;A Valuation</div>
+<h1>AI in M&amp;A Valuation: What a Peer Screen Is Worth in Euros</h1>
+<div class="byline">Tim Lampe · 2026-10-07</div>
+<h2>AI in M&amp;A Valuation: What a Peer Screen Is Worth in Euros</h2>
+<h2>Hook</h2>
+<p>In M&amp;A valuation, choosing the peer group takes an analyst a few hours and can move the price by millions. That makes it an easy place to claim AI savings and a hard place to prove them. This post puts numbers on one case.</p>
+<h2>The Candidate</h2>
+<p>The process is peer-group screening: deciding which listed companies are comparable to a target before multiples are applied. The setting is Brabant Corporate Finance, a composite 10-person Brussels boutique that runs four multiples valuations a month. In the value chain the process sits in the analysis step, after company and market data are collected and before multiples are applied and the client report is written. An error here passes into every later step. The AI candidate is a screening prompt that labels each candidate Comparable, Not comparable or Unclear against five criteria. An analyst reviews the output.</p>
+<h2>The Numbers</h2>
+<p>All inputs are my estimates, not measurements. The rate of €48/h is the loaded data-analyst cost from the course.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Formula</th>
+<th>€ / month</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time saved</td>
+<td>(8 h manual − 2 h review) × 4 valuations × €48</td>
+<td>1,152</td>
+</tr>
+<tr>
+<td>Revenue increase</td>
+<td>none claimed</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cost reduction</td>
+<td>no headcount change</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Risk mitigation</td>
+<td>not quantified (see Insight)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Gross benefit</strong></td>
+<td></td>
+<td><strong>1,152</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Cost</th>
+<th>Formula</th>
+<th>€</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tokens</td>
+<td>(16,500 in × $2.00 + 5,000 out × $12.00) / 1M = $0.093 per run; × 0.92 = €0.086; × 3 runs × 4 valuations</td>
+<td>≈ 1 / month</td>
+</tr>
+<tr>
+<td>Maintenance</td>
+<td>2 h re-testing and updates × €48</td>
+<td>96 / month</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>20 h build and testing × €48</td>
+<td>960 one-off</td>
+</tr>
+</tbody>
+</table>
+<p>Net monthly benefit: 1,152 − 1 − 96 = <strong>€1,055</strong>.<br />
+Payback: 960 / 1,055 = <strong>0.9 months</strong>.</p>
+<p>Not included: a paid data source. The model finds candidate data itself, so the 2 review hours must include checking it.</p>
+<h2>The Pressure Test</h2>
+<p>Assume benefits are 50% lower and costs 50% higher. Time saved falls to 3 h per valuation (€576/month). Implementation rises to €1,440, maintenance to €144, tokens to €1.5.</p>
+<ul>
+<li>Net: 576 − 1.5 − 144 = €430.5 per month. Payback: 1,440 / 430.5 = <strong>3.3 months</strong>. The case holds.</li>
+<li>Harsher: volume also halves to 2 valuations a month. Benefit €288, net €142.5, payback <strong>10.1 months</strong>. The case holds, but only just.</li>
+<li>Break-even: with costs 50% higher, monthly costs are €145.5, so the screen must save at least 145.5 / 48 = <strong>3 analyst-hours a month</strong>. The base case saves 24.</li>
+</ul>
+<h2>The Insight</h2>
+<p>The time saving is real but small: about €1,100 a month. The risk is not small. On a target with €4M EBITDA, a peer set that is off by 1.0x on the multiple moves enterprise value by €4M (my estimate). The net benefit per valuation is €264, which is 0.007% of that. If the AI adds even a 0.007% chance per valuation of an undetected 1.0x error, the whole benefit is gone. For this beat the takeaway is to price valuation AI by what it does to the error rate, not by the hours it saves. The case holds only with a human check on every peer set, and the same test applies to vendor claims like "half the time".</p>
+<p><em>AI disclosure: structure and arithmetic checked with Claude Sonnet 5.5; all inputs are my own estimates and unverified.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
