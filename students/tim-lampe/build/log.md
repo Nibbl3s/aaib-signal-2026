@@ -154,9 +154,9 @@ logged before Week 8 so it can feed your CP2 revision delta.
 
 | | |
 |---|---|
-| Machine(s) I expect to use, and why | — |
-| The artifact I'm aiming for (kiosk face, counter mock, standee…) | — |
-| Which weekly session or OPEN block I'll visit for file-prep, and when | — |
+| Machine(s) I expect to use, and why | wood laser machine|
+| The artifact I'm aiming for (kiosk face, counter mock, standee…) |box for wine bottle with QR code for my contact details and a description of what my product does|
+| Which weekly session or OPEN block I'll visit for file-prep, and when |I already have the file ready to go. Just need to test it|
 
 **When the artifact exists — the deployment observation (the evidence, not the prop):**
 
