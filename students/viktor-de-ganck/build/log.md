@@ -114,9 +114,9 @@ Every time you change the prompt, record it here **before** you re-run. Predicti
 
 ### Change 1 - 12 October 2026 (planned, not yet run)
 
-**What I changed:** nothing in the prompt yet. Planned: add to the rules in v1 the line "Expectations, odds or forecasts by an individual or a market are opinion, even when they contain numbers. Official statistics and central bank decisions are fact." This becomes v2.
+**What I changed:** nothing in the prompt yet. Planned, two rules, both becoming v2: (A) list every asset class a news item clearly affects, for example FX alongside bonds for a rate decision; (B) expectations, odds or forecasts by an individual or a market are opinion even when they contain numbers; official statistics and central bank decisions stay fact.
 **Why I thought it would help:** item 14 failed on fact or opinion in both runs because the percentages made it look like data, and the prompt has no rule for numbers inside an opinion.
-**What I predicted would happen:** the fact or opinion label of item 14 flips to opinion in both runs (that field goes from 93% to 100% on the original items), while items 1, 2 and 9 (official figures and decisions) stay fact. The overall fully-correct rate stays near 60%, because item 14 also has a wrong event and asset, which this rule does not touch. Risk: item 2 (Eurostat "expected") could wrongly flip to opinion.
+**What I predicted would happen:** items 1, 6 and 14 become fully correct: 12 of 15 (80%), up from 9 of 15 (60%). Risk: item 2 ("expected" in a Eurostat flash estimate) could wrongly flip to opinion. I will also test on new items so the rules are not only fitted to this test set.
 **What actually happened:** re-run still to do; result goes here as % → %
 **Was I right?** —
 
