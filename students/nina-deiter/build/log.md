@@ -26,7 +26,7 @@
 **Awkward cases deliberately included** — tick what you covered:
 
 - [x] Ambiguous — a human would have to ask a follow-up
-- [x] Another language (german, dutch)
+- [ ] Another language (german, dutch)
 - [ ] Very short input
 - [ ] Very long input
 - [x] One where the correct answer is "I don't know"
