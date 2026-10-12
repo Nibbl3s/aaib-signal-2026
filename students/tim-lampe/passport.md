@@ -43,14 +43,16 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟢 / 🟡 / 🔴 | |
-| Capability skepticism | 2 | 🟢 / 🟡 / 🔴 | |
-| Vendor claim detection | 3 | 🟢 / 🟡 / 🔴 | |
-| Value quantification | 4 | 🟢 / 🟡 / 🔴 | |
+| Cost literacy | 1 | 🟡 |I converted token prices ($2.00 in / $12.00 out per million, 0.92 USD to EUR) into a cost per run of about €0.09 for my peer screen, but I have not yet measured real token use per run.|
+| Capability skepticism | 2 | 🟡|I designed my peer-screen prompt with an "Unclear" verdict and a no-invented-figures rule against fabricated output (F2), but I have not yet measured how often it still fails.|
+| Vendor claim detection | 3 |🟡 |I tagged 7 Valutico claims (2 Facts, 1 Aspiration, 4 Avoidances) and found that its "half the time" claim conflicts with its own "a third" quote, but the vendor has not answered my questions, so the claims stay untested||
+| Value quantification | 4 |🟡 |I quantified the peer screen at €1,055 net per month with a 0.9-month payback (3.3 months under a 50% pressure test), but time saved, volume and accuracy are my estimates, not measurements|
 
-**6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
+**6 ECTS — extended evidence:** Valutico's seven claims tagged and tested with the FOMO questions (Q3 verification, Q4 total cost, Q5 simpler solution). Verdict: pilot, not buy. I also sent the vendor two questions ("suggests the most relevant comps" and "pays out 10 times over"). The silence is documented as evidence under Q3.
+- **Extended cost model:** Token cost per run (16,500 in / 5,000 out = $0.093 = €0.086), times 3 runs and 4 valuations a month (about €1 a month), plus maintenance (2 h × €48 = €96 a month) and a one-off implementation (20 h × €48 = €960). Net benefit €1,055 a month, payback 0.9 months.
+- **Sensitivity analysis:** Benefits −50% and costs +50% give a payback of 3.3 months. With volume also halved, the payback is 10.1 months. Break-even: the screen must save at least 3 analyst-hours a month (the base case saves 24). Risk side: the net benefit per valuation (€264) equals 0.007% of a €4M enterprise-value error (my estimate).
 
-**Your click:** One sentence — what did you believe in Week 1 that you no longer believe, and what replaced it? That change is the click: it's the proof the cycle moved you. No click = swinging, not thinking.
+**Your click:** I believed an AI tool's value was its accuracy; now I believe value is the hours it saves that someone actually reuses, minus the cost of the errors left in the output, and that needs an error rate I have to measure.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
