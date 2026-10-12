@@ -103,7 +103,7 @@ I missed the fablab intro session on Monday 28 September. This plan is based on 
 |---|---|
 | Machine(s) I expect to use, and why | Laser cutter: a flat plywood sign is quick to cut and engrave, and fits next to the DJ booth |
 | The artifact I'm aiming for (kiosk face, counter mock, standee…) | A small standee at the DJ booth: "Book DJ Thorax for your party" + a QR code to my booking form. The probe tests whether inquiries made at a party (on a phone, after a few drinks) are messier than the ones I get now |
-| Which weekly session or OPEN block I'll visit for file-prep, and when | To confirm — first available OPEN block after Week 3; file-prep before the Week 4 checkpoint |
+| Which weekly session or OPEN block I'll visit for file-prep, and when | **Not booked yet (12 Oct).** To book: the first fablab OPEN block after Week 4, for laser-cutter file-prep (SVG of the standee + QR code) |
 
 **When the artifact exists — the deployment observation:**
 
@@ -135,7 +135,11 @@ I missed the fablab intro session on Monday 28 September. This plan is based on 
 ## Checkpoint summaries
 
 ### Checkpoint 1 — Week 4
-> *(to write in Week 4)*
+> **What it does:** Reads one booking inquiry for my DJ business (form answer or e-mail, mostly Dutch) and returns 10 booking fields plus the list of what I still need to ask before I can quote.
+> **Measured:** 50% fully correct on 15 real inputs × 2 runs (n = 30); only 7/15 inputs (47%) correct in both runs; dates 30/30 correct.
+> **Dominant failure type:** F3 missed (8 of 19 failures), mostly caused by my own prompt rule "uncertain → unknown" contradicting the expected answers I wanted (T01, T10, T13). F1 wrong is second (7), concentrated on the gear field.
+> **The failure that would matter most:** T09, dj_gear = `on_site` in both runs while the client wrote there's only a mixer and asked me to bring back-up decks. Nothing goes into `missing_for_quote`, so I'd turn up to a paid gig without decks (≈ €300 + reputation). Worth more than three years of the tool's time savings (see `business-case.md`).
+> **What I'd change first:** let a free-text remark override a tick-box answer, and fix the "uncertain" rule (keep the stated estimate and add the field to `missing_for_quote`). Then re-run the same 15 inputs ×2 with a written prediction first: I expect T01, T10 and T13 to flip to correct and T09 to become `dj_brings`.
 
 ### Checkpoint 2 — Week 8
 > *(later)*

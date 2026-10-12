@@ -1,71 +1,61 @@
-# Business case — first draft (Week 3, for the Week 4 clinic)
+# Build value model — Week 4 (Checkpoint 1)
 
-**Tool:** booking-inquiry extractor (prompt v1, see `prompt.md`).
-**Question:** is it worth running this on every inquiry instead of reading the inquiries myself?
+**Tool:** booking-inquiry extractor, prompt v1 (`prompt.md`). **Measured:** 15/30 = **50%** fully correct (15 real inputs × 2 runs, Run 1, 1 Oct 2026).
+**Question:** at my measured rate, is this worth using on every inquiry instead of reading inquiries myself?
 
-All numbers below are either **measured** (from my own data or my Run 1) or **assumed** (marked, with the reason). The assumed ones are what I want to test at the clinic.
-
----
-
-## 1. Volume — how many inquiries?
-
-| Source | Count | Period | Per month | Type |
-|---|---:|---|---:|---|
-| Booking form (serious answers only) | 11 | Jul 2025 – Sep 2026 (15 months) | 0.7 | measured |
-| E-mail inquiries outside the form | 2 | same period | 0.1 | measured |
-| WhatsApp / Instagram / phone | ? | — | ? | **not logged** |
-| **Measured total** | **13** | | **≈ 0.9** | |
-
-**Correction to my Week 1 post:** there I assumed 8 inquiries a month. Through the channels I can actually count, it's under 1 a month. Either the other channels carry most of the volume, or Week 1 overestimated by about 8×. This is the number that decides everything below, so I'll start logging WhatsApp and Instagram inquiries this week.
-
-## 2. Value — time saved
-
-| | Value | Type |
-|---|---|---|
-| Time to read an inquiry and work out what's still missing | 5–10 min | assumed (my own estimate; to time on the next 5 inquiries) |
-| Value of my time | €20/hour | assumed (student self-employed; below my €60–80 DJ rate because admin time doesn't replace a gig) |
-| Time saved per month at 0.9 inquiries | 4.5–9 min → **€1.50–3** | calculated |
-| Time saved per month at 8 inquiries (Week 1 assumption) | 40–80 min → **€13–27** | calculated |
-
-## 3. Cost — running the tool
-
-| | Value | Type |
-|---|---|---|
-| Tokens per run | ≈ 1,000 input (prompt + inquiry) + 200 output | estimated from text length; to measure in Week 6 |
-| Price | $2.00 / 1M input, $12.00 / 1M output | course AI Pricing Reference, snapshot 7 Sept 2026 (same as Week 1) |
-| Cost per run | ≈ $0.0044 | calculated |
-| Cost per month (0.9–8 runs) | **< €0.05** | calculated |
-
-As in Week 1: the token cost is irrelevant.
-
-## 4. Error cost — the number that matters
-
-| | Value | Type |
-|---|---|---|
-| Inputs fully correct (Run 1) | 15/30 = **50%** | measured |
-| Dangerous error: tool says "DJ gear on site" when I must bring my own (T06, T09) | 4/30 runs = **13%** | measured |
-| Cost if that error reaches a real gig unchecked | ≈ €300 (lost fee of a 4-hour gig at €60–80/h, plus reputation) | assumed |
-| Expected cost per month if I trust it unchecked, at 0.9 inquiries | 0.9 × 13% × €300 ≈ **€35** | calculated |
-| Same at 8 inquiries/month | 8 × 13% × €300 ≈ **€312** | calculated |
-
-## 5. Result (draft)
-
-| Per month | 0.9 inquiries (measured) | 8 inquiries (Week 1 assumption) |
-|---|---:|---:|
-| Time saved | €1.50–3 | €13–27 |
-| Token cost | < €0.05 | < €0.05 |
-| Expected error cost if unchecked | ≈ €35 | ≈ €312 |
-| **Net if unchecked** | **≈ −€32** | **≈ −€290** |
-
-**Draft conclusion:** at a 50% success rate, running the tool unchecked loses money at any volume. If I check every output, the error cost drops to near zero, but so does the time saved, since checking means reading the inquiry anyway. So v1 has **no positive business case**. It only gets one if two things change together:
-1. accuracy on the gear and time fields goes up enough that I only need to check flagged fields (the v2 changes in `log.md`), and
-2. volume is higher than the 0.9/month I can count today.
-
-**What I want to test at the Week 4 clinic:**
-- Is €300 a fair cost for "showing up without gear", or should it be the full cost of a lost client?
-- Should I value my admin time at €20/hour?
-- Is a business case of "don't run it unchecked" a valid outcome for the Build, or should I change the job?
+*Week 3 draft → Week 4 changes:* volume updated with my own estimate for Instagram/WhatsApp/phone; laid out in the Week 4 format (human cost per job → gross at 100% and at the measured rate → failure cost → net → required rate).
 
 ---
 
-*AI use: Claude drafted this business case from my booking-form export, mails, Run 1 results and the course price snapshot. The assumptions marked "assumed" are to be confirmed by me.*
+## 1. Inputs
+
+| Input | Value | Source |
+|---|---|---|
+| Human time per inquiry (read it, work out what's missing) | 7.5 min (5–10) | est. — to time on my next 5 inquiries |
+| Value of my time | €20/h | est. — student self-employed; admin time doesn't replace a gig, so below my €60–80 DJ rate. Sensitivity at €40/h below |
+| **Human cost per job** | 7.5/60 × €20 = **€2.50** | calculated |
+| Volume: form + e-mail | 0.9/month | measured: 13 serious inquiries in 15 months |
+| Volume: Instagram / WhatsApp / phone | 2/month (1–3) | est. — my own estimate, logging starts now |
+| **Realistic monthly volume** | **≈ 2.9/month ≈ 35/year** | |
+| Measured success rate | 50% (n = 30 runs, 15 inputs) | measured |
+| Dangerous-failure rate: "gear on site" when I must bring my own (T06, T09) | 4/30 = 13% | measured |
+| Cost of that failure if it reaches a gig | €300 (lost fee of a 4-hour gig at €60–80/h + reputation) | est. — who pays: me |
+| Token cost per run | ≈ $0.0044 (1,000 in + 200 out at $2/$12 per 1M) | course pricing snapshot 7 Sept 2026 |
+
+## 2. Value model
+
+| Step | Formula | €/year |
+|---|---|---:|
+| Gross benefit at 100% accuracy | 35 × €2.50 | **€87.50** |
+| Gross benefit at measured 50% | 35 × €2.50 × 50% | **€43.75** |
+| AI running cost | 35 × $0.0044 × 0.92 | €0.14 |
+| Set-up cost (one-off) | 4 h writing/testing the prompt × €20 | €80 |
+| Failure cost if used unchecked | 35 × 13% × €300 | **€1,365** |
+| **Net, unchecked, Year 1** | 43.75 − 0.14 − 80 − 1,365 | **≈ −€1,401** |
+| Failure cost if I always check the gear field (1 min per inquiry) | gear errors caught; check = 35 × 1/60 h × €20 | €11.67 |
+| **Net, gear field always checked, Year 1** | 43.75 − 0.14 − 80 − 11.67 | **≈ −€48** |
+| **Net, gear field always checked, Year 2+** | 43.75 − 0.14 − 11.67 | **≈ +€32/year** |
+
+**Who pays a failure:** me. A misread inquiry means I quote wrong or turn up without decks, and there's nobody else to absorb it.
+
+## 3. Answer: at my measured rate, is this worth building?
+
+**No, not as a tool I trust unchecked.** The time it can save is worth at most €87.50 a year at my volume. A single gear failure (€300) wipes out more than three years of that.
+
+**What rate would it need?** For running it unchecked to break even, the *dangerous* error rate has to fall below €2.50 ÷ €300 = **0.8%**, so fewer than 1 gear mistake per 120 inquiries. With 15 test inputs I can't even measure a rate that low. **Not reachable in a way I could prove.**
+
+**The version that does work:** always check the one dangerous field (gear) myself and let the tool do the rest. That breaks even in Year 2 at about +€32/year. Positive, but so small that the real value of the Build is what it *taught* me: AI shouldn't be the step that touches gear or price (Weeks 2–3). The booking form already collects those fields in fixed boxes, for free.
+
+## 4. Sensitivity
+
+| Change | Effect |
+|---|---|
+| My time worth €40/h instead of €20/h | gross at 50% = €87.50/year; checked version ≈ +€64/year from Year 2 |
+| Volume 8/month (my Week 1 assumption) instead of 2.9 | gross at 50% ≈ €120/year, but unchecked failure cost ≈ €3,744/year: worse, not better |
+| v2 halves the overall error rate (75% correct) and removes the gear errors | gross €65.60/year; unchecked becomes viable only if gear errors are really 0, which needs a bigger test set to prove |
+
+**Conclusion for the capstone:** at my volume, AI on the inquiry → quote path is worth tens of euros a year at best, and it's only safe with a human check on gear and price. The decision for DJ Thorax is less "AI or not" than "which step can afford an error". The answer so far: only the reading step, never the gear or price step.
+
+---
+
+*AI use: Claude built this value model from my measured Run 1 results, my booking-form/mail counts and my own estimates (marked est.). I reviewed it.*
