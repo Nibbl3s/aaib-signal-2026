@@ -12,8 +12,8 @@
 
 1. **What my tool can do now:** ScoutLab loads a 339-row Premier League 2023/24 benchmark, filters players, shows position-relative profiles, compares candidates, finds statistically similar profiles, and exports a shortlist. It can compare performance with market-value percentiles only if separate market values are supplied.
 2. **What it cannot do yet:** The default source has no market values and is not a live 2026 recruitment dataset. It cannot prove that a player is undervalued, predict future performance, review video or make a signing decision.
-3. **What I measured:** I have confirmed that the app's interface and tabs are accessible and usable. This is only a manual UI check, not an accuracy evaluation. The new expected-answer evaluation set and a timed manual-versus-ScoutLab comparison have **not yet been run**, so no ScoutLab accuracy or time-saving rate is claimed. The V1 20/20 result is not a V2 result.
-4. **Dominant failure type / highest-impact failure:** V2's dominant failure type is not yet known. The highest-impact risk to test is a wrong or missing player/metric caused by source-data mismatch, low metric coverage or player-name joining. A fabricated or stale market value would be particularly damaging, so the app does not create values itself.
+3. **What I measured:** I ran the 15-case V2 expected-answer set once and report that all 15 cases passed (15/15 for this test set in one run). I also checked the 10 expected player facts against the source CSV, and four core-code unit tests passed in an isolated reconstruction. The UI outcomes are recorded as student-reported in the evaluation log. I have not yet repeated the full UI test set or timed ScoutLab against the manual/spreadsheet workflow, so this does not establish repeatability or time savings. The V1 20/20 result remains a separate historical result.
+4. **Dominant failure type / highest-impact failure:** No failure was reported in the single 15-case V2 run, so there is not enough evidence to identify a dominant failure type or claim repeatability. The highest-impact risks remain a wrong or missing player/metric caused by source-data mismatch, low metric coverage or player-name joining, and a fabricated or stale market value. The app does not generate market values itself.
 5. **What I would change first:** Run the 15-case expected-answer set in the ScoutLab evaluation-plan file, repeat key checks, fix any failures, and time the same scouting task in ScoutLab and a spreadsheet baseline.
 
 ## Provisional own-Build value row (all assumptions clearly labelled)
@@ -23,7 +23,7 @@
 | Current human handling time | 15 min/profile (est.) | Hypothetical baseline, needs measurement |
 | Volume | 200 profiles/month (est.) | Composite club scenario, not real club data |
 | ScoutLab-assisted handling time | 5 min/profile (est.) | Hypothesis after data is prepared |
-| Measured ScoutLab success rate | Not yet measured | Evaluation set prepared, not yet run |
+| V2 expected-answer test result | 15/15 passed (reported; one run) | Student-reported result for this 15-case test set; repeat run not confirmed |
 | Gross time-capacity value | €16,000/year (est.) | (15 - 5) min × 200 × 12 ÷ 60 × €40/hour |
 | Revenue increase | €0 counted | Not proven |
 | Cost reduction | €0 counted | No cash expense eliminated |
@@ -36,7 +36,7 @@
 
 - **Self-diagnostic pattern:** 5 — no volume (provisional; change this if you selected another pattern in class).
 - **Question to ask the cluster/teacher:** What evidence would establish actual monthly scouting volume and handling time?
-- **Cluster finding from classmates:** [Fill in the actual sentence reported by your group.]
+- **Cluster finding from classmates:** [Still to fill in from the actual sentence reported by your group.]
 - **Cross-pollination takeaway:** [Fill in a real insight you heard from another group.]
 
 ## FabLab probe plan
