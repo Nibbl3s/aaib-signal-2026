@@ -1,43 +1,54 @@
-# INVESTMENT MEMO — AI Candidate: Invoice Processing
+# INVESTMENT MEMO — ScoutLab scouting workflow
 
-**TO:** CEO, TechCorp  
+**STATUS: Draft for real classmate peer review. Not yet the revised submission.**
+
+**TO:** Head of Recruitment, Flanders United FC (composite scenario)  
 **FROM:** Gaetan Werbrouck, Business Analyst  
 **DATE:** 13 October 2026  
-**SUBJECT:** Pilot recommendation — AI-assisted invoice extraction and validation
+**SUBJECT:** Conditional pilot of ScoutLab for player discovery and comparison
 
 ## Executive summary
 
-I recommend a controlled pilot, not a full rollout. Under the lesson’s assumptions, estimated annual gross economic value is €214,560 versus €26,000 Year 1 cost, but the result depends on validating correction costs and actually using the time freed.
+I recommend a limited pilot, not a full rollout. Under explicit scenario assumptions, ScoutLab could create €16,000/year in time-capacity value against €3,120 in modelled Year 1 costs, but the estimate excludes unpriced data and hosting costs and has not been measured in a real club workflow.
 
 ## The problem
 
-TechCorp processes 600 invoices/month at 15 minutes each, or 150 hours/month. A 12% error rate means 72 invoices/month need correction. At an unverified €220 per correction, that is €15,840/month, so Finance must measure the true correction cost before treating it as a saving.
+Flanders United FC is assumed to review 200 player profiles/month. Analysts currently gather and compare statistics across separate sources, making it harder to review profiles consistently. The 200-profile volume, 15-minute current handling time and €40/hour loaded rate are assumptions, not measured club data. The reference dataset used in the prototype has 339 historical Premier League 2023/24 players and no market values, so it cannot by itself prove who is undervalued.
 
 ## The proposal
 
-Pilot AI-assisted OCR and extraction for vendor, invoice number, date, VAT and total, with checks against SAP and purchase-order rules. Route low-confidence fields and mismatches to accounts-payable staff; never let the AI approve or pay invoices. Compare time and error rate with a measured baseline, with humans approving exceptions and payments.
+Pilot ScoutLab as a decision-support interface for filters, position-relative profiles, player comparison, similar-profile search and shortlist export. Compare it with both the current process and a spreadsheet/database baseline. Human scouts must verify the data, inspect video and assess tactical fit; the application must not make signing decisions. The optional performance/value comparison stays off until an attributable, dated market-value dataset is supplied.
 
 ## Benefit analysis
 
-| Category | Annual value (€) | Basis |
+| Category | Annual value | Basis |
 |---|---:|---|
-| Time saved | 56,160 | (150 − 30) hours/month × 12 × €39/hour; capacity value, not automatic cash savings |
-| Revenue increase | 0 | No evidenced sales effect claimed |
-| Cost reduction | 158,400 | (72 − 12) corrections/month × €220 × 12; €220 is an estimate |
-| Risk mitigation | 0 separately | No separate probability/impact estimate; avoids double-counting |
-| **Gross economic benefit** | **214,560** | Time capacity + correction savings |
-| AI cost, Year 1 | **(26,000)** | €15,000 setup/integration + €8,000 annual AI/service cost (lesson estimate) + €3,000 maintenance (est.) |
-| **Conditional net value, Year 1** | **188,560** | Gross value less Year 1 cost, if time capacity is realized |
-| Payback after go-live | **~0.85 months (est.)** | €15,000 ÷ ((€214,560 − €11,000 recurring costs)/12); excludes ramp-up |
+| Time saved | €16,000 (est.) | 200 profiles/month × 12 × 10 minutes saved ÷ 60 × €40/hour |
+| Revenue increase | €0 counted | No proven link from this screen to additional transfer revenue |
+| Cost reduction | €0 counted | No eliminated cash expense demonstrated |
+| Risk mitigation | €0 counted | No calibrated probability/impact evidence for avoided recruitment losses |
+| **Gross benefit** | **€16,000 (est.)** | Capacity value only |
+| Setup and validation | €800 (est.) | 20 hours × €40/hour |
+| Data checking and refresh | €1,920/year (est.) | 4 hours/month × 12 × €40/hour |
+| Maintenance | €400/year (est.) | 10 hours/year × €40/hour |
+| **Year 1 modelled cost** | **€3,120 (est.)** | Excludes any paid data feed, hosting and data rights |
+| **Net benefit Year 1** | **€12,880 (est.)** | €16,000 - €3,120, before unpriced costs |
+| Payback | **0.7 months (est.)** | €800 setup ÷ ((€16,000 - €2,320 recurring cost)/12) |
+
+The application does not make LLM API calls, so no token spend is included. That does not make data, hosting or maintenance free.
 
 ## Risks and mitigations
 
-Extraction errors could pass through unnoticed; use confidence thresholds, exception queues, source-document checks and sample audits. The €220 correction cost and 2% post-AI error rate may be optimistic; measure both during the pilot. Invoice data may be sensitive, so approve access, retention, security and data-processing terms before using live data.
+First, stale or mismatched data could create a misleading comparison; record source dates and audit player-name matches. Second, the default historical data lacks market values, and any values supplied must have a credible source and date. Third, the dashboard could add little value beyond a spreadsheet; measure task time and shortlist usefulness against that baseline.
 
 ## Recommendation
 
-**Pilot with conditions.** Agree a baseline and targets for processing time, error rate and total cost, and keep humans accountable for exceptions and payments. Scale only if Finance validates the assumptions and the pilot beats both the current workflow and a conventional OCR/rules-based alternative.
+**Pilot with conditions.** Proceed only if the test set passes, the data permissions and full costs are established, and a timed comparison demonstrates a real improvement over the existing process and spreadsheet alternative.
 
 ## Sensitivity note
 
-If gross benefits are 50% lower, the estimated Year 1 net value is still €81,280. If saved staff time creates no value, the case is €158,400 estimated correction savings minus €18,200 in costs, or €132,400 net, but still relies on verifying the €220 correction-cost estimate.
+If the time benefit is 50% lower, gross value is €8,000 and modelled net is €4,880 before unpriced data/hosting costs. The case can easily weaken if the saving is not observed, so do not approve a full deployment from this estimate alone.
+
+---
+
+**Peer review required:** Have a classmate review the numbers and risks, complete the peer-review record, then revise this memo. Do not label it peer-reviewed until that has happened.
