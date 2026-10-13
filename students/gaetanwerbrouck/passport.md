@@ -1,15 +1,15 @@
 ---
 type: passport
-student: "Your Name"
-beat: "Your Signal beat"
+student: "Gaetan Werbrouck"
+beat: "How Football Clubs Use Data to Find Undervalued Players"
 track: "4 ECTS"
 ---
 
 # Skills Passport
 
-**Student:** Your Name
-**Beat:** Your Signal beat
-**Track:** 4 ECTS *(or 6 ECTS)*
+**Student:** Gaetan Werbrouck
+**Beat:** How Football Clubs Use Data to Find Undervalued Players
+**Track:** 4 ECTS
 
 > Copy this file to `students/your-name/passport.md` in the Signal repository in Week 1.
 > Update it at three checkpoints — end of Week 4, Week 8 and Week 12 — and commit each time.
@@ -41,16 +41,22 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 ## Checkpoint 1 — End of Week 4
 
+### Build status
+
+- **What can my tool do now?** It can apply five explicit screening rules to a supplied player profile and return whether the player meets all five.
+- **What can it not do yet?** It cannot establish that a player is truly undervalued or replace a scout’s recruitment judgment; the fixed-rule task is simpler to run in a spreadsheet.
+- **Which number proves it?** In my small test, 10 player cases were run twice and all 20 individual classifications matched the expected answers; one explanatory summary still contained a counting inconsistency.
+
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟢 / 🟡 / 🔴 | |
-| Capability skepticism | 2 | 🟢 / 🟡 / 🔴 | |
-| Vendor claim detection | 3 | 🟢 / 🟡 / 🔴 | |
-| Value quantification | 4 | 🟢 / 🟡 / 🔴 | |
+| Cost literacy | 1 | 🟡 | In Week 1 I calculated token and failure costs across three pricing tiers and compared cost per correctly handled email. |
+| Capability skepticism | 2 | 🟡 | In Week 2 I tested 10 player profiles twice, found the individual classifications matched the expected answers, and concluded a spreadsheet is simpler for the fixed rules. |
+| Vendor claim detection | 3 | 🟡 | In Week 3 I tagged all 16 NexusAI claims and identified five avoidances, including undefined accuracy and unsupported customer results. |
+| Value quantification | 4 | 🔴 | My Build has a measured 20/20 classification result, but I have not measured real club volume or manual handling time, so its ROI still depends on assumptions. |
 
 **6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
 
-**Your click:** One sentence — what did you believe in Week 1 that you no longer believe, and what replaced it? That change is the click: it's the proof the cycle moved you. No click = swinging, not thinking.
+**Your click:** In Week 1 I focused mainly on token prices. I now understand that failure correction, implementation, maintenance and human oversight can dominate token costs, so I need to compare total cost with measured benefits.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
