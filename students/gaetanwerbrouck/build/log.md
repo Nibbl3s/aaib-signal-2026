@@ -318,16 +318,16 @@ I fetched and checked the same public CSV URL used by `app.py`. It contains 339 
 
 | Case | Player | Checked source facts | Source-row result | UI profile result |
 |---:|---|---|---|---|
-| 1 | Erling Haaland | Manchester City; Forward; age 23; 2,556 minutes; goals/90 0.95; xG/90 1.03 | Match | Not run |
-| 2 | Bukayo Saka | Arsenal; Forward; age 21; 2,933 minutes; goals/90 0.49 | Match | Not run |
-| 3 | Mohamed Salah | Liverpool; Forward; age 31; 2,535 minutes; goals/90 0.64 | Match | Not run |
-| 4 | Cole Palmer | Chelsea; source position FW,MF; grouped Forward; age 21; 2,624 minutes; goals/90 0.75 | Match | Not run |
-| 5 | Phil Foden | Manchester City; source position FW,MF; grouped Forward; age 23; 2,865 minutes; goals/90 0.60 | Match | Not run |
-| 6 | Declan Rice | Arsenal; Midfielder; age 24; 3,230 minutes; tackles/90 1.4; pass success 90.7% | Match | Not run |
-| 7 | Rodri | Manchester City; Midfielder; age 27; 2,938 minutes; pass success 92.5% | Match | Not run |
-| 8 | Virgil van Dijk | Liverpool; Defender; age 32; 3,178 minutes; clearances/90 4.0; pass success 91.5% | Match | Not run |
-| 9 | Aaron Wan-Bissaka | Manchester United; Defender; age 25; 1,781 minutes; tackles/90 1.3; interceptions/90 2.1 | Match | Not run |
-| 10 | Alisson Becker | Liverpool; Goalkeeper; age 30; 2,520 minutes; attacking fields are missing in the source CSV | Match | Not run |
+| 1 | Erling Haaland | Manchester City; Forward; age 23; 2,556 minutes; goals/90 0.95; xG/90 1.03 | Match | Pass (reported) |
+| 2 | Bukayo Saka | Arsenal; Forward; age 21; 2,933 minutes; goals/90 0.49 | Match | Pass (reported) |
+| 3 | Mohamed Salah | Liverpool; Forward; age 31; 2,535 minutes; goals/90 0.64 | Match | Pass (reported) |
+| 4 | Cole Palmer | Chelsea; source position FW,MF; grouped Forward; age 21; 2,624 minutes; goals/90 0.75 | Match | Pass (reported) |
+| 5 | Phil Foden | Manchester City; source position FW,MF; grouped Forward; age 23; 2,865 minutes; goals/90 0.60 | Match | Pass (reported) |
+| 6 | Declan Rice | Arsenal; Midfielder; age 24; 3,230 minutes; tackles/90 1.4; pass success 90.7% | Match | Pass (reported) |
+| 7 | Rodri | Manchester City; Midfielder; age 27; 2,938 minutes; pass success 92.5% | Match | Pass (reported) |
+| 8 | Virgil van Dijk | Liverpool; Defender; age 32; 3,178 minutes; clearances/90 4.0; pass success 91.5% | Match | Pass (reported) |
+| 9 | Aaron Wan-Bissaka | Manchester United; Defender; age 25; 1,781 minutes; tackles/90 1.3; interceptions/90 2.1 | Match | Pass (reported) |
+| 10 | Alisson Becker | Liverpool; Goalkeeper; age 30; 2,520 minutes; attacking fields are missing in the source CSV | Match | Pass (reported) |
 
 **Source-row result:** 10/10 expected fact sets matched in the reference CSV. Separately, the student later reported passing the 10 UI profile cases.
 
