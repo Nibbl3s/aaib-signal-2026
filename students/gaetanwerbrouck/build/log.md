@@ -142,9 +142,9 @@ The FabLab introduction took place on Monday 28/09. We had a tour of the availab
 
 | ------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 
-| Laser cutter              | A physical visualisation of the player-screening criteria, such as a layered or labelled scouting filter | Monday 28/09 — FabLab introduction |
+| Laser cutter | A physical visualization of the player-screening criteria, such as a layered or labelled scouting filter | Future session: NOT YET BOOKED; add confirmed date after booking |
 
-| 3D printer                | A small physical representation of a player profile or scouting data structure                           | Monday 28/09 — FabLab introduction |
+| 3D printer | A small physical representation of a player profile or scouting data structure | Future session: NOT YET BOOKED; add confirmed date after booking |
 
 | Fabricator | A physical visualization or fabricated representation of the scouting filter | Future session: NOT YET BOOKED; add confirmed date after booking |
 
