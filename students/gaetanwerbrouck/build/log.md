@@ -158,7 +158,9 @@ The purpose of these probes is to explore how the digital player-screening conce
 
 ---
 
-## Week 4 — Build Checkpoint 1: value estimate (13 October 2026)
+## Historical Week 4 estimate for V1 (superseded by the current ScoutLab checkpoint below)
+
+This earlier calculation describes the retired five-rule classifier. It is kept as build history, not as the current ScoutLab V2 value estimate.
 
 ### Five-line checkpoint evidence
 
