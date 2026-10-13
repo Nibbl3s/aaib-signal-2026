@@ -26,12 +26,12 @@
 **Awkward cases deliberately included** — tick what you covered:
 
 - [x] Ambiguous — a human would have to ask a follow-up
-- [ ] Another language (german, dutch)
-- [ ] Very short input
-- [ ] Very long input
+- [x] Another language (german, dutch)
+- [x] Very short input
+- [x] Very long input
 - [x] One where the correct answer is "I don't know"
-- [ ] One near the boundary between two categories
-- [ ] One with a typo, or written badly
+- [x] One near the boundary between two categories
+- [x] One with a typo, or written badly
 
 *A test set with none of these will tell you your tool is excellent. It isn't; your test set is.*
 
@@ -50,7 +50,7 @@ earlier — applied to the task itself.) Read in sequence at the checkpoints, yo
 your thinking sharpening: v1 vague, v3 sharp. The first output reveals what the brief failed
 to specify — revise the brief, then re-run. A brief is a hypothesis, not a contract.
 
-### Run 1 — prompt v1 — *date*
+### Run 1 — prompt v1 — *11.10.2026*
 
 **Brief:** Test whether a basic prompt can consistently classify publicly available design feedback and generate actionable design tasks without inventing information.
 **Model used:** To be recorded during testing.
@@ -58,40 +58,52 @@ to specify — revise the brief, then re-run. A brief is a hypothesis, not a con
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
-| 1 | | | | | ✓ / ✗ | |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
-| 6 | | | | | | |
-| 7 | | | | | | |
-| 8 | | | | | | |
-| 9 | | | | | | |
-| 10 | | | | | | |
+| T01 | small tennis text | READABILITY; YES; UI_DESIGNER | READABILITY; YES; UI_DESIGNER | READABILITY; YES; UI_DESIGNER | Acceptable | — |
+| T02 | championship contrast | READABILITY; YES; UI_DESIGNER | READABILITY; YES; UI_DESIGNER | READABILITY; YES; UI_DESIGNER | Acceptable | — |
+| T03 | crowded screen | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | Acceptable | — |
+| T04 | search bar margin | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | Acceptable | — |
+| T05 | menu prominence | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | Acceptable | — |
+| T06 | arrow prominence | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | Acceptable | — |
+| T07 | left-aligned menu | LAYOUT_SPACING; CLARIFICATION_NEEDED; PROJECT_MANAGER | LAYOUT_SPACING; CLARIFICATION_NEEDED; PROJECT_MANAGER | LAYOUT_SPACING; CLARIFICATION_NEEDED; PROJECT_MANAGER | Acceptable | — |
+| T08 | blurred background | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | Acceptable | — |
+| T09 | Facebook icon alignment | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | Acceptable | — |
+| T10 | German left-aligned text | LAYOUT_SPACING; CLARIFICATION_NEEDED; PROJECT_MANAGER | LAYOUT_SPACING; CLARIFICATION_NEEDED; PROJECT_MANAGER | LAYOUT_SPACING; CLARIFICATION_NEEDED; PROJECT_MANAGER | Acceptable | — |
+| T11 | Dutch logo visibility | READABILITY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | Acceptable (category alt.) | — |
+| T12 | typo: login contrast | READABILITY; YES; UI_DESIGNER | READABILITY; YES; UI_DESIGNER | READABILITY; YES; UI_DESIGNER | Acceptable | — |
+| T13 | typos: unused space | LAYOUT_SPACING; YES; UI_DESIGNER | VISUAL_CONSISTENCY; YES; UI_DESIGNER | VISUAL_HIERARCHY; YES; UI_DESIGNER | A category wrong; B plausible | F1 (A), F6 |
+| T14 | long: font consistency | VISUAL_CONSISTENCY; YES; UI_DESIGNER | VISUAL_CONSISTENCY; YES; UI_DESIGNER | VISUAL_CONSISTENCY; YES; UI_DESIGNER | Acceptable | — |
+| T15 | grammar: checkbox sizing | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | LAYOUT_SPACING; YES; UI_DESIGNER | Acceptable | — |
+
 
 Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** format · **F5** refused · **F6** inconsistent between runs
 
-**Result:** — correct out of — → **—%**
+**Result (strict complete output):** 26/30 → **86.7%** (category exact-match + correct action + correct role + acceptable task).
+**Task acceptability (manual):** 30/30 → **100% provisional**; all tasks were relevant to the source feedback, with no confirmed inventions.
+**Substantive output acceptability:** 29/30 → **96.7% provisional** when defensible alternative categories count as acceptable (T11 twice and T13 B).
 
 **Failures by type:**
 
 | Code | Count | Notes |
 |---|---:|---|
-| F1 Wrong | | |
-| F2 Fabricated | | |
-| F3 Missed | | |
-| F4 Format | | |
-| F5 Refused | | |
-| F6 Inconsistent | | |
+| F1 Wrong | 1 confirmed | T13 A: VISUAL_CONSISTENCY is unsupported by feedback about visual dominance/unused space. Four strict category-label mismatches exist, but T11 A/B and T13 B are defensible alternatives. |
+| F2 Fabricated | 0 confirmed | No clearly invented UI element, deadline or specification in tasks. |
+| F3 Missed | 0 confirmed | No omitted requirement that is explicitly present in the version of feedback actually tested. |
+| F4 Format | 0 observed | All four fields were provided in recorded outputs. |
+| F5 Refused | 0 observed | No refusals. |
+| F6 Inconsistent | 1 case | T13 category differs between run A and B; a simultaneous F1/F6 is possible. |
 
 **What surprised me:**
-> —
+> Even after removing explicit "To fix this..." recommendations from most test inputs, the assistant generated usable tasks. Category wording was less reliable than action decisions and role assignments. The reference labels are sometimes open to multiple reasonable readings (notably T11 and T13).
 
 **The failure that would have mattered most in real use, and why:**
-> —
+> A wrongly labelled or overconfident task could be routed to the wrong workflow or acted on without clarification. T13 showed category inconsistency; T07/T10 show the value of asking for clarification rather than treating a layout observation as an instruction.
 
 *This one line is the most valuable thing in the log. Not the success rate — which failure would have caused actual damage.*
 
+**Methodological limitations:**
+> T01 includes an explicit "To fix this" recommendation while most other inputs do not. The test set contains translated, edited and deliberately misspelled feedback, so describe it as UICrit-based/adapted rather than 15 verbatim originals. The 30 outputs are not 30 independent real-world projects. Manual task acceptability is a reviewer judgment, not an independent gold-standard score. Prompt v1 was only tested on one model as recorded here; model identity and dates must be filled in.
+
+*Do not delete observed errors. Preserve original chat transcripts and exact inputs if available.*
 ---
 
 ## Changes
