@@ -263,25 +263,25 @@ Book the session and add its real date. Keep the classroom notes blank until you
 
 ## ScoutLab V2 — actual evaluation log (Week 4)
 
-**Status: pending execution.** The expected answers are in `build/scoutlab/evaluation-plan.md`. Do not fill the result columns until the corresponding action has actually been run. Keep the pre-written expected answers unchanged.
+**Status: all 15 UI cases reported as passed by the student.** The assistant has recorded the student's confirmation; the interactive results were not independently observed. The expected answers in `build/scoutlab/evaluation-plan.md` remain unchanged.
 
 | Case | Input/action | Run 1 result | Run 2 result | Pass/fail | Failure type (F1–F6) | Notes/evidence |
 |---:|---|---|---|---|---|---|
-| 1 | Find Erling Haaland | — | — | — | — | — |
-| 2 | Find Bukayo Saka | — | — | — | — | — |
-| 3 | Find Mohamed Salah | — | — | — | — | — |
-| 4 | Find Cole Palmer | — | — | — | — | — |
-| 5 | Find Phil Foden | — | — | — | — | — |
-| 6 | Find Declan Rice | — | — | — | — | — |
-| 7 | Find Rodri | — | — | — | — | — |
-| 8 | Find Virgil van Dijk | — | — | — | — | — |
-| 9 | Find Aaron Wan-Bissaka | — | — | — | — | — |
-| 10 | Find Alisson Becker | — | — | — | — | — |
-| 11 | Compare Haaland and Saka | — | — | — | — | — |
-| 12 | Similar-player search for Haaland | — | — | — | — | — |
-| 13 | Open Hidden Gems using default data | — | — | — | — | Should report that market values are not supplied |
-| 14 | Upload controlled test value CSV with at least three same-position players and synthetic prices | — | — | — | — | Use clearly synthetic values, never report them as real valuations |
-| 15 | Export shortlist containing two chosen players | — | — | — | — | — |
+| 1 | Find Erling Haaland | Pass (reported) | Not repeated | **Pass** | None | Student reports expected profile facts displayed. |
+| 2 | Find Bukayo Saka | Pass (reported) | Not repeated | **Pass** | None | Student reports expected profile facts displayed. |
+| 3 | Find Mohamed Salah | Pass (reported) | Not repeated | **Pass** | None | Student reports expected profile facts displayed. |
+| 4 | Find Cole Palmer | Pass (reported) | Not repeated | **Pass** | None | Student reports expected profile facts and Forward grouping. |
+| 5 | Find Phil Foden | Pass (reported) | Not repeated | **Pass** | None | Student reports expected profile facts and Forward grouping. |
+| 6 | Find Declan Rice | Pass (reported) | Not repeated | **Pass** | None | Student reports expected midfielder profile facts. |
+| 7 | Find Rodri | Pass (reported) | Not repeated | **Pass** | None | Student reports expected midfielder profile facts. |
+| 8 | Find Virgil van Dijk | Pass (reported) | Not repeated | **Pass** | None | Student reports expected defender profile facts. |
+| 9 | Find Aaron Wan-Bissaka | Pass (reported) | Not repeated | **Pass** | None | Student reports expected defender profile facts. |
+| 10 | Find Alisson Becker | Pass (reported) | Not repeated | **Pass** | None | Student reports goalkeeper profile and missing attacking values behaved as expected. |
+| 11 | Compare Haaland and Saka | Pass (reported) | Not repeated | **Pass** | None | Student reports comparison behaved as expected. |
+| 12 | Similar-player search for Haaland | Pass (reported) | Not repeated | **Pass** | None | Student reports similar-player search behaved as expected. |
+| 13 | Open Hidden Gems using default data | Pass (reported) | Not repeated | **Pass** | None | Student reports no-value warning/template behaved as expected. |
+| 14 | Upload controlled test value CSV with at least three same-position players and synthetic prices | Pass (reported) | Not repeated | **Pass** | None | Student reports synthetic value upload/comparison worked. |
+| 15 | Export shortlist containing two chosen players | Pass (reported) | Not repeated | **Pass** | None | Student reports shortlist export behaved as expected. |
 
 ### Timed comparison (same profiles, same task)
 
@@ -291,14 +291,67 @@ Book the session and add its real date. Keep the classroom notes blank until you
 | 2 | — | — | — | — | — |
 | 3 | — | — | — | — | — |
 
-### Results summary (complete only after running)
+### Results summary (UI outcome reported by student)
 
-- Cases passed: — / 15
-- Cases failed: —
-- F1 wrong: — · F2 fabricated: — · F3 missed: — · F4 format: — · F5 refused: — · F6 inconsistent: —
-- Median manual/spreadsheet time: —
-- Median ScoutLab time including verification: —
-- Measured time difference: —
-- Decision versus spreadsheet baseline: keep / revise / stop, with reason: —
+- Cases passed: **15 / 15 (student-reported)**
+- Cases failed: **0 reported**
+- F1 wrong: 0 reported · F2 fabricated: 0 reported · F3 missed: 0 reported · F4 format: 0 reported · F5 refused: 0 reported · F6 inconsistent: not tested by a second run
+- Median manual/spreadsheet time: **Not measured**
+- Median ScoutLab time including verification: **Not measured**
+- Measured time difference: **Not available**
+- Decision versus spreadsheet baseline: **Pending timed comparison**
+
+The student's confirmation is the evidence for the 15 UI passes; the assistant did not independently observe those app interactions. A second run was not confirmed, so consistency (F6) remains untested.
 
 Do not convert the hypothetical €16,000/year capacity estimate into a measured ROI until the time comparison has been completed and a real workload has been established.
+
+
+---
+
+## ScoutLab V2 — checks actually completed (13 October 2026)
+
+**Scope note:** The student subsequently confirmed that all 15 interactive cases passed. The results are marked as student-reported in the table above; the assistant did not independently observe the live UI. The manual-versus-ScoutLab timing table remains open because no measurements have been provided.
+
+### Reference-dataset fact check (source-level support for cases 1–10)
+
+I fetched and checked the same public CSV URL used by `app.py`. It contains 339 player rows. Each target player was present, and the pre-written source facts below matched the CSV. This verifies source-row facts only; I did not verify how each profile rendered in the live UI.
+
+| Case | Player | Checked source facts | Source-row result | UI profile result |
+|---:|---|---|---|---|
+| 1 | Erling Haaland | Manchester City; Forward; age 23; 2,556 minutes; goals/90 0.95; xG/90 1.03 | Match | Pass (reported) |
+| 2 | Bukayo Saka | Arsenal; Forward; age 21; 2,933 minutes; goals/90 0.49 | Match | Pass (reported) |
+| 3 | Mohamed Salah | Liverpool; Forward; age 31; 2,535 minutes; goals/90 0.64 | Match | Pass (reported) |
+| 4 | Cole Palmer | Chelsea; source position FW,MF; grouped Forward; age 21; 2,624 minutes; goals/90 0.75 | Match | Pass (reported) |
+| 5 | Phil Foden | Manchester City; source position FW,MF; grouped Forward; age 23; 2,865 minutes; goals/90 0.60 | Match | Pass (reported) |
+| 6 | Declan Rice | Arsenal; Midfielder; age 24; 3,230 minutes; tackles/90 1.4; pass success 90.7% | Match | Pass (reported) |
+| 7 | Rodri | Manchester City; Midfielder; age 27; 2,938 minutes; pass success 92.5% | Match | Pass (reported) |
+| 8 | Virgil van Dijk | Liverpool; Defender; age 32; 3,178 minutes; clearances/90 4.0; pass success 91.5% | Match | Pass (reported) |
+| 9 | Aaron Wan-Bissaka | Manchester United; Defender; age 25; 1,781 minutes; tackles/90 1.3; interceptions/90 2.1 | Match | Pass (reported) |
+| 10 | Alisson Becker | Liverpool; Goalkeeper; age 30; 2,520 minutes; attacking fields are missing in the source CSV | Match | Pass (reported) |
+
+**Source-row result:** 10/10 expected fact sets matched in the reference CSV. Separately, the student later reported passing the 10 UI profile cases.
+
+### Core unit tests
+
+I could not create a fresh repository clone because direct GitHub access from this execution environment failed. To test the logic nevertheless, I reproduced the current `scouting_core.py` and `test_scouting_core.py` contents in an isolated local test folder and ran `python -m pytest -q`.
+
+**Result: 4 passed in 1.18 seconds.** The tests cover name/position normalization, market-value parsing and units, scoring plus a synthetic value overlay (including value-gap and provenance fields), and similar-player output excluding the reference player and supplying similarity scores. This is a local reconstruction of the current source, not a run inside the actual Streamlit UI.
+
+### Case-by-case interpretation of the checks
+
+| Case(s) | What was actually checked | Status |
+|---|---|---|
+| 1–10 | Source facts plus live profile behavior | Student reports all ten UI cases passed |
+| 11 | Haaland/Saka comparison | Student reports pass |
+| 12 | Similar-player search for Haaland | Student reports pass |
+| 13 | Default data has no values; warning/template | Student reports pass |
+| 14 | Synthetic valuation upload/comparison | Student reports pass |
+| 15 | Two-player shortlist CSV export | Student reports pass |
+
+**Failure classification:** The student reported no failures in the 15 UI cases. The four code tests and source-row checks also passed. F6 consistency remains untested because a second full run was not confirmed.
+
+### Timed comparison — still required
+
+**Not run.** This environment could not open the live/local Streamlit interface, so I have no genuine ScoutLab interaction time or spreadsheet time to report.
+
+For a fair, quick trial, time the same fixed task in both workflows: find Haaland and Saka, verify their position/minutes/goals-per-90, compare them side-by-side, create a shortlist containing exactly those two players, and export/open the CSV. In the spreadsheet workflow, locate the same two rows and create/export the same two-player comparison. Start the timer at the first search/filter action and stop only when the exported file is open; include any data checks and corrections. Repeat three times and enter the actual times and corrections in the timed-comparison table above. This measures retrieval/comparison/export workflow time, not scouting accuracy or candidate-selection quality.
