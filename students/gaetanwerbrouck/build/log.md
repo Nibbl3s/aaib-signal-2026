@@ -257,3 +257,48 @@ The 28 September introduction was a tour of available equipment, including laser
 | Fabricator | A small label/card or physical display part, subject to confirmation of the machine's capabilities. | **[Enter confirmed booked date]** |
 
 Book the session and add its real date. Keep the classroom notes blank until you can enter what classmates actually said.
+
+
+---
+
+## ScoutLab V2 — actual evaluation log (Week 4)
+
+**Status: pending execution.** The expected answers are in `build/scoutlab/evaluation-plan.md`. Do not fill the result columns until the corresponding action has actually been run. Keep the pre-written expected answers unchanged.
+
+| Case | Input/action | Run 1 result | Run 2 result | Pass/fail | Failure type (F1–F6) | Notes/evidence |
+|---:|---|---|---|---|---|---|
+| 1 | Find Erling Haaland | — | — | — | — | — |
+| 2 | Find Bukayo Saka | — | — | — | — | — |
+| 3 | Find Mohamed Salah | — | — | — | — | — |
+| 4 | Find Cole Palmer | — | — | — | — | — |
+| 5 | Find Phil Foden | — | — | — | — | — |
+| 6 | Find Declan Rice | — | — | — | — | — |
+| 7 | Find Rodri | — | — | — | — | — |
+| 8 | Find Virgil van Dijk | — | — | — | — | — |
+| 9 | Find Aaron Wan-Bissaka | — | — | — | — | — |
+| 10 | Find Alisson Becker | — | — | — | — | — |
+| 11 | Compare Haaland and Saka | — | — | — | — | — |
+| 12 | Similar-player search for Haaland | — | — | — | — | — |
+| 13 | Open Hidden Gems using default data | — | — | — | — | Should report that market values are not supplied |
+| 14 | Upload controlled test value CSV with at least three same-position players and synthetic prices | — | — | — | — | Use clearly synthetic values, never report them as real valuations |
+| 15 | Export shortlist containing two chosen players | — | — | — | — | — |
+
+### Timed comparison (same profiles, same task)
+
+| Trial | Current manual/spreadsheet time | ScoutLab time, including data checks | Corrections needed | Useful candidates found | Notes |
+|---:|---|---|---|---|---|
+| 1 | — | — | — | — | — |
+| 2 | — | — | — | — | — |
+| 3 | — | — | — | — | — |
+
+### Results summary (complete only after running)
+
+- Cases passed: — / 15
+- Cases failed: —
+- F1 wrong: — · F2 fabricated: — · F3 missed: — · F4 format: — · F5 refused: — · F6 inconsistent: —
+- Median manual/spreadsheet time: —
+- Median ScoutLab time including verification: —
+- Measured time difference: —
+- Decision versus spreadsheet baseline: keep / revise / stop, with reason: —
+
+Do not convert the hypothetical €16,000/year capacity estimate into a measured ROI until the time comparison has been completed and a real workload has been established.
