@@ -28,7 +28,6 @@ Pilot AI-assisted OCR and extraction for vendor, invoice number, date, VAT and t
 | **Gross economic benefit** | **214,560** | Time capacity + correction savings |
 | AI cost, Year 1 | **(18,200)** | €15,000 setup/integration + €3,000 maintenance + €200 usage, all estimated |
 | **Conditional net value, Year 1** | **196,360** | Gross value less Year 1 cost, if time capacity is realized |
-| Cash-like case if time is not redeployed | **140,200** | €158,400 correction savings − €18,200 cost |
 | Payback after go-live | **~0.85 months (est.)** | €15,000 ÷ ((€214,560 − €3,200 recurring costs)/12); excludes ramp-up |
 
 ## Risks and mitigations
@@ -41,4 +40,4 @@ Extraction errors could pass through unnoticed; use confidence thresholds, excep
 
 ## Sensitivity note
 
-If gross benefits are 50% lower, the estimated Year 1 net value is still €89,080. If saved staff time creates no value, the case falls to about €140,200 net before any extra costs, and still relies on verifying the €220 correction-cost estimate.
+If gross benefits are 50% lower, the estimated Year 1 net value is still €89,080. If saved staff time creates no value, the case is €158,400 estimated correction savings minus €18,200 in costs, or €140,200 net, but still relies on verifying the €220 correction-cost estimate.
