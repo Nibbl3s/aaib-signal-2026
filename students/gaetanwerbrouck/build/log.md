@@ -199,3 +199,30 @@ The €8,000 is capacity value, not automatically a cash saving. It assumes a cl
 ### FabLab probe plan status
 
 The introduction on Monday 28/09 was attended. The three exploratory artifacts are a laser-cut scouting filter, a 3D-printed player profile/data structure, and a Fabricator-made representation. **A future FabLab session is not yet recorded as booked.** After booking it, replace the status in the table above with the confirmed session date. Do not mark this checkpoint complete until the booking is real.
+
+
+---
+
+## Week 5 — ScoutLab scouting workflow (13 October 2026)
+
+### Design decision
+I am moving beyond the Week 2 five-rule classifier. Week 4's evaluation found that fixed threshold rules are simpler in a spreadsheet. The revised Build focuses on player discovery and decision support: position-relative performance profiles, comparison, same-position similarity, shortlist export, and an optional performance-versus-value comparison.
+
+### Current implementation
+- App code: **build/scoutlab/app.py**
+- Transparent calculations: **build/scoutlab/scouting_core.py**
+- Setup and method: **build/scoutlab/README.md**
+- Unit tests: **build/scoutlab/test_scouting_core.py**
+- Assignment map: **build/scoutlab/COURSE_ALIGNMENT.md**
+
+### Data boundary
+The default reference is the public FootballScoutingAI 2023/24 Premier League dataset (339 player rows). It contains performance fields but no market-value field. Hidden-gem ranking therefore requires a separate CSV with player names and dated, attributed market values. The app does not infer prices from performance. Upstream dataset licence terms are not clearly stated in the README, so the data is fetched at runtime rather than copied into this repository.
+
+### Validation status
+**Not yet run locally.** Unit tests are included but must be executed in PowerShell, and the results must be recorded only after they actually pass. The dashboard is a prototype, not proof of scouting accuracy or positive ROI. The Week 4 scenario assumptions should not be reused for this larger app without fresh time/cost measurements.
+
+### Next evidence to collect
+1. Run the test suite and manually inspect several player profiles.
+2. Add a dated market-value file from an attributable source and check name matching and season alignment.
+3. Obtain real feedback from a classmate and record the review honestly.
+4. Complete outstanding real clinic/cross-pollination notes and book/record the FabLab session when confirmed.
