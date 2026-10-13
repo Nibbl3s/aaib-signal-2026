@@ -19,6 +19,7 @@ def test_name_normalization_and_position_mapping():
 
 def test_market_value_parser():
     assert parse_market_value("€9.5m", "auto", "Market Value (€m)") == 9.5
+    assert parse_market_value("€9.5m", "euros", "Market Value (€m)") == 9.5
     assert parse_market_value(9.5, "millions", "Market Value (€m)") == 9.5
     assert parse_market_value(9_500_000, "euros", "Market Value (€)") == 9.5
     assert pd.isna(parse_market_value("n/a", "auto", "Market Value (€m)"))
@@ -46,11 +47,15 @@ def test_score_and_value_overlay():
     overlay = pd.DataFrame({
         "Player": ["A Forward", "B Forward", "C Forward", "D Forward", "E Forward"],
         "Market Value (€m)": [4, 15, 8, 5, 6],
+        "Value source": ["Example source"] * 5,
+        "Value date (YYYY-MM-DD)": ["2026-10-01"] * 5,
     })
     valued = add_market_value_overlay(players, overlay, "auto")
     assert valued["Market_Value_EURm"].notna().all()
     assert valued["Value_Gap"].notna().all()
     assert valued.loc[valued["Player"].eq("A Forward"), "Market_Value_EURm"].iloc[0] == 4
+    assert valued.loc[valued["Player"].eq("A Forward"), "Market_Value_Source"].iloc[0] == "Example source"
+    assert valued.loc[valued["Player"].eq("A Forward"), "Market_Value_Date"].iloc[0] == "2026-10-01"
 
 
 def test_similar_player_search_returns_other_players():
