@@ -15,18 +15,18 @@ TechCorp processes 600 invoices/month. Manual processing takes 15 minutes per in
 | Cost reduction | 12% × 600 = 72 errors/month; 72 × €220 = €15,840/month | 2% × 600 = 12 errors/month; 12 × €220 = €2,640/month | **€158,400/year** = (€15,840 − €2,640) × 12. The €220 correction cost is a lesson-provided estimate, not a measured TechCorp figure. |
 | Risk mitigation | No separate probability/impact estimate supplied | Not separately quantified | **€0 separately counted**. Error-correction savings already appear above; assigning another risk value could double-count the same benefit. |
 | **Gross benefit** |  |  | **€214,560/year** = €56,160 + €158,400 |
-| Less: AI cost, Year 1 |  |  | **€18,200 (est.)** = €15,000 implementation/integration + €3,000 maintenance (20% of implementation) + €200 usage/OCR/API allowance. |
-| **Net benefit, Year 1** |  |  | **€196,360** = €214,560 − €18,200 |
-| Payback period |  |  | **About 0.85 months after go-live** = €15,000 implementation ÷ ((€214,560 − €3,200 recurring costs)/12). This excludes time to deploy. |
+| Less: AI cost, Year 1 |  |  | **€26,000 (est.)** = €15,000 one-time implementation/integration + €8,000 annual AI/service cost (lesson estimate) + €3,000 annual maintenance (20% of implementation). |
+| **Net benefit, Year 1** |  |  | **€188,560** = €214,560 − €26,000 |
+| Payback period |  |  | **About 0.85 months after go-live** = €15,000 implementation ÷ ((€214,560 − €11,000 recurring costs)/12). This excludes time to deploy. |
 
 ## Assumptions and checks
 
 - The 15-minute manual time and 12% error rate come from the TechCorp profile. The 3-minute post-AI time, 2% error rate and €220 correction cost come from the lesson's worked example, so they are assumptions to validate in a pilot, not proven TechCorp outcomes.
 - The €39/hour AP analyst loaded cost comes from the lesson's reference rates.
-- Implementation/integration (€15,000), maintenance (€3,000) and usage/OCR/API (€200) are estimates. Replace them with quotes if available.
+- The €8,000 annual AI/service cost is the lesson's rough example. Implementation/integration (€15,000) and maintenance (€3,000/year) are estimates; replace them with actual quotes if available.
 - The 1,440 hours/year of capacity value is not automatically a cash saving. The business case should explain how the time will be redeployed.
 - The risk-mitigation row is deliberately zero to avoid double-counting correction savings and because the assignment provides no separate probability-and-impact estimate for this process.
 
 ## 50% downside check
 
-If the combined benefits are 50% lower than estimated, gross benefit would be €107,280/year. Subtracting the same €18,200 Year 1 cost leaves **€89,080 net benefit**. That still looks positive on these assumptions, but the pilot must verify the error-rate improvement and the €220 correction-cost estimate.
+If the combined benefits are 50% lower than estimated, gross benefit would be €107,280/year. Subtracting the same €18,200 Year 1 cost leaves **€81,280 net benefit**. That still looks positive on these assumptions, but the pilot must verify the error-rate improvement and the €220 correction-cost estimate.
