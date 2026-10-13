@@ -263,7 +263,7 @@ Book the session and add its real date. Keep the classroom notes blank until you
 
 ## ScoutLab V2 — actual evaluation log (Week 4)
 
-**Status: pending execution.** The expected answers are in `build/scoutlab/evaluation-plan.md`. Do not fill the result columns until the corresponding action has actually been run. Keep the pre-written expected answers unchanged.
+**Status: the interactive 15-case run remains pending; partial source/code checks are recorded in the dated section at the end of this log.** The expected answers are in `build/scoutlab/evaluation-plan.md`. Do not fill the result columns until the corresponding action has actually been run. Keep the pre-written expected answers unchanged.
 
 | Case | Input/action | Run 1 result | Run 2 result | Pass/fail | Failure type (F1–F6) | Notes/evidence |
 |---:|---|---|---|---|---|---|
@@ -302,3 +302,54 @@ Book the session and add its real date. Keep the classroom notes blank until you
 - Decision versus spreadsheet baseline: keep / revise / stop, with reason: —
 
 Do not convert the hypothetical €16,000/year capacity estimate into a measured ROI until the time comparison has been completed and a real workload has been established.
+
+
+---
+
+## ScoutLab V2 — checks actually completed (13 October 2026)
+
+**Scope note:** I could not launch and interact with the Streamlit interface from this execution environment. Therefore, this evidence is not reported as a completed 15/15 UI evaluation. The UI result table and manual-versus-ScoutLab timing table above remain open; no timings have been invented.
+
+### Reference-dataset fact check (source-level support for cases 1–10)
+
+I fetched and checked the same public CSV URL used by `app.py`. It contains 339 player rows. Each target player was present, and the pre-written source facts below matched the CSV. This verifies source-row facts only; I did not verify how each profile rendered in the live UI.
+
+| Case | Player | Checked source facts | Source-row result | UI profile result |
+|---:|---|---|---|---|
+| 1 | Erling Haaland | Manchester City; Forward; age 23; 2,556 minutes; goals/90 0.95; xG/90 1.03 | Match | Not run |
+| 2 | Bukayo Saka | Arsenal; Forward; age 21; 2,933 minutes; goals/90 0.49 | Match | Not run |
+| 3 | Mohamed Salah | Liverpool; Forward; age 31; 2,535 minutes; goals/90 0.64 | Match | Not run |
+| 4 | Cole Palmer | Chelsea; source position FW,MF; grouped Forward; age 21; 2,624 minutes; goals/90 0.75 | Match | Not run |
+| 5 | Phil Foden | Manchester City; source position FW,MF; grouped Forward; age 23; 2,865 minutes; goals/90 0.60 | Match | Not run |
+| 6 | Declan Rice | Arsenal; Midfielder; age 24; 3,230 minutes; tackles/90 1.4; pass success 90.7% | Match | Not run |
+| 7 | Rodri | Manchester City; Midfielder; age 27; 2,938 minutes; pass success 92.5% | Match | Not run |
+| 8 | Virgil van Dijk | Liverpool; Defender; age 32; 3,178 minutes; clearances/90 4.0; pass success 91.5% | Match | Not run |
+| 9 | Aaron Wan-Bissaka | Manchester United; Defender; age 25; 1,781 minutes; tackles/90 1.3; interceptions/90 2.1 | Match | Not run |
+| 10 | Alisson Becker | Liverpool; Goalkeeper; age 30; 2,520 minutes; attacking fields are missing in the source CSV | Match | Not run |
+
+**Source-row result:** 10/10 expected fact sets matched. No F1–F6 failure was observed in this source-data check. Do not enter these as UI passes until the profiles are actually checked in ScoutLab.
+
+### Core unit tests
+
+I could not create a fresh repository clone because direct GitHub access from this execution environment failed. To test the logic nevertheless, I reproduced the current `scouting_core.py` and `test_scouting_core.py` contents in an isolated local test folder and ran `python -m pytest -q`.
+
+**Result: 4 passed in 1.18 seconds.** The tests cover name/position normalization, market-value parsing and units, scoring plus a synthetic value overlay (including value-gap and provenance fields), and similar-player output excluding the reference player and supplying similarity scores. This is a local reconstruction of the current source, not a run inside the actual Streamlit UI.
+
+### Case-by-case interpretation of the checks
+
+| Case(s) | What was actually checked | Status |
+|---|---|---|
+| 1–10 | Expected player facts matched source CSV rows | Source check complete; live profile rendering still pending |
+| 11 | Haaland/Saka comparison | Live comparison tab not run |
+| 12 | Similar-player logic on a five-player synthetic fixture | Core unit test passed; Haaland against the full default dataset not run in the app |
+| 13 | Default CSV has no market-value column; app source contains the unavailable-values warning and template download path | Data/code check complete; visible UI warning not clicked |
+| 14 | Synthetic market-value overlay parsing, name matching, value-gap calculation, source/date metadata | Core unit test passed; file upload in the UI not run |
+| 15 | App source implements shortlist export with `to_csv` | Code inspection only; CSV not downloaded/opened in the UI |
+
+**Failure classification:** No F1–F6 failures were observed in the source-row check or the four core unit tests. UI cases not actually run have no failure classification yet; their status is unknown, not “pass.”
+
+### Timed comparison — still required
+
+**Not run.** This environment could not open the live/local Streamlit interface, so I have no genuine ScoutLab interaction time or spreadsheet time to report.
+
+For a fair, quick trial, time the same fixed task in both workflows: find Haaland and Saka, verify their position/minutes/goals-per-90, compare them side-by-side, create a shortlist containing exactly those two players, and export/open the CSV. In the spreadsheet workflow, locate the same two rows and create/export the same two-player comparison. Start the timer at the first search/filter action and stop only when the exported file is open; include any data checks and corrections. Repeat three times and enter the actual times and corrections in the timed-comparison table above. This measures retrieval/comparison/export workflow time, not scouting accuracy or candidate-selection quality.
