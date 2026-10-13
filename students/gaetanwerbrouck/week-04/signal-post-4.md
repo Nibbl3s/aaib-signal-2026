@@ -1,36 +1,42 @@
-# Signal Post 4 — AI Scouting: Does the ROI Beat a Spreadsheet?
+# Signal Post 4: What Is a Football Scouting Tool Actually Worth?
 
-## Hook
-
-Football clubs do not need another tool that produces an impressive shortlist; they need one that saves scouting time without hiding good players or wasting budget. A positive demo is not an ROI case, especially when a spreadsheet can do part of the job.
+Football clubs can collect more player statistics than ever, but a bigger spreadsheet does not automatically create better recruitment decisions. A scouting tool only creates value if it helps a club find and review promising players faster, without hiding important context or adding costs that outweigh the benefit.
 
 ## The candidate
 
-My beat is how football clubs use data to find players whose performance is better than their reputation or transfer value suggests. The candidate is an AI-assisted first-pass screen for hypothetical Belgian club Flanders United FC. It classifies player profiles using five rules: age, league minutes, goals plus assists per 90, estimated market value and outfield position. This sits in recruitment/scouting. Human scouts still check data and decide who deserves detailed scouting; the tool does not decide who is signed.
+My beat is how football clubs use data to find players whose performances deserve more attention than their reputation or estimated market value might suggest. For a realistic composite Belgian club, Flanders United FC, the candidate is ScoutLab, a player-discovery and comparison dashboard. It filters a player pool, shows position-relative performance profiles, compares candidates, finds similar statistical profiles, and exports a shortlist. Where dated market-value data is supplied, it can also compare performance rank with value rank.
+
+This sits in the recruitment value chain. The intended user is a scouting analyst who currently gathers statistics across pages and spreadsheets. A human scout still checks data, watches video, evaluates tactical fit and decides whether a player merits deeper work. ScoutLab does not make transfer decisions.
 
 ## The numbers
 
-I tested my prompt on 10 player profiles, with expected answers set before testing, and ran the set twice. All 20 classifications matched the expected answers: 20/20, or 100% observed success on this small, bounded test. One separate counting inconsistency appeared in an explanation, showing that correct individual classifications do not guarantee every summary is correct. This is promising evidence for a narrow task, not proof of production accuracy.
-
-For a value estimate, I use a hypothetical scenario, not measured club data: 200 profiles screened per month; eight minutes of manual screening per profile; three minutes per profile for AI-assisted screening plus human verification; and a loaded scout/analyst rate of €40/hour. The time saving is (8 − 3) minutes × 200 × 12 = 12,000 minutes, or 200 hours/year. At €40/hour, that is **€8,000/year in capacity value**. It becomes a cash saving only if the club redeploys the hours or avoids paid work.
+The public reference dataset has 339 player rows from the 2023/24 Premier League season. It is useful for testing the workflow, but it is historical and does not contain market values. I therefore cannot claim the default data has already discovered undervalued players. I use a hypothetical monthly workload to estimate possible process value, not as a measured fact about a real club.
 
 | Benefit category | Annual value | Formula and treatment |
 |---|---:|---|
-| Time saved | €8,000 | 200 hours × €40/hour; hypothetical capacity value |
-| Revenue increase | €0 | No evidence that this screen increases transfer profit |
-| Cost reduction | €0 | No actual payroll or other expenditure is shown to disappear |
-| Risk mitigation | €0 separately | No defensible probability/impact estimate for a missed player; do not invent one |
-| **Gross quantified benefit** | **€8,000** | Only time-capacity value is counted |
+| Time saved | €16,000 (est.) | 200 profiles/month × 12 × 10 minutes saved/profile ÷ 60 × €40/hour. Both profile volume and time saved must be measured in a pilot. |
+| Revenue increase | €0 counted | No evidence that a shortlist directly creates additional transfer revenue. |
+| Cost reduction | €0 counted | No actual expense is proven to disappear, so freed-up time is not described as a cash saving. |
+| Risk mitigation | €0 counted | There is no defensible probability and impact estimate for a missed player or a bad signing. |
+| **Gross benefit** | **€16,000 (est.)** | Time-capacity value only, not guaranteed cash. |
 
-Assume the club already has the structured data. For 2,400 profiles/year, 500 input tokens and 100 output tokens per profile, the lesson's reference prices ($2 per million input tokens and $12 per million output tokens) imply about €5/year in tokens after the $0.92 conversion. I estimate 20 hours of setup/testing at €40/hour (€800) and 10 hours of maintenance at €40/hour (€400). Year 1 cost is about **€1,205**, excluding any new data subscription or integration quote. Net Year 1 value against manual screening is €8,000 − €1,205 = **€6,795**. Payback is about **1.3 months**: €800 setup ÷ ((€8,000 − €405 recurring cost)/12).
+The 10-minute saving is a hypothesis: manual discovery and comparison would take 15 minutes per profile, while ScoutLab-assisted review would take 5 minutes after the relevant data is prepared. The calculation is (15 - 5) minutes × 200 profiles/month × 12 ÷ 60 × €40/hour = €16,000 a year. The €40 loaded hourly rate and 200-profile volume are scenario assumptions, not measurements from a club.
+
+Estimated Year 1 costs are €800 for 20 hours of setup and validation (20 × €40), €1,920 for four hours/month checking and refreshing data (4 × 12 × €40), and €400 for ten hours of maintenance (10 × €40). The app itself does not call a language model API, so no LLM token cost is assumed. Hosting, a licensed performance feed and market-value data may cost extra and have not been priced. Total currently modelled cost is €3,120, giving a provisional net value of €16,000 - €3,120 = **€12,880** before those unpriced costs. Payback on the €800 setup estimate is about 0.7 months after launch if the assumed benefit arrives and recurring costs remain as modelled.
 
 ## The pressure test
 
-The 100% result covers only 10 profiles and two runs, with deterministic criteria. It says little about messy, stale or incomplete real-world data. If the time benefit is 50% lower, gross value falls to €4,000 and estimated net value remains €2,795 in Year 1. In a 5% error scenario, 120 profiles/year would need correction; ten minutes of rechecking at €40/hour costs about €800/year. The opportunity cost of missing a genuinely undervalued player remains unpriced.
+If the time benefit is 50% lower, gross value drops to €8,000 and the modelled Year 1 net is €4,880 (€8,000 - €3,120). That still looks positive on paper, but a paid data feed, higher preparation time or no actual reduction in manual work could remove the remaining margin. The biggest uncertainty is not the calculation. It is whether ScoutLab really saves ten minutes on real scouting tasks and improves the shortlist compared with the current process.
 
-The AI is not competing only with manual work. A spreadsheet/database filter can apply the same five rules to structured fields. If that takes an estimated two minutes per profile, it saves (8 − 2) minutes × 2,400 ÷ 60 = 240 hours/year, worth €9,600. Assuming €160 setup and €80 annual upkeep, its Year 1 net value is about €9,360, above the AI case's €6,795 and with less risk of invented reasoning. These spreadsheet figures are estimates too, but it is the right alternative to test.
+The pilot should compare the same player profiles through the current workflow, a spreadsheet baseline and ScoutLab. Record time, data errors, useful candidates found, and the human review required. The market-value feature must stay disabled until values from an attributable source and date are supplied. A positive performance/value gap is a lead to investigate, not proof that the market price is wrong.
 
 ## The insight
 
-My verdict is **no-go for AI on this five-rule task; use a spreadsheet or database filter**. The test shows the prompt can classify these examples, but capability is not the same as value. AI may earn its place if the club needs to combine unstructured scouting reports, qualitative assessments or signals that rules cannot handle. That requires a new test set and a separate business case, not a claim that this small test already proves ROI.
+My current verdict is **pilot only, not a full investment**. A spreadsheet remains the simpler tool for fixed thresholds, as my Week 2 test showed. ScoutLab has a broader workflow, especially comparison and similar-profile discovery, but I have not yet measured whether those features create enough extra value. I need the expected-answer tests, a timed comparison with the current process, reliable and permissioned data, and real peer feedback before claiming a proven ROI. Value quantification means being willing to reject the tool if the evidence does not justify it.
 
+## Data source
+
+- [FootballScoutingAI reference project](https://github.com/sahilwalawalkar/FootballScoutingAI)
+- [Processed Premier League 2023/24 CSV](https://raw.githubusercontent.com/sahilwalawalkar/FootballScoutingAI/main/data/processed/premier_league_2023_24_scouting_final.csv)
+
+The upstream README does not clearly state the dataset licence, so permission must be checked before any real deployment or redistribution.
