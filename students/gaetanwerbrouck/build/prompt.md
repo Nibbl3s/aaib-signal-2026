@@ -8,3 +8,12 @@
 
 5\. The player is an outfield player.
 
+
+
+---
+
+# Week 4 — current Build note (ScoutLab V2)
+
+The five-rule prompt above is the historical V1 prompt from Week 2. It is not the prompt or scoring logic for the current application.
+
+ScoutLab V2 is a Streamlit data-analysis workflow documented in the ScoutLab README. It uses explicit position-specific percentile weights and same-position cosine similarity; it does not call an LLM API. Current evaluation inputs and expected answers are in the ScoutLab evaluation-plan file. Do not report the old V1 20/20 result as a V2 result.
