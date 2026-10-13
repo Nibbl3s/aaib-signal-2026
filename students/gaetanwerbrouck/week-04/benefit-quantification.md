@@ -17,7 +17,7 @@ TechCorp processes 600 invoices/month. Manual processing takes 15 minutes per in
 | **Gross benefit** |  |  | **€214,560/year** = €56,160 + €158,400 |
 | Less: AI cost, Year 1 |  |  | **€26,000 (est.)** = €15,000 one-time implementation/integration + €8,000 annual AI/service cost (lesson estimate) + €3,000 annual maintenance (20% of implementation). |
 | **Net benefit, Year 1** |  |  | **€188,560** = €214,560 − €26,000 |
-| Payback period |  |  | **About 0.85 months after go-live** = €15,000 implementation ÷ ((€214,560 − €11,000 recurring costs)/12). This excludes time to deploy. |
+| Payback period |  |  | **About 0.9 months after go-live** = €15,000 implementation ÷ ((€214,560 − €11,000 recurring costs)/12). This excludes time to deploy. |
 
 ## Assumptions and checks
 
@@ -29,7 +29,7 @@ TechCorp processes 600 invoices/month. Manual processing takes 15 minutes per in
 
 ## 50% downside check
 
-If the combined benefits are 50% lower than estimated, gross benefit would be €107,280/year. Subtracting the same €18,200 Year 1 cost leaves **€81,280 net benefit**. That still looks positive on these assumptions, but the pilot must verify the error-rate improvement and the €220 correction-cost estimate.
+If the combined benefits are 50% lower than estimated, gross benefit would be €107,280/year. Subtracting the full €26,000 Year 1 cost leaves **€81,280 net benefit**. That still looks positive on these assumptions, but the pilot must verify the error-rate improvement and the €220 correction-cost estimate.
 
 ---
 
