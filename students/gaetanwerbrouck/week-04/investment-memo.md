@@ -7,7 +7,7 @@
 
 ## Executive summary
 
-I recommend a controlled pilot, not a full rollout. Under the lesson’s assumptions, estimated annual gross economic value is €214,560 versus €18,200 Year 1 cost, but the result depends on validating correction costs and actually using the time freed.
+I recommend a controlled pilot, not a full rollout. Under the lesson’s assumptions, estimated annual gross economic value is €214,560 versus €26,000 Year 1 cost, but the result depends on validating correction costs and actually using the time freed.
 
 ## The problem
 
@@ -26,9 +26,9 @@ Pilot AI-assisted OCR and extraction for vendor, invoice number, date, VAT and t
 | Cost reduction | 158,400 | (72 − 12) corrections/month × €220 × 12; €220 is an estimate |
 | Risk mitigation | 0 separately | No separate probability/impact estimate; avoids double-counting |
 | **Gross economic benefit** | **214,560** | Time capacity + correction savings |
-| AI cost, Year 1 | **(18,200)** | €15,000 setup/integration + €3,000 maintenance + €200 usage, all estimated |
-| **Conditional net value, Year 1** | **196,360** | Gross value less Year 1 cost, if time capacity is realized |
-| Payback after go-live | **~0.85 months (est.)** | €15,000 ÷ ((€214,560 − €3,200 recurring costs)/12); excludes ramp-up |
+| AI cost, Year 1 | **(26,000)** | €15,000 setup/integration + €8,000 annual AI/service cost (lesson estimate) + €3,000 maintenance (est.) |
+| **Conditional net value, Year 1** | **188,560** | Gross value less Year 1 cost, if time capacity is realized |
+| Payback after go-live | **~0.85 months (est.)** | €15,000 ÷ ((€214,560 − €11,000 recurring costs)/12); excludes ramp-up |
 
 ## Risks and mitigations
 
@@ -40,4 +40,4 @@ Extraction errors could pass through unnoticed; use confidence thresholds, excep
 
 ## Sensitivity note
 
-If gross benefits are 50% lower, the estimated Year 1 net value is still €89,080. If saved staff time creates no value, the case is €158,400 estimated correction savings minus €18,200 in costs, or €140,200 net, but still relies on verifying the €220 correction-cost estimate.
+If gross benefits are 50% lower, the estimated Year 1 net value is still €81,280. If saved staff time creates no value, the case is €158,400 estimated correction savings minus €18,200 in costs, or €132,400 net, but still relies on verifying the €220 correction-cost estimate.
