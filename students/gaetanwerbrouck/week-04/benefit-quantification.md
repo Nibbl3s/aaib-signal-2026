@@ -30,3 +30,45 @@ TechCorp processes 600 invoices/month. Manual processing takes 15 minutes per in
 ## 50% downside check
 
 If the combined benefits are 50% lower than estimated, gross benefit would be €107,280/year. Subtracting the same €18,200 Year 1 cost leaves **€81,280 net benefit**. That still looks positive on these assumptions, but the pilot must verify the error-rate improvement and the €220 correction-cost estimate.
+
+---
+
+# My Build value quantification — ScoutLab (Week 4)
+
+This section is for my own Build, in addition to the TechCorp worked example above. These are **scenario assumptions**, not measured club outcomes. The app's interface is available, but the new expected-answer tests and timed comparison with manual scouting have not yet been completed.
+
+## Candidate and value-chain position
+
+**Candidate:** ScoutLab, a player-discovery, comparison and shortlisting workflow for a recruitment analyst. This sits in the primary recruitment/scouting activity. Its value is helping scouts find and compare profiles for deeper review, not replacing their decision.
+
+## Four-category benefit table
+
+| Benefit category | Current state | With ScoutLab | Annual value and formula |
+|---|---|---|---|
+| **Time saved** | 200 profiles/month × 15 minutes/profile (all est.) | 5 minutes/profile after data is prepared (est.) | **€16,000 (est.)** = (15 - 5) minutes × 200 × 12 ÷ 60 × €40/hour |
+| **Revenue increase** | No directly attributable transfer-income uplift measured | No revenue uplift claimed | **€0 counted** because there is no evidence the screen itself causes extra transfer revenue |
+| **Cost reduction** | No eliminated cash cost measured | Freed analyst capacity only | **€0 counted** because capacity value is already represented above and no spend reduction is established |
+| **Risk mitigation** | No credible probability/impact baseline for a missed or wrongly signed player | No risk-reduction rate validated | **€0 counted** until a defensible probability × impact × reduction estimate exists |
+| **Gross benefit** | | | **€16,000/year (est.)** |
+| Less: Year 1 cost | | | **€3,120 (est.)** = €800 setup/validation + €1,920 data checks/refresh + €400 maintenance. Paid data, hosting and rights are unpriced. |
+| **Net benefit Year 1** | | | **€12,880 (est.)** = €16,000 - €3,120, before unpriced costs |
+| Payback | | | **0.7 months (est.)** = €800 setup ÷ ((€16,000 - €2,320 annual recurring cost)/12) |
+
+## Cost assumptions and caveats
+
+- Current handling time: 15 minutes/profile, assumed.
+- ScoutLab-assisted handling time: 5 minutes/profile after data is prepared, assumed.
+- Volume: 200 profiles/month, assumed for the Flanders United FC composite scenario.
+- Loaded hourly cost: €40/hour, assumed.
+- Setup: 20 hours × €40 = €800.
+- Data review/refresh: 4 hours/month × 12 × €40 = €1,920/year.
+- Maintenance: 10 hours/year × €40 = €400/year.
+- LLM API token spend: €0 in this prototype because it does not call a language model. Hosting and data licensing/subscription remain unknown and are excluded from this provisional total.
+
+## 50% downside test
+
+If time saved is only five minutes/profile rather than ten, gross capacity value becomes €8,000/year. With the same €3,120 modelled costs, net value is €4,880/year before any unpriced data or hosting costs. If a paid data source or the actual time burden is high enough, even this scenario may not hold.
+
+## Decision
+
+**Pilot, not full rollout.** Run the 15-case evaluation plan, compare the same profiles against the current process and a spreadsheet/database baseline, and measure actual times and human corrections. If ScoutLab does not save time or improve the usefulness of the shortlist beyond the simpler alternative, do not invest further. A positive performance/value percentile gap is only a prompt for further scouting, not proof of undervaluation.
