@@ -92,3 +92,12 @@ The expected classifications were determined from the five rules before testing 
 
 \* \*\*Accessed:\*\* September 2026.
 
+
+
+---
+
+## Version history and current evaluation
+
+The ten profiles above are the V1 fixed-rule test set from Week 2. Keep their expected answers and results as historical evidence; they test the old five-rule prompt, not the current application.
+
+For Week 4's ScoutLab V2, the new 15-case expected-answer set is in the ScoutLab evaluation-plan file. Its expected answers are written before its formal run. Record each actual outcome, failure class (F1-F6), and any fix there after testing. The V1 20/20 classification outcome must not be reused as the success rate for V2.
