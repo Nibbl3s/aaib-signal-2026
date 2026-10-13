@@ -170,9 +170,6 @@ def _recalculate_scores(frame: pd.DataFrame) -> pd.DataFrame:
                 continue
             values = _numeric(out.loc[mask, col])
             ranks = values.rank(pct=True, ascending=higher_is_better) * 100
-            # A lower rank is better for reverse metrics, so invert to a high-is-good percentile.
-            if not higher_is_better:
-                ranks = (1 - values.rank(pct=True, ascending=True)) * 100
             pct_col = f"Pct | {metric}"
             if pct_col not in out:
                 out[pct_col] = np.nan
@@ -199,13 +196,15 @@ def _recalculate_scores(frame: pd.DataFrame) -> pd.DataFrame:
     out["Performance_Percentile"] = np.nan
     for _, indices in out.groupby("Position_Group", dropna=False).groups.items():
         scores = _numeric(out.loc[indices, "Performance_Score"])
-        out.loc[indices, "Performance_Percentile"] = scores.rank(pct=True) * 100
+        if scores.notna().sum() >= 3:
+            out.loc[indices, "Performance_Percentile"] = scores.rank(pct=True) * 100
 
     out["Market_Value_EURm"] = pd.to_numeric(out.get("Market_Value_EURm", np.nan), errors="coerce")
     out["Market_Value_Percentile"] = np.nan
     for _, indices in out.groupby("Position_Group", dropna=False).groups.items():
         values = _numeric(out.loc[indices, "Market_Value_EURm"])
-        out.loc[indices, "Market_Value_Percentile"] = values.rank(pct=True) * 100
+        if values.notna().sum() >= 3:
+            out.loc[indices, "Market_Value_Percentile"] = values.rank(pct=True) * 100
     out["Value_Gap"] = out["Performance_Percentile"] - out["Market_Value_Percentile"]
     out.attrs["score_components"] = sorted(set(score_cols))
     return out
