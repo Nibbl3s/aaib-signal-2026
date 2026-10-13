@@ -368,4 +368,3 @@ with tab_method:
     })
     coverage["Coverage (%)"] = (coverage["Rows populated"] / coverage["Rows in dataset"] * 100).round(1)
     st.dataframe(coverage, hide_index=True, use_container_width=True)
-    st.download_button("Download player dataset with calculated scores", data=players.to_csv(index=False).encode("utf-8"), file_name="scoutlab_player_dataset.csv", mime="text/csv")
