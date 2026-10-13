@@ -44,8 +44,8 @@ Evidence anchors the rating in something real. It is also what your instructor v
 ### Build status
 
 - **What can my tool do now?** ScoutLab can filter a larger player pool, show position-relative player profiles, compare candidates, find similar statistical profiles and export a shortlist; a value-gap view requires a separate valuation file.
-- **What can it not do yet?** It cannot prove that a player is undervalued, use live 2026 market data from the default source, evaluate video or replace a scout. The new build has not yet been accuracy-tested against its 15-case expected-answer set.
-- **Which number proves it?** The reference CSV contains 339 player rows, but that is a dataset-size figure, not an accuracy result. The earlier 20/20 result applies only to the retired V1 five-rule prompt, not ScoutLab V2.
+- **What can it not do yet?** It cannot prove that a player is undervalued, use live 2026 market data from the default source, evaluate video or replace a scout. The 15-case expected-answer set passed once as I reported, but the set has not been repeated and this does not establish time savings or real-world scouting accuracy.
+- **Which number proves it?** I reported 15/15 passes on the V2 expected-answer set in one run. This is a test-set result, not a guarantee of live-season accuracy or repeatability; the earlier 20/20 result applies only to the retired V1 five-rule prompt.
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|

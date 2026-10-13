@@ -37,8 +37,8 @@ This index gathers the evidence already stored in the student folder. It is an i
 
 ## Evidence still to finish
 
-1. Run the 15-case ScoutLab expected-answer set and record actual outcomes and F1-F6 failures; do not re-use V1's 20/20 as the V2 success rate.
-2. Measure current manual handling time and ScoutLab-assisted time on the same profiles, and update the value estimate if the assumptions are wrong.
+1. The student reports 15/15 passes on the V2 expected-answer set in one run; keep that result separate from V1's 20/20. Repeat the V2 set if required to check consistency.
+2. Measure current manual handling time and ScoutLab-assisted time on the same profiles, then update the value estimate if the assumptions are wrong.
 3. Obtain and record real classmate feedback, revise the memo, and complete the peer-review record.
 4. Enter the actual clinic/cross-pollination findings and a confirmed future FabLab booking date.
 
