@@ -60,7 +60,7 @@ TEAM_COLUMNS = ["Team", "Club", "Squad", "team"]
 AGE_COLUMNS = ["Age", "age"]
 MINUTE_COLUMNS = ["Minutes", "Playing Time", "minutes", "Min"]
 VALUE_COLUMNS = [
-    "Market Value (€m)", "Market Value (EUR m)", "market_value_eur_m",
+    "Market Value (€m)", "Market Value (EUR m)", "Market_Value_EURm", "Market Value EURm", "market_value_eur_m",
     "market_value_m", "Market Value (Millions)", "Market Value (€)",
     "Market Value (EUR)", "market_value", "Market Value", "Transfer Value",
     "Estimated Market Value",
@@ -115,7 +115,7 @@ def _numeric(series: pd.Series) -> pd.Series:
 
 def _value_unit_from_header(header: str) -> str:
     token = _token(header)
-    if re.search(r"\b(m|mn|million|millions)\b", token) or "eur m" in token:
+    if re.search(r"\b(m|mn|million|millions)\b", token) or "eur m" in token or "eurm" in token:
         return "millions"
     if "eur" in token or "euro" in token or "€" in header or "gbp" in token or "£" in header:
         return "euros"
