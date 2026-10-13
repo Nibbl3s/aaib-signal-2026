@@ -243,15 +243,21 @@ def prepare_players(source: pd.DataFrame, value_units: str = "auto") -> pd.DataF
     else:
         out["Market_Value_EURm"] = np.nan
 
+    source_col = find_column(source, ["Market Value Source", "Value Source", "Source URL", "Source"])
+    date_col = find_column(source, ["Value Date (YYYY-MM-DD)", "Value Date", "Market Value Date", "Valuation Date", "Date Accessed", "Snapshot Date"])
+    out["Market_Value_Source"] = source[source_col].replace("", np.nan) if source_col else np.nan
+    out["Market_Value_Date"] = source[date_col].replace("", np.nan) if date_col else np.nan
     out["_join_key"] = out["Player"].map(player_key)
     out["Performance_Score"] = np.nan
     return _recalculate_scores(out)
 
 
 def add_market_value_overlay(players: pd.DataFrame, overlay: pd.DataFrame, units: str = "auto") -> pd.DataFrame:
-    """Join a separate player-to-market-value CSV using normalized player names."""
+    """Join a separate player-to-market-value CSV using normalized names and retain provenance."""
     player_col = find_column(overlay, NAME_COLUMNS)
     value_col = find_column(overlay, VALUE_COLUMNS)
+    source_col = find_column(overlay, ["Market Value Source", "Value Source", "Source URL", "Source"])
+    date_col = find_column(overlay, ["Value Date (YYYY-MM-DD)", "Value Date", "Market Value Date", "Valuation Date", "Date Accessed", "Snapshot Date"])
     if not player_col or not value_col:
         raise ValueError(
             "The value file needs a player-name column (Player/Name) and a market-value column "
@@ -262,11 +268,19 @@ def add_market_value_overlay(players: pd.DataFrame, overlay: pd.DataFrame, units
     lookup["Market_Value_EURm"] = lookup.apply(
         lambda row: parse_market_value(row[value_col], units, value_col), axis=1
     )
-    lookup = lookup.dropna(subset=["_join_key", "Market_Value_EURm"])
-    lookup = lookup.groupby("_join_key")["Market_Value_EURm"].median()
+    if source_col:
+        lookup["Market_Value_Source"] = overlay[source_col].replace("", np.nan)
+    if date_col:
+        lookup["Market_Value_Date"] = overlay[date_col].replace("", np.nan)
+    lookup = lookup.dropna(subset=["_join_key", "Market_Value_EURm"]).drop_duplicates("_join_key", keep="last")
+    lookup = lookup.set_index("_join_key")
     out = players.copy()
-    overlay_values = out["_join_key"].map(lookup)
+    overlay_values = out["_join_key"].map(lookup["Market_Value_EURm"])
     out["Market_Value_EURm"] = overlay_values.combine_first(out["Market_Value_EURm"])
+    for column in ["Market_Value_Source", "Market_Value_Date"]:
+        if column in lookup.columns:
+            existing = out[column] if column in out else pd.Series(np.nan, index=out.index)
+            out[column] = out["_join_key"].map(lookup[column]).combine_first(existing)
     return _recalculate_scores(out)
 
 
