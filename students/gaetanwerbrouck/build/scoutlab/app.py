@@ -142,7 +142,7 @@ with st.sidebar:
     minute_values = players["Minutes"].dropna()
     max_minutes = max(900, int(np.ceil(minute_values.max() / 100) * 100)) if not minute_values.empty else 900
     min_minutes = st.slider("Minimum league minutes", 0, max_minutes, min(900, max_minutes), step=100)
-    selected_positions = st.multiselect("Position", all_positions, default=[p for p in all_positions if p != "Unknown"])
+    selected_positions = st.multiselect("Position", all_positions, default=all_positions)
     team_choice = st.selectbox("Team", ["All teams"] + all_teams)
     st.divider()
     st.caption(f"Rows loaded: {len(players):,}")
@@ -232,6 +232,10 @@ with tab_profile:
     b.metric("League minutes", safe_number(row["Minutes"]))
     c.metric("Position-relative score", safe_number(row["Performance_Percentile"]))
     d.metric("Estimated market value", euro_millions(row["Market_Value_EURm"]))
+    if pd.notna(row["Market_Value_EURm"]):
+        market_source = row.get("Market_Value_Source", "")
+        market_date = row.get("Market_Value_Date", "")
+        st.caption(f"Market-value provenance: {market_source if pd.notna(market_source) and str(market_source).strip() else 'source not supplied'} · {market_date if pd.notna(market_date) and str(market_date).strip() else 'date not supplied'}")
     if value_ready and pd.notna(row["Value_Gap"]):
         st.write(f"**Performance/value gap:** {row['Value_Gap']:+.1f} percentile points. This is a screening signal, not proof the player is mispriced.")
     features = player_percentile_features(row)
