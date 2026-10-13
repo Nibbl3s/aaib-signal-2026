@@ -133,9 +133,9 @@ def parse_market_value(value: object, units: str = "auto", header: str = "") -> 
     if not match:
         return np.nan
     amount = float(match.group())
-    explicit_millions = bool(re.search(r"(?:m|mn|million|millions)\\s*$", text))
-    explicit_thousands = bool(re.search(r"(?:k|thousand)\\s*$", text))
-    explicit_billions = bool(re.search(r"(?:b|billion)\\s*$", text))
+    explicit_millions = bool(re.search(r"(?:m|mn|million|millions)\s*$", text))
+    explicit_thousands = bool(re.search(r"(?:k|thousand)\s*$", text))
+    explicit_billions = bool(re.search(r"(?:b|billion)\s*$", text))
     if explicit_billions:
         return amount * 1000
     if explicit_millions:
