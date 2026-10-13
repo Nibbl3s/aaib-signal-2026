@@ -1,7 +1,7 @@
 | Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Probe 1** | Prototyping Base | 3D Printer | Tactile standee base/holder | Booked for Week 4 prototyping block |
-| **Probe 2** | Display Panel | Laser Cutter[cite: 5] | Clear acrylic display panel | Booked for Week 4 cutting block |
+| **Probe 1** | Prototyping Base | 3D Printer | Tactile standee base/holder | Booked for Week 6 prototyping block |
+| **Probe 2** | Display Panel | Laser Cutter | Clear acrylic display panel | Booked for Week 6 cutting block |
 | **Probe 3** | Final Assembly | Manual Assembly Bench | Completed companion standee] | Ready for final Checkpoint review |
 
 ## Test Run Log & Failure Classifications
