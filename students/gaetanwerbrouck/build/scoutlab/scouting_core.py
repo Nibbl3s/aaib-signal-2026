@@ -133,9 +133,9 @@ def parse_market_value(value: object, units: str = "auto", header: str = "") -> 
     if not match:
         return np.nan
     amount = float(match.group())
-    explicit_millions = bool(re.search(r"(?:\bm\b|million|mn|millions)", text))
-    explicit_thousands = bool(re.search(r"\bk\b|thousand", text))
-    explicit_billions = bool(re.search(r"\bb\b|billion", text))
+    explicit_millions = bool(re.search(r"(?:m|mn|million|millions)\\s*$", text))
+    explicit_thousands = bool(re.search(r"(?:k|thousand)\\s*$", text))
+    explicit_billions = bool(re.search(r"(?:b|billion)\\s*$", text))
     if explicit_billions:
         return amount * 1000
     if explicit_millions:
@@ -298,7 +298,7 @@ def similar_players(players: pd.DataFrame, player_name: str, min_minutes: int = 
     similarities = cosine_similarity(matrix)
     row_num = peers.index.get_loc(target_idx)
     result = peers.copy()
-    result["Similarity_Pct"] = similarities[row_num] * 100
+    result["Similarity_Pct"] = np.clip(similarities[row_num], 0, 1) * 100
     result = result[result["Player"].ne(player_name)].sort_values("Similarity_Pct", ascending=False)
     result = result.head(limit)
     return result[
