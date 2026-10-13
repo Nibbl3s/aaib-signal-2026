@@ -33,8 +33,24 @@ This is a workflow and source-data validation set, not proof that ScoutLab can p
 - **F5 — Refused:** the tool fails to answer a valid supported request.
 - **F6 — Inconsistent:** repeating the same action with the same data produces materially different results.
 
-## Results log — fill only after running
+## Results log — completed from the student's confirmation
+
+**Reported outcome: 15/15 passed.** The student confirmed that all 15 cases passed. The case-by-case entries below record that confirmation; the assistant did not independently observe the live UI. No failure codes were reported.
 
 | # | Actual result | Pass/fail | Failure code (if any) | Notes / fix |
 |---:|---|---|---|---|
-| 1–15 | **Not run yet** | — | — | Record separately for each case after running. Do not count the user's UI smoke test as a data-accuracy result. |
+| 1 | User reports expected profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 2 | User reports expected profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 3 | User reports expected profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 4 | User reports expected profile facts and Forward grouping were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 5 | User reports expected profile facts and Forward grouping were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 6 | User reports expected midfielder profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 7 | User reports expected midfielder profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 8 | User reports expected defender profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 9 | User reports expected defender profile facts were shown. | **Pass** | None | Reported by student; no fix reported. |
+| 10 | User reports goalkeeper profile and missing attacking metrics behaved as expected. | **Pass** | None | Reported by student; no fix reported. |
+| 11 | User reports comparison behaved as expected. | **Pass** | None | Reported by student; no fix reported. |
+| 12 | User reports similar-player search behaved as expected. | **Pass** | None | Reported by student; no fix reported. |
+| 13 | User reports missing-market-value warning/template behavior was correct. | **Pass** | None | Reported by student; no fix reported. |
+| 14 | User reports synthetic values were accepted and value comparison worked. | **Pass** | None | Reported by student; no fix reported. |
+| 15 | User reports shortlist export behaved as expected. | **Pass** | None | Reported by student; no fix reported. |
