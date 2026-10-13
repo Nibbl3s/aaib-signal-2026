@@ -43,16 +43,16 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 ### Build status
 
-- **What can my tool do now?** It can apply five explicit screening rules to a supplied player profile and return whether the player meets all five.
-- **What can it not do yet?** It cannot establish that a player is truly undervalued or replace a scout’s recruitment judgment; the fixed-rule task is simpler to run in a spreadsheet.
-- **Which number proves it?** In my small test, 10 player cases were run twice and all 20 individual classifications matched the expected answers; one explanatory summary still contained a counting inconsistency.
+- **What can my tool do now?** ScoutLab can filter a larger player pool, show position-relative player profiles, compare candidates, find similar statistical profiles and export a shortlist; a value-gap view requires a separate valuation file.
+- **What can it not do yet?** It cannot prove that a player is undervalued, use live 2026 market data from the default source, evaluate video or replace a scout. The new build has not yet been accuracy-tested against its 15-case expected-answer set.
+- **Which number proves it?** The reference CSV contains 339 player rows, but that is a dataset-size figure, not an accuracy result. The earlier 20/20 result applies only to the retired V1 five-rule prompt, not ScoutLab V2.
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
 | Cost literacy | 1 | 🟡 | In Week 1 I calculated token and failure costs across three pricing tiers and compared cost per correctly handled email. |
 | Capability skepticism | 2 | 🟡 | In Week 2 I tested 10 player profiles twice, found the individual classifications matched the expected answers, and concluded a spreadsheet is simpler for the fixed rules. |
 | Vendor claim detection | 3 | 🟡 | In Week 3 I tagged all 16 NexusAI claims and identified five avoidances, including undefined accuracy and unsupported customer results. |
-| Value quantification | 4 | 🔴 | My Build has a measured 20/20 classification result, but I have not measured real club volume or manual handling time, so its ROI still depends on assumptions. |
+| Value quantification | 4 | 🔴 | ScoutLab's current business case uses clearly labelled estimates, but its actual time saving, useful-shortlist rate and total data/hosting cost have not been measured. |
 
 **6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
 
