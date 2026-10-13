@@ -1,8 +1,8 @@
-\# Week 2 — Build Log
+# Week 2 — Build Log
 
 
 
-\## Goal
+## Goal
 
 
 
@@ -10,7 +10,7 @@ Test whether an AI system can consistently classify football players against fiv
 
 
 
-\## Prompt
+## Prompt
 
 
 
@@ -18,19 +18,19 @@ The player must meet all five conditions:
 
 
 
-1\. The player is 23 years old or younger.
+1. The player is 23 years old or younger.
 
-2\. The player has played at least 1,000 league minutes.
+2. The player has played at least 1,000 league minutes.
 
-3\. The player's goals + assists per 90 is at least 0.50.
+3. The player's goals + assists per 90 is at least 0.50.
 
-4\. The player's estimated market value is below €10 million.
+4. The player's estimated market value is below €10 million.
 
-5\. The player is an outfield player.
+5. The player is an outfield player.
 
 
 
-\## Test methodology
+## Test methodology
 
 
 
@@ -46,21 +46,21 @@ Failure categories:
 
 
 
-\* F1 — Wrong
+* F1 — Wrong
 
-\* F2 — Fabricated
+* F2 — Fabricated
 
-\* F3 — Missed
+* F3 — Missed
 
-\* F4 — Format
+* F4 — Format
 
-\* F5 — Refused
+* F5 — Refused
 
-\* F6 — Inconsistent
+* F6 — Inconsistent
 
 
 
-\## Results
+## Results
 
 
 
@@ -90,7 +90,7 @@ Failure categories:
 
 
 
-\## Failure analysis
+## Failure analysis
 
 
 
@@ -106,7 +106,7 @@ One useful observation from the test is that exact wording of thresholds matters
 
 
 
-\## Summary
+## Summary
 
 
 
@@ -118,19 +118,19 @@ However, this does not mean that AI is automatically the best tool for the task.
 
 
 
-\## Data sources
+## Data sources
 
 
 
-\* Performance statistics: FBref, Belgian Pro League 2025–26.
+* Performance statistics: FBref, Belgian Pro League 2025–26.
 
-\* Estimated market values: Transfermarkt.
+* Estimated market values: Transfermarkt.
 
-\* Accessed: September 2026.
+* Accessed: September 2026.
 
 
 
-\## FabLab probe plan
+## FabLab probe plan
 
 
 
@@ -146,7 +146,7 @@ The FabLab introduction took place on Monday 28/09. We had a tour of the availab
 
 | 3D printer                | A small physical representation of a player profile or scouting data structure                           | Monday 28/09 — FabLab introduction |
 
-| \[Fabrication] | A second physical/visual representation of the football scouting concept                                 | Monday 28/09 — FabLab introduction |
+| Fabricator | A physical visualization or fabricated representation of the scouting filter | Future session: NOT YET BOOKED; add confirmed date after booking |
 
 
 
@@ -154,3 +154,48 @@ The purpose of these probes is to explore how the digital player-screening conce
 
 
 
+
+
+---
+
+## Week 4 — Build Checkpoint 1: value estimate (13 October 2026)
+
+### Five-line checkpoint evidence
+
+1. **What the tool does:** It applies five explicit screening rules to supplied player profiles and classifies whether all five rules are met.
+2. **What I measured:** I tested 10 player profiles twice; all 20 individual classifications matched their expected answers. One explanation had a counting inconsistency, so the small test does not prove production reliability.
+3. **Dominant observed failure:** A minor F1-style wrong count in the explanation (five claimed, four named); the classification table itself was correct.
+4. **Failure that would matter most:** Stale or fabricated player statistics/market values could create a false shortlist and waste scout time. Inputs need source dates and human verification.
+5. **What I would change first:** Use a spreadsheet/database filter for the five deterministic rules, then only test AI for a genuinely less-structured task such as extracting evidence from scouting reports.
+
+### Provisional value estimate for my own Build
+
+**Important:** only the 20/20 result is measured. The volume, handling times and hourly rate below are scenario assumptions, not information supplied by a real club.
+
+| Item | Estimate or result | Basis |
+|---|---:|---|
+| Human screening today | 8 minutes/profile (est.) | Hypothetical manual baseline |
+| Volume | 200 profiles/month (est.) | Must be replaced with a real club's volume |
+| Loaded human rate | €40/hour (est.) | Scenario assumption |
+| Observed success rate | 20/20 = 100% | Ten profiles run twice; very small test |
+| Time saved vs manual review | 5 minutes/profile (est.) | Assumes AI-assisted review takes 3 minutes including verification |
+| Gross time-capacity value | €8,000/year (est.) | (8 − 3) min × 200/month × 12 ÷ 60 × €40 |
+| Token cost | ~€5/year (est.) | 2,400 profiles/year × 500 input and 100 output tokens; lesson reference prices, converted at $1 = €0.92 |
+| Setup/testing | €800 (est.) | 20 hours × €40/hour |
+| Maintenance | €400/year (est.) | 10 hours × €40/hour |
+| Net Year 1 before unmeasured error handling | €6,795 (est.) | €8,000 − (€5 + €800 + €400) |
+| 5% error-check sensitivity | −€800/year (est.) | 120 profiles × 10 minutes × €40/hour |
+| Net Year 1 in 5% error scenario | €5,995 (est.) | €6,795 − €800 |
+
+The €8,000 is capacity value, not automatically a cash saving. It assumes a club really processes 200 profiles monthly and can redeploy the time. It also does not mean AI is the best option: a spreadsheet is estimated to save six minutes per profile and has much lower setup and maintenance cost. Under these assumptions, the spreadsheet is the preferred option. Actual club volume and processing times must be measured before claiming ROI.
+
+### Week 4 clinic and cross-pollination notes
+
+- **Provisional self-diagnostic:** Pattern 5 — no volume. I do not know the actual number of player profiles a target club screens per month.
+- **Question to ask the cluster/teacher:** What evidence would be acceptable for monthly scouting volume and the loaded hourly cost?
+- **Cluster finding from classmates:** [Fill in the actual pattern your cluster reported.]
+- **Cross-pollination takeaway:** [Fill in the actual insight reported by another cluster.]
+
+### FabLab probe plan status
+
+The introduction on Monday 28/09 was attended. The three exploratory artifacts are a laser-cut scouting filter, a 3D-printed player profile/data structure, and a Fabricator-made representation. **A future FabLab session is not yet recorded as booked.** After booking it, replace the status in the table above with the confirmed session date. Do not mark this checkpoint complete until the booking is real.
