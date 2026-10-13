@@ -24,7 +24,7 @@ The Build is intended to help a recruitment analyst decide which players deserve
 
 Week 2 V1 classified 10 player profiles against five fixed rules. Its expected answers and two-run result are retained as historical evidence. The Week 2 conclusion still stands: a spreadsheet/database is the simpler solution for that deterministic task.
 
-ScoutLab is a different version and a different scope. It adds filtering, profiles, role-relative metrics, comparisons, a similar-profile function, shortlists and an optional value-gap view. Therefore V1's 20/20 classification result does **not** measure V2. V2 has a manual UI smoke check reported by the user, but the formal expected-answer set still needs to be run and logged.
+ScoutLab is a different version and a different scope. It adds filtering, profiles, role-relative metrics, comparisons, a similar-profile function, shortlists and an optional value-gap view. Therefore V1's 20/20 classification result does **not** measure V2. I have manually checked that V2's interface and tabs are accessible and usable. This UI smoke check is not an accuracy result; the formal expected-answer set still needs to be run and logged.
 
 ## Limitations that directly affect value
 
