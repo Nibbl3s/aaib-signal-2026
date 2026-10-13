@@ -106,17 +106,31 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 *Do not delete observed errors. Preserve original chat transcripts and exact inputs if available.*
 ---
 
-## Changes
+### Change 1 – Prompt v2 – 13 October 2026
 
-Every time you change the prompt, record it here **before** you re-run. Predicting the effect first, then checking, is what separates a change from a guess.
+**What I changed:**
 
-### Change 1 — *date*
+Removed the predefined options for CATEGORY and RESPONSIBLE_ROLE. The AI can now independently identify the most appropriate design category and professional role. Instructions for consistent terminology remain in place.
 
-**What I changed:** —
-**Why I thought it would help:** —
-**What I predicted would happen:** —
-**What actually happened:** — % → — %
-**Was I right?** —
+The three ACTION_REQUIRED options and the rules for generating tasks remain unchanged.
+
+**Why I thought it would help:**
+
+In real creative agencies, client feedback does not always fit predefined design categories. Giving the AI more flexibility might help it better understand unusual feedback and suggest appropriate responsibilities.
+
+During v1 testing, some AI-generated categories differed from the reference labels but were still professionally reasonable. This suggested that strict categories might sometimes limit the usefulness of the output.
+
+**What I predicted would happen:**
+
+I expect the AI to maintain at least 90% agreement with the reference decisions for ACTION_REQUIRED and continue generating accurate tasks.
+
+I also expect more variation in CATEGORY and RESPONSIBLE_ROLE labels between repeated tests, because the model no longer selects from fixed lists.
+
+This experiment will test whether the additional flexibility outweighs the potential loss of consistency.
+
+**What actually happened:** Not tested yet.
+
+**Was I right?** To be evaluated after testing.
 
 *Being wrong here is fine and common. Not noticing you were wrong is the problem.*
 
