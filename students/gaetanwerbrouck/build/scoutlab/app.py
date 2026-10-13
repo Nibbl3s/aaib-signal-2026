@@ -160,7 +160,10 @@ else:
 if team_choice != "All teams":
     filtered = filtered[filtered["Team"].eq(team_choice)]
 
-value_ready = int(players["Market_Value_EURm"].notna().sum()) >= 3
+value_ready = any(
+    group["Market_Value_EURm"].notna().sum() >= 3
+    for _, group in players.groupby("Position_Group")
+)
 
 tab_dashboard, tab_finder, tab_profile, tab_compare, tab_similar, tab_gems, tab_shortlist, tab_method = st.tabs(
     ["Command centre", "Player finder", "Player profile", "Compare", "Similar players", "Hidden gems", "Shortlist", "Method & data"]
