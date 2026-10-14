@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>When AI Is Not the Answer: A Freelancer Research Tool Put to the Test — AAIB Signal</title>
+<title>When AI Gets in the Way: Why Creative Agencies Still Need Human Judgment — AAIB Signal</title>
 <script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,10 +57,33 @@
 <body>
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
-<div class="meta">Week 2 · How, and under what conditions, does generative AI adoption affect productivity and work quality in creative brand agencies?</div>
-<h1>When AI Is Not the Answer: A Freelancer Research Tool Put to the Test</h1>
+<div class="meta">Week 2 · When does AI actually help project managers in creative agencies — and when does it get in the way?</div>
+<h1>When AI Gets in the Way: Why Creative Agencies Still Need Human Judgment</h1>
 <div class="byline">Nina Deiter · 2026-10-03</div>
-<p>Work in progress — full post coming shortly.</p>
+<p>The Problem</p>
+<p>Project managers in creative agencies regularly receive client feedback that needs to be interpreted, organised and translated into actionable tasks for designers. AI promises to automate this process, potentially saving time and reducing administrative work.</p>
+<p>But what happens when client feedback is unclear? Can AI reliably decide what needs to be changed, or might it create unnecessary work by interpreting vague comments too confidently?</p>
+<p>Applying the No-AI Decision Framework</p>
+<p>Q1 – Do we already know the answer?</p>
+<p>Not always. Creative feedback can be subjective and incomplete. For example, a client might mention that text is left-aligned without explaining why this is a problem or what should change.</p>
+<p>AI can identify the topic, but it cannot reliably determine the client's actual intention from missing information.</p>
+<p>Q2 – Is the cost of being wrong higher than the cost of being slow?</p>
+<p>Potentially, yes. If AI incorrectly interprets feedback and creates a task, designers may spend time making changes the client never requested. This can lead to additional revisions, wasted resources and client dissatisfaction.</p>
+<p>Asking one clarification question may take longer initially but prevent unnecessary work.</p>
+<p>Q3 – Is the information stable or changing rapidly?</p>
+<p>Creative requirements frequently evolve through client discussions, design reviews and revisions. An AI-generated task based on incomplete feedback may quickly become irrelevant once the client's actual expectations are clarified.</p>
+<p>Q4 – Can we verify the AI's answer?</p>
+<p>Sometimes. Straightforward feedback, such as a button being too small, can usually be translated into a task and checked against the original comment.</p>
+<p>However, ambiguous feedback cannot always be verified without additional information from the client. A plausible AI-generated task is not necessarily the correct one.</p>
+<p>Q5 – What is the simplest solution?</p>
+<p>For unclear feedback, the simplest solution is direct human clarification. Instead of allowing AI to independently create a design task, the project manager should ask the client what specifically needs improvement.</p>
+<p>AI can still help organise feedback, but it should not replace decisions that require missing context.</p>
+<p>Evidence From My AI Build</p>
+<p>To investigate this, I developed a Creative Agency Feedback-to-Task Assistant using publicly available UICrit design feedback.</p>
+<p>The tool classifies feedback, determines whether action is required, generates a task and suggests a responsible professional role.</p>
+<p>In my first testing phase, most feedback was successfully converted into meaningful tasks, including longer and linguistically challenging comments.</p>
+<p>However, Prompt v2 revealed an important limitation. In test case T10, German feedback described left-aligned text without clearly specifying a required change. Instead of requesting clarification, the AI generated a design task and assigned it to a UI designer.</p>
+<p>This illustrates how AI can produce a convincing output even when the underlying instruction is insufficient.</p>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
