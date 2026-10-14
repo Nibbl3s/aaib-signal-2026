@@ -35,7 +35,7 @@ If the combined benefits are 50% lower than estimated, gross benefit would be â‚
 
 # My Build value quantification â€” ScoutLab (Week 4)
 
-This section is for my own Build, in addition to the TechCorp worked example above. These are **scenario assumptions**, not measured club outcomes. The app's interface is available, but the new expected-answer tests and timed comparison with manual scouting have not yet been completed.
+This section is for my own Build, in addition to the TechCorp worked example above. These are **scenario assumptions**, not measured club outcomes. The app's interface is available. The 15-case expected-answer set is recorded as 15/15 passes based on the student's report, but the timed comparison with manual/spreadsheet scouting has not yet been completed.
 
 ## Candidate and value-chain position
 
