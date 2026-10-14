@@ -12,10 +12,10 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 | # | Skill | Rating | Evidence |
 |---|-------|--------|----------|
-| 1 | Cost literacy | — | |
-| 2 | Capability skepticism | — | |
-| 3 | Vendor claim detection | — | |
-| 4 | Value quantification | — | |
+| 1 | Cost literacy | 🟢 | |
+| 2 | Capability skepticism | 🟡 | |
+| 3 | Vendor claim detection | 🟡 | |
+| 4 | Value quantification | 🟡 | |
 
 ## Checkpoint 2 — end of Week 8
 
