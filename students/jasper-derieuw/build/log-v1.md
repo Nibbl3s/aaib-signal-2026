@@ -126,6 +126,48 @@ Same 12 invoices, each run twice, on the same model as Run 2 (Claude Sonnet 5.5,
 Anthropic. (n.d.-a). *Increase output consistency*. Claude Developer Platform. Retrieved October 14, 2026, from https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency
 Anthropic. (n.d.-b). *Reduce hallucinations*. Claude Developer Platform. Retrieved October 14, 2026, from https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations
 
+### Run 3, prompt v2, 14 October 2026
+
+**Setup:** prompt v2 (committed at 19:45, before any v2 call), same reference list and 12 invoices, each run twice. Model A: `claude-sonnet-5-5` via the API (effort medium), as in Run 2. Model B: `llama3.2` (3B) on my own PC via Ollama, as in Week 7. All 48 calls made on 14 October 2026; raw responses with token counts saved per call.
+
+| # | Input (short label) | Expected | Sonnet 5.5 (A / B) | llama3.2 (A / B) | Failure code (llama3.2) |
+|---|---|---|---|---|---|
+| 1 | Clean invoice | Clear | Pass / Pass | Pass / Pass | None |
+| 2 | Exact match, Heihe | High risk match | Pass / Pass | Pass / Pass | None |
+| 3 | Exact match, Heilongjiang Suifenhe | High risk match | Pass / Pass | Pass / Pass | None |
+| 4 | Near duplicate | Needs review | Pass / Pass | High risk match / High risk match | F1 (over-flag) |
+| 5 | Missing HS code | HS not found, clear | Pass / Pass | Pass / Pass | None |
+| 6 | Huawei | Clear | Pass / Pass | Pass / Pass | None |
+| 7 | Chinese-script name | High risk match | Pass / Pass (original name + English in brackets) | Pass / Pass (English name only; original script dropped) | None |
+| 8 | Partial match | Needs review | Pass / Pass | Supplier rewritten as "Heihe Rural Commercial Bank Co. Ltd", high risk match (both runs) | F2 (fabricated name) + F1 |
+| 9 | Noisy invoice | Alibaba, clear | Pass / Pass | Pass / Pass | None |
+| 10 | USD value | Value kept as $9,100 | Pass / Pass | Pass / Pass | None |
+| 11 | Hong Kong branch | High risk match | Pass / Pass | Pass / Pass | None |
+| 12 | Corrupted text | Not found, cannot be determined | Pass / Pass | Supplier invented as "Heihe Rural Commercial Bank Co. Ltd", HS "85XX.XX", high risk match (both runs) | F2 (fabricated name) + F1 |
+
+**Result:** Claude Sonnet 5.5: 24 of 24 correct (100%; Run 2: 91.7%). llama3.2: 18 of 24 (75%; Week 7: 16.7%). On both models, 24 of 24 answers parse as JSON and the flag is the same on both runs for 12 of 12 inputs.
+
+**Prediction check**
+
+| # | Predicted | Measured | Right? |
+|---|---|---|---|
+| P1 | 24/24 strict | 24/24 | Right. The whole gain is input 12: the fix was in my specification, not in the model. |
+| P2 | 0 format changes, all JSON | 0 format changes; 48 of 48 answers parse as JSON (both models) | Right |
+| P3 | 0 outside-knowledge flags | 0 (Huawei and Alibaba clear on both runs) | Right |
+| P4 | About 280 output tokens; about €0.0033 per check | 83.9 output tokens (−79%) but 680.9 input tokens (+83%, the longer prompt); €0.0020 per check (−54%) | Direction right, size wrong: almost all v1 output was explanation, and I forgot that a longer prompt raises the input tokens |
+| P5 | No change on my own test set | No change on Sonnet 5.5; llama3.2 wrote "unclear" as the origin once (input 12, run A) although the invoice says China | Right for Sonnet 5.5; the routing rule is still untested on a transshipped invoice |
+| P6 | llama3.2: code answers ≤3, strict ≥8/24 | 0 code answers, 18/24 | Right in direction, far too pessimistic in size |
+| Risk | No clean invoice becomes "cannot be determined" | None did | Held |
+
+**Cost:** (680.9 × $2 + 83.9 × $10) ÷ 1,000,000 × 0.92 = **€0.0020 per check** (Run 2: €0.0044). At 18,000 checks a year: €36 (was €79). llama3.2: 1.0 s per answer on average (was 4.1 s), because the answers are now 56 tokens instead of long code.
+
+**What surprised me:**
+1. llama3.2's remaining errors are worse in kind than its old ones. On inputs 8 and 12 it named a flagged bank as the supplier when the invoice did not: 4 fabrications in 24 runs (Week 7: 1). The fixed JSON format made every answer parseable, but not true; a fabricated answer now looks as tidy as a correct one.
+2. All 6 llama3.2 failures lean towards over-flagging; none called a sanctioned bank clear (Week 7: input 3). Over-flags cost reviewer time; a fabricated sanctioned name in an audit trail costs credibility.
+3. My Week 7 conclusion was partly about my prompt, not the model: the same 3B model went from 16.7% to 75% with v2. It is still not fit for verdicts (the fabrications), but the gap to the cloud is smaller than I reported.
+
+**Caveat:** I wrote v2 while looking at these same 12 invoices, so 24/24 may be overfitting. The honest test is the swap set (someone else's invoices) on v2, which I have not run yet.
+
 ## Test-set swap, from Week 3
 
 Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two runs each, full record in [test-set-swap.md](test-set-swap.md). The in-class swap was not recorded, so this is a fresh run after the session.
