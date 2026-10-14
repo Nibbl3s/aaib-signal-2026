@@ -7,13 +7,13 @@ skill: "Capability skepticism"
 date: 2026-10-03
 ---
 
-##The Problem
+## The Problem
 
 Project managers in creative agencies regularly receive client feedback that needs to be interpreted, organised and translated into actionable tasks for designers. AI promises to automate this process, potentially saving time and reducing administrative work.
 
 But what happens when client feedback is unclear? Can AI reliably decide what needs to be changed, or might it create unnecessary work by interpreting vague comments too confidently?
 
-##Applying the No-AI Decision Framework
+## Applying the No-AI Decision Framework
 
 **Q1 – Do we already know the answer?**
 
@@ -43,7 +43,7 @@ For unclear feedback, the simplest solution is direct human clarification. Inste
 
 AI can still help organise feedback, but it should not replace decisions that require missing context.
 
-##Evidence From My AI Build
+## Evidence From My AI Build
 
 To investigate this, I developed a Creative Agency Feedback-to-Task Assistant using publicly available UICrit design feedback.
 
@@ -55,7 +55,7 @@ However, Prompt v2 revealed an important limitation. In test case T10, German fe
 
 This illustrates how AI can produce a convincing output even when the underlying instruction is insufficient.
 
-##My Verdict: AI Should Assist, Not Assume
+## My Verdict: AI Should Assist, Not Assume
 
 AI can add value by structuring and summarising design feedback into short, actionable tasks. Especially in ongoing creative projects, this could help project managers maintain a clear overview, keep track of previous feedback and avoid repeatedly reading lengthy client comments.
 
