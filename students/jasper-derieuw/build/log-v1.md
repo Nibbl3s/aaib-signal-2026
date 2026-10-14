@@ -182,6 +182,56 @@ Run 4 runs prompt v2 on the two sets I did not write v2 against: my practitioner
 
 **Risk I expect:** v2's "unclear" rule may make the tool more cautious on real origins (Janis 4, 7, 9) while it fixes routing points (A–H D, E).
 
+### Run 4, prompt v2 on the swap sets, 14 October 2026
+
+**Setup:** prompt v2, unchanged. Practitioner-pattern set (A–H) and Janis Krainis's freight set (1–10), each input run twice on `claude-sonnet-5-5` (API, effort medium) and `llama3.2` (my PC). 72 calls, all after the prediction commit (19:55). Expected answers and scoring rules as recorded before the run.
+
+**Practitioner set (A–H)**
+
+| # | Input | Expected | Sonnet 5.5 (A / B) | llama3.2 (A / B) |
+|---|---|---|---|---|
+| A | Clean, complete | All fields, clear | Pass / Pass | Pass / "cannot be determined" (F1) |
+| B | Missing value | Value not found, clear | Pass / Pass | Pass / "cannot be determined" (F1) |
+| C | Missing HS code | HS not found, clear | Pass / Pass | Pass / Pass |
+| D | Transshipped, origin unclear | Origin unclear, clear | Origin "Japan", reasoning written before the JSON (F1 + F4) / same, flag changed to "cannot be determined" (F1 + F4 + F6) | Supplier invented as "Heihe Rural Commercial Bank Co. Ltd.", high risk match (F2), both runs |
+| E | Transshipped, no manufacture stated | Origin unclear, clear | Pass / Pass | Supplier invented as Heihe bank (F2) / origin right, "cannot be determined" (F1) |
+| F | Missing HS and value | Both not found, clear | Pass / Pass | "cannot be determined" (F1), both runs |
+| G | Clean, complete | All fields, clear | Pass / Pass | "cannot be determined" (F1), both runs |
+| H | No origin stated | Origin not found, clear | Pass / Pass | "cannot be determined" (F1) / Pass |
+
+**Janis's set (1–10)**
+
+| | Sonnet 5.5 | llama3.2 |
+|---|---|---|
+| Supplier, HS code, value | 60 of 60 "not found" | Supplier invented as "Heihe Rural Commercial Bank Co. Ltd." in 19 of 20 runs (F2); "Drewes", the forwarder, once (F1) |
+| Flag | "cannot be determined" 20 of 20 | "high risk match" 18 of 20, "cannot be determined" 2 of 20 |
+| Origin, routing point only (1, 2, 3, 5, 6, 8, 10) | 14 of 14 correct ("unclear" or "not found") | 14 of 14 "unclear" |
+| Origin, real place (4 Bilbao, 7 Gothenburg, 9 Valencia) | 0 of 6: "unclear" every time (F3) | 0 of 6: "unclear" every time (F3) |
+| Strict | 14 of 20 | 0 of 20 |
+
+**Result:** Claude Sonnet 5.5: 28 of 36 correct (77.8%). llama3.2: 5 of 36 (13.9%). Week 3 on prompt v1 (claude.ai chat, single model): practitioner 6 of 8, Janis 0 of 20 strict.
+
+**Prediction check**
+
+| # | Predicted | Measured | Right? |
+|---|---|---|---|
+| P7 Sonnet | 16/16 | 14/16; only D failed | Wrong. The routing rule worked (Rotterdam never given as origin), but on D it chose Japan where my Week 3 answer says "unclear". Japan is defensible, since the invoice states Japanese manufacture; I keep my expected answer unchanged |
+| P7 llama3.2 | ≥12/16; at least one routing point as origin | 5/16; no routing point given as origin | Wrong twice: far too optimistic, and it failed on the flag, not the origin |
+| P8 Sonnet | 20/20 "cannot be determined"; 0 fabricated suppliers | 20/20; 0 | Right |
+| P8 llama3.2 | At least 2 fabricated suppliers | 19 of 20 | Right in direction, far too low |
+| P9 | Real origins missed in ≥2 of 6 | 6 of 6 missed | Right, and worse than predicted |
+| Risk | "unclear" makes the tool over-cautious on real origins | It did, on every real origin given as a place | Held |
+
+**Cost:** 36 Sonnet calls, €0.073 in total. Hard inputs cost more: D and G used 245–450 output tokens (thinking), the others 61–71. Per check: (680 × $2 + 450 × $10) ÷ 1,000,000 × 0.92 = €0.0054 for the hardest, against (626 × $2 + 62 × $10) ÷ 1,000,000 × 0.92 = €0.0017 for an easy one. My cost model should use the average over a mixed set, not my easiest invoices.
+
+**What this run taught me:**
+1. Run 3 overstated llama3.2. Its 75% was on the invoices I wrote v2 against; on unseen inputs it scored 13.9%. When the supplier is missing or a placeholder, it fills in a flagged bank from the reference list (22 of 36 runs). I take back surprise 3 of Run 3: the gap to the cloud model is not smaller, and a local model is still not an exit for this task.
+2. Sonnet 5.5 kept v2's main promises on unseen inputs: no invented supplier in 36 runs, "cannot be determined" whenever there was no name, and no routing point given as an origin. Its misses are cautious ("unclear"), not confident errors.
+3. The JSON-only rule held on my own set (24/24) but not here: on D, both answers had reasoning written before the JSON, which would break a strict parser.
+4. My anonymised supplier names ("Supplier 4") are a test-design flaw: on D, run B argued that a placeholder does not identify anyone and chose "cannot be determined". Real invoices carry real names.
+
+**Candidate changes for v3 (not made yet):** accept a named production site or supplier location as origin and add its country; parse the last JSON object, or use the API's structured-output option, instead of relying on the prompt; replace the placeholder names in my practitioner set with realistic invented names.
+
 ## Test-set swap, from Week 3
 
 Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two runs each, full record in [test-set-swap.md](test-set-swap.md). The in-class swap was not recorded, so this is a fresh run after the session.
