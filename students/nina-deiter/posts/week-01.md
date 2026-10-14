@@ -2,7 +2,7 @@
 week: 1
 title: "Signal Post Week 1 | Cost Literacy | AI costs in creative agencies"
 author: "Nina Deiter"
-beat: "Dein Beat"
+beat: "When does AI actually help project managers in creative agencies — and when does it get in the way?"
 skill: "Capability skepticism"
 date: 2026-09-26
 ---
