@@ -7,7 +7,7 @@ skill: "Capability skepticism"
 date: 2026-09-26
 ---
 
-# Signal Post Week 1 | Cost Literacy | AI costs in creative agencies
+# AI costs in creative agencies
 
 ## Hook - Why should anyone care about AI costs in your beat?:
 Especially in creative processes nowadays, it is necessary to use AI to keep up with competitors. The goal is to work faster and create even better outcomes. However, the use of AI comes with costs, so it is really important to identify the costs, make them visible to the client, and include them in cost estimates/offers so that the output stays lucrative. This is especially important because, with the development of AI, it is becoming and will become easier to justify the use of AI tokens than actual working hours
