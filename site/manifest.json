@@ -799,5 +799,26 @@
    "kpis": "\u20ac0.0044 | per check, measured from my own API calls ; 299\u00d7 | errors vs tokens at my Week 2 error rate ; 1.1 | checks per day where it breaks if the vendor fixes errors",
    "takeaways": "Scale does not break a token-cheap tool; error handling does ; Whoever pays for a wrong answer decides the break point ; Re-measure every time the model changes"
   }
+ },
+ {
+  "week": 7,
+  "title": "I Ran My Sanctions Screening Tool on My Own PC. It Got 4 Out of 24 Right.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Lock-in detection",
+  "date": "2026-10-14",
+  "url": "posts/jasper-derieuw-week-07.html",
+  "meta": {
+   "week": "7",
+   "title": "I Ran My Sanctions Screening Tool on My Own PC. It Got 4 Out of 24 Right.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Lock-in detection",
+   "date": "2026-10-14",
+   "verdict": "Connect, and keep the exit a re-test away",
+   "stamp": "LOCK-IN 5/15 \u00b7 MODERATE",
+   "kpis": "5/15 | lock-in score of my own stack ; \u20ac1,258 | cost to switch provider ; 16.7% | success on a model I own (vs 91.7% cloud)",
+   "takeaways": "My lock-in is capability, not price ; A thin switching layer and a saved test set are the cheapest insurance ; Owning the model removed the vendor but added wrong answers"
+  }
  }
 ]
