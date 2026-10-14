@@ -1,3 +1,12 @@
+---
+week: 4
+title: "Is AI-Powered Feedback Processing Worth the Investment?"
+author: "Nina Deiter"
+beat: "When does AI actually help project managers in creative agencies — and when does it get in the way?"
+skill: "Value quantification"
+date: 2026-10-03
+---
+
 # Signal Post 4 – Is AI-Powered Feedback Processing Worth the Investment?
 
 **Beat:** When does AI actually help project managers in creative agencies — and when does it get in the way?
