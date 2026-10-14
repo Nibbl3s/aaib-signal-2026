@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · </div>
+<h1>Week 4</h1>
+<div class="byline">nina-deiter · </div>
+<h2>Signal Post 4 – Is AI-Powered Feedback Processing Worth the Investment?</h2>
+<p><strong>Beat:</strong> When does AI actually help project managers in creative agencies — and when does it get in the way?</p>
+<h3>1. Hook</h3>
+<p>AI promises to make project management faster and more efficient. But in creative agencies, where client feedback can be subjective and ambiguous, faster processing does not necessarily mean better results. The question is whether the time saved outweighs the cost of implementing, reviewing and correcting AI-generated outputs.</p>
+<h3>2. The Candidate</h3>
+<p>My AI candidate is a Feedback-to-Task Assistant for a hypothetical creative agency with 20 employees, including five project managers.</p>
+<p>The process belongs to project coordination within the agency's primary value chain: delivering creative work to clients. Project managers regularly interpret feedback, identify changes and translate them into actionable tasks for designers.</p>
+<p>The proposed Langdock agent would summarize feedback, identify required actions and suggest responsible roles. Human project managers would still review and approve every output.</p>
+<p>The process is repetitive, text-based and verifiable, making it a promising AI candidate. However, incorrectly interpreted feedback could create additional work.</p>
+<h3>3. The Numbers</h3>
+<p>To evaluate the potential benefit, I developed a hypothetical business case based on five project managers processing approximately ten feedback documents each per week.</p>
+<p>Assuming 46 productive weeks per year, this results in:</p>
+<p>5 project managers × 10 documents × 46 weeks = <strong>2,300 documents annually</strong>.</p>
+<p>Manual processing is estimated at ten minutes per document. With AI assistance, including human review, I assume five minutes.</p>
+<p>Using the course reference of €42 per working hour, the potential annual time-saving value is:</p>
+<p>2,300 × (10 − 5) / 60 × €42 = <strong>€8,050</strong>.</p>
+<p>I evaluated all four benefit categories:</p>
+<table>
+<thead>
+<tr>
+<th>Benefit category</th>
+<th style="text-align: right;">Annual value</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time saved</td>
+<td style="text-align: right;">€8,050</td>
+<td>191.67 hours × €42</td>
+</tr>
+<tr>
+<td>Revenue increase</td>
+<td style="text-align: right;">€0</td>
+<td>No verified additional revenue</td>
+</tr>
+<tr>
+<td>Cost reduction</td>
+<td style="text-align: right;">€0</td>
+<td>No separate direct savings</td>
+</tr>
+<tr>
+<td>Risk mitigation</td>
+<td style="text-align: right;">€0</td>
+<td>No measurable risk reduction</td>
+</tr>
+<tr>
+<td><strong>Gross benefit</strong></td>
+<td style="text-align: right;"><strong>€8,050</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Although faster coordination might improve client satisfaction or reduce misunderstandings, I cannot reliably quantify these effects. Including them would make the business case look more attractive without sufficient evidence.</p>
+<p>The proposed solution requires five Langdock licenses at an assumed price of €25 per user per month, resulting in €1,500 annually.</p>
+<p>I also estimate seven hours for initial configuration and training (€294), three hours of annual maintenance (€126), and €805 for additional error correction.</p>
+<p>The correction cost assumes that 10% of the 2,300 documents require five additional minutes of work:</p>
+<p>2,300 × 10% × 5 / 60 × €42 = <strong>€805</strong>.</p>
+<p>This percentage is an assumption loosely informed by my Week 3 prototype tests, not a validated production error rate.</p>
+<p>Total first-year costs are therefore €2,725, resulting in a <strong>net productivity benefit of €5,325</strong>.</p>
+<p>The simplified payback period is:</p>
+<p>€294 / [(€8,050 − €1,500 − €126 − €805) / 12] = <strong>0.63 months</strong>.</p>
+<p>However, this calculation values released working hours as an economic benefit. It does not demonstrate equivalent cash savings, which would require the agency to use the additional capacity productively.</p>
+<h3>4. The Pressure Test</h3>
+<p>The result looks promising, but how robust are the assumptions?</p>
+<p>Suppose the estimated time saving is 50% too optimistic. Instead of saving five minutes per document, the agent saves only 2.5 minutes.</p>
+<p>The annual gross benefit would fall to:</p>
+<p>2,300 × 2.5 / 60 × €42 = <strong>€4,025</strong>.</p>
+<p>Assuming unchanged costs of €2,725, the net benefit decreases to <strong>€1,300</strong>.</p>
+<p>The business case remains positive, but the financial advantage becomes considerably smaller. Additional correction costs or unexpected integration challenges could eliminate the remaining benefit.</p>
+<p>Furthermore, my Week 3 tests mainly evaluated output quality rather than actual processing-time reductions. Longer and more complex feedback might require significantly more human verification.</p>
+<p>Therefore, the estimated ROI should not be treated as demonstrated performance. A controlled pilot would be necessary before committing to regular deployment.</p>
+<h3>5. The Insight</h3>
+<p>This exercise changed how I evaluate AI tools in creative project management.</p>
+<p>Previously, I mainly considered whether an AI-generated task was accurate and useful. Now I realize that technical performance alone does not establish business value.</p>
+<p>The greatest potential lies in reducing repetitive administrative work while allowing project managers to focus on communication and creative judgment.</p>
+<p>At the same time, the tool becomes counterproductive if reviewing and correcting its outputs takes almost as long as completing the original task.</p>
+<p><strong>My conclusion is to recommend a controlled pilot, not an immediate full rollout.</strong> AI helps when measurable efficiency gains exceed its operational and error-related costs. Otherwise, the promise of productivity risks becoming another example of AI-driven FOMO.</p>
+<p><em>Assumptions: Hypothetical 20-person agency; 46 productive weeks; €42 hourly rate from course materials; Langdock licensing at an assumed €25/user/month. Processing times and correction rates are estimates requiring validation.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
