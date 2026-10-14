@@ -168,6 +168,20 @@ Anthropic. (n.d.-b). *Reduce hallucinations*. Claude Developer Platform. Retriev
 
 **Caveat:** I wrote v2 while looking at these same 12 invoices, so 24/24 may be overfitting. The honest test is the swap set (someone else's invoices) on v2, which I have not run yet.
 
+### Prediction for the swap sets on prompt v2 (recorded 14 October 2026, before Run 4)
+
+Run 4 runs prompt v2 on the two sets I did not write v2 against: my practitioner-pattern set (inputs A–H) and Janis Krainis's freight set (inputs 1–10), each run twice on Claude Sonnet 5.5 and llama3.2. The expected answers are the ones committed in Week 3 and are not changed. Two scoring rules, fixed now because v2 uses different words:
+- When no true origin is stated, "unclear" and "not found" both count as correct (v2 says "unclear"; the Week 3 answers say "not found").
+- A true origin given only as a city (Janis 4: Bilbao factory; 7: Gothenburg mill; 9: Valencia supplier) counts as correct if the answer names the city or its country.
+
+| # | Set | Predicted (Claude Sonnet 5.5) | Predicted (llama3.2) |
+|---|---|---|---|
+| P7 | Practitioner A–H | 16/16 strict: the routing rule fixes D and E (failed in Week 3) | 12/16 or more; at least one routing point still given as origin |
+| P8 | Janis 1–10 | Flag "cannot be determined" on 20/20 (Week 3: 0/20, value not allowed); 0 fabricated suppliers | At least 2 runs with an invented supplier name (F2), as on input 12 in Run 3 |
+| P9 | Janis 4, 7, 9 | Origin still missed in at least 2 of 6 runs, because v2 says "if you cannot tell, write unclear" and a city is not stated as a country | Not predicted |
+
+**Risk I expect:** v2's "unclear" rule may make the tool more cautious on real origins (Janis 4, 7, 9) while it fixes routing points (A–H D, E).
+
 ## Test-set swap, from Week 3
 
 Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two runs each, full record in [test-set-swap.md](test-set-swap.md). The in-class swap was not recorded, so this is a fresh run after the session.
