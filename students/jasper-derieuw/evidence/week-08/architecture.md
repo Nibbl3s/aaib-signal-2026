@@ -48,7 +48,7 @@ Why this one (Week 4 five-criterion filter): it is repetitive (1,500 a month), p
 ┌───────┴──────── DATA ─────┐ ┌──┴──── AI MODEL ────┐ ┌─┴── SCREENING ────┐
 │ Outlook mailbox (Graph)   │ │ Claude Sonnet 5.5  (L)│ │ Bought service (L)│
 │ ERP supplier export       │ │ prompt v2, €0.0020  │ │ EU consolidated   │
-│ EU sanctions list (free)  │ │ per check, €37/yr   │ │ list, €1,082/yr   │
+│ EU sanctions list (free)  │ │ per check, €38/yr   │ │ list, €1,082/yr   │
 └───────────────────────────┘ │ exit: Gemini 3 Flash│ └───────────────────┘
                               └─────────────────────┘
 ┌──────────────────────── GOVERNANCE ─────────────────────────────┐
@@ -75,7 +75,7 @@ Why this one (Week 4 five-criterion filter): it is repetitive (1,500 a month), p
 |---|---|---|
 | 1 | Why not the AI in our existing tools (Microsoft 365 Copilot)? | Copilot can read an invoice, but it does not screen against the EU list, does not give one fixed answer per invoice, and leaves no per-invoice audit trail. We buy what exists (the screening service, about €1,082 a year) and build only the thin part that does not: invoice pre-fill and routing. |
 | 2 | What does this cost at scale; what if we grow 3×? | At 3× (4,500 checks a month), tokens go from €3 to €9 a month. Analyst clean-up of AI errors goes from €0–€1,499 to €0–€4,496 a month (0% error on my own set, 22.2% on unseen inputs, × €4.50 per redo). The bill scales with errors, not tokens (cost-at-scale one-pager). |
-| 3 | What if Anthropic changes its price or shuts down? | Tokens ×3 = €110 a year instead of €37: no reason to leave. Retirement needs at least 60 days' notice; the switch to Gemini 3 Flash costs about €1,258 and 1–2 weeks (Week 7). The screening service may stop "with or without notice" (Verifex terms, §15), so the fallback is the manual queue and the EU's own list. |
+| 3 | What if Anthropic changes its price or shuts down? | Tokens ×3 = €110 a year instead of €38: no reason to leave. Retirement needs at least 60 days' notice; the switch to Gemini 3 Flash costs about €1,258 and 1–2 weeks (Week 7). The screening service may stop "with or without notice" (Verifex terms, §15), so the fallback is the manual queue and the EU's own list. |
 | 4 | How does it handle Chinese, Dutch and French? | Measured: the Chinese-script invoice passed 2 of 2 runs on v2 and costs 3% more input tokens (693 vs about 670); the French request passed 2 of 2. That is n = 2 each, so non-Latin supplier names go to a person by rule, whatever the model says. |
 | 5 | What risk are we not seeing? | Automation bias at H1: about 1,050 "clear" rows a month confirmed in 2 minutes each. My Build showed that a wrong answer looks as tidy as a right one (Run 3). Mitigation: a monthly sample of 30 cleared invoices re-checked in full, and the monthly re-test. Second: injection through invoice text (Week 9). |
 | Bonus | €100k instead? €25k? | €100k: a screening service with transliteration and ownership data, and a validation set of 200 real invoices instead of 30 synthetic ones. €25k: drop the €8,000 mailbox automation (analysts drop invoices into a folder), cut maintenance to €2,250 (15% of the smaller €15,000 build) and contingency to 10%: about €22,800. |
