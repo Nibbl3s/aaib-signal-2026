@@ -153,7 +153,7 @@ To be completed before Week 8, per the Build brief.
 
 Measured via the Claude API on 14 October 2026 (`claude-sonnet-5-5`, effort medium, prompt v1, my 12 test invoices × 2 runs): **371.9 input and 402.5 output tokens per call** on average, so **€0.004387 per check** ($2 / $10 per 1M tokens, × 0.92). At my scenario volume of 18,000 checks a year that is **€79 a year in tokens**.
 
-Error cost at my Week 2 measured rate: 29.2% × 18,000 × €4.50 (6 min × €45/hr, paid by the compliance analyst) = **€23,652 a year**, 299× the tokens. At the Week 6 rate below (8.3%): €6,750 a year, still 85×. Break point: 265 checks per analyst per day if the customer fixes errors, 1.1 to 4.0 if the vendor does. Full model: [cost-model.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-06/cost-model.md).
+Error cost at my Week 2 measured rate: 29.2% × 18,000 × €4.50 (6 min × €45/hr, paid by the compliance analyst) = **€23,652 a year**, 299× the tokens. At the Week 6 rate above (8.3%): €6,750 a year, still 85×. Break point: 265 checks per analyst per day if the customer fixes errors, 1.1 to 4.0 if the vendor does. Full model: [cost-model.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-06/cost-model.md).
 
 ## Second model, from Week 7
 
