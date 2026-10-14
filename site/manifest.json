@@ -820,5 +820,26 @@
    "kpis": "5/15 | lock-in score of my own stack ; \u20ac1,258 | cost to switch provider ; 16.7% | success on a model I own (vs 91.7% cloud)",
    "takeaways": "My lock-in is capability, not price ; A thin switching layer and a saved test set are the cheapest insurance ; Owning the model removed the vendor but added wrong answers"
   }
+ },
+ {
+  "week": 8,
+  "title": "I Defended My Own AI Design to a Board. It Shrank My Business Case.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Design defense",
+  "date": "2026-10-14",
+  "url": "posts/jasper-derieuw-week-08.html",
+  "meta": {
+   "week": "8",
+   "title": "I Defended My Own AI Design to a Board. It Shrank My Business Case.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Design defense",
+   "date": "2026-10-14",
+   "verdict": "Buy the list, build the thin layer, keep a person on every clear",
+   "stamp": "PAYBACK 10\u201326 MONTHS",
+   "kpis": "\u20ac37,329 | year-1 system cost ; <0.1% | tokens' share of the running cost ; 35.2% | error rate at which the design stops paying",
+   "takeaways": "Drawing every box and costing it removed my optimistic numbers ; Buy what exists and build only the thin part ; The error rate on real invoices decides the case, not the token price"
+  }
  }
 ]
