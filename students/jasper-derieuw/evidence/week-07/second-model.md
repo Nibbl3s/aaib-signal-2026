@@ -55,6 +55,18 @@ Failures: F4 format × 14, F1 wrong × 4, F3 missed × 2 (one of them a sanction
 
 If my provider tripled its prices, my tokens would go from €79 to €237 a year (18,000 checks × €0.0132). Switching to a model I own would cost almost nothing in money but would drop my measured success from 91.7% to 16.7%. So my lock-in is not the price: it is the capability my prompt needs. A realistic exit is another frontier cloud model, not my own PC.
 
+## Addendum, 14 October 2026 (after Build Runs 3 and 4)
+
+I re-ran both models with prompt v2 (one fixed JSON answer, "cannot be determined" allowed, routing points are not origins). Full tables are in the [Build log](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/build/log-v1.md), Runs 3 and 4.
+
+| | Claude Sonnet 5.5 | llama3.2 3B |
+|---|---|---|
+| Prompt v1, my 12 invoices (this page) | 22/24 (91.7%) | 4/24 (16.7%) |
+| Prompt v2, my 12 invoices (Run 3) | 24/24 (100%) | 18/24 (75%) |
+| Prompt v2, 18 unseen inputs from two other sets (Run 4) | 28/36 (77.8%) | 5/36 (13.9%) |
+
+**What changes:** a better prompt fixed llama3.2's format (0 code answers, every answer valid JSON), and on my own invoices it looked close to usable. On unseen inputs it was not: when the supplier was missing, it wrote a flagged bank's name as the supplier in 22 of 36 runs. **What stays:** the conclusion above holds. A model I own is not an exit for this task, and the realistic exit is another frontier cloud model.
+
 ---
 
 *AI disclosure: the 24 local runs were made on my own PC on 14 October 2026 with my prompt v1. I used Claude to write the run script, classify the answers against my expected answers and structure this comparison; I checked the classifications.*
