@@ -107,6 +107,25 @@ Input 12, the corrupted invoice. On one run the tool correctly reported the fiel
 
 **Caveat:** this is a different setup from Run 1 (API and Sonnet 5.5 vs the chat app with an unknown model), so the improvement belongs to this model and setup, not to my prompt. Week 7 tests a second model.
 
+### Prediction for prompt v2 (recorded 14 October 2026, before Run 3)
+
+Same 12 invoices, each run twice, on the same model as Run 2 (Claude Sonnet 5.5, effort medium), plus the local llama3.2 as a second check.
+
+| # | Change in v2 | Predicted effect (Claude Sonnet 5.5) | Grounded in |
+|---|---|---|---|
+| P1 | "cannot be determined" added as an allowed flag | Input 12 passes on both runs, so strict success goes from 22/24 to **24/24** | Anthropic (n.d.-b): allow the model to say it does not know |
+| P2 | Answer only as one fixed JSON object | Format changes between runs drop from 5 inputs to **0**; every answer parses as JSON | Anthropic (n.d.-a): specify the desired output format |
+| P3 | "Use only the reference list above" | Flags based on outside knowledge stay at **0** (no regression) | Anthropic (n.d.-b): external knowledge restriction |
+| P4 | No explanations in the answer | Output tokens fall about 30% (402.5 to about 280 per call), so the cost per check falls to about **€0.0033**. Uncertain, because thinking tokens remain | My own Week 6 measurement: most output was explanation |
+| P5 | Routing point is not an origin | **No change** on my own test set (every invoice states its origin); the effect should only show on transshipped invoices | Week 2 extension and Week 3 swap |
+| P6 | Same prompt on llama3.2 (3B) | Python-code answers fall from 9 to **3 or fewer**, strict success rises from 4/24 to **8/24 or more** (low confidence) | Anthropic (n.d.-a); the course's local-model lab expects format drift in small models |
+
+**Risk I expect:** none of the clean invoices should become "cannot be determined"; if any does, v2 has made the tool over-cautious.
+
+**References**
+Anthropic. (n.d.-a). *Increase output consistency*. Claude Developer Platform. Retrieved October 14, 2026, from https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency
+Anthropic. (n.d.-b). *Reduce hallucinations*. Claude Developer Platform. Retrieved October 14, 2026, from https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations
+
 ## Test-set swap, from Week 3
 
 Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two runs each, full record in [test-set-swap.md](test-set-swap.md). The in-class swap was not recorded, so this is a fresh run after the session.
