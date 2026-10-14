@@ -6,7 +6,7 @@ beat: "When does AI actually help project managers in creative agencies — and 
 skill: "Capability skepticism"
 date: 2026-10-03
 ---
-
+# When AI Gets in the Way: Why Creative Agencies Still Need Human Judgment 
 ## The Problem
 
 Project managers in creative agencies regularly receive client feedback that needs to be interpreted, organised and translated into actionable tasks for designers. AI promises to automate this process, potentially saving time and reducing administrative work.
