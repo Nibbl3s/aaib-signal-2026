@@ -110,6 +110,16 @@ Measured rates stay as logged for v1: 70.8% per run on my own set, 58.3% of inpu
 | The artifact I am aiming for | A small standee or counter card, simulating how a compliance reviewer would physically encounter a needs review flag during document intake |
 | Which weekly session or OPEN block I will visit, and when | To be scheduled after the 28 September intro session, targeting an OPEN block the following week |
 
+**Probe plan, updated 14 October 2026 (Build Checkpoint 1):**
+
+| | |
+|---|---|
+| Machine | Laser cutter (3 mm plywood) + laser rubber for the stamps |
+| Artifact | "The 2-minute review test": an IN tray, three stamps (CLEAR / NEEDS REVIEW / HIGH RISK) and a two-key CLEARED box. Testers check 8 invoice cards from my test set, 3 of them carrying a real wrong AI verdict from my log |
+| Session | Planned: one OPEN block in week 5 or 6 at the fablab (Campus Kantienberg); cutting files are ready, booking still to be made |
+
+Why the plan changed: the counter card would only show a flag. The review test measures how many wrong AI verdicts a human checker actually catches, which is the "50% (est.)" my business case rests on.
+
 **When the artifact exists, the deployment observation:**
 
 To be completed before Week 8, per the Build brief.
@@ -134,7 +144,11 @@ To be completed in Week 10.
 
 ### Checkpoint 1, Week 4
 
-To be completed in Week 4.
+- **What it does:** extracts supplier, origin, HS code and value from a shipment invoice and flags the supplier against a supplied list (clear / needs review / high risk match).
+- **What I measured:** 70.8% (17/24 runs, 12 inputs × 2); 58.3% of inputs inconsistent; 75% on the practitioner-pattern set (8 inputs); Janis's set 10/10 consistent, origin missed on 3.
+- **Dominant failure type:** F6 inconsistent (7 of 12 inputs).
+- **Failure that matters most:** F3, the Chinese-script sanctioned bank cleared on one run (the expensive one); F2 on the corrupted invoice is the hardest to spot.
+- **What I'd change first:** rules decide "clear", AI only adds flags; risky invoice types go to a human; v2 prompt separates transshipment port from origin, allows "cannot be determined", aligns the reference list. Value at the measured rate: [business case](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-04/business-case-draft.md).
 
 ### Checkpoint 2, Week 8
 
