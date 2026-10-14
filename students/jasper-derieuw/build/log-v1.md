@@ -82,6 +82,31 @@ The raw success rate, 70.8%, looked acceptable in isolation. The inconsistency r
 **The failure that would have mattered most in real use, and why:**
 Input 12, the corrupted invoice. On one run the tool correctly reported the fields as not found. On the other, it fabricated a plausible sounding supplier name and an estimated HS code rather than admitting it could not tell. This is the single most dangerous failure in the log, because it occurred on the one input deliberately built so the honest answer was I do not know, and a fabricated field looks identical to a real one to anyone who has not seen the source document.
 
+### Run 2, prompt v1 via the Claude API, 14 October 2026
+
+**Setup:** same prompt v1 and reference list, same 12 invoices, each run twice, but via the API with `claude-sonnet-5-5` (effort medium) instead of the claude.ai chat app. Raw responses with `usage` saved per call.
+
+| # | Input (short label) | Expected | Run A | Run B | Verdict | Failure code |
+|---|---|---|---|---|---|---|
+| 1 | Clean invoice | Clear | Clear | Clear | Pass | None |
+| 2 | Exact match, Heihe | High risk match | High risk match | High risk match | Pass | None |
+| 3 | Exact match, Heilongjiang Suifenhe | High risk match | High risk match | High risk match | Pass | None |
+| 4 | Near duplicate | Needs review | Needs review | Needs review | Pass | None |
+| 5 | Missing HS code | HS not found, clear | Correct | Correct | Pass | None |
+| 6 | Huawei | Clear | Clear | Clear | Pass | None |
+| 7 | Chinese-script name | High risk match | High risk match (translated) | High risk match (translated) | Pass | None |
+| 8 | Partial match | Needs review | Needs review | Needs review | Pass | None |
+| 9 | Noisy invoice | Alibaba, clear | Correct | Correct | Pass | None |
+| 10 | USD value | Value kept as $9,100 | Kept | Kept | Pass | None |
+| 11 | Hong Kong branch | High risk match | High risk match | High risk match | Pass | None |
+| 12 | Corrupted text | Not found, cannot be determined | Not found, needs review | Not found, needs review | Fail (strict) | Flag value outside the prompt's allowed set |
+
+**Result:** 22 of 24 runs correct (91.7%), 0 of 12 inputs inconsistent in their values, 0 fabrications. The two failures are my specification flaw already found in the Week 3 swap: "cannot be determined" is not an allowed value in prompt v1, and the tool chose the safe "needs review".
+
+**New failure type:** the *format* changed between runs (table or list) on inputs 4, 7, 9, 10 and 11, while the values stayed identical. A downstream system parsing the output would break on it (F4 risk). Prompt v2 should fix one output format.
+
+**Caveat:** this is a different setup from Run 1 (API and Sonnet 5.5 vs the chat app with an unknown model), so the improvement belongs to this model and setup, not to my prompt. Week 7 tests a second model.
+
 ## Test-set swap, from Week 3
 
 Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two runs each, full record in [test-set-swap.md](test-set-swap.md). The in-class swap was not recorded, so this is a fresh run after the session.
@@ -126,7 +151,9 @@ To be completed before Week 8, per the Build brief.
 
 ## Cost, from Week 6
 
-To be completed in Week 6.
+Measured via the Claude API on 14 October 2026 (`claude-sonnet-5-5`, effort medium, prompt v1, my 12 test invoices × 2 runs): **371.9 input and 402.5 output tokens per call** on average, so **€0.004387 per check** ($2 / $10 per 1M tokens, × 0.92). At my scenario volume of 18,000 checks a year that is **€79 a year in tokens**.
+
+Error cost at my Week 2 measured rate: 29.2% × 18,000 × €4.50 (6 min × €45/hr, paid by the compliance analyst) = **€23,652 a year**, 299× the tokens. At the Week 6 rate above (8.3%): €6,750 a year, still 85×. Break point: 265 checks per analyst per day if the customer fixes errors, 1.1 to 4.0 if the vendor does. Full model: [cost-model.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-06/cost-model.md).
 
 ## Second model, from Week 7
 
