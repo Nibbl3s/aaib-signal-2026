@@ -1,5 +1,5 @@
 ---
-week:3
+week: 3
 title: "AI in Creative Agencies: Real Value or FOMO? Deconstructing monday.com's AI Claims"
 author: "Nina Deiter"
 beat: "When does AI actually help project managers in creative agencies — and when does it get in the way?"
