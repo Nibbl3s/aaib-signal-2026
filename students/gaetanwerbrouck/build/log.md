@@ -350,41 +350,25 @@ I could not create a fresh repository clone because direct GitHub access from th
 
 **Failure classification:** The student reported no failures in the 15 UI cases. The four code tests and source-row checks also passed. F6 consistency remains untested because a second full run was not confirmed.
 
-### Timed comparison — still required
+### Timed comparison — actual measurements still required
 
-**Not run.** This environment could not open the live/local Streamlit interface, so I have no genuine ScoutLab interaction time or spreadsheet time to report.
+**Status: NOT RUN / NOT VERIFIED.** The example times previously shown below were illustrative only and have been removed from the results table so they cannot be mistaken for observed evidence. No genuine ScoutLab-versus-spreadsheet time-saving percentage is currently claimed.
 
-### ScoutLab V2: Workflow comparison
+**Task:** Identify Haaland and Saka, verify position/minutes/goals per 90 against the 2023/24 dataset, compare them, create a shortlist containing exactly those two players, and export/open the CSV.
 
-**Status:** Illustrative comparison, pending timed validation.
+**Protocol:** Use the same source data and task in both workflows. Start timing at the first search/filter action and stop when the exported file is open. Include data checks and corrections. Repeat three times per workflow. Record correction counts and any failures. This measures workflow time, not scouting accuracy or candidate-selection quality.
 
-**Task:** Identify three Premier League forwards, compare their performance statistics, verify player profiles against the 2023/24 dataset, and prepare a shortlist.
+| Trial | ScoutLab observed time | Spreadsheet observed time | ScoutLab corrections/errors | Spreadsheet corrections/errors |
+|---|---|---|---|---|
+| 1 | Pending real run | Pending real run | Pending | Pending |
+| 2 | Pending real run | Pending real run | Pending | Pending |
+| 3 | Pending real run | Pending real run | Pending | Pending |
+| Average | Pending real run | Pending real run | Pending | Pending |
 
-**Methods:** ScoutLab V2 versus a spreadsheet-based scouting workflow using the same scouting objective and source data.
+**Calculations to complete after the trials**
 
-| Trial | ScoutLab | Spreadsheet | Illustrative difference |
-|---|---:|---:|---:|
-| 1 | 1:42 | 4:15 | 2:33 |
-| 2 | 1:35 | 3:58 | 2:23 |
-| 3 | 1:48 | 4:22 | 2:34 |
-| Average | 1:42 | 4:12 | 2:30 |
+- Mean time (seconds) = sum of three observed times ÷ 3.
+- Time reduction (%) = (spreadsheet mean − ScoutLab mean) ÷ spreadsheet mean × 100.
+- Report correction counts alongside the time result; do not treat faster output as better if it introduces more errors.
 
-**Calculation**
-
-Average ScoutLab time = (102 + 95 + 108) / 3 = 101.7 seconds.
-
-Average spreadsheet time = (255 + 238 + 262) / 3 = 251.7 seconds.
-
-Illustrative time reduction = (251.7 − 101.7) / 251.7 × 100 = 59.6%.
-
-**Corrections and failure handling**
-
-The number of corrections and data errors has not been measured. Player statistics must be checked against the source dataset, and missing values must not be interpreted as zero. Similar-player results and exported shortlists also require validation before use in recruitment decisions.
-
-**Interpretation**
-
-These example timings suggest that a structured scouting interface could reduce the time required to find and compare players. However, the result does not establish ScoutLab's actual time savings, accuracy, or financial ROI. Timed trials using both workflows are required before making a measured performance claim.
-
-**Next action:** Run three timed trials per workflow, record observed corrections, and replace the illustrative figures with the actual results.
-
-For a fair, quick trial, time the same fixed task in both workflows: find Haaland and Saka, verify their position/minutes/goals-per-90, compare them side-by-side, create a shortlist containing exactly those two players, and export/open the CSV. In the spreadsheet workflow, locate the same two rows and create/export the same two-player comparison. Start the timer at the first search/filter action and stop only when the exported file is open; include any data checks and corrections. Repeat three times and enter the actual times and corrections in the timed-comparison table above. This measures retrieval/comparison/export workflow time, not scouting accuracy or candidate-selection quality.
+**Current conclusion:** The timing comparison is outstanding. The ROI figures in the Week 4 memo and Signal Post 4 remain scenario estimates, not measured savings. Do not claim a measured time reduction or positive ROI until these trials have been run.

@@ -12,9 +12,9 @@
 
 1. **What my tool can do now:** ScoutLab loads a 339-row Premier League 2023/24 benchmark, filters players, shows position-relative profiles, compares candidates, finds statistically similar profiles, and exports a shortlist. It can compare performance with market-value percentiles only if separate market values are supplied.
 2. **What it cannot do yet:** The default source has no market values and is not a live 2026 recruitment dataset. It cannot prove that a player is undervalued, predict future performance, review video or make a signing decision.
-3. **What I measured:** I have confirmed that the app's interface and tabs are accessible and usable. This is only a manual UI check, not an accuracy evaluation. The new expected-answer evaluation set and a timed manual-versus-ScoutLab comparison have **not yet been run**, so no ScoutLab accuracy or time-saving rate is claimed. The V1 20/20 result is not a V2 result.
+3. **What I measured:** I have confirmed that the app's interface and tabs are accessible and usable. This is only a manual UI check, not an accuracy evaluation. The 15-case expected-answer set is recorded as **15/15 passes based on the student's report**; the assistant did not independently observe the live UI run. A timed manual-versus-ScoutLab comparison has **not yet been run**, so no measured time-saving rate is claimed. The V1 20/20 result is not a V2 result.
 4. **Dominant failure type / highest-impact failure:** V2's dominant failure type is not yet known. The highest-impact risk to test is a wrong or missing player/metric caused by source-data mismatch, low metric coverage or player-name joining. A fabricated or stale market value would be particularly damaging, so the app does not create values itself.
-5. **What I would change first:** Run the 15-case expected-answer set in the ScoutLab evaluation-plan file, repeat key checks, fix any failures, and time the same scouting task in ScoutLab and a spreadsheet baseline.
+5. **What I would change first:** Retain the reported 15/15 evaluation result with its provenance clearly labelled; repeat key checks if possible, fix any failures found, and time the same scouting task in ScoutLab and a spreadsheet baseline.
 
 ## Provisional own-Build value row (all assumptions clearly labelled)
 

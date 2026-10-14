@@ -1,6 +1,6 @@
 # Portfolio Batch 1 — Weeks 1 to 4
 
-This index gathers the evidence already stored in the student folder. It is an index, not a claim that every checkpoint is complete. Items that need a real test run, classmate feedback, or a confirmed FabLab booking remain marked as pending in the relevant files.
+This index gathers the evidence already stored in the student folder. It is an index, not a claim that every checkpoint is complete. Items needing genuine timed workflow measurements remain pending. Peer-review and FabLab/classroom evidence are intentionally not completed at the student's request.
 
 ## Week 1 — Cost literacy
 
@@ -37,9 +37,8 @@ This index gathers the evidence already stored in the student folder. It is an i
 
 ## Evidence still to finish
 
-1. Run the 15-case ScoutLab expected-answer set and record actual outcomes and F1-F6 failures; do not re-use V1's 20/20 as the V2 success rate.
-2. Measure current manual handling time and ScoutLab-assisted time on the same profiles, and update the value estimate if the assumptions are wrong.
-3. Obtain and record real classmate feedback, revise the memo, and complete the peer-review record.
-4. Enter the actual clinic/cross-pollination findings and a confirmed future FabLab booking date.
+1. The 15-case ScoutLab V2 results are recorded as 15/15 passes based on the student's report; the live UI run was not independently observed. Do not reuse V1's 20/20 as the V2 success rate.
+2. **Still outstanding:** measure manual/spreadsheet and ScoutLab handling time on the same profiles, record corrections, and update the value estimate if the assumptions are wrong.
+3. Peer review and the FabLab/classroom evidence are intentionally left pending, per the student's instruction to skip those items.
 
 The ROI figures for ScoutLab are currently labelled as estimates. No positive ROI, market-value accuracy or successful discovery of undervalued players has been proven yet.
