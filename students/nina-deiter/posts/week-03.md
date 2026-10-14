@@ -1,10 +1,10 @@
 ---
 week:3
-title:"AI in Creative Agencies: Real Value or FOMO? Deconstructing monday.com's AI Claims"
-author:"Nina Deiter"
-beat:"When does AI actually help project managers in creative agencies — and when does it get in the way?"
-skill:"Capability skepticism"
-date:2026-10-03
+title: "AI in Creative Agencies: Real Value or FOMO? Deconstructing monday.com's AI Claims"
+author: "Nina Deiter"
+beat: "When does AI actually help project managers in creative agencies — and when does it get in the way?"
+skill: "Capability skepticism"
+date: 2026-10-03
 ---
 # AI in Creative Agencies: Real Value or FOMO? Deconstructing monday.com's AI Claims
 
