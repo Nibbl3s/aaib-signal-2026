@@ -10,7 +10,7 @@
       help: '<span><kbd>←↑→↓</kbd> / swipe — slide tiles</span><span class="k"><kbd>Z</kbd> undo</span><span>Your game is saved when you close it</span>' },
     snake: { title: 'Snake', file: 'snake.js', ready: true,
       help: '<span><kbd>←↑→↓</kbd> / swipe — steer</span><span><kbd>Space</kbd> / tap — pause</span><span class="k"><kbd>Esc</kbd> — close</span>' },
-        shooter: { title: 'Virus Shooter', file: 'shooter.js', ready: true, board: false,
+        shooter: { title: 'Virus Shooter', file: 'shooter.js', ready: true,
       help: '<span><kbd>←</kbd> <kbd>→</kbd> / drag — move</span><span><kbd>Space</kbd> / hold — shoot</span><span class="k"><kbd>P</kbd> — pause</span><span class="k"><kbd>Esc</kbd> — close</span>' },
   };
   const factories = {};

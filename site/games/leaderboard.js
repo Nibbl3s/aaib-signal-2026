@@ -9,6 +9,7 @@
     { id: 'sudoku', label: 'Sudoku', levels: ['easy', 'medium', 'hard', 'expert'] },
     { id: '2048', label: '2048' },
     { id: 'snake', label: 'Snake' },
+    { id: 'shooter', label: 'Virus Shooter' },
   ];
   const BLOCKED = ['fuck', 'shit', 'bitch', 'cunt', 'nigg', 'fag', 'whore', 'slut', 'dick', 'cock', 'pussy', 'porn', 'nazi', 'hitler', 'retard', 'kanker', 'hoer', 'kut', 'lul', 'slet', 'tering'];
   const headers = { apikey: KEY, 'Content-Type': 'application/json' };
