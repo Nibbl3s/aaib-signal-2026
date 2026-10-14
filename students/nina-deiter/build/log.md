@@ -128,9 +128,25 @@ I also expect more variation in CATEGORY and RESPONSIBLE_ROLE labels between rep
 
 This experiment will test whether the additional flexibility outweighs the potential loss of consistency.
 
-**What actually happened:** Not tested yet.
+**What actually happened:**
 
-**Was I right?** To be evaluated after testing.
+Prompt v2 was tested on 11 feedback inputs (5 standard and 6 challenging cases), with one response per input.
+
+The AI correctly identified ACTION_REQUIRED and RESPONSIBLE_ROLE in 10 out of 11 cases (90.9%). The generated tasks were appropriate in 10 out of 11 cases.
+
+Removing predefined categories resulted in more specific classifications, such as VISUAL_CLUTTER, COLOR_CONTRAST and TYPOGRAPHY_CONSISTENCY. In several cases, these were more descriptive than my original reference categories.
+
+However, T10 revealed an important weakness: the AI converted ambiguous German feedback into an actionable task instead of requesting clarification. One category also contained a formatting error.
+
+**Was I right?**
+
+Partially. My prediction that open classification would produce more flexible and descriptive categories was supported by the results. The AI generally continued to generate useful tasks.
+
+However, it did not maintain the same reliability for ACTION_REQUIRED across all cases. The T10 error shows that greater flexibility does not necessarily lead to better decisions.
+
+Category consistency between repeated runs remains untested because I completed only one pass with v2. Therefore, I cannot confirm whether removing predefined categories reduces consistency.
+
+My conclusion is that open classification can improve the descriptive quality of feedback categories, but reliable action decisions and clear human verification remain essential.
 
 *Being wrong here is fine and common. Not noticing you were wrong is the problem.*
 
