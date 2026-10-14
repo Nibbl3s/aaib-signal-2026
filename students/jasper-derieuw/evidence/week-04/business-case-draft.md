@@ -94,3 +94,79 @@ A deterministic match against the EU consolidated list (free) decides "clear". A
 2. How often is origin genuinely unclear on transshipped goods? My Build's biggest real-world weakness, not yet in the model.
 3. A real enforcement figure to replace the €250,000 assumption.
 4. Does a mid-sized importer already pay for a screening tool? If so, the baseline is not "fully manual".
+
+---
+
+## Part 3. The cost of a missed match: a sourced range instead of one guess
+
+The clinic (12 Oct) asked me to double-check the €250,000. Real cases and the law give a range:
+
+| Point | Cost per missed match | Source |
+|---|---:|---|
+| Low | €50,000 | Fine actually payable by two Belgian companies in an Antwerp sanctions case (AAE Chemie Trading and Danmar Logistics, €50,000 effective each) |
+| Middle | €250,000 | My Week 1 assumption (est.), between low and high |
+| High | €500,000 | Headline fine for a Belgian customs broker in the same case (Anex Customs: €500,000, of which €100,000 effective) |
+| Legal ceiling | €8M–€40M, or 1–5% of worldwide turnover | Directive (EU) 2024/1226, maximum fines for companies (law-firm summary; still to check against the Official Journal) |
+
+Fines are only part of the cost: legal fees, held shipments and reputation are not in these numbers, so the low point is a floor, not a typical case.
+
+| Cost per missed match | Build v1 as built, net per year | Redesign, net year 2+ | Redesign payback |
+|---|---:|---:|---:|
+| €50,000 | −€52,318 | €46,033 | 6.0 months |
+| €250,000 | −€358,318 | €82,033 | 3.4 months |
+| €500,000 | −€740,818 | €127,033 | 2.2 months |
+| No risk line at all | – | €37,033 | 7.5 months |
+
+Formulas: v1 = €24,182 − (1.53 extra misses × cost). Redesign risk line = 0.72 misses × cost × 25%; net = €56,700 + risk line − €19,667.
+
+**What this changes:** my Build as built loses money even at the lowest real fine. At €50,000 it would need ≤6.7% false clears; I measured 12.5%. The redesign is positive at every point: the fine decides how good the case is, not whether it works.
+
+## Part 4. Human fallback by invoice pattern (synthetic invoice mix)
+
+The idea comes from the clinic and a classmate's synthetic-data approach. Instead of one error rate, I split invoices into patterns, use my measured failure rate per pattern, and send the risky patterns straight to a human.
+
+| Pattern | Measured on | Failures | Share of invoices (est.) | Route |
+|---|---|---|---:|---|
+| A. Clean, normal invoice | Inputs 1, 2, 3, 5, 6, 9, 10 | 3 of 14 runs (21%): over-flag, format, invented currency | 70% | AI pre-fill + 2-min human check |
+| B. Name variant | Inputs 4, 8, 11 | 2 of 6 runs (33%) | 10% | Human, 6-min check |
+| C. Chinese-script name | Input 7 | 1 of 2 runs (50%): **missed a sanctioned bank** | 8% | Human |
+| D. Corrupted or unclear document | Input 12 | 1 of 2 runs (50%): **invented a supplier** | 5% | Human |
+| E. Transshipped, unclear origin | Janis's set + practitioner-pattern D, E, H | 8 of 23 runs (35%) | 7% | Human |
+
+The samples are small (2 to 23 runs per pattern), so read every rate as an indication. The mix is my estimate, still to confirm with a practitioner (interview requested 11 Oct, no reply yet). The routing itself is a rule, not AI: non-Latin characters, missing fields or more than one port means "human".
+
+| Line | Formula | €/yr |
+|---|---|---:|
+| Time saved (clean invoices only) | 12,600 × (6 − 2) min × €45/60 | 37,800 |
+| Revenue | No revenue effect | 0 |
+| Cost reduction | False-positive reviews unchanged | 0 |
+| Risk mitigation | Risky patterns stay with a human: 0.72 × cost × 0% | 0 |
+| **Gross benefit** | | **37,800** |
+| Redo AI failures on clean invoices | 21% × 12,600 = 2,646 × 6 min × €45/60 | −11,907 |
+| Tokens | €166 × 70% of volume | −116 |
+| Maintenance | Course default | −6,000 |
+| **Net, year 2+** | | **19,777** |
+| Implementation, year 1 only | €15,000 + €8,000 | −23,000 |
+| **Net, year 1** | | **−3,223** |
+| **Payback** | €23,000 ÷ (€19,777 ÷ 12) | **14.0 months** |
+
+**50% pressure test:** benefits halved and costs +50% gives €18,900 − €17,861 − €174 − €9,000 = **−€8,135 a year**. This version fails the test; its margin is thin.
+
+| | Full redesign (AI on all invoices, only adds flags) | Pattern routing (risky types to a human) |
+|---|---|---|
+| Net, year 2+ | €82,033 (€37,033–€127,033) | €19,777 |
+| Payback | 3.4 months | 14.0 months |
+| Depends on the fine? | Partly (€37,033 without it) | No |
+| Survives 50% worse? | Yes (€21,350) | No (−€8,135) |
+| Missed-match risk vs today | Lower, if the AI's flags work | The same as today |
+
+**My recommendation: pilot the pattern-routing version, and run the AI in shadow mode on the risky invoices.** The routing version can't make things worse than today and doesn't rest on any fine estimate. In shadow mode the AI also screens the risky invoices, but its output is only logged, never used. That measures, without risk, whether the AI flags Chinese-script names reliably, which is the condition for moving to the full redesign.
+
+Go/no-go after 3 months:
+- at least 60% of invoices are clean
+- a clean check takes 3 minutes or less
+- zero missed matches
+
+---
+
+*AI disclosure: I used Claude to structure this business case, run the arithmetic and find the enforcement cases and the directive. The assumptions marked (est.), the pattern idea (from the class clinic) and the recommendation are mine.*
