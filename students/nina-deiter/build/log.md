@@ -163,8 +163,10 @@ logged before Week 8 so it can feed your CP2 revision delta.
 
 | | |
 |---|---|
-| Machine(s) I expect to use, and why | — |
-| The artifact I'm aiming for (kiosk face, counter mock, standee…) | — |
+| Machine(s) I expect to use, and why | Laser cutter. I plan to create a wooden laptop stand with an integrated workflow panel, allowing users to interact directly with my AI Feedback-to-Task Assistant. |
+| The artifact I'm aiming for (kiosk face, counter mock, standee…) | An interactive desktop testing station consisting of a raised laptop platform and a front panel displaying the workflow: Enter Design Feedback → AI Analysis → Review Structured Task → Human Approval.
+
+Users will be able to test the tool directly and evaluate whether the AI-generated output helps them understand and organise design feedback more efficiently. |
 | Which weekly session or OPEN block I'll visit for file-prep, and when | — |
 
 **When the artifact exists — the deployment observation (the evidence, not the prop):**
