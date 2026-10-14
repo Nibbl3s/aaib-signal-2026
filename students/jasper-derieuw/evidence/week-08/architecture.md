@@ -46,7 +46,7 @@ Why this one (Week 4 five-criterion filter): it is repetitive (1,500 a month), p
 └───────▲───────────────────────▲──────────────────────▲──────────┘
         │ invoice text           │ JSON (5 fields)       │ name
 ┌───────┴──────── DATA ─────┐ ┌──┴──── AI MODEL ────┐ ┌─┴── SCREENING ────┐
-│ Outlook mailbox (Graph)   │ │ Claude Sonnet 5.5  (L)│ │ Bought service (L)│
+│ Outlook mailbox (Graph)   │ │Claude Sonnet 5.5 (L)│ │ Bought service (L)│
 │ ERP supplier export       │ │ prompt v2, €0.0020  │ │ EU consolidated   │
 │ EU sanctions list (free)  │ │ per check, €38/yr   │ │ list, €1,082/yr   │
 └───────────────────────────┘ │ exit: Gemini 3 Flash│ └───────────────────┘
