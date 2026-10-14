@@ -748,5 +748,26 @@
   "skill": "Value quantification",
   "date": "2026-10-16",
   "url": "posts/viktor-de-ganck-week-04.html"
+ },
+ {
+  "week": 5,
+  "title": "I Asked Three AIs Who Can Screen My Chinese Suppliers. None Named the Company That Files My Customs Declarations.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-14",
+  "url": "posts/jasper-derieuw-week-05.html",
+  "meta": {
+   "week": "5",
+   "title": "I Asked Three AIs Who Can Screen My Chinese Suppliers. None Named the Company That Files My Customs Declarations.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Market mechanism thinking",
+   "date": "2026-10-14",
+   "verdict": "Invisible to the SME that needs it",
+   "stamp": "AI-MARGINAL \u00b7 9/18",
+   "kpis": "0 of 6 | AI answers that named a customs broker ; 9/18 | GEO score for Gaston Schul ; 3 | recommended firms I could not find",
+   "takeaways": "There is no ranking to climb: six answers gave six lists ; Buyers ask with a problem, not a category, and that decides who is named ; Visibility is built on other people's pages, not your own"
+  }
  }
 ]
