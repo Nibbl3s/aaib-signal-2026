@@ -604,6 +604,15 @@
  },
  {
   "week": 3,
+  "title": "AI in Creative Agencies: Real Value or FOMO? Deconstructing monday.com's AI Claims",
+  "author": "Nina Deiter",
+  "beat": "When does AI actually help project managers in creative agencies \u2014 and when does it get in the way?",
+  "skill": "Capability skepticism",
+  "date": "2026-10-03",
+  "url": "posts/nina-deiter-week-03.html"
+ },
+ {
+  "week": 3,
   "title": "Sports Performance: Real Value or FOMO? Deconstructing Zone7's AI Claims",
   "author": "Osama Daoud",
   "beat": "AI in Sports Performance \u2013 Scouting, Player Tracking and Injury Prevention",
@@ -682,15 +691,6 @@
   "skill": "",
   "date": "2026-10-11",
   "url": "posts/levente-sinka-week-03.html"
- },
- {
-  "week": 3,
-  "title": "Week 3",
-  "author": "nina-deiter",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/nina-deiter-week-03.html"
  },
  {
   "week": 3,
