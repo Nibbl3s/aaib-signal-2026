@@ -40,3 +40,7 @@ At what inconsistency rate should a compliance tool be considered unfit for any 
 ---
 
 *AI disclosure: I used Claude to help build and run the test set against my own prompt, to classify the failures using the F1 to F6 taxonomy, and to structure this write up. The decision to test for inconsistency across repeated runs, the choice of the corrupted invoice as a deliberate edge case, and the framework based conclusion were mine.*
+
+---
+
+Full evidence: [borderline cases and decision framework](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-02/week-02-evidence.md) · [Build log](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/build/log.md)

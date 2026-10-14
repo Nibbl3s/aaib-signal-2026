@@ -41,16 +41,21 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 ## Checkpoint 1 — End of Week 4
 
+**Build**
+- **What my tool can do now:** read a shipment invoice, extract supplier, origin, HS code and value, and flag the supplier against a supplied sanctions list; clean invoices are mostly handled correctly.
+- **What it can't do yet:** give the same verdict twice reliably, or safely handle Chinese-script names, unclear origin and corrupted documents.
+- **Which number proves it:** 17 of 24 runs correct (70.8%), 7 of 12 inputs answered differently on a re-run, and 1 of 2 runs missed a sanctioned bank written in Chinese characters.
+
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟢 / 🟡 / 🔴 | |
-| Capability skepticism | 2 | 🟢 / 🟡 / 🔴 | |
-| Vendor claim detection | 3 | 🟢 / 🟡 / 🔴 | |
-| Value quantification | 4 | 🟢 / 🟡 / 🔴 | |
+| Cost literacy | 1 | 🟢 | My Week 1 model priced tokens at €166/yr against ~€450k/yr expected missed-match cost (0.04% of the total), and I later caught and corrected the direction of my own Month-6 breakeven conclusion. |
+| Capability skepticism | 2 | 🟢 | Running my own tool twice on 12 inputs exposed 58% inconsistency and one invented supplier on the "I don't know" test, and the No-AI framework told me AI must not decide alone. |
+| Vendor claim detection | 3 | 🟡 | First pass 9/12 on the Claim Gauntlet; on NexusAI my first tags matched the reveal on 14/16, but I revised six and ended at 8/16, so the Aspiration/Avoidance boundary is where I still drift. |
+| Value quantification | 4 | 🟡 | At its measured rate my Build is net −€358k/yr and would need ≤4.5% false clears (measured 12.5%); after the clinic I replaced my guessed €250k error cost with sourced fines (€50k–€500k) and a pattern-routing pilot (€19.8k/yr) that does not depend on any fine, but its invoice mix is still my estimate. |
 
-**6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
+**6 ECTS — extended evidence:** vendor outreach to ComplyAdvantage and World-Check (no reply; silence documented as a finding); a second test set built from real customs patterns (75% on 8 inputs, exposed the transshipment-origin weakness); Janis's freight set run twice (10/10 consistent, origin missed on 3 inputs); Week 3 follow-up questions to the vendor (0 of 3 answered); practitioner interview requested 11 October (no reply by 14 October).
 
-**Your click:** One sentence — what did you believe in Week 1 that you no longer believe, and what replaced it? That change is the click: it's the proof the cycle moved you. No click = swinging, not thinking.
+**Your click:** In Week 1 I believed the token price was the cost question; now I know the cost of being wrong decides the case, and that I have to measure the tool before I can put a price on it.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
