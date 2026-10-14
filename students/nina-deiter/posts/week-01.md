@@ -3,7 +3,7 @@ week: 1
 title: "Signal Post Week 1 | Cost Literacy | AI costs in creative agencies"
 author: "Nina Deiter"
 beat: "Dein Beat"
-skill: "How, and under what conditions, does generative AI adoption affect productivity and work quality in creative brand agencies?"
+skill: "Capability skepticism"
 date: 2026-09-26
 ---
 
