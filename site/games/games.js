@@ -10,6 +10,8 @@
       help: '<span><kbd>←↑→↓</kbd> / swipe — slide tiles</span><span class="k"><kbd>Z</kbd> undo</span><span>Your game is saved when you close it</span>' },
     snake: { title: 'Snake', file: 'snake.js', ready: true,
       help: '<span><kbd>←↑→↓</kbd> / swipe — steer</span><span><kbd>Space</kbd> / tap — pause</span><span class="k"><kbd>Esc</kbd> — close</span>' },
+        shooter: { title: 'Virus Shooter', file: 'shooter.js', ready: true, board: false,
+      help: '<span><kbd>←</kbd> <kbd>→</kbd> / drag — move</span><span><kbd>Space</kbd> / hold — shoot</span><span class="k"><kbd>P</kbd> — pause</span><span class="k"><kbd>Esc</kbd> — close</span>' },
   };
   const factories = {};
   const loading = {};
@@ -77,7 +79,7 @@
       variant(v) { variant = v; store.text('last-' + id, v); showBest(); showBests(); },
       gameOver(n) {   // the single place every game reports a final score 
         const key = bestKey(id, variant);
-        if (window.SignalBoard) SignalBoard.offer(key, Math.floor(n));   // shows "add to leaderboard" if it's a Top 5 score
+        if (window.SignalBoard && GAMES[id].board !== false) SignalBoard.offer(key, Math.floor(n));   // shows "add to leaderboard" if it's a Top 5 score
         if (better(id, n, store.get(key))) { store.set(key, Math.floor(n)); showBest(); showBests(); return true; }
         return false;
       },
