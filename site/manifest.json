@@ -703,6 +703,27 @@
  },
  {
   "week": 4,
+  "title": "My Sanctions Screening Tool Saves \u20ac30,000 a Year. It Also Loses \u20ac358,000.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Value quantification",
+  "date": "2026-10-14",
+  "url": "posts/jasper-derieuw-week-04.html",
+  "meta": {
+   "week": "4",
+   "title": "My Sanctions Screening Tool Saves \u20ac30,000 a Year. It Also Loses \u20ac358,000.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Value quantification",
+   "date": "2026-10-14",
+   "verdict": "Build it rule-first, not AI-first",
+   "stamp": "PILOT \u00b7 HUMAN FALLBACK",
+   "kpis": "\u20ac30k | time saved a year at the measured rate ; \u2212\u20ac358k | net once missed matches are priced ; \u22644.5% | false clears it would need (measured 12.5%)",
+   "takeaways": "Accuracy is not value: the failure type decides the case ; Let rules decide and AI only add warnings ; Send risky invoice types to a human"
+  }
+ },
+ {
+  "week": 4,
   "title": "Algorithmic Homogenization: Why an Anti-Homogenization AI Tool Yields a Real Business Case",
   "author": "Luna Van der Heyden",
   "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing",
