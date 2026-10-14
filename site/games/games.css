@@ -148,3 +148,5 @@ body.g-open { overflow:hidden; }
 /* ---------- Snake ---------- */
 .snk { width:100%; padding:1rem; display:grid; place-items:center; }
 .snk canvas { width:min(440px,100%); aspect-ratio:1; height:auto; border:2px solid var(--ink); border-radius:10px; touch-action:none; }
+.sht { width:100%; padding:1rem; display:grid; place-items:center; }
+.sht canvas { width:min(380px,100%); aspect-ratio:360/460; height:auto; border:2px solid var(--ink); border-radius:10px; touch-action:none; }
