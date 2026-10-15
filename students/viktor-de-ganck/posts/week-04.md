@@ -4,7 +4,7 @@ title: "AI Sorting Financial News for Advisors: Worth a Pilot, Not Yet a Purchas
 author: "Viktor De Ganck"
 beat: "AI as a retail investor's research desk"
 skill: "Value quantification"
-date: 2026-10-16
+date: 2026-10-12
 ---
 For my Build, I made an AI prompt that sorts financial news. For each news item it gives three labels: what kind of event it is, which assets it affects, and whether it is fact or opinion. In my test, all three labels were right on 9 of 15 real news items (60%). What is that worth in euros? A retail investor has no salary to save, so I priced it for someone paid to read the news: an investment advisor.
 
