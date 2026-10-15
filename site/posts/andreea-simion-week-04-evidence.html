@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · </div>
+<h1>Week 4</h1>
+<div class="byline">andreea-simion · </div>
+<h2>Week 4: Value Quantification — Lab Results &amp; Evidence</h2>
+<p><strong>Author:</strong> Andreea Simion<br />
+<strong>Beat:</strong> The Psychology of AI Adoption in the Workplace[cite: 1]<br />
+<strong>Skill:</strong> Value quantification[cite: 2]<br />
+<strong>Date:</strong> 2026-10-15[cite: 3]  </p>
+<hr />
+<h2>Exercise: Map TechCorp's Value Chain</h2>
+<p>A value chain divides a company's activities into two categories: <strong>Primary activities</strong> (which directly create the product or service) and <strong>Support activities</strong> (which enable the primary activities to happen)[cite: 2, 6]. </p>
+<p>Below is the completed mapping for TechCorp, evaluating AI potential, providing one-sentence reasoning for each "Yes", and identifying the top value-creation opportunities[cite: 2, 6].</p>
+<h3>1. Value Chain Mapping Table</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Activity Type</th>
+<th style="text-align: left;">Department / Process</th>
+<th style="text-align: left;">AI Potential?</th>
+<th style="text-align: left;">Reasoning for "Yes"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primary</strong></td>
+<td style="text-align: left;">Product Development (Engineering, QA, Docs)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can assist developers by reviewing pull requests, generating test cases, and drafting technical documentation[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary</strong></td>
+<td style="text-align: left;">Marketing &amp; Sales (Lead qualification, proposals, CRM)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can automate lead scoring, draft personalized sales proposals from CRM data, and scale content generation[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary</strong></td>
+<td style="text-align: left;">Service Delivery (Cloud platform execution)[cite: 2, 6]</td>
+<td style="text-align: left;">No[cite: 2, 6]</td>
+<td style="text-align: left;">Core cloud infrastructure requires deterministic reliability and uptime rather than generative AI capabilities[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary</strong></td>
+<td style="text-align: left;">Customer Support (Ticket triage, knowledge base)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI excels at text classification to triage repetitive tier-1 tickets and suggest knowledge base articles for agents[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary</strong></td>
+<td style="text-align: left;">Customer Success (Onboarding, churn prevention)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can analyze multi-system customer usage data to surface early churn risk signals for customer success managers[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Support</strong></td>
+<td style="text-align: left;">IT &amp; Security (Access provisioning, helpdesk)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can handle high-volume routine helpdesk queries (like password resets) and assist in filtering security alert noise[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Support</strong></td>
+<td style="text-align: left;">Finance (Invoicing, expenses, AP)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI-driven OCR and data extraction can automate manual invoice entry into SAP and flag expense anomalies[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Support</strong></td>
+<td style="text-align: left;">HR (Resume screening, onboarding, policy Q&amp;A)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can rapidly scan high volumes of incoming resumes against job descriptions and answer repetitive policy questions[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Support</strong></td>
+<td style="text-align: left;">Legal &amp; Compliance (Contract review, GDPR)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can function as an initial redliner to highlight standard contract deviations before human legal counsel reviews them[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Support</strong></td>
+<td style="text-align: left;">Data &amp; Analytics (Reports, dashboards, SQL)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can accelerate reporting workflows by generating SQL queries and drafting recurring dashboard summaries[cite: 2, 6].</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Support</strong></td>
+<td style="text-align: left;">Operations (Vendor management, reporting)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes[cite: 2, 6]</td>
+<td style="text-align: left;">AI can track contract renewal dates across spreadsheets and help compile multi-system internal reports[cite: 2, 6].</td>
+</tr>
+</tbody>
+</table>
+<h3>2. Top 3 Activities Where AI Creates the Most Value</h3>
+<p>Based on volume, repetition, and cost impact, the three strongest AI opportunities at TechCorp are[cite: 2, 6]:</p>
+<ul>
+<li><strong>Customer Support (Ticket Triage &amp; Response Drafting):</strong> Support agents handle 4,200 tickets per month with a 14-hour average response time, and 30% of queries are repetitive "how-to" questions[cite: 2, 6]. Automating classification and drafting frees up significant agent hours[cite: 2, 6].</li>
+<li><strong>Finance (Invoice Processing &amp; AP Data Entry):</strong> The accounts payable team processes 600 invoices monthly manually at 15 minutes per invoice, suffering a 12% error rate[cite: 2, 6]. Automating data extraction directly eliminates heavy administrative labor and costly manual errors[cite: 2, 6].</li>
+<li><strong>Marketing &amp; Sales (Proposal Generation &amp; Lead Workflow):</strong> Sales reps spend 6 hours per week on administrative work rather than selling, and proposal turnaround takes 3 days, causing prospects to churn[cite: 2, 6]. Accelerating proposals directly impacts top-line revenue[cite: 2, 6].</li>
+</ul>
+<hr />
+<h2>Check Your Understanding</h2>
+<ul>
+<li><strong>What's the difference between a primary activity and a support activity in a value chain?</strong> Primary activities are the core operational steps that directly create, deliver, and service the product or service that the customer pays for (such as product development, sales, and customer support)[cite: 2, 6]. Support activities, on the other hand, are the background organizational functions that enable those primary activities to happen smoothly (such as IT, finance, HR, and legal compliance)[cite: 2, 6].</li>
+<li><strong>Why did you mark some activities as "No" for AI potential? What was your reasoning?</strong> Activities like core cloud service delivery were marked as "No" because they require deterministic reliability, strict uptime, and absolute system stability rather than probabilistic generative AI capabilities[cite: 2, 6]. Similarly, high-level executive strategic planning and product roadmap decisions require human empathy, relationship-building, and market intuition, making them fundamentally incompatible with automated AI decision-making[cite: 2, 6].</li>
+<li><strong>Which of Week 2's lessons (capability skepticism) influenced your assessment?</strong> Capability skepticism influenced the assessment by establishing that AI should be kept away from high-stakes or non-error-tolerant tasks (like autonomous hiring decisions or independent legal risk determination)[cite: 2, 6]. Specifically, Week 2's lessons dictate that where the cost of being wrong is catastrophic or where human judgment and auditability are legally and ethically required (such as HR screening or legal contract review), AI must function strictly as a supportive assistant rather than an independent decision-maker[cite: 2, 6].</li>
+</ul>
+<hr />
+<h2>Exercise: Apply the 5-Criterion Framework to TechCorp</h2>
+<p>This exercise filters the strongest AI candidates from the value chain map through the five criteria: <strong>Repetitive</strong>, <strong>Pattern-based</strong>, <strong>Error-tolerant</strong>, <strong>Cost-justifiable</strong>, and <strong>Verifiable</strong>[cite: 2, 6]. </p>
+<h3>5-Criterion Candidate Filter Table</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Process</th>
+<th style="text-align: left;">Repetitive?</th>
+<th style="text-align: left;">Pattern-based?</th>
+<th style="text-align: left;">Error-tolerant?</th>
+<th style="text-align: left;">Cost-justifiable?</th>
+<th style="text-align: left;">Verifiable?</th>
+<th style="text-align: left;">Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Support ticket sorting[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (daily)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (text classification)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (agent reviews)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (4,200 tickets/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (resolution time, CSAT)[cite: 2, 6]</td>
+<td style="text-align: left;">Strong[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Invoice processing[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (600/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (data extraction)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (AP reviews)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (15 min × 600 = 150 hrs/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (error rate, processing time)[cite: 2, 6]</td>
+<td style="text-align: left;">Strong[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resume screening[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (300/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (text matching)[cite: 2, 6]</td>
+<td style="text-align: left;">Partially (bias risk)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (15 hrs/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Partially (hire quality is subjective)[cite: 2, 6]</td>
+<td style="text-align: left;">Risky — guardrails needed[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Marketing content[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (weekly)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (format generation)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (editor reviews)[cite: 2, 6]</td>
+<td style="text-align: left;">Medium (time saved is real but output is 4 posts/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (engagement metrics)[cite: 2, 6]</td>
+<td style="text-align: left;">Strong[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Code review[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (120 PRs/week)[cite: 2, 6]</td>
+<td style="text-align: left;">Partially (pattern but context-specific)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (developer reviews)[cite: 2, 6]</td>
+<td style="text-align: left;">High (120 × 3 hrs = 360 hrs/week across team)[cite: 2, 6]</td>
+<td style="text-align: left;">Partially (bug catch rate)[cite: 2, 6]</td>
+<td style="text-align: left;">Risky — needs human review[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contract review[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (25/quarter)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (text analysis)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (lawyer reviews)[cite: 2, 6]</td>
+<td style="text-align: left;">Medium (25 × 4 hrs = 100 hrs/quarter)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (flagged clauses vs. actual risks)[cite: 2, 6]</td>
+<td style="text-align: left;">Risky — lawyer decides[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Churn detection[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (continuous)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (data patterns)[cite: 2, 6]</td>
+<td style="text-align: left;">Partially (false positive annoy CSMs)[cite: 2, 6]</td>
+<td style="text-align: left;">High (8% churn × €43,200/customer)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (churn rate, save rate)[cite: 2, 6]</td>
+<td style="text-align: left;">Risky — needs CSM judgment[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Report generation[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (50/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (SQL + data patterns)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (analyst reviews)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (50 × 2 hrs = 100 hrs/month)[cite: 2, 6]</td>
+<td style="text-align: left;">Yes (accuracy vs. manual)[cite: 2, 6]</td>
+<td style="text-align: left;">Strong[cite: 2, 6]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Activity 1: The Clinic — Self-Diagnostic &amp; Build Diagnosis</h2>
+<h3>Step 1: Self-Diagnosis</h3>
+<p>Looking across the six diagnostic patterns, my Build most critically aligns with:</p>
+<ul>
+<li><strong>Pattern 6: Accuracy $\neq$ value</strong> (<em>"My tool works. I still can't say what it's worth to anyone."</em>)[cite: 2, 6]</li>
+<li><strong>Pattern 1: No formula</strong> (<em>"I know it saves time sorting employee feedback, but I can't turn that into a defensible number."</em>)[cite: 2, 6]</li>
+</ul>
+<p><em>Context from my GitHub Build:</em> My HR AI Sentiment Classifier achieved a 70% pass rate across 10 test inputs, with specific failure tags identified (F1 wrong, F2 fabricated, F6 inconsistent)[cite: 1, 2, 6]. While I know the accuracy metrics, I needed to convert these test results and error rates into a rigorous financial business case[cite: 2, 6].</p>
+<h3>Step 2 &amp; 3: The Clinic Fix (Quantifying My Build)</h3>
+<ol>
+<li><strong>Current Baseline (Manual HR State):</strong></li>
+</ol>
+<ul>
+<li><strong>Volume:</strong> An enterprise HR department receives roughly 300 unstructured employee feedback comments per month[cite: 2, 6].</li>
+<li><strong>Current Cost:</strong> An HR recruiter manually reads and categorizes each comment (5 minutes per comment × 300 = 1,500 minutes = 25 hours/month)[cite: 2, 6].</li>
+<li><strong>Loaded Hourly Rate:</strong> €44/hour for an HR recruiter (Belgian market rate)[cite: 2, 6].</li>
+<li>
+<p><strong>Total Current Manual Cost:</strong> 25 hours × €44 = €1,100/month (€13,200/year)[cite: 2, 6].<br />
+2. <strong>The AI Benefit (Time Saved):</strong></p>
+</li>
+<li>
+<p><strong>With AI:</strong> The tool classifies comments instantly, and HR personnel only spot-check or review edge cases (reducing sorting time to 1 minute per comment)[cite: 2, 6].</p>
+</li>
+<li><strong>New Time:</strong> 300 comments × 1 min = 300 minutes = 5 hours/month[cite: 2, 6].</li>
+<li><strong>Time Saved:</strong> 25 − 5 = 20 hours/month saved (240 hours/year)[cite: 2, 6].</li>
+<li>
+<p><strong>Annual Value (Time Saved):</strong> 240 hours × €44/hr = €10,560/year[cite: 2, 6].<br />
+3. <strong>Factoring in Measured Error Costs (Week 2 &amp; 4 Link):</strong></p>
+</li>
+<li>
+<p>In my test logs, the tool has a 30% failure/error rate (90 misclassified comments per month)[cite: 1, 2, 6].</p>
+</li>
+<li>An HR manager spends 3 minutes correcting each misclassification (90 × 3 min = 270 minutes = 4.5 hours/month)[cite: 2, 6].</li>
+<li>
+<p><strong>Correction Cost:</strong> 4.5 hours × €44/hr = €198/month (€2,376/year)[cite: 2, 6].<br />
+4. <strong>Subtracting AI Costs (Week 1 Cost Literacy):</strong></p>
+</li>
+<li>
+<p><strong>Token Cost:</strong> Negligible for 300 text prompts per month (under €5/year)[cite: 1, 2, 6].</p>
+</li>
+<li>
+<p><strong>Implementation/Setup:</strong> Estimated at a one-time cost of €500 for initial prompt tuning[cite: 2, 6].<br />
+5. <strong>Net Benefit Summary:</strong></p>
+</li>
+<li>
+<p><strong>Gross Benefit (Time Saved):</strong> €10,560/year[cite: 2, 6]</p>
+</li>
+<li><strong>Less Error Correction Cost:</strong> −€2,376/year[cite: 1, 2, 6]</li>
+<li><strong>Less AI Cost (Year 1):</strong> −€505/year[cite: 2, 6]</li>
+<li><strong>Net Benefit (Year 1):</strong> <strong>€7,729/year</strong>[cite: 2, 6]</li>
+</ul>
+<hr />
+<h2>Activity 2: Cross-Pollination — Summary &amp; Collective Patterns</h2>
+<ul>
+<li><strong>Format &amp; Purpose:</strong> One representative per diagnostic cluster shares their group's pattern and fix in 90 seconds[cite: 2, 6]. This allows students to gather fixes for all six clinic bottlenecks[cite: 2, 6].</li>
+<li><strong>Key Value-Side Patterns Collected:</strong><br />
+  1. <em>The "Time Saved" Trap:</em> Never assume gross hours saved equal cut headcounts; frame time savings as <em>capacity unlocked</em> for higher-value work[cite: 2, 6].<br />
+  2. <em>The Hidden Cost of Error Correction:</em> Every error rate carries a downstream labor cost that must be subtracted from the business case[cite: 1, 2, 6].<br />
+  3. <em>Token Costs vs. Overhead Reality:</em> Token bills are noise; real expenses are setup, ongoing maintenance (20–30% of setup), and human oversight labor[cite: 2, 6].</li>
+</ul>
+<hr />
+<h2>Activity 3: Quantify Your Own Build — In-Depth Business Case</h2>
+<h3>Consolidated Benefit Quantification Table</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Benefit Category</th>
+<th style="text-align: left;">Current State</th>
+<th style="text-align: left;">With AI</th>
+<th style="text-align: left;">Annual Value (€)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Time saved</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">25 hrs/month at €44/hr[cite: 2, 6]</td>
+<td style="text-align: left;">5 hrs/month[cite: 2, 6]</td>
+<td style="text-align: left;">€10,560 / year[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Revenue increase</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">—[cite: 2, 6]</td>
+<td style="text-align: left;">—[cite: 2, 6]</td>
+<td style="text-align: left;">€0[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost reduction</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">€0 / year[cite: 2, 6]</td>
+<td style="text-align: left;">€0 / year[cite: 2, 6]</td>
+<td style="text-align: left;">€0[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Risk mitigation</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">5% × €10,000 × 30%[cite: 2, 6]</td>
+<td style="text-align: left;">Early HR alert buffer[cite: 2, 6]</td>
+<td style="text-align: left;">€150 / year[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GROSS BENEFIT</strong>[cite: 2, 6]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>€10,710 / year</strong>[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Less: AI Cost (Year 1)</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">Tokens (€5) + Setup (€500) + Maint (€100) + Error Correction (€2,376)[cite: 1, 2, 6]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>−€2,981 / year</strong>[cite: 1, 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NET BENEFIT (Year 1)</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">Gross Benefit minus Year 1 Costs[cite: 2, 6]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>€7,729 / year</strong>[cite: 2, 6]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Payback Period</strong>[cite: 2, 6]</td>
+<td style="text-align: left;">One-time setup (€500) ÷ Monthly Net Benefit (€644.08)[cite: 2, 6]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>0.8 months</strong>[cite: 2, 6]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Capstone Checkpoint 1: Scenario Lock</h2>
+<ol>
+<li><strong>The company:</strong> TechCorp Belgium (a mid-sized B2B SaaS company headquartered in Ghent with 500 employees)[cite: 2, 6].</li>
+<li><strong>The decision:</strong> Should TechCorp implement an automated AI sentiment classifier to monitor employee feedback channels across Slack and Teams, or rely exclusively on quarterly manual HR pulse surveys?[cite: 2, 6]</li>
+<li><strong>The reader:</strong> Chief Human Resources Officer (CHRO)[cite: 2, 6].</li>
+<li><strong>Why it matters:</strong> If they get this wrong and deploy an intrusive monitoring tool, it will trigger severe change fatigue, data privacy distrust, and an increase in employee turnover costing the company upwards of €50,000 in recruitment and lost productivity[cite: 2, 6].</li>
+<li><strong>What I still need to find out:</strong> The exact volume of weekly unstructured feedback across multi-language channels (FR/NL/EN) and the true tolerance threshold of employees regarding automated sentiment tracking[cite: 2, 6].</li>
+</ol>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
