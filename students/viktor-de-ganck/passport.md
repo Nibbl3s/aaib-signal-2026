@@ -50,11 +50,11 @@ Evidence anchors the rating in something real. It is also what your instructor v
 | Cost literacy | 1 | 🟡 | I priced my research desk at €0.49 to €4.10 a month from the course price list and found that data access and wrong answers cost more than tokens, but in Week 4 I could not source my implementation costs, so those lines stay (est.). |
 | Capability skepticism | 2 | 🟡 | I measured my news classifier at 9 of 15 items fully correct and caught that it labelled an opinion item as fact, but 15 short items is too small a test to know its real rate. |
 | Vendor claim detection | 3 | 🔴 | I tagged five of Perplexity's finance claims as fact, aspiration or avoidance, and found that spotting a false or exaggerated claim is hard because it depends on phrasing rather than anything checkable; I did not test any claim myself. |
-| Value quantification | 4 | 🟡 | My Week 4 memo prices the news briefing with a formula behind every line and shows it only breaks even (€321 in Year 1) at the 60% I measured, but hours saved, licence and failure rates are still my estimates. |
+| Value quantification | 4 | 🟡 | My Signal post 4 prices my Build for a composite 8-advisor wealth manager with a formula behind every line: at my measured 60% Year 1 loses EUR 1,882, it breaks even at 73% and pays back in 10.5 months at 80%; time spent on news is still my estimate. |
 
 **6 ECTS, extended evidence:** not applicable (4 ECTS track).
 
-**Your click:** In Week 1 I assumed an AI news tool would be right 80 to 100% of the time; now I believe the measured error rate decides the whole case, because at 60% accuracy the time saved is almost cancelled by the cost of mistakes.
+**Your click:** In Week 1 I assumed an AI news tool would be right 80 to 100% of the time; now I believe the measured error rate decides the whole case, because at 60% accuracy the tool loses money in Year 1, and 20 percentage points of accuracy decide the whole investment.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
