@@ -12,10 +12,10 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 | # | Skill | Rating | Evidence |
 |---|-------|--------|----------|
-| 1 | Cost literacy | — | |
-| 2 | Capability skepticism | — | |
-| 3 | Vendor claim detection | — | |
-| 4 | Value quantification | — | |
+| 1 | Cost literacy | 🟡 | I got the Euroshop exercise almost completely right.|
+| 2 | Capability skepticism | 🟡 | The Frame exercise went well.|
+| 3 | Vendor claim detection | 🔴 | The 16 claims detection exercise didn't go well. |
+| 4 | Value quantification | 🟡 | Value quantification of my beat. |
 
 ## Checkpoint 2 — end of Week 8
 
