@@ -1,4 +1,5 @@
-The €44/Hour Resume Trap: Quantifying AI ROI in High-Volume Retail Recruitment
+**The €44/Hour Resume Trap: Quantifying AI ROI in High-Volume Retail Recruitment**
+
 Buying AI for hiring often sounds great in sales pitches, but companies cannot bank on vague promises of efficiency. Without real numbers, buying AI becomes a risky choice driven by fear of missing out. By using hard math on AI resume screening, we can find the real financial return and spot the hidden costs before spending any money.
 Our test case is automated resume screening for store and warehouse jobs at Colruyt Group, one of Belgium's largest private employers. This process sits in the HR and hiring support team. Currently, HR staff manually read thousands of applications a year to check basic skills and enter data into their hiring system (SAP SuccessFactors). Because this work is repetitive and follows set patterns, it is a great candidate for AI assistance, as long as humans make the final decisions.
 To see if AI makes financial sense, we first look at human costs. Recruiters handle about 300 resumes a month, taking 3 minutes per resume. That adds up to 180 hours a year. In Belgium, a recruiter costs about €44 an hour (including salary, taxes, and office costs). That means manual screening costs €7,920 per year for every 300 monthly resumes.
