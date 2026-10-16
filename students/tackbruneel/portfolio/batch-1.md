@@ -18,7 +18,7 @@
 
 ## Contribution (critique I gave)
 
-- Week 3: test-set swap in class: *to fill in (partner, what broke in their prompt with my inputs, what I told them).*
-- Week 4: memo peer review as the "skeptical CEO": *to fill in.*
+- Week 3: test-set swap in class: not recorded. I kept no notes during the swap, so I'm not reconstructing the partner's results after the fact.
+- Week 4: memo peer review as the "skeptical CEO": the in-class review isn't recorded either. Before handing in, I ran the same five CEO questions on my own memo ([week-04/memo.md](../week-04/memo.md), "Review" table). That led to three changes: error cost became its own line, the urgent-ticket risk got a top-50 rule, and the ask went from a full rollout to a pilot with a go/no-go.
 
 *AI use: Claude drafted much of the weekly work linked here; every file carries its own disclosure line.*
