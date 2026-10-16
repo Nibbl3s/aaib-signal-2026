@@ -189,6 +189,29 @@ product is "LLM for layer, rule for exposure", and the Engine already holds the 
 | v1 | 2026-09-25 | 15 x 2 (scored set) | 46.67% | 73.33% | 60.0% | 0 | 0 (undetectable, temp 0) |
 | v1, as first run | 2026-09-25 | 16 x 2 | 43.75% | 75.0% | 56.25% | 0 | 0 (undetectable, temp 0) |
 
+## Interface and scored-set verification, 2026-10-16
+
+The app now uses the same 15 active inputs as the documented scored set. T13 remains in the original case list and both historical runs remain visible, marked "Retired, not scored". The test button is configured for 15 inputs x 2 passes, or 30 calls.
+
+The summary has explicit loading and error states. Accuracy and failure counts use active v1 test inputs, excluding T13 and the ad-hoc smoke test. Scored API cost is displayed separately from total retained-history spending.
+
+Verified in the browser and API responses:
+
+| Check | Result |
+|---|---|
+| Active test cases | 15, excluding T13 |
+| Scored historical calls | 30, covering 15 unique inputs |
+| Exact match | 46.67% (14/30 calls, 7/15 unique inputs) |
+| Layer correct | 73.33% (22/30) |
+| Exposure correct | 60.0% (18/30) |
+| Scored failure counts | F1: 8; F3: 8; F2, F4, F5 and F6: 0 observed |
+| Scored tokens and API cost | 16,748 tokens; EUR 0.019444, displayed as EUR 0.0194 |
+| Full retained history | 33 calls: 30 active scored calls, 2 retired T13 calls, 1 ad-hoc smoke test |
+| Full retained spending | 18,420 tokens; EUR 0.021346 |
+| Build verification | App build passed |
+
+No model calls were made during this correction. No prompt, expected answer, raw output or database run was changed or deleted. This is a reporting and interface correction, not a new measurement or an improvement in classification performance. Both original passes were identical; zero observed F6 does not establish consistency across wording or sampling conditions.
+
 ## Deployment probe
 
 **Plan rows:**
