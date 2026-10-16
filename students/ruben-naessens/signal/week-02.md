@@ -1,0 +1,19 @@
+# Week 2 Signal — The Best Recruitment AI Decision May Be Not to Use AI
+
+*Draft Signal post — verify and personalise before publishing.*
+
+The temptation in recruitment is to put AI everywhere. A model that turns multilingual vacancies into structured requirements sounds useful. My project began with exactly that idea: a prompt that reads a vacancy and returns mandatory and preferred qualifications as JSON. But Week 2 forced me to ask a more useful question: which part of this workflow actually needs AI?
+
+Consider a vacancy that states: “A valid forklift certificate is mandatory.” Once that requirement has been extracted and verified, checking whether an applicant has the required certificate is not a language-generation problem. It is a rule: certificate verified, yes or no. A simple database field and deterministic check are easier to audit, cheaper to run, and more predictable than asking a language model to make the same decision. The model might infer a certificate without evidence. That is not intelligence adding value; it is extra uncertainty.
+
+The harder problem comes one step earlier. Recruiters receive inconsistent job descriptions: “Dutch is essential,” “French would be useful,” “three years preferred,” or qualifications scattered across a paragraph.  Here, a language model may help because the task involves interpreting wording, negation and context. My first prompt separates mandatory from nice-to-have requirements and sorts them into education, experience, technical skills and languages. It also instructs the model not to invent qualifications. Instructions are not proof of reliability.
+
+I applied five questions to the extraction idea. First, the business problem is repetitive reading and re-entry, not a need for AI itself. Second, structured application forms, ATS fields and rule-based parsing can solve many straightforward cases. Third, language models become relevant when requirements are buried in unstructured or multilingual text. Fourth, mistakes are asymmetric: a formatting error costs time, but turning a preferred qualification into a mandatory one could wrongly narrow the candidate pool. Fifth, value depends on measured time saved *after* human review, error correction and operating costs.
+
+That leads to a deliberately limited design. The AI proposes a structured draft; a recruiter checks the original wording; only verified requirements enter the screening workflow. I would not let the model automatically reject candidates. I would also keep an ordinary rules engine for checks against explicit, verified criteria. The key is knowing where interpretation ends and validation begins.
+
+My Week 2 test plan reflects that distinction. Before running the prompt, I need expected answers for 10–15 real vacancies, including difficult cases such as “either/or” requirements, training offered by the employer, negation and multilingual wording. Each output should be logged and errors classified, especially mandatory/preferred swaps. A separate practitioner-sourced set is important because examples I write myself may accidentally match the assumptions built into my prompt. A high score on easy examples would be reassurance, not evidence.
+
+The no-AI winner in my recruitment workflow is therefore **verification of explicit, structured eligibility criteria**. The potential AI winner is **draft extraction from messy vacancy text**, provided it beats a simpler baseline and survives real testing. I do not yet have measured success rates to claim that it does. My current position is a hypothesis with a falsifiable test, not a product pitch. If the model creates more review work than it saves, the right business decision is to leave it out.
+
+*AI disclosure: I used ChatGPT to structure and draft this post. The project focus comes from my existing qualification-extraction prompt. Test results and practitioner evidence have not yet been collected or claimed.*
