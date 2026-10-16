@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · </div>
+<h1>Week 4</h1>
+<div class="byline">lander-rutten · </div>
+<p>The €44/Hour Resume Trap: Quantifying AI ROI in High-Volume Retail Recruitment<br />
+Buying AI for hiring often sounds great in sales pitches, but companies cannot bank on vague promises of efficiency. Without real numbers, buying AI becomes a risky choice driven by fear of missing out. By using hard math on AI resume screening, we can find the real financial return and spot the hidden costs before spending any money.<br />
+Our test case is automated resume screening for store and warehouse jobs at Colruyt Group, one of Belgium's largest private employers. This process sits in the HR and hiring support team. Currently, HR staff manually read thousands of applications a year to check basic skills and enter data into their hiring system (SAP SuccessFactors). Because this work is repetitive and follows set patterns, it is a great candidate for AI assistance, as long as humans make the final decisions.<br />
+To see if AI makes financial sense, we first look at human costs. Recruiters handle about 300 resumes a month, taking 3 minutes per resume. That adds up to 180 hours a year. In Belgium, a recruiter costs about €44 an hour (including salary, taxes, and office costs). That means manual screening costs €7,920 per year for every 300 monthly resumes.<br />
+Using an AI screening tool drops the review time from 3 minutes down to 30 seconds per resume, saving 150 hours a year. This creates four main financial benefits. First, saved staff time is worth €6,600 a year (150 hours multiplied by €44 an hour). Second, faster replies stop top candidates from taking other jobs, saving 2 extra hires a year worth €7,000. Third, better screening stops managers from wasting 60 hours an hour on bad interviews, saving €2,250 a year. Fourth, hiding personal details reduces discrimination risks, worth about €300 a year in risk protection. Totaled together, the gross yearly benefit is €16,150.<br />
+To find the real profit, we must subtract the costs and errors. Year 1 setup and maintenance cost €4,245 (including €45 for AI usage, €3,000 for setup, and €1,200 for software updates). Additionally, if the AI is 85% accurate, it will make mistakes on 15% of applications (540 resumes a year). Fixing those mistakes costs €5 per error, adding €2,700 in manual fix costs. Subtracting both setup costs (€4,245) and error costs (€2,700) from the total benefits (€16,150) leaves a clean Year 1 profit of €9,205. The €3,000 setup cost pays for itself in just 3 months.<br />
+Vendor pitches always assume AI works perfectly, so we tested a worst-case scenario where benefits are 50% lower than expected. Under this heavy discount, total benefits fall to €8,075. Fixed setup costs stay at €4,245, while error costs drop to €1,350. The project still makes a profit of €2,480 in Year 1 and pays for itself in under 9 months.<br />
+Using real numbers changes the AI conversation from hype to simple arithmetic. AI usage fees are tiny (€45 a year), while staff time and error costs drive the real economics. The key lesson for business leaders is that AI screening is not about replacing HR staff, but about freeing expensive human hours for important candidate conversations. A business case built on formulas easily stands up to executive scrutiny.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
