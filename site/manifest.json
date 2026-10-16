@@ -721,6 +721,15 @@
  },
  {
   "week": 4,
+  "title": "My Classifier Costs Almost Nothing to Run. Using It Still Loses Money.",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Value quantification",
+  "date": "2026-10-16",
+  "url": "posts/daniel-stefirta-week-04.html"
+ },
+ {
+  "week": 4,
   "title": "81% Accurate and Barely Worth It. The Price of a Hidden Complaint",
   "author": "Guillaume Vandenweghe",
   "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
