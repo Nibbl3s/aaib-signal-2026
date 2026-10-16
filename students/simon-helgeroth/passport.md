@@ -13,56 +13,24 @@ track: "6 ECTS"
 
 ---
 
-## How to Rate Yourself
-
-| Level | Meaning | The honest test |
-|-------|---------|-----------------|
-| 🟢 **Confident** | I can do this without help | *Could I explain it to a colleague and answer their follow-up?* |
-| 🟡 **Getting there** | I can do this with the framework in front of me | *I need to look things up, but I get it.* |
-| 🔴 **Need practice** | Not there yet | *I would struggle if asked to do this cold.* |
-
-🟡 is the most common honest rating and the most useful one. A passport that is all 🟢 tells your instructor nothing except that you have not calibrated yet.
-
-## Evidence: One Sentence, Something You Actually Did
-
-| Good | Not good |
-|------|----------|
-| "I caught 4 of 5 hallucinations in the Week 2 lab" | "I think I'm good at this" |
-| "My Week 4 memo priced all three candidates with formulas" | "I understand ROI" |
-| "I found 3 attack surfaces in my own Week 8 design" | "I got a good mark" |
-
-Evidence anchors the rating in something real. It is also what your instructor validates or challenges — and that conversation is the point of the passport.
-
-## Start Each Checkpoint With Your Build
-
-Before you rate anything, answer three questions about your Build, one line each:
-
-1. **What can your tool do now?**
-2. **What can't it do yet?**
-3. **Which number proves it?** An error rate, a cost per run, a score on your test set, and what you measured it on.
-
-A rating is easy to fill in without thinking. A line that hangs on a number you measured is not. Use your answers as raw material for the Evidence column: several skills can point straight at them.
-
----
-
 ## Checkpoint 1 — End of Week 4
 
-**Your Build, right now** (one line each):
+**Your Build, right now** 
 
-- What can your tool do now?
-- What can't it do yet?
-- Which number proves it?
+- What can your tool do now? My tool can extract information from job ads and leave an output on the information it contains.
+- What can't it do yet? It can't successfully get it right every time and will leave different answers on the same ads.
+- Which number proves it? The fact that it only got it right on 30% shows that it needs more work.
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟢 / 🟡 / 🔴 | |
-| Capability skepticism | 2 | 🟢 / 🟡 / 🔴 | |
-| Vendor claim detection | 3 | 🟢 / 🟡 / 🔴 | |
-| Value quantification | 4 | 🟢 / 🟡 / 🔴 | |
+| Cost literacy | 1 |🟡|My week 1 post explains the yearly cost for tokens but shows that it does not answer the costs of errors that human agents must fix.   |
+| Capability skepticism | 2 |🔴 |I caught 3/7. I still find it difficult to pinpoint why.|
+| Vendor claim detection | 3 |🟡|I successfully tagged a lot of claims in the NexusAI table, but I still struggle to differentiate between verifiable metrics and vague marketing phrasing.|
+| Value quantification | 4 |🔴 |I could do the calculations for the TechCorp case, but I struggled to attach a concrete value estimate to my own Build today because it's difficult when you don’t have all the baseline numbers.|
 
-**6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
+**6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)* Since I did my build on published ads I did not run my build on more on other test sets. For Week 3 I got one response which changed my view a little since I went from no to pilot. For Week 4, I did not manage to get an interview. 
 
-**Your click:** One sentence — what did you believe in Week 1 that you no longer believe, and what replaced it? That change is the click: it's the proof the cycle moved you. No click = swinging, not thinking.
+**Your click:** In Week 1 I believed the token bill was the full cost of AI and trusted vendor claims, but I now realize the true cost includes human error correction and that vendor promises must be strictly verified
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
