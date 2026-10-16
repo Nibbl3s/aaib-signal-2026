@@ -110,9 +110,9 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 
 | | |
 |---|---|
-| Machine(s) I expect to use, and why | Still thinking |
-| The artifact I'm aiming for (kiosk face, counter mock, standee…) | Still thinking |
-| Which weekly session or OPEN block I'll visit for file-prep, and when | Still thinking |
+| Machine(s) I expect to use, and why | Laser cutting and how to draw in 2D to make my artifact|
+| The artifact I'm aiming for (kiosk face, counter mock, standee…) | wooden plate to show at a kiosk. The plate explains the tool! |
+| Which weekly session or OPEN block I'll visit for file-prep, and when | Friday 23/10, 9.30 - 12.30 |
 
 **When the artifact exists — the deployment observation (the evidence, not the prop):**
 
