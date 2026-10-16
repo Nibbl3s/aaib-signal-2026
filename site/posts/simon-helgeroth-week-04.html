@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · </div>
+<h1>Week 4</h1>
+<div class="byline">simon-helgeroth · </div>
+<h2>From Proofreader to Decision Maker: Scaling Job Ad Quality</h2>
+<p>In high-volume staffing, checking job ads before publishing is a slow manual chore. Publishing hundreds of job postings every month creates a risk of vague wording, missing deadlines, and confusing requirements that turn good applicants away. Showing the financial ROI of an automated ad reviewer shows how staffing companies can publish faster without letting quality slip.</p>
+<p>An LLM-based ad auditor can be built straight into the publishing system. Instead of writing ads from scratch, the AI works as a quick filter. Before any ads go live, the AI scans them against a checklist covering for example application deadlines, work location, and required skills etc. It flags any unclear wording for the recruiter or publishing coordinator to quickly fix before hitting publish. This sits at the end of the process, right before ads go live on job boards.</p>
+<p>Academic Work Sweden publishes 334 job ads per month, which equals 4,008 ads per year. Looking at this across four benefit areas gives a clear financial case. For direct time savings, a recruiter costs €44 per hour fully loaded. Reading and cross-checking an ad manually takes about 10 minutes, which equals 668 hours or €29,392 per year.</p>
+<p>With AI pre-screening, the recruiter only spends about 2 minutes reviewing flagged items. Saving 8 minutes per ad across 4,008 ads equals 534.4 hours saved per year. Multiplying 534.4 hours by €44 per hour gives €23,514 per year in direct time savings.</p>
+<p>Faster review could get job ads live sooner, which might fill roles a little earlier. I do not have data on how much sooner ads are filled, so I set this to €0 in this case. This is because the effect is hard to prove.</p>
+<p>For risk mitigation, fixing vague requirements like several years of experience might stop unqualified applications and keep good candidates interested. I do not have data on how many ads have this problem, so the value is also set at €0. For capacity expansion, recruiters could handle more ads without extra staff, but this is already counted in the direct time savings. It would only add value if ad volume grows and the review would otherwise require a new hire, so I set this at €0 as well. This brings total gross benefits to €23,514 per year.</p>
+<p>Calculating the AI cost using the course standard rate of $2.00 for input and $12.00 for output per million tokens, with an exchange rate of $1.00 to €0.92, shows very low running costs. Using 2,500 input tokens and 500 output tokens per ad audit, the yearly input is 10.02 million tokens ($20.04) and yearly output is 2.004 million tokens ($24.05). Converting this combined $44.09 to euros gives an API running cost of €41 per year. Adding a one-time build cost of €8,000 for system setup and prompt testing, plus €2,500 per year for prompt maintenance, brings total Year 1 costs to €10,541, and ongoing costs to €2,541 per year.</p>
+<p>Subtracting the Year 1 cost of €10,541 from the gross benefit of €23,514 leaves a Year 1 net benefit of €12,973. Dividing the initial €8,000 build cost by the monthly savings of €1,959.50 gives a payback period of 4.1 months.</p>
+<p>To pressure-test these numbers, imagine the estimates are 50% off. Time saved drops to 4 minutes per ad, and the build cost jumps by 50% to €12,000. Under this stress test, annual savings drop to €11,757 and Year 1 costs rise to €14,541. This creates a small first-year loss of -€2,784. However, the payback period becomes 12.2 months, meaning the project breaks even at 12 months and generates pure profit in Year 2.</p>
+<p>The main takeaway is that API token costs for simple text checks are tiny (€41 per year for over 4,000 ads). The real investment is in setting up the system and keeping the guidelines updated. The true value comes from turning recruiters from manual proofreaders into quick decision-makers, saving over 500 hours a year while ensuring every job ad is clear and compliant.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
