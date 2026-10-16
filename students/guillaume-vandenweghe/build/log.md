@@ -20,7 +20,7 @@
 
 ## Run setup
 
-- **Model and version:** Claude Opus 5.5 · **Interface:** Claude chat · **Date of runs:** _____
+- **Model and version:** Claude Opus 5.5 · **Interface:** Claude chat · **Date of runs:** 2026-10-05
 - **Method (deviation from one email per chat, disclosed):** prompt v1 was used unchanged, with all 12 emails in one message and the instruction to classify each email separately. Run A and Run B were two separate new chats with exactly the same message. The model also returned a summary table, which is what is logged below.
 - The expected answers were committed in `test-set.md` before the runs and were not in the message sent to the model.
 
@@ -96,3 +96,42 @@ A real complaint sorted as something else. In this test that happened in #10: an
 **Change planned for prompt v2 (not made yet):** none from this input. Prompt v2 will focus on the COMPLAINT boundary found in Week 2: first decide whether my rule 2 or my expected answers are wrong, then change only that.
 
 **Updated total (Week 2 + swap):** 10 correct out of 13 inputs → 77%.
+
+## Week 4 — value estimate (what my measured rate is worth)
+
+**Self-diagnostic pattern:** 4, guessed error cost. My result depends on the cost of a hidden complaint, and that number is an estimate.
+
+Rates use run level: 26 runs (13 inputs × 2). 21 of 26 correct = 81% (strict, both runs right: 75%). Non-complaint runs: 16/16 correct. Complaint runs: 10, of which 5 correct, 3 → UNCLEAR (a human still sees them), 2 → CLAIM_FOLLOWUP (hidden complaint, #10 in both runs).
+
+| Line | Value | Formula / source |
+|---|---|---|
+| What the job costs a human today | €0.83 per email | 1.5 min (est.) × €33/h (course loaded cost reference: €38,000 × 1.4 ÷ 1,600) |
+| Volume | 20,000 emails/month | Estimate, same as Week 1 and 2 |
+| Measured success rate | 81% of runs (75% strict) | This log, Week 2 + Week 3 swap |
+| Gross benefit at 100% | €198,000/year | 20,000 × €0.83 × 12 |
+| Gross benefit at my rate | €195,030/year | Complaints are 3% (est.): (19,400 × 100% + 600 × 50%) × €0.83 × 12 |
+| What each failure costs, and who pays | UNCLEAR: €0 extra (a human sorts it, as today). Hidden complaint: €96.60, paid by the insurer and the customer | 30 min × €33 = €16.50 + 10% Ombudsman × 6 h × €46 = €27.60 + 15% churn × €350 margin = €52.50 (all est.) |
+| Failure cost per year | −€139,104 | 600 × 20% = 120/month × €96.60 × 12 |
+| AI cost | −€15,561/year + €30,000 one-time | Tokens €561 (Standard tier, 1,150 in / 20 out) + monitoring €10,000 + IT €5,000 (est.) |
+| **Net benefit** | **€10,365 in year 1 · €40,365/year after** | Payback 8.9 months |
+
+**At my measured rate, is this worth building?** Only just, and not safely: with time savings 50% lower, year 1 is −€87,150. Break-even is at 26% of complaints hidden; v1 hides 20%, measured on only 10 complaint runs.
+**What rate would it need?** Hidden complaints ≤ 5% of complaints, even if that costs automation (90% of normal emails auto-sorted). Then year 1 net is €94,300 and payback 2.9 months; still +€7,000 with a 50% haircut. That looks reachable with prompt v2 (send every dissatisfied email it is unsure about to a human), but I have to measure it.
+
+## Checkpoint 1 (Week 4)
+
+1. **What it does:** sorts one customer email to a Belgian non-life insurer into one of six queues plus its language, in a fixed two-line format.
+2. **What I measured:** 13 real inputs (12 Trustpilot reviews + 1 classmate swap), expected answers written before running, every input run twice: 21/26 runs correct (81%), 10/13 inputs correct in both runs (77%), language 26/26.
+3. **Dominant failure type:** F1, confidently wrong, all on the COMPLAINT boundary (#1 run A, #3, #10); one F6 (#1).
+4. **Failure that would matter most:** a real complaint sorted as CLAIM_FOLLOWUP (#10): nobody in complaints handling sees it, and it can become an Ombudsman case. It is also the line that decides my business case (€139,104/year).
+5. **What I would change first:** prompt v2 on the COMPLAINT boundary only: decide first whether rule 2 or my expected answers are wrong, then add a test set with more complaint and non-complaint emails, so the hidden-complaint rate is measured on more than 10 runs.
+
+**Deployment scenario (locked):** the tool pre-sorts the claims inbox of a mid-sized Belgian non-life insurer; COMPLAINT and UNCLEAR always go to a human; first live use only as an 8-week shadow pilot next to the human sorters.
+
+### Deployment probe — status Week 4
+
+| | Status |
+|---|---|
+| **Machine(s)** | Laser cutter (unchanged from the plan above) |
+| **Artifact** | Six-tray claims mail desk with printed test emails on cards (unchanged) |
+| **Fablab session** | Not booked yet: requested by e-mail to fablab@arteveldehs.be on 16 October 2026; I will add the date here when it is confirmed. |
