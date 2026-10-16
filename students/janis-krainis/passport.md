@@ -11,11 +11,11 @@ with a post. In Week 12 you will open this file's history and see three versions
 ## Checkpoint 1 — end of Week 4
 
 | # | Skill | Rating | Evidence |
-|---|-------|--------|----------|
-| 1 | Cost literacy | — | |
-| 2 | Capability skepticism | — | |
-| 3 | Vendor claim detection | — | |
-| 4 | Value quantification | — | |
+|:---:|---|:---:|---|
+| 1 | Cost literacy | 🟢 | Calculated token costs at per-million rates in my Week 1 cost model and separated them from implementation and maintenance expenses. |
+| 2 | Capability skepticism | 🟢 | Separated low-risk F3 omissions from high-risk F2 fabrications in my Build prototype and established human-in-the-loop guardrails for customs. |
+| 3 | Vendor claim detection | 🟢 | Pressure-tested my own freight automation business case against a 50% benefit haircut and stripped out unverified vendor "99% accuracy" claims. |
+| 4 | Value quantification | 🟡 | Quantified all four benefit categories using Belgian loaded rates (€37/hr) and subtracted AI plus error rework costs, though my spot-quote conversion lift is still estimated. |
 
 ## Checkpoint 2 — end of Week 8
 
