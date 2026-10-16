@@ -1,15 +1,15 @@
 ---
 type: passport
-student: "Your Name"
-beat: "Your Signal beat"
+student: "Guillaume Vandenweghe"
+beat: "What AI really costs in the insurance sector, with a focus on claims handling and customer service"
 track: "4 ECTS"
 ---
 
 # Skills Passport
 
-**Student:** Your Name
-**Beat:** Your Signal beat
-**Track:** 4 ECTS *(or 6 ECTS)*
+**Student:** Guillaume Vandenweghe
+**Beat:** What AI really costs in the insurance sector, with a focus on claims handling and customer service
+**Track:** 4 ECTS
 
 > Copy this file to `students/your-name/passport.md` in the Signal repository in Week 1.
 > Update it at three checkpoints — end of Week 4, Week 8 and Week 12 — and commit each time.
@@ -53,20 +53,20 @@ A rating is easy to fill in without thinking. A line that hangs on a number you 
 
 **Your Build, right now** (one line each):
 
-- What can your tool do now?
-- What can't it do yet?
-- Which number proves it?
+- What can your tool do now? Sort one customer email to a Belgian non-life insurer into one of six queues and name its language (NL/FR/EN/MIXED), in a fixed two-line format.
+- What can't it do yet? Reliably recognise a complaint: it sends some angry customers who ask for compensation to the normal claims queue (#10, both runs).
+- Which number proves it? 21 of 26 runs correct (81%; 10 of 13 inputs correct in both runs = 77%) on 13 real emails, but only 5 of 10 complaint runs correct, and 2 of 10 hidden in the wrong queue.
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟢 / 🟡 / 🔴 | |
-| Capability skepticism | 2 | 🟢 / 🟡 / 🔴 | |
-| Vendor claim detection | 3 | 🟢 / 🟡 / 🔴 | |
-| Value quantification | 4 | 🟢 / 🟡 / 🔴 | |
+| Cost literacy | 1 | 🟢 | In Week 1 and again in Week 4 I priced the token bill of my use case (€561/year for 20,000 emails a month) and showed it is a tiny part of the real cost, which is error handling. |
+| Capability skepticism | 2 | 🟡 | My Week 2 Build log classifies every failure (3 × F1, 1 × F6), but my own expected answers on the COMPLAINT boundary disagree with my rule 2, and I have not resolved that yet. |
+| Vendor claim detection | 3 | 🟢 | I tagged all 16 NexusAI claims with a reason each, and tagged Tractable's "3 mins / 10x / 70%" as Avoidance because none has a source or method. |
+| Value quantification | 4 | 🟡 | My Week 4 business case has a formula for every line and a 50% pressure test (+€10,365 becomes −€87,150), but the €96.60 cost of a hidden complaint, which decides the result, is still an estimate. |
 
-**6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
+**6 ECTS — extended evidence:** not applicable (4 ECTS).
 
-**Your click:** One sentence — what did you believe in Week 1 that you no longer believe, and what replaced it? That change is the click: it's the proof the cycle moved you. No click = swinging, not thinking.
+**Your click:** In Week 1 I thought the cost of AI was the price per token; now I know the cost sits in the errors and who catches them: in my Build the hidden complaints cost about 248 times the token bill.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
