@@ -7,14 +7,6 @@ skill: "Vendor claim detection"
 date: 2026-10-12
 ---
 
----
-week: 4
-title: "Is AI Customer Service Actually Worth It for a Solo Entrepreneur?"
-author: "Lima"
-beat: "How AI Enables the One-Person Business"
-skill: "Value quantification"
-date: 2026-10-17
----
 
 # Is AI Customer Service Actually Worth It for a Solo Entrepreneur?
 
