@@ -1,3 +1,10 @@
+---
+title: "Signal Post 4: Show Me the Numbers, Quantifying the Solo AI Agency in Hospitality Marketing"
+date: "2026-10-17"
+author: "Levente Sinka"
+week: 4
+---
+
 # Signal Post 4: Show Me the Numbers, Quantifying the Solo AI Agency in Hospitality Marketing
 
 Ask a traditional agency what they'll do for your hotel and you'll get a pitch about brand feeling and aesthetics. Ask a software vendor and you'll hear about fully automated, viral growth. Neither one hands you a balance sheet. So independent hotels end up spending thousands of euros on generic social calendars that never produce a single direct booking.
