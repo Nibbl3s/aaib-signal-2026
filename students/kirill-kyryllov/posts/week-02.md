@@ -7,10 +7,10 @@ skill: "Capability skepticism"
 date: 2026-10-10
 ---
 
-Last week I wrote about a case where a company let AI build a full financial model, and it
-took a human 20-40 hours to rebuild it after the AI inserted dead numbers, forced balance-sheet
-plugs, and misclassified CapEx as OpEx. This week I wanted to test whether that was a one-off
-failure or a predictable one. The "no AI" decision framework says it's predictable.
+Last week I wrote about research showing AI financial advice is wrong 57% of the time on
+average, and 88% of the time on questions requiring more than one calculation. This week I
+wanted to test whether that failure rate is predictable, and whether it's avoidable. The "no
+AI" decision framework says both are true.
 
 ## The use case
 
@@ -20,12 +20,11 @@ analyst in the loop?
 **Q1: Do you know the answer already?** No. That's the whole reason to use AI here, the
 company doesn't have the model yet.
 
-**Q2: Is the cost of being wrong higher than the cost of being slow?** Yes, clearly. A broken
-model doesn't just cost time, it costs real money. In the case I covered last week, the
-rebuild ran €1,200-€3,600 for a model that cost about €25 in subscription fees to generate. If
-the broken model gets used for a real decision before anyone catches it, the cost is worse:
-one AI pension-tax error researched by the Financial Times risked a saver a £17,500 charge
-from HMRC. The downside dwarfs the time saved.
+**Q2: Is the cost of being wrong higher than the cost of being slow?** Yes, clearly. The
+research I covered last week found one AI pension-tax error that risked a saver a £17,500
+charge from HMRC, a single wrong answer that was free to generate and catastrophic to act on.
+Even the best-performing model tested was still wrong 39% of the time. The downside dwarfs any
+time saved.
 
 **Q3: Is the information stable or changing rapidly?** This is where it gets interesting.
 Accounting logic itself (double-entry, how a balance sheet balances) is stable. But the
@@ -59,7 +58,8 @@ a partner has already acted on it.
 
 ## What this changes about my beat
 
-I'd assumed the interesting failures would be AI getting numbers wrong. The more interesting
-finding is that verification itself is the bottleneck: the "simpler tool" here isn't really
-simpler, it's just moving the expensive part (human judgment) earlier, before the model ships,
-instead of after it breaks.
+I'd assumed the interesting failures would be AI getting numbers wrong in isolation. The more
+interesting finding, tying back to last week's 57% figure, is that verification itself is the
+bottleneck: the "simpler tool" here isn't really simpler, it's just moving the expensive part
+(human judgment) earlier, before the model ships, instead of after a 57%-likely-wrong answer
+reaches someone who trusts it.
