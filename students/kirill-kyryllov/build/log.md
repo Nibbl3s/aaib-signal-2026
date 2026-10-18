@@ -1,14 +1,9 @@
 # Build Log — Claim Risk Classifier
 
 ## Honesty note on the test set
-This test set was written by me, not sourced from public real-world documents (public reviews,
-forums, job ads). Per the Build Brief: "Inputs you invent are unconsciously shaped to be
-answerable, so your tool will look better than it is." I'm flagging this explicitly — the
-measured success rate below should be treated as an **upper bound**, not a true reflection of
-real-world performance. Several claims are adapted directly from this week's Seven Failures
-exercise and from my own Week 1 post (the CapEx/OpEx and financial modeling claims), which are
-closer to "real" in the sense that they're drawn from an actual FT article and an actual course
-case study, but the full set of 15 was authored by me for this test, not pulled from independent
+Several claims are adapted directly from the course's Week 2 Seven Failures
+exercise, and the financial-modeling claims (#10, #13, #15) reflect failure patterns central to
+my beat, but the full set of 15 was authored by me for this test, not pulled from independent
 public sources.
 
 ## Tool
@@ -48,14 +43,8 @@ Each input run twice (Run 1, Run 2), to check for consistency (F6).
 
 **Claim #10 — CapEx classification (F1):** The tool classified a specific CapEx/OpEx
 classification decision as "Safe to trust," treating it as general accounting principle. But
-this is exactly the failure mode documented in my Week 1 post: CapEx vs. OpEx misclassification
-is a named, recurring AI financial-modeling failure (per the Corient case study referenced in
-that post). The general *principle* (hardware purchases can be CapEx) is stable, but applying
-it confidently to a specific €15,000 line item without context (useful life, materiality
-threshold, company policy) is exactly the kind of "sounds right, might not be" claim this tool
-was built to catch — and it didn't. **Hypothesis for why:** the prompt's "safe to trust" bucket
-includes "general, stable conceptual knowledge," and the model appears to have matched on the
-general CapEx concept rather than evaluating the specific dollar amount attached to it.
+CapEx vs. OpEx misclassification is a known, recurring AI financial-modeling failure pattern
+central to my beat. The general *principle* (hardware purchases can be CapEx) is stable, but applying it confidently to a specific €15,000 line item without context (useful life, materiality threshold, company policy) is exactly the kind of "sounds right, might not be" claim this tool was built to catch — and it didn't. **Hypothesis for why:** the prompt's "safe to trust" bucket includes "general, stable conceptual knowledge," and the model appears to have matched on the general CapEx concept rather than evaluating the specific dollar amount attached to it.
 
 **Claim #11 — single word "AI" (F1 / edge case):** This was deliberately included as the "where
 the right answer is 'I don't know'" awkward case the Build brief asks for. Prompt v1 forces a
@@ -86,9 +75,7 @@ bound per the honesty note above, not a reliable real-world figure.
 
 **The failure that would matter most:** Claim #10 (CapEx €15,000 classification marked "Safe to
 trust" when it needed verification) — this is the highest-stakes miss because it's exactly the
-kind of confident, specific financial claim that would reach a real decision-maker unchecked,
-and it reproduces a named, documented AI financial-modeling failure mode from my own Week 1
-research.
+kind of confident, specific financial claim that would reach a real decision-maker unchecked, and it reproduces a known AI financial-modeling failure pattern central to my beat.
 
 **What I'd change first:** Add explicit instruction that a specific number attached to a
 general accounting principle (CapEx/OpEx, tax treatment) should default to "Needs verification"
