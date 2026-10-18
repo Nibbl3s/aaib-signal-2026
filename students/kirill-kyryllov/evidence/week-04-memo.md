@@ -13,11 +13,11 @@ reports before consultant sign-off. One-time cost of €2,000, with a payback pe
 THE PROBLEM
 Consultants currently verify AI-generated claims in client reports manually, at roughly 5
 minutes per claim across an estimated 300 claims/month. This process is slow, inconsistent, and
-measurably fallible: my own prototype tool, tested on 15 realistic claims, still missed 2 (13.3%)
-without any tool at all to assist — and the type of claim that slips through (a specific,
-confident financial classification like CapEx/OpEx) is exactly the kind that reaches a client
-and causes real damage once discovered, as documented in a real case I researched in Week 1
-(€1,200–€3,600 to correct after the fact).
+measurably fallible: my own prototype tool, tested on 15 realistic claims, still missed 2
+(13.3%) on its own. And the type of claim that slips through (a specific, confident financial
+classification like CapEx/OpEx) is exactly the kind that reaches a client and causes real
+damage once discovered. A correction after the fact, once an error like this reaches a client,
+is a conservative estimate of €1,200 per incident.
 
 THE PROPOSAL
 A prompt-based classifier flags each claim in a draft report as "Needs verification" or "Safe to
