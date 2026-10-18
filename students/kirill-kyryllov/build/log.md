@@ -72,9 +72,34 @@ Two concrete fixes to test next:
 2. Add a third classification option ("Insufficient context") for inputs too short or vague to
    assess, rather than forcing a binary choice.
 
+## Checkpoint 1 — Week 4
+
+**What it does:** Classifies a single factual claim from an AI-generated business report as
+"Needs verification" or "Safe to trust," based on claim type (private company data, cited
+sources, technical specs, regulatory citations vs. stable historical facts).
+
+**Measured:** 86.7% (13/15) on an invented test set — self-authored, so treated as an upper
+bound per the honesty note above, not a reliable real-world figure.
+
+**Dominant failure type:** F1 (Wrong) — both failures found were this type; 0 F6
+(inconsistency) across 30 runs.
+
+**The failure that would matter most:** Claim #10 (CapEx €15,000 classification marked "Safe to
+trust" when it needed verification) — this is the highest-stakes miss because it's exactly the
+kind of confident, specific financial claim that would reach a real decision-maker unchecked,
+and it reproduces a named, documented AI financial-modeling failure mode from my own Week 1
+research.
+
+**What I'd change first:** Add explicit instruction that a specific number attached to a
+general accounting principle (CapEx/OpEx, tax treatment) should default to "Needs verification"
+even when the underlying principle is stable — the number carries the risk, not the concept.
+
 ## Fablab probe plan (planning rows — formal submission due Week 4, CP1)
-- **Machine:** Laser cutter (tentative)
-- **Artifact:** A small standee/kiosk face showing the claim classifier in a simulated "analyst's
-  desk" deployment context
-- **Session:** Fablab intro, Monday 28 Sept (attended during Week 2 session) — follow-up booked
-  visit to be scheduled during independent build hours, before Week 8 (CP2) observation is due
+- **Machine:** 3D printer
+- **Artifact:** A small 3D-printed desk stand that holds a phone or tablet at an analyst's desk.
+  The stand itself is just a physical holder — the claim classifier keeps running as a chat tool
+  (prompt.md) on the device it holds. The point is to simulate the tool being kept visibly open
+  and within reach during real report-checking work, instead of living in an unused browser tab.
+- **Session:** Fablab intro attended Monday 28 September (Week 2 session); a follow-up booked
+  visit to the fablab's 3D printing sessions to be scheduled during independent build hours,
+  with the deployment observation logged before Week 8 (CP2)
