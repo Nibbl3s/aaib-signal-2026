@@ -60,21 +60,20 @@
 <div class="meta">Week 2 · The Fake Analyst: When AI-Generated Business Reports Get It Wrong</div>
 <h1>No, Don&#x27;t Let AI Build the Whole Model: Running the &#x27;No AI&#x27; Framework</h1>
 <div class="byline">Kirill Kyryllov · 2026-10-10</div>
-<p>Last week I wrote about a case where a company let AI build a full financial model, and it<br />
-took a human 20-40 hours to rebuild it after the AI inserted dead numbers, forced balance-sheet<br />
-plugs, and misclassified CapEx as OpEx. This week I wanted to test whether that was a one-off<br />
-failure or a predictable one. The "no AI" decision framework says it's predictable.</p>
+<p>Last week I wrote about research showing AI financial advice is wrong 57% of the time on<br />
+average, and 88% of the time on questions requiring more than one calculation. This week I<br />
+wanted to test whether that failure rate is predictable, and whether it's avoidable. The "no<br />
+AI" decision framework says both are true.</p>
 <h2>The use case</h2>
 <p>Should a company let AI build a complete financial model from scratch, with no financial<br />
 analyst in the loop?</p>
 <p><strong>Q1: Do you know the answer already?</strong> No. That's the whole reason to use AI here, the<br />
 company doesn't have the model yet.</p>
-<p><strong>Q2: Is the cost of being wrong higher than the cost of being slow?</strong> Yes, clearly. A broken<br />
-model doesn't just cost time, it costs real money. In the case I covered last week, the<br />
-rebuild ran €1,200-€3,600 for a model that cost about €25 in subscription fees to generate. If<br />
-the broken model gets used for a real decision before anyone catches it, the cost is worse:<br />
-one AI pension-tax error researched by the Financial Times risked a saver a £17,500 charge<br />
-from HMRC. The downside dwarfs the time saved.</p>
+<p><strong>Q2: Is the cost of being wrong higher than the cost of being slow?</strong> Yes, clearly. The<br />
+research I covered last week found one AI pension-tax error that risked a saver a £17,500<br />
+charge from HMRC, a single wrong answer that was free to generate and catastrophic to act on.<br />
+Even the best-performing model tested was still wrong 39% of the time. The downside dwarfs any<br />
+time saved.</p>
 <p><strong>Q3: Is the information stable or changing rapidly?</strong> This is where it gets interesting.<br />
 Accounting logic itself (double-entry, how a balance sheet balances) is stable. But the<br />
 specific rules that trip AI up, like CapEx vs. OpEx classification, tax treatment, intercompany<br />
@@ -99,10 +98,11 @@ correct, and let AI populate it with data under supervision, not build the archi
 This is slower than "AI, build me a model" but faster than discovering the model is wrong after<br />
 a partner has already acted on it.</p>
 <h2>What this changes about my beat</h2>
-<p>I'd assumed the interesting failures would be AI getting numbers wrong. The more interesting<br />
-finding is that verification itself is the bottleneck: the "simpler tool" here isn't really<br />
-simpler, it's just moving the expensive part (human judgment) earlier, before the model ships,<br />
-instead of after it breaks.</p>
+<p>I'd assumed the interesting failures would be AI getting numbers wrong in isolation. The more<br />
+interesting finding, tying back to last week's 57% figure, is that verification itself is the<br />
+bottleneck: the "simpler tool" here isn't really simpler, it's just moving the expensive part<br />
+(human judgment) earlier, before the model ships, instead of after a 57%-likely-wrong answer<br />
+reaches someone who trusts it.</p>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
