@@ -53,12 +53,12 @@ No. That's the entire reason to use AI here: the company doesn't have the model 
 one built.
 
 **Q2 — Is the cost of being wrong higher than the cost of being slow?**
-Yes, clearly. A broken model doesn't just cost time to fix, it costs real money. A documented
-case from my Week 1 research found a rebuild of a broken AI-generated financial model running
-€1,200-€3,600, for a model that cost about €25 in subscription fees to generate in the first
-place. If the broken model gets used for a real decision before anyone catches the error, the
-cost is worse: a separate case researched by the Financial Times found an AI pension-tax error
-that risked a saver a £17,500 charge from HMRC. The downside dwarfs the time saved.
+Yes, clearly. My Week 1 research (Saturn/FT study) found AI financial advice wrong 57% of the
+time on average, and 88% of the time on multi-step questions. One documented case in that
+research involved an AI pension-tax error that risked a saver a £17,500 charge from HMRC, a
+single wrong answer that was free to generate and catastrophic to act on. Even the
+best-performing model tested was still wrong 39% of the time. The downside dwarfs the time
+saved.
 
 **Q3 — Is the information stable or changing rapidly?**
 Mixed, and this is where it gets genuinely interesting rather than a clean yes/no. The
@@ -112,9 +112,9 @@ historical facts, vague/unquantified statements) are typically safe.
 15 claims (full list in `build/test-set.md`), expected answers written before any run, including
 deliberately awkward cases: a single ambiguous word ("AI", claim #11, expected "I don't know"),
 a foreign-language input (French, claim #14), a deliberately vague claim with no specific number
-(claim #9), and claims drawn directly from this week's Seven Failures plus claims extending my
-own Week 1 beat research (CapEx/OpEx, claim #10; ICAEW guidance, claim #13; financial model
-debt-balance behavior, claim #15).
+(claim #9), and claims drawn directly from this week's Seven Failures plus claims extending my beat's
+focus on financial-modeling failure patterns (CapEx/OpEx, claim #10; ICAEW guidance, claim #13;
+financial model debt-balance behavior, claim #15). 
 
 **Honesty note:** this test set was authored by me rather than sourced from independent public
 documents. Per the Build brief, I'm treating the measured success rate below as an upper bound,
@@ -130,8 +130,8 @@ more rigorous than it is.
 **Failure 1 (claim #10, CapEx classification):** The tool classified a specific €15,000 CapEx
 decision as "Safe to trust," apparently matching on the general accounting *principle* (hardware
 purchases can be CapEx) rather than evaluating the specific dollar amount and context attached
-to it. This is exactly the CapEx/OpEx failure mode documented in my Week 1 research as a known,
-recurring AI financial-modeling error, and my own tool reproduced it.
+to it. This is a known, recurring AI financial-modeling error pattern in my beat, and my own tool
+reproduced it.
 
 **Failure 2 (claim #11, single-word input "AI"):** This was deliberately included as the "right
 answer is 'I don't know'" awkward case the Build brief asks for. The tool defaulted to "Safe to
