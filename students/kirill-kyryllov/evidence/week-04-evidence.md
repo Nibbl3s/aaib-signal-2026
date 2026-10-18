@@ -30,10 +30,11 @@ verify AI-generated claims in client reports manually before sign-off.
 Not applicable. This tool reduces risk and review time; it doesn't generate new sales or faster
 deal closure. **€0** — flagged honestly rather than stretched to fit the framework.
 
-## 3. Cost Reduction (error correction avoided)
+### 3. Cost Reduction (error correction avoided)
 
-- Cost of an incorrect claim reaching a client, based on my Week 1 research (broken AI-generated
-  financial claim, rebuild/correction cost): conservative estimate **€1,200/incident**
+- Cost of an incorrect claim reaching a client: conservative estimate **€1,200/incident**
+  (correction time, client communication, reputational handling for a single factual error that
+  reached a report before being caught)
 - Estimated significant misses per year **without** the tool (manual review only): 4/year
 - Estimated significant misses per year **with** the tool (based on measured 13.3% miss rate on
   genuinely risky claims): ~1/year
