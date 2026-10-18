@@ -4,7 +4,7 @@ title: "No, Don't Let AI Build the Whole Model: Running the 'No AI' Framework"
 author: "Kirill Kyryllov"
 beat: "The Fake Analyst: When AI-Generated Business Reports Get It Wrong"
 skill: "Capability skepticism"
-date: 2026-10-10
+date: 2026-10-04
 ---
 
 Last week I wrote about research showing AI financial advice is wrong 57% of the time on

@@ -10,7 +10,7 @@ picking the three borderline cases below:
 3. Meeting Notes Summarization → AI-Suitable
 4. Fraud Detection in Bank Transactions → AI-Risky (borderline)
 5. Hiring Candidate Screening → AI-Risky (borderline)
-6. Inventory Forecasting → AI-Risky (borderline)
+6. Inventory Forecasting → AI-Suitable (borderline)
 7. Legal Contract Review → AI-Risky
 8. Writing Product Launch Announcement → AI-Suitable
 9. Regulatory Compliance Check → AI-Incompatible
