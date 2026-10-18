@@ -12,9 +12,11 @@
 
 4. **Why it matters:** An unverified AI claim reaching a client (such as a CapEx/OpEx
    misclassification, the exact failure type my own Build caught) creates professional
-   liability exposure and risks client trust. A documented case from my own Week 1 research
-   showed a broken AI-generated financial model costing €1,200-€3,600 to rebuild after the
-   fact, once an error like this was discovered too late.
+   liability exposure and risks client trust. A single such error reaching a client, once
+   discovered, carries a conservative correction cost of roughly €1,200, not counting the
+   reputational damage. My own Week 1 research also documented an AI financial-advice case
+   where a wrong answer risked a saver a £17,500 charge from HMRC, a reminder that the
+   downside of an unchecked AI claim can be far larger than the cost of generating it.
 
 5. **What I still need to find out:** A realistic volume of AI-assisted client reports produced
    per month at a firm this size, and how consultants currently catch (or miss) AI errors
