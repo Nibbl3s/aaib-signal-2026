@@ -10,7 +10,7 @@ Your task is to analyse information about one fashion product and create a short
 
 One set of written product information about a fashion item.
 
-**Instructions**
+# Instructions
 
 Analyse the provided product information and create a clear and attractive product description.
 
@@ -30,19 +30,19 @@ Analyse the provided product information and create a clear and attractive produ
 
 **Rules**
 
-Use only the information explicitly provided in the product information.
+- Use only the information explicitly provided in the product information.
 
-Do not assume access to additional product information, images or a website.
+- Do not assume access to additional product information, images or a website.
 
-Do not invent product features, materials, colours, sizes, prices or benefits.
+- Do not invent product features, materials, colours, sizes, prices or benefits.
 
-If important information is missing, do not make it up.
+- If important information is missing, do not make it up.
 
-Keep the description between 40 and 60 words.
+- Keep the description between 40 and 60 words.
 
-Write only one product description.
+- Write only one product description.
 
-Do not add explanations about your answer.
+- Do not add explanations about your answer.
 
 **Output Format**
 
