@@ -1,10 +1,13 @@
 # Build Log — Claim Risk Classifier
 
 ## Honesty note on the test set
-Several claims are adapted directly from the course's Week 2 Seven Failures
+This test set was written by me, not sourced from public real-world documents (public reviews,
+forums, job ads). Per the Build Brief: "Inputs you invent are unconsciously shaped to be
+answerable, so your tool will look better than it is." I'm flagging this explicitly — the
+measured success rate below should be treated as an **upper bound**, not a true reflection of
+real-world performance. Several claims are adapted from the course's Week 2 Seven Failures
 exercise, and the financial-modeling claims (#10, #13, #15) reflect failure patterns central to
-my beat, but the full set of 15 was authored by me for this test, not pulled from independent
-public sources.
+my beat, but none of the 15 were pulled from independent public sources.
 
 ## Tool
 Model used: Gemini
@@ -42,9 +45,9 @@ Each input run twice (Run 1, Run 2), to check for consistency (F6).
 ## Failure analysis
 
 **Claim #10 — CapEx classification (F1):** The tool classified a specific CapEx/OpEx
-classification decision as "Safe to trust," treating it as general accounting principle. But
+classification decision as "Safe to trust," treating it as a general accounting principle. But
 CapEx vs. OpEx misclassification is a known, recurring AI financial-modeling failure pattern
-central to my beat. The general *principle* (hardware purchases can be CapEx) is stable, but applying it confidently to a specific €15,000 line item without context (useful life, materiality threshold, company policy) is exactly the kind of "sounds right, might not be" claim this tool was built to catch — and it didn't. **Hypothesis for why:** the prompt's "safe to trust" bucket includes "general, stable conceptual knowledge," and the model appears to have matched on the general CapEx concept rather than evaluating the specific dollar amount attached to it.
+central to my beat. The general *principle* (hardware purchases can be CapEx) is stable, but applying it confidently to a specific €15,000 line item without context (useful life, materiality threshold, company policy) is exactly the kind of "sounds right, might not be" claim this tool was built to catch — and it didn't. **Hypothesis for why:** the prompt's "safe to trust" bucket includes "general, stable conceptual knowledge," and the model appears to have matched on the general CapEx concept rather than evaluating the specific euro amount attached to it.
 
 **Claim #11 — single word "AI" (F1 / edge case):** This was deliberately included as the "where
 the right answer is 'I don't know'" awkward case the Build brief asks for. Prompt v1 forces a
