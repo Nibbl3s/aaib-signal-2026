@@ -59,7 +59,7 @@
 <article>
 <div class="meta">Week 4 · The Fake Analyst: When AI-Generated Business Reports Get It Wrong</div>
 <h1>The Fake Analyst: What&#x27;s My Fact-Checker Actually Worth?</h1>
-<div class="byline">Kirill Kyryllov · 2026-10-16</div>
+<div class="byline">Kirill Kyryllov · 2026-10-18</div>
 <p>My beat has spent three weeks establishing that AI confidently gets financial claims wrong. This<br />
 week I had to answer a harder question: is building a tool to catch those errors actually worth<br />
 anything in euros, or is it just a nice idea with no business case behind it?</p>
@@ -70,19 +70,20 @@ where my beat lives: the moment before an AI-drafted report reaches a human sign
 client. For this exercise I quantified it against a realistic scenario: Vandermeer &amp; Partners, a<br />
 mid-sized Belgian consulting firm where consultants currently verify AI-assisted claims by hand.</p>
 <h2>The Numbers</h2>
-<p><strong>Time saved</strong> is the strongest number here, and the only one built on something I actually<br />
-measured rather than estimated. At 300 claims/month and 5 minutes of manual verification each<br />
-(25 hrs/month, €39/hr loaded cost), the current process costs €11,700/year. With the tool<br />
-cutting review to roughly 1 minute per claim (reading a flag instead of triaging from scratch),<br />
-that drops to €2,340/year. <strong>Time saved: €9,360/year.</strong></p>
-<p><strong>Revenue increase</strong> is €0. I was tempted to stretch the framework to find a number here, the<br />
-way GhentBakery's vendor did in Week 3, but this tool doesn't close deals faster or win more<br />
-business. Forcing a revenue line into a risk-reduction tool is exactly the kind of move my own<br />
-Week 3 skills taught me to distrust.</p>
-<p><strong>Cost reduction</strong> comes from incident avoidance: a documented case from my Week 1 research<br />
-showed a broken AI-generated financial claim costing €1,200-3,600 to fix after discovery. If<br />
-manual review alone misses roughly 4 significant claims a year and the tool cuts that to 1 (based<br />
-on my measured 13.3% miss rate), that's <strong>€3,600/year</strong> in avoided correction cost.</p>
+<p><strong>Time saved</strong> is the most defensible number here, because the arithmetic is simple, but its<br />
+inputs are still estimates. I assumed 5 minutes of manual verification per claim and roughly 1<br />
+minute with the tool (reading a flag instead of triaging from scratch); I haven't timed either.<br />
+At 300 claims/month and €39/hr loaded cost, the current process costs €11,700/year, and with the<br />
+tool it drops to €2,340/year. <strong>Time saved: €9,360/year.</strong></p>
+<p><strong>Revenue increase</strong> is €0. I was tempted to stretch the framework to find a number here, but<br />
+this tool doesn't close deals faster or win more business. Inflating a benefit line to make a<br />
+case look bigger is exactly what the vendor proposals in Week 3 did, and exactly what I learned<br />
+to distrust.</p>
+<p><strong>Cost reduction</strong> comes from incident avoidance. I estimate that a single incorrect claim<br />
+reaching a client costs about €1,200 to correct (correction time, client communication,<br />
+reputational handling). If manual review alone misses roughly 4 significant claims a year and<br />
+the tool cuts that to about 1 (based on my measured 13.3% miss rate), that's <strong>€3,600/year</strong> in<br />
+avoided correction cost.</p>
 <p><strong>Risk mitigation</strong> is the tail-risk number: a 5% annual probability of a serious client-facing<br />
 error, a €50,000 cost if it happens, and a 40% reduction factor from the tool catching the most<br />
 common failure pattern (confident, specific, unverified numbers), gives an expected value of<br />
@@ -93,19 +94,20 @@ implementation, since token cost at this volume is a trivial €2/year) and the 
 correction cost (€1,200/year, since it isn't perfect either), <strong>net benefit is €10,258 in Year 1</strong>,<br />
 with a payback period of roughly 2.3 months.</p>
 <h2>The Pressure Test</h2>
-<p>The honest weak point isn't the AI cost line, it's the cost-reduction and risk-mitigation<br />
-figures, which rest on estimated incident rates, not Vandermeer's actual error history. If those<br />
-two estimates are 50% too optimistic, net benefit falls to roughly €7,980/year. If even the<br />
-time-saved figure (the one I'm most confident in) is 50% too optimistic, net benefit still holds<br />
-at around €5,578/year. The case survives a bad estimate on any single line, which is the point<br />
-of running the pressure test rather than just presenting the best-case number.</p>
+<p>The weakest lines are cost reduction and risk mitigation, which rest on estimated incident rates,<br />
+not Vandermeer's actual error history. If those two estimates are 50% too optimistic, net benefit<br />
+falls to roughly €7,958/year. If the time-saved figure is 50% too optimistic (for example, review<br />
+with the tool takes 3 minutes per claim instead of 1), net benefit still holds at around<br />
+€5,578/year. The case survives a bad estimate on any single line, which is the point of running<br />
+the pressure test rather than just presenting the best-case number.</p>
 <h2>The Insight</h2>
 <p>Building the benefit case was harder than I expected for a tool that's about catching errors<br />
-rather than making money. It forced me to admit that two of my four benefit categories are built<br />
-on judgment calls, not measurements, exactly the gap my own test-set honesty note already<br />
-flagged. The real takeaway for my beat: a tool that prevents AI-generated mistakes has value, but<br />
-proving that value rigorously requires the same discipline as catching the mistakes in the first<br />
-place.</p>
+rather than making money. It forced me to admit that only one input in this whole case is<br />
+actually measured: my tool's 86.7% accuracy on 15 claims, itself an upper bound because I wrote<br />
+the test set. Everything else (review times, incident rates, the €1,200 correction cost) is an<br />
+estimate. The real takeaway for my beat: a tool that prevents AI-generated mistakes has value,<br />
+but proving that value rigorously requires the same discipline as catching the mistakes in the<br />
+first place.</p>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
