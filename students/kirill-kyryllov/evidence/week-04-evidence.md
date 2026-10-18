@@ -30,7 +30,7 @@ verify AI-generated claims in client reports manually before sign-off.
 Not applicable. This tool reduces risk and review time; it doesn't generate new sales or faster
 deal closure. **€0** — flagged honestly rather than stretched to fit the framework.
 
-### 3. Cost Reduction (error correction avoided)
+## 3. Cost Reduction (error correction avoided)
 
 - Cost of an incorrect claim reaching a client: conservative estimate **€1,200/incident**
   (correction time, client communication, reputational handling for a single factual error that
@@ -83,9 +83,11 @@ deal closure. **€0** — flagged honestly rather than stretched to fit the fra
 
 ## Honest caveat
 
-This is built on an invented test set (per the honesty note in `build/log.md`) and several
-estimated probabilities (incident rates, risk reduction factor) rather than measured client
-data. The **time saved** figure is the most defensible number here — it's a direct mechanical
-calculation from measured review time. The **cost reduction** and **risk mitigation** figures
-are the weakest links; they would need real incident history from Vandermeer & Partners to
-replace the estimates with measured figures.
+The only measured input in this whole case is my tool's accuracy: 86.7% (13/15) on a
+self-written test set, which is an upper bound (see the honesty note in `build/log.md`).
+Everything else is an estimate: review times (5 min manual, 1 min with the tool), incident
+rates, the €1,200 correction cost and the risk reduction factor. The **time saved** figure is
+the most defensible, because the arithmetic is simple and the review times could be checked
+quickly with a stopwatch. The **cost reduction** and **risk mitigation** figures are the weakest
+links; they would need real incident history from Vandermeer & Partners to replace the estimates
+with measured figures.
