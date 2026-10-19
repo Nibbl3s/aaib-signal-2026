@@ -24,8 +24,6 @@ Anthropic sells Claude to universities through Team, Enterprise and Education pl
 - Claude helps administrative teams "transform the way they work without losing quality" (education page).
 - A Team seat costs $20 a month (billed annually); a Premium seat gives "5x more usage than standard seats" (pricing page).
 
-Add logos from LSE, Northeastern and Dartmouth, and the pitch looks complete.
-
 ## The Deconstruction
 
 | Claim | Tag | Why |
