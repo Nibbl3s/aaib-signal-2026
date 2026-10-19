@@ -207,7 +207,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Cost literacy",
   "date": "2026-09-21",
-  "url": "posts/tim-lampe-week-01.html"
+  "url": "posts/tim-lampe-week-01.html",
+  "meta": {
+   "week": "1",
+   "title": "The \u20ac5 Comps Run and the \u20ac400 Check",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Cost literacy",
+   "date": "2026-09-21"
+  }
  },
  {
   "week": 1,
@@ -399,7 +407,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Knowing when not to use AI",
   "date": "2026-10-01",
-  "url": "posts/tim-lampe-week-02.html"
+  "url": "posts/tim-lampe-week-02.html",
+  "meta": {
+   "week": "2",
+   "title": "The Part of My Build Where AI Is the Wrong Tool",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Knowing when not to use AI",
+   "date": "2026-10-01"
+  }
  },
  {
   "week": 2,
@@ -636,7 +652,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Vendor Claim Detection",
   "date": "2026-10-05",
-  "url": "posts/tim-lampe-week-03.html"
+  "url": "posts/tim-lampe-week-03.html",
+  "meta": {
+   "week": "3",
+   "title": "AI in M&A Valuation: Real Value or FOMO? Deconstructing Valutico's AI Claims",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Vendor Claim Detection",
+   "date": "2026-10-05"
+  }
  },
  {
   "week": 3,
@@ -855,7 +879,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Value quantification",
   "date": "2026-10-07",
-  "url": "posts/tim-lampe-week-04.html"
+  "url": "posts/tim-lampe-week-04.html",
+  "meta": {
+   "week": "4",
+   "title": "AI in M&A Valuation: What a Peer Screen Is Worth in Euros",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Value quantification",
+   "date": "2026-10-07"
+  }
  },
  {
   "week": 4,
@@ -948,7 +980,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Market mechanism thinking",
   "date": "2026-10-19",
-  "url": "posts/tim-lampe-week-05.html"
+  "url": "posts/tim-lampe-week-05.html",
+  "meta": {
+   "week": "5",
+   "title": "Can an AI Find Valutico? A GEO Audit of a Valuation Platform",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Market mechanism thinking",
+   "date": "2026-10-19"
+  }
  },
  {
   "week": 6,
