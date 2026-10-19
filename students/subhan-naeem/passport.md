@@ -19,8 +19,8 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 | # | Skill | Rating | Evidence |
 |---|---|---|---|
-| 1 | Cost literacy | 🟡 | I compared AI token costs using input and output token counts and pricing, including the difference in token costs between English and Urdu. |
-| 2 | Capability skepticism | 🟡 | I tested my AI Market-Entry Risk Detector on 18 cases across two runs and identified that forcing multiple risks into one category can oversimplify the information. |
+| 1 | Cost literacy |  🟢  | I compared AI token costs using input and output token counts and pricing, including the difference in token costs between English and Urdu. |
+| 2 | Capability skepticism |  🟢  | I tested my AI Market-Entry Risk Detector on 18 cases across two runs and identified that forcing multiple risks into one category can oversimplify the information. |
 | 3 | Vendor claim detection | 🟡 | I analysed NexusAI claims in Week 3, separating facts from aspirations and identifying claims that lacked sufficient supporting evidence. |
 | 4 | Value quantification | 🟡 | I estimated €5,313 in annual time-capacity value per consultant using 40 items per month, 11.5 minutes saved per item and a loaded hourly cost of €57.75, while identifying these figures as assumptions rather than measured results. |
 
