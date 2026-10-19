@@ -20,8 +20,8 @@ Write down:
 
 | Field | Your value |
 |---|---|
-| Model ID (from your list) | [ ] |
-| Date and time of call | [ ] |
+| Model ID (from your list) | [gemini-flash.3.8] |
+| Date and time of call | [19.10.26 / 1pm] |
 | Input tokens (promptTokenCount) | 22 |
 | Output tokens visible (candidatesTokenCount) | 27 |
 | Total tokens (totalTokenCount) | 486 |
