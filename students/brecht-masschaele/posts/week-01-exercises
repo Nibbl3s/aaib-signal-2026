@@ -1,1 +1,50 @@
+Activity 1: The AI Bill
+What You'll Do
+You've received an invoice from an AI vendor. Three different outputs. 
+Three different price tags — quoted the way a business would actually buy them: per 1,000 responses.
+Your Task
+Rank these three outputs by cost. Most expensive → least expensive. Write the order: B > C > A
+Write down WHY you ranked them this way. What's your reasoning? What do you think you're being charged for? 
+The first one looks the most expensive. But I know it's a trick
+Be ready for this to be wrong. That's the whole point of this activity. Ok, bring it on.
+
+Check Your Understanding
+Why does the French output cost more than the English one, even though they say the same thing? 
+French costs more tokens than English because the AI models are trained with mostly English data. 
+Translation costs tokens.
+What's the relationship between tokens and words? (Hint: it's not 1:1)
+Word vs Token = 100 vs 133 (1 token = 3/4 word)
+What is a token? (And why is it not the same as a word?)
+A token is a small unit of text that is processed by an AI tool/model
+What's the difference between input and output tokens?
+Input tokens are tokens you put into the AI tool to process. 
+Output tokens are tokens AI produces to deliver to you. 
+Why does a Dutch company pay more for AI than an American one, even for the same task?
+Because the Dutch company will have to pay more for translations. 
+
+Activity 2: Token Discovery Lab
+Which document increased the most in tokens when translated to your language? What was the % increase? The meeting notes: 83,4%
+For the most expensive document, what's the annual cost difference if you process it 1,000 times/year in English vs. your language? 
+The trade-off question: If you're building a customer service chatbot for your country, should you force all customers to use English to reduce costs? What's the trade-off?
+Customer service is important. People who do not master the language might leave you for another company.
+
+Activity 3 (async): Cost Modeling Lab
+Part 3: The Analysis
+Now answer these questions:
+Question 1: The Paradox
+Why is the Budget tier the most expensive system despite having the lowest token cost? Write 1 sentence.
+Budget tier brings the highest error cost.
+Question 2: Business Insight
+The Premium tier costs €0.31/email. The Budget tier costs €1.51/email. Why would any company choose Budget?
+Because they are seduced by the low token cost.
+Question 3: The Reality Check
+You recommended a tier in Step 6. If you were the CMO presenting to the CFO, which number would you lead with — 
+token cost or total cost? Why? 
+Total cost of course. I would show token cost and my calculations to convince her (the CFO)
+
+Check Your Understanding
+Why does a higher token price sometimes mean a lower total cost? low error cost
+What's the hidden cost that makes "cheap AI" expensive? quantity or the cost of fixing the errors
+If someone tells you "AI is cheap," what's the first question you should ask? depends on what you use it for.
+
 
