@@ -1012,6 +1012,23 @@
   }
  },
  {
+  "week": 6,
+  "title": "What an AI Peer Screen Costs at 10,000 Analysts, and What Breaks It",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Cost projection",
+  "date": "2026-10-19",
+  "url": "posts/tim-lampe-week-06.html",
+  "meta": {
+   "week": "6",
+   "title": "What an AI Peer Screen Costs at 10,000 Analysts, and What Breaks It",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Cost projection",
+   "date": "2026-10-19"
+  }
+ },
+ {
   "week": 7,
   "title": "I Ran My Sanctions Screening Tool on My Own PC. It Got 4 Out of 24 Right.",
   "author": "Jasper Derieuw",
