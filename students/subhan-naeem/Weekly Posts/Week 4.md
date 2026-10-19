@@ -1,3 +1,11 @@
+| **Field** | **Details** |
+|---|---|
+| Week | 4 |
+| Title | AI in Business Consulting: Would a €5,313 Time Saving Actually Make a Profit? |
+| Author | Subhan Naeem |
+| Beat | AI in Business Consulting |
+| Skill | Value quantification |
+| Date | 2026-10-15 |
 # AI in Business Consulting: Would a €5,313 Time Saving Actually Make a Profit?
 
 Consulting firms use AI to promise faster research and lower costs, but how much of that value is real? I built an AI Market-Entry Risk Detector and calculated whether a consulting firm could benefit financially from using it. The result looks promising until the assumptions are challenged.
