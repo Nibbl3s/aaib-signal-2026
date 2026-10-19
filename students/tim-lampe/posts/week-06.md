@@ -47,4 +47,4 @@ I expected the model to be the expensive part. It is not: 1.4% of revenue at 20 
 
 When a platform adds a "screen the whole pipeline" button, does anyone re-run the cost model before launch, or does finance find out from the invoice?
 
-*AI disclosure: the cost model was calculated and the text drafted with Claude Sonnet 5.5 from my use case and assumptions; I checked the arithmetic and the price source. [Adjust to what is true for you.]*
+*AI disclosure: the cost model was calculated and the text drafted with Claude Sonnet 5.5 from my use case and assumptions; I checked the arithmetic and the price source.*
