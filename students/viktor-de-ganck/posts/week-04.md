@@ -18,7 +18,7 @@ For my Build, I made an AI prompt that sorts financial news. For each news item 
 |---|---|---|
 | Fed raises rates | rate decision / FX, bonds / **fact** | Read it, tell clients with bond funds |
 | "Beursagenda" (upcoming company dates) | none / none / fact | Keep it for planning client calls |
-| Commentator on X about rate-hike odds | opinion only / FX / **opinion** | Skip it, or at least never present it as news |
+| FT opinion piece on rate-hike odds | opinion only / FX / **opinion** | Skip it, or at least never present it as news |
 
 In short: **the tool tells the advisor which items are real news, which are background, and which are just opinion.** The buyer is the managing partner.
 
@@ -71,3 +71,5 @@ For Week 8 I will add two rules: when to list several assets, and that forecasts
 **My question:** of all the news you read in a morning, how much of it do you actually use?
 
 *Graslei Wealth and all (est.) figures are my assumptions. The 60%, 20% and 2 of 30 come from my own Build (run 1, 15 items, run twice). Numbers calculated in Python, post drafted with Claude from my Build log; case, verdict and prediction are mine.*
+
+*Correction (22 October 2026): the rate-hike item in the table was first labelled as an X post. It came from a Financial Times opinion piece.*

@@ -42,7 +42,7 @@ Evidence anchors the rating in something real. It is also what your instructor v
 ## Checkpoint 1 — End of Week 4
 
 **What can my Build do now?** It sorts a financial news item into event type, asset class and fact or opinion; fact or opinion was right in 93% of 30 answers, and official statements, Dutch items and sarcasm were handled correctly.
-**What can it not do yet?** List all the relevant asset classes (73% right), tell a government action from a market move, label an opinion post full of numbers as opinion (item 14), or give the same answer twice (2 of 15 items differed).
+**What can it not do yet?** List all the relevant asset classes (73% right), tell a government action from a market move, label an opinion piece full of numbers as opinion (item 14), or give the same answer twice (2 of 15 items differed).
 **Which number proves it?** 9 of 15 items fully correct (60%), in both runs, 95% interval 36% to 80%.
 
 | Skill | Week | Rating | Evidence (one sentence) |
