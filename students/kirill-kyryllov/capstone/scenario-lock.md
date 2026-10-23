@@ -11,7 +11,7 @@
 3. **The reader:** The Managing Partner.
 
 4. **Why it matters:** An unverified AI claim reaching a client (such as a CapEx/OpEx
-   misclassification, the exact failure type my own Build caught) creates professional
+   misclassification, the exact failure type my own Build missed in testing) creates professional
    liability exposure and risks client trust. A single such error reaching a client, once
    discovered, carries a conservative correction cost of roughly €1,200, not counting the
    reputational damage. My own Week 1 research also documented an AI financial-advice case
