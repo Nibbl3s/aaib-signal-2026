@@ -25,7 +25,7 @@ Rating: 🟢 Confident / 🟡 Getting there / 🔴 Need practice, plus **one sen
 
 | # | Skill | Rating | Evidence |
 |---|-------|--------|----------|
-| 5 | Market mechanism thinking | - | |
+| 5 | Market mechanism thinking | 🟡 | Completed an AI-assisted Room 8 Studio audit scoring 12/18 using four agent-run recommendation responses and a four-factor vulnerability assessment, distinguishing shortlist visibility from supplier quality and website traffic from contract revenue while labelling unmeasured acquisition channels and illustrative revenue assumptions. |
 | 6 | Cost projection | - | |
 | 7 | Lock-in detection | - | |
 | 8 | Integration & architecture design | - | |
