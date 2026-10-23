@@ -1,64 +1,41 @@
 ---
 week: 5
-title: "Can AI Find an Enterprise Workplace Psychology Firm? A GEO Audit of MindGym"
+title: "Can an AI Find an Enterprise Workplace Psychology Firm? A GEO Audit of MindGym"
 author: Andreea Simion
 beat: The Psychology of AI Adoption in the Workplace.
 skill: "Market mechanism thinking"
 date: 2026-10-23
 ---
 
-# Can AI Find an Enterprise Workplace Psychology Firm? A GEO Audit of MindGym
+# Can an AI Find an Enterprise Workplace Psychology Firm? A GEO Audit of MindGym
 
-When a Chief Human Resources Officer (CHRO) asks an AI assistant, *"What are the best workplace psychology consultancies to help manage employee anxiety and change fatigue during a major AI software rollout?"*, which companies actually appear in the synthesized recommendation? 
-
-For twenty-five years, enterprise customer discovery depended on Search Engine Optimization (SEO)—ranking on page one of Google, earning blue-link clicks, and driving inbound web traffic. Today, the gatekeeper between the customer and the provider is shifting. AI answer engines synthesize solutions directly, bypassing traditional search results and deciding which consultancies to mention and which to ignore. 
-
-To evaluate how visible workplace psychology firms are in this new paradigm, I conducted a 6-criterion Generative Engine Optimization (GEO) audit on **MindGym** (Mind Gym PLC), a leading global B2B behavioral science consultancy.
-
----
+When a Chief Human Resources Officer asks an AI assistant "what's the best workplace psychology consultancy to manage employee anxiety and change fatigue during an AI rollout?", which companies appear in the answer? I audited one to find out — and the results should concern every HR tech and organizational change consultancy.
 
 ## The Company
 
-MindGym is an enterprise behavioral science consultancy that uses psychological research to transform organizational culture, leadership, and change management. They serve Fortune 500 clients undergoing major organizational shifts. I selected MindGym because they represent the exact type of high-authority, specialized B2B provider that enterprise leaders should be recommended when asking an AI for help with employee AI adoption anxiety—yet their visibility in AI-mediated discovery reveals critical structural gaps.
+MindGym is a global behavioral science and workplace psychology consultancy operating across Europe and the US, helping enterprises transform culture, leadership, and employee engagement. I chose them because they represent the exact kind of high-authority, mid-to-large specialized firm that should appear immediately when an AI is asked to recommend a behavioral partner for complex technology transitions — yet their positioning reveals fascinating vulnerabilities in AI-mediated discovery.
 
----
+## The Audit
 
-## The GEO Audit
-
-Below is the full 6-criterion GEO audit evaluating MindGym's discoverability across AI answer engines:
-
-| Criterion | Score (0-3) | Quoted Evidence & Findings |
+| Criterion | Score (0-3) | Evidence |
 | :--- | :--- | :--- |
-| **1. Structured Data & Schema Markup** | **1 / 3** | **Quoted Evidence:** *"Site source code contains basic Schema.org JSON-LD properties (`@type: Organization`, `name: Mind Gym`, `url`). However, it lacks specialized `Service`, `Product`, `FAQPage`, or `Review` schema markup across key behavioral transformation solution pages."* |
-| **2. Content Parseability** | **2 / 3** | **Quoted Evidence:** *"Pages utilize clear H1 and H2 headers and clean bulleted lists on behavioral transformation solutions. However, core service explanations rely heavily on narrative marketing prose rather than structured Q&A formats or extraction-friendly comparison tables."* |
-| **3. Third-Party Mention Density** | **3 / 3** | **Quoted Evidence:** *"MindGym is cited extensively across high-authority external sources, including coverage in Harvard Business Review, HR Grapevine, Forbes, LinkedIn Industry Reports, and major corporate press releases regarding behavioral science and workplace change."* |
-| **4. AI Citation Presence** | **2 / 3** | **Quoted Evidence:** *"When queried in Perplexity AI and ChatGPT with web search for 'best workplace psychology consultancies for AI change management and employee anxiety', MindGym is cited consistently in general corporate change prompts, though occasionally eclipsed by Tier-1 strategy giants (Gartner, Mercer) on specific generative AI queries."* |
-| **5. Authority & Expertise Signals** | **3 / 3** | **Quoted Evidence:** *"Demonstrates strong domain expertise with published whitepapers, named behavioral scientists and organizational psychologists on staff, academic citations, and case studies with Fortune 500 clients."* |
-| **6. Brand Direct-Search Strength** | **3 / 3** | **Quoted Evidence:** *"Dominates direct brand search queries (`MindGym` / `Mind Gym`), featuring a verified Google Knowledge Panel, active social media ecosystems, extensive Wikipedia/press references, and clear brand-category association."* |
+| **1. Structured Data & Schema Markup** | 1 / 3 | Site source code contains basic Schema.org JSON-LD properties (`@type: Organization`), but lacks specialized `Service`, `FAQPage`, or `Review` markup across key behavioral transformation solution pages. |
+| **2. Content Parseability** | 2 / 3 | Pages utilize clear H1/H2 headers and bulleted lists on behavioral solutions, but core explanations rely heavily on narrative marketing prose rather than structured Q&A formats or extraction tables. |
+| **3. Third-Party Mention Density** | 3 / 3 | Cited extensively across high-authority external sources, including coverage in Harvard Business Review, Forbes, HR Grapevine, and major executive press regarding workplace change. |
+| **4. AI Citation Presence** | 2 / 3 | When queried in Perplexity and ChatGPT with web search for enterprise change management consultancies, MindGym is cited consistently in general corporate prompts, though occasionally eclipsed by Tier-1 strategy giants (Gartner, Mercer) on specific AI adoption queries. |
+| **5. Authority & Expertise Signals** | 3 / 3 | Demonstrates strong domain expertise with published whitepapers, named behavioral scientists on staff, academic citations, and enterprise client case studies. |
+| **6. Brand Direct-Search Strength** | 3 / 3 | Dominates direct brand searches with a verified Google Knowledge Panel, active social ecosystems, extensive press references, and clear category association. |
 
-**Total Score:** **14 / 18**  
-**GEO Readiness Level:** **AI-Present**
-
----
+**Total Score:** 14/18 — **AI-Present**
 
 ## The Verdict
 
-MindGym scores **14/18 (AI-Present)**. An AI agent asked to recommend a workplace psychology consultancy for enterprise change will mention MindGym for broad behavioral management prompts. However, for niche queries specifically targeting *generative AI adoption anxiety*, MindGym is frequently eclipsed by broad management strategy giants like Gartner or Mercer. 
-
-MindGym's primary strength is its massive **third-party mention density** across executive press and business publications. Because AI models synthesize answers from external corroboration rather than self-published website claims, MindGym's external press footprint keeps it visible. Their biggest gap sits in **structured machine-readable schema**—their website relies on long, narrative prose that AI engines must work hard to parse, lacking structured `FAQPage` or `Service` JSON-LD schemas.
-
----
+MindGym scored 14/18 — AI-Present. An AI agent asked to recommend a workplace psychology partner will mention them for broad organizational change queries, but they face friction on niche AI-adoption prompts where legacy management consultants dominate. Their primary strength is third-party mention density: because business press frequently covers their behavioral frameworks, AI models corroborate their existence externally. Their biggest gap is structured data and parseability; their website relies on narrative prose rather than machine-readable schemas, forcing AI engines to work harder to extract specific service capabilities.
 
 ## The Insight
 
-This audit reveals a profound market mechanism shift in workplace consulting: **AI answer engines favor legacy entities with massive external digital footprints over specialized boutiques.**
-
-In the SEO era, a specialized boutique consultancy could out-rank a legacy giant by writing targeted blog posts on "employee AI adoption friction." In the GEO era, the AI model ignores long-tail keyword optimization and synthesizes answers from high-density, third-party corroborated sources. 
-
-For consultancies in the workplace psychology beat, GEO is not an SEO trick; it is an existential business model discipline. Once an AI engine establishes a citation pattern for category recommendations, that pattern becomes self-reinforcing in training data. Getting cited early in AI answer engines is the new competitive moat.
-
----
+This audit reveals a broader pattern in enterprise consulting: legacy firms with massive external digital footprints hold a structural advantage over specialized boutiques in AI discovery. Most HR consultancies are heavily optimized for traditional Google SEO keywords but remain passive or unoptimized for generative engine synthesis. The firms that move first to structure their expertise for AI extraction will capture an outsized share of executive inbound interest as procurement shifts from search engines to conversational agents.
 
 ## The Question
 
-As enterprise buyers increasingly rely on AI assistants to select B2B vendors, how quickly will specialized organizational consultancies realize that traditional website SEO is dead—and what happens to the expert firms that remain AI-invisible?
+How long before enterprise HR consultancies realize that traditional keyword SEO no longer guarantees executive recommendations — and what happens to the specialized firms that figure it out last?
