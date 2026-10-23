@@ -100,12 +100,6 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 | F5 Refused |1 | |
 | F6 Inconsistent |0 | |
  
-**What surprised me:**
-> —
- 
-**The failure that would have mattered most in real use, and why:**
-> —
- 
 ---
  
 ## Decision framework
@@ -126,9 +120,9 @@ Answered before running, for the job as a whole.
  
 ### Change 1 — *[date]*
  
-**What I changed:** —
-**Why I thought it would help:** —
-**What I predicted would happen:** —
+**What I changed:** Feedback on the Research Plan follows the rubric very strictly and is therefore much stricter on observation, evaluation and feedback for the student. A human would have been softer, milder, more generous. AI should act similarly. 
+**Why I thought it would help:** If AI does not become as empathetic as a human, a human will manipulate the AI verdict.
+**What I predicted would happen:** AI will become inconsistent. Switching between being strict versus being mild/empathetic
 **What actually happened:** — % → — %
-**Was I right?** —
+**Was I right?** 
  
