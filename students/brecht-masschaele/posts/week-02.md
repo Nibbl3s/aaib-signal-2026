@@ -1,3 +1,12 @@
+---
+week: 2
+title: "The best AI decision I made this week was a COUNTIFS"
+author: "Brecht Masschaele"
+beat: "AI in International Management"
+skill: "Capability skepticism"
+date: 2026-10-09
+---
+
 # Signal #2: The best AI decision I made this week was a COUNTIFS
 
 **Beat:** coordinating internships and individual Bachelor Projects (BAP) for ~76 Business & Management students.
