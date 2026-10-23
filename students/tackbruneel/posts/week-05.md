@@ -23,9 +23,9 @@ date: 2026-10-23
 | 6 | Brand search | 1 | #1 for "DJ Thorax", but no knowledge panel; without "DJ", the anatomy term *thorax* wins. |
 | | **Total** | **6/18** | **AI-Invisible** |
 
-The most telling run: I asked which DJ a Chiro should book for a fuif *in Ingelmunster*. The AI named DJ Vjeetn and DJ Fish, citing an UiTinVlaanderen listing of one recent fuif, plus DJ GERD from Trustlocal. That's the town where I've played seven listed events. The identical wedding query gave no names the first time and two names the second time.
+The most telling run: I asked which DJ a Chiro should book for a fuif *in Ingelmunster*. The AI named DJ Vjeetn and DJ Fish, citing an UiTinVlaanderen listing of one recent fuif, plus DJ GERD from Trustlocal. That's the town where I've played seven listed events, and as a DJ in that scene I know none of the five DJs named across my runs. The identical wedding query gave no names the first time and two the second.
 
-**The Verdict:** An AI wouldn't recommend DJ Thorax today. The site isn't the problem: five of my six points come from my own page. The problem is that no source the AI reads mentions me. In every answer the AI cited directories and event agendas, never a DJ's own website. The biggest gaps are criteria 3 and 4, and both are outside my site. The most important fix costs nothing: ask the organisers I play for to put "DJ Thorax" in their UiTinVlaanderen line-up, and collect reviews on Trustlocal and House of Weddings.
+**The Verdict:** An AI wouldn't recommend DJ Thorax today. The site isn't the problem: five of my six points come from my own page. The problem is that no source the AI reads mentions me. In every answer the AI cited directories and event agendas, never a DJ's own website. The biggest gaps are criteria 3 and 4, and both are outside my site. The fix costs nothing: get organisers to list "DJ Thorax" in their UiTinVlaanderen line-up, and collect reviews on Trustlocal and House of Weddings.
 
 On the vulnerability matrix I'm **low risk**: bookings come from my network, and no AI can play a set. A 60% traffic drop would barely touch revenue. The risk is new clients outside my network, like couples planning a wedding, who never hear my name at all.
 

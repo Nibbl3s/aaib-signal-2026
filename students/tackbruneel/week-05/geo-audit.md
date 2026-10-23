@@ -30,11 +30,11 @@
 | "Our youth movement (Chiro) is organising a fuif in Ingelmunster, West Flanders. Which DJ should we book?" | DJ Vjeetn, DJ Fish, DJ GERD | uitinvlaanderen.be (event listing of a recent Ingelmunster fuif), trustlocal.be |
 | "Is DJ Thorax from West Flanders a good DJ to book for a party?" | — | "I couldn't find reliable reviews or booking information for a DJ called DJ Thorax in West Flanders" |
 
-**Note 1 — insider check:** I'm the insider here, as a working DJ in this region. *(Thor to fill in: do I know DJ Gert V, DJ Pieter, DJ Vjeetn, DJ Fish, DJ GERD, and would people in the scene name them?)* None of the names looks invented: every one came with a source link I could open.
+**Note 1 — insider check:** I'm the insider here, as a working DJ in this region (23 listed events, 2025–2026). **I don't know any of the five DJs the AI named** (DJ Gert V, DJ Pieter, DJ Vjeetn, DJ Fish, DJ GERD). None of them has crossed my path at the youth-movement parties, fuiven or events where I play. So an insider would **not** name these same DJs. None of the names looks invented, though: every one came with a source link I could open. They're real, but they're the DJs that directories list, not the ones the local scene books.
 
 **What it says about the sector:** the AI never cited a DJ's own website. Every name came from a **third party that lists DJs or events**: House of Weddings, Trustlocal, eventplanner.net, UiTinVlaanderen. Local DJs are found through the directories and event agendas that write about them, not through their own sites.
 
-**Pool row** *(in the Canvas pool format; I didn't post it by the Monday 11:30 deadline)*: `DJs / events (wedding + fuif DJ, West Flanders) | Yes, but only DJs listed on directories (House of Weddings, Trustlocal, UiTinVlaanderen) — never from their own sites | Insider: see note 1 | No — 0 names vs 2 names on identical runs`
+**Pool row** *(in the Canvas pool format; I didn't post it by the Monday 11:30 deadline)*: `DJs / events (wedding + fuif DJ, West Flanders) | Yes, but only DJs listed on directories (House of Weddings, Trustlocal, UiTinVlaanderen) — never from their own sites | No — I'm a DJ in this region and know none of the 5 named | No — 0 names vs 2 names on identical runs`
 
 ---
 
