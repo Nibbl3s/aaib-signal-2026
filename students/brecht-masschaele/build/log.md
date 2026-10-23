@@ -94,11 +94,11 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 | Code | Count | Notes |
 |---|---:|---|
 | F1 Wrong |3 |human errors! |
-| F2 Fabricated | | |
-| F3 Missed | | |
-| F4 Format | | |
-| F5 Refused | | |
-| F6 Inconsistent | | |
+| F2 Fabricated |0 | |
+| F3 Missed |1 | |
+| F4 Format |2 | |
+| F5 Refused |1 | |
+| F6 Inconsistent |0 | |
  
 **What surprised me:**
 > —
