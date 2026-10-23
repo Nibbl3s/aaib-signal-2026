@@ -39,3 +39,4 @@ Rating: 🟢 Confident / 🟡 Getting there / 🔴 Need practice, plus **one sen
 | 11 | Cross-domain transfer | - | |
 | 12 | Synthesis | - | |
 | 13 | Defence | - | |
+
