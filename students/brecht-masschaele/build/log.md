@@ -28,7 +28,7 @@
  
 **Where the inputs came from:** the real S1 2026-27 worklist (73 BAP students) and real coordinator requests from the first weeks of the semester.
 **Real, or written by me?** Real data and real requests; a few edge cases written by me to test boundaries.
-**Anonymised?** Yes in this repo (S01–S10). The tool itself runs on the real data inside our university environment.
+**Anonymised?** Yes in this repo (S01–S10). The tool itself is a demo and runs on fabricated data based on real data that only live inside our university environment.
  
 **Awkward cases deliberately included:**
  
