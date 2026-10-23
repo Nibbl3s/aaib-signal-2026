@@ -34,7 +34,7 @@
 
 **What it says about the sector:** the AI never cited a DJ's own website. Every name came from a **third party that lists DJs or events**: House of Weddings, Trustlocal, eventplanner.net, UiTinVlaanderen. Local DJs are found through the directories and event agendas that write about them, not through their own sites.
 
-**Pool row** *(in the Canvas pool format; I didn't post it by the Monday 11:30 deadline)*: `DJs / events (wedding + fuif DJ, West Flanders) | Yes, but only DJs listed on directories (House of Weddings, Trustlocal, UiTinVlaanderen) — never from their own sites | No — I'm a DJ in this region and know none of the 5 named | No — 0 names vs 2 names on identical runs`
+**Pool row** *(posted late in the Canvas pool on 23 Oct, after the Monday 11:30 deadline)*: `DJs / events (wedding + fuif DJ, West Flanders) | Yes, but only DJs listed on directories (House of Weddings, Trustlocal, UiTinVlaanderen) — never from their own sites | No — I'm a DJ in this region and know none of the 5 named | No — 0 names vs 2 names on identical runs`
 
 ---
 
