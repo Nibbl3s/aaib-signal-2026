@@ -291,6 +291,15 @@
  },
  {
   "week": 2,
+  "title": "One Student, One Coach, One Form: Why My BAP Rubric Distribution Doesn't Need AI",
+  "author": "Brecht Masschaele",
+  "beat": "AI in International Management",
+  "skill": "Capability skepticism",
+  "date": "2026-10-09",
+  "url": "posts/brecht-masschaele-week-02-No AI.html"
+ },
+ {
+  "week": 2,
   "title": "My Own Classifier Says AI Can Help Balance a Game. The Framework Says No.",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
