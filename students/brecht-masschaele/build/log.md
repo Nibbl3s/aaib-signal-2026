@@ -93,7 +93,7 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
  
 | Code | Count | Notes |
 |---|---:|---|
-| F1 Wrong | | |
+| F1 Wrong |3 |human errors! |
 | F2 Fabricated | | |
 | F3 Missed | | |
 | F4 Format | | |
