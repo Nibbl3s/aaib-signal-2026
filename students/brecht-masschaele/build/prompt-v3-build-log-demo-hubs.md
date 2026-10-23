@@ -1,6 +1,6 @@
 ### Run 0b — anonymised demo hubs — 21 Oct 2026 (build observation, not scored)
 
-**Brief:** Have Claude build an anonymised twin of both hubs (Coordination Hub + Coach Hub) from one prompt, to demo without exposing any real student, staff or company data.
+**Brief:** Have Claude build anonymised hubs (Coordination Hub + Coach Hub) to demo without exposing any real student, staff or company data.
 **Model used:** Claude (Opus, claude.ai with Projects + device access)
 **Inputs tested:** one prompt plus one follow-up, run once. So there's no F6 check and **no success rate**. The expected results below are the requirements in my own prompt, not answers written down beforehand.
 
