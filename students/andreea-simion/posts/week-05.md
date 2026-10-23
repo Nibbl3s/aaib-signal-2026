@@ -1,8 +1,8 @@
 ---
 week: 5
-title: "Can AI Find a Enterprise Workplace Psychology Firm? A GEO Audit of MindGym"
+title: "Can AI Find an Enterprise Workplace Psychology Firm? A GEO Audit of MindGym"
 author: Andreea Simion
-beat: "The Psychology of AI Adoption in the Workplace."
+beat: The Psychology of AI Adoption in the Workplace.
 skill: "Market mechanism thinking"
 date: 2026-10-23
 ---
