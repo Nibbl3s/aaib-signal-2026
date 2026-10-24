@@ -23,14 +23,14 @@
   .theme:hover { border-color:var(--ink); }
   /* masthead band: dark title area, then the photo fading in underneath it (title never covers faces) */
   .hero { --ink:#f6f1e8; --muted:rgba(246,241,232,.85); --rule:rgba(246,241,232,.45); color:var(--ink); background:#16130f; }
-  .hero-photo { height:clamp(260px, 43vw, 600px);
+  .hero-photo { height:clamp(270px, 46.5vw, 640px);
     background:linear-gradient(180deg, #16130f 0%, rgba(22,19,15,0) 18%), url("assets/hero.webp") center 20% / cover no-repeat; }
-  /* Max Moor: slideshow, group photo and Max's photo alternate every 5 s */
+  /* Max Moor: slideshow, group photo and Max's photo alternate every 10 s */
   .hero-photo { position:relative; overflow:hidden; background:none; }
-  .hero-photo .slide { position:absolute; inset:0; background-size:cover; background-position:center 30%; background-repeat:no-repeat; }
+  .hero-photo .slide { position:absolute; inset:0; background-size:cover; background-position:center 0%; background-repeat:no-repeat; }
   .hero-photo .s1 { background-image:url("assets/hero.webp"); }
-  .hero-photo .s2 { background-image:url("assets/max.jpg"); opacity:0; animation:heroswap 10s infinite; }
-  .hero-photo .fade { position:absolute; inset:0; background:linear-gradient(180deg, #16130f 0%, rgba(22,19,15,0) 18%); }
+  .hero-photo .s2 { background-image:url("assets/max.jpg"); opacity:0; animation:heroswap 20s infinite; }
+  .hero-photo .fade { position:absolute; inset:0; background:linear-gradient(180deg, #16130f 0%, rgba(22,19,15,0) 7%); }
   @keyframes heroswap { 0%,45% { opacity:0 } 50%,95% { opacity:1 } 100% { opacity:0 } }
   @media (prefers-reduced-motion: reduce) { .hero-photo .s2 { animation:none } }
   header { padding:3rem 0 2rem; }
