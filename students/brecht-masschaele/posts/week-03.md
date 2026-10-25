@@ -53,7 +53,7 @@ The source checker searches the web to flag fake references, but can miss paywal
 
 ## The Question
 
-If AI drafts the feedback, how do coaches stay the ones who decide, and how do we stay credible telling students that AI may polish their work but not do their thinking? 🤔
+If AI drafts the feedback, how do coaches stay the ones who decide? 🤔
 
 ---
 
