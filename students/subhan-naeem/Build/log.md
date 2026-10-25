@@ -168,8 +168,8 @@ Complete these at the relevant checkpoints.
 
 **Measured:** 100% on 18 recorded test cases; each case was run twice.
 
-**Dominant failure type:** No F1–F6 failures recorded in the current test set.
+**Dominant failure type:** No F1–F6 failures recorded in the current test set and oversimplification of information containing multiple risks because the tool must select one primary category.
 
 **The failure that would matter most:** An incorrect or incomplete classification that causes a consultant to overlook a significant risk.
 
-**What I'd change first:** Consider how the tool could flag inputs containing multiple risks instead of representing them with only one category.
+**What I'd change first:** Consider how the tool could flag inputs containing multiple risks instead of representing them with only one category and test a revised prompt that identifies all relevant risk categories, then compare its classifications against predefined expected answer
