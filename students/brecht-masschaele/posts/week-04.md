@@ -23,7 +23,7 @@ The Coach Hub bundles several jobs. The 5-criterion filter split them. Five jobs
 
 **Assumptions:**
 
-- Loaded rate: €68,000 (10-year lecturer salary) × 1.3 ÷ 1,600 h = **€55.25/h**
+- Loaded rate: €68,000 (10-year lecturer gross salary) × 1.3 ÷ 1,600 h = **€55.25/h**
 - AI success rate: **80% (est.)**, not tested yet
 - Seats: Team plan, $20 × 0.92 = €18.40/month (claude.com, 19 October)
 
