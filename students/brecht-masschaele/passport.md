@@ -43,14 +43,19 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟢 / 🟡 / 🔴 | |
-| Capability skepticism | 2 | 🟢 / 🟡 / 🔴 | |
-| Vendor claim detection | 3 | 🟢 / 🟡 / 🔴 | |
-| Value quantification | 4 | 🟢 / 🟡 / 🔴 | |
+| Cost literacy | 1 | 🟡 | Many variables to take into account. |
+| Capability skepticism | 2 | 🟡 | So many options to choose from for the test set. I could launch a test set every day for every phase. |
+| Vendor claim detection | 3 | 🔴 | I think I will have to study this list to be aware of the avoidance. Very tricky to miss some. |
+| Value quantification | 4 | 🔴 | Too little time to prepare and revise. |
 
 **6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
 
 **Your click:** One sentence — what did you believe in Week 1 that you no longer believe, and what replaced it? That change is the click: it's the proof the cycle moved you. No click = swinging, not thinking.
+In week 1 I thought this course would be way to hard for me: GitHub? MarkDown? Posting every week? All these technical details and thinking? 
+Now I found a way to ask AI to assist me in every step I take in this course:
+I build an interactive quiz and flashcards to learn the technical jargon and deatils, but also the strategical thinking and frameworks.
+I build a skill to assist me in the prep phase: do I really need AI or should I go for a simpler solution? 
+My mindset has changed a lot. 
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
