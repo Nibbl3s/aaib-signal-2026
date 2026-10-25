@@ -94,11 +94,3 @@ Do not provide a long report, multiple paragraphs, recommendations, or additiona
 **Primary Risk Category:** Legal/Regulatory Risk
 
 **Explanation:** The new import tax creates a regulatory risk, while the currency depreciation introduces an additional economic risk.
-
-## Important Limitations
-
-This tool provides an initial classification based only on the supplied information. Its output is not a complete market-risk assessment and should not be treated as verified business intelligence.
-
-A consultant must independently verify important facts, assess the potential financial impact, consider interactions between risks, and make the final decision.
-
-A correct classification does not automatically mean that the tool has identified every relevant risk or produced an accurate market-entry recommendation.    shd iadd this?
