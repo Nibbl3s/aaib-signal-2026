@@ -29,7 +29,7 @@ Build, buy or connect? Screening is compliance hygiene, not a competitive advant
 
 I scored my own stack on five dimensions, 0 to 3 each: 5 out of 15, moderate. Data portability scores 0: every prompt, invoice and raw answer sits as plain JSON on my own disk. API stability scores 1: Anthropic gives at least 60 days' notice before retiring a model, and kept exactly 61 days twice this year. Feature dependency and migration cost score 1 each: one function switches providers, and moving took an afternoon. The highest score, 2, is pricing control: list prices can change on 30 days' notice, with no cap.
 
-But that risk barely bites. Tripling the price moves my tokens from €79 to €237 a year, while switching costs about €1,258. The dependency that matters is capability. The same prompt scored 91.7% on Claude, 89.5% on Gemini (19 runs so far) and 16.7% on a free model on my own PC, which wrote Python code instead of answers nine times and once cleared a sanctioned bank.
+But that risk barely bites. Tripling the price moves my tokens from €79 to €237 a year, while switching costs about €1,258. The dependency that matters is capability. The same prompt scored 91.7% on Claude, 83.3% on Gemini (24 runs) and 16.7% on a free model on my own PC, which wrote Python code instead of answers nine times and once cleared a sanctioned bank.
 
 **The Migration Path**
 
