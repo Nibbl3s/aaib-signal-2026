@@ -43,10 +43,10 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Cost literacy | 1 | 🟡 | Many variables to take into account. |
-| Capability skepticism | 2 | 🟡 | So many options to choose from for the test set. I could launch a test set every day for every phase. |
-| Vendor claim detection | 3 | 🔴 | I think I will have to study this list to be aware of the avoidance. Very tricky to miss some. |
-| Value quantification | 4 | 🔴 | Too little time to prepare and revise. |
+| Cost literacy: You can read an AI pricing page, estimate token costs, and build a cost projection | 1 | 🟡 | Many variables to take into account. |
+| Capability skepticism: You can spot hallucinations, assess AI fit, and decide when AI is the wrong tool | 2 | 🟡 | So many options to choose from for the test set. I could launch a test set every day for every phase. |
+| Vendor claim detection: You can deconstruct a vendor proposal, separate facts from aspirations, and identify FOMO | 3 | 🔴 | I think I will have to study this list to be aware of the avoidance. Very tricky to miss some. |
+| Value quantification: You can map a value chain, quantify benefits, and build a defensible business case | 4 | 🔴 | Too little time to prepare and revise. |
 
 **6 ECTS — extended evidence:** *(reference your extension work — the second vendor deconstruction, the extended cost model, the sensitivity analysis)*
 
