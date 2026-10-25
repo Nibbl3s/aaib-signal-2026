@@ -9,7 +9,7 @@ date: 2026-10-25
 
 ## Hook
 
-Week 3 showed two ways to waste money on AI. GhentBakery bought a "revolution" that beat its spreadsheet by three points. FlandersTextiles turned down a tool that would have saved it around €227K a year. Same root cause: nobody tested the claim. I have two AI ideas for our internship & BAP programme, so I built a tool that tests them first. 🛠️
+Week 3 showed two ways to waste money on AI. I don't want to buy a "revolution" that beats my spreadsheet by three points. I don't want the management to turn down a tool that would save us some burn-outs and bore-outs a year. I want to avoid the root cause: let's test the claim. I have two AI ideas for our internship & BAP programme, so I built a tool that tests them first. 🛠️
 
 ## What I Built
 
