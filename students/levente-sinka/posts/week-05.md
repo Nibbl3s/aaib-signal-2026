@@ -1,11 +1,11 @@
 ---
-title: "Signal Post 5: Can AI Find Your Local Pub? A GEO Audit of Turner's"
+title: "Can AI Find Your Local Pub? A GEO Audit of Turner's"
 date: "2026-10-25"
 author: "Levente Sinka"
 week: 5
 ---
 
-# Signal Post 5: Can AI Find Your Local Pub? A GEO Audit of Turner's
+# Can AI Find Your Local Pub? A GEO Audit of Turner's
 
 When a tourist in a new city asks an AI assistant, "What's the best local pub around here?", the AI becomes the ultimate gatekeeper. In independent hospitality, surviving off local foot traffic is no longer enough; if an AI engine cannot parse your digital footprint, you simply do not exist in the recommendation layer. I audited a thriving local pub to see if their real-world popularity translates into AI discoverability.
 
