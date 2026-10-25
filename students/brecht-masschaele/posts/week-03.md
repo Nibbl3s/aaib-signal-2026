@@ -1,56 +1,61 @@
 ---
 week: 3
-title: "AI in International Management: Real Value or FOMO? Deconstructing Anthropic's AI Claims"
+title: "Coordination Hub & Coach Hub: Real Value or FOMO? I Built a Skill That Asks First"
 author: "Brecht Masschaele"
 beat: "AI in International Management"
 skill: "Vendor claim detection"
-date: 2026-10-23
+date: 2026-10-25
 ---
 
 ## Hook
 
-Our internship & BAP coordination hub already runs part of its admin on Claude, and a paid plan feels like the logical next step. Before anyone signs, I want to know what happens to student data, what it costs at our volume, and how much time it really saves. 🔍
+Week 3 showed two ways to waste money on AI. GhentBakery bought a "revolution" that beat its spreadsheet by three points. FlandersTextiles turned down a tool that would have saved it around €227K a year. Same root cause: nobody tested the claim. I have two AI ideas for our internship & BAP programme, so I built a tool that tests them first. 🛠️
 
-## The Claim
+## What I Built
 
-Anthropic, the US company behind Claude, sells it to universities through Team, Enterprise and Education plans. Three claims carry the pitch:
+A Claude skill called **AI FOMO Check**. It asks six questions, one at a time: What's the real problem, in numbers? What does waiting six months cost? Is AI the right tool? Can the claims be checked on our data? What's the total cost? Is there a simpler fix for 80% of the problem? It pushes back on vague answers, can also say "buy", and ends with one verdict.
 
-- Claude "meets the compliance requirements higher education institutions have for student data" (education page).
-- Claude helps administrative teams "transform the way they work without losing quality" (education page).
-- A Team seat costs $20 a month (billed annually); a Premium seat gives "5x more usage than standard seats" (pricing page).
+## The Vendor Claims
 
-## The Deconstruction
+Both ideas run on Claude, so the skill first tagged Anthropic's pitch:
 
-| # | Claim | Section | Tag | Reasoning |
-|---|---|---|---|---|
-| 1 | "No model training on your content by default" (Team) | Pricing page | **Fact** | Checkable in the plan table and terms. Free and Pro are opt-out, so a coach on a personal account isn't covered. |
-| 2 | University logos | Education page | **Fact** | Verifiable, but proves adoption, not results. |
-| 3 | "Transform the way they work without losing quality" | Education page | **Aspiration** | No baseline, metric or timeframe. |
-| 4 | Security "designed to meet institutional compliance needs" | Education page | **Aspiration** | "Designed to" is intent, not outcome. |
-| 5 | "Meets the compliance requirements … for student data" | Education page | **Avoidance** | Which ones? No GDPR, no data processing agreement, nothing on where EU student data is processed. |
-| 6 | Premium = "5x more usage than standard seats" | Pricing page | **Avoidance** | 5x of what? Standard usage isn't defined, and limits can change. |
-| 7 | Enterprise usage cost "scales with model and task" | Pricing page | **Avoidance** | "It depends." No price for a scheduled monitoring task. |
+| Claim | Tag | Why |
+|---|---|---|
+| "No model training on your content by default" (Team) | **Fact** | Checkable in the terms, but personal accounts aren't covered. |
+| Claude "meets the compliance requirements higher education institutions have for student data" | **Avoidance** | Which requirements? No GDPR basis, no data processing agreement named. |
+| Helps admin teams "transform the way they work without losing quality" | **Aspiration** | No baseline, no metric, no timeframe. |
+| Premium seat = "5x more usage than standard seats" | **Avoidance** | Five times an unpublished limit. With 40 coaches, I can't budget on that. |
 
-Two facts, two aspirations, three avoidances. The avoidances sit exactly on data and cost.
+## Run 1: Coordination Hub
 
-## The FOMO Test
+AI drafts replies to repeat questions in our shared inbox. The fit is good: repetitive work, and every draft is reviewed. But the volumes are still estimates, waiting costs staff hours rather than students, and a FAQ page with templates might do most of the job. **Verdict: pilot**, against a templates-only comparison.
 
-**Q1: What problem will this solve?** My estimate: coaches spend about 50% of their time on admin, coordinators and the administrator even more. Each coach follows 5 to 10 students, all at a slightly different pace, with countless small to-dos and deadlines to track. Doing nothing means more of what coaches already complain about: too much admin, with a real risk of burnout and bore-out.
+## Run 2: Coach Hub
 
-**Q3: Can we verify the claims independently?** Yes, Anthropic's strongest point. Team bills monthly from two seats, no sales call. A university of applied sciences in the Netherlands confirmed it works for them. Now I want to test it on *my* data with *my* metric: 25% less admin time for coaches, coordinators and the administrator.
+250 BAP students a year (70 in semester 1, 180 in semester 2), 20 to 40 coaches, 21 paid hours per student. The goal isn't fewer hours but better ones: less admin, more in-depth coaching. Feedback also differs widely between coaches.
 
-**Q4: What's the total cost?** 2 coordinators + 1 administrator + 20 coaches = 23 seats × $20 × 12 = **€5,078 a year** (est.). If all 40 semester-2 coaches need a seat, 43 seats cost **€9,494 a year** (est.). Not visible: whether scheduled monitoring pushes us onto pricier Premium seats, extra usage at API rates, and our own time maintaining skills and data.
+The skill split the Hub into two kinds of work:
 
-## The Verdict
+| Part | Verdict | Why |
+|---|---|---|
+| Research Plan feedback, Socratic coach, feedback checker, source checker | **AI** | Reading and writing against the rubric. Up to an hour of coach work becomes 10–15 minutes of review. |
+| Draft emails to students and mentors | **AI** | Personal; the coach reviews them. |
+| Executive assistant | **AI, if grounded** | Only safe if it answers from the BAP guide. |
+| Coach to-do list, overview, coordinator monitoring | **Rules** | "Is task X done by date Y?" needs an exact answer every time. |
 
-**Pilot.** This isn't FOMO: the no-model-training claim is checkable, and a spreadsheet is no alternative, because our two hubs are connected and talk to each other. But the questions that matter most for a Belgian university, data and cost at our volume, are exactly the ones the pages avoid.
+The source checker searches the web to flag fake references, but can miss paywalled sources: it sorts, the coach decides.
 
-So: three months on Team, billed monthly, with 2 coordinators, 1 administrator and 2 coaches (5 seats × $25 × 3 = **€345**). No identifiable student data until our data protection officer has seen the DPA. Measure admin time before and after, check the usage meter weekly, then buy or walk away in January.
+**Rough win:** 250 students × 4 tools × 45 minutes ≈ **750 hours a year**, about 14% of 5,250 paid coaching hours, moved to real coaching. It's an estimate until I know how often each tool runs.
+
+**Cost:** the tools already exist, so mainly seats (up to 40, about €8,800 a year at list price) and coach training.
+
+**Verdict: pilot.** Five coaches in semester 2, measuring the share of hours spent on admin versus coaching, and feedback consistency against the rubric. Both hubs share one condition: no student documents go in until our data protection officer has seen the DPA.
 
 ## The Question
 
-If standard seats hold up, do 40 coaches each need a seat, or can the hub deliver the AI's output to them without one? 🎓
+If AI drafts the feedback, how do coaches stay the ones who decide, and how do we stay credible telling students that AI may polish their work but not do their thinking? 🤔
 
 ---
 
-*AI helped me structure and edit this post (yes, it was Claude). Anthropic's claims were taken from claude.com on 19 October 2026. The tags and the verdict are mine. Currency: $1 = €0.92.*
+*AI helped me build the skill and edit this post. The answers and verdicts are mine. Anthropic's claims were taken from claude.com on 19 October 2026.*
+
