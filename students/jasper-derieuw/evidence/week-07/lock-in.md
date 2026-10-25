@@ -30,7 +30,7 @@ date: 2026-10-14
 | 1. Data portability | 0 | Everything I need (prompt, test set, every raw response with its usage data) is plain text and JSON on my own disk. No embeddings, no fine-tuning, nothing stored only at the vendor. |
 | 2. API stability | 1 | Versioned API (`anthropic-version` header); at least 60 days' notice before retirement, kept twice in 2026 at 61 days. But a forced model change resets my measurements: the same prompt went from 29.2% wrong (Week 2) to 8.3% wrong (Week 6) with a different model. |
 | 3. Pricing control | 2 | Unilateral list-price changes on 30 days' notice, no cap, no pass-through of falling costs; I am on pay-as-you-go with no contract. Impact is low at my volume (see the exit plan). |
-| 4. Feature dependency | 1 | A small abstraction layer exists: one `Invoke-Model` function and one `Read-Answer` that normalises usage across three providers. No vendor-only features (no tools, caching or vector store). But my prompt needs frontier capability: 91.7% on Claude Sonnet 5.5, 89.5% on Gemini 3 Flash (19 of 24 runs so far), 16.7% on a local 3B model. |
+| 4. Feature dependency | 1 | A small abstraction layer exists: one `Invoke-Model` function and one `Read-Answer` that normalises usage across three providers. No vendor-only features (no tools, caching or vector store). But my prompt needs frontier capability: 91.7% on Claude Sonnet 5.5, 83.3% on Gemini 3 Flash (20 of 24, all runs; updated 25 Oct 2026), 16.7% on a local 3B model. |
 | 5. Migration cost | 1 | Moving to another cloud model took one afternoon on my prototype; in a real deployment (integration, re-validation by compliance, documentation) about 1–2 weeks of contained cost (Section 3). |
 | **Total** | **5 / 15** | **Moderate: partially locked.** Fix the highest-scoring dimension (pricing control) before adding dependencies. |
 
@@ -51,7 +51,7 @@ date: 2026-10-14
 | **Total** | **€1,258** | About 1.5 developer days plus about 10 analyst hours |
 
 **If we had to leave this vendor in 90 days, here is what we would do:**
-1. Move to **Gemini 3 Flash** (Google), because it already runs the same prompt at 89.5% (19 of 24 runs measured) at a lower list price ($0.50/$3 per 1M tokens, course AI Pricing Reference).
+1. Move to **Gemini 3 Flash** (Google), because it already runs the same prompt at 83.3% (all 24 runs; updated 25 Oct 2026) at a lower list price ($0.50/$3 per 1M tokens, course AI Pricing Reference).
 2. The work is about **1.5 developer days plus 10 analyst hours, roughly €1,258** at loaded rates.
 3. The piece with no clean equivalent is **my measured error profile**: Gemini over-flags partial name matches (input 8, both runs) where Claude does not. Our answer: re-measure on the full test set, and send partial matches to a human anyway, as the Week 4 pattern-routing design already does.
 4. We would lose **nothing stored**, but we would lose our **measured baseline** and have to re-earn it.
