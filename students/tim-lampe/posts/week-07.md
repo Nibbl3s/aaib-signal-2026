@@ -44,4 +44,4 @@ The re-test shows what leaving to each place costs. Groq got 138 of 144 verdicts
 
 Lock-in in this beat sits in the wiring, not the logo. Most boutiques will buy a platform that hides the model, the notice period and the export format, so they cannot score it. Ask any vendor in writing: how do I export my data, how many days' notice before a model is retired, how many before a price changes? The vendors who answer are worth a premium.
 
-*AI disclosure: I ran the API calls myself; Claude helped research the vendor terms, do the arithmetic and draft the text, and I checked the scores and numbers. [Adjust to what is true for you.]*
+*AI disclosure: I ran the API calls myself; Claude helped research the vendor terms, do the arithmetic and draft the text, and I checked the scores and numbers.*
