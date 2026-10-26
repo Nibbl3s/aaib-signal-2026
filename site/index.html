@@ -544,8 +544,7 @@ fetch('manifest.json').then(r => r.json()).then(manifest => {
   // --- title: decode on load, glitch on hover ---
   const h1 = $('header h1'), orig = h1.textContent, chars = '!<>-_\\/[]{}=+*^?#01';
   const scramble = () => { let f = 0; const t = setInterval(() => { h1.textContent = orig.split('').map((c, k) => c === ' ' ? ' ' : (k < f / 2 ? c : chars[Math.random() * chars.length | 0])).join(''); if (++f > orig.length * 2) { clearInterval(t); h1.textContent = orig; } }, 35); };
-  if (!calm) setTimeout(scramble, store.get('booted') ? 200 : 2000);
-  h1.addEventListener('pointerenter', () => { if (calm) return; h1.classList.remove('glitch'); void h1.offsetWidth; h1.classList.add('glitch'); scramble(); });
+  // Titel-Scramble beim Laden und Glitch beim Hover entfernt
   // --- interactive constellation in the hero ---
   const hero = $('.hero'), cv = document.createElement('canvas'); cv.id = 'pts'; hero.prepend(cv);
   const g = cv.getContext('2d'); let W, H, vis = true, mx = -999, my = -999, P = [];
