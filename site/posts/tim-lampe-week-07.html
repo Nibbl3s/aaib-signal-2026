@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Peer Screen on Two Providers: What It Costs to Leave — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+<link rel="stylesheet" href="../themes/tim-lampe/theme.css">
+</head>
+<body class="themed theme-tim-lampe">
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · AI in M&amp;A Valuation</div>
+<h1>A Peer Screen on Two Providers: What It Costs to Leave</h1>
+<div class="byline">Tim Lampe · 2026-10-26</div>
+<h2>A Peer Screen on Two Providers: What It Costs to Leave</h2>
+<h2>Hook</h2>
+<p>Valuation platforms sell AI peer selection as a feature. Few ask what happens when the model underneath is retired or repriced. The peer list sits under every multiple, so the answer matters.</p>
+<h2>The Use Case</h2>
+<p>I modelled an AI peer screen inside a valuation platform for advisory boutiques. A target and six candidates go in; each candidate comes back as Comparable, Not comparable or Unclear, with a one-line reason. My Build runs on Google's Gemini API (<code>gemini-3.8-flash</code>). To test the exit, I ran the same prompt on Groq (<code>openai/gpt-oss-120b</code>) and on Llama 3.2 3B on my own laptop. Google and Groq gave the same six verdicts on my first case; Groq and Llama then ran 12 cases twice. Google was not run on all 12.</p>
+<h2>The Decision</h2>
+<p>Build, buy or connect? A boutique's edge is the judgement about which peers hold up in front of a client, not the model call, and the model call is a commodity. So: buy. But models and prices change within 12 months, so buy the model and own the wiring: one function holds provider, URL, model ID and prompt, and every raw answer is saved with its token usage.</p>
+<h2>The Lock-In Scorecard</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Gemini API</th>
+<th>Groq</th>
+<th>Llama (local)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data portability</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>API stability</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Pricing control</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Feature dependency</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Migration cost</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Total (of 15)</strong></td>
+<td><strong>7, moderate</strong></td>
+<td><strong>5, moderate</strong></td>
+<td><strong>1, low</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The highest cloud risk is API stability. Google lists shutdown dates but no notice period in days; <code>gemini-2.0-flash</code> closed on 1 June 2026. Groq retired <code>llama-3.3-70b-versatile</code> on 16 August after an email on 17 June. I found no price-change notice period for Groq, so that score is provisional.</p>
+<h2>The Migration Path</h2>
+<p>If Google tripled its price tomorrow, my 660-run month would rise from about €3.49 to about €10.46 at a stand-in price. The bill is not the cost; the work is. Moving to Groq meant changing the URL, the header, the request body and the response parsing. The prompt did not change. I estimate one hour to switch and three more to re-test; with a parallel month and a briefing for ten analysts, leaving costs about €519 at €48 an hour (Belgian average, Eurostat 2024). That is roughly six years of the price increase, so only a retirement or falling quality would make me go.</p>
+<p>The re-test shows what leaving to each place costs. Groq got 138 of 144 verdicts right (96%) for about €0.35 a month. Llama got 114 of 144 (79%) for nothing per call, with the data staying on my machine. They failed differently. All six Groq misses were "Not comparable" where my key says Unclear. Llama changed its verdicts between identical runs in 10 of 12 cases and made every error type, including 9 false "Comparable" calls. A wrong peer inside the multiple is the costly error, so the local model is a spare, not a replacement.</p>
+<h2>The Insight</h2>
+<p>Lock-in in this beat sits in the wiring, not the logo. Most boutiques will buy a platform that hides the model, the notice period and the export format, so they cannot score it. Ask any vendor in writing: how do I export my data, how many days' notice before a model is retired, how many before a price changes? The vendors who answer are worth a premium.</p>
+<p><em>AI disclosure: I ran the API calls myself; Claude helped research the vendor terms, do the arithmetic and draft the text, and I checked the scores and numbers. [Adjust to what is true for you.]</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+<script type="application/json" id="post-meta">{"week": 7, "title": "A Peer Screen on Two Providers: What It Costs to Leave", "author": "Tim Lampe", "beat": "AI in M&A Valuation", "skill": "Lock-in detection", "date": "2026-10-26", "folder": "tim-lampe", "slug": "tim-lampe-week-07"}</script>
+<script src="../themes/tim-lampe/theme.js" defer></script>
+</body>
+</html>
