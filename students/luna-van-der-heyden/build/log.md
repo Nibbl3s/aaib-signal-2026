@@ -1,3 +1,9 @@
+| Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Probe 1** | Prototyping Base | 3D Printer | Tactile standee base/holder | Booked for Week 6 prototyping block |
+| **Probe 2** | Display Panel | Laser Cutter | Clear acrylic display panel | Booked for Week 6 cutting block |
+| **Probe 3** | Final Assembly | Manual Assembly Bench | Completed companion standee] | Ready for final Checkpoint review |
+
 ## Chapter Seven — Iterative Testing Log (Prompt V4)
 
 ### Test Run 1 — Initial Evaluation
@@ -47,12 +53,6 @@
 **Editor's Notes Summary:** The chapter works. The voice is distinct, consistent, and deeply character-driven. The tension of concealment (the scar, the wig, the photo, the cigarette pack in the bra, Grigsby's probing comments) runs seamlessly through every scene. Concluded that editing any further would trade authorial voice for artificial tidiness. 
 
 **Suggested Revision:** None. Text is publication-ready.
-
-| Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Probe 1** | Prototyping Base | 3D Printer | Tactile standee base/holder | Booked for Week 6 prototyping block |
-| **Probe 2** | Display Panel | Laser Cutter | Clear acrylic display panel | Booked for Week 6 cutting block |
-| **Probe 3** | Final Assembly | Manual Assembly Bench | Completed companion standee] | Ready for final Checkpoint review |
 
 ## Test Run Log & Failure Classifications
 
