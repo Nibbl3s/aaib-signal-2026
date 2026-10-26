@@ -1,0 +1,48 @@
+{
+  "requested_at": "2026-10-26T20:03:13+01:00",
+  "model": "gemini-3.1-flash-lite",
+  "latency_s": 19.84,
+  "request": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Write a one-sentence customer support response to a customer asking about our 30-day return policy."
+          }
+        ]
+      }
+    ]
+  },
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "You may return any item within 30 days of purchase for a full refund, provided it is in its original condition.",
+              "thoughtSignature": "EnMKcQFpFH0TtZ3B0uou7/ZN1PxalnbgZM0nff8HhcnYcLXQ1mGePfgVkmduh4kqiadgTUm5nTGQJSVzgU1muniYWI2muJGwysBbdidkzQZiCEFimG2CrKsAzLwtcbZSthZnMGf8WZoXnIy3BMZS6HPCFc6C"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 23,
+      "candidatesTokenCount": 25,
+      "totalTokenCount": 48,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 23
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.1-flash-lite",
+    "responseId": "8aPfauXRM9XmnsEP_ZjiwAE"
+  }
+}

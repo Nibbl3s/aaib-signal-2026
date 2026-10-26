@@ -116,7 +116,20 @@ I missed the fablab intro session on Monday 28 September. This plan is based on 
 
 ## Cost — from Week 6
 
-*(later)*
+Measured on 26 Oct 2026 with my own API key, `gemini-3.1-flash-lite` ($0.25 / $1.50 per 1M, AI Studio, read the same day), prompt v1 + real inputs. Full model: [`../week-06/cost-model.md`](../week-06/cost-model.md).
+
+| | |
+|---|---|
+| Tokens per run (measured, T03 + T09) | 796 in / 154 out on average; output fixed by the JSON (151–157) |
+| Cost per run | $0.00043 |
+| Monthly volume | 2.9 inquiries (0.9 measured form + mail, 2 estimated chat/phone) |
+| Monthly token cost | €0.0011 |
+| Error rate | 50% (Run 1, Haiku 4.5, n = 30); dangerous gear error 13% |
+| Who fixes an error | me |
+| Monthly error cost | €3.62 ordinary + €116 gear errors unchecked (€0.97 with a 1-min gear check) |
+| Error cost ÷ token cost | 4,001× with the gear check, 104,242× without |
+
+New observation: on the same T09 input Gemini returned `dj_gear` = `unknown` and put it in `missing_for_quote`. Wrong by my scoring rule, but the safe kind of wrong, where Haiku said `on_site` twice. Only two Gemini outputs so far, so this is a lead for the Week 7 second-model run, not a result. 5 of 8 calls got HTTP 503 on the free tier, so T12 was never measured.
 
 ## Second model — from Week 7
 

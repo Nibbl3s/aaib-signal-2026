@@ -1,0 +1,55 @@
+{
+  "requested_at": "2026-10-26T20:03:13+01:00",
+  "model": "gemini-3.1-flash-lite",
+  "latency_s": 0.96,
+  "request": {
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Naam van het evenement: 50ste verjaardag\nDatum: 18-10-2025 | Begintijd: 19:00 | Eindtijd: 2:30\nAdres / Locatie: La Cuisette, Kerkstraat 2, 8570 Anzegem\nSoort evenement: Verjaardag | Verwachte opkomst: 0 - 100\nIs er een DJ-controller aanwezig op locatie?: Nee, de DJ (Thorax) dient deze zelf te voorzien\nFactuur noodzakelijk?: Nee\nWil je licht & geluid huren via Thorax?: Ja"
+          }
+        ]
+      }
+    ],
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "You extract booking details from an inquiry sent to a freelance DJ in Belgium\n(DJ Thorax). The inquiry is either an answer to his booking form or an e-mail.\nIt may be a first message or a reply in an ongoing conversation. It is usually\nin Dutch.\n\nReturn ONLY this JSON, nothing else:\n\n{\n  \"is_booking_inquiry\": true | false,\n  \"event_type\": \"wedding\" | \"birthday\" | \"party_fuif\" | \"company_event\" | \"other\" | \"unknown\",\n  \"event_date\": \"YYYY-MM-DD\" | \"unknown\",\n  \"start_time\": \"HH:MM\" | \"unknown\",\n  \"end_time\": \"HH:MM\" | \"unknown\",\n  \"venue\": \"<venue name and/or town as written>\" | \"unknown\",\n  \"guest_count\": \"<number or range as written>\" | \"unknown\",\n  \"dj_gear\": \"on_site\" | \"dj_brings\" | \"unknown\",\n  \"sound_and_light\": \"rent_from_dj\" | \"not_needed\" | \"unknown\",\n  \"missing_for_quote\": [ any of: \"event_date\", \"start_time\", \"end_time\", \"venue\",\n                         \"guest_count\", \"dj_gear\", \"sound_and_light\" ]\n}\n\nRules:\n- Only use information that is stated in the message. If a field is not stated, write \"unknown\". Never guess.\n- dj_gear = is there a DJ controller/decks at the venue (\"on_site\"), or must the DJ bring his own (\"dj_brings\")?\n- sound_and_light = does the client want to rent speakers/lights from the DJ (\"rent_from_dj\"), or is it already arranged (\"not_needed\")?\n- If the client says something is uncertain, not decided yet, or \"an estimate\", that field is \"unknown\".\n- \"missing_for_quote\" lists every field from the list above that is \"unknown\".\n- If the message is not a booking inquiry from a client, set \"is_booking_inquiry\" to false, every other field to \"unknown\" and \"missing_for_quote\" to []."
+        }
+      ]
+    }
+  },
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"birthday\",\n  \"event_date\": \"2025-10-18\",\n  \"start_time\": \"19:00\",\n  \"end_time\": \"02:30\",\n  \"venue\": \"La Cuisette, Kerkstraat 2, 8570 Anzegem\",\n  \"guest_count\": \"0 - 100\",\n  \"dj_gear\": \"dj_brings\",\n  \"sound_and_light\": \"rent_from_dj\",\n  \"missing_for_quote\": []\n}",
+              "thoughtSignature": "EnMKcQFpFH0T5Uxs4NmemhuF7Clyl2sfRwohVOhkJbpW6HLibFw5Y0ohfhD+PlbEAgYqsqntzN5VeU1shOCbfsjwMs5d7jpoTwdg9/0ybccZk7bdz1UxYy3lSauGJfnOei5VHm0bsLgwGFh/o4Q/XZeHGqgs"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 644,
+      "candidatesTokenCount": 151,
+      "totalTokenCount": 795,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 644
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.1-flash-lite",
+    "responseId": "M6Tfaq3pCPbY7M8PgcmPyAs"
+  }
+}
