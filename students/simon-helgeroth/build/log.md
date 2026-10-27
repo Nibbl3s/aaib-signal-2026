@@ -125,25 +125,27 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 
 ## Cost — from Week 6
 
+**Snapshot date: 7 September 2026** · Exchange rate used throughout the course: **$1.00 = €0.92**
+
 | | |
 |---|---|
-| Model / tier | — |
-| Prices used (with snapshot date) | — |
-| Measured input tokens per run | — |
-| Measured output tokens per run | — |
-| **Cost per run** | — |
-| Realistic monthly volume, and why that number | — |
-| **Monthly token cost** | — |
+| Model / tier | gemini-3.1-flash-lite (Budget tier) |
+| Prices used (with snapshot date) | $0.25 per 1M input tokens, $1.50 per 1M output tokens (snapshot: 7 September 2026) |
+| Measured input tokens per run | 687 |
+| Measured output tokens per run | 247 |
+| **Cost per run** | **$0.00054225** (687 × $0.25/1M + 247 × $1.50/1M) |
+| Realistic monthly volume, and why that number | 334 runs per month. Why: Based on real-world data, the recruitment agency Academic Work publishes approximately 334 job advertisements per month. This represents a realistic, grounded volume for a single major agency using the tool. |
+| **Monthly token cost** | **$0.18** (334 ads × $0.00054225) |
 
 **Error cost — the part that matters:**
 
 | | |
 |---|---|
-| Measured error rate | — % on — inputs |
-| Who fixes an error here? | — |
-| Cost per error | — |
-| **Monthly error cost** | — |
-| **Error cost ÷ token cost** | — × |
+| Measured error rate | 70 % on 20 inputs (10 unique inputs tested 2 times each) |
+| Who fixes an error here? | HR Recruiter |
+| Cost per error | €7.33 (Assumption: 10 minutes of work to review and fix the error, based on a loaded cost of €44/hr for an HR recruiter) |
+| **Monthly error cost** | **€1,715** (Calculation: 334 job ads/month × 70% error rate = 233.8 errors. 234 errors × €7.33 = €1,715) |
+| **Error cost ÷ token cost** | **~10,300×** (Monthly token cost is $0.18 / ~€0.16; the monthly error cost of €1,715 is over 10,000 times higher than the token cost) |
 
 ---
 
