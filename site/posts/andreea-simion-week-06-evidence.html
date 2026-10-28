@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 6 · </div>
+<h1>Week 6</h1>
+<div class="byline">andreea-simion · </div>
+<h2>Week 6 Evidence: Cost Projection, API Measurements &amp; Build Economics</h2>
+<h2>1. API Response &amp; Per-Call Cost Calculation</h2>
+<p>To establish an empirical baseline for enterprise cost modeling, we executed a test call against the Google Gemini API using the budget-tier model variant. The exact request details and raw JSON response object are documented below.</p>
+<p><strong>Selected Model Tier:</strong> gemini-3.1-flash-lite</p>
+<p><strong>API Endpoint:</strong> https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent</p>
+<p><strong>Prompt Sent:</strong> Write a one-sentence customer support response to a customer asking about our 30-day return policy.</p>
+<pre><code class="language-json">{
+  &quot;usageMetadata&quot;: {
+    &quot;promptTokenCount&quot;: 22,
+    &quot;candidatesTokenCount&quot;: 27,
+    &quot;totalTokenCount&quot;: 49,
+    &quot;promptTokensDetails&quot;: [
+      {
+        &quot;modality&quot;: &quot;TEXT&quot;,
+        &quot;tokenCount&quot;: 22
+      }
+    ]
+  }
+}
+</code></pre>
+<h3>Per-Call Unit Cost Calculation</h3>
+<p>Google AI Studio pricing for gemini-3.1-flash-lite is set at $0.25 per 1 million input tokens and $1.50 per 1 million output tokens. Using our measured token counts (22 input, 27 output), the unit cost per execution is derived as follows:</p>
+<p><strong>Input Cost:</strong> (22 / 1,000,000) × $0.25 = $0.00000550 per call</p>
+<p><strong>Output Cost:</strong> (27 / 1,000,000) × $1.50 = $0.00004050 per call</p>
+<p><strong>Total Unit Cost:</strong> $0.00000550 + $0.00004050 = $0.00004600 per call</p>
+<h2>2. Beat Cost Model: Scale Projections &amp; Break Points</h2>
+<p>For our beat, The Psychology of AI Adoption in the Workplace, we model an Automated Employee AI Sentiment &amp; Adoption Barrier Classifier deployed across enterprise feedback channels (Slack, Teams, pulse forms).</p>
+<table>
+<thead>
+<tr>
+<th>Scale Level</th>
+<th>Calls / Day</th>
+<th>Unit Cost</th>
+<th>Daily Cost</th>
+<th>Monthly Cost (30d)</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prototype</td>
+<td>10</td>
+<td>$0.0000460</td>
+<td>$0.00046</td>
+<td>$0.014</td>
+<td>$0.17</td>
+</tr>
+<tr>
+<td>Pilot</td>
+<td>100</td>
+<td>$0.0000460</td>
+<td>$0.00460</td>
+<td>$0.14</td>
+<td>$1.66</td>
+</tr>
+<tr>
+<td>Launch</td>
+<td>1,000</td>
+<td>$0.0000460</td>
+<td>$0.04600</td>
+<td>$1.38</td>
+<td>$16.56</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>10,000</td>
+<td>$0.0000460</td>
+<td>$0.46000</td>
+<td>$13.80</td>
+<td>$165.60</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>100,000</td>
+<td>$0.0000460</td>
+<td>$4.60000</td>
+<td>$138.00</td>
+<td>$1,656.00</td>
+</tr>
+</tbody>
+</table>
+<h3>Unit Economics Break Point &amp; Key Assumptions</h3>
+<p><strong>Revenue / Value Assumption:</strong> €1.50 per employee / month (internal operational efficiency value allocation).</p>
+<p><strong>Where the Break Point Rests:</strong> Pure API token costs never break the unit economics because they represent less than 0.01% of total enterprise value. The true economic break point rests entirely on the classification error rate and downstream human remediation labor. If the error rate exceeds 10%, human correction costs completely wipe out the efficiency gains, regardless of how cheap the API tokens are.</p>
+<h2>3. The Build Costed From Your Own API Call</h2>
+<p>To evaluate real operational expenditure, we connect our measured token pricing to our actual enterprise build: an HR Sentiment &amp; Barrier Classifier processing employee feedback.</p>
+<p><strong>Realistic Monthly Volume:</strong> 300 feedback comments per month (representing an active enterprise HR intake channel across multi-language Slack/Teams channels).</p>
+<p><strong>Monthly API Token Cost:</strong> 300 comments × $0.0000460 = $0.0138 / month (€0.0127 / month or €0.15 / year).</p>
+<h3>Integration of Week 2 Measured Error Rates</h3>
+<p>From our Week 2 empirical stress test (log.md), the classifier produced a 30% failure rate across dual test runs (consisting of F1 Wrong, F2 Fabricated, and F6 Inconsistent classifications).</p>
+<p><strong>Monthly Misclassifications:</strong> 300 comments × 30% error rate = 90 misclassified comments per month.</p>
+<p><strong>Who Fixes the Error?</strong> An HR Recruiter / Organizational Analyst reviewing and manually correcting misclassified sentiment tags in the HR dashboard.</p>
+<p><strong>Time Required per Fix:</strong> 3 minutes per misclassified entry.</p>
+<p><strong>Loaded Recruiter Hourly Rate:</strong> €44.00 / hour (Belgian market loaded reference rate).</p>
+<p><strong>Cost per Error Fix:</strong> 3 min / 60 min × €44.00 = €2.20 per error fix.</p>
+<p><strong>Monthly Error Remediation Labor:</strong> 90 errors × €2.20 = €198.00 / month (€2,376.00 / year).</p>
+<h2>Total Year 1 Cost Model Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Cost Component</th>
+<th>Monthly Cost (€)</th>
+<th>Annual Cost (€)</th>
+<th>% of Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Token Cost (Gemini Flash-Lite)</td>
+<td>€0.013</td>
+<td>€0.15</td>
+<td>0.005%</td>
+</tr>
+<tr>
+<td>Initial Setup &amp; Prompt Tuning</td>
+<td>—</td>
+<td>€500.00</td>
+<td>16.77%</td>
+</tr>
+<tr>
+<td>Annual Script Maintenance</td>
+<td>€8.33</td>
+<td>€100.00</td>
+<td>3.35%</td>
+</tr>
+<tr>
+<td>Error Remediation Labor (30% rate)</td>
+<td>€198.00</td>
+<td>€2,376.00</td>
+<td>79.70%</td>
+</tr>
+<tr>
+<td><strong>TOTAL YEAR 1 OPERATING EXPENDITURE</strong></td>
+<td><strong>€206.34</strong></td>
+<td><strong>€2,976.15</strong></td>
+<td><strong>100.00%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>Core Architectural Finding</h3>
+<p><strong>Cost Gap Ratio:</strong> Monthly Error Remediation Cost (€198.00) / Monthly API Token Cost (€0.0127) ≈ 15,590×</p>
+<p><strong>Conclusion:</strong> The labor cost of correcting AI classification errors is over 15,000 times higher than the cost of running the API calls. Optimizing prompt token lengths saves negligible fractions of a cent; investing in prompt optimization and validation guardrails to reduce the error rate represents the absolute core financial lever for this build.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
