@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What AI-Powered Financial Document Parsing Costs a Belgian Business at Scale — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 6 · AI as a Personal Study Coach</div>
+<h1>What AI-Powered Financial Document Parsing Costs a Belgian Business at Scale</h1>
+<div class="byline">Dalia El-Ghalid · 2026-10-28</div>
+<h3>Hook</h3>
+<p>Belgian accounting firms and SMBs are rapidly adopting AI to parse invoices, receipts, and bank statements automatically. On paper, calling an API to extract data from a financial PDF costs fractions of a cent per page. But when I modeled the real costs at scale, I found that token pricing is a distraction—the true break point lives somewhere entirely different.</p>
+<hr />
+<h3>The Use Case</h3>
+<p>A mid-sized Belgian accounting practice wants to implement an AI document-parsing pipeline. The system receives PDF invoices from clients, converts image text into structured JSON (vendor name, VAT number, line items, totals), and pushes entries into an accounting database.</p>
+<ul>
+<li><strong>Average Input per Call:</strong> 800 tokens (OCR text + system instructions + JSON schema rules).</li>
+<li><strong>Average Output per Call:</strong> 350 tokens (structured JSON payload).</li>
+<li><strong>Volume:</strong> 50 invoices/day per client at 100 clients = 5,000 calls/day.</li>
+</ul>
+<hr />
+<h3>The Numbers</h3>
+<p>Using the <strong>Standard Tier</strong> (<code>gpt-5.6-terra</code> / Gemini Flash equivalent at <strong>$2.00 / 1M input tokens</strong> and <strong>$12.00 / 1M output tokens</strong>):</p>
+<ul>
+<li><strong>Input Cost per Call:</strong> $(800 / 1,000,000) \times \$2.00 = \$0.0016$</li>
+<li><strong>Output Cost per Call:</strong> $(350 / 1,000,000) \times \$12.00 = \$0.0042$</li>
+<li><strong>Unit Cost per Call:</strong> $\$0.0016 + \$0.0042 = \mathbf{\$0.0058}$ (approx. <strong>€0.0053</strong>)</li>
+</ul>
+<h4>Scale Projection Table</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scale</th>
+<th style="text-align: center;">Clients</th>
+<th style="text-align: center;">Calls / Day</th>
+<th style="text-align: center;">Daily Token Cost (USD)</th>
+<th style="text-align: center;">Monthly Token Cost (USD)</th>
+<th style="text-align: center;">Monthly Token Cost (EUR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Prototype</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">$0.29</td>
+<td style="text-align: center;">$8.70</td>
+<td style="text-align: center;">€8.00</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pilot</strong></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">500</td>
+<td style="text-align: center;">$2.90</td>
+<td style="text-align: center;">$87.00</td>
+<td style="text-align: center;">€80.04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Launch</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">5,000</td>
+<td style="text-align: center;">$29.00</td>
+<td style="text-align: center;">$870.00</td>
+<td style="text-align: center;">€800.40</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Growth</strong></td>
+<td style="text-align: center;">1,000</td>
+<td style="text-align: center;">50,000</td>
+<td style="text-align: center;">$290.00</td>
+<td style="text-align: center;">$8,700.00</td>
+<td style="text-align: center;">€8,004.00</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: AI Pricing Reference, snapshot 7 September 2026 ($1 = €0.92).</em></p>
+<p>At 100 clients (150,000 invoices/month), the raw token bill is <strong>€800.40/month</strong>. Against a software subscription fee or retainer, an €800 API bill looks negligible. </p>
+<h4>Incorporating the Human Error Remediation Cost</h4>
+<p>Now add the cost of being wrong. Accounting data requires <strong>100% accuracy</strong> for VAT compliance. </p>
+<ul>
+<li>Assume a measured AI error/hallucination rate of <strong>10%</strong> on complex multi-page invoices.</li>
+<li>At 150,000 invoices/month, 10% errors = <strong>15,000 flawed entries/month</strong>.</li>
+<li>Fixing an incorrect VAT filing entry or misallocated line item requires a Belgian accountant's time—estimated conservatively at <strong>€10 per fix</strong> (15 minutes of work at loaded labour rates).</li>
+</ul>
+<p>$$\text{Monthly Error Remediation Cost} = 15,000 \times €10 = \mathbf{€150,000/\text{month}}$$</p>
+<p>The error remediation cost is <strong>187 times higher</strong> than the token bill (€150,000 vs. €800.40). The token line item accounts for less than <strong>0.6%</strong> of the total operating cost.</p>
+<hr />
+<h3>The Break Point</h3>
+<p>The unit economics for financial document processing do not break when API volume scales up; they break when the <strong>error rate creeps up</strong>. </p>
+<ul>
+<li><strong>The Baseline:</strong> 150,000 invoices processed manually by human data-entry staff at €5 per invoice = <strong>€750,000/month</strong>.</li>
+<li><strong>AI + Remediation (at 10% error rate):</strong> €800 (tokens) + €150,000 (remediation) = <strong>€150,800/month</strong> (<em>€599,200 monthly savings</em>).</li>
+<li><strong>The Break Point:</strong> If the AI model degrades or fails on non-standard Belgian invoice layouts, driving the error rate up to <strong>45%</strong>, the remediation cost reaches <strong>€675,000/month</strong>. At this point, the operational savings disappear, and managing human auditors becomes more expensive than legacy manual input.</li>
+</ul>
+<hr />
+<h3>The Insight</h3>
+<p>Every AI product has a critical variable that determines its viability. In creative writing, it is <em>calls-per-user</em>. In financial workflow automation, it is the <strong>error rate</strong>. Developers who negotiate over fractions of a cent per 1M tokens are optimizing the rounding error. The real architecture challenge is building validation rules, schema enforcement, and human-in-the-loop audit triggers that keep error rates below 10%.</p>
+<hr />
+<h3>The Question</h3>
+<p>If accuracy determines 99% of an AI tool's unit economics, why do vendor pitch decks focus almost entirely on per-token pricing cuts instead of certified error-rate benchmarks?</p>
+<hr />
+<blockquote>
+<p><strong>Academic Integrity &amp; Human Review Disclaimer:</strong><br />
+<em>This post was drafted and formatted with the assistance of generative AI tooling as an analytical assistant. In strict accordance with Arteveldehogeschool guidelines, all token calculations, scale models, error cost remediations, and strategic insights were personally audited, verified, and reviewed by the author prior to publication.</em></p>
+</blockquote>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
