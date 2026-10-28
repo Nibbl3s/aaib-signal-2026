@@ -1199,6 +1199,15 @@
  },
  {
   "week": 6,
+  "title": "The CFO's adoption trap: Why cheap AI models hide expensive organizational failures",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Cost projection",
+  "date": "2026-10-28",
+  "url": "posts/andreea-simion-week-06.html"
+ },
+ {
+  "week": 6,
   "title": "My Sanctions Screening Tool Costs \u20ac0.004 per Check. The Bill That Matters Is \u20ac23,652.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
