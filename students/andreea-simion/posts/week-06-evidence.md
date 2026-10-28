@@ -6,8 +6,6 @@ To establish an empirical baseline for enterprise cost modeling, we executed a t
 
 **Selected Model Tier:** gemini-3.1-flash-lite
 
-**API Endpoint:** https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent
-
 **Prompt Sent:** Write a one-sentence customer support response to a customer asking about our 30-day return policy.
 
 ```json
