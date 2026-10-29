@@ -1217,6 +1217,15 @@
  },
  {
   "week": 6,
+  "title": "\u20ac2.82 to Run, \u20ac11,740 to Be Wrong: The Real API Bill of AI in a Claims Inbox",
+  "author": "Guillaume Vandenweghe",
+  "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/guillaume-vandenweghe-week-06.html"
+ },
+ {
+  "week": 6,
   "title": "My Sanctions Screening Tool Costs \u20ac0.004 per Check. The Bill That Matters Is \u20ac23,652.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
