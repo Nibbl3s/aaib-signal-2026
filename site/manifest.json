@@ -1217,6 +1217,15 @@
  },
  {
   "week": 6,
+  "title": "The API Bill Is Not the Cost of Trusting a Game-Production Classifier",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/daniel-stefirta-week-06.html"
+ },
+ {
+  "week": 6,
   "title": "\u20ac2.82 to Run, \u20ac11,740 to Be Wrong: The Real API Bill of AI in a Claims Inbox",
   "author": "Guillaume Vandenweghe",
   "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
