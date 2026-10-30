@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Does AI Email Triage Actually Cost Drewes at Scale? — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 6 · AI and Communication Automation in European Freight Forwarding</div>
+<h1>What Does AI Email Triage Actually Cost Drewes at Scale?</h1>
+<div class="byline">Janis Krainis · 2026-10-30</div>
+<h2>What Does AI Email Triage Actually Cost Drewes at Scale?</h2>
+<p>When building communication automation tools for European freight forwarding—such as the email triage and data extraction pipeline for Drewes[cite: 1, 2]—it is easy to look at a single API response and assume AI is practically free. When I made my first API test call using Google’s Gemini Flash model, the response showed 184 input tokens and 42 output tokens, costing roughly €0.0001 per call. At prototype scale (10 calls a day), the monthly bill is €1.43[cite: 2]. But a cost model that stops at 10 calls is a trap. To build a system that survives contact with reality, you have to project the curve from 10 calls to 50,000 calls per day[cite: 2].</p>
+<h3>The Use Case and Token Model</h3>
+<p>The use case is a 15-person operational forwarding desk handling 18,000 shared inbox emails per month (600 calls/day). Each email requires the AI to read customer message threads (average 200 input tokens) and output a structured JSON classification with extracted container numbers and routing tags (average 400 completion tokens)[cite: 15]. Using Standard tier pricing (<code>gpt-5.6-terra</code> / equivalent at $2.00 per 1M input tokens and $12.00 per 1M output tokens, sourced from the course AI Pricing Reference dated September 7, 2026)[cite: 20], the unit cost is €0.00478 per call.</p>
+<h3>Scaling the Costs</h3>
+<p>Projecting this unit cost across monthly scale points (30 days/month)[cite: 17] reveals how quickly expenses compound[cite: 22]:</p>
+<ul>
+<li><strong>Small Pilot (100 calls/day):</strong> €14.34/month[cite: 16]</li>
+<li><strong>Medium Desk (600 calls/day):</strong> €86.04/month[cite: 16]</li>
+<li><strong>Full Branch (5,000 calls/day):</strong> €717.00/month[cite: 16]</li>
+<li><strong>Enterprise Scale (50,000 calls/day):</strong> €7,170.00/month[cite: 16]</li>
+</ul>
+<p>While €7,170/month looks manageable against enterprise revenue, this token-only view is dangerously incomplete[cite: 23]. </p>
+<h3>Adding Error Costs and the Break Point</h3>
+<p>Following Week 6 frameworks, we must factor in our Week 2 measured error rate of 18%. At 18,000 monthly emails, 3,240 emails will fail (missing secondary IDs or misclassifying urgency). If each failure takes a coordinator 10 minutes to manually fix at a Belgian loaded rate of €33/hr (€5.00/fix)[cite: 24], the monthly error remediation cost is <strong>€16,200</strong>[cite: 23]. </p>
+<p>The token bill (€14.44) represents less than 0.1% of the total system cost; human error correction accounts for 99.9%[cite: 23]. The unit economics break point for this tool is not bound by API pricing inflation, but by accuracy degradation[cite: 26, 32]. If the error rate creeps from 18% to 30% due to prompt drift or messy carrier formatting, rework costs jump to €27,000/month, completely inverting the business case[cite: 32].</p>
+<h3>The Insight</h3>
+<p>Every AI builder in logistics learns the hard way that token pricing is a distraction[cite: 23]. The real cost driver is error remediation[cite: 23]. If you do not model your Week 2 error rate into your Week 6 scale projection, your financial model is just a wish.</p>
+<ul>
+<li><strong>The Question:</strong> If error rework is 1,000x more expensive than API tokens, why do most engineering teams spend all their optimization energy on prompt token compression instead of output validation guardrails?</li>
+</ul>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
