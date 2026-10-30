@@ -1256,6 +1256,15 @@
  },
  {
   "week": 6,
+  "title": "When Cheap AI Becomes Expensive: Costing My Review Classifier",
+  "author": "Ksenija Maruscaka",
+  "beat": "AI in Marketing and Consumer Personalization",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/ksenija-maruscaka-week-06.html"
+ },
+ {
+  "week": 6,
   "title": "What Does AI Customer Service Actually Cost at Scale?",
   "author": "Lima",
   "beat": "How AI Enables the One-Person Business",
