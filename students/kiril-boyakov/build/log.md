@@ -574,3 +574,22 @@ These are planning calculations, not measured business savings. See [Week 4 anal
 | Fablab session | Not yet booked. I need to arrange a supervised catch-up session with the teacher or fablab staff. This remains an outstanding action, not a completed activity. |
 
 No physical deployment or new model test is claimed in this checkpoint.
+
+## Week 6 — API cost checkpoint, 2026-11-02
+
+Operator: ChatGPT, authorised to use my configured Hoppscotch request.
+Prompt: existing v1, Test 01, individual request. See ../week-06-evidence/build-request.json.
+Provider: Google Gemini. Requested alias: gemini-flash-lite-latest. Returned model: gemini-3.5-flash-lite.
+HTTP: 200. Observed request time: 734 ms (single observation).
+Usage: 352 input + 42 output = 394 tokens. Response: ../week-06-evidence/build-response.json.
+
+Actual response:
+Mode: ROAD
+Evidence: "Partial-Truck Load (PTL) and Full-Truck Load (FTL)"
+Reason: The description explicitly references truck transport through the mention of truck-load services.
+
+Assessment: PASS for label, evidence and format. One new API input; no claim of a new representative failure rate.
+Paid-equivalent cost: $0.0002106/run; 3,000 assumed runs/month = $0.6318/month. Actual account billing status not verified.
+Week 2 recorded rate: 0 failures/20 responses on ten repeated descriptions, different model and mixed individual/batch prompts. Extrapolated correction cost at that recorded rate: €0. Planning stress at 5% and €1/correction: €150/month.
+Full scale, integration and break-even calculations: ../week-06-evidence/analysis.md.
+Previous 404/503 availability problems are documented separately; no usage was returned. Earlier log entries must remain intact.
