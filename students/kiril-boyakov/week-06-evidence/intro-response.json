@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Yes, you may return any eligible item within 30 days of purchase for a full refund or exchange.",
+            "thoughtSignature": "EmAKXgFpFH0Tfac4cR/ccYH0M423wsw7fAtNx/+RCybW7TV6da8w8teplxJgHIG284YW+TBX/jok1bAUyrZtgu29djyy6Hz1Wv2IglLSzbZdzr5a+9MxwzIo9W10Ng8ZdNI="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 22,
+    "candidatesTokenCount": 22,
+    "totalTokenCount": 44,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 22
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.5-flash-lite",
+  "responseId": "_XPoao6jKc_insEPqo7dyQU"
+}
