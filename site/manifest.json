@@ -1265,6 +1265,15 @@
  },
  {
   "week": 6,
+  "title": "A freight classifier costs less than a euro in tokens. Integration is another bill.",
+  "author": "Kiril Boyakov",
+  "beat": "AI in European Freight Cost Estimation",
+  "skill": "Cost projection",
+  "date": "2026-11-02",
+  "url": "posts/kiril-boyakov-week-06.html"
+ },
+ {
+  "week": 6,
   "title": "When Cheap AI Becomes Expensive: Costing My Review Classifier",
   "author": "Ksenija Maruscaka",
   "beat": "AI in Marketing and Consumer Personalization",

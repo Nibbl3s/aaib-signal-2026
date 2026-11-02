@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A freight classifier costs less than a euro in tokens. Integration is another bill. — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 6 · AI in European Freight Cost Estimation</div>
+<h1>A freight classifier costs less than a euro in tokens. Integration is another bill.</h1>
+<div class="byline">Kiril Boyakov · 2026-11-02</div>
+<p>My freight classifier's projected token cost looked almost too small to matter: about €0.58 for 3,000 monthly runs. But that number leaves out the employee checking each result, the person maintaining the integration, and mistakes requiring correction. Measuring the tokens made the distinction clearer.</p>
+<p>The use case is deliberately narrow. At fictional EuroRoute Forwarding, the tool reads a freight description, identifies the transport mode and quotes supporting words. An employee confirms the result before looking up rates. It does not calculate or approve a freight price. My scenario keeps Week 4's assumed 3,000 descriptions per month: ten staff-user equivalents averaging ten descriptions per calendar day. This allocates monthly workload; it does not assume each person works thirty days.</p>
+<p>With my permission, ChatGPT operated a real Hoppscotch request using my API account. The requested alias returned Gemini 3.5 Flash-Lite. Its usageMetadata recorded 352 input tokens and 42 output tokens. The model correctly classified the truck-service example as ROAD. This was one successful example, not proof of reliability across real enquiries.</p>
+<p>At Google's Standard paid rates of $0.30 per million input tokens and $2.50 per million output tokens, the calculation is:</p>
+<p>352 × $0.30 / 1,000,000 + 42 × $2.50 / 1,000,000 = <strong>$0.0002106 per call</strong>.</p>
+<p>This is a paid-rate equivalent; I have not verified an actual charge. Using the course budgeting assumption of $1 = €0.92 gives €0.000193752 per run.</p>
+<p>Holding that usage constant, and assuming ten calls per user daily:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Users</th>
+<th style="text-align: right;">Monthly API cost</th>
+<th style="text-align: right;">Annual API cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">$6.318</td>
+<td style="text-align: right;">$75.816</td>
+</tr>
+<tr>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">$63.18</td>
+<td style="text-align: right;">$758.16</td>
+</tr>
+<tr>
+<td style="text-align: right;">10,000</td>
+<td style="text-align: right;">$631.80</td>
+<td style="text-align: right;">$7,581.60</td>
+</tr>
+</tbody>
+</table>
+<p>These projections exclude human work. Longer inputs, longer answers and additional calls would change them. A linear 50% increase in unit cost over twelve months increases the annual token estimate by 25% at constant volume.</p>
+<p>My Week 2 log records twenty passing responses across ten repeated descriptions. That produces a measured error rate of zero in that selected set, but the tests used another model and included batch prompts. Applying zero errors to Gemini production would be unjustified. I therefore also retain Week 4's assumed 5% correction rate: 150 monthly corrections at €1 each. That is approximately 258 times the token cost.</p>
+<p>Including fifteen seconds of routine human handling per description, corrections, €90 monthly maintenance and hosting, and €2,700 setup, the first-year process cost is about €10,087. The manual baseline values the same work at €18,000. The apparent €7,913 benefit represents usable staff capacity, not guaranteed cash savings.</p>
+<p>Under these assumptions, first-year break-even is approximately 970 descriptions monthly. The critical assumption is that assisted handling takes fifteen seconds while manual classification takes one minute. If manual classification already takes fifteen seconds, the economic advantage disappears. Cheap tokens cannot repair that assumption.</p>
+<p>I would pilot this against a structured form or simple rules before integrating it. The unresolved question is: does the classifier reduce total handling time after checking and correction, on descriptions the team actually receives?</p>
+<p>Sources: <a href="https://ai.google.dev/gemini-api/docs/pricing">Google pricing</a>, checked 2 November 2026; <a href="https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/kiril-boyakov/week-06-evidence/analysis.md">measurement and calculations</a>.</p>
+<p>AI assistance: ChatGPT operated the authorised API calls, helped draft this post and checked arithmetic. The usage is measured; the business scenario remains hypothetical.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
