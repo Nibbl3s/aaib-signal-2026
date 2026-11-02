@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Mode: ROAD\nEvidence: \"Partial-Truck Load (PTL) and Full-Truck Load (FTL)\"\nReason: The description explicitly references truck transport through the mention of truck-load services.",
+            "thoughtSignature": "EmAKXgFpFH0T3dUmxIdVLdGc4PdCA20+t5gepqLf5Bg1RhHyRUa8xHfd/sheHO0SVRohH8Bs9b6hTZdT/r0bQUY3cfaRjBbYDAUgN/gma/uGELV+uUfFhpeSJCTmWlgJ4Go="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 352,
+    "candidatesTokenCount": 42,
+    "totalTokenCount": 394,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 352
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.5-flash-lite",
+  "responseId": "OXToapy3K_3lkdUPosqbiQQ"
+}
