@@ -122,9 +122,6 @@
 
 ---
 
-```markdown
----
-
 ## 4. Week 7: Second-Model Local Comparison Matrix
 
 To evaluate vendor lock-in and model portability, our 10-input sentiment classification test set was executed against a local open-weights model (Llama-3-8B via Ollama) and compared against our original cloud baseline (Gemini Flash).
@@ -180,5 +177,3 @@ To evaluate vendor lock-in and model portability, our 10-input sentiment classif
 - **Days 1–7 (First Week):** Redirect API endpoint connections from the primary vendor to an alternate cloud model (e.g., Anthropic or OpenAI) using standard REST abstraction wrappers.
 - **Days 8–30 (First Month):** Deploy Ollama locally running Llama-3 as an offline fallback engine to absorb un-sensitive batch categorization tasks and eliminate external token exposure.
 - **Days 31–90 (First Quarter):** Fine-tune an open-weights model on historical, verified HR sentiment logs to match cloud baseline performance entirely off-grid, achieving full architectural independence.
-
-```
