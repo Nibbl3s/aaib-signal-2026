@@ -186,8 +186,7 @@ logged before Week 8 so it can feed your CP2 revision delta.
 
 | | |
 |---|---|
-| Model / tier | Google Gemini 3.5 Flash-Lite<img width="470" height="25" alt="image" src="https://github.com/user-attachments/assets/a30a056d-c568-4d6d-9799-4fbe75220cc9" />
- |
+| Model / tier | Google Gemini 3.5 Flash-Lite|
 | Prices used (with snapshot date) | 07.11.26 Input: $0.30 per million tokens, Output: $2.50 per million tokens |
 | Measured input tokens per run | 108 |
 | Measured output tokens per run | 379 |
