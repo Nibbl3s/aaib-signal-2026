@@ -229,455 +229,230 @@
 </table>
 <h3>Failure Profile Analysis</h3>
 <p>While both models achieved comparable overall accuracy (70% vs. 60%), their operational failure profiles differed significantly:<br />
-1. <strong>Format Reliability:</strong> Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks (<code>json ...</code>), triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.<br />
-2. <strong>Multilingual Reasoning:</strong> Model B demonstrated degraded performance on non-English inputs, misclassifying the Dutch skepticism prompt (Input 9) as interface friction rather than a trust concern.<br />
-3. <strong>Privacy vs. Precision Trade-off:</strong> Running Model B locally completely eliminates data privacy and GDPR compliance risks regarding employee sentiment surveillance, but incurs a 10% accuracy penalty that increases downstream human review labor.</p>
-<hr />
-<h2>4. Real Vendor Terms of Service Audit</h2>
-<p><strong>Vendor Audited:</strong> Google AI Studio / Gemini API Services<br />
-<strong>Document Reviewed:</strong> Google APIs Terms of Service &amp; Generative AI Additional Terms of Service</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Audit Dimension</th>
-<th style="text-align: left;">Specific Term / Finding</th>
-<th style="text-align: left;">Risk Rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Self-Service Data Export</strong></td>
-<td style="text-align: left;">Standard API response formats allow self-service export of generated text payload logs. No lock-in fees for data retrieval.</td>
-<td style="text-align: left;">🟢 Low Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Published Deprecation Policy</strong></td>
-<td style="text-align: left;">Terms specify that Google will provide reasonable notice prior to deprecating APIs, but <strong>no fixed minimum timeline (e.g., 6 months)</strong> is contractually guaranteed.</td>
-<td style="text-align: left;">🟡 Moderate Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Price Change Notice Period</strong></td>
-<td style="text-align: left;">Changes to fees or usage limits are governed by general terms requiring <strong>30 days' advance notice</strong> via developer updates.</td>
-<td style="text-align: left;">🟡 Moderate Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Promotional / Tier Expiry</strong></td>
-<td style="text-align: left;">Developer and free-tier rate limits and pricing structures are subject to modification or termination at vendor discretion without prior notice.</td>
-<td style="text-align: left;">🔴 High Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Conspicuous Omissions (What They Refuse to Commit To)</strong></td>
-<td style="text-align: left;"><strong>No Output Stability Guarantee:</strong> Vendor explicitly disclaims deterministic consistency across model updates. Silent model weight updates can alter classification accuracy without warning. <strong>No Price Cap:</strong> No contractual limits exist on future API pricing escalations.</td>
-<td style="text-align: left;">🔴 High Risk</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>5. 90-Day Architectural Exit Plan</h2>
-<h3>The Trigger Scenario</h3>
-<p>Our cloud API provider (Model A) announces an immediate 300% price increase and updates model weights, causing classification consistency on employee feedback to drop below 50%.</p>
-<h3>The Core Deliverable Question</h3>
-<p><em>If our primary provider triples pricing tomorrow, what would switching cost us in hours and performance?</em></p>
-<ul>
-<li><strong>Estimated Switching Labor:</strong> <strong>4 Engineering Hours</strong> (updating REST client endpoint configurations and JSON parser logic).</li>
-<li><strong>Performance Impact:</strong> Immediate temporary <strong>10% drop in classification pass rate</strong> (from 70% to 60%) when shifting to an un-tuned local model, increasing human remediation labor by €66/month until fine-tuned.</li>
-</ul>
-<h3>Phase-by-Phase Exit Roadmap</h3>
-<h2>Week 7 Evidence: Lock-In Detection &amp; Local Model Lab</h2>
-<p><strong>Author:</strong> Andreea Simion<br />
-<strong>Beat:</strong> The Psychology of AI Adoption in the Workplace<br />
-<strong>Course:</strong> AI Adoption &amp; Implementation (AAIB 2026)<br />
-<strong>Date:</strong> October 30, 2026<br />
-<strong>Skill:</strong> Lock-in detection  </p>
-<hr />
-<h2>1. 5-Dimension Lock-In Scorecard (Build Audit)</h2>
-<p>This scorecard evaluates the lock-in risk of our primary enterprise build: the <strong>Automated Employee AI Sentiment &amp; Adoption Barrier Classifier</strong> (deployed across Slack, Teams, and pulse survey channels).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Dimension</th>
-<th style="text-align: left;">Score (0–3)</th>
-<th style="text-align: left;">Evidence &amp; Architectural Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>1. Data Portability</strong></td>
-<td style="text-align: left;"><strong>0</strong></td>
-<td style="text-align: left;"><strong>Full Portability.</strong> Prompt templates, system instructions, ground-truth classification rules, and test-set logs are stored locally in standard, open formats (<code>.md</code> and <code>.json</code>). Feedback data ingestion relies on standard REST endpoints without vendor-locked data schemas.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>2. API Stability</strong></td>
-<td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;"><strong>Mostly Stable.</strong> Built on standard OpenAI-compatible REST API formats. While the primary cloud provider (Google AI Studio / Gemini API) does not contractually guarantee long-term deprecation windows, transitioning to an alternative provider requires only changing the API base URL and request payload wrapper.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>3. Pricing Control</strong></td>
-<td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;"><strong>Published Pricing.</strong> API pricing operates on a pay-as-you-go model ($0.000046/call for Gemini Flash-Lite). While the vendor can modify pricing with 30 days' notice, token costs represent less than 0.01% of total operational expenditure, making price fluctuations financially negligible relative to human error remediation costs.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>4. Feature Dependency</strong></td>
-<td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;"><strong>Portable Core Logic.</strong> The core classification logic rests entirely in prompt engineering and zero-shot/few-shot system context rather than proprietary vendor UI components, custom model fine-tuning, or closed vector database engines.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>5. Migration Cost</strong></td>
-<td style="text-align: left;"><strong>0</strong></td>
-<td style="text-align: left;"><strong>Low Cost.</strong> Total migration cost to an alternative cloud model or local open-weights instance is estimated at under €200 in developer time (&lt;4 engineering hours) with zero database re-indexing or format conversion overhead.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>TOTAL SCORE</strong></td>
-<td style="text-align: left;"><strong>3 / 15</strong></td>
-<td style="text-align: left;"><strong>LOW RISK (Architectural Independence)</strong></td>
-</tr>
-</tbody>
-</table>
-<p><em>Interpretation:</em> A total score of 3/15 confirms that our AI adoption classifier operates with minimal vendor lock-in. The architecture maintains a clear, documented exit path and can be migrated off-grid or across cloud providers within 48 hours.</p>
-<hr />
-<h2>2. Architecture Recommendation &amp; Costed Migration (Scenario 2: GhentAccounting)</h2>
-<h3>Scenario Summary</h3>
-<ul>
-<li><strong>Company:</strong> GhentAccounting (Small Belgian accounting firm, 24 employees, 300 SME clients).</li>
-<li><strong>Problem:</strong> Processing 15,000 invoices/receipts per month; manually extracting fields (VAT, amounts, dates) consuming massive staff hours.</li>
-<li><strong>Constraints:</strong> 0 internal software engineers, €2,000–€5,000/month budget, 2-month timeline requirement.</li>
-</ul>
-<h3>5-Question Decision Framework Application</h3>
-<ol>
-<li><em>Is this capability their competitive advantage?</em> <strong>No.</strong> Invoice OCR and expense data extraction are standard commoditized accounting tasks. GhentAccounting’s true competitive moat is client relationships and advisory expertise.</li>
-<li><em>Is this a commoditized problem with good off-the-shelf solutions?</em> <strong>Yes.</strong> Standardized AI invoice processing platforms (e.g., Exact Online add-ons, Rossum, Klippa) exist with pre-built accounting software integrations.</li>
-<li><em>Do they need multiple AI capabilities that no single vendor provides well?</em> <strong>No.</strong> They require standard document OCR and field extraction.</li>
-<li><em>Will their needs change significantly in the next 12 months?</em> <strong>No.</strong> Invoice structures and regulatory VAT fields follow stable, standardized accounting rules.</li>
-<li><em>Do they have the engineering capacity to build or maintain?</em> <strong>No.</strong> 0 software engineers on staff.</li>
-</ol>
-<p><strong>Architectural Recommendation:</strong> <strong>BUY</strong> (License an off-the-shelf, pre-integrated AI invoice processing SaaS).</p>
-<h3>Lock-In Risk Assessment for GhentAccounting</h3>
-<ul>
-<li><strong>Total Score:</strong> <strong>6 / 15 (Moderate Risk)</strong></li>
-<li><strong>Justification:</strong> While buying a closed SaaS solution introduces dependency on the vendor's extraction engine, this risk is professionally acceptable. Invoice parsing is a commoditized service offered by dozens of competing vendors. If the primary vendor triples prices or degrades performance, switching to an alternative off-the-shelf invoice platform requires minimal data re-mapping without building custom code.</li>
-</ul>
-<h3>Migration Path &amp; Costing (If Forced to Exit)</h3>
-<p>If GhentAccounting's chosen vendor alters pricing or terms, the 60-day migration plan is costed as follows:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Migration Activity</th>
-<th style="text-align: left;">Resource / Labor Required</th>
-<th style="text-align: left;">Estimated Cost (€)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Vendor Selection &amp; Trial</strong></td>
-<td style="text-align: left;">Accounting Lead (10 hours @ €50/hr)</td>
-<td style="text-align: left;">€500</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>API Data Pipeline Re-connection</strong></td>
-<td style="text-align: left;">External IT Consultant (16 hours @ €90/hr)</td>
-<td style="text-align: left;">€1,440</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Staff Retraining &amp; Onboarding</strong></td>
-<td style="text-align: left;">3 Staff Members (4 hours each @ €35/hr)</td>
-<td style="text-align: left;">€420</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Parallel System Run (1 Month)</strong></td>
-<td style="text-align: left;">Dual SaaS license overlap</td>
-<td style="text-align: left;">€1,500</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>TOTAL MIGRATION COST</strong></td>
-<td style="text-align: left;"><strong>Timeline: 3 Weeks</strong></td>
-<td style="text-align: left;"><strong>€3,860</strong></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>3. Second-Model Benchmark Matrix (Cloud Baseline vs. Local Open-Weights)</h2>
-<p>To test system portability and measure the performance penalty of escaping cloud vendor infrastructure, our complete 10-input test set (from <code>test-set.md</code>) was executed against a local open-weights model and benchmarked against our primary cloud API.</p>
-<h3>Benchmark Setup</h3>
-<ul>
-<li><strong>Model A (Cloud Baseline):</strong> Google Gemini 3.1 Flash-Lite (via REST API)</li>
-<li><strong>Model B (Local Open-Weights):</strong> Llama-3-8B-Instruct (executed locally via Ollama hardware acceleration)</li>
-<li><strong>Test Protocol:</strong> 10 multi-category, multi-language inputs (EN, FR, NL) executed across dual runs (20 total model executions per model).</li>
-</ul>
-<h3>Benchmark Results Table</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Metric / Evaluation Dimension</th>
-<th style="text-align: left;">Model A (Cloud API: Gemini Flash-Lite)</th>
-<th style="text-align: left;">Model B (Local Model: Llama-3-8B Ollama)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Model Version &amp; Host</strong></td>
-<td style="text-align: left;">Gemini 3.1 Flash-Lite (Google Cloud API)</td>
-<td style="text-align: left;">Llama-3-8B-Instruct (Local Laptop Execution)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Success / Pass Rate</strong></td>
-<td style="text-align: left;"><strong>70%</strong> (7/10 inputs passed dual-run consistency)</td>
-<td style="text-align: left;"><strong>60%</strong> (6/10 inputs passed dual-run consistency)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Per-Call Unit Cost</strong></td>
-<td style="text-align: left;">$0.000046 / call (€0.000042)</td>
-<td style="text-align: left;"><strong>$0.00</strong> (Zero marginal API token cost)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Monthly Operating Cost (300 comments)</strong></td>
-<td style="text-align: left;">€0.013 / month API tokens</td>
-<td style="text-align: left;"><strong>€0.00</strong> (Excludes local hardware electricity)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Primary Failure Modes</strong></td>
-<td style="text-align: left;"><strong>F6 Inconsistent</strong> (Input 2, Input 10); <strong>F2 Fabricated</strong> (Input 4 context hallucination).</td>
-<td style="text-align: left;"><strong>F4 Format Drift</strong> (JSON output wrapping in markdown block quotes); <strong>F1 Wrong</strong> on Dutch nuance (Input 9).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Language Performance (FR / NL)</strong></td>
-<td style="text-align: left;">100% Pass on French (Input 3) &amp; Dutch (Input 9).</td>
-<td style="text-align: left;">Passed French (Input 3); failed Dutch (Input 9 - mistagged as Usability).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Data Residency &amp; Privacy</strong></td>
-<td style="text-align: left;">Data transmitted to third-party cloud servers under vendor Terms of Service.</td>
-<td style="text-align: left;"><strong>100% On-Device Data Sovereignty.</strong> Zero employee feedback text leaves the local machine.</td>
-</tr>
-</tbody>
-</table>
-<h3>Failure Profile Analysis</h3>
-<p>While both models achieved comparable overall accuracy (70% vs. 60%), their operational failure profiles differed significantly:<br />
-1. <strong>Format Reliability:</strong> Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks (<code>json ...</code>), triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.<br />
-2. <strong>Multilingual Reasoning:</strong> Model B demonstrated degraded performance on non-English inputs, misclassifying the Dutch skepticism prompt (Input 9) as interface friction rather than a trust concern.<br />
-3. <strong>Privacy vs. Precision Trade-off:</strong> Running Model B locally completely eliminates data privacy and GDPR compliance risks regarding employee sentiment surveillance, but incurs a 10% accuracy penalty that increases downstream human review labor.</p>
-<hr />
-<h2>4. Real Vendor Terms of Service Audit</h2>
-<p><strong>Vendor Audited:</strong> Google AI Studio / Gemini API Services<br />
-<strong>Document Reviewed:</strong> Google APIs Terms of Service &amp; Generative AI Additional Terms of Service</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Audit Dimension</th>
-<th style="text-align: left;">Specific Term / Finding</th>
-<th style="text-align: left;">Risk Rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Self-Service Data Export</strong></td>
-<td style="text-align: left;">Standard API response formats allow self-service export of generated text payload logs. No lock-in fees for data retrieval.</td>
-<td style="text-align: left;">🟢 Low Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Published Deprecation Policy</strong></td>
-<td style="text-align: left;">Terms specify that Google will provide reasonable notice prior to deprecating APIs, but <strong>no fixed minimum timeline (e.g., 6 months)</strong> is contractually guaranteed.</td>
-<td style="text-align: left;">🟡 Moderate Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Price Change Notice Period</strong></td>
-<td style="text-align: left;">Changes to fees or usage limits are governed by general terms requiring <strong>30 days' advance notice</strong> via developer updates.</td>
-<td style="text-align: left;">🟡 Moderate Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Promotional / Tier Expiry</strong></td>
-<td style="text-align: left;">Developer and free-tier rate limits and pricing structures are subject to modification or termination at vendor discretion without prior notice.</td>
-<td style="text-align: left;">🔴 High Risk</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Conspicuous Omissions (What They Refuse to Commit To)</strong></td>
-<td style="text-align: left;"><strong>No Output Stability Guarantee:</strong> Vendor explicitly disclaims deterministic consistency across model updates. Silent model weight updates can alter classification accuracy without warning. <strong>No Price Cap:</strong> No contractual limits exist on future API pricing escalations.</td>
-<td style="text-align: left;">🔴 High Risk</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>5. 90-Day Architectural Exit Plan</h2>
-<h3>The Trigger Scenario</h3>
-<p>Our cloud API provider (Model A) announces an immediate 300% price increase and updates model weights, causing classification consistency on employee feedback to drop below 50%.</p>
-<h3>The Core Deliverable Question</h3>
-<p><em>If our primary provider triples pricing tomorrow, what would switching cost us in hours and performance?</em></p>
-<ul>
-<li><strong>Estimated Switching Labor:</strong> <strong>4 Engineering Hours</strong> (updating REST client endpoint configurations and JSON parser logic).</li>
-<li><strong>Performance Impact:</strong> Immediate temporary <strong>10% drop in classification pass rate</strong> (from 70% to 60%) when shifting to an un-tuned local model, increasing human remediation labor by €66/month until fine-tuned.</li>
-</ul>
-<h3>Phase-by-Phase Exit Roadmap</h3>
-<p>Here is the complete, in-depth <strong>Week 7 Evidence</strong> document formatted in Markdown code so you can copy and paste it directly into GitHub:</p>
-<p>```markdown</p>
-<h2>Week 7 Evidence: Lock-In Detection &amp; Local Model Lab</h2>
-<p><strong>Author:</strong> Andreea Simion<br />
-<strong>Beat:</strong> The Psychology of AI Adoption in the Workplace<br />
-<strong>Course:</strong> AI Adoption &amp; Implementation (AAIB 2026)<br />
-<strong>Date:</strong> October 30, 2026<br />
-<strong>Skill:</strong> Lock-in detection  </p>
-<hr />
-<h2>1. 5-Dimension Lock-In Scorecard (Build Audit)</h2>
-<p>This scorecard evaluates the lock-in risk of our primary enterprise build: the <strong>Automated Employee AI Sentiment &amp; Adoption Barrier Classifier</strong> (deployed across Slack, Teams, and pulse survey channels).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Dimension</th>
-<th style="text-align: left;">Score (0–3)</th>
-<th style="text-align: left;">Evidence &amp; Architectural Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>1. Data Portability</strong></td>
-<td style="text-align: left;"><strong>0</strong></td>
-<td style="text-align: left;"><strong>Full Portability.</strong> Prompt templates, system instructions, ground-truth classification rules, and test-set logs are stored locally in standard, open formats (<code>.md</code> and <code>.json</code>). Feedback data ingestion relies on standard REST endpoints without vendor-locked data schemas.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>2. API Stability</strong></td>
-<td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;"><strong>Mostly Stable.</strong> Built on standard OpenAI-compatible REST API formats. While the primary cloud provider (Google AI Studio / Gemini API) does not contractually guarantee long-term deprecation windows, transitioning to an alternative provider requires only changing the API base URL and request payload wrapper.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>3. Pricing Control</strong></td>
-<td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;"><strong>Published Pricing.</strong> API pricing operates on a pay-as-you-go model ($0.000046/call for Gemini Flash-Lite). While the vendor can modify pricing with 30 days' notice, token costs represent less than 0.01% of total operational expenditure, making price fluctuations financially negligible relative to human error remediation costs.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>4. Feature Dependency</strong></td>
-<td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;"><strong>Portable Core Logic.</strong> The core classification logic rests entirely in prompt engineering and zero-shot/few-shot system context rather than proprietary vendor UI components, custom model fine-tuning, or closed vector database engines.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>5. Migration Cost</strong></td>
-<td style="text-align: left;"><strong>0</strong></td>
-<td style="text-align: left;"><strong>Low Cost.</strong> Total migration cost to an alternative cloud model or local open-weights instance is estimated at under €200 in developer time (&lt;4 engineering hours) with zero database re-indexing or format conversion overhead.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>TOTAL SCORE</strong></td>
-<td style="text-align: left;"><strong>3 / 15</strong></td>
-<td style="text-align: left;"><strong>LOW RISK (Architectural Independence)</strong></td>
-</tr>
-</tbody>
-</table>
-<p><em>Interpretation:</em> A total score of 3/15 confirms that our AI adoption classifier operates with minimal vendor lock-in. The architecture maintains a clear, documented exit path and can be migrated off-grid or across cloud providers within 48 hours.</p>
-<hr />
-<h2>2. Architecture Recommendation &amp; Costed Migration (Scenario 2: GhentAccounting)</h2>
-<h3>Scenario Summary</h3>
-<ul>
-<li><strong>Company:</strong> GhentAccounting (Small Belgian accounting firm, 24 employees, 300 SME clients).</li>
-<li><strong>Problem:</strong> Processing 15,000 invoices/receipts per month; manually extracting fields (VAT, amounts, dates) consuming massive staff hours.</li>
-<li><strong>Constraints:</strong> 0 internal software engineers, €2,000–€5,000/month budget, 2-month timeline requirement.</li>
-</ul>
-<h3>5-Question Decision Framework Application</h3>
-<ol>
-<li><em>Is this capability their competitive advantage?</em> <strong>No.</strong> Invoice OCR and expense data extraction are standard commoditized accounting tasks. GhentAccounting’s true competitive moat is client relationships and advisory expertise.</li>
-<li><em>Is this a commoditized problem with good off-the-shelf solutions?</em> <strong>Yes.</strong> Standardized AI invoice processing platforms (e.g., Exact Online add-ons, Rossum, Klippa) exist with pre-built accounting software integrations.</li>
-<li><em>Do they need multiple AI capabilities that no single vendor provides well?</em> <strong>No.</strong> They require standard document OCR and field extraction.</li>
-<li><em>Will their needs change significantly in the next 12 months?</em> <strong>No.</strong> Invoice structures and regulatory VAT fields follow stable, standardized accounting rules.</li>
-<li><em>Do they have the engineering capacity to build or maintain?</em> <strong>No.</strong> 0 software engineers on staff.</li>
-</ol>
-<p><strong>Architectural Recommendation:</strong> <strong>BUY</strong> (License an off-the-shelf, pre-integrated AI invoice processing SaaS).</p>
-<h3>Lock-In Risk Assessment for GhentAccounting</h3>
-<ul>
-<li><strong>Total Score:</strong> <strong>6 / 15 (Moderate Risk)</strong></li>
-<li><strong>Justification:</strong> While buying a closed SaaS solution introduces dependency on the vendor's extraction engine, this risk is professionally acceptable. Invoice parsing is a commoditized service offered by dozens of competing vendors. If the primary vendor triples prices or degrades performance, switching to an alternative off-the-shelf invoice platform requires minimal data re-mapping without building custom code.</li>
-</ul>
-<h3>Migration Path &amp; Costing (If Forced to Exit)</h3>
-<p>If GhentAccounting's chosen vendor alters pricing or terms, the 60-day migration plan is costed as follows:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Migration Activity</th>
-<th style="text-align: left;">Resource / Labor Required</th>
-<th style="text-align: left;">Estimated Cost (€)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Vendor Selection &amp; Trial</strong></td>
-<td style="text-align: left;">Accounting Lead (10 hours @ €50/hr)</td>
-<td style="text-align: left;">€500</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>API Data Pipeline Re-connection</strong></td>
-<td style="text-align: left;">External IT Consultant (16 hours @ €90/hr)</td>
-<td style="text-align: left;">€1,440</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Staff Retraining &amp; Onboarding</strong></td>
-<td style="text-align: left;">3 Staff Members (4 hours each @ €35/hr)</td>
-<td style="text-align: left;">€420</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Parallel System Run (1 Month)</strong></td>
-<td style="text-align: left;">Dual SaaS license overlap</td>
-<td style="text-align: left;">€1,500</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>TOTAL MIGRATION COST</strong></td>
-<td style="text-align: left;"><strong>Timeline: 3 Weeks</strong></td>
-<td style="text-align: left;"><strong>€3,860</strong></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>3. Second-Model Benchmark Matrix (Cloud Baseline vs. Local Open-Weights)</h2>
-<p>To test system portability and measure the performance penalty of escaping cloud vendor infrastructure, our complete 10-input test set (from <code>test-set.md</code>) was executed against a local open-weights model and benchmarked against our primary cloud API.</p>
-<h3>Benchmark Setup</h3>
-<ul>
-<li><strong>Model A (Cloud Baseline):</strong> Google Gemini 3.1 Flash-Lite (via REST API)</li>
-<li><strong>Model B (Local Open-Weights):</strong> Llama-3-8B-Instruct (executed locally via Ollama hardware acceleration)</li>
-<li><strong>Test Protocol:</strong> 10 multi-category, multi-language inputs (EN, FR, NL) executed across dual runs (20 total model executions per model).</li>
-</ul>
-<h3>Benchmark Results Table</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Metric / Evaluation Dimension</th>
-<th style="text-align: left;">Model A (Cloud API: Gemini Flash-Lite)</th>
-<th style="text-align: left;">Model B (Local Model: Llama-3-8B Ollama)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Model Version &amp; Host</strong></td>
-<td style="text-align: left;">Gemini 3.1 Flash-Lite (Google Cloud API)</td>
-<td style="text-align: left;">Llama-3-8B-Instruct (Local Laptop Execution)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Success / Pass Rate</strong></td>
-<td style="text-align: left;"><strong>70%</strong> (7/10 inputs passed dual-run consistency)</td>
-<td style="text-align: left;"><strong>60%</strong> (6/10 inputs passed dual-run consistency)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Per-Call Unit Cost</strong></td>
-<td style="text-align: left;">$0.000046 / call (€0.000042)</td>
-<td style="text-align: left;"><strong>$0.00</strong> (Zero marginal API token cost)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Monthly Operating Cost (300 comments)</strong></td>
-<td style="text-align: left;">€0.013 / month API tokens</td>
-<td style="text-align: left;"><strong>€0.00</strong> (Excludes local hardware electricity)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Primary Failure Modes</strong></td>
-<td style="text-align: left;"><strong>F6 Inconsistent</strong> (Input 2, Input 10); <strong>F2 Fabricated</strong> (Input 4 context hallucination).</td>
-<td style="text-align: left;"><strong>F4 Format Drift</strong> (JSON output wrapping in markdown block quotes); <strong>F1 Wrong</strong> on Dutch nuance (Input 9).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Language Performance (FR / NL)</strong></td>
-<td style="text-align: left;">100% Pass on French (Input 3) &amp; Dutch (Input 9).</td>
-<td style="text-align: left;">Passed French (Input 3); failed Dutch (Input 9 - mistagged as Usability).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Data Residency &amp; Privacy</strong></td>
-<td style="text-align: left;">Data transmitted to third-party cloud servers under vendor Terms of Service.</td>
-<td style="text-align: left;"><strong>100% On-Device Data Sovereignty.</strong> Zero employee feedback text leaves the local machine.</td>
-</tr>
-</tbody>
-</table>
-<h3>Failure Profile Analysis</h3>
-<p>While both models achieved comparable overall accuracy (70% vs. 60%), their operational failure profiles differed significantly:<br />
 1. <strong>Format Reliability:</strong> Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks, triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.<br />
+2. <strong>Multilingual Reasoning:</strong> Model B demonstrated degraded performance on non-English inputs, misclassifying the Dutch skepticism prompt (Input 9) as interface friction rather than a trust concern.<br />
+3. <strong>Privacy vs. Precision Trade-off:</strong> Running Model B locally completely eliminates data privacy and GDPR compliance risks regarding employee sentiment surveillance, but incurs a 10% accuracy penalty that increases downstream human review labor.</p>
+<hr />
+<h2>4. Real Vendor Terms of Service Audit</h2>
+<p><strong>Vendor Audited:</strong> Google AI Studio / Gemini API Services<br />
+<strong>Document Reviewed:</strong> Google APIs Terms of Service &amp; Generative AI Additional Terms of Service</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Audit Dimension</th>
+<th style="text-align: left;">Specific Term / Finding</th>
+<th style="text-align: left;">Risk Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Self-Service Data Export</strong></td>
+<td style="text-align: left;">Standard API response formats allow self-service export of generated text payload logs. No lock-in fees for data retrieval.</td>
+<td style="text-align: left;">🟢 Low Risk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Published Deprecation Policy</strong></td>
+<td style="text-align: left;">Terms specify that Google will provide reasonable notice prior to deprecating APIs, but <strong>no fixed minimum timeline (e.g., 6 months)</strong> is contractually guaranteed.</td>
+<td style="text-align: left;">🟡 Moderate Risk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Price Change Notice Period</strong></td>
+<td style="text-align: left;">Changes to fees or usage limits are governed by general terms requiring <strong>30 days' advance notice</strong> via developer updates.</td>
+<td style="text-align: left;">🟡 Moderate Risk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Promotional / Tier Expiry</strong></td>
+<td style="text-align: left;">Developer and free-tier rate limits and pricing structures are subject to modification or termination at vendor discretion without prior notice.</td>
+<td style="text-align: left;">🔴 High Risk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Conspicuous Omissions (What They Refuse to Commit To)</strong></td>
+<td style="text-align: left;"><strong>No Output Stability Guarantee:</strong> Vendor explicitly disclaims deterministic consistency across model updates. Silent model weight updates can alter classification accuracy without warning. <strong>No Price Cap:</strong> No contractual limits exist on future API pricing escalations.</td>
+<td style="text-align: left;">🔴 High Risk</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 90-Day Architectural Exit Plan</h2>
+<h3>The Trigger Scenario</h3>
+<p>Our cloud API provider (Model A) announces an immediate 300% price increase and updates model weights, causing classification consistency on employee feedback to drop below 50%.</p>
+<h3>The Core Deliverable Question</h3>
+<p><em>If our primary provider triples pricing tomorrow, what would switching cost us in hours and performance?</em></p>
+<ul>
+<li><strong>Estimated Switching Labor:</strong> <strong>4 Engineering Hours</strong> (updating REST client endpoint configurations and JSON parser logic).</li>
+<li><strong>Performance Impact:</strong> Immediate temporary <strong>10% drop in classification pass rate</strong> (from 70% to 60%) when shifting to an un-tuned local model, increasing human remediation labor by €66/month until fine-tuned.</li>
+</ul>
+<h3>Phase-by-Phase Exit Roadmap</h3>
+<h2>Week 7 Evidence: Lock-In Detection &amp; Local Model Lab</h2>
+<p><strong>Author:</strong> Andreea Simion<br />
+<strong>Beat:</strong> The Psychology of AI Adoption in the Workplace<br />
+<strong>Course:</strong> AI Adoption &amp; Implementation (AAIB 2026)<br />
+<strong>Date:</strong> October 30, 2026<br />
+<strong>Skill:</strong> Lock-in detection  </p>
+<hr />
+<h2>1. 5-Dimension Lock-In Scorecard (Build Audit)</h2>
+<p>This scorecard evaluates the lock-in risk of our primary enterprise build: the <strong>Automated Employee AI Sentiment &amp; Adoption Barrier Classifier</strong> (deployed across Slack, Teams, and pulse survey channels).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Score (0–3)</th>
+<th style="text-align: left;">Evidence &amp; Architectural Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Data Portability</strong></td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>Full Portability.</strong> Prompt templates, system instructions, ground-truth classification rules, and test-set logs are stored locally in standard, open formats (<code>.md</code> and <code>.json</code>). Feedback data ingestion relies on standard REST endpoints without vendor-locked data schemas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. API Stability</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Mostly Stable.</strong> Built on standard OpenAI-compatible REST API formats. While the primary cloud provider (Google AI Studio / Gemini API) does not contractually guarantee long-term deprecation windows, transitioning to an alternative provider requires only changing the API base URL and request payload wrapper.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Pricing Control</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Published Pricing.</strong> API pricing operates on a pay-as-you-go model ($0.000046/call for Gemini Flash-Lite). While the vendor can modify pricing with 30 days' notice, token costs represent less than 0.01% of total operational expenditure, making price fluctuations financially negligible relative to human error remediation costs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Feature Dependency</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Portable Core Logic.</strong> The core classification logic rests entirely in prompt engineering and zero-shot/few-shot system context rather than proprietary vendor UI components, custom model fine-tuning, or closed vector database engines.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Migration Cost</strong></td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>Low Cost.</strong> Total migration cost to an alternative cloud model or local open-weights instance is estimated at under €200 in developer time (&lt;4 engineering hours) with zero database re-indexing or format conversion overhead.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL SCORE</strong></td>
+<td style="text-align: left;"><strong>3 / 15</strong></td>
+<td style="text-align: left;"><strong>LOW RISK (Architectural Independence)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Interpretation:</em> A total score of 3/15 confirms that our AI adoption classifier operates with minimal vendor lock-in. The architecture maintains a clear, documented exit path and can be migrated off-grid or across cloud providers within 48 hours.</p>
+<hr />
+<h2>2. Architecture Recommendation &amp; Costed Migration (Scenario 2: GhentAccounting)</h2>
+<h3>Scenario Summary</h3>
+<ul>
+<li><strong>Company:</strong> GhentAccounting (Small Belgian accounting firm, 24 employees, 300 SME clients).</li>
+<li><strong>Problem:</strong> Processing 15,000 invoices/receipts per month; manually extracting fields (VAT, amounts, dates) consuming massive staff hours.</li>
+<li><strong>Constraints:</strong> 0 internal software engineers, €2,000–€5,000/month budget, 2-month timeline requirement.</li>
+</ul>
+<h3>5-Question Decision Framework Application</h3>
+<ol>
+<li><em>Is this capability their competitive advantage?</em> <strong>No.</strong> Invoice OCR and expense data extraction are standard commoditized accounting tasks. GhentAccounting’s true competitive moat is client relationships and advisory expertise.</li>
+<li><em>Is this a commoditized problem with good off-the-shelf solutions?</em> <strong>Yes.</strong> Standardized AI invoice processing platforms (e.g., Exact Online add-ons, Rossum, Klippa) exist with pre-built accounting software integrations.</li>
+<li><em>Do they need multiple AI capabilities that no single vendor provides well?</em> <strong>No.</strong> They require standard document OCR and field extraction.</li>
+<li><em>Will their needs change significantly in the next 12 months?</em> <strong>No.</strong> Invoice structures and regulatory VAT fields follow stable, standardized accounting rules.</li>
+<li><em>Do they have the engineering capacity to build or maintain?</em> <strong>No.</strong> 0 software engineers on staff.</li>
+</ol>
+<p><strong>Architectural Recommendation:</strong> <strong>BUY</strong> (License an off-the-shelf, pre-integrated AI invoice processing SaaS).</p>
+<h3>Lock-In Risk Assessment for GhentAccounting</h3>
+<ul>
+<li><strong>Total Score:</strong> <strong>6 / 15 (Moderate Risk)</strong></li>
+<li><strong>Justification:</strong> While buying a closed SaaS solution introduces dependency on the vendor's extraction engine, this risk is professionally acceptable. Invoice parsing is a commoditized service offered by dozens of competing vendors. If the primary vendor triples prices or degrades performance, switching to an alternative off-the-shelf invoice platform requires minimal data re-mapping without building custom code.</li>
+</ul>
+<h3>Migration Path &amp; Costing (If Forced to Exit)</h3>
+<p>If GhentAccounting's chosen vendor alters pricing or terms, the 60-day migration plan is costed as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Migration Activity</th>
+<th style="text-align: left;">Resource / Labor Required</th>
+<th style="text-align: left;">Estimated Cost (€)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Vendor Selection &amp; Trial</strong></td>
+<td style="text-align: left;">Accounting Lead (10 hours @ €50/hr)</td>
+<td style="text-align: left;">€500</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>API Data Pipeline Re-connection</strong></td>
+<td style="text-align: left;">External IT Consultant (16 hours @ €90/hr)</td>
+<td style="text-align: left;">€1,440</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Staff Retraining &amp; Onboarding</strong></td>
+<td style="text-align: left;">3 Staff Members (4 hours each @ €35/hr)</td>
+<td style="text-align: left;">€420</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Parallel System Run (1 Month)</strong></td>
+<td style="text-align: left;">Dual SaaS license overlap</td>
+<td style="text-align: left;">€1,500</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL MIGRATION COST</strong></td>
+<td style="text-align: left;"><strong>Timeline: 3 Weeks</strong></td>
+<td style="text-align: left;"><strong>€3,860</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Second-Model Benchmark Matrix (Cloud Baseline vs. Local Open-Weights)</h2>
+<p>To test system portability and measure the performance penalty of escaping cloud vendor infrastructure, our complete 10-input test set (from <code>test-set.md</code>) was executed against a local open-weights model and benchmarked against our primary cloud API.</p>
+<h3>Benchmark Setup</h3>
+<ul>
+<li><strong>Model A (Cloud Baseline):</strong> Google Gemini 3.1 Flash-Lite (via REST API)</li>
+<li><strong>Model B (Local Open-Weights):</strong> Llama-3-8B-Instruct (executed locally via Ollama hardware acceleration)</li>
+<li><strong>Test Protocol:</strong> 10 multi-category, multi-language inputs (EN, FR, NL) executed across dual runs (20 total model executions per model).</li>
+</ul>
+<h3>Benchmark Results Table</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric / Evaluation Dimension</th>
+<th style="text-align: left;">Model A (Cloud API: Gemini Flash-Lite)</th>
+<th style="text-align: left;">Model B (Local Model: Llama-3-8B Ollama)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Model Version &amp; Host</strong></td>
+<td style="text-align: left;">Gemini 3.1 Flash-Lite (Google Cloud API)</td>
+<td style="text-align: left;">Llama-3-8B-Instruct (Local Laptop Execution)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Success / Pass Rate</strong></td>
+<td style="text-align: left;"><strong>70%</strong> (7/10 inputs passed dual-run consistency)</td>
+<td style="text-align: left;"><strong>60%</strong> (6/10 inputs passed dual-run consistency)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Per-Call Unit Cost</strong></td>
+<td style="text-align: left;">$0.000046 / call (€0.000042)</td>
+<td style="text-align: left;"><strong>$0.00</strong> (Zero marginal API token cost)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Monthly Operating Cost (300 comments)</strong></td>
+<td style="text-align: left;">€0.013 / month API tokens</td>
+<td style="text-align: left;"><strong>€0.00</strong> (Excludes local hardware electricity)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary Failure Modes</strong></td>
+<td style="text-align: left;"><strong>F6 Inconsistent</strong> (Input 2, Input 10); <strong>F2 Fabricated</strong> (Input 4 context hallucination).</td>
+<td style="text-align: left;"><strong>F4 Format Drift</strong> (JSON output wrapping in markdown block quotes); <strong>F1 Wrong</strong> on Dutch nuance (Input 9).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Language Performance (FR / NL)</strong></td>
+<td style="text-align: left;">100% Pass on French (Input 3) &amp; Dutch (Input 9).</td>
+<td style="text-align: left;">Passed French (Input 3); failed Dutch (Input 9 - mistagged as Usability).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data Residency &amp; Privacy</strong></td>
+<td style="text-align: left;">Data transmitted to third-party cloud servers under vendor Terms of Service.</td>
+<td style="text-align: left;"><strong>100% On-Device Data Sovereignty.</strong> Zero employee feedback text leaves the local machine.</td>
+</tr>
+</tbody>
+</table>
+<h3>Failure Profile Analysis</h3>
+<p>While both models achieved comparable overall accuracy (70% vs. 60%), their operational failure profiles differed significantly:<br />
+1. <strong>Format Reliability:</strong> Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks (<code>json ...</code>), triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.<br />
 2. <strong>Multilingual Reasoning:</strong> Model B demonstrated degraded performance on non-English inputs, misclassifying the Dutch skepticism prompt (Input 9) as interface friction rather than a trust concern.<br />
 3. <strong>Privacy vs. Precision Trade-off:</strong> Running Model B locally completely eliminates data privacy and GDPR compliance risks regarding employee sentiment surveillance, but incurs a 10% accuracy penalty that increases downstream human review labor.</p>
 <hr />
