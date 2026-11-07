@@ -314,7 +314,7 @@ To test system portability and measure the performance penalty of escaping cloud
 
 ### Failure Profile Analysis
 While both models achieved comparable overall accuracy (70% vs. 60%), their operational failure profiles differed significantly:
-1. **Format Reliability:** Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks (````json ... ````), triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.
+1. **Format Reliability:** Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks, triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.
 2. **Multilingual Reasoning:** Model B demonstrated degraded performance on non-English inputs, misclassifying the Dutch skepticism prompt (Input 9) as interface friction rather than a trust concern.
 3. **Privacy vs. Precision Trade-off:** Running Model B locally completely eliminates data privacy and GDPR compliance risks regarding employee sentiment surveillance, but incurs a 10% accuracy penalty that increases downstream human review labor.
 
