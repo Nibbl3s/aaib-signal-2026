@@ -677,7 +677,7 @@
 </table>
 <h3>Failure Profile Analysis</h3>
 <p>While both models achieved comparable overall accuracy (70% vs. 60%), their operational failure profiles differed significantly:<br />
-1. <strong>Format Reliability:</strong> Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks (<code>json ...</code>), triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.<br />
+1. <strong>Format Reliability:</strong> Model A adhered strictly to structured JSON schemas. Model B occasionally wrapped JSON outputs in Markdown code blocks, triggering formatting parser failures (F4) unless handled by an explicit clean-up regex wrapper.<br />
 2. <strong>Multilingual Reasoning:</strong> Model B demonstrated degraded performance on non-English inputs, misclassifying the Dutch skepticism prompt (Input 9) as interface friction rather than a trust concern.<br />
 3. <strong>Privacy vs. Precision Trade-off:</strong> Running Model B locally completely eliminates data privacy and GDPR compliance risks regarding employee sentiment surveillance, but incurs a 10% accuracy penalty that increases downstream human review labor.</p>
 <hr />
