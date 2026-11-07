@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 6 — AAIB Signal</title>
+<title>The Real Cost of AI in Creative Project Management — AAIB Signal</title>
 <script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,84 +57,34 @@
 <body>
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
-<div class="meta">Week 6 · </div>
-<h1>Week 6</h1>
-<div class="byline">nina-deiter · </div>
-<h2>Week 6 – 6 ECTS Extension: Measured Across Two Providers</h2>
-<p><strong>Use Case:</strong> AI Feedback-to-Task Assistant for Creative Agencies<br />
-<strong>Test date:</strong> November 7, 2026<br />
-<strong>Providers:</strong> Google Gemini API and GroqCloud<br />
-<strong>Models:</strong> Gemini 3.5 Flash-Lite and Qwen 3.8 27B</p>
-<h3>1. Methodology</h3>
-<p>I tested two AI models through their respective APIs using Hoppscotch. Both providers offered a free tier for the tests, but I calculated the equivalent costs using their standard paid API prices.</p>
-<p>I used three identical feedback scenarios for both models:</p>
-<ul>
-<li><strong>T1 – Standard:</strong> Clear client feedback containing several design changes.</li>
-<li><strong>T2 – Ambiguous:</strong> German feedback with an unclear request regarding text alignment.</li>
-<li><strong>T3 – Complex:</strong> Longer client feedback containing multiple changes, fixed design elements and decisions requiring clarification.</li>
-</ul>
-<p>The purpose was to compare real token consumption, estimated API costs and differences in output quality.</p>
-<h3>2. Measured Results</h3>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th style="text-align: right;">Gemini</th>
-<th style="text-align: right;">Groq / Qwen</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Total input tokens</td>
-<td style="text-align: right;">525</td>
-<td style="text-align: right;">562</td>
-</tr>
-<tr>
-<td>Total output tokens</td>
-<td style="text-align: right;">1,319</td>
-<td style="text-align: right;">1,842</td>
-</tr>
-<tr>
-<td>Total tokens</td>
-<td style="text-align: right;">1,844</td>
-<td style="text-align: right;">2,404</td>
-</tr>
-<tr>
-<td>Average cost per run</td>
-<td style="text-align: right;">$0.001152</td>
-<td style="text-align: right;">$0.002606</td>
-</tr>
-<tr>
-<td>Monthly cost (300 runs)</td>
-<td style="text-align: right;">$0.35</td>
-<td style="text-align: right;">$0.78</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Prices used:</strong></p>
-<ul>
-<li>Gemini 3.5 Flash-Lite: $0.30 input / $2.50 output per million tokens.</li>
-<li>Qwen 3.8 27B via Groq: $0.80 input / $4.00 output per million tokens.</li>
-</ul>
-<p>These are estimates based on the three measured API responses and a projected monthly volume of 300 feedback evaluations.</p>
-<h3>3. Quality and Failure Comparison</h3>
-<p>Both models successfully identified the main client requirements in all three tests.</p>
-<p>In T2, both correctly recognised ambiguous German feedback and recommended seeking clarification rather than implementing an unsupported design change. This was particularly relevant because my earlier Week 2 Langdock testing revealed a weakness in handling this type of ambiguity.</p>
-<p>However, Groq's Qwen model tended to provide more detailed responses and introduce additional recommendations.</p>
-<p>For example, in T2 it suggested creating optional layout variations even though the client had not requested them. In T3, it suggested a staging update and client delivery steps that were not explicitly specified.</p>
-<p>These additions were not necessarily incorrect, but they could create unnecessary work if project managers treated every suggested action as an approved client requirement.</p>
-<p>Gemini generally produced more concise, focused outputs while covering the required tasks and constraints.</p>
-<p>Neither model made a confirmed major error in the three tests. However, the sample is too small to establish a reliable production accuracy rate.</p>
-<h3>4. Model Decision</h3>
-<p>For my Feedback-to-Task Assistant, I would currently choose <strong>Gemini 3.5 Flash-Lite</strong>.</p>
-<p>Both models performed adequately, but Gemini generated more concise responses and had lower estimated API costs.</p>
-<p>The cost difference itself is relatively small: approximately $0.44 per month at the projected usage volume. Therefore, output reliability and the risk of creating unnecessary tasks are more important decision factors than token pricing alone.</p>
-<h3>5. Limitations and Conclusion</h3>
-<p>The comparison is based on only three prompts per model, with one response per prompt. It does not prove that Gemini consistently outperforms Qwen.</p>
-<p>Furthermore, the tests used a simplified version of my tool's instructions rather than the complete Langdock implementation. Longer feedback, project history and additional instructions could affect both cost and output quality.</p>
-<p>The results suggest that <strong>human verification and the prevention of incorrectly generated tasks matter more than small differences in API costs</strong>.</p>
-<p>Before selecting a model for real deployment, I would test both with a larger dataset, repeated runs and measured human correction times.</p>
-<p><strong>Sources:</strong> Google Gemini API Pricing and GroqCloud Model Pricing, accessed November 7, 2026.</p>
+<div class="meta">Week 6 · When does AI actually help project managers in creative agencies — and when does it get in the way?</div>
+<h1>The Real Cost of AI in Creative Project Management</h1>
+<div class="byline">Nina Deiter · 2026-11-07</div>
+<h2>Signal Post 6 – The Real Cost of AI in Creative Project Management</h2>
+<p><strong>Beat:</strong> When does AI actually help project managers in creative agencies — and when does it get in the way?</p>
+<h2>The Hook</h2>
+<p>AI tools promise to save project managers time by automating repetitive work. But how much does this actually cost when used across an agency? My cost analysis suggests that API costs are surprisingly low, while human error correction can become a much more important factor.</p>
+<h2>The Use Case</h2>
+<p>My Feedback-to-Task Assistant helps project managers in creative agencies process client feedback. It creates summaries, identifies required changes and converts feedback into actionable tasks. The project manager reviews and approves the results.</p>
+<p>For a creative agency with 20 employees and five project managers, I assume three feedback evaluations per PM per working day, resulting in 300 AI calls per month.</p>
+<h2>The Numbers</h2>
+<p>I tested the workflow using Google Gemini 3.5 Flash-Lite through its API. Across three test scenarios (standard, ambiguous and complex feedback), the model used an average of 175 input tokens and approximately 440 output tokens.</p>
+<p>Using paid API rates of $0.30 per million input tokens and $2.50 per million output tokens, the average cost was approximately $0.001152 per call. This leads to projected monthly API costs of about $0.35 for five project managers and roughly $4.15 per year.</p>
+<p>For my original five-PM scenario, I estimate a net saving of five minutes per feedback evaluation. At an internal hourly rate of €42, this represents a potential productivity value of €1,050 per month.</p>
+<p>However, the API costs do not tell the whole story.</p>
+<p>In Week 2, my latest prompt version correctly handled 10 out of 11 feedback inputs. One ambiguous German comment was incorrectly turned into an actionable task instead of triggering a clarification request. Using this observed failure frequency of 9.1% as a preliminary assumption and estimating ten additional minutes to correct each error, monthly correction costs would reach approximately €191.</p>
+<p>This is much higher than the token bill.</p>
+<p>I also compared Gemini with Qwen 3.8 27B through GroqCloud. Both models handled three identical feedback scenarios successfully, but Qwen generated longer outputs and occasionally suggested additional tasks that the client had not explicitly requested. Its projected API cost was approximately $0.78 per month for 300 calls, compared with $0.35 for Gemini.</p>
+<h2>The Break Point</h2>
+<p>For this internal tool, there is no direct subscription revenue. Therefore, the relevant break-even question is whether the value of saved working time exceeds API, correction, implementation and licensing costs.</p>
+<p>Under my assumptions, the estimated productivity benefit remains positive after additional correction costs. There is no volume-based break-even point within the model because savings and variable costs scale proportionally. However, higher error rates, longer feedback and additional software costs could change the result.</p>
+<p>The measured error rate also comes from a small test sample, so it cannot establish long-term reliability.</p>
+<h2>The Insight</h2>
+<p>What surprised me most was how little the API itself costs compared with human intervention. Choosing the cheapest model is therefore not necessarily the best economic decision.</p>
+<p>For creative project management, AI creates value when it structures information reliably without introducing unnecessary work. Human verification remains essential, particularly when feedback is ambiguous.</p>
+<h2>The Question</h2>
+<p>How can creative agencies measure actual time savings and correction costs in everyday workflows before deciding whether an AI tool is worth scaling?</p>
+<p><strong>Sources:</strong> Google Gemini API Pricing and GroqCloud Pricing, accessed November 7, 2026.</p>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
