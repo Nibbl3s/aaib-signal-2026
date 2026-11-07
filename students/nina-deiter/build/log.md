@@ -186,23 +186,24 @@ logged before Week 8 so it can feed your CP2 revision delta.
 
 | | |
 |---|---|
-| Model / tier | — |
-| Prices used (with snapshot date) | — |
-| Measured input tokens per run | — |
-| Measured output tokens per run | — |
-| **Cost per run** | — |
-| Realistic monthly volume, and why that number | — |
-| **Monthly token cost** | — |
+| Model / tier | Google Gemini 3.5 Flash-Lite<img width="470" height="25" alt="image" src="https://github.com/user-attachments/assets/a30a056d-c568-4d6d-9799-4fbe75220cc9" />
+ |
+| Prices used (with snapshot date) | 07.11.26 Input: $0.30 per million tokens, Output: $2.50 per million tokens |
+| Measured input tokens per run | 108 |
+| Measured output tokens per run | 379 |
+| **Cost per run** | $0.0009799|
+| Realistic monthly volume, and why that number | 300 Because I assume 5 Project Managers, 3 feedback evaluations per project manager per working day, 20 working days per month|
+| **Monthly token cost** | $0.29397 (≈ $0.29)|
 
 **Error cost — the part that matters:**
 
 | | |
 |---|---|
-| Measured error rate | — % on — inputs |
-| Who fixes an error here? | — |
-| Cost per error | — |
-| **Monthly error cost** | — |
-| **Error cost ÷ token cost** | — × |
+| Measured error rate | 9.1% on 11 inputs (prompt v2; 1 incorrect action decision) |
+| Who fixes an error here? | Project Manager (reviews and corrects the AI-generated output) |
+| Cost per error | $7.82 (10 minutes at €42/hour) |
+| **Monthly error cost** | $213.15 |
+| **Error cost ÷ token cost** | Approximately 145× under the assumed 2-minute correction scenario; up to 725× with 10 minutes per error. |
 
 ---
 
