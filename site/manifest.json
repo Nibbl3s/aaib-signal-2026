@@ -1274,6 +1274,15 @@
  },
  {
   "week": 6,
+  "title": "My Fact-Checker Costs \u20ac0.40 a Year. Its Mistakes Cost 3,900 Times More",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Cost projection",
+  "date": "2026-11-15",
+  "url": "posts/kirill-kyryllov-week-06.html"
+ },
+ {
+  "week": 6,
   "title": "When Cheap AI Becomes Expensive: Costing My Review Classifier",
   "author": "Ksenija Maruscaka",
   "beat": "AI in Marketing and Consumer Personalization",
