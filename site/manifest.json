@@ -1563,5 +1563,26 @@
    "kpis": "10/10 | questions that carried over to the factory ; 2/10 | answers that carried over fully ; 2,500\u00d7 | cost gap between a missed defect and a false reject",
    "takeaways": "Price the mistake before the unit ; The vendor always leaves out the number that decides ; In my beat liability cannot be delegated, and the counterparty writes the input"
   }
+ },
+ {
+  "week": 12,
+  "title": "Should an Antwerp Importer Let AI Screen Its Chinese Suppliers? Pilot It. Don't Buy It Yet.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Synthesis",
+  "date": "2026-11-16",
+  "url": "posts/jasper-derieuw-week-12.html",
+  "meta": {
+   "week": "12",
+   "title": "Should an Antwerp Importer Let AI Screen Its Chinese Suppliers? Pilot It. Don't Buy It Yet.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Synthesis",
+   "date": "2026-11-16",
+   "verdict": "Pilot, don't buy: the human check decides",
+   "stamp": "3-MONTH PILOT \u00b7 STOP AT 3 MIN OR 1 MISS",
+   "kpis": "77.8% | right on invoices the AI had never seen (28/36) ; \u20ac0.002 | tokens per check ; 47% \u2192 80% | planted AI errors caught, quick vs deliberate check",
+   "takeaways": "Buy the no-regret step first ; Rules and a person decide, not the model ; Measure the human check before you argue about it"
+  }
  }
 ]
