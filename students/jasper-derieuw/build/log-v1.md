@@ -304,7 +304,12 @@ To be completed in Week 10.
 
 ### Checkpoint 2, Week 8
 
-To be completed in Week 8.
+- **What I changed, and why:** prompt v2 (14 Oct) with three fixes from the Week 3 swap and the Week 6 run: a "cannot be determined" value, a routing-point-is-not-an-origin rule, one fixed JSON answer. Predictions P1–P6 were recorded before Run 3, with APA sources (Anthropic, n.d.-a, n.d.-b).
+- **Re-measured:** own set 24/24 (Run 3; was 22/24); unseen inputs 28/36 = 77.8% (Run 4); local llama3.2 18/24 and 5/36.
+- **The delta, explained:** right on P1–P3 and P6 in direction; wrong on size for P4 (output fell 79%, not 30%) and P6 (far too pessimistic); P7 wrong (14/16, not 16/16). The 24/24 was partly overfitting: on unseen inputs the model is cautious ("unclear" on 6 of 6 real origins), not wrong in a dangerous direction.
+- **Costed:** €0.0020 per check over 60 calls (was €0.0044, −54%); the error rate decides the case, with break-even at 35.2% errors ([Week 8 cost model](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/cost-at-scale.md)).
+- **Deployment probe:** planned at the fablab on Wednesday 18 November 2026; what I deployed, what the physical setting showed that the chat window couldn't, what it cost and which failure class it feeds are added here after the probe.
+- **The Build inside the design:** the five board questions are answered in the [Week 8 architecture](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/architecture.md), section 4.
 
 ### Checkpoint 3, Week 12
 
