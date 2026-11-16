@@ -9,6 +9,8 @@ date: 2026-10-14
 
 # Integration Architecture: Sanctions Screening for an Antwerp Importer
 
+> **Revised 16 November 2026** after a practitioner review: eight changes, marked P1–P8, in [practitioner-review.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/practitioner-review.md). The design below is version 1, kept as it was.
+
 **The company** (my capstone scenario, a realistic composite): a ~150-employee Antwerp importer of Chinese electronic components. About 150 shipments and 1,500 counterparty checks a month (18,000 a year), screened today by 2 compliance analysts by hand at about 6 minutes each: 1,800 h × €45/hr = **€81,000 a year** (Week 4). Systems already paid for: Microsoft 365 (Outlook, Teams, SharePoint) and an ERP with supplier master data. No developers in-house.
 
 ## 1. The use case, and why this one
