@@ -100,8 +100,6 @@
   side.setAttribute('aria-label', 'About this series');
   const card = (title, ...kids) => { const c = el('div', 'jd-card'); c.append(el('h4', '', title), ...kids); side.append(c); return c; };
   card('The beat', el('p', '', BEAT));
-  const story = el('a', '', 'Read “The Last Check” →'); story.href = `../pages/${meta.folder}-the-last-check.html`;
-  card('The whole story', el('p', '', 'Twelve weeks in one visual case file.'), story);
   const voyage = el('ul');
   voyage.append(el('li', '', 'Loading…'));
   card('The voyage so far', voyage);
@@ -116,6 +114,13 @@
   }
   layout.append(side);
 
+  // the voyage ends at the final port: the visual case file (students/jasper-derieuw/pages/the-last-check.md)
+  const finalPort = () => {
+    const li = el('li', 'jd-final'), a = el('a');
+    a.href = `../pages/${meta.folder}-the-last-check.html`;
+    a.append(el('b', '', 'Final port · The Last Check'), el('small', '', 'The whole story as a visual case file'));
+    li.append(a); voyage.append(li);
+  };
   // the voyage: every week of this series, with skill and verdict, from the site's post list
   fetch('../manifest.json').then(r => r.json()).then(all => {
     const mine = all.filter(p => p.url.startsWith(`posts/${meta.folder}-`)).sort((a, b) => a.week - b.week);
@@ -137,5 +142,6 @@
     });
     const last = mine.length ? Math.max(...mine.map(p => p.week)) : week;
     if (last < 12) { const li = el('li'); li.append(el('span', 'jd-next', `${String(last + 1).padStart(2, '0')} · next port: ${PORTS[last]}`)); voyage.append(li); }
-  }).catch(() => { voyage.textContent = ''; });
+    finalPort();
+  }).catch(() => { voyage.textContent = ''; finalPort(); });
 })();
