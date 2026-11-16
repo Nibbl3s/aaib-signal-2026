@@ -63,6 +63,11 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 ## Checkpoint 2 — End of Week 8
 
+**Build**
+- **What my tool can do now:** read a supplier invoice in English, French or Chinese script and return five fields as one JSON answer, with "cannot be determined" when the supplier is unreadable; behind the routing fix, no tested attack or genuine match reaches the 2-minute check.
+- **What it can't do yet:** decide on its own that a supplier is clear, reliably tell a routing point from the origin when documents conflict, or show how long a careful human check takes.
+- **Which number proves it:** 24/24 on my own invoices and 28/36 (77.8%) on 18 unseen inputs; in the routing replay, 0 of 20 attack answers and 0 of 32 genuine matches reach the 2-minute check.
+
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
 | Market mechanism thinking | 5 | 🟡 | My GEO audit scored a real broker 9/18 with quoted evidence and found 0 of 6 AI answers naming a customs broker, but I haven't tested whether any fix changes those answers. |
@@ -79,7 +84,7 @@ Evidence anchors the rating in something real. It is also what your instructor v
 | Vendor claim detection | 🟡 | 🟡 | An absence is data: 33 days of silence to one direct question on notice periods became a decision rule in my ADR. |
 | Value quantification | 🟡 | 🟡 | The 6 minutes per check and the 70/30 routing split are still estimates; the fablab review test is meant to measure them. |
 
-**6 ECTS — extended evidence:** a second provider measured on my full test set (Gemini 3 Flash, 20/24 strict, 83.3%, against Claude's 91.7%); the vendor's notice period asked in writing (Verifex, 14 October, no reply after 33 days) and recorded as ADR 001; my Build run on a model I own (local llama3.2: 18/24 own set, 5/36 unseen); a practitioner review of my Week 8 design, added when it has taken place.
+**6 ECTS — extended evidence:** a second provider measured on my full test set (Gemini 3 Flash, 20/24 strict, 83.3%, against Claude's 91.7%); the vendor's notice period asked in writing (Verifex, 14 October, no reply after 33 days) and recorded as ADR 001; my Build run on a model I own (local llama3.2: 18/24 own set, 5/36 unseen); a customs and trade-compliance specialist reviewed my Week 8 design on 16 November and broke it in eight places (P1–P8), adding a second break-even: the 2-minute check must stay under 3.1–5.0 minutes.
 
 **Your click:** At CP1 I believed a better prompt would make the tool trustworthy. Now I know a prompt can look perfect on the invoices it was written for and still fail on new ones, and that the design around the model decides more than the model.
 
