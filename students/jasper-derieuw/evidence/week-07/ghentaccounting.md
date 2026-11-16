@@ -55,6 +55,8 @@ Before signing: (1) export of documents and extracted data in CSV or JSON, self-
 | First month | Trial a second tool on one month of invoices, in parallel |
 | First quarter | Switch, keep the old tool read-only for the archive, retrain staff |
 
+**What the exit costs (est.):** setting up the rules in a new tool 40 h × €45 = €1,800 + retraining 3 staff × 4 h × €45 = €540 + one month of parallel subscription at their €2,000–€5,000 budget = **€4,340–€7,340**, about one and a half to two months of their current tool budget.
+
 **Link to my own Build:** it is the same task as my tool, reading invoices and pulling out fields, but a different path because of a different team. My importer buys the list matching and connects a model through a thin layer; GhentAccounting, with no engineers, buys the whole thing.
 
 ---

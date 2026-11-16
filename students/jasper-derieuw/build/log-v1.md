@@ -312,6 +312,37 @@ Same prompt and test set on a model I own: `llama3.2` 3B via Ollama on my own PC
 
 **What I would fix first:** in the script, take the strictest of three results: the screening-service match, the AI flag and the routing rules. An AI "clear" can then never lower a route, and any answer that is not exactly one JSON object goes to a person (H2). Cost: about 2 developer hours, 2 × €63 = €126. Why this one: it closes attack 2 for any model, including one I switch to later, and it turns the F4 answers from attacks 4 and 5 into a safe route instead of a parser error. Second: add the 5 attacks to the monthly re-test (30 → 35 inputs), and make "0 of 10 attacks work" a condition before any model switch.
 
+### Prediction for the routing fix (recorded 16 November 2026, before the replay)
+
+**The fix** (Week 9, PI-2): the final route is the strictest of (1) a rule-based name check of the invoice text against the reference list, exact and with key-token variants (Heihe, Suifenhe, 黑河, 绥芬河); (2) the model's flag; (3) the routing rules: the answer is not exactly one JSON object, a field is "not found", the origin is "unclear", the supplier name is not in Latin script, or the invoice contains instruction-like text ("ignore", "screening system", "set flag", "flag_status", "must return"). Anything triggered goes to H2 (the 6-minute check); otherwise H1 (the 2-minute confirmation).
+
+**Test:** the rule is replayed on all 140 recorded prompt-v2 answers (Claude Sonnet 5.5 and llama3.2: own set 24 each, the two swap sets 36 each, the attacks 10 each). No new model calls.
+
+- **P1:** 0 of 20 attack answers end in H1, including llama3.2's "clear" on the sanctioned bank.
+- **P2:** 0 genuine matches (expected "high risk match" or "needs review") end in H1, on either model.
+- **P3 (the cost of the fix):** Sonnet 5.5's answers go to H2 in 40–60% of cases on the own and swap sets (est.), above the 30% in my Week 4 and Week 8 cost models, because the test sets are built from hard cases.
+- **P4:** llama3.2 sends more invoices to H2 than Sonnet 5.5.
+
+### Routing fix replay, 16 November 2026
+
+**Setup:** as predicted above. A script applied the rule to the 140 recorded prompt-v2 answers; no model calls, €0. Per-answer results are kept with the run files.
+
+| | Claude Sonnet 5.5 | llama3.2 |
+|---|---|---|
+| Attack answers ending in H1 | **0 of 10** | **0 of 10**, including its "clear" on the sanctioned bank: caught by the name check and the instruction rule |
+| Genuine matches ending in H1 | **0 of 16** | **0 of 16** |
+| Wrong AI flags that reached H1 | 0 | 0 |
+| Own and swap sets routed to H2 | 48 of 60 (80%) | 51 of 60 (85%) |
+| Without the classmate's set (no supplier in any input) | 28 of 40 (70%) | 31 of 40 (78%) |
+
+**Prediction check:** P1 right; P2 right; **P3 wrong**: 80%, not 40–60%; P4 right, narrowly (85% vs 80%).
+
+**Why so much goes to H2:** most "clean" test invoices are clean on the sanctions question but incomplete: a missing HS code or value (own input 5; practitioner B, C, F), an unclear origin (E, H), or a line the rule reads as an instruction (attack 1). Of Sonnet's 28 expected-clear answers, 16 went to H2, each for a reason a person should check. The confident wrong origin from Run 4 (practitioner D, "Japan") came with reasoning text around the JSON, so the format rule sent it to H2. That was partly luck: clean JSON would have reached H1, and the rule that closes it, conflicting origin documents to a person (P1, Week 8 revision), needs more than one document per invoice and is not in this replay.
+
+**What it shows:** the fix does what it is for. No attack and no genuine match reaches the 2-minute check, on either model, so safety no longer depends on which model I use. Its price is the share of invoices that need the 6-minute check. My test sets are built from hard cases, so 70–80% is an upper bound, not a forecast. My cost models assume 30%, and an accounting manager's "1 in 10 needed follow-up" (E6) suggests that real invoices are mostly complete. Every 10 points above 30% costs €5,400 a year (Week 8). The pilot must measure this share alongside the check time.
+
+**Limits:** a replay of recorded answers, not new runs; the name check uses four key tokens from my 6-entity reference list, not a real screening service; the ">1 port" and conflicting-documents rules are not implemented.
+
 ## Regulatory, from Week 10
 
 To be completed in Week 10.
