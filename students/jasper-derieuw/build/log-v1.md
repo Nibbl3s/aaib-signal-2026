@@ -272,7 +272,7 @@ Why the plan changed: the counter card would only show a flag. The review test m
 
 **When the artifact exists, the deployment observation:**
 
-To be completed before Week 8, per the Build brief.
+**Status, 16 November 2026:** not yet done. The fablab session planned for 15 October did not take place (no reply from the fablab to my booking request). New plan: in person at the fablab on Wednesday 18 November, with a paper version of the same review test as the fallback if no cutting slot is free. The observation is added here after the probe, and this delay stays in the log.
 
 ## Cost, from Week 6
 
@@ -282,7 +282,15 @@ Error cost at my Week 2 measured rate: 29.2% × 18,000 × €4.50 (6 min × €4
 
 ## Second model, from Week 7
 
-To be completed in Week 7.
+Same prompt and test set on a model I own: `llama3.2` 3B via Ollama on my own PC, 14 October 2026.
+
+| | Claude Sonnet 5.5 | llama3.2 3B (local) |
+|---|---|---|
+| Prompt v1, my 12 invoices | 22/24 (91.7%) | 4/24 (16.7%) |
+| Prompt v2, my 12 invoices (Run 3) | 24/24 (100%) | 18/24 (75%) |
+| Prompt v2, 18 unseen inputs (Run 4) | 28/36 (77.8%) | 5/36 (13.9%) |
+
+**Different failures:** on v1 the local model answered with Python code in 9 of 24 runs and called a sanctioned bank "clear" once; on v2 its format was fixed, but on unseen inputs it named a flagged bank as the supplier in 22 of 36 runs. Owning the weights means owning the ceiling: a model I own is not an exit for this task. Full comparison: [second-model.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-07/second-model.md).
 
 ## Attack, from Week 9
 
