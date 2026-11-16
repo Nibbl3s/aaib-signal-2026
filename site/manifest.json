@@ -1503,5 +1503,26 @@
    "kpis": "0/10 | attacks that worked on Claude Sonnet 5.5 ; 1 | sanctioned bank cleared by a local model ; \u20ac126 | cost of my first fix",
    "takeaways": "In sanctions screening the attacker is the supplier, who writes the text my prompt reads ; Injection resistance belongs to the model, not to the prompt ; Fix the route, not the model"
   }
+ },
+ {
+  "week": 10,
+  "title": "My Sanctions Tool Is Legal Under the AI Act. That Was the Easy Part.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Regulatory reasoning",
+  "date": "2026-11-16",
+  "url": "posts/jasper-derieuw-week-10.html",
+  "meta": {
+   "week": "10",
+   "title": "My Sanctions Tool Is Legal Under the AI Act. That Was the Easy Part.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Regulatory reasoning",
+   "date": "2026-11-16",
+   "verdict": "Minimal risk on paper; document it as if it were high-risk",
+   "stamp": "AI ACT: MINIMAL RISK \u00b7 GDPR: APPLIES NOW",
+   "kpis": "Minimal | AI Act risk class of my Build ; \u20ac3,120\u2013\u20ac3,720 | compliance cost, year 1 (est.) ; \u20ac95k\u2013\u20ac240k | the cost if it were high-risk",
+   "takeaways": "Read who an Annex III point applies to, not only what it covers ; In sanctions screening the obligations that bite come from sanctions, customs and data protection law ; In practice, doubt pushes a system up a risk class, not down"
+  }
  }
 ]
