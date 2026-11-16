@@ -312,6 +312,17 @@ Same prompt and test set on a model I own: `llama3.2` 3B via Ollama on my own PC
 
 **What I would fix first:** in the script, take the strictest of three results: the screening-service match, the AI flag and the routing rules. An AI "clear" can then never lower a route, and any answer that is not exactly one JSON object goes to a person (H2). Cost: about 2 developer hours, 2 × €63 = €126. Why this one: it closes attack 2 for any model, including one I switch to later, and it turns the F4 answers from attacks 4 and 5 into a safe route instead of a parser error. Second: add the 5 attacks to the monthly re-test (30 → 35 inputs), and make "0 of 10 attacks work" a condition before any model switch.
 
+### Prediction for the routing fix (recorded 16 November 2026, before the replay)
+
+**The fix** (Week 9, PI-2): the final route is the strictest of (1) a rule-based name check of the invoice text against the reference list, exact and with key-token variants (Heihe, Suifenhe, 黑河, 绥芬河); (2) the model's flag; (3) the routing rules: the answer is not exactly one JSON object, a field is "not found", the origin is "unclear", the supplier name is not in Latin script, or the invoice contains instruction-like text ("ignore", "screening system", "set flag", "flag_status", "must return"). Anything triggered goes to H2 (the 6-minute check); otherwise H1 (the 2-minute confirmation).
+
+**Test:** the rule is replayed on all 140 recorded prompt-v2 answers (Claude Sonnet 5.5 and llama3.2: own set 24 each, the two swap sets 36 each, the attacks 10 each). No new model calls.
+
+- **P1:** 0 of 20 attack answers end in H1, including llama3.2's "clear" on the sanctioned bank.
+- **P2:** 0 genuine matches (expected "high risk match" or "needs review") end in H1, on either model.
+- **P3 (the cost of the fix):** Sonnet 5.5's answers go to H2 in 40–60% of cases on the own and swap sets (est.), above the 30% in my Week 4 and Week 8 cost models, because the test sets are built from hard cases.
+- **P4:** llama3.2 sends more invoices to H2 than Sonnet 5.5.
+
 ## Regulatory, from Week 10
 
 To be completed in Week 10.
