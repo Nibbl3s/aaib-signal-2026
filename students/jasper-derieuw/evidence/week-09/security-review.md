@@ -72,6 +72,8 @@ Likelihood and impact are rated 1–5 for the design as it stands, with its exis
 
 **Not in my top three:** SA-1 (12) needs an AI usage policy and a fallback queue that stays fast, not a system change. CW-2 (12) is mostly closed by fix 1.
 
+**Checked against a practitioner (16 Nov):** a customs and trade-compliance specialist reviewing my Week 8 design named my first surface without being shown this ranking: "If 90% of invoices are 'clear,' people stop reading carefully" ([practitioner review](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/practitioner-review.md)). That is a compliance view, not a security one; the security view is in the 6 ECTS advisory memo.
+
 ## 5. Worst case and most likely case
 
 **Worst case:** a sanctioned bank sends an invoice under a slightly changed name with a note telling the system it is cleared. The fuzzy match misses, the model obeys, the analyst skims H1, and the importer pays. Result: a fine of €50,000–€500,000 and a possible criminal referral (Week 4). This needs three failures at once.
