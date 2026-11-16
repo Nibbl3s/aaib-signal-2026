@@ -94,34 +94,35 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 ## Checkpoint 3 — End of Week 12
 
+**Build**
+- **What my tool can do now:** read a supplier invoice in English, French or Chinese script and return five fields as one JSON answer; behind the routing rules, every list hit, warning, non-Latin name or conflicting origin goes to a full human check, on either model.
+- **What it can't do yet:** be trusted without a deliberate human step: in a paper test the AI's planted wrong verdicts got past people half the time with a quick confirmation.
+- **Which number proves it:** 28/36 (77.8%) on unseen inputs; 0 of 20 attacks and 0 of 32 genuine matches reach the quick check (replay on 140 answers); people caught 7/15 planted errors with a quick check and 12/15 with a deliberate one (10 testers, 16 Nov).
+
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Attack surface thinking | 9 | 🟢 / 🟡 / 🔴 | |
-| Regulatory reasoning | 10 | 🟢 / 🟡 / 🔴 | |
-| Cross-domain transfer | 11 | 🟢 / 🟡 / 🔴 | |
-| Synthesis | 12 | 🟢 / 🟡 / 🔴 | |
+| Attack surface thinking | 9 | 🟢 | I attacked my own Build ten ways: Claude resisted 10 of 10, a local model cleared a sanctioned bank because the invoice told it to, and moving the decision to routing rules stopped all 20 attacks on both models. |
+| Regulatory reasoning | 10 | 🟡 | My gut got 5 of 10 scenarios exactly right and 2 wrong; with the decision tree I classified my own Build as minimal risk through Annex III points 6 and 7, but my self-assessment found I had left out data subject rights and the Art. 50 check. |
+| Cross-domain transfer | 11 | 🟡 | All ten of my framework's questions carried into a car-parts factory but only two answers did, and an insider showed three of my seven assumptions were local to my beat. |
+| Synthesis | 12 | 🟡 | I assembled 21 pieces of dated evidence into one memo with a clear recommendation, but my own self-assessment found three weak sections and the draft is still too long. |
 | Defense | 13 | 🔴 | Not yet demonstrated — complete after your Week 13 defence |
 
 **Re-rate everything.** All twelve prior skills, honestly. This is the version a future employer could read.
 
-| Skill | CP1 | CP2 | CP3 |
-|-------|:---:|:---:|:---:|
-| Cost literacy | | | |
-| Capability skepticism | | | |
-| Vendor claim detection | | | |
-| Value quantification | | | |
-| Market mechanism thinking | — | | |
-| Cost projection | — | | |
-| Lock-in detection | — | | |
-| Design defense | — | | |
-| Attack surface thinking | — | — | |
-| Regulatory reasoning | — | — | |
-| Cross-domain transfer | — | — | |
-| Synthesis | — | — | |
+| Skill | CP1 | CP2 | CP3 | What changed |
+|-------|:---:|:---:|:---:|--------------|
+| Cost literacy | 🟢 | 🟢 | 🟢 | Tokens are under €40 a year against €43,200 of human checks: I now price people's time first. |
+| Capability skepticism | 🟢 | 🟢 | 🟢 | I now test the people around the model as well: a quick confirmation let half of the AI's planted errors through. |
+| Vendor claim detection | 🟡 | 🟡 | 🟢 | I found the missing number three times without the framework in front of me: a vendor's silence on notice periods, "100%" that meant coverage, and an invoice model with no origin field. |
+| Value quantification | 🟡 | 🟡 | 🟡 | The 2-minute check that carries my saving is still assumed; my paper test measured only a name check (19–30 s), a lower bound. |
+| Market mechanism thinking | — | 🟡 | 🟡 | My 18-answer audit showed what assistants cite, but I still haven't tested whether a fix changes their answers. |
+| Cost projection | — | 🟢 | 🟢 | Unchanged: €360 and €3,600 a year at 10× and 100×, and the bill scales with errors and check time, not tokens. |
+| Lock-in detection | — | 🟢 | 🟢 | Unchanged: the real lock-in is capability (€16,800 a year to switch), and no vendor is signed without three terms in writing. |
+| Design defense | — | 🟡 | 🟡 | Two practitioners broke my design in nine places and I revised it, but I have not yet defended it live to a board. |
 
-**6 ECTS — extended evidence:**
+**6 ECTS — extended evidence:** an IT professional and a customs specialist re-ranked my security threats (access control up, injection down); the chamber of commerce did not answer in 33 days and a trade-compliance specialist told me large firms document "as if it were high-risk", which added outside counsel to my budget; an insider in production IT corrected three of my seven assumptions about factory AI; a deployment probe with 10 people measured how often a human check catches the AI's wrong verdicts (47% quick, 80% deliberate); an evidence index maps all 21 pieces to the memo claim each supports.
 
-**Your click:** What did you believe at Checkpoint 2 that you've since replaced? This is the version a future employer could read — make the change nameable.
+**Your click:** At CP2 I believed the design around the model decides more than the model. Now I know the design itself depends on one human habit: a check that has become a click passes the AI's mistakes through, so the confirmation must cost the reviewer a deliberate act.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
