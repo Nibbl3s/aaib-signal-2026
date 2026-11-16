@@ -284,6 +284,28 @@ Why the plan changed: the counter card would only show a flag. The review test m
 - **D4:** the median check time on the clean cards 1, 3 and 7 is 30–90 seconds. This is the name check only, so it is a lower bound for a full invoice check.
 - **D5:** at least one tester clears a planted card in under 30 seconds.
 
+### Probe run 1: paper version, 16 November 2026, 14:00–16:00
+
+**Note:** a paper version of the review test, at home, not the laser-cut desk and not a live model; the AI verdicts on the cards are copied from my real Build runs (Run 1). A second run with the laser-cut parts at the fablab on 18 November is added as run 2.
+
+| | Set-up A: quick (n = 5) | Set-up C: deliberate (n = 5) |
+|---|---|---|
+| Planted errors caught (cards 2, 5, 8) | 7 of 15 (47%) | 12 of 15 (80%) |
+| Sanctioned bank in Chinese script cleared (card 2) | 3 of 5 | 1 of 5 |
+| Unreadable invoice cleared (card 5) | 2 of 5 | 0 of 5 |
+| False alarms on clean cards | 0 | 0 |
+| Median seconds, clean card (1, 3, 7) | 19 | 30 |
+| Median seconds, planted card (2, 5, 8) | 33 | 55 |
+
+**Prediction check:** D1 right (47%); D2 right (+33 points); **D3 wrong**: card 8 was the most missed (rated "needs review" instead of "high risk" by 5 of 10, which still sends it to a person), while card 2 was the most dangerous miss (cleared 4 times); **D4 wrong for set-up A** (19 s, below the 30–90 s I predicted), right at the edge for C (30 s); D5 right (planted cards cleared in 24–29 s).
+
+1. **What I deployed:** 8 invoice cards with the AI's verdict printed on them (3 of them wrong), the reference list, and two ways to decide: A = write C, R or H; C = to clear, pick up a green HUMAN KEY card, initial the card, post it in a CLEARED envelope, and first remove a red AI FLAG note where the AI had warned. 10 testers (fellow students and family), at home, timed per card with a stopwatch.
+2. **What the physical setting showed that the chat window couldn't:** speed decides. Testers who cleared the listed bank in Chinese script did so in 27–49 seconds; those who caught it took 42–67. A physical step to clear raised the catch rate from 47% to 80%, and nobody removed an AI flag to clear a card. In their words: "I mostly followed the AI unless something looked incomplete or unusual" (set-up A); "Removing the AI flag felt like actively accepting responsibility" (set-up C). The chat window shows whether the AI is right; the desk shows whether a person notices when it is not.
+3. **What it cost:** about €5 (paper, ink, sticky notes, an envelope) and about 2 hours. The deliberate step costs 15.5 seconds a card: 12,600 quick checks × 15.5 s ÷ 3,600 × €45 = about €2,441 a year.
+4. **Which failure class and memo section it feeds:** F3 missed (card 2) and F1 wrong (card 8); the memo's weakest number (the check time), the "50% (est.)" catch rate in my business case (now measured: 47%), and the rubber-stamp risk in the security section.
+
+**Limits:** 5 testers per set-up, so an indication, not proof; testers are not compliance analysts; same card order for everyone; a name check only, so the times are a lower bound for a full invoice check.
+
 ## Cost, from Week 6
 
 Measured via the Claude API on 14 October 2026 (`claude-sonnet-5-5`, effort medium, prompt v1, my 12 test invoices × 2 runs): **371.9 input and 402.5 output tokens per call** on average, so **€0.004387 per check** ($2 / $10 per 1M tokens, × 0.92). At my scenario volume of 18,000 checks a year that is **€79 a year in tokens**.

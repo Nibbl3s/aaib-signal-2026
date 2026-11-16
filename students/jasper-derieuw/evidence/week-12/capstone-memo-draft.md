@@ -21,7 +21,7 @@ date: 2026-11-16
 
 **Cost and return:** €28,007–€28,607 one-off; a saving of €7,298–€25,280 a year from year two; payback in 13 to 47 months. Tokens cost under €40 a year: this is a case about people's time, not about AI prices.
 
-**The weakest number:** the time of the AI-assisted check. I assumed two minutes; a customs specialist expects "five or ten"; above 2.8–4.7 minutes the saving is gone. **If it is wrong, the answer becomes "buy the screening service only"** (section 3.2), which is the first step of this plan anyway. *[FABLAB 18 NOV: measured median seconds for a careful check of a clean card, n testers]*
+**The weakest number:** the time of the AI-assisted check. I assumed two minutes; a customs specialist expects "five or ten"; above 2.8–4.7 minutes the saving is gone. **If it is wrong, the answer becomes "buy the screening service only"** (section 3.2), which is the first step of this plan anyway. In a paper test with 10 people (16 November), a careful name check of a clean invoice took a median 19 seconds with a quick confirmation and 30 with a deliberate one; the quick check caught 47% of the AI's planted errors, the deliberate one 80%. That is a lower bound: a full check also covers the order, value and HS code.
 
 **Risk class:** minimal risk under the EU AI Act, documented as if it were high-risk until outside counsel confirms. The obligations that bite come from sanctions, customs and data protection law, and they stay with the importer whatever the model says.
 
@@ -61,7 +61,7 @@ The task has two halves with different answers.
 
 | No AI wins if … | Threshold | Today's evidence |
 |---|---|---|
-| The AI-assisted check takes too long | above 2.8–4.7 min | assumed 2 min; "five or ten" (E17); *[fablab]* |
+| The AI-assisted check takes too long | above 2.8–4.7 min | assumed 2 min; "five or ten" (E17); name check alone 19–30 s in my paper test (E21) |
 | Too many invoices need the full check | above 43.5–76.8% | model assumes 30%; hard test sets 70–80% (routing replay); practice "1 in 10" (E6) |
 | The payback outlives the system | above 36 months (est.) | 13–47 months |
 
@@ -104,7 +104,7 @@ The importer's attacker is the supplier, who writes the invoice text the model r
 
 | Threat | Where in the design | Mitigation and cost |
 |---|---|---|
-| Confidently wrong output: a quick check that becomes a rubber stamp | The 2-minute confirmation | Source line per field, conflicting origins to a full check, monthly re-check of 30 cleared invoices: €3,078 |
+| Confidently wrong output: a quick check that becomes a rubber stamp | The 2-minute confirmation | Source line per field, conflicting origins to a full check, monthly re-check of 30 cleared invoices: €3,078; a deliberate confirmation caught 80% of planted errors against 47% for a quick one (E21), for about €2,441 a year in extra seconds, not yet in the totals |
 | Data leakage: directors' and owners' names to the model provider | The model call | Processing agreement, retention period, EU safeguards: €690 |
 | Unauthorised access: who can approve or edit | The Teams list and the log | Edit rights for the two analysts only, approval tied to the signed-in account, a read-only log: €432 |
 | Prompt injection through the invoice | The model's input | The strictest route wins, non-JSON goes to a person, attacks re-tested before any model switch: €522 |
