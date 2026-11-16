@@ -106,3 +106,48 @@ manifest.sort(key=lambda p: (p["week"], p["author"]))
 os.makedirs(OUT, exist_ok=True)
 json.dump(manifest, open(f"{OUT}/manifest.json", "w"), indent=1)
 print(f"manifest: {len(manifest)} posts")
+
+# ---------- optional extra pages (added November 2026) ----------
+# students/<folder>/pages/<name>.md  ->  site/pages/<folder>-<name>.html
+# Pages are NOT added to manifest.json, so the class index does not change.
+# A student theme may also ship fonts: students/<folder>/theme/fonts/*.woff2
+# Everything below is wrapped in try/except: if anything here fails, the
+# posts and the index above are already built and stay as they are.
+try:
+    PAGES_OUT = f"{OUT}/pages"
+    SAFE = re.compile(r"[a-z0-9-]+")
+    # fonts for student themes (the themes folder is rebuilt above on every run)
+    for fdir in sorted(glob.glob(f"{MD}/*/theme/fonts")):
+        folder = Path(fdir).parts[1]
+        if theme_of(folder):
+            os.makedirs(f"{OUT}/themes/{folder}/fonts", exist_ok=True)
+            for f in glob.glob(f"{fdir}/*.woff2"):
+                shutil.copy(f, f"{OUT}/themes/{folder}/fonts/")
+    built_pages = set()
+    for path in sorted(glob.glob(f"{MD}/*/pages/*.md")):
+        folder = Path(path).parts[1]
+        name = Path(path).stem
+        if not (SAFE.fullmatch(folder) and SAFE.fullmatch(name)):
+            print(f"  skipped page {path}: use only a-z, 0-9 and - in names")
+            continue
+        meta, body = fm_and_body(path)
+        title = meta.get("title", name)
+        slug = f"{folder}-{name}"
+        e = html.escape
+        page = template.replace("__TITLE__", e(title)).replace("__CONTENT__",
+            f'<div class="meta">{e(meta.get("beat", ""))}</div>\n<h1>{e(title)}</h1>\n'
+            f'<div class="byline">{e(meta.get("author", folder))} · {e(meta.get("date", ""))}</div>\n'
+            + md_to_html(body))
+        if theme_of(folder):
+            page = apply_theme(page, folder, {**meta, "page": name, "folder": folder, "slug": slug})
+        os.makedirs(PAGES_OUT, exist_ok=True)
+        open(f"{PAGES_OUT}/{slug}.html", "w", encoding="utf-8").write(page)
+        built_pages.add(f"{slug}.html")
+        print(f"  page {PAGES_OUT}/{slug}.html")
+    # remove pages whose source no longer exists (only inside site/pages/)
+    for old in glob.glob(f"{PAGES_OUT}/*.html"):
+        if os.path.basename(old) not in built_pages:
+            os.remove(old)
+            print(f"  removed {old}")
+except Exception as err:
+    print(f"  WARNING: extra pages skipped ({err}); posts and index are unaffected")
