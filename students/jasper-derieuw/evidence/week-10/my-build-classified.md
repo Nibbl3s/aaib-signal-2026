@@ -71,7 +71,7 @@ date: 2026-10-14
 | Processing agreement with the model provider | Already counted in the Week 9 mitigations (€690) | 0 |
 | **Total** | | **1,800** |
 
-Together with the Week 9 security work (€4,515), this exceeds my Week 8 contingency (€4,869) by €1,446, so **the year-1 system cost rises from €37,329 to €38,775 (est.)**. For scale: if the tool were high-risk, the course's worked example puts compliance at €95,000–€240,000, roughly 2.5 to 6 times my entire year-1 system cost. Getting step 2 right is worth more than any other line in this file.
+Together with the Week 9 security work (€4,947 after the [advisory memo](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-09/advisory-memo.md)), this exceeds my Week 8 contingency (€4,869) by €1,878, so **the year-1 system cost rises from €37,329 to €39,207 (est.)**. For scale: if the tool were high-risk, the course's worked example puts compliance at €95,000–€240,000, roughly 2.4 to 6 times my entire year-1 system cost. Getting step 2 right is worth more than any other line in this file.
 
 ---
 
