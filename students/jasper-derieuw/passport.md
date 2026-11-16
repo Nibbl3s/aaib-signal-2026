@@ -82,7 +82,7 @@ Evidence anchors the rating in something real. It is also what your instructor v
 | Cost literacy | 🟢 | 🟢 | Now from measured tokens instead of estimates: €0.0044 per check on v1, €0.0020 on v2 over 60 calls. |
 | Capability skepticism | 🟢 | 🟢 | I learned that 24/24 on my own invoices became 28/36 on unseen ones: a prompt can be overfitted to its test set. |
 | Vendor claim detection | 🟡 | 🟡 | An absence is data: 33 days of silence to one direct question on notice periods became a decision rule in my ADR. |
-| Value quantification | 🟡 | 🟡 | The 6 minutes per check and the 70/30 routing split are still estimates; the fablab review test is meant to measure them. |
+| Value quantification | 🟡 | 🟡 | The 6 minutes per check is now supported by a practitioner's figures (4.7–7.5 minutes on average); the 70/30 routing split and the 2-minute AI-assisted check are still estimates, and the fablab review test is meant to measure the check time. |
 
 **6 ECTS — extended evidence:** a second provider measured on my full test set (Gemini 3 Flash, 20/24 strict, 83.3%, against Claude's 91.7%); the vendor's notice period asked in writing (Verifex, 14 October, no reply after 33 days) and recorded as ADR 001; my Build run on a model I own (local llama3.2: 18/24 own set, 5/36 unseen); a customs and trade-compliance specialist reviewed my Week 8 design on 16 November and broke it in eight places (P1–P8), adding a second break-even: the 2-minute check must stay under 3.1–5.0 minutes.
 
