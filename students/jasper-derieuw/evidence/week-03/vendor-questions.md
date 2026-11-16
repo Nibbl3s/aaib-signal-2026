@@ -18,8 +18,8 @@ One question per email, each stating that I am a student. Dates and times are as
 | # | Vendor | Question | Sent | To | Days of silence on 11 Oct |
 |---|---|---|---|---|---|
 | 1 | ComplyAdvantage | Q3: what data is the "95% of reviews automated" figure based on, and was it verified independently? | Monday 5 Oct 2026, [time not recorded] | press@complyadvantage.com | 6 |
-| 2 | World Check (LSEG) | Q4: what does year one cost in total, on top of the license fee (implementation, integration, support), for about 1,500 counterparties a month? | Wednesday 7 Oct 2026, about 15:04 | [address to confirm] | 4 |
-| 3 | ComplyAdvantage | Q5: is a full AI product needed, or is a simpler list matching service enough at this volume? | Friday 9 Oct 2026, 10:35 | [address to confirm] | 2, including a weekend |
+| 2 | World Check (LSEG) | Q4: what does year one cost in total, on top of the license fee (implementation, integration, support), for about 1,500 counterparties a month? | Wednesday 7 Oct 2026, about 15:04 | address not recorded at the time of sending | 4 |
+| 3 | ComplyAdvantage | Q5: is a full AI product needed, or is a simpler list matching service enough at this volume? | Friday 9 Oct 2026, 10:35 | address not recorded at the time of sending | 2, including a weekend |
 
 Earlier contact from Week 1: two pricing emails, one to each vendor, both sent on 23 September 2026 at 16:29. No reply to either in the 18 days since. Counting those, ComplyAdvantage has now been written to three times and World Check twice, with no answer from either.
 
@@ -41,9 +41,9 @@ Thank you,
 Jasper Derieuw
 jasper.derieuw@hotmail.com
 
-**Email 2, World Check, Q4.** Asked about the total cost in year one on top of the license fee, covering implementation, integration and support, for a small importer screening about 1,500 counterparties a month. Student status stated. [Paste the exact sent text here before submitting, I have the substance but not the final wording.]
+**Email 2, World Check, Q4.** Asked about the total cost in year one on top of the license fee, covering implementation, integration and support, for a small importer screening about 1,500 counterparties a month. Student status stated. Exact wording not saved at the time of sending; the substance is as recorded above.
 
-**Email 3, ComplyAdvantage, Q5.** Asked whether a full AI product is needed, or whether a simpler list matching service is enough, at about 1,500 counterparties a month. Student status stated. [Paste the exact sent text here before submitting, I have the substance but not the final wording.]
+**Email 3, ComplyAdvantage, Q5.** Asked whether a full AI product is needed, or whether a simpler list matching service is enough, at about 1,500 counterparties a month. Student status stated. Exact wording not saved at the time of sending; the substance is as recorded above.
 
 ## What came back
 
