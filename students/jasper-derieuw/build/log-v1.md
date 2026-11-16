@@ -306,6 +306,16 @@ Why the plan changed: the counter card would only show a flag. The review test m
 
 **Limits:** 5 testers per set-up, so an indication, not proof; testers are not compliance analysts; same card order for everyone; a name check only, so the times are a lower bound for a full invoice check.
 
+### Prediction for probe run 2 (written 16 November, before the run)
+
+Same 8 cards and briefing as run 1, card order alternated (1→8 and 8→1), plus two full-invoice checks (F1 clean, F2 with changed bank details) against a supplier file.
+
+- **P1:** quick set-up A catches 40–55% of the planted errors; deliberate set-up C catches 75–90%. Pooled with run 1, the gap stays at 25 points or more.
+- **P2:** reversing the card order does not change which card is missed most dangerously: card 2 (the bank in Chinese script) is still the one cleared most often.
+- **P3:** a full check of a clean invoice (F1) takes a median 60–120 seconds: longer than a name check, still under my assumed 2 minutes.
+- **P4:** at least 6 of 10 testers hold F2 for the changed bank details; those who miss it spend under 60 seconds on the card.
+- **P5:** no tester's full check exceeds 2.8 minutes, the lower break-even in my memo.
+
 ## Cost, from Week 6
 
 Measured via the Claude API on 14 October 2026 (`claude-sonnet-5-5`, effort medium, prompt v1, my 12 test invoices × 2 runs): **371.9 input and 402.5 output tokens per call** on average, so **€0.004387 per check** ($2 / $10 per 1M tokens, × 0.92). At my scenario volume of 18,000 checks a year that is **€79 a year in tokens**.
