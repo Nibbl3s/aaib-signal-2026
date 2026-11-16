@@ -124,6 +124,7 @@ try:
             for f in glob.glob(f"{fdir}/*.woff2"):
                 shutil.copy(f, f"{OUT}/themes/{folder}/fonts/")
     built_pages = set()
+    extras = []   # listed on the main page under "Extras" (site/pages.json)
     for path in sorted(glob.glob(f"{MD}/*/pages/*.md")):
         folder = Path(path).parts[1]
         name = Path(path).stem
@@ -143,7 +144,11 @@ try:
         os.makedirs(PAGES_OUT, exist_ok=True)
         open(f"{PAGES_OUT}/{slug}.html", "w", encoding="utf-8").write(page)
         built_pages.add(f"{slug}.html")
+        extras.append({"title": title, "author": meta.get("author", folder),
+                       "date": meta.get("date", ""), "url": f"pages/{slug}.html"})
         print(f"  page {PAGES_OUT}/{slug}.html")
+    extras.sort(key=lambda p: (p["author"], p["title"]))
+    json.dump(extras, open(f"{OUT}/pages.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     # remove pages whose source no longer exists (only inside site/pages/)
     for old in glob.glob(f"{PAGES_OUT}/*.html"):
         if os.path.basename(old) not in built_pages:
