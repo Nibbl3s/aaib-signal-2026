@@ -28,7 +28,7 @@
  
 **Where the inputs came from:** the real S1 2026-27 worklist (73 BAP students) and real coordinator requests from the first weeks of the semester.
 **Real, or written by me?** Real data and real requests; a few edge cases written by me to test boundaries.
-**Anonymised?** Yes in this repo (S01–S10). The tool itself runs on the real data inside our university environment.
+**Anonymised?** Yes in this repo (S01–S10). The tool itself is a demo and runs on fabricated data based on real data that only live inside our university environment.
  
 **Awkward cases deliberately included:**
  
@@ -93,18 +93,12 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
  
 | Code | Count | Notes |
 |---|---:|---|
-| F1 Wrong | | |
-| F2 Fabricated | | |
-| F3 Missed | | |
-| F4 Format | | |
-| F5 Refused | | |
-| F6 Inconsistent | | |
- 
-**What surprised me:**
-> —
- 
-**The failure that would have mattered most in real use, and why:**
-> —
+| F1 Wrong |3 |human errors! |
+| F2 Fabricated |0 | |
+| F3 Missed |1 | |
+| F4 Format |2 | |
+| F5 Refused |1 | |
+| F6 Inconsistent |0 | |
  
 ---
  
@@ -126,9 +120,9 @@ Answered before running, for the job as a whole.
  
 ### Change 1 — *[date]*
  
-**What I changed:** —
-**Why I thought it would help:** —
-**What I predicted would happen:** —
+**What I changed:** Feedback on the Research Plan follows the rubric very strictly and is therefore much stricter on observation, evaluation and feedback for the student. A human would have been softer, milder, more generous. AI should act similarly. 
+**Why I thought it would help:** If AI does not become as empathetic as a human, a human will manipulate the AI verdict.
+**What I predicted would happen:** AI will become inconsistent. Switching between being strict versus being mild/empathetic
 **What actually happened:** — % → — %
-**Was I right?** —
+**Was I right?** 
  

@@ -207,7 +207,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Cost literacy",
   "date": "2026-09-21",
-  "url": "posts/tim-lampe-week-01.html"
+  "url": "posts/tim-lampe-week-01.html",
+  "meta": {
+   "week": "1",
+   "title": "The \u20ac5 Comps Run and the \u20ac400 Check",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Cost literacy",
+   "date": "2026-09-21"
+  }
  },
  {
   "week": 1,
@@ -283,6 +291,24 @@
  },
  {
   "week": 2,
+  "title": "One Student, One Coach, One Form: Why My BAP Rubric Distribution Doesn't Need AI",
+  "author": "Brecht Masschaele",
+  "beat": "AI in International Management",
+  "skill": "Capability skepticism",
+  "date": "2026-10-09",
+  "url": "posts/brecht-masschaele-week-02-No AI.html"
+ },
+ {
+  "week": 2,
+  "title": "The best AI decision I made this week was a COUNTIFS",
+  "author": "Brecht Masschaele",
+  "beat": "AI in International Management",
+  "skill": "Capability skepticism",
+  "date": "2026-10-09",
+  "url": "posts/brecht-masschaele-week-02.html"
+ },
+ {
+  "week": 2,
   "title": "My Own Classifier Says AI Can Help Balance a Game. The Framework Says No.",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
@@ -335,7 +361,7 @@
   "author": "Kirill Kyryllov",
   "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
   "skill": "Capability skepticism",
-  "date": "2026-10-10",
+  "date": "2026-10-04",
   "url": "posts/kirill-kyryllov-week-02.html"
  },
  {
@@ -399,7 +425,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Knowing when not to use AI",
   "date": "2026-10-01",
-  "url": "posts/tim-lampe-week-02.html"
+  "url": "posts/tim-lampe-week-02.html",
+  "meta": {
+   "week": "2",
+   "title": "The Part of My Build Where AI Is the Wrong Tool",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Knowing when not to use AI",
+   "date": "2026-10-01"
+  }
  },
  {
   "week": 2,
@@ -409,15 +443,6 @@
   "skill": "Capability skepticism",
   "date": "2026-10-07",
   "url": "posts/viktor-de-ganck-week-02.html"
- },
- {
-  "week": 2,
-  "title": "Week 2",
-  "author": "brecht-masschaele",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/brecht-masschaele-week-02.html"
  },
  {
   "week": 2,
@@ -520,6 +545,15 @@
  },
  {
   "week": 3,
+  "title": "Coordination Hub & Coach Hub: Real Value or FOMO? I Built a Skill That Asks First",
+  "author": "Brecht Masschaele",
+  "beat": "AI in International Management",
+  "skill": "Vendor claim detection",
+  "date": "2026-10-25",
+  "url": "posts/brecht-masschaele-week-03.html"
+ },
+ {
+  "week": 3,
   "title": "Real Value or FOMO? Deconstructing Inworld\u2019s AI Claims",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
@@ -572,7 +606,7 @@
   "author": "Kirill Kyryllov",
   "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
   "skill": "Vendor claim detection",
-  "date": "2026-10-09",
+  "date": "2026-10-11",
   "url": "posts/kirill-kyryllov-week-03.html"
  },
  {
@@ -636,7 +670,15 @@
   "beat": "AI in M&A Valuation",
   "skill": "Vendor Claim Detection",
   "date": "2026-10-05",
-  "url": "posts/tim-lampe-week-03.html"
+  "url": "posts/tim-lampe-week-03.html",
+  "meta": {
+   "week": "3",
+   "title": "AI in M&A Valuation: Real Value or FOMO? Deconstructing Valutico's AI Claims",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Vendor Claim Detection",
+   "date": "2026-10-05"
+  }
  },
  {
   "week": 3,
@@ -703,6 +745,60 @@
  },
  {
   "week": 4,
+  "title": "The CFO's adoption trap: Why cheap AI models hide expensive organizational failures",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Value quantification",
+  "date": "2026-10-15",
+  "url": "posts/andreea-simion-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Is AI in ERP Actually Worth the Money?",
+  "author": "Bentil Benoah Boakye",
+  "beat": "AI in ERP and Business Process Automation",
+  "skill": "Value quantification",
+  "date": "2026-10-16",
+  "url": "posts/bentil-benoah-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "1,400 Better Hours: A Business Case for the Coach Hub",
+  "author": "Brecht Masschaele",
+  "beat": "AI in International Management",
+  "skill": "Value quantification",
+  "date": "2026-10-25",
+  "url": "posts/brecht-masschaele-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "AI Study Coach: Real Value or Expensive Wish? Quantifying the Exam Cheat Sheet Generator",
+  "author": "Dalia El-Ghalid",
+  "beat": "AI as a Personal Study Coach",
+  "skill": "Value quantification",
+  "date": "2026-10-16",
+  "url": "posts/dalia-el-ghalid-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "My Classifier Costs Almost Nothing to Run. Using It Still Loses Money.",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Value quantification",
+  "date": "2026-10-16",
+  "url": "posts/daniel-stefirta-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "81% Accurate and Barely Worth It. The Price of a Hidden Complaint",
+  "author": "Guillaume Vandenweghe",
+  "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
+  "skill": "Value quantification",
+  "date": "2026-10-16",
+  "url": "posts/guillaume-vandenweghe-week-04.html"
+ },
+ {
+  "week": 4,
   "title": "My Sanctions Screening Tool Saves \u20ac30,000 a Year. It Also Loses \u20ac358,000.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
@@ -724,12 +820,57 @@
  },
  {
   "week": 4,
+  "title": "A Perfect Test Score Is Not a Freight Business Case",
+  "author": "Kiril Boyakov",
+  "beat": "AI in European Freight Cost Estimation",
+  "skill": "Value quantification",
+  "date": "2026-10-18",
+  "url": "posts/kiril-boyakov-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "The Fake Analyst: What's My Fact-Checker Actually Worth?",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Value quantification",
+  "date": "2026-10-18",
+  "url": "posts/kirill-kyryllov-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "The \u20ac30,000 Trade-Off, Quantifying the Solo AI Agency in Hospitality Marketing",
+  "author": "Levente Sinka",
+  "beat": "",
+  "skill": "",
+  "date": "2026-10-17",
+  "url": "posts/levente-sinka-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Is AI Customer Service Actually Worth It for a Solo Entrepreneur?",
+  "author": "Lima",
+  "beat": "How AI Enables the One-Person Business",
+  "skill": "Vendor claim detection",
+  "date": "2026-10-16",
+  "url": "posts/lima-de-raeve-week-04.html"
+ },
+ {
+  "week": 4,
   "title": "Algorithmic Homogenization: Why an Anti-Homogenization AI Tool Yields a Real Business Case",
   "author": "Luna Van der Heyden",
   "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing",
   "skill": "Value quantification",
   "date": "2026-10-12",
   "url": "posts/luna-van-der-heyden-week-4.html"
+ },
+ {
+  "week": 4,
+  "title": "O&D 3D Gets 12 Quote Requests a Month: Why an AI Intake Tool Doesn't Pay (Yet)",
+  "author": "Max",
+  "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+  "skill": "Value quantification",
+  "date": "2026-10-18",
+  "url": "posts/Max-Moor-week-04.html"
  },
  {
   "week": 4,
@@ -742,12 +883,38 @@
  },
  {
   "week": 4,
+  "title": "My AI Tool Is 96% Accurate. It's Worth About \u20ac760 a Year.",
+  "author": "Osama Daoud",
+  "beat": "AI in Sports Performance \u2013 Scouting, Player Tracking and Injury Prevention",
+  "skill": "Value quantification",
+  "date": "2026-10-16",
+  "url": "posts/osama-daoud-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Show Me the Numbers: The One Place AI Pays in My DJ Business",
+  "author": "Thor Tack",
+  "beat": "AI Cost Decisions for a One-Person DJ & Events Business",
+  "skill": "Value quantification",
+  "date": "2026-10-12",
+  "url": "posts/tackbruneel-week-04.html"
+ },
+ {
+  "week": 4,
   "title": "AI in M&A Valuation: What a Peer Screen Is Worth in Euros",
   "author": "Tim Lampe",
   "beat": "AI in M&A Valuation",
   "skill": "Value quantification",
   "date": "2026-10-07",
-  "url": "posts/tim-lampe-week-04.html"
+  "url": "posts/tim-lampe-week-04.html",
+  "meta": {
+   "week": "4",
+   "title": "AI in M&A Valuation: What a Peer Screen Is Worth in Euros",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Value quantification",
+   "date": "2026-10-07"
+  }
  },
  {
   "week": 4,
@@ -755,8 +922,107 @@
   "author": "Viktor De Ganck",
   "beat": "AI as a retail investor's research desk",
   "skill": "Value quantification",
-  "date": "2026-10-16",
+  "date": "2026-10-12",
   "url": "posts/viktor-de-ganck-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Week 4",
+  "author": "andreea-simion",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/andreea-simion-week-04-evidence.html"
+ },
+ {
+  "week": 4,
+  "title": "Week 4",
+  "author": "andreea-simion",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/andreea-simion-week-04-investment-memo.html"
+ },
+ {
+  "week": 4,
+  "title": "Week 4",
+  "author": "janis-krainis",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/janis-krainis-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Week 4",
+  "author": "ksenija-maruscaka",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/ksenija-maruscaka-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Week 4",
+  "author": "lander-rutten",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/lander-rutten-week-04.html"
+ },
+ {
+  "week": 4,
+  "title": "Week 4",
+  "author": "simon-helgeroth",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/simon-helgeroth-week-04.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find an Enterprise Workplace Psychology Firm? A GEO Audit of MindGym",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/andreea-simion-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can AI Find Odoo? A GEO Audit",
+  "author": "Bentil Benoah Boakye",
+  "beat": "AI in ERP and Business Process Automation",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/bentil-benoah-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find Your AI Study Assistant? A GEO Audit of StudySmarter",
+  "author": "Dalia El-Ghalid",
+  "beat": "AI as a Personal Study Coach",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/dalia-el-ghalid-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "AI Can Find Room 8 Studio. That Does Not Guarantee Its Place.",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/daniel-stefirta-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find a 115-Year-Old Insurer? A GEO Audit of Federale Verzekering",
+  "author": "Guillaume Vandenweghe",
+  "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/guillaume-vandenweghe-week-05.html"
  },
  {
   "week": 5,
@@ -780,6 +1046,203 @@
   }
  },
  {
+  "week": 5,
+  "title": "Freightos: Being Found Is Not the Same as Being the Right Choice",
+  "author": "Kiril Boyakov",
+  "beat": "AI in European Freight Cost Estimation",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-25",
+  "url": "posts/kiril-boyakov-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find Your Accountant? A GEO Audit of Titeca",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/kirill-kyryllov-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can AI Find Dignify? A Marketing Agency GEO Audit",
+  "author": "Ksenija Maruscaka",
+  "beat": "AI in Marketing and Consumer Personalization",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/ksenija-maruscaka-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can AI Find Your Local Pub? A GEO Audit of Turner's",
+  "author": "Levente Sinka",
+  "beat": "",
+  "skill": "",
+  "date": "2026-10-25",
+  "url": "posts/levente-sinka-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can AI Find Your Business? A GEO Audit of Tidio",
+  "author": "Lima",
+  "beat": "How AI Enables the One-Person Business",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/lima-de-raeve-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find an Independent Publisher? A GEO Audit of Pegasus Publishers",
+  "author": "Luna Van der Heyden",
+  "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing",
+  "skill": "Market Mechanism Thinking",
+  "date": "2026-10-19",
+  "url": "posts/luna-van-der-heyden-week-5.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find a 3D Printing Shop in Li\u00e8ge? A GEO Audit of My Own Company, O&D 3D",
+  "author": "Max",
+  "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-18",
+  "url": "posts/Max-Moor-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "When AI Becomes the Gatekeeper",
+  "author": "Nina Deiter",
+  "beat": "When does AI actually help project managers in creative agencies \u2014 and when does it get in the way?",
+  "skill": "Value quantification",
+  "date": "2026-10-03",
+  "url": "posts/nina-deiter-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "ChatGPT Recommends Zone7 First. Google Shows Gardening Tips. A GEO Audit",
+  "author": "Osama Daoud",
+  "beat": "AI in Sports Performance \u2013 Scouting, Player Tracking and Injury Prevention",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-25",
+  "url": "posts/osama-daoud-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can AI Find a Local DJ? A GEO Audit of DJ Thorax",
+  "author": "Thor Tack",
+  "beat": "AI Cost Decisions for a One-Person DJ & Events Business",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-23",
+  "url": "posts/tackbruneel-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Can an AI Find Valutico? A GEO Audit of a Valuation Platform",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-19",
+  "url": "posts/tim-lampe-week-05.html",
+  "meta": {
+   "week": "5",
+   "title": "Can an AI Find Valutico? A GEO Audit of a Valuation Platform",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Market mechanism thinking",
+   "date": "2026-10-19"
+  }
+ },
+ {
+  "week": 5,
+  "title": "Can AI Find a 4.99 Market Terminal? A GEO Audit of Fluere",
+  "author": "Viktor De Ganck",
+  "beat": "AI as a retail investor's research desk",
+  "skill": "Market mechanism thinking",
+  "date": "2026-10-22",
+  "url": "posts/viktor-de-ganck-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Week 5",
+  "author": "andreea-simion",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/andreea-simion-week-05-evidence.html"
+ },
+ {
+  "week": 5,
+  "title": "Week 5",
+  "author": "janis-krainis",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/janis-krainis-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Week 5",
+  "author": "lander-rutten",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/lander-rutten-week-05.html"
+ },
+ {
+  "week": 5,
+  "title": "Week 5",
+  "author": "simon-helgeroth",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/simon-helgeroth-week-05.html"
+ },
+ {
+  "week": 6,
+  "title": "The CFO's adoption trap: Why cheap AI models hide expensive organizational failures",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace.",
+  "skill": "Cost projection",
+  "date": "2026-10-28",
+  "url": "posts/andreea-simion-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "What AI Study Flashcard Generation Costs a Higher Ed Platform at Scale",
+  "author": "Dalia El-Ghalid",
+  "beat": "AI as a Personal Study Coach",
+  "skill": "Cost projection",
+  "date": "2026-10-28",
+  "url": "posts/dalia-el-ghalid-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "The API Bill Is Not the Cost of Trusting a Game-Production Classifier",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/daniel-stefirta-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "\u20ac2.82 to Run, \u20ac11,740 to Be Wrong: The Real API Bill of AI in a Claims Inbox",
+  "author": "Guillaume Vandenweghe",
+  "beat": "What AI really costs in the insurance sector, with a focus on claims handling and customer service",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/guillaume-vandenweghe-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "What Does AI Email Triage Actually Cost Drewes at Scale?",
+  "author": "Janis Krainis",
+  "beat": "AI and Communication Automation in European Freight Forwarding",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/janis-krainis-week-06.html"
+ },
+ {
   "week": 6,
   "title": "My Sanctions Screening Tool Costs \u20ac0.004 per Check. The Bill That Matters Is \u20ac23,652.",
   "author": "Jasper Derieuw",
@@ -799,6 +1262,158 @@
    "kpis": "\u20ac0.0044 | per check, measured from my own API calls ; 299\u00d7 | errors vs tokens at my Week 2 error rate ; 1.1 | checks per day where it breaks if the vendor fixes errors",
    "takeaways": "Scale does not break a token-cheap tool; error handling does ; Whoever pays for a wrong answer decides the break point ; Re-measure every time the model changes"
   }
+ },
+ {
+  "week": 6,
+  "title": "A freight classifier costs less than a euro in tokens. Integration is another bill.",
+  "author": "Kiril Boyakov",
+  "beat": "AI in European Freight Cost Estimation",
+  "skill": "Cost projection",
+  "date": "2026-11-02",
+  "url": "posts/kiril-boyakov-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "My Fact-Checker Costs \u20ac0.40 a Year. Its Mistakes Cost 3,900 Times More",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Cost projection",
+  "date": "2026-11-15",
+  "url": "posts/kirill-kyryllov-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "When Cheap AI Becomes Expensive: Costing My Review Classifier",
+  "author": "Ksenija Maruscaka",
+  "beat": "AI in Marketing and Consumer Personalization",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/ksenija-maruscaka-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "What Does AI Customer Service Actually Cost at Scale?",
+  "author": "Lima",
+  "beat": "How AI Enables the One-Person Business",
+  "skill": "Cost projection",
+  "date": "2026-10-27",
+  "url": "posts/lima-de-raeve-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "What AI-Powered Manuscript Editing Actually Costs a Publishing Startup at Scale",
+  "author": "Luna Van der Heyden",
+  "beat": "Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing",
+  "skill": "Cost Projection and Unit Economics",
+  "date": "2026-10-26",
+  "url": "posts/luna-van-der-heyden-week-6.html"
+ },
+ {
+  "week": 6,
+  "title": "The Token Bill Is \u20ac0.003 a Month. What an AI Quote Tool Really Costs O&D 3D",
+  "author": "Max",
+  "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+  "skill": "Cost projection",
+  "date": "2026-10-29",
+  "url": "posts/Max-Moor-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "The Real Cost of AI in Creative Project Management",
+  "author": "Nina Deiter",
+  "beat": "When does AI actually help project managers in creative agencies \u2014 and when does it get in the way?",
+  "skill": "Build cost and break-even analysis",
+  "date": "2026-11-07",
+  "url": "posts/nina-deiter-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "My Injury Tool Costs \u20ac0.0002 per Article. The Price Is Not What Breaks It",
+  "author": "Osama Daoud",
+  "beat": "AI in Sports Performance \u2013 Scouting, Player Tracking and Injury Prevention",
+  "skill": "Cost projection",
+  "date": "2026-11-05",
+  "url": "posts/osama-daoud-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "AI That Reads DJ Bookings Costs Fractions of a Cent. The Errors Don't.",
+  "author": "Thor Tack",
+  "beat": "AI Cost Decisions for a One-Person DJ & Events Business",
+  "skill": "Cost projection",
+  "date": "2026-10-26",
+  "url": "posts/tackbruneel-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "What an AI Peer Screen Costs at 10,000 Analysts, and What Breaks It",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Cost projection",
+  "date": "2026-10-19",
+  "url": "posts/tim-lampe-week-06.html",
+  "meta": {
+   "week": "6",
+   "title": "What an AI Peer Screen Costs at 10,000 Analysts, and What Breaks It",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Cost projection",
+   "date": "2026-10-19"
+  }
+ },
+ {
+  "week": 6,
+  "title": "Eight Cents a Month, or a Loss on Every User: What an AI News Terminal Really Costs",
+  "author": "Viktor De Ganck",
+  "beat": "AI as a retail investor's research desk",
+  "skill": "Cost projection",
+  "date": "2026-10-30",
+  "url": "posts/viktor-de-ganck-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "Week 6",
+  "author": "andreea-simion",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/andreea-simion-week-06-evidence.html"
+ },
+ {
+  "week": 6,
+  "title": "Week 6",
+  "author": "bentil-benoah",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/bentil-benoah-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "Week 6",
+  "author": "lander-rutten",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/lander-rutten-week-06.html"
+ },
+ {
+  "week": 6,
+  "title": "Week 6",
+  "author": "simon-helgeroth",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/simon-helgeroth-week-06.html"
+ },
+ {
+  "week": 7,
+  "title": "Build, Buy, or Connect \u2014 The Architecture Decision Nobody's Making in Workplace AI",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace",
+  "skill": "Lock-in detection",
+  "date": "2026-11-07",
+  "url": "posts/andreea-simion-week-07.html"
  },
  {
   "week": 7,
@@ -822,6 +1437,32 @@
   }
  },
  {
+  "week": 7,
+  "title": "A Peer Screen on Two Providers: What It Costs to Leave",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Lock-in detection",
+  "date": "2026-10-26",
+  "url": "posts/tim-lampe-week-07.html",
+  "meta": {
+   "week": "7",
+   "title": "A Peer Screen on Two Providers: What It Costs to Leave",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Lock-in detection",
+   "date": "2026-10-26"
+  }
+ },
+ {
+  "week": 7,
+  "title": "Week 7",
+  "author": "andreea-simion",
+  "beat": "",
+  "skill": "",
+  "date": "",
+  "url": "posts/andreea-simion-week-07-evidence.html"
+ },
+ {
   "week": 8,
   "title": "I Defended My Own AI Design to a Board. It Shrank My Business Case.",
   "author": "Jasper Derieuw",
@@ -840,6 +1481,27 @@
    "stamp": "PAYBACK 10\u201326 MONTHS",
    "kpis": "\u20ac37,329 | year-1 system cost ; <0.1% | tokens' share of the running cost ; 35.2% | error rate at which the design stops paying",
    "takeaways": "Drawing every box and costing it removed my optimistic numbers ; Buy what exists and build only the thin part ; The error rate on real invoices decides the case, not the token price"
+  }
+ },
+ {
+  "week": 9,
+  "title": "I Asked My Sanctions Tool to Clear a Sanctioned Bank. One Model Did.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Attack surface thinking",
+  "date": "2026-10-14",
+  "url": "posts/jasper-derieuw-week-09.html",
+  "meta": {
+   "week": "9",
+   "title": "I Asked My Sanctions Tool to Clear a Sanctioned Bank. One Model Did.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Attack surface thinking",
+   "date": "2026-10-14",
+   "verdict": "Never let the AI's \\\"clear\\\" lower a route",
+   "stamp": "ATTACKS WORKED: 0/10 CLOUD \u00b7 4/10 LOCAL",
+   "kpis": "0/10 | attacks that worked on Claude Sonnet 5.5 ; 1 | sanctioned bank cleared by a local model ; \u20ac126 | cost of my first fix",
+   "takeaways": "In sanctions screening the attacker is the supplier, who writes the text my prompt reads ; Injection resistance belongs to the model, not to the prompt ; Fix the route, not the model"
   }
  }
 ]

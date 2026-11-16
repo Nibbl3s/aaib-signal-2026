@@ -18,7 +18,7 @@ The first question is: do you already know the answer? For the decision itself, 
 
 ## What happens if you use AI anyway
 
-I tested this in my own Build, a prompt that classifies financial news items. One input was an X post by a commentator: the market-implied odds of a rate hike had risen from 0% to 6.2% for April and to 15% for June. By my rules, that is an opinion. The model labelled it as an official rate decision in one run and as macro data in the next, both times as a fact. Same input, two different answers, and both wrong in the most dangerous direction: speculation turned into news.
+I tested this in my own Build, a prompt that classifies financial news items. One input was a Financial Times opinion piece: the market-implied odds of a rate hike had risen from 0% to 6.2% for April and to 15% for June. By my rules, that is an opinion. The model labelled it as an official rate decision in one run and as macro data in the next, both times as a fact. Same input, two different answers, and both wrong in the most dangerous direction: speculation turned into news.
 
 A calendar cannot make that mistake. It only shows decisions that were actually taken.
 
@@ -35,3 +35,5 @@ On accuracy, the calendar is exact, while my AI tool was fully right on 9 of 15 
 If AI can turn a forecast into a "fact" with total confidence, would you trust its explanation of a rate decision with your own money, or only after checking it yourself?
 
 *Build results and conclusions are my own; the post was structured and edited with Claude from my notes.*
+
+*Correction (22 October 2026): this post first said the rate-hike item came from an X post. It came from a Financial Times opinion piece.*

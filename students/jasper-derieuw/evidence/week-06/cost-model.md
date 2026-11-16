@@ -18,9 +18,10 @@ date: 2026-10-14
 | Input price | $2.00 per 1M tokens | Anthropic API pricing for Claude Sonnet 5.5, checked 14 Oct 2026; same as the Sonnet tier in the course AI Pricing Reference (snapshot 7 Sep 2026) |
 | Output price | $10.00 per 1M tokens | Same sources |
 | Average input tokens per call | **371.9 (measured)** | `usage.input_tokens`, 24 calls (12 test invoices × 2 runs), 14 Oct 2026 |
-| Average output tokens per call | **402.5 (measured)** | `usage.output_tokens`, same 24 calls; includes the model's thinking tokens, which are billed as output |
+| Average output tokens per call | **402.5 (measured)** | `usage.output_tokens`, same 24 calls; measured 0 thinking tokens in all 24 calls (`thinking_tokens`): the output is the answer and its explanation. *Corrected 25 Oct 2026: an earlier version said thinking tokens were included.* |
 | Exchange rate | $1.00 = €0.92 | Course convention |
 | Days per month | 30 | Course convention |
+| Second provider | Gemini 3 Flash, same prompt and invoices (6 ECTS) | [two-providers.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-06/two-providers.md) |
 
 ## 1. Unit cost
 

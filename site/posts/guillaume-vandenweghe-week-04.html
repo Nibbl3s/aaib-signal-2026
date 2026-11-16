@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>81% Accurate and Barely Worth It. The Price of a Hidden Complaint — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · What AI really costs in the insurance sector, with a focus on claims handling and customer service</div>
+<h1>81% Accurate and Barely Worth It. The Price of a Hidden Complaint</h1>
+<div class="byline">Guillaume Vandenweghe · 2026-10-16</div>
+<p>My email-sorting tool gets 81% of its answers right. That sounds like a business case. When I put a euro amount on each answer, the 8% that go wrong eat 71% of the value, because they are almost all angry customers sent to the wrong desk.</p>
+<h2>The candidate</h2>
+<p>A mid-sized Belgian non-life insurer receives about 20,000 customer emails a month in its claims inbox (my running estimate since Week 1). Today a person reads each one and sends it to a queue: new claim, follow-up, policy change, cancellation, complaint. My Build does that first sort: one email in, one of six labels out, and "UNCLEAR" always goes to a human. It passes the five-criterion filter on paper: repetitive, pattern-based, verifiable (two people agree on a label), cheap to run. The one criterion it only half passes is "error-tolerant", and that is where the money is.</p>
+<h2>The numbers</h2>
+<p>Inputs (est. = my estimate, not measured):</p>
+<ul>
+<li>Volume: 20,000 emails/month (est.)</li>
+<li>Human sort time: 1.5 minutes per email (est.)</li>
+<li>Loaded cost: €38,000 × 1.4 ÷ 1,600 h = <strong>€33/hour</strong> (course reference, customer support agent). So one human sort costs 1.5/60 × €33 = <strong>€0.83</strong></li>
+<li>Complaints: 3% of the inbox (est.) = 600/month</li>
+<li>Measured on my test set (13 real emails, each run twice = 26 runs; 21 of 26 correct = 81%, or 75% if an email only counts when both runs are right): all 16 non-complaint runs correct. Of 10 complaint runs: 5 correct, 3 sent to UNCLEAR (a human still sees them), <strong>2 sent to the normal claims queue</strong> (a hidden complaint)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Formula</th>
+<th>Per year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time saved</td>
+<td>(19,400 non-complaints × 100% + 600 complaints × 50%) × €0.83 × 12</td>
+<td>€195,030</td>
+</tr>
+<tr>
+<td>Revenue gained</td>
+<td>Not claimed: I have no data that faster sorting keeps customers</td>
+<td>€0</td>
+</tr>
+<tr>
+<td>Cost avoided</td>
+<td>Not claimed: I do not know today's human misrouting rate</td>
+<td>€0</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td><em>Added</em>, not reduced: 600 × 20% = 120 hidden complaints/month × €96.60 × 12</td>
+<td>−€139,104</td>
+</tr>
+<tr>
+<td>AI cost: tokens</td>
+<td>20,000 × (1,150 in × $2 + 20 out × $12) per 1M = $50.80/month × 0.92 × 12</td>
+<td>−€561</td>
+</tr>
+<tr>
+<td>AI cost: running</td>
+<td>Monitoring 4 h/week × €48 × 52 (≈€10,000) + IT maintenance €5,000 (est.)</td>
+<td>−€15,000</td>
+</tr>
+<tr>
+<td>AI cost: one-time</td>
+<td>Mailbox and claims-system integration (est.)</td>
+<td>−€30,000</td>
+</tr>
+<tr>
+<td><strong>Net benefit, year 1</strong></td>
+<td>195,030 − 139,104 − 561 − 15,000 − 30,000</td>
+<td><strong>€10,365</strong></td>
+</tr>
+<tr>
+<td><strong>Payback</strong></td>
+<td>€30,000 ÷ (€40,365 ÷ 12 = €3,364/month)</td>
+<td><strong>8.9 months</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Where does €96.60 per hidden complaint come from? Thirty minutes of extra handling when it surfaces late (€16.50), plus a 10% chance it becomes an Ombudsman file costing six hours at €46 (€27.60), plus a 15% chance the customer leaves, losing €350 of yearly margin (€52.50). All three are estimates. This is the weakest number in the post, and it is the one that decides the result.</p>
+<p>The tokens cost €561 a year. The hidden complaints cost 248 times more.</p>
+<h2>The pressure test</h2>
+<p>What if my benefit estimates are 50% too optimistic? For example, sorting really takes 45 seconds instead of 90. Time saved falls to €97,515, while the hidden complaints still cost €139,104. Year 1 becomes <strong>−€87,150</strong>. The project does not pay back at all.</p>
+<p>Break-even: the tool stays positive as long as fewer than <strong>26%</strong> of complaints are hidden. Version 1 hides 20%. That is a thin margin built on 10 runs.</p>
+<p>Now the version I would actually pilot: prompt v2 sends every dissatisfied email it is unsure about to a human. I assume that costs some automation (90% of normal emails auto-sorted instead of 100%) but cuts hidden complaints to 5%. Year 1 net: <strong>€94,300</strong>, payback 2.9 months. With the same 50% haircut it is still +€7,000.</p>
+<h2>The insight</h2>
+<p>In my beat the ROI is not in the accuracy figure but in where the errors land. An 81% tool that fails on random emails would be fine. Mine fails on the one email type that can reach the Ombudsman. That is also the FOMO trap: a vendor demo with "95% accuracy" says nothing about which 5% fails. My recommendation is not "buy" or "build" yet. It is: fix the complaint boundary, then run an 8-week shadow pilot on real mail, and measure the two numbers I had to guess, the complaint share and the cost of a hidden complaint. One more caveat for the CFO: the 500 hours saved per month are capacity, not cash, until someone decides what those 3.75 FTE will do instead.</p>
+<p><em>AI note: I used Claude to help structure this post and check my calculations. The test results, the assumptions and the recommendation are mine.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

@@ -65,23 +65,23 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Market mechanism thinking | 5 | 🟢 / 🟡 / 🔴 | |
-| Cost projection | 6 | 🟢 / 🟡 / 🔴 | |
-| Lock-in detection | 7 | 🟢 / 🟡 / 🔴 | |
-| Design defense | 8 | 🟢 / 🟡 / 🔴 | |
+| Market mechanism thinking | 5 | 🟡 | My GEO audit scored a real broker 9/18 with quoted evidence and found 0 of 6 AI answers naming a customs broker, but I haven't tested whether any fix changes those answers. |
+| Cost projection | 6 | 🟢 | I costed my Build from 24 of my own API calls, projected it from 10 to 100,000 checks a day, and found errors cost 85–299× the tokens. |
+| Lock-in detection | 7 | 🟢 | I scored my own stack 5/15 from the vendors' real terms and measured my exit cost: €1,258 in hours, about €16,800 a year in performance. |
+| Design defense | 8 | 🟡 | Costing every box of my design cut my own Week 4 case from €82k to €10.5k–28.5k a year; defending it live to a board happens on 23 Nov. |
 
 **Re-rate Checkpoint 1.** Do not copy your Week 4 answers down. Four weeks of compounding changes them — sometimes upward, sometimes not, because Week 8 shows you what you did not know you did not know in Week 4.
 
 | Skill | Week 4 rating | Week 8 rating | What changed |
 |-------|:-------------:|:-------------:|--------------|
-| Cost literacy | | | |
-| Capability skepticism | | | |
-| Vendor claim detection | | | |
-| Value quantification | | | |
+| Cost literacy | 🟢 | 🟢 | Now from measured tokens instead of estimates: €0.0044 per check on v1, €0.0020 on v2 over 60 calls. |
+| Capability skepticism | 🟢 | 🟢 | I learned that 24/24 on my own invoices became 28/36 on unseen ones: a prompt can be overfitted to its test set. |
+| Vendor claim detection | 🟡 | 🟡 | An absence is data: 33 days of silence to one direct question on notice periods became a decision rule in my ADR. |
+| Value quantification | 🟡 | 🟡 | The 6 minutes per check and the 70/30 routing split are still estimates; the fablab review test is meant to measure them. |
 
-**6 ECTS — extended evidence:**
+**6 ECTS — extended evidence:** a second provider measured on my full test set (Gemini 3 Flash, 20/24 strict, 83.3%, against Claude's 91.7%); the vendor's notice period asked in writing (Verifex, 14 October, no reply after 33 days) and recorded as ADR 001; my Build run on a model I own (local llama3.2: 18/24 own set, 5/36 unseen); a practitioner review of my Week 8 design, added when it has taken place.
 
-**Your click:** What did you believe at Checkpoint 1 that you've since replaced? Four weeks of compounding should have produced at least one.
+**Your click:** At CP1 I believed a better prompt would make the tool trustworthy. Now I know a prompt can look perfect on the invoices it was written for and still fail on new ones, and that the design around the model decides more than the model.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 

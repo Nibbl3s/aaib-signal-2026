@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 5 · </div>
+<h1>Week 5</h1>
+<div class="byline">simon-helgeroth · </div>
+<h2>Can AI find a mid-sized ATS? A GEO audit of Teamtailor</h2>
+<p>When an HR director asks an AI assistant, "Which AI recruitment software would you recommend for a mid-sized company?" who gets recommended? I audited one ATS provider to find out, and the results show where the battle for recruitment tech will be fought next.</p>
+<p>Teamtailor is an applicant tracking system (ATS) offering interactive software workflows and candidate databases for hiring teams. I chose them because their market relies heavily on content and SEO marketing. This makes them a good case study in what a company must do to turn a strong search engine presence into AI discoverability.</p>
+<p>The audit uses a 6-criterion GEO audit for Teamtailor.</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>What It Measures</th>
+<th>Score (0-3)</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Structured Data</td>
+<td>Schema markup, JSON-LD</td>
+<td>1</td>
+<td>Only basic Organization and WebSite JSON-LD schemas found in the source code (missing Product, FAQ, or Service schemas).</td>
+</tr>
+<tr>
+<td>2. Content Parseability</td>
+<td>Content structure for AI extraction</td>
+<td>1</td>
+<td>Some headings but no clear structure or bullet lists, which would make it difficult for AI to extract content.</td>
+</tr>
+<tr>
+<td>3. Third-Party Mentions</td>
+<td>Brand mention density across sources</td>
+<td>2</td>
+<td>Frequent third-party mentions but limited results within high-authority sources. Mostly integration companies.</td>
+</tr>
+<tr>
+<td>4. AI Citation Presence</td>
+<td>Actually appears in AI answers</td>
+<td>2</td>
+<td>Featured in 2 out of 3 tested queries, ranking #1 in one response and #3 in the other. Mentioned as best for SME companies both times.</td>
+</tr>
+<tr>
+<td>5. Authority Signals</td>
+<td>Expertise, credentials, original research</td>
+<td>3</td>
+<td>Strong trust signals via ISO/SOC 2 certifications, top G2 Leader ratings (4.6/5), and verified enterprise case studies.</td>
+</tr>
+<tr>
+<td>6. Brand Direct-Search</td>
+<td>Brand search strength and recognition</td>
+<td>3</td>
+<td>Ranks #1 with clear sitelinks, a knowledge panel, and strong third-party sources validating its ATS category.</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>Out of 18</strong></td>
+<td><strong>12</strong></td>
+<td><strong>AI present</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Teamtailor scored 12/18, placing it at an "AI present" GEO readiness level. If an AI agent were asked to recommend an ATS provider with AI features, Teamtailor would consistently appear, especially for SME businesses. Its strong brand direct-search dominance, solid reviews, and partner integrations carry its visibility. However, its biggest gaps are technical: it is held back by poor structured data and low page content parseability. To elevate its AI discoverability to the "optimized" level, the most important step is to implement rich schemas in its JSON-LD and redesign its website into a more structured format using bullet lists and tables.</p>
+<p>This audit serves as a clear warning for the AI in recruitment beat. If an established player like Teamtailor relies heavily on SEO while lacking technical GEO formatting, competitors might face the exact same problem. While Teamtailor's recurring subscriptions mean a low dependency on site visits, a drop in search traffic would still slow new customer growth. To compensate, companies must pivot toward GEO optimization to ensure AI platforms can easily parse and recommend their tools to future buyers.</p>
+<p><strong>How much market share will traditional software providers lose before they realize that strong search engine rankings do not guarantee AI visibility?</strong></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

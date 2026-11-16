@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 5 · </div>
+<h1>Week 5</h1>
+<div class="byline">andreea-simion · </div>
+<h2>Week 5 Notes &amp; Class Activities</h2>
+<p><strong>Author:</strong> Andreea Simion<br />
+<strong>Beat:</strong> The Psychology of AI Adoption in the Workplace<br />
+<strong>Course:</strong> AI, Automation &amp; Integrated Business (AAIB 2026)  </p>
+<hr />
+<h2>Activity 1: Pre-requisite Signal Check &amp; Setup</h2>
+<ul>
+<li><strong>Beat:</strong> The Psychology of AI Adoption in the Workplace</li>
+<li><strong>Primary Focus:</strong> How human resistance, change management, employee anxiety, and organizational trust impact the implementation of Generative AI in enterprise environments.</li>
+<li><strong>Target Audience:</strong> HR Directors, Chief People Officers, Digital Transformation Leaders, and Organizational Psychologists.</li>
+</ul>
+<hr />
+<h2>Activity 2: Class Consolidation &amp; Data Gathering</h2>
+<p>During this session, we consolidated data across all 40 student beats to evaluate how Generative AI engine queries interact with various industry sectors, company sizes, and digital footprints.</p>
+<h3>Key Observations:</h3>
+<ol>
+<li><strong>Name Recognition Disparity:</strong> AI models consistently output named, real-world entities for high-density B2C consumer sectors (e.g., travel, retail, consumer tech) while frequently returning generic recommendations or silence for niche B2B consulting services.</li>
+<li><strong>Third-Party Dependency:</strong> Companies relying exclusively on self-published website claims struggled for visibility compared to entities actively discussed across third-party media, academic journals, and review aggregators.</li>
+<li><strong>Dynamic Output Volatility:</strong> Running identical queries across separate threads yielded differing company rankings, confirming that traditional "search engine ranking" (SEO) is replaced by probabilistic synthesis in AI systems.</li>
+</ol>
+<hr />
+<h2>Activity 3: Find the Pattern</h2>
+<p>Analyzing the consolidated dataset of all 40 class beats reveals clear structural patterns regarding where AI names real entities versus where it returns no actionable results.</p>
+<h3>1. Analysis of Tested Theories Against Data</h3>
+<ul>
+<li><strong>B2C vs. B2B:</strong> B2C sectors benefit from dense online consumer reviews and aggregator platforms, allowing AI to extract structured recommendations effortlessly. B2B niche sectors (such as workplace psychology consulting or specialized industrial machinery) frequently face AI silence or generic lists of Tier-1 legacy firms (e.g., McKinsey, Gartner).</li>
+<li><strong>Presence of Third-Party Sources:</strong> The decisive factor for AI discovery is not the quality of a firm's owned website, but the <strong>density of third-party coverage</strong> (press articles, Reddit discussions, professional directories, academic citations). AI synthesizes what <em>others</em> say about an entity.</li>
+<li><strong>Market Leaders vs. Most Mentioned:</strong> Entities recommended by AI are not necessarily technical market leaders; they are <strong>entities with the highest overall text density and digital footprint</strong>.</li>
+<li><strong>Result Volatility:</strong> Re-running identical queries yielded shifting recommendations, proving that fixed algorithmic rank (SEO) has dissolved into dynamic probabilistic generation.</li>
+</ul>
+<h3>2. Core Emerging Thesis</h3>
+<p>AI does not search for the "best" company; it searches for entities that are <strong>easiest to synthesize</strong> and <strong>most heavily corroborated by third-party text sources</strong>. If an industry relies on opaque trust networks, unstructured websites, or offline relationships, AI effectively ignores it.</p>
+<hr />
+<h2>Activity 4: GEO Audit Framework &amp; Vulnerability Taxonomies</h2>
+<p>This activity formalizes the transition from traditional Search Engine Optimization (SEO) to Generative Engine Optimization (GEO).</p>
+<h3>1. Comparison: SEO Era (2020) vs. AI Agent Era (2026)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">SEO Era (2020)</th>
+<th style="text-align: left;">AI Agent Era (2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>What the user sees</strong></td>
+<td style="text-align: left;">10 ranked links + featured snippet</td>
+<td style="text-align: left;">Single synthesized response with inline citations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sites visited by user</strong></td>
+<td style="text-align: left;">Typically 2 to 4 websites</td>
+<td style="text-align: left;">0 to 1 website (Zero-click resolution)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Who controls visibility</strong></td>
+<td style="text-align: left;">Google ranking algorithms</td>
+<td style="text-align: left;">LLM synthesis logic (probabilistic &amp; opaque)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Discovery channel</strong></td>
+<td style="text-align: left;">Organic search &amp; paid ads</td>
+<td style="text-align: left;">AI citations (no paid placement available)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unit of attention</strong></td>
+<td style="text-align: left;">A Click (CTR)</td>
+<td style="text-align: left;">A Mention / Citation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ranks 4 to 10 status</strong></td>
+<td style="text-align: left;">Still receive organic traffic</td>
+<td style="text-align: left;">Invisible (AI typically recommends 2-3 entities)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Threatened business models</strong></td>
+<td style="text-align: left;">Ad-funded content sites</td>
+<td style="text-align: left;">Ad networks, affiliate review sites, directories</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Key metric to track</strong></td>
+<td style="text-align: left;">Organic Traffic, CTR, Keyword Rank</td>
+<td style="text-align: left;">AI Citation Frequency, Brand Mention Density</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>What companies control</strong></td>
+<td style="text-align: left;">Keywords, backlinks, ad spend</td>
+<td style="text-align: left;">Structured data, third-party press, brand authority</td>
+</tr>
+</tbody>
+</table>
+<h3>2. Business Model Vulnerability Taxonomy</h3>
+<p>Four factors determine a firm's exposure to AI disintermediation:</p>
+<ul>
+<li><strong>Visit Dependency:</strong> Extent to which revenue requires direct website visits (ad views, transactional checkouts).</li>
+<li><strong>AI Substitutability:</strong> Ability of AI to fully satisfy user intent without requiring the source website.</li>
+<li><strong>Intermediary Position:</strong> Reliance on acting as a middleman, directory, or affiliate aggregator.</li>
+<li><strong>SEO Asset Weight:</strong> Vulnerability caused by historical over-reliance on legacy SEO rankings.</li>
+</ul>
+<h3>3. The 6-Criterion GEO Audit Framework</h3>
+<ol>
+<li><strong>Structured Data &amp; Schema Markup (0-3):</strong> Implementation of JSON-LD / Schema.org machine-readable metadata.</li>
+<li><strong>Content Parseability (0-3):</strong> Formatting clarity (H1/H2, bulleted lists, Q&amp;A tables) for AI extraction.</li>
+<li><strong>Third-Party Mention Density (0-3):</strong> Frequency and authority of external brand citations.</li>
+<li><strong>AI Citation Presence (0-3):</strong> Direct appearance in AI answer engine queries.</li>
+<li><strong>Authority &amp; Expertise Signals (0-3):</strong> Named authors, academic credentials, whitepapers, case studies.</li>
+<li><strong>Brand Direct-Search Strength (0-3):</strong> Brand recognition, Knowledge Panel presence, direct search volume.</li>
+</ol>
+<hr />
+<h2>Activity 5: Beat Application &amp; Signal Post 5</h2>
+<h3>Audited Entity: MindGym (Mind Gym PLC)</h3>
+<ul>
+<li><strong>Category:</strong> Enterprise Behavioral Science &amp; Workplace Psychology Consultancy</li>
+<li><strong>Beat:</strong> The Psychology of AI Adoption in the Workplace</li>
+</ul>
+<h3>GEO Audit Scorecard</h3>
+<ul>
+<li><strong>Structured Data:</strong> <strong>1 / 3</strong> — <em>Basic Schema.org JSON-LD (<code>Organization</code>) present; lacks specialized <code>Service</code> or <code>FAQPage</code> schema on solution pages.</em></li>
+<li><strong>Content Parseability:</strong> <strong>2 / 3</strong> — <em>Clear H1/H2 headers and bulleted lists; relies on narrative marketing prose over structured Q&amp;A formats.</em></li>
+<li><strong>Third-Party Mention Density:</strong> <strong>3 / 3</strong> — <em>Extensive coverage in HBR, Forbes, HR Grapevine, and major industry press.</em></li>
+<li><strong>AI Citation Presence:</strong> <strong>2 / 3</strong> — <em>Frequently cited for general corporate change; occasionally eclipsed by Tier-1 strategy giants (Gartner, Mercer) on specific AI prompts.</em></li>
+<li><strong>Authority &amp; Expertise Signals:</strong> <strong>3 / 3</strong> — <em>Published whitepapers, named organizational psychologists, academic citations, and Fortune 500 case studies.</em></li>
+<li><strong>Brand Direct-Search Strength:</strong> <strong>3 / 3</strong> — <em>Verified Google Knowledge Panel, strong brand search queries, and high category association.</em></li>
+<li><strong>Total Score:</strong> <strong>14 / 18</strong> (<em>GEO Readiness Level: AI-Present</em>)</li>
+</ul>
+<h3>4-Factor Vulnerability Assessment</h3>
+<ul>
+<li><strong>Visit Dependency:</strong> <strong>Low</strong> — <em>Enterprise consulting revenue depends on RFP tenders and long-term B2B contracts, not website ad clicks.</em></li>
+<li><strong>AI Substitutability:</strong> <strong>Medium</strong> — <em>AI can summarize change models, but enterprise interventions require human executive coaching and facilitation.</em></li>
+<li><strong>Intermediary Position:</strong> <strong>Low</strong> — <em>Direct service provider, not an aggregator or middleman.</em></li>
+<li><strong>SEO Asset Weight:</strong> <strong>Medium</strong> — <em>SEO fuels inbound top-of-funnel lead generation, but sales conversion occurs offline.</em></li>
+<li><strong>Overall Risk:</strong> <strong>Low to Moderate Risk</strong></li>
+</ul>
+<hr />
+<h2>Week 5 Submission Evidence</h2>
+<h3>Summary Scorecard</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: left;">What It Measures</th>
+<th style="text-align: left;">Score (0-3)</th>
+<th style="text-align: left;">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Structured Data &amp; Schema Markup</strong></td>
+<td style="text-align: left;">Schema.org, JSON-LD implementation</td>
+<td style="text-align: left;"><strong>1 / 3</strong></td>
+<td style="text-align: left;">Quoted Evidence: "Site source code contains basic Schema.org JSON-LD properties (<code>@type: Organization</code>, <code>name: Mind Gym</code>, <code>url</code>). However, it lacks specialized <code>Service</code>, <code>Product</code>, <code>FAQPage</code>, or <code>Review</code> schema markup across key behavioral transformation solution pages."</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Content Parseability</strong></td>
+<td style="text-align: left;">Content structure for AI extraction</td>
+<td style="text-align: left;"><strong>2 / 3</strong></td>
+<td style="text-align: left;">Quoted Evidence: "Pages utilize clear H1 and H2 headers and clean bulleted lists on behavioral transformation solutions. However, core service explanations rely heavily on narrative marketing prose rather than structured Q&amp;A formats or extraction-friendly comparison tables."</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Third-Party Mention Density</strong></td>
+<td style="text-align: left;">Brand mention density across external sources</td>
+<td style="text-align: left;"><strong>3 / 3</strong></td>
+<td style="text-align: left;">Quoted Evidence: "MindGym is cited extensively across high-authority external sources, including coverage in Harvard Business Review, HR Grapevine, Forbes, LinkedIn Industry Reports, and major corporate press releases regarding behavioral science and workplace change."</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. AI Citation Presence</strong></td>
+<td style="text-align: left;">Appearance in AI answer engine recommendations</td>
+<td style="text-align: left;"><strong>2 / 3</strong></td>
+<td style="text-align: left;">Quoted Evidence: "When queried in Perplexity AI and ChatGPT with web search for 'best workplace psychology consultancies for AI change management and employee anxiety', MindGym is cited consistently in general corporate change prompts, though occasionally eclipsed by Tier-1 strategy giants (Gartner, Mercer) on specific generative AI queries."</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Authority &amp; Expertise Signals</strong></td>
+<td style="text-align: left;">Credentials, original research, case studies</td>
+<td style="text-align: left;"><strong>3 / 3</strong></td>
+<td style="text-align: left;">Quoted Evidence: "Demonstrates strong domain expertise with published whitepapers, named behavioral scientists and organizational psychologists on staff, academic citations, and case studies with Fortune 500 clients."</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Brand Direct-Search Strength</strong></td>
+<td style="text-align: left;">Brand search recognition and knowledge graph presence</td>
+<td style="text-align: left;"><strong>3 / 3</strong></td>
+<td style="text-align: left;">Quoted Evidence: "Dominates direct brand search queries (<code>MindGym</code> / <code>Mind Gym</code>), featuring a verified Google Knowledge Panel, active social media ecosystems, extensive Wikipedia/press references, and clear brand-category association."</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Score:</strong> 14 / 18<br />
+<strong>GEO Readiness Level:</strong> AI-Present  </p>
+<hr />
+<h3>Vulnerability Matrix</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Vulnerability Factor</th>
+<th style="text-align: left;">Level</th>
+<th style="text-align: left;">Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Visit Dependency</strong></td>
+<td style="text-align: left;"><strong>Low</strong></td>
+<td style="text-align: left;">MindGym's business model relies on high-touch enterprise corporate consulting, RFP tenders, and multi-year B2B contracts rather than ad-supported web traffic, affiliate links, or transactional online checkouts.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. AI Substitutability</strong></td>
+<td style="text-align: left;"><strong>Medium</strong></td>
+<td style="text-align: left;">While AI answer engines can summarize general behavioral psychology concepts and change models, enterprise clients require customized organizational interventions, human leadership coaching, and proprietary workshop facilitation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Intermediary Position</strong></td>
+<td style="text-align: left;"><strong>Low</strong></td>
+<td style="text-align: left;">MindGym is a direct service provider rather than a middleman, directory, or affiliate aggregator, protecting it from direct disintermediation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. SEO Asset Weight</strong></td>
+<td style="text-align: left;"><strong>Medium</strong></td>
+<td style="text-align: left;">Traditional SEO drives top-of-funnel inbound leads, but sales conversions depend on B2B relationship building, executive reputation, and account management.</td>
+</tr>
+</tbody>
+</table>
+<h3>Risk Matrix Summary</h3>
+<ul>
+<li><strong>Position:</strong> Low to Moderate Overall Risk  </li>
+<li><strong>Impact Assessment:</strong> If MindGym were to lose 60% of its organic website search traffic due to AI answer engine synthesis, its core enterprise contract revenue would remain largely resilient. However, to maintain its inbound pipeline for new enterprise clients asking AI assistants for recommendations, MindGym must improve its schema structured data (Schema.org JSON-LD) and publish structured Q&amp;A content addressing employee AI adoption anxiety specifically.</li>
+</ul>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

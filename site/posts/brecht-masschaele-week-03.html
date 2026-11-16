@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coordination Hub &amp; Coach Hub: Real Value or FOMO? I Built a Skill That Asks First — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 3 · AI in International Management</div>
+<h1>Coordination Hub &amp; Coach Hub: Real Value or FOMO? I Built a Skill That Asks First</h1>
+<div class="byline">Brecht Masschaele · 2026-10-25</div>
+<h2>Hook</h2>
+<p>Week 3 showed two ways to waste money on AI. I do not want to buy a "revolution" that beats our spreadsheet by three points. I have two AI ideas for our internship &amp; BAP programme, so I built a tool that tests them first. 🛠️</p>
+<h2>What I Built</h2>
+<p>A Claude skill called <strong>AI FOMO Check</strong>. It asks six questions, one at a time: What's the real problem, in numbers? What does waiting six months cost? Is AI the right tool? Can the claims be checked on our data? What's the total cost? Is there a simpler fix for 80% of the problem? It pushes back on vague answers, can also say "buy", and ends with one verdict.</p>
+<h2>The Vendor Claims</h2>
+<p>Both ideas run on Claude, so the skill first tagged Anthropic's pitch:</p>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Tag</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"No model training on your content by default" (Team)</td>
+<td><strong>Fact</strong></td>
+<td>Checkable in the terms, but personal accounts aren't covered.</td>
+</tr>
+<tr>
+<td>Claude "meets the compliance requirements higher education institutions have for student data"</td>
+<td><strong>Avoidance</strong></td>
+<td>Which requirements? No GDPR basis, no data processing agreement named.</td>
+</tr>
+<tr>
+<td>Helps admin teams "transform the way they work without losing quality"</td>
+<td><strong>Aspiration</strong></td>
+<td>No baseline, no metric, no timeframe.</td>
+</tr>
+<tr>
+<td>Premium seat = "5x more usage than standard seats"</td>
+<td><strong>Avoidance</strong></td>
+<td>Five times an unpublished limit. With 40 coaches, I can't budget on that.</td>
+</tr>
+</tbody>
+</table>
+<h2>Run 1: Coordination Hub</h2>
+<p>AI drafts replies to repeat questions in our shared inbox. The fit is good: repetitive work, and every draft is reviewed. But the volumes are still estimates, waiting costs staff hours rather than students, and a FAQ page with templates might do most of the job. <strong>Verdict: pilot</strong>, against a templates-only comparison.</p>
+<h2>Run 2: Coach Hub</h2>
+<p>250 BAP students a year (70 in semester 1, 180 in semester 2), 20 to 40 coaches, 21 paid hours per student. The goal isn't fewer hours but better ones: less admin, more in-depth coaching. Feedback also differs widely between coaches.</p>
+<p>The skill split the Hub into two kinds of work:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Verdict</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Research Plan feedback, Socratic coach, feedback checker, source checker</td>
+<td><strong>AI</strong></td>
+<td>Reading and writing against the rubric. Up to an hour of coach work becomes 10–15 minutes of review.</td>
+</tr>
+<tr>
+<td>Draft emails to students and mentors</td>
+<td><strong>AI</strong></td>
+<td>Personal; the coach reviews them.</td>
+</tr>
+<tr>
+<td>Executive assistant</td>
+<td><strong>AI, if grounded</strong></td>
+<td>Only safe if it answers from the BAP guide.</td>
+</tr>
+<tr>
+<td>Coach to-do list, overview, coordinator monitoring</td>
+<td><strong>Rules</strong></td>
+<td>"Is task X done by date Y?" needs an exact answer every time.</td>
+</tr>
+</tbody>
+</table>
+<p>The source checker searches the web to flag fake references, but can miss paywalled sources: it sorts, the coach decides.</p>
+<p><strong>Rough win:</strong> 250 students × 4 tools × 45 minutes ≈ <strong>750 hours a year</strong>, about 14% of 5,250 paid coaching hours, moved to real coaching. It's an estimate until I know how often each tool runs.</p>
+<p><strong>Cost:</strong> the tools already exist, so mainly seats (up to 40, about €8,800 a year at list price) and coach training.</p>
+<p><strong>Verdict: pilot.</strong> Five coaches in semester 2, measuring the share of hours spent on admin versus coaching, and feedback consistency against the rubric. Both hubs share one condition: no student documents go in until our data protection officer has seen the DPA.</p>
+<h2>The Question</h2>
+<p>If AI drafts the feedback, how do coaches stay the ones who decide? 🤔</p>
+<hr />
+<p><em>AI helped me build the skill and edit this post. The answers and verdicts are mine. Anthropic's claims were taken from claude.com on 19 October 2026.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

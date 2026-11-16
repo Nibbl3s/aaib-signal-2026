@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Cheap AI Becomes Expensive: Costing My Review Classifier — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 6 · AI in Marketing and Consumer Personalization</div>
+<h1>When Cheap AI Becomes Expensive: Costing My Review Classifier</h1>
+<div class="byline">Ksenija Maruscaka · 2026-10-30</div>
+<h2>When Cheap AI Becomes Expensive: Costing My Review Classifier</h2>
+<h2>The Hook</h2>
+<p>An AI model can classify a customer review for a fraction of a cent. That sounds perfect for e-commerce marketing teams — until thousands of reviews need checking, incorrect labels require staff time, and the business must support the system. I tested one real API call to find out what this might cost.</p>
+<h2>The Use Case</h2>
+<p>My Week 2 Build sorts customer reviews into three categories: <strong>Product Quality</strong>, <strong>Shipping</strong>, and <strong>Neutral/Other</strong>. A marketing team could use these labels to identify recurring complaints. For my business scenario, I assume a subscription service charging each online shop <strong>€15 per month</strong>, with each shop processing <strong>two reviews daily</strong>. These are planning assumptions, not real company data.</p>
+<h2>What I Measured</h2>
+<p>On 30 October 2026, I called <strong>Google Gemini 3.1 Flash-Lite</strong> through Hoppscotch. For the review "The jacket tore after one week of use," it correctly returned <strong>Product Quality</strong>. The actual API response showed <strong>37 input tokens</strong>, <strong>2 output tokens</strong>, and <strong>39 tokens in total</strong>.</p>
+<p>Google's <a href="https://ai.google.dev/gemini-api/docs/pricing">published Gemini API pricing</a> lists <strong>$0.25 per million input tokens</strong> and <strong>$1.50 per million output tokens</strong> for the paid Standard tier (checked 30 October 2026).</p>
+<p>My measured-call calculation is:</p>
+<p><code>(37 × $0.25 / 1,000,000) + (2 × $1.50 / 1,000,000) = $0.00001225</code>.</p>
+<p>This is a <strong>paid-tier cost equivalent</strong>; a free-tier request might actually be billed at $0.</p>
+<table>
+<thead>
+<tr>
+<th>Paying shops</th>
+<th style="text-align: right;">Calls per day</th>
+<th style="text-align: right;">Calls per month</th>
+<th style="text-align: right;">API cost per month</th>
+<th style="text-align: right;">API cost per year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">$0.00735</td>
+<td style="text-align: right;">$0.0882</td>
+</tr>
+<tr>
+<td>100</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">6,000</td>
+<td style="text-align: right;">$0.0735</td>
+<td style="text-align: right;">$0.882</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td style="text-align: right;">2,000</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">$0.735</td>
+<td style="text-align: right;">$8.82</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td style="text-align: right;">20,000</td>
+<td style="text-align: right;">600,000</td>
+<td style="text-align: right;">$7.35</td>
+<td style="text-align: right;">$88.20</td>
+</tr>
+</tbody>
+</table>
+<p>At 10,000 business accounts, the modeled token bill is only <strong>$7.35 per month</strong>. This assumes every call stays as short as my test; longer reviews and prompts would increase it.</p>
+<h2>The Hidden Cost and Break Point</h2>
+<p>My original Week 2 Build passed <strong>8 of 12 tests</strong>, meaning <strong>4 of 12 failed (33.3%)</strong>. That is a small, earlier test set — <strong>not a measured error rate for Gemini 3.1 Flash-Lite</strong>. I use it only as a provisional risk assumption.</p>
+<p>Suppose a marketing analyst takes <strong>30 seconds</strong> to fix a wrong category and costs <strong>€30/hour</strong>. Each correction then costs <strong>€0.25</strong>. At 100 shops, the service processes 6,000 reviews monthly; applying the old failure rate gives <strong>2,000 corrections</strong>, or <strong>€500</strong> in labor. That dwarfs the <strong>$0.0735</strong> API bill.</p>
+<p>With €15 subscription revenue per shop, these assumptions imply a <strong>variable-cost break point of approximately six reviews per shop per day</strong>. More reviews make the correction costs exceed the subscription revenue even while the API remains cheap. I also assume <strong>€2,000 initial integration</strong> and <strong>€100 monthly monitoring</strong>, which make profitability harder at a small customer base. None of these costs is a real vendor quote.</p>
+<p>The decisive assumption is correction time. If fixing an error takes two minutes rather than 30 seconds, the labor cost at two reviews daily rises to <strong>€20 per shop per month</strong>, already above the €15 subscription.</p>
+<h2>The Lesson</h2>
+<p>The surprising result is that token pricing is almost irrelevant for this short classification task: staff corrections dominate. Before launch, I would test the same API model on more real reviews, measure correction time, and enforce a clear fallback for ambiguous comments. My next question is whether improving the prompt reduces total costs more than switching to a more expensive model.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

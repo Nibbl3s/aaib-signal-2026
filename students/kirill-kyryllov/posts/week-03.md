@@ -4,7 +4,7 @@ title: "The Fake Analyst: Real Value or FOMO? Deconstructing Dataiku's AI Claims
 author: "Kirill Kyryllov"
 beat: "The Fake Analyst: When AI-Generated Business Reports Get It Wrong"
 skill: "Vendor claim detection"
-date: 2026-10-09
+date: 2026-10-11
 ---
 
 My beat is about where AI-generated financial analysis breaks. This week I turned the same

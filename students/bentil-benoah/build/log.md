@@ -33,6 +33,13 @@ Failure types:
 | Multilingual input | Test more Dutch enquiries | ERP systems in Belgium may receive different languages |
 | Ambiguous input | Give an enquiry that could fit two categories | Check how the classifier handles uncertainty |
 | Missing information | Give an enquiry without enough context | Check whether it guesses or chooses Other |
+## Week 4 — Physical Deployment Probe Plan
+
+- **Machine:** 3D printer
+- **Artifact:** Phone stand to display my AI customer enquiry classifier.
+- **Fablab session:** Not booked yet. I still need to arrange a session.
+
+I want to test how someone would use my classifier in a customer service setting instead of only testing it in ChatGPT.
 
 ## Result
 

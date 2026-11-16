@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Classification: Needs verification\nReason: The claim cites a specific legal case and a novel judicial ruling that requires verification to ensure the case exists and the precedent is accurately represented.",
+            "thoughtSignature": "EnMKcQFpFH0TGNloXonrvzE+g7JUj0HUbWUAHLxuJdyT6seDfi8xJfCj7OpLOWLv7pZVNwZReaB+NfcIJVJIg67iCS6voqf6+MK4sTmaVjOswKjK0HaLarBHWjLNQ1XT5jgLB2ne7FiPsolWwnlELe9kH/Fr"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 296,
+    "candidatesTokenCount": 34,
+    "totalTokenCount": 330,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 296
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.1-flash-lite",
+  "responseId": "NPb5avWvGZbSxN8P9PW-mAY"
+}

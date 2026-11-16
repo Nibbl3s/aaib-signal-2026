@@ -51,6 +51,16 @@
 
 | Field | Plan |
 |---|---|
-| Machine | Laser cutter (cutting and engraving plexiglass / acrylic) |
-| Artifact | A tablet-style plexiglass panel for the physio's desk in a club's medical room, showing one "player card" exactly like the tool's output: name, body part, injury type and expected time out |
-| Fablab session | To be booked at the fablab (Voetweg 66), before Week 8 |
+| Machine | Laser cutter: cutting and engraving 3 mm acrylic (clear front plate, coloured back plate, U-frame and two stand feet) |
+| Artifact | An A5 desk stand for the club's data or medical room: engraved labels (player, body part, injury type, expected time out, source + date) and a "Checked by physio" box, with a swappable printed player card (fictional player) that slides in from the top |
+| Fablab session | To be booked at the fablab (Voetweg 66), before Week 8. Laser-cut files are ready (SVG) |
+
+## Build Checkpoint 1 — Week 4
+
+1. **What it does:** it reads a real news article about an injured athlete and fills in a player card with four fields: player, body part, injury type (muscle / ligament / bone / head / unknown) and expected time out.
+2. **What I measured:** 23 of 24 answers correct (95.8%) on 10 real articles in English, Dutch and French (12 players), every article run twice in a new chat.
+3. **Dominant failure type:** F2 fabricated, together with F6 inconsistent: the only failure, where the tool invented an answer and changed it between runs.
+4. **The failure that would matter most:** an F2 on the injury type or the time out. It looks like a confident, correct answer, so an analyst could pass it on without noticing, and a wrong injury could affect a transfer or selection decision.
+5. **What I would change first:** add a rule to the prompt, "If the injury does not clearly fit one of the five types, write unknown", and change "football players" to "athletes". Then re-run the French Mbappé article several times to see if the guess disappears.
+
+**Value (Week 4):** worth about €760 net a year to a club data analyst, used as a prompt in an AI chat tool (est.: 150 articles/month; the test articles average 179 words, about 45 seconds of reading at 238 words per minute, so the tool saves about 40 seconds per article, mostly the writing, because every card still has to be checked). Not worth building as a custom system: maintenance alone would cost about five times what it saves. The article volume and the writing/checking times are still estimates.

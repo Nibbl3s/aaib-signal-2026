@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can AI Find a Local DJ? A GEO Audit of DJ Thorax — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 5 · AI Cost Decisions for a One-Person DJ &amp; Events Business</div>
+<h1>Can AI Find a Local DJ? A GEO Audit of DJ Thorax</h1>
+<div class="byline">Thor Tack · 2026-10-23</div>
+<p><strong>Hook:</strong> A youth movement planning a fuif used to ask around, or google "DJ Ingelmunster". More and more, they ask an AI, and get two or three names back. For a one-person DJ business, being one of those names is free advertising. Not being one of them means you were never in the room.</p>
+<p><strong>The Company:</strong> DJ Thorax (djthorax.com) is my own DJ business in West Flanders. I play fuiven, youth-movement parties, company events and weddings, and my site lists 23 events, seven of them in Ingelmunster. I audited myself because I'm the company that <em>should</em> have appeared in my own live query, and because every claim here can be checked on the live site.</p>
+<p><strong>The Audit:</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Criterion</th>
+<th style="text-align: center;">Score</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Structured data</td>
+<td style="text-align: center;">2</td>
+<td>JSON-LD with <code>EntertainmentBusiness</code>, six services, ten towns served, a <code>FAQPage</code>. No reviews or prices.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Parseability</td>
+<td style="text-align: center;">2</td>
+<td>The title says it plainly ("DJ boeken in West-Vlaanderen"), 7 FAQ Q&amp;As. But the H1 is a slogan and headings are split into fragments.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Third-party mentions</td>
+<td style="text-align: center;">0</td>
+<td>Searching "DJ Thorax" returns only my own pages. Not on House of Weddings, Trustlocal, UiTinVlaanderen or eventplanner.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AI citation</td>
+<td style="text-align: center;">0</td>
+<td>0 of 6 Duck.ai answers. Even "Is DJ Thorax a good DJ?" got "couldn't find reliable reviews or booking information".</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Authority</td>
+<td style="text-align: center;">1</td>
+<td>A named person, an event list and a Unisono licence. No reviews, articles or press.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Brand search</td>
+<td style="text-align: center;">1</td>
+<td>#1 for "DJ Thorax", but no knowledge panel; without "DJ", the anatomy term <em>thorax</em> wins.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>6/18</strong></td>
+<td><strong>AI-Invisible</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The most telling run: I asked which DJ a Chiro should book for a fuif <em>in Ingelmunster</em>. The AI named DJ Vjeetn and DJ Fish, citing an UiTinVlaanderen listing of one recent fuif, plus DJ GERD from Trustlocal. That's the town where I've played seven listed events, and as a DJ in that scene I know none of the five DJs named across my runs. The identical wedding query gave no names the first time and two the second.</p>
+<p><strong>The Verdict:</strong> An AI wouldn't recommend DJ Thorax today. The site isn't the problem: five of my six points come from my own page. The problem is that no source the AI reads mentions me. In every answer the AI cited directories and event agendas, never a DJ's own website. The biggest gaps are criteria 3 and 4, and both are outside my site. The fix costs nothing: get organisers to list "DJ Thorax" in their UiTinVlaanderen line-up, and collect reviews on Trustlocal and House of Weddings.</p>
+<p>On the vulnerability matrix I'm <strong>low risk</strong>: bookings come from my network, and no AI can play a set. A 60% traffic drop would barely touch revenue. The risk is new clients outside my network, like couples planning a wedding, who never hear my name at all.</p>
+<p><strong>The Insight:</strong> In my beat, GEO isn't SEO with new words. Ranking #1 for my own name does nothing if nobody asks for my name. AI recommends who <em>others</em> write about. For local service providers, that means the event agenda and the review site have become the new shop window, and they're filled in by your clients, not by you.</p>
+<p><strong>The Question:</strong> If my clients' event listings decide whether AI finds me, should "put the DJ in your UiTinVlaanderen line-up" become a line in my booking confirmation?</p>
+<p><em>AI use: Claude ran the AI queries and web checks and drafted this post from the audit; the facts about my business are mine. I reviewed it.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

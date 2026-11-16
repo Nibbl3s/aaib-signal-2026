@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can AI Find a 4.99 Market Terminal? A GEO Audit of Fluere — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 5 · AI as a retail investor&#x27;s research desk</div>
+<h1>Can AI Find a 4.99 Market Terminal? A GEO Audit of Fluere</h1>
+<div class="byline">Viktor De Ganck · 2026-10-22</div>
+<p>More and more retail investors start their research with a question to an AI assistant: "what is a cheap alternative to a Bloomberg terminal?" The assistant names two or three tools. Every other terminal simply does not exist for that investor.</p>
+<h2>The company</h2>
+<p><strong>Fluere</strong> (<a href="https://capitalfluere.com">capitalfluere.com</a>) is a market terminal for retail traders: live prices, news, SEC filings, charts, about 18 quant models and a stock screener in one interface, from 4.99 a month. Fluere Terminal Ltd was registered in England on 7 July 2026. I chose it because it is close to the research desk I want for myself, and because a new entrant has no old Google rankings to fall back on.</p>
+<h2>The audit</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align: center;">Score</th>
+<th>What I found</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Structured data</td>
+<td style="text-align: center;">0</td>
+<td>No JSON-LD or schema.org markup in the homepage source</td>
+</tr>
+<tr>
+<td>2. Content parseability</td>
+<td style="text-align: center;">1</td>
+<td>The H1 is clear ("Premium-quality financial tools without the premium price"), but the H2s are slogans: the screener section is titled "Find the name before it finds you". The pricing page has no headings and no FAQ</td>
+</tr>
+<tr>
+<td>3. Third-party mentions</td>
+<td style="text-align: center;">0</td>
+<td>Outside its own site I found only Companies House and a registry copy of it. No reviews, no press, no forum threads</td>
+</tr>
+<tr>
+<td>4. AI citation presence</td>
+<td style="text-align: center;">0</td>
+<td>Not named in two identical ChatGPT runs or in five comparison lists the AI retrieved. Koyfin: first in both runs, in all five lists</td>
+</tr>
+<tr>
+<td>5. Authority signals</td>
+<td style="text-align: center;">1</td>
+<td>Two founders are named on the pricing page, without credentials. No research, no case studies</td>
+</tr>
+<tr>
+<td>6. Brand direct-search</td>
+<td style="text-align: center;">0</td>
+<td>Searching "Fluere" returns Latin dictionaries and a review of a non-alcoholic spirits brand. Not the terminal</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>2/18</strong></td>
+<td><strong>AI-Invisible</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>The verdict</h2>
+<p>No, an AI asked for a cheap Bloomberg alternative would not name Fluere. Not because the product is weak: its price and feature list compete with the tools that do get named. The AI cannot recommend a company it has never read about. The biggest gap is criterion 3: there is not one independent source that says what Fluere is. The second gap is the name. "Fluere" is Latin for "to flow" and is shared with a drinks brand, so even a model that saw it might not know it is a terminal. The cheapest fix is schema markup (Organization plus SoftwareApplication with the price), but the fix that matters is being written about by someone else.</p>
+<h2>The insight</h2>
+<p>Who did the AI find? Koyfin, TIKR and TradingView, in that order, in both ChatGPT runs. Partly the market leaders, but look at who writes the lists the AI reads. Stock Rover's comparison ranks Stock Rover first. DataSetIQ's and PageCrawl's lists include themselves. In my beat, the "third-party" layer is largely vendors' own content marketing. You cannot buy an AI recommendation, but you can write the article the AI will quote. And not one Belgian or Dutch-language source came up: for a Belgian investor, the AI's research desk is largely American.</p>
+<p>One more thing the framework misses: the Week 5 cases are about companies losing traffic. Fluere has no traffic to lose. Its risk is never getting any.</p>
+<p><strong>My question:</strong> if the comparison lists an AI reads are written by competitors, is a "neutral" AI recommendation in my beat just the best content marketer winning?</p>
+<p><em>Audit run on 22 October 2026 on capitalfluere.com, Companies House and five comparison articles found with Claude (web search), plus two ChatGPT runs. Drafted with Claude; scores checked by me. Full evidence on Canvas.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The CFO&#x27;s adoption trap: Why cheap AI models hide expensive organizational failures — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 6 · The Psychology of AI Adoption in the Workplace.</div>
+<h1>The CFO&#x27;s adoption trap: Why cheap AI models hide expensive organizational failures</h1>
+<div class="byline">Andreea Simion · 2026-10-28</div>
+<h2>What AI-Powered Sentiment Classification Actually Costs an Enterprise at Scale</h2>
+<h3>Hook</h3>
+<p>Enterprise leaders frequently look at a $0.000046 per-call API price tag and declare that AI adoption tools are cheap[cite: 2, 3]. It looks almost free on paper[cite: 3]. I modeled the API costs and error remediation labor for an enterprise workplace psychology tool—and the true operational cost arrives sooner than you'd think[cite: 1, 2, 3].</p>
+<h3>The Use Case</h3>
+<p>A mid-to-large enterprise with 5,000 employees deploys an automated <strong>Employee AI Sentiment &amp; Adoption Barrier Classifier</strong> to parse unstructured feedback arriving across Slack, Teams, and pulse forms[cite: 1, 3]. Each feedback entry requires the AI to read the employee message (average 22 prompt tokens)[cite: 2], apply system instructions classifying it into one of six core psychological barrier categories (e.g., <em>Job Security Fear</em>, <em>Trust/Accuracy Concern</em>, <em>Change Fatigue</em>)[cite: 1], and output a structured JSON tag (average 27 completion tokens)[cite: 2]. Employees submit an average of 2 feedback comments per month, generating 10,000 queries per month at prototype scale, scaling up to 100,000 queries per month at full enterprise deployment[cite: 1, 3].</p>
+<h3>The Numbers</h3>
+<p>For our primary API baseline, we use Google's budget tier (<strong>gemini-3.1-flash-lite</strong>, priced at $0.25 per 1M input tokens and $1.50 per 1M output tokens based on Google AI Studio pricing)[cite: 3].</p>
+<p><strong>Measured Per-Call Cost:</strong></p>
+<ul>
+<li><strong>Input cost:</strong> $(22 \div 1,000,000) \times \$0.25 = \$0.0000055$[cite: 2, 3]</li>
+<li><strong>Output cost:</strong> $(27 \div 1,000,000) \times \$1.50 = \$0.0000405$[cite: 2, 3]</li>
+<li><strong>Unit Cost per Call:</strong> <strong>$0.0000460</strong>[cite: 2, 3]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scale</th>
+<th style="text-align: left;">Users</th>
+<th style="text-align: left;">Comments / Day</th>
+<th style="text-align: left;">Input Tokens / Day</th>
+<th style="text-align: left;">Output Tokens / Day</th>
+<th style="text-align: left;">Daily API Cost</th>
+<th style="text-align: left;">Monthly API Cost (30 Days)</th>
+<th style="text-align: left;">Annual API Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>100 users</strong></td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">154</td>
+<td style="text-align: left;">189</td>
+<td style="text-align: left;">$0.00032</td>
+<td style="text-align: left;"><strong>$0.01</strong></td>
+<td style="text-align: left;">$0.12</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>1,000 users</strong></td>
+<td style="text-align: left;">1,000</td>
+<td style="text-align: left;">67</td>
+<td style="text-align: left;">1,474</td>
+<td style="text-align: left;">1,809</td>
+<td style="text-align: left;">$0.00308</td>
+<td style="text-align: left;"><strong>$0.09</strong></td>
+<td style="text-align: left;">$1.11</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10,000 users</strong></td>
+<td style="text-align: left;">10,000</td>
+<td style="text-align: left;">667</td>
+<td style="text-align: left;">14,674</td>
+<td style="text-align: left;">18,009</td>
+<td style="text-align: left;">$0.03068</td>
+<td style="text-align: left;"><strong>$0.92</strong></td>
+<td style="text-align: left;">$11.05</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>100,000 users</strong></td>
+<td style="text-align: left;">100,000</td>
+<td style="text-align: left;">6,667</td>
+<td style="text-align: left;">146,674</td>
+<td style="text-align: left;">180,009</td>
+<td style="text-align: left;">$0.30668</td>
+<td style="text-align: left;"><strong>$9.20</strong></td>
+<td style="text-align: left;">$110.40</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Google AI Studio Pricing Reference &amp; Hoppscotch Lab Measurements.</em>[cite: 2, 3]</p>
+<p>At 100,000 users, the pure API token bill is a negligible <strong>$9.20/month</strong> (€8.46)[cite: 3]. Against an enterprise software or HR operating budget, this figure looks like rounding error noise[cite: 1, 3].</p>
+<p>Now add the error cost[cite: 3]. At 100,000 users, the system processes 200,000 feedback comments per month[cite: 1]. Based on empirical testing in our Week 2 test logs, this lightweight budget classifier exhibits a <strong>30% failure rate</strong> (60,000 misclassified comments/month) due to context hallucinations on short inputs (F2) and inconsistent primary tag selections on mixed-sentiment comments (F6)[cite: 1].</p>
+<p>When an AI classifier misdiagnoses employee sentiment, an HR specialist must spot-check, review, and manually re-categorize the output[cite: 1]. At an average of 3 minutes per correction at a Belgian loaded HR recruiter rate of €44/hour (€2.20 per fix), fixing 60,000 misclassifications costs <strong>€132,000/month</strong>—over 15,000 times the API token bill[cite: 1, 2, 3].</p>
+<h3>The Break Point</h3>
+<p>For this workplace psychology tool, the unit economics do not break on API query volume—they break on the <strong>classification error rate</strong>[cite: 1, 3]. </p>
+<p>Assuming the enterprise values automated feedback classification at an internal operational efficiency buffer of €0.50 per employee/month (€50,000/month for 100,000 employees), the system is highly profitable if the error rate remains under 5% (€22,000 error correction cost vs. €50,000 value generated)[cite: 1]. However, at our measured 30% error rate, human remediation (€132,000/month) completely eclipses all value creation, turning a seemingly "cheap" $9 API solution into a massive net loss[cite: 1, 2, 3]. </p>
+<p>The binding variable is not token pricing; it is model accuracy[cite: 1, 3]. If model performance quietly degrades due to unmonitored prompt drift or changed workplace jargon, the financial failure occurs entirely off the pricing page[cite: 3].</p>
+<h3>The Insight</h3>
+<p>Every AI product has one variable that decides whether it is viable, and it is rarely the one quoted on the vendor's pricing page[cite: 3]. For consumer writing assistants, it is calls-per-user; for enterprise HR tools, it is the downstream labor cost of correcting errors[cite: 1, 3]. Optimizing system prompt tokens saves fractions of a cent, but investing in prompt engineering, guardrails, and human-in-the-loop audit workflows to cut the error rate from 30% to 5% saves over €100,000 every month[cite: 1, 3].</p>
+<h3>The Question</h3>
+<p>If error remediation labor represents 99.9% of the real operational bill, why are corporate procurement teams still evaluating AI adoption software almost entirely on API token rates and license fees[cite: 1, 3]?</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

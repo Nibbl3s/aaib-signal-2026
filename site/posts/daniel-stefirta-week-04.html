@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Classifier Costs Almost Nothing to Run. Using It Still Loses Money. — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · AI in Game Production</div>
+<h1>My Classifier Costs Almost Nothing to Run. Using It Still Loses Money.</h1>
+<div class="byline">Daniel Stefirta · 2026-10-16</div>
+<p>My Classifier’s scored test cost €0.0194 for 30 calls. That sounds like the beginning of an easy business case: almost free AI helping a producer organise game-development tasks. Once I priced the human work around those calls, the result became a first-year loss of €834.11.</p>
+<h3>The candidate</h3>
+<p>The candidate is human-reviewed production-task assessment at Kojima Productions. Its public job postings contain tasks such as “Implementing character control” and “Adjusting various parameters.” My Classifier returns a production layer, an AI-exposure judgement and a supporting quote. It sits in production planning, not in generating or approving game content.</p>
+<p>The postings establish that these tasks exist. They do not establish that Kojima needs this workflow, how often staff assess tasks, or what assessment costs. My numbers describe an illustrative evaluation scenario, not the studio’s internal operations.</p>
+<h3>The numbers</h3>
+<p>I assume 100 task lines per month, or 1,200 annually. Manual assessment takes 3 minutes. Every AI output takes 30 seconds to review, and a failed assessment takes another 4 minutes to correct. Labour costs an assumed €50 per hour, loaded with employer costs and overhead rather than salary alone. Setup and annual maintenance each require 12 hours.</p>
+<p>These assumptions need timing and workload evidence before a purchase decision. They are visible so a reader can replace them, rather than accept a saving built from hidden guesses.</p>
+<p>My measured evidence is narrower: the Classifier matched my expected labels, with evidence validity checked, on 7 of 15 unique inputs, or 46.7%. Each input ran twice with identical outputs. That gives 14 successful calls out of 30, not 30 independent examples or validated production accuracy.</p>
+<p>Applying that rate to the scenario gives 560 successful assessments and 640 failures annually.</p>
+<table>
+<thead>
+<tr>
+<th>Benefit category</th>
+<th>Formula</th>
+<th style="text-align: right;">Annual value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time saved on successful outputs</td>
+<td>560 × (3 − 0.5) minutes ÷ 60 × €50</td>
+<td style="text-align: right;">€1,166.67</td>
+</tr>
+<tr>
+<td>Revenue increase</td>
+<td>0 evidenced additional sales</td>
+<td style="text-align: right;">€0 credited</td>
+</tr>
+<tr>
+<td>Direct cost reduction</td>
+<td>€0 evidenced eliminated expenditure</td>
+<td style="text-align: right;">€0 credited</td>
+</tr>
+<tr>
+<td>Risk mitigation</td>
+<td>No measured probability or impact reduction</td>
+<td style="text-align: right;">€0 credited</td>
+</tr>
+<tr>
+<td><strong>Gross benefit</strong></td>
+<td>Sum of categories</td>
+<td style="text-align: right;"><strong>€1,166.67</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Zero credited does not mean no benefit is possible. It means I have no evidence to price it. The time value is freed capacity, not money banked: staff would need to use it for other work or avoid additional paid hours.</p>
+<p>Failures reverse part of that benefit. Reviewing and correcting a failed output takes 4.5 minutes, against 3 minutes manually. The incremental penalty is 640 × 1.5 minutes ÷ 60 × €50 = <strong>€800</strong>. This assumes every error is detected; unnoticed planning errors could cost more.</p>
+<p>API usage is 1,200 × (€0.0194 ÷ 30) = <strong>€0.78</strong>. Setup is 12 × €50 = <strong>€600</strong>, and maintenance is another <strong>€600</strong>. Therefore:</p>
+<p><strong>Net first-year value = €1,166.67 − €800 − €0.78 − €600 − €600 = −€834.11.</strong></p>
+<p>The cross-check reaches the same answer. Manual assessment costs €3,000 annually. AI-assisted assessment costs €500 in review, €2,133.33 in corrections and €1,200.78 in API, setup and maintenance: €3,834.11 altogether.</p>
+<h3>The pressure test</h3>
+<p>If volume is 50% lower, the first-year loss becomes €1,017.05 because setup and maintenance remain fixed. If correction takes 50% longer, 6 minutes instead of 4, the loss becomes €1,900.78. Neither scenario rescues the case.</p>
+<p>Holding everything else constant, first-year break-even requires approximately 67.5% success. That threshold is a model output, not a promise that better prompting will achieve it. Even after removing setup, the current scenario loses €234.11 annually, so there is no positive payback.</p>
+<h3>The insight</h3>
+<p>My verdict is <strong>do not deploy the current Classifier as a cost-saving workflow</strong>. Keep manual assessment and restrict the tool to evaluation until independently labelled tasks and timed reviews establish a positive case.</p>
+<p>The lesson for game production is that cheap generation does not make an entire workflow cheap. My API bill is almost irrelevant beside correction and maintenance. The purchasing question is not “Can AI produce a label?” It is “Can a producer check and use that label for less effort than assessing the task directly?” At my measured rate and stated assumptions, the answer is no.</p>
+<p><em>Sources: <a href="https://www.kojimaproductions.jp/en/game-designer">Kojima Productions’ Game Designer posting</a> and my <a href="https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/daniel-stefirta/build/log.md">Classifier run log</a>.</em></p>
+<p><em>AI disclosure: an AI assistant helped draft and check the arithmetic. No Kojima staff interviews or workflow timing studies were conducted.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

@@ -58,6 +58,8 @@ Tokens are €38 of a €52,480–€70,462 running year: under 0.1%. **The erro
 
 **Not counted:** the risk reduction (Week 4: €45,000 a year at a €250,000 fine, €37,033 net without it). Without it this is a time case, and a smaller one than Week 4's €54,000, because routing sends 30% of invoices to a full check.
 
+**After the practitioner review (16 Nov):** the H1 time (2 min, est.) matters as much as the error rate: break-even at 3.1–5.0 minutes ([practitioner review](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/practitioner-review.md)).
+
 ## 4. Sketch ↔ cost cross-check
 
 | Box in the sketch | Cost line |

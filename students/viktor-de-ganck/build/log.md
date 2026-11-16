@@ -158,23 +158,23 @@ logged before Week 8 so it can feed your CP2 revision delta.
 
 | | |
 |---|---|
-| Model / tier | — |
-| Prices used (with snapshot date) | — |
-| Measured input tokens per run | — |
-| Measured output tokens per run | — |
-| **Cost per run** | — |
-| Realistic monthly volume, and why that number | — |
-| **Monthly token cost** | — |
+| Model / tier | gemini-3.1-flash-lite (list ID gemini-3.1-flash-lite-preview), Budget tier, Gemini API free tier |
+| Prices used (with snapshot date) | $0.25 input / $1.50 output per 1M tokens, AI Pricing Reference snapshot 7 Sep 2026, accessed 30 Oct 2026; $1 = €0.92 |
+| Measured input tokens per run | 220.5 (two calls on 30 Oct 2026: item 14 = 247, item 11 = 194) |
+| Measured output tokens per run | 18 (item 14 = 20, item 11 = 16); no thinking tokens billed |
+| **Cost per run** | $0.0000821 (€0.0000756) |
+| Realistic monthly volume, and why that number | 880 runs: 40 items/day (est.) × 22 working days at Graslei Wealth (composite, Week 4); my test set drew 7 items from two sources on one day |
+| **Monthly token cost** | €0.07 |
 
 **Error cost — the part that matters:**
 
 | | |
 |---|---|
-| Measured error rate | — % on — inputs |
-| Who fixes an error here? | — |
-| Cost per error | — |
-| **Monthly error cost** | — |
-| **Error cost ÷ token cost** | — × |
+| Measured error rate | 40% on 15 inputs (Week 2, Claude Sonnet 5.5; on Flash-Lite only 2 items tested: item 11 right, item 14 wrong as "rate decision / fact") |
+| Who fixes an error here? | The advisor who reads the morning list re-reads the item and corrects the label |
+| Cost per error | 3 min (est.) × €57/h loaded = €2.85 |
+| **Monthly error cost** | 352 errors × €2.85 = €1,003 |
+| **Error cost ÷ token cost** | about 15,000 × |
 
 ---
 

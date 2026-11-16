@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 4 · </div>
+<h1>Week 4</h1>
+<div class="byline">ksenija-maruscaka · </div>
+<h2>Show Me the Numbers: Auditing AI Personalization ROI vs. Martech FOMO</h2>
+<p><strong>Author:</strong> Ksenija Maruscaka<br />
+<strong>Beat:</strong> AI in Marketing and Consumer Personalization<br />
+<strong>Week:</strong> 4 — Value Quantification  </p>
+<hr />
+<p>In marketing, nobody buys an AI tool because they calculated the cost of fixing its mistakes. Having worked in marketing, I have watched teams sign €30,000 annual contracts for "AI hyper-personalization engines" based on a vendor slide promising a 20% conversion lift—without ever calculating loaded staff rates, token volume, or how many hours copywriters spend rewriting robotic drafts. If we apply Week 4’s value audit framework to consumer personalization, the gap between vendor FOMO and real unit economics becomes starkly visible.</p>
+<h2>The Candidate: Dynamic Lifecycle Email &amp; Paid-Social Personalization</h2>
+<p>Take a realistic mid-market Ghent e-commerce brand, <strong>Maison Nord</strong> (280 employees, €32M annual revenue, 14-person marketing team selling premium homeware across Belgium, France, Germany, and the Netherlands). </p>
+<p>In Maison Nord’s <strong>Primary Value Chain (Marketing &amp; Sales)</strong>, six lifecycle marketers spend their Mondays manually adapting product-launch briefs into localized email segments and Meta ad variants across four languages. This process passes all five candidate criteria:</p>
+<ul>
+<li><strong>Repetitive:</strong> Happens weekly across 4,000 asset variants/month.</li>
+<li><strong>Pattern-based:</strong> Maps structured SKU attributes to established brand templates.</li>
+<li><strong>Error-tolerant:</strong> Drafts sit in Klaviyo staging for marketer approval before dispatch.</li>
+<li><strong>Cost-justifiable:</strong> Consumes high loaded labor plus external translation fees.</li>
+<li><strong>Verifiable:</strong> Output quality is auditable against character limits and campaign click-through logs.</li>
+</ul>
+<h2>The Numbers: Full Value Audit</h2>
+<p>Using the Belgian loaded cost reference (<strong>Marketing Specialist: €48,000 salary × 1.4 ÷ 1,600 hrs = €42/hr</strong>), here is the auditable business case across all four benefit categories:</p>
+<ol>
+<li><strong>Time Saved:</strong> Six marketers currently spend 7 hours/week each manually drafting and localizing campaign variants (<code>42 hrs/week</code>). An LLM pipeline connected to the product feed cuts drafting time to 2 hours/week per marketer (<code>12 hrs/week</code>), saving <strong>30 hours/week</strong>.  </li>
+</ol>
+<ul>
+<li>
+<p><em>Formula:</em> <code>30 hrs/week × 52 weeks × €42/hr loaded rate = €65,520/year</code><br />
+2. <strong>Revenue Increase:</strong> Martech vendors pitch a 10–15% revenue jump from AI personalization. Applying Week 3 skepticism, we reject that and model a conservative <strong>0.4% incremental conversion lift</strong> across 45,000 monthly segmented checkouts (<code>180 extra orders/month = 2,160 orders/year</code>) at a €38 net contribution margin per order.  </p>
+</li>
+<li>
+<p><em>Formula:</em> <code>2,160 additional orders/year × €38 margin/order = €82,080/year</code><br />
+3. <strong>Cost Reduction:</strong> Maison Nord currently pays an external translation agency <strong>€2,800/month</strong> (<code>€33,600/year</code>) for routine seasonal promo adaptations. Moving first-draft localization in-house reduces external agency spend to <strong>€600/month</strong> (<code>€7,200/year</code>) for flagship brand campaigns only.  </p>
+</li>
+<li>
+<p><em>Formula:</em> <code>€33,600/year (current agency spend) − €7,200/year (new agency spend) = €26,400/year</code><br />
+4. <strong>Risk Mitigation:</strong> Under the EU Omnibus Directive, advertising a discount without displaying the lowest prior 30-day price triggers Belgian Economic Inspection fines averaging €120,000. Adding an automated pre-send compliance check reduces an estimated 5% annual violation probability by 50%.  </p>
+</li>
+<li>
+<p><em>Formula:</em> <code>5% probability × €120,000 fine × 50% reduction factor = €3,000/year</code></p>
+</li>
+</ul>
+<p><strong>Gross Annual Benefit:</strong> <code>€65,520 + €82,080 + €26,400 + €3,000 = €177,000/year</code> <em>(or </em><em>€94,920/year</em><em> in hard savings if Revenue Increase is €0)</em>.</p>
+<h3>Subtracting the Cost Side (Week 1 Cost Literacy + Build Error Rate)</h3>
+<ul>
+<li><strong>Token Cost (Standard Tier: $2.00/1M in, $12.00/1M out):</strong> 4,000 runs/month (<code>48,000/year</code>), averaging 1,200 input tokens and 600 output tokens.</li>
+<li><em>Input:</em> <code>(4,000 × 1,200 ÷ 1,000,000) × $2.00 = $9.60/month</code></li>
+<li><em>Output:</em> <code>(4,000 × 600 ÷ 1,000,000) × $12.00 = $28.80/month</code></li>
+<li><em>Annual EUR Token Cost:</em> <code>$38.40 × 0.92 (EUR/USD) × 12 = €424/year</code></li>
+<li><strong>Implementation &amp; Maintenance:</strong> <code>€16,000</code> one-time Shopify/Klaviyo integration + <code>€4,000/year</code> maintenance (25%) = <strong>€20,000 in Year 1</strong> (<code>€4,000/year</code> in Year 2+).</li>
+<li><strong>Error Rework Cost:</strong> In my own Build testing, <strong>22% of generated variants failed</strong> (14% F3 format/tone omissions, 8% F2 fabricated promo terms). Across 48,000 outputs/year, <code>10,560 failed drafts</code> require a 3-minute manual fix by a marketer (<code>0.05 hrs × €42/hr = €2.10/error</code>).  </li>
+<li><em>Formula:</em> <code>10,560 errors/year × €2.10 = €22,176/year</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Summary Metric</th>
+<th style="text-align: left;">Year 1 (€)</th>
+<th style="text-align: left;">Year 2+ Steady State (€)</th>
+<th style="text-align: left;">Formula / Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Gross Benefit</strong></td>
+<td style="text-align: left;">€177,000</td>
+<td style="text-align: left;">€177,000</td>
+<td style="text-align: left;">Sum of 4 benefit categories (<code>€94,920</code> hard savings only)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Less: Total AI &amp; Error Cost</strong></td>
+<td style="text-align: left;">−€42,600</td>
+<td style="text-align: left;">−€26,600</td>
+<td style="text-align: left;"><code>€424 tokens + €16k setup (Y1) + €4k maint + €22,176 error rework</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Net Benefit (All Categories)</strong></td>
+<td style="text-align: left;"><strong>€134,400</strong></td>
+<td style="text-align: left;"><strong>€150,400</strong></td>
+<td style="text-align: left;">Payback: <code>€16,000 ÷ (€150,400 / 12) = 1.28 months</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Net Benefit (€0 Revenue Lift)</strong></td>
+<td style="text-align: left;"><strong>€52,320</strong></td>
+<td style="text-align: left;"><strong>€68,320</strong></td>
+<td style="text-align: left;">Payback: <code>€16,000 ÷ (€68,320 / 12) = 2.81 months</code></td>
+</tr>
+</tbody>
+</table>
+<h2>The Pressure Test: What If We Are 50% Wrong?</h2>
+<p>If our benefit assumptions are <strong>50% too optimistic across the board</strong> (Gross Benefit drops from €177,000 to <strong>€88,500</strong>) while implementation, maintenance, and error rework costs remain fixed at <strong>€42,600</strong>, Year 1 Net Benefit still lands at <strong>€45,900</strong> (<code>€61,900/year</code> in Year 2+, paying back in <strong>3.1 months</strong>). </p>
+<p>More importantly, what if the vendor’s "conversion lift" is pure FOMO (<strong>Revenue Increase = €0</strong>) <em>and</em> we only capture <strong>50% of our projected time and agency savings</strong> (<code>€94,920 × 50% = €47,460 gross</code>)? Even in that harsh scenario, Year 1 Net Benefit is <strong>+€4,860</strong> and Year 2+ nets <strong>+€20,860/year</strong> (payback in <strong>9.2 months</strong>).</p>
+<h2>The Insight for Marketing</h2>
+<p>The real ROI in AI marketing is never the unprovable conversion lift on a vendor’s pitch deck—that is pure FOMO. The defensible ROI sits in compressing repetitive localization hours (<code>€65,520</code>) and trimming external agency overflow (<code>€26,400</code>). And as the math proves, API tokens (<code>€424/year</code>) are a rounding error; the real cost that makes or breaks a marketing AI deployment is the human rework required to catch the 22% of drafts where the model quietly invents a discount code you never authorized.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

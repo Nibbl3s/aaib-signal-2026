@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build, Buy, or Connect — The Architecture Decision Nobody&#x27;s Making in Workplace AI — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · The Psychology of AI Adoption in the Workplace</div>
+<h1>Build, Buy, or Connect — The Architecture Decision Nobody&#x27;s Making in Workplace AI</h1>
+<div class="byline">Andreea Simion · 2026-11-07</div>
+<h3>1. Hook</h3>
+<p>Most HR leaders and enterprise transformation teams deploying AI tools never ask: <em>"What happens to employee trust if we need to switch vendors next quarter?"</em> They optimize for rapid rollout, unintentionally creating technological traps and worsening workplace change fatigue. In human resources, vendor lock-in isn't just an IT budget problem—it's a psychological commitment that can destroy workforce trust when systems break or vanish.</p>
+<hr />
+<h3>2. The Use Case</h3>
+<p>Consider <strong>OmniRetail</strong>, a mid-sized European retail group with 2,500 employees. To combat post-pandemic turnover, HR deployed an automated <strong>Employee AI Sentiment &amp; Adoption Barrier Classifier</strong>. The tool analyzes internal pulse surveys and Slack channels to identify psychological adoption barriers (such as job security anxiety, interface complexity, or change fatigue) and route at-risk teams to tailored support programs. OmniRetail chose a <strong>Connect</strong> architectural path: building custom prompt classification logic and wrapping standard cloud APIs (Google Gemini Flash) while storing user telemetry and feedback data locally in open JSON schemas.</p>
+<hr />
+<h3>3. The Decision</h3>
+<p>Applying the 5-question decision framework reveals why <strong>Connect</strong> is the optimal path for OmniRetail:<br />
+1. <em>Is sentiment classification their competitive moat?</em> <strong>No</strong>, but employee retention is critical.<br />
+2. <em>Is it a commoditized problem with off-the-shelf software?</em> <strong>Partially</strong>, but commercial HR SaaS tools operate as closed black boxes that obscure <em>why</em> employees resist technology.<br />
+3. <em>Do they need custom integration across diverse internal platforms?</em> <strong>Yes</strong>, integrating Slack, Teams, and pulse survey channels requires custom pipelines.<br />
+4. <em>Will sentiment analysis needs shift in 12 months?</em> <strong>Yes</strong>, as new AI tools roll out across departments.<br />
+5. <em>Do they have internal dev capacity?</em> <strong>Yes</strong>, a small internal IT team capable of maintaining REST API wrappers.</p>
+<p>Building a proprietary foundation model from scratch would be absurd; buying a closed enterprise HR platform creates opaque data silos. Connecting an abstraction layer to lightweight cloud endpoints delivers customized classification while protecting operational agility.</p>
+<hr />
+<h3>4. The Lock-In Scorecard</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Score (0–3)</th>
+<th style="text-align: left;">Evidence &amp; Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Data Portability</strong></td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>Full Control.</strong> Prompts, JSON output logs, and ground-truth sets reside locally in open formats (<code>.md</code>/<code>.json</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. API Stability</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Uses standard OpenAI-compatible REST endpoints, though third-party API deprecation windows remain uncommitted.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Pricing Control</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Pay-as-you-go token pricing ($0.000046/call); token operational spend is negligible relative to labor costs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Feature Dependency</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Core logic relies on prompt context rather than vendor-locked vector databases or closed UI components.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Migration Cost</strong></td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;">Switching cloud providers requires only updating API base URLs and payload wrappers (&lt;4 engineering hours).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL SCORE</strong></td>
+<td style="text-align: left;"><strong>3 / 15</strong></td>
+<td style="text-align: left;"><strong>LOW RISK (Architectural Independence)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Highest-Risk Dimension:</strong> <em>API Stability (Score: 1).</em> While data and code remain fully portable, silent model weight updates from cloud vendors present a hidden risk: sudden changes in classification logic can alter how employee fear is tagged, creating inconsistent HR interventions.</p>
+<hr />
+<h3>5. The Migration Path</h3>
+<p>If the primary cloud API provider tripled prices or degraded sentiment classification accuracy tomorrow, OmniRetail's exit path is straightforward:</p>
+<ul>
+<li><strong>Immediate Cost:</strong> ~4 engineering hours (€360) to update client API routing endpoints.</li>
+<li><strong>Performance Impact:</strong> A temporary 10% drop in pass rate if forced onto an un-tuned local model (e.g., Llama-3-8B via Ollama).</li>
+<li><strong>Mitigation:</strong> Maintaining an abstraction layer and running routine local benchmark sweeps ensures OmniRetail can fallback off-grid without data loss or prolonged system downtime.</li>
+</ul>
+<hr />
+<h3>6. The Insight</h3>
+<p>This architecture highlights a widespread blind spot in workplace AI adoption: enterprise HR departments are rushing into single-vendor SaaS lock-in without recognizing how platform instability fuels employee cynicism. When a vendor unilaterally alters its features, pricing, or data policies, organizations are forced into sudden migrations that break internal workflows. The leaders who build modular, connected architectures maintain control over their data—and ultimately preserve the psychological trust of their workforce.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@ title: "AI Sorting Financial News for Advisors: Worth a Pilot, Not Yet a Purchas
 author: "Viktor De Ganck"
 beat: "AI as a retail investor's research desk"
 skill: "Value quantification"
-date: 2026-10-16
+date: 2026-10-12
 ---
 For my Build, I made an AI prompt that sorts financial news. For each news item it gives three labels: what kind of event it is, which assets it affects, and whether it is fact or opinion. In my test, all three labels were right on 9 of 15 real news items (60%). What is that worth in euros? A retail investor has no salary to save, so I priced it for someone paid to read the news: an investment advisor.
 
@@ -18,7 +18,7 @@ For my Build, I made an AI prompt that sorts financial news. For each news item 
 |---|---|---|
 | Fed raises rates | rate decision / FX, bonds / **fact** | Read it, tell clients with bond funds |
 | "Beursagenda" (upcoming company dates) | none / none / fact | Keep it for planning client calls |
-| Commentator on X about rate-hike odds | opinion only / FX / **opinion** | Skip it, or at least never present it as news |
+| FT opinion piece on rate-hike odds | opinion only / FX / **opinion** | Skip it, or at least never present it as news |
 
 In short: **the tool tells the advisor which items are real news, which are background, and which are just opinion.** The buyer is the managing partner.
 
@@ -71,3 +71,5 @@ For Week 8 I will add two rules: when to list several assets, and that forecasts
 **My question:** of all the news you read in a morning, how much of it do you actually use?
 
 *Graslei Wealth and all (est.) figures are my assumptions. The 60%, 20% and 2 of 30 come from my own Build (run 1, 15 items, run twice). Numbers calculated in Python, post drafted with Claude from my Build log; case, verdict and prediction are mine.*
+
+*Correction (22 October 2026): the rate-hike item in the table was first labelled as an X post. It came from a Financial Times opinion piece.*

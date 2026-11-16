@@ -549,3 +549,47 @@ Status: Planned, not yet built or tested.
 | Machine | Laser cutter, subject to confirmation with fablab staff about availability, suitable materials, and required training. |
 | Artifact | A small tabletop freight-intake stand with a printed mock interface showing the source description, predicted transport mode, quoted evidence, and a human confirmation step. Use it to observe whether a tester checks the evidence before accepting the classification, particularly when the result is NOT ENOUGH INFORMATION. |
 | Fablab session | I missed the introductory session. A future supervised session has not yet been arranged. I will ask the teacher or fablab staff about a catch-up opportunity. |
+
+
+## Build Checkpoint 1 — Week 4, 2026-10-18
+
+1. **What it does:** Classifies freight-service descriptions by transport mode, quotes supporting evidence and flags insufficient information or unsupported modes. It does not calculate or approve freight prices.
+2. **What I measured:** The Week 2 log records 20/20 passing responses across ten distinct descriptions, each tested twice. Results cover prompt v1 individually and v1b in batches; these are not twenty independent inputs or evidence of production accuracy.
+3. **Dominant failure type:** None observed in the recorded test set. The small, selected sample does not establish that failures are absent on unseen inputs.
+4. **Failure that would matter most:** An incorrect classification or fabricated supporting evidence that survives human review and leads an employee toward the wrong rate category. This would involve F1 or F2 and could cause consequences beyond the correction cost in my planning model.
+5. **What I would change first:** Strengthen the evaluation before changing the prompt: test unseen, ambiguous descriptions, compare with simple rules, and measure manual handling, AI review and correction time. Preserve all results and version any later prompt changes.
+
+### Value estimate attached to the Build
+
+The hypothetical Week 4 case estimates €7,819.20 first-year net capacity value at an assumed 95% acceptable-output rate. Halving time benefits and increasing corrections to 10% produces a €730.80 loss.
+
+These are planning calculations, not measured business savings. See [Week 4 analysis](../week-04-evidence/analysis.md).
+
+### Deployment probe plan — Week 4 status
+
+| Item | Plan and status |
+|---|---|
+| Machine | Proposed laser cutter, subject to fablab staff confirming suitability, materials and required training. |
+| Artifact | A tabletop freight-intake stand with a printed mock interface showing the source description, predicted mode, quoted evidence and human confirmation step. Observe whether testers check the evidence before accepting a result. |
+| Fablab session | Not yet booked. I need to arrange a supervised catch-up session with the teacher or fablab staff. This remains an outstanding action, not a completed activity. |
+
+No physical deployment or new model test is claimed in this checkpoint.
+
+## Week 6 — API cost checkpoint, 2026-11-02
+
+Operator: ChatGPT, authorised to use my configured Hoppscotch request.
+Prompt: existing v1, Test 01, individual request. See ../week-06-evidence/build-request.json.
+Provider: Google Gemini. Requested alias: gemini-flash-lite-latest. Returned model: gemini-3.5-flash-lite.
+HTTP: 200. Observed request time: 734 ms (single observation).
+Usage: 352 input + 42 output = 394 tokens. Response: ../week-06-evidence/build-response.json.
+
+Actual response:
+Mode: ROAD
+Evidence: "Partial-Truck Load (PTL) and Full-Truck Load (FTL)"
+Reason: The description explicitly references truck transport through the mention of truck-load services.
+
+Assessment: PASS for label, evidence and format. One new API input; no claim of a new representative failure rate.
+Paid-equivalent cost: $0.0002106/run; 3,000 assumed runs/month = $0.6318/month. Actual account billing status not verified.
+Week 2 recorded rate: 0 failures/20 responses on ten repeated descriptions, different model and mixed individual/batch prompts. Extrapolated correction cost at that recorded rate: €0. Planning stress at 5% and €1/correction: €150/month.
+Full scale, integration and break-even calculations: ../week-06-evidence/analysis.md.
+Previous 404/503 availability problems are documented separately; no usage was returned. Earlier log entries must remain intact.
