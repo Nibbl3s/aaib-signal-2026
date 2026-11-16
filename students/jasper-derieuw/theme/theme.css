@@ -110,6 +110,9 @@ body.theme-jasper-derieuw .back { color:var(--jd-muted); }
 .jd-card li small { font:500 .74rem/1.35 Inter,sans-serif; color:var(--jd-muted); text-align:right; max-width:52%; }
 .jd-card li.now b { color:var(--jd-accent-ink); }
 .jd-card li span.jd-next { color:var(--jd-muted); }
+.jd-card li.jd-final { border-top:1px dashed var(--jd-line); margin-top:.3rem; }
+.jd-card li.jd-final b { color:var(--jd-stamp); }
+.jd-card li.jd-final small { max-width:58%; }
 .jd-card dt { font:700 .8rem Inter,sans-serif; color:var(--jd-text); margin-top:.55rem; }
 .jd-card dt:first-child { margin-top:0; }
 .jd-card dd { font:400 .8rem/1.45 Inter,sans-serif; color:var(--jd-muted); margin:0; }
