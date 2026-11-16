@@ -167,6 +167,10 @@ Go/no-go after 3 months:
 - a clean check takes 3 minutes or less
 - zero missed matches
 
+## Addendum, 16 November 2026: the practitioner's late reply
+
+The practitioner I asked on 11 October replied in writing on 28 October, after this week was submitted. For an accounts-payable invoice check at their company: "Around 3–5 minutes for a straightforward invoice. A difficult case took 20–30 minutes of actual work", and "Perhaps 1 in 10 needed follow-up". That averages 0.9 × 3–5 + 0.1 × 20–30 = 4.7–7.5 minutes, so A3 (6 min, est.) sits inside the practitioner's range. Their check is broader than sanctions screening (VAT, bank details, purchase-order match), so it supports the estimate rather than replacing it.
+
 ---
 
 *AI disclosure: I used Claude to structure this business case, run the arithmetic and find the enforcement cases and the directive. The assumptions marked (est.), the pattern idea (from the class clinic) and the recommendation are mine.*

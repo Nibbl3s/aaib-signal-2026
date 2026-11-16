@@ -74,6 +74,8 @@ Changes are marked **P1–P8** and attributed to the practitioner.
 | P7 | Re-screen before payment and on every update of the EU list. | "A supplier can be clean today and listed tomorrow." | Screening |
 | P8 | Start with a pilot on one product family and known suppliers, with no automatic clearance; measure exception rate, false negatives, H1 time and audit completeness before scaling. | "The dangerous cases are not the easy ones." | Governance |
 
+**Added 16 November 2026, from a second practitioner:** **P9.** Any change in a supplier's bank details goes to a person (H2), never to the 2-minute confirmation. Prompted by an accounting manager's written reply of 28 October: what would worry them is "incorrect information being accepted without anyone noticing, especially bank details or duplicate invoices" ([evidence index, E6](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-12/evidence-index.md)).
+
 ```
 Invoice PDF ─► AI PROPOSAL: 5 fields, each with source page and field  [P5]
                conflicting origin documents → show both, choose none   [P1]
