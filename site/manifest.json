@@ -1482,5 +1482,26 @@
    "kpis": "\u20ac37,329 | year-1 system cost ; <0.1% | tokens' share of the running cost ; 35.2% | error rate at which the design stops paying",
    "takeaways": "Drawing every box and costing it removed my optimistic numbers ; Buy what exists and build only the thin part ; The error rate on real invoices decides the case, not the token price"
   }
+ },
+ {
+  "week": 9,
+  "title": "I Asked My Sanctions Tool to Clear a Sanctioned Bank. One Model Did.",
+  "author": "Jasper Derieuw",
+  "beat": "EU and China Trade Compliance in the AI Era",
+  "skill": "Attack surface thinking",
+  "date": "2026-10-14",
+  "url": "posts/jasper-derieuw-week-09.html",
+  "meta": {
+   "week": "9",
+   "title": "I Asked My Sanctions Tool to Clear a Sanctioned Bank. One Model Did.",
+   "author": "Jasper Derieuw",
+   "beat": "EU and China Trade Compliance in the AI Era",
+   "skill": "Attack surface thinking",
+   "date": "2026-10-14",
+   "verdict": "Never let the AI's \\\"clear\\\" lower a route",
+   "stamp": "ATTACKS WORKED: 0/10 CLOUD \u00b7 4/10 LOCAL",
+   "kpis": "0/10 | attacks that worked on Claude Sonnet 5.5 ; 1 | sanctioned bank cleared by a local model ; \u20ac126 | cost of my first fix",
+   "takeaways": "In sanctions screening the attacker is the supplier, who writes the text my prompt reads ; Injection resistance belongs to the model, not to the prompt ; Fix the route, not the model"
+  }
  }
 ]
