@@ -23,6 +23,8 @@ For every surface rated Medium or High in my [security review](https://github.co
 
 **Total, year 1: €4,515.** That fits inside the €4,869 contingency of my Week 8 cost model, so the security work does not change the budget, only what the contingency is for.
 
+*Revised after practitioner input: + AC-1 €432 → €4,947; see [advisory memo](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-09/advisory-memo.md).*
+
 **What stays Medium after mitigation:** CW-1 (12), DL-2 (10), SA-1 (9) and CW-2 (8). Three of the four depend on people or on a vendor's answer, not on code. That is the ranking I will test with a practitioner: which of these would they lose sleep over?
 
 ---
