@@ -1417,6 +1417,15 @@
  },
  {
   "week": 7,
+  "title": "Build, Buy, or Connect? Avoiding Vendor Lock-In in AI Study Coaches",
+  "author": "Dalia El-Ghalid",
+  "beat": "AI as a Personal Study Coach",
+  "skill": "Lock-in detection",
+  "date": "2026-11-16",
+  "url": "posts/dalia-el-ghalid-week-07.html"
+ },
+ {
+  "week": 7,
   "title": "I Ran My Sanctions Screening Tool on My Own PC. It Got 4 Out of 24 Right.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
