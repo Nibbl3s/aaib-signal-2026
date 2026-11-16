@@ -11,7 +11,7 @@ date: 2026-10-14
 
 **The system:** my [Week 8 design](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/architecture.md). A Belgian importer uses Claude Sonnet 5.5 to read supplier invoices and pre-fill four fields plus a warning flag. A bought service matches supplier names against the EU sanctions list, rules route risky invoices to an analyst, and an analyst checks every invoice. The AI never clears a supplier on its own.
 
-**Sources:** Regulation (EU) 2024/1689 (AI Act), Annex III as published on [artificialintelligenceact.eu](https://artificialintelligenceact.eu/annex/3/) (read 14 Oct 2026); dates as amended by the Digital Omnibus, Regulation (EU) 2026/1744 (published 24 July 2026), as summarised on the [Week 10 course page](https://advanced-ai-in-business.vercel.app/week/10); GDPR (Regulation (EU) 2016/679). To check against the Commission's own timeline before the capstone memo: these dates have moved once already.
+**Sources:** Regulation (EU) 2024/1689 (AI Act), Annex III as published on [artificialintelligenceact.eu](https://artificialintelligenceact.eu/annex/3/) (read 14 Oct 2026); dates as amended by the Digital Omnibus, Regulation (EU) 2026/1744 (published 24 July 2026), checked against the Official Journal text on [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng) on 16 Nov 2026; GDPR (Regulation (EU) 2016/679).
 
 ## 1. EU AI Act: the decision tree, step by step
 
@@ -26,7 +26,7 @@ date: 2026-10-14
 **My tier: minimal risk.** The reasoning that matters is step 2. The tool's purpose (helping stop payments to sanctioned parties) is close to law enforcement, but Annex III points 6 and 7 are scoped to public authorities, and the importer is not one.
 
 **Obligations that still apply:**
-- **AI literacy (Art. 4):** the people operating the system need sufficient understanding of it. In force since 2 February 2025 per the course timeline; I still have to check whether the Omnibus changed it.
+- **AI literacy (Art. 4):** in force since 2 February 2025, and softened by the Digital Omnibus (Regulation (EU) 2026/1744, OJ 24 July 2026): deployers must "take measures to support the development of AI literacy" of their staff, without having to guarantee any specific level. The 2-hour analyst training covers it.
 - **Transparency (Art. 50):** does not apply. There is no chatbot and no AI-generated content for the public, and the analysts know they are reading AI output.
 
 **What would change the tier:**
@@ -53,7 +53,7 @@ date: 2026-10-14
 | 2 Feb 2025 | Prohibitions (not triggered); AI literacy | In force |
 | 2 Aug 2025 | General-purpose model duties, for Anthropic, not the importer | In force |
 | 2 Aug 2026 | Authorities' full enforcement powers | In force |
-| 2 Dec 2026 | End of the transparency grace period (Art. 50 does not apply to this tool) | No action |
+| 2 Dec 2026 | Two new prohibitions (Art. 5(1)(ba) and (bb): sexual deepfakes) and the end of the Art. 50(2) marking grace period for generative systems; neither concerns this tool | No action |
 | 2 Dec 2027 | Annex III high-risk duties: only if the tool were reclassified | Watch |
 | GDPR | Applies now, fully | Act now |
 
