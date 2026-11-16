@@ -274,6 +274,16 @@ Why the plan changed: the counter card would only show a flag. The review test m
 
 **Status, 16 November 2026:** not yet done. The fablab session planned for 15 October did not take place (no reply from the fablab to my booking request). New plan: in person at the fablab on Wednesday 18 November, with a paper version of the same review test as the fallback if no cutting slot is free. The observation is added here after the probe, and this delay stays in the log.
 
+### Prediction for the deployment probe (recorded 16 November 2026, before the test on 18 November)
+
+**Test:** the 2-minute review test (kit v2): 8 invoice cards, 3 of them with a wrong AI verdict copied from Run 1 (cards 2, 5 and 8); set-up A (stamp or write) against set-up C (human key); at least 10 testers; the decision and the seconds per card are recorded.
+
+- **D1:** in set-up A, testers catch 40–60% of the planted errors (my business case assumes 50%, est.).
+- **D2:** set-up C catches at least 10 points more than set-up A.
+- **D3:** card 2 (a listed bank in Chinese script, marked clear by the AI) is the most missed planted card.
+- **D4:** the median check time on the clean cards 1, 3 and 7 is 30–90 seconds. This is the name check only, so it is a lower bound for a full invoice check.
+- **D5:** at least one tester clears a planted card in under 30 seconds.
+
 ## Cost, from Week 6
 
 Measured via the Claude API on 14 October 2026 (`claude-sonnet-5-5`, effort medium, prompt v1, my 12 test invoices × 2 runs): **371.9 input and 402.5 output tokens per call** on average, so **€0.004387 per check** ($2 / $10 per 1M tokens, × 0.92). At my scenario volume of 18,000 checks a year that is **€79 a year in tokens**.
