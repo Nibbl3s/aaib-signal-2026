@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture, Lock-In, and the Illusion of Ownership in Indie Publishing — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing</div>
+<h1>Architecture, Lock-In, and the Illusion of Ownership in Indie Publishing</h1>
+<div class="byline">Luna Van der Heyden · 2026-11-16</div>
+<h2>Architecture, Lock-In, and the Illusion of Ownership in Indie Publishing</h2>
+<p>When an independent publishing startup builds its editorial workflow on a closed platform, it assumes that retaining legal ownership of the raw manuscript text guarantees safety. But digital lock-in in modern trade publishing isn’t about your words—it’s about the invisible formatting engines, proprietary prompt libraries, and tightly coupled editorial workflows that trap you inside someone else's walled garden.</p>
+<hr />
+<h3>The Use Case</h3>
+<p>Consider an independent literary publishing house utilizing Storyloft, a closed-ecosystem publishing platform anchored by "Eddy," an in-app AI editorial triage assistant. Freelance book editors and acquisitions teams rely on Eddy daily to evaluate draft chapters, run pacing checks, and flag structural errors across roughly 600 calls per user monthly. While the core manuscript text remains legally owned by the creator, the platform tightly binds that text with custom layout templates, typography rules, research cards, and prompt histories built entirely inside Storyloft's proprietary environment. If the platform alters its terms or sunsets features, the publisher's entire operational pipeline is thrown into jeopardy.</p>
+<h3>The Decision: Build, Buy, or Connect?</h3>
+<p>To determine the right architectural path, we evaluate the scenario through the 5-question decision framework:<br />
+1. <em>Is automated manuscript triage our core competitive advantage?</em> No; human editorial taste and authorial voice are our differentiators. <br />
+2. <em>Is AI editorial evaluation a commoditized problem?</em> Partially, though literary editing requires nuanced voice protection. <br />
+3. <em>Do we have the engineering talent and maintenance capacity?</em> As a lean indie startup, we have zero internal developers. <br />
+4. <em>What is our timeline and budget pressure?</em> We need immediate workflow efficiency on a fixed SaaS budget, ruling out a custom build. <br />
+5. <em>What are the integration and lock-in implications?</em> This is where Storyloft fails. Instead of offering modular APIs that connect to external LLMs or standard data schemas, it forces an all-in-one vertical silo. </p>
+<p>The verdict? While <strong>buying</strong> an off-the-shelf solution makes sense for a non-core administrative workflow, buying into a closed, non-interoperable silo creates an unacceptable architectural trap. Publishers must demand composable, API-connected tools.</p>
+<h3>The Lock-In Scorecard (11/15 — High Risk)</h3>
+<p>Evaluated strictly against Storyloft’s Terms of Service, the platform scores an alarming <strong>11/15 (High Risk)</strong>:</p>
+<ul>
+<li><strong>Data Portability (2 - Limited):</strong> §4 guarantees content ownership, but provides zero commitment or export formats for prompt libraries, editorial logs, or AI interaction history.</li>
+<li><strong>API Stability (3 - No Portability):</strong> §8 explicitly states Storyloft may modify, suspend, or discontinue features at any time without notice, versioning guarantees, or backward compatibility. This is our <strong>highest-risk dimension</strong>, as the vendor holds unilateral power to alter core functionality overnight.</li>
+<li><strong>Pricing Control (2 - Limited):</strong> §3 and §14 permit unilateral price changes with undefined "reasonable" notice, alongside strict non-refundable clauses for AI and image credits.</li>
+<li><strong>Feature Dependency (2 - Significant):</strong> Layouts, typography engines, and workflow prompts have no abstraction layer; they live exclusively within Storyloft.</li>
+<li><strong>Migration Cost (2 - High):</strong> With no export pipeline or migration assistance, exiting requires a manual rebuild of every book's formatting and style kit.</li>
+</ul>
+<h3>The Migration Path &amp; 90-Day Recommendation</h3>
+<p>If an independent publisher had to switch platforms tomorrow, the cost wouldn't be financial token fees—it would be hundreds of catastrophic human hours spent manually reformatting interior layouts and rebuilding prompts. To eliminate this friction without over-engineering a custom build, publishers should execute a <strong>90-day risk reduction plan</strong>: <br />
+1. Freeze new platform-specific credits and audit all raw manuscript assets into external cloud storage (Days 1–30). <br />
+2. Build a vendor-neutral prompt library in Markdown and test independent layout tools like Vellum or Atticus (Days 31–60). <br />
+3. Establish a dual-run workflow outside the closed platform and insert a standard JSON export layer to ensure absolute data sovereignty before the next billing renewal (Days 61–90).</p>
+<h3>The Insight</h3>
+<p>In modern trade publishing, owning your manuscript is only half the battle. Closed AI platforms exploit the false comfort of content ownership while quietly locking your entire operational machinery behind a proprietary tollbooth. If your publishing workflow cannot survive a sudden vendor migration, you don't own an independent publishing business—you are merely renting operational space inside someone else's software.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
