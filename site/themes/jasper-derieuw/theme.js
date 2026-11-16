@@ -15,6 +15,13 @@
   const article = document.querySelector('article');
   if (!metaEl || !article) return;
   const meta = JSON.parse(metaEl.textContent);
+  // extra pages (students/jasper-derieuw/pages/*.md) get their own layout from story.css and story.js
+  if (meta.page) {
+    const base = document.currentScript ? document.currentScript.src.replace(/theme\.js(\?.*)?$/, '') : '../themes/jasper-derieuw/';
+    const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = base + 'story.css?v=' + encodeURIComponent(meta.version || meta.date || ''); document.head.append(css);
+    const js = document.createElement('script'); js.src = base + 'story.js?v=' + encodeURIComponent(meta.version || meta.date || ''); document.body.append(js);
+    return;
+  }
   const week = Math.max(1, Math.min(12, +meta.week || 1));
   const nn = String(week).padStart(2, '0');
   const split = (s, sep) => (s || '').split(sep).map(x => x.trim()).filter(Boolean);
@@ -93,6 +100,8 @@
   side.setAttribute('aria-label', 'About this series');
   const card = (title, ...kids) => { const c = el('div', 'jd-card'); c.append(el('h4', '', title), ...kids); side.append(c); return c; };
   card('The beat', el('p', '', BEAT));
+  const story = el('a', '', 'Read “The Last Check” →'); story.href = `../pages/${meta.folder}-the-last-check.html`;
+  card('The whole story', el('p', '', 'Twelve weeks in one visual case file.'), story);
   const voyage = el('ul');
   voyage.append(el('li', '', 'Loading…'));
   card('The voyage so far', voyage);
