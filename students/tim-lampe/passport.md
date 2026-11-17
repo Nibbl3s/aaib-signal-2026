@@ -62,23 +62,23 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Market mechanism thinking | 5 | 🟢 / 🟡 / 🔴 | |
-| Cost projection | 6 | 🟢 / 🟡 / 🔴 | |
-| Lock-in detection | 7 | 🟢 / 🟡 / 🔴 | |
-| Design defense | 8 | 🟢 / 🟡 / 🔴 | |
+| Market mechanism thinking | 5 | 🟡 | I applied it to my own design in Week 8: a provider price change is cheap for me (tripling the token price adds about €22 a year) while leaving costs about €519 in work, and I chose a main model, a spare and an offline fallback so no single provider sets my terms. |
+| Cost projection | 6 | 🟢 | I costed the Comp Screen end to end (€10,378 one-off, €1,644 running in year 1, €12,021 total against a €15,000 budget) and the numbers agree across the post, the cost model and the Build Log. |
+| Lock-in detection | 7 | 🟡 | I priced my exit from the model API at about €519 (10.8 h) and tested a second provider (Groq 95.8%, Llama 79.2%), but my written vendor question (sent 26 Oct, no reply as of 13 Nov) left the notice period unknown. |
+| Design defense | 8 | 🟡 | I defended the design with a stress test (payback 10.2 months; 42 months with benefits −50% and costs +50%) and named review time as the deciding number (break-even 2.8 h per valuation), but I have not tested Copilot and no practitioner has challenged the design yet. |
 
-**Re-rate Checkpoint 1.** Do not copy your Week 4 answers down. Four weeks of compounding changes them — sometimes upward, sometimes not, because Week 8 shows you what you did not know you did not know in Week 4.
+**Re-rate Checkpoint 1.**
 
 | Skill | Week 4 rating | Week 8 rating | What changed |
 |-------|:-------------:|:-------------:|--------------|
-| Cost literacy | | | |
-| Capability skepticism | | | |
-| Vendor claim detection | | | |
-| Value quantification | | | |
+| Cost literacy | 🟡 | 🟢 | In Week 4 I assumed 16,500 input tokens per run (€0.09); I have now measured about 395 input tokens per screen, so tokens are about €1 a month and the real costs are build, hosting, maintenance and review time (€12,021 in year 1). |
+| Capability skepticism | 🟡 | 🟡 | I now measure failures (Claude 71/72, Groq 138/144, Llama 114/144, sorted into F1 to F6), but Claude was run only once and fabricated figures (F2) are not counted yet, so I still cannot call it stable. |
+| Vendor claim detection | 🟡 | 🟡 | I checked Groq's price against my own API response and asked it a written question, but it never answered, and I took Claude's price from price trackers and have not scored Anthropic's notice terms. |
+| Value quantification | 🟡 | 🟡 | The Week 4 figures (€1,055 net a month, 0.9-month payback, 3.3 months under stress) became €1,015 a month, 10.2 months and 42 months once every cost was included, and the case still rests on my own estimates of 8 hours manual screening and 2 hours review. |
 
-**6 ECTS — extended evidence:**
+**6 ECTS — extended evidence:** Primary evidence is self-measurement on a 12-case test set (Claude 71/72, Groq 138/144, Llama 114/144) plus one written vendor question to Groq (26 Oct 2026, 11:54, contact form, no reply as of 13 Nov). A second test set with 10 new industries is prepared and not yet run, and no practitioner has challenged the design yet.
 
-**Your click:** What did you believe at Checkpoint 1 that you've since replaced? Four weeks of compounding should have produced at least one.
+**Your click:** At Checkpoint 1 I believed the 0.9-month payback was the case and that tokens were the cost to watch (€0.09 per run); costing every box replaced that, because tokens are negligible (about €1 a month), the bill is build, hosting, maintenance and review time, and the payback is 10.2 months, or 42 under stress, with one number I only estimate: the 2 hours an analyst needs to review a machine screen.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
