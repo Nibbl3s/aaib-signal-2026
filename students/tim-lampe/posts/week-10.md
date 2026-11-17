@@ -19,4 +19,4 @@ In M&A valuation the peer group decides the answer. Valutico's own guidance says
 
 **The insight.** Minimal risk is a result of checking, not a default. The expensive moment is the day someone adds "and also screen the management team". Classify the use, not the tool, and re-run the tree whenever the use changes. For valuation teams, that means a written classification memo before the first client deliverable.
 
-*Is this legal? Take an AI use case in your beat and assess it under the EU AI Act. Is it prohibited, high-risk, or low-risk? What compliance obligations does it trigger?*
+*AI disclosure: I drafted this post with Claude Sonnet 5.5 and checked the figures and claims against my own Build log, my Week 1 model and the sources named above. The final wording and the conclusions are mine.*
