@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Same Questions, Different Stakes: What a Hospital Taught Me About AI in M&amp;A Valuation — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+<link rel="stylesheet" href="../themes/tim-lampe/theme.css">
+</head>
+<body class="themed theme-tim-lampe">
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 11 · AI in M&amp;A Valuation</div>
+<h1>Same Questions, Different Stakes: What a Hospital Taught Me About AI in M&amp;A Valuation</h1>
+<div class="byline">Tim Lampe · 2026-11-20</div>
+<p>A framework built in one industry can fail quietly in the next. The retail-to-hospital story in this week's brief is a composite, but the mechanism is real: the team kept the questions and assumed the risk weights travelled with them. In M&amp;A valuation the temptation runs the other way, because our work is so numeric that we assume everything transfers.</p>
+<p><strong>The framework application.</strong> I tested the ten skills first in a sector I know nothing about, Belgian healthcare: the AI that rewrites medical reports in plain language at ZAS, AZ Maria Middelares and UZ Brussel, and Tandem's AI scribe, live inside the Nexuzhealth record system. Then I turned the same ten questions on my own beat, AI-assisted peer-group selection. The questions did not change. The answers did.</p>
+<p>Cost literacy is universal: tokens times volume times price. In my Week 1 model a 40-peer run costs €5.15 in tokens and €400 in analyst review; in my Build, a six-candidate screen costs about €0.002 on Claude (an estimate), while a wrong verdict costs about €24 of analyst time (my assumption). In the hospital, 40,000 reports a year costs a few hundred euros of model time on my estimate, and validation costs far more. Capability skepticism: in valuation a wrong "comparable" label looks plausible and stays silent. On my 12 test inputs Claude got 71 of 72 verdicts right in one run, and every error from the cheaper Groq model was a "Not comparable" where my key says "Unclear": the peers that get dropped are the ones nobody sees. Vendor claims are aspirational everywhere: "global first" in healthcare, "AI-powered peer selection" in valuation, neither checkable without your own data.</p>
+<p>Market mechanism differs most visibly. In valuation, data platforms decide which companies even appear as candidates; in Belgian hospitals the record system is the gatekeeper to clinicians, so vendors integrate with it. At scale, model price rises linearly in both; what breaks first is human review capacity. Lock-in sits in the comps database and templates in my beat, in the EHR integration in healthcare. Design defense means different things: an auditor wants to know why each peer is in or out, a hospital shows patients the original report next to the AI version. Attack surface is shared (injection through documents), but the asset differs: confidential deal data against patient data.</p>
+<p>Regulation is where transfer breaks. My Week 10 reflex was Annex III first. In healthcare, software with a medical purpose goes through the MDR, which is Annex I, with AI Act duties from 2 August 2028, plus GDPR Article 9 and the new health data space rules. My own tool stays low-risk.</p>
+<p><strong>Sector-specific risks.</strong> A generalist would miss three things in valuation. First, silent judgement error: the peer group is the valuation, and a bad screen shifts the price without any visible failure. In a hospital a wrong output is noticed by a clinician or a patient; in valuation it is noticed, if at all, by the counterparty, so the error cost looks low while the deal value at stake is high. Second, confidentiality: target data and inside information must not reach an external model without contractual limits on retention and training. The hospital contrast is instructive, because the Belgian report tool is reportedly run inside the hospital rather than through an outside service. Third, professional liability: the signing valuer answers to auditors, courts and counterparties, so every AI-suggested peer needs a reproducible reason that a human owns. The model cannot carry that liability for me. None of these shows up on a pricing page or in a vendor demo.</p>
+<p><strong>The insight.</strong> What transferred was the question list, the habit of pricing the human check and the suspicion of vendor claims. What did not transfer was every weight: error cost, regulatory path, gatekeeper and what dominates the budget. In healthcare compliance and validation outweigh tokens; in valuation the analyst's time does. To advise in a new industry I would first learn who signs off, what a wrong answer costs, and which regulation attaches to the intended purpose, before touching a spreadsheet. The deepest lesson is humility: I could apply all ten skills to healthcare in thirty minutes and still not know the first thing an insider would correct.</p>
+<p><strong>The question.</strong> For the capstone, I want to test my weakest number, the cost of the human check, the way a hospital would: with a named person who signs off. What does that sign-off cost per peer group?</p>
+<p><em>Same AI, different sector. Apply the full evaluation framework to your beat's industry. What's different about AI in your sector? What risks are sector-specific? What's universal?</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+<script type="application/json" id="post-meta">{"week": 11, "title": "Same Questions, Different Stakes: What a Hospital Taught Me About AI in M&A Valuation", "author": "Tim Lampe", "beat": "AI in M&A Valuation", "skill": "Cross-domain transfer", "date": "2026-11-20", "folder": "tim-lampe", "slug": "tim-lampe-week-11"}</script>
+<script src="../themes/tim-lampe/theme.js" defer></script>
+</body>
+</html>

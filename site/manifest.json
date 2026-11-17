@@ -1616,6 +1616,23 @@
   }
  },
  {
+  "week": 11,
+  "title": "Same Questions, Different Stakes: What a Hospital Taught Me About AI in M&A Valuation",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Cross-domain transfer",
+  "date": "2026-11-20",
+  "url": "posts/tim-lampe-week-11.html",
+  "meta": {
+   "week": "11",
+   "title": "Same Questions, Different Stakes: What a Hospital Taught Me About AI in M&A Valuation",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Cross-domain transfer",
+   "date": "2026-11-20"
+  }
+ },
+ {
   "week": 12,
   "title": "Should an Antwerp Importer Let AI Screen Its Chinese Suppliers? Pilot It. Don't Buy It Yet.",
   "author": "Jasper Derieuw",
