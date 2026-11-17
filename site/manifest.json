@@ -1540,6 +1540,23 @@
   }
  },
  {
+  "week": 9,
+  "title": "Peer Screens: How an Analyst's AI Shortlist Could Be Attacked",
+  "author": "Tim Lampe",
+  "beat": "AI in M&A Valuation",
+  "skill": "Attack surface thinking",
+  "date": "2026-11-17",
+  "url": "posts/tim-lampe-week-09.html",
+  "meta": {
+   "week": "9",
+   "title": "Peer Screens: How an Analyst's AI Shortlist Could Be Attacked",
+   "author": "Tim Lampe",
+   "beat": "AI in M&A Valuation",
+   "skill": "Attack surface thinking",
+   "date": "2026-11-17"
+  }
+ },
+ {
   "week": 10,
   "title": "My Sanctions Tool Is Legal Under the AI Act. That Was the Easy Part.",
   "author": "Jasper Derieuw",
