@@ -55,4 +55,4 @@ Brabant Corporate Finance is the composite 10-person Brussels boutique from my W
 
 The 8 and 2 hours are my estimates, and the whole case turns on them: how long does an analyst really need to screen peers by hand, and to review a machine screen?
 
-*AI disclosure: I ran the model calls myself; Claude helped research vendor terms, do the arithmetic and draft the text, and I checked the numbers. [Adjust to what is true for you.]*
+*AI disclosure: I ran the model calls myself; Claude helped research vendor terms, do the arithmetic and draft the text, and I checked the numbers.*
