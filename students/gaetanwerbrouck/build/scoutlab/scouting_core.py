@@ -11,9 +11,6 @@ from typing import Iterable
 
 import numpy as np
 import pandas as pd
-from sklearn.impute import SimpleImputer
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.preprocessing import StandardScaler
 
 
 POSITION_WEIGHTS = {
@@ -284,6 +281,25 @@ def add_market_value_overlay(players: pd.DataFrame, overlay: pd.DataFrame, units
     return _recalculate_scores(out)
 
 
+def _cosine_similarity_matrix(values: np.ndarray) -> np.ndarray:
+    """Median-impute, standardise (population std), then return pairwise cosine similarity.
+
+    Plain numpy, so the app does not depend on scikit-learn (whose compiled files
+    Windows Smart App Control can block).
+    """
+    values = values.copy()
+    medians = np.nanmedian(values, axis=0)
+    rows, cols = np.where(np.isnan(values))
+    values[rows, cols] = medians[cols]
+    std = values.std(axis=0)
+    std[std == 0] = 1.0
+    values = (values - values.mean(axis=0)) / std
+    norms = np.linalg.norm(values, axis=1)
+    norms[norms == 0] = 1.0
+    unit = values / norms[:, None]
+    return unit @ unit.T
+
+
 def similar_players(players: pd.DataFrame, player_name: str, min_minutes: int = 900, limit: int = 10) -> pd.DataFrame:
     """Find same-position peers by cosine similarity across observed percentile features."""
     target_rows = players.index[players["Player"].eq(player_name)].tolist()
@@ -306,9 +322,7 @@ def similar_players(players: pd.DataFrame, player_name: str, min_minutes: int = 
     if target_features.notna().mean() < 0.5:
         return pd.DataFrame()
     matrix = peers[feature_cols].apply(pd.to_numeric, errors="coerce")
-    matrix = SimpleImputer(strategy="median").fit_transform(matrix)
-    matrix = StandardScaler().fit_transform(matrix)
-    similarities = cosine_similarity(matrix)
+    similarities = _cosine_similarity_matrix(matrix.to_numpy(dtype=float))
     row_num = peers.index.get_loc(target_idx)
     result = peers.copy()
     result["Similarity_Pct"] = np.clip(similarities[row_num], 0, 1) * 100

@@ -49,6 +49,14 @@ If PowerShell blocks virtual-environment activation:
     .\.venv\Scripts\python.exe -m pytest -q
     .\.venv\Scripts\python.exe -m streamlit run app.py
 
+## Optional AI scouting summary (added Week 7)
+
+The Player profile tab has an optional, off-by-default expander that asks a language model to write a short scouting note from the numbers on screen. It uses one plain function (`ask_model` in `scout_summary.py`) that talks to any OpenAI-compatible `/chat/completions` endpoint, so the model can be changed by editing the endpoint and model name. It was tested with a local Ollama model (`llama3.2:3b`, default endpoint `http://localhost:11434/v1`). Claude was compared by pasting the same prompt into the claude.ai chat, so it has not been tested through this function.
+
+Every note is checked automatically against the table: strongest metric correct, weakest metric correct, no invented numbers, no unsupported claims (injury, contract, wages, value and similar), and a summary present. A failed check is shown next to the note. The note is a drafting aid for a scout, not a scouting verdict.
+
+The similarity feature uses plain NumPy, so scikit-learn is no longer a dependency.
+
 ## Data source and attribution
 
 The default performance dataset is loaded at runtime from [Sahil Walawalkar's FootballScoutingAI repository](https://github.com/sahilwalawalkar/FootballScoutingAI), specifically [the processed Premier League 2023/24 scouting CSV](https://raw.githubusercontent.com/sahilwalawalkar/FootballScoutingAI/main/data/processed/premier_league_2023_24_scouting_final.csv). The CSV itself is not copied into this course repository. The upstream project README does not clearly state a dataset licence, so review its terms before redistribution or commercial use; use a data source with clear permissions for any real deployment.

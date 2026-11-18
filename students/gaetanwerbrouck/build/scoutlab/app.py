@@ -6,6 +6,7 @@ import plotly.express as px
 import streamlit as st
 
 from scouting_core import add_market_value_overlay, prepare_players, similar_players
+from scout_summary import DEFAULT_BASE_URL, DEFAULT_MODEL, summarise_one
 
 st.set_page_config(page_title="ScoutLab | Football recruitment", page_icon="⚽", layout="wide")
 
@@ -245,6 +246,28 @@ with tab_profile:
         st.plotly_chart(fig, use_container_width=True)
     else:
         st.info("No underlying percentile features were available for this player's position.")
+    with st.expander("AI scouting summary (optional, off by default)"):
+        st.caption(
+            "A language model turns this player's table numbers into a short note. It only sees the numbers above, "
+            "and every answer is checked against them. Choose any OpenAI-compatible endpoint: a model on this laptop "
+            "(Ollama) or a cloud API. Switching provider means changing these two fields."
+        )
+        ai_url = st.text_input("Endpoint", DEFAULT_BASE_URL, key="ai-url")
+        ai_model = st.text_input("Model name", DEFAULT_MODEL, key="ai-model")
+        ai_key = st.text_input("API key (leave as 'ollama' for a local model)", "ollama", type="password", key="ai-key")
+        if st.button("Write summary", key="ai-run"):
+            try:
+                with st.spinner("Asking the model..."):
+                    ai_text, ai_checks = summarise_one(players, chosen, base_url=ai_url, model=ai_model, api_key=ai_key)
+                st.text(ai_text.strip())
+                if all(ai_checks.values()):
+                    st.success("Checks passed: strongest and weakest metric correct, no invented numbers, no unsupported claims.")
+                else:
+                    failed = ", ".join(name.replace("_", " ") for name, ok in ai_checks.items() if not ok)
+                    st.warning(f"Do not rely on this note. Failed checks: {failed}.")
+                st.caption("A summary restates the table. It is not a scouting verdict. Watch the player before deciding.")
+            except Exception as error:  # network, model not running, wrong name
+                st.error(f"Could not get a summary: {error}")
     st.markdown("#### Source statistics")
     ignored = {"Performance_Score", "Performance_Percentile", "Market_Value_EURm", "Market_Value_Percentile", "Value_Gap", "_join_key", "Similarity_Pct"}
     numeric_cols = [col for col in players.select_dtypes(include="number").columns if not col.startswith("Pct | ") and col not in ignored]
