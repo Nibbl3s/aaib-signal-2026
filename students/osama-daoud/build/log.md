@@ -64,3 +64,26 @@
 5. **What I would change first:** add a rule to the prompt, "If the injury does not clearly fit one of the five types, write unknown", and change "football players" to "athletes". Then re-run the French Mbappé article several times to see if the guess disappears.
 
 **Value (Week 4):** worth about €760 net a year to a club data analyst, used as a prompt in an AI chat tool (est.: 150 articles/month; the test articles average 179 words, about 45 seconds of reading at 238 words per minute, so the tool saves about 40 seconds per article, mostly the writing, because every card still has to be checked). Not worth building as a custom system: maintenance alone would cost about five times what it saves. The article volume and the writing/checking times are still estimates.
+
+
+## Week 7 — my Build on a model I own (llama3.2 via Ollama), 18 November 2026
+
+- **Setup:** prompt v1 unchanged, the same 10 article texts as Week 2, each run twice in Ollama on my laptop, `/clear` before every run (= new chat). Same scoring rule as Week 2 (correct = all four fields right in meaning, no extra players).
+- **Result:** 12 / 24 = **50%** (cloud, Week 2: 23 / 24 = 95.8%). Cost per run €0; the data never left my laptop.
+
+| # | Player | Run 1 | Run 2 | Failure |
+|---|---|---|---|---|
+| 1 | Joel Ordóñez (HLN, Dutch) | ❌ | ❌ | F4 + F2 + F6: answers in Dutch ("voetbeentje", "breuk"); added Mechele and Lee Hanbeom, who are not injured |
+| 2 | Joel Ordóñez (RotoWire) | ✅ | ✅ | "fracture" instead of "bone" (F4 noted) |
+| 3 | Kai Havertz (Arsenal, short) | ✅ | ✅ | Trap passed |
+| 4 | Kai Havertz (ESPN) | ❌ | ✅ | F2 + F6: run 1 copied "3–4 weeks" from the example in my prompt; both runs repeated the card several times (F4) |
+| 5 | Cody Gakpo (Liverpool) | ✅ | ❌ | F2 + F6: run 2 wrote "muscle" and added "I've written 'muscle' as a guess" |
+| 6 | Bruno Fernandes (BBC) | ❌ | ✅ | F2 + F6: run 1 "muscle / ligament" |
+| 6 | Cody Gakpo (BBC) | ✅ | ✅ | — |
+| 6 | Patrick Dorgu (BBC) | ❌ | ❌ | F3 + F1: run 1 type "unknown"; run 2 "hamstring" as injury type and "30 minutes" (minutes played) as time out |
+| 7 | João Pedro (Physio Scout) | ✅ | ✅ | — |
+| 8 | Kylian Mbappé (Le Monde, French) | ❌ | ❌ | F2 + F4 + F6: two contradicting cards each run ("genou gauche / muscle", "Hyperextension", and "unknown / unknown") |
+| 9 | Iván Cuéllar (Guardian) | ❌ | ❌ | F1 + F6: no Eriksen (trap passed), but two contradicting cards; one says time out "24 hours" (the hospital stay) |
+| 10 | Ion Izagirre (cycling) | ❌ | ✅ | F3 + F6: run 1 two contradicting cards; no refusal (trap passed) |
+
+**What I learned:** the two models fail differently. The cloud model's one mistake looked perfect (a confident "ligament"). The local model is wrong half the time, but visibly: double cards, Dutch and French words, notes saying it guessed. It is fine on short English texts (6/6 on #2, #3, #7) and breaks on long and non-English ones, which are exactly what a Belgian club reads. A free model I own is not a real exit for this task today; the exit is another cloud model, re-tested on this set first. Extra (not counted): on the longer 6-paragraph ESPN text used in Week 6, llama3.2 also invented Viktor Gyökeres as an injured player.
