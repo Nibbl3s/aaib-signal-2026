@@ -1,6 +1,5 @@
 # Week 2 Signal — The Best Recruitment AI Decision May Be Not to Use AI
 
-*Draft Signal post — verify and personalise before publishing.*
 
 The temptation in recruitment is to put AI everywhere. A model that turns multilingual vacancies into structured requirements sounds useful. My project began with exactly that idea: a prompt that reads a vacancy and returns mandatory and preferred qualifications as JSON. But Week 2 forced me to ask a more useful question: which part of this workflow actually needs AI?
 
