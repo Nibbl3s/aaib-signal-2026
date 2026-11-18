@@ -27,7 +27,7 @@ Rating: 🟢 Confident / 🟡 Getting there / 🔴 Need practice, plus **one sen
 |---|-------|--------|----------|
 | 5 | Market mechanism thinking | 🟡 | Completed an AI-assisted Room 8 Studio audit scoring 12/18 using four agent-run recommendation responses and a four-factor vulnerability assessment, distinguishing shortlist visibility from supplier quality and website traffic from contract revenue while labelling unmeasured acquisition channels and illustrative revenue assumptions. |
 | 6 | Cost projection | 🟡 | Built an AI-assisted Classifier cost model from one agent-run call using 515 input and 35 output tokens, projected daily/monthly/annual costs across 10 to 10,000 users, compared three published-price tiers, and applied my 16/30 test-set disagreement rate to show a supplier-correction break point of 0.562 calls/user/day under a hypothetical €15/month subscription and assumed two-minute fixes at €50/hour, while distinguishing measured tokens from workload and labour assumptions and test-set disagreement from production failure. |
-| 7 | Lock-in detection | - | |
+| 7 | Lock-in detection | 🟡 | Ran my unchanged Classifier prompt on llama3.2:1b on my ThinkPad across 15 inputs twice using AI-prepared automation, found 0/30 parser-accepted exact matches versus the historical cloud baseline of 14/30 and categorical inconsistency in 12/15 local pairs, and completed an AI-assisted 9/15 stack scorecard with real vendor terms, a conditional 6/15 GhentAccounting architecture scorecard and costed 90-day exit plans, while distinguishing measured performance from estimated migration effort and untested restoration. |
 | 8 | Integration & architecture design | - | |
 | 9 | Attack surface thinking | - | |
 
