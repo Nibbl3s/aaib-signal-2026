@@ -1,11 +1,11 @@
 ---
-title: "Signal Post 6: What AI Actually Costs in Independent Hospitality at Scale"
+title: "Why a 2.9% Error Drift Breaks Hospitality AI Economics at Scale"
 date: "2026-11-19"
 author: "Levente Sinka"
 week: 6
 ---
 
-# Signal Post 6: What AI Actually Costs in Independent Hospitality at Scale
+# Why a 2.9% Error Drift Breaks Hospitality AI Economics at Scale
 
 Independent restaurants and solo hospitality operators are rushing to replace €2,000/month agencies with AI automation for guest reviews and Generative Engine Optimization (GEO). On paper, an API call costs fractions of a cent, so everyone assumes AI software prints money. I modeled the unit economics at scale, and the break point is far closer than the pricing page suggests.
 
