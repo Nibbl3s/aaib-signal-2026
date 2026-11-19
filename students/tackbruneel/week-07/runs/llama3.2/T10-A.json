@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-19T20:39:02.983077Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"huwelijksfeest\",\n  \"event_date\": \"2027-10-16\",\n  \"start_time\": \"21:00\",\n  \"end_time\": \"03:00\",\n  \"venue\": \"[address], Izegem 8870\",\n  \"guest_count\": \"100 - 300\",\n  \"dj_gear\": \"dj_brings\",\n  \"sound_and_light\": \"rent_from_dj\",\n  \"missing_for_quote\": [\n    \"event_date\",\n    \"start_time\",\n    \"end_time\",\n    \"venue\",\n    \"guest_count\",\n    \"dj_gear\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3933920042,
+  "load_duration": 777583,
+  "prompt_eval_count": 672,
+  "prompt_eval_cached_count": 462,
+  "prompt_eval_duration": 484516000,
+  "eval_count": 145,
+  "eval_duration": 3428435000,
+  "wall_seconds": 3.94
+}

@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-19T20:39:45.582526Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"zakelijk event\",\n  \"event_date\": \"2026-03-18\",\n  \"start_time\": \"18:00\",\n  \"end_time\": \"22:00\",\n  \"venue\": \"Kortrijksestraat 272, 8870 Izegem\",\n  \"guest_count\": \"100 - 300\",\n  \"dj_gear\": \"dj_brings\",\n  \"sound_and_light\": \"unknown\",\n  \"missing_for_quote\": [\n    \"event_date\",\n    \"start_time\",\n    \"end_time\",\n    \"venue\",\n    \"guest_count\",\n    \"dj_gear\",\n    \"sound_and_light\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4141372084,
+  "load_duration": 687792,
+  "prompt_eval_count": 718,
+  "prompt_eval_cached_count": 462,
+  "prompt_eval_duration": 573111000,
+  "eval_count": 153,
+  "eval_duration": 3564177000,
+  "wall_seconds": 4.14
+}

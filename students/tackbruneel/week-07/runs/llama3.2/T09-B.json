@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-19T20:39:50.623423Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"afscheidsfeestje/proclamatie\",\n  \"event_date\": \"2026-06-25\",\n  \"start_time\": \"23:00\",\n  \"end_time\": \"03:00\",\n  \"venue\": \"Graaf Boudewijn IX-Laan 2, 8500 Kortrijk\",\n  \"guest_count\": \"0 - 100\",\n  \"dj_gear\": \"on_site\",\n  \"sound_and_light\": \"not_needed\",\n  \"missing_for_quote\": [\n    \"event_date\",\n    \"start_time\",\n    \"end_time\",\n    \"venue\",\n    \"guest_count\",\n    \"dj_gear\",\n    \"sound_and_light\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5039271250,
+  "load_duration": 659417,
+  "prompt_eval_count": 957,
+  "prompt_eval_cached_count": 472,
+  "prompt_eval_duration": 1154746000,
+  "eval_count": 163,
+  "eval_duration": 3879612000,
+  "wall_seconds": 5.04
+}

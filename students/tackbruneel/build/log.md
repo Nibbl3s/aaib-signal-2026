@@ -133,7 +133,21 @@ New observation: on the same T09 input Gemini returned `dj_gear` = `unknown` and
 
 ## Second model — from Week 7
 
-*(later)*
+Run 19 Nov 2026 on a model I own: `llama3.2` (Llama 3.2 3B, Q4_K_M, 2.0 GB) via Ollama 0.40.16 on my MacBook (M4, 16 GB). Prompt v1 unchanged, same 15 inputs × 2 fresh runs, same expected answers. Script, raw outputs and scorer: [`../week-07/`](../week-07/). Full analysis: [`../week-07/lab-memo.md`](../week-07/lab-memo.md).
+
+| | Haiku 4.5 (Run 1, cloud) | Llama 3.2 3B (mine) |
+|---|---|---|
+| Fully correct | 15/30 (50%) | **1/30 (3%)** (T14-B only) |
+| Cost per run | ≈ $0.0016 | €0 per call (laptop, electricity, my time) |
+| Dominant failure | F3 missed, F1 wrong (judgment) | F4 format (Dutch labels, "0:00", 1 broken JSON) + F1 on `missing_for_quote` (rules) |
+| Gear error (T06, T09 `on_site`) | 4/30 = 13% | **4/30 = 13%, same inputs** |
+| F6 inconsistent inputs | 5/15 | 14/15 |
+| Data | Anthropic's servers | never left my laptop |
+| Latency | — | median 3.4 s, first call 5.3 s |
+
+New fabrication on both models: T11 venue "Izegem" from "KSA Meisjes Izegem". New on Llama: "02:30" → "14:30" (T03-A) and "02:00" → "14:00" (T05-B).
+
+What-if (not a score): if code maps the event label, pads times and builds `missing_for_quote` from the unknown fields, Llama reaches 12/30. So most of the gap is format, which a wrapper can absorb. The gear error is not, and it doesn't move with the vendor.
 
 ## Attack — from Week 9
 

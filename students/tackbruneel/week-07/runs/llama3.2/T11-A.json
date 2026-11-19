@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-19T20:39:05.954799Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"party_fuif\",\n  \"event_date\": \"2026-10-03\",\n  \"start_time\": \"unknown\",\n  \"end_time\": \"unknown\",\n  \"venue\": \"Izegem\",\n  \"guest_count\": \"an estimate\",\n  \"dj_gear\": \"unknown\",\n  \"sound_and_light\": \"unknown\",\n  \"missing_for_quote\": [\n    \"start_time\",\n    \"end_time\",\n    \"guest_count\",\n    \"sound_and_light\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2969848958,
+  "load_duration": 698958,
+  "prompt_eval_count": 556,
+  "prompt_eval_cached_count": 462,
+  "prompt_eval_duration": 218786000,
+  "eval_count": 118,
+  "eval_duration": 2747060000,
+  "wall_seconds": 2.97
+}

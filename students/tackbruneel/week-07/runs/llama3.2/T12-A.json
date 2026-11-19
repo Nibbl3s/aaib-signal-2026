@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-19T20:39:08.750231Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"trouw\",\n  \"event_date\": \"unknown\",\n  \"start_time\": \"unknown\",\n  \"end_time\": \"unknown\",\n  \"venue\": \"unknown\",\n  \"guest_count\": \"unknown\",\n  \"dj_gear\": \"on_site\",\n  \"sound_and_light\": \"unknown\",\n  \"missing_for_quote\": [\"event_date\", \"start_time\", \"end_time\", \"venue\", \"guest_count\", \"sound_and_light\"]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2793718583,
+  "load_duration": 678833,
+  "prompt_eval_count": 536,
+  "prompt_eval_cached_count": 464,
+  "prompt_eval_duration": 211799000,
+  "eval_count": 110,
+  "eval_duration": 2578420000,
+  "wall_seconds": 2.8
+}

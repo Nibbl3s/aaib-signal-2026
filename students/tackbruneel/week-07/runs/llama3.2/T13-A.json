@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-19T20:39:12.082394Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"trouw\",\n  \"event_date\": \"2027-09-03\",\n  \"start_time\": \"22:00/23:00\",\n  \"end_time\": \"03:00\",\n  \"venue\": \"Zaal Amuse in Meulebeke\",\n  \"guest_count\": \"±90\",\n  \"dj_gear\": \"dj_brings\",\n  \"sound_and_light\": \"not_needed\",\n  \"missing_for_quote\": [\"event_date\", \"start_time\", \"end_time\", \"venue\", \"guest_count\", \"sound_and_light\"]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3330480834,
+  "load_duration": 752542,
+  "prompt_eval_count": 553,
+  "prompt_eval_cached_count": 464,
+  "prompt_eval_duration": 216773000,
+  "eval_count": 134,
+  "eval_duration": 3109753000,
+  "wall_seconds": 3.33
+}
