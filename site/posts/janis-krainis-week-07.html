@@ -64,7 +64,7 @@
 <p>A freight-forwarding team can adopt an AI model in a day and accidentally make it expensive to replace for years. The risk is not just the model price; it is where the operational rules, data and integrations end up living.</p>
 <p>For my beat, I am looking at the email-triage workflow I am prototyping for freight-forwarding operations connected to my upcoming Drewes internship. The prototype reads a transport email and extracts four fields: origin, destination, weight and cargo type. Today, the test set contains ten synthetic messages, each run twice. Seventeen of the twenty outputs matched the expected result: an 85% output-level pass rate. Only eight of the ten cases passed in both runs. In one case, “about two tons” became “2,000 kg” in one run but stayed conversational in the other. In another, the model captured Madrid as the current transit hub but omitted the Valencia supplier context.</p>
 <p>I would not build a new foundation model for this. The extraction capability is increasingly commoditized, so my first answer is <strong>buy the model capability</strong> through an API. But I would connect it through a provider-neutral adapter and keep the workflow, schema, validation rules and operational records under the forwarding team's control. The five-question test leads there: this is not the team's competitive moat; suitable model APIs exist; the business needs a reliable connection to the email inbox and transport system rather than a complete AI suite; provider choice may change; and the project does not yet have evidence of an engineering team that should maintain a model stack from scratch. Buy the commodity capability, own the integration and business logic.</p>
-<p>My prototype's lock-in score is <strong>9/15</strong> (0 = low, 3 = high):</p>
+<p>My prototype's lock-in score is <strong>6/15</strong> (0 = low, 3 = high):</p>
 <table>
 <thead>
 <tr>
@@ -96,8 +96,8 @@
 </tr>
 <tr>
 <td>Migration cost</td>
-<td style="text-align: right;">3</td>
-<td>There is no provider adapter yet and no recorded local-model result. Switching looks technically small, but its performance cost is unknown until the second model is tested.</td>
+<td style="text-align: right;">0</td>
+<td>The prompt, test set and run log are portable files. The workflow has no trained model, embedding store or proprietary orchestration to migrate; switching should take less than a month and cost below €20,000. The performance impact is not yet measured.</td>
 </tr>
 </tbody>
 </table>
