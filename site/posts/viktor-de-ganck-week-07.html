@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switching Models Costs Me One Hour and €1. It Also Costs 53 Points of Accuracy. — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · AI as a retail investor&#x27;s research desk</div>
+<h1>Switching Models Costs Me One Hour and €1. It Also Costs 53 Points of Accuracy.</h1>
+<div class="byline">Viktor De Ganck · 2026-11-21</div>
+<p>A pricing page shows you the part of lock-in that is easy to read. The part that traps you is the accuracy you only see when you try to leave. I tried to leave.</p>
+<h2>The use case</h2>
+<p>Graslei Wealth is my composite Ghent wealth manager from Week 4: 8 advisors who read the FT, ECB, Fed, X and VEB every morning. My Build prompt labels each news item with an event type, the assets it affects, and fact or opinion. Only advisors see the output. I assume 40 items a day, or 880 calls a month, and an €8,000 integration (both est.). It runs on Claude Sonnet 5.5 through the Anthropic API.</p>
+<h2>The decision</h2>
+<ol>
+<li>Competitive advantage? <strong>No.</strong> The prompt is plain text, so a competitor could copy it, and clients never see the output (my assumption).</li>
+<li>Commoditized, with good off-the-shelf options? <strong>No.</strong> RavenPack, LSEG MarketPsych and Bloomberg's AI summaries sell news analytics, but none describes a fact-versus-opinion label, none confirms Dutch, and none publishes prices.</li>
+<li>Several capabilities no vendor offers? <strong>No.</strong> One capability.</li>
+<li>Needs change within 12 months? <strong>No.</strong></li>
+<li>Engineering capacity? <strong>No.</strong> Eight advisors, no engineers (assumption).</li>
+</ol>
+<p>Question 5 sends Graslei to <strong>Buy</strong>. What it buys is an API and a thin integration, because Question 2 found no finished product.</p>
+<h2>The lock-in scorecard</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Score</th>
+<th>Evidence (Anthropic terms, read 16 Nov 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data portability</td>
+<td>1</td>
+<td>No export documented. My prompt, test set and outputs are my own files</td>
+</tr>
+<tr>
+<td>API stability</td>
+<td>1</td>
+<td>Retirement needs at least 60 days' notice. Sonnet 4.5 got 61</td>
+</tr>
+<tr>
+<td>Pricing control</td>
+<td>2</td>
+<td>Rates can change 30 days after posting (Commercial Terms H.1). No lock, no price history</td>
+</tr>
+<tr>
+<td>Feature dependency</td>
+<td>1</td>
+<td>The same plain-text prompt ran unchanged on a second model</td>
+</tr>
+<tr>
+<td>Migration cost</td>
+<td>1</td>
+<td>€8,000 integration estimate. No exit plan yet</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>6/15</strong></td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<p>Pricing control is the weak spot: 30 days is half of the 60 that would score a 1.</p>
+<h2>The migration path</h2>
+<p>I ran the same prompt on llama3.2 (3B), on my own laptop. Switching took under 1 hour of my work. A tripled price would add about €1 a month at 880 calls. Accuracy fell from 9 of 15 items fully right (60%) to 1 of 15 (7%).</p>
+<p>The two failed differently. Claude missed boundary cases: asset lists on 4 items, event type on 3. Llama failed the basics: blank or off-list event labels in 6 of 30 answers, asset "none" in 11 of 30, opinion called fact in 8 of 12.</p>
+<p>Next 90 days:</p>
+<ul>
+<li><strong>Week 1:</strong> keep my own copy of the prompt, test set and graded results, plus a one-page switch runbook.</li>
+<li><strong>Month 1:</strong> write prompt v2 and test it on new items, on both models. Keep Llama installed as a fallback.</li>
+<li><strong>Quarter 1:</strong> re-tune for the fallback and re-run both models.</li>
+</ul>
+<h2>The insight</h2>
+<p>In news triage, the price is not the trap. Leaving costs hours and euros. What it costs in accuracy, no pricing page tells you. Only my own graded test set did. The asset to protect is not the contract. It is the 15 items I can grade a new model against.</p>
+<p><strong>My question:</strong> if you switched models tomorrow, would you know within an hour what you lost?</p>
+<p><em>Measured: 15 items, run twice, same prompt and strict grading for both models. Claude's first run is rebuilt from my Week 4 results table. Vendor statements come from public pages read on 16 November 2026. Graslei Wealth and (est.) figures are my assumptions. Post drafted with Claude from my own run data; case, scores and verdict are mine.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
