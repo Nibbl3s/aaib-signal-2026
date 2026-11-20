@@ -15,7 +15,7 @@ For my beat, I am looking at the email-triage workflow I am prototyping for frei
 
 I would not build a new foundation model for this. The extraction capability is increasingly commoditized, so my first answer is **buy the model capability** through an API. But I would connect it through a provider-neutral adapter and keep the workflow, schema, validation rules and operational records under the forwarding team's control. The five-question test leads there: this is not the team's competitive moat; suitable model APIs exist; the business needs a reliable connection to the email inbox and transport system rather than a complete AI suite; provider choice may change; and the project does not yet have evidence of an engineering team that should maintain a model stack from scratch. Buy the commodity capability, own the integration and business logic.
 
-My prototype's lock-in score is **9/15** (0 = low, 3 = high):
+My prototype's lock-in score is **6/15** (0 = low, 3 = high):
 
 | Dimension | Score | Evidence |
 |---|---:|---|
@@ -23,7 +23,7 @@ My prototype's lock-in score is **9/15** (0 = low, 3 = high):
 | API stability | 2 | The Build log does not record a model ID, API version or endpoint for every run, so I cannot prove a stable interface or deprecation window. |
 | Pricing control | 2 | Week 6 uses a pricing reference rather than a contract or quote; a provider can change list prices. |
 | Feature dependency | 1 | The system uses a plain text prompt and four text fields, not provider-specific fine-tuning, embeddings or workflow tools. |
-| Migration cost | 3 | There is no provider adapter yet and no recorded local-model result. Switching looks technically small, but its performance cost is unknown until the second model is tested. |
+| Migration cost | 0 | The prompt, test set and run log are portable files. The workflow has no trained model, embedding store or proprietary orchestration to migrate; switching should take less than a month and cost below €20,000. The performance impact is not yet measured. |
 
 The highest risk is API and provider uncertainty: my own documentation is not good enough to reproduce the cloud baseline. The score is a provisional assessment of my prototype, not a claim that I have audited a specific signed vendor contract. Week 6 records one initial Gemini Flash call, but the later cost projection references a separate course pricing model, so I cannot attribute every test run to one provider.
 
