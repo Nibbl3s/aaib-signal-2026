@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lock-In Is Not the API, It Is the Test Set — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · What AI really costs in the insurance sector, with a focus on claims handling and customer service</div>
+<h1>The Lock-In Is Not the API, It Is the Test Set</h1>
+<div class="byline">Guillaume Vandenweghe · 2026-11-20</div>
+<p>In insurance, the dangerous lock-in is not the contract. It is the day a vendor swaps the model under your feet and complaints start landing in the wrong queue. This week I scored my own Build for lock-in and ran it on a model I own.</p>
+<h2>The use case</h2>
+<p>A mid-sized Belgian non-life insurer receives 20,000 claims emails a month (est.) in Dutch, French and English. My Build sorts each one into six queues plus its language. The failure that matters is a hidden complaint: a real complaint filed as a normal claim email, at about €96.60 each (est.). Today it runs on Google's Gemini 3.1 Flash-Lite through the API, for €2.82 a month in tokens.</p>
+<h2>The decision: connect</h2>
+<p>Competitive advantage? No. Commodity? The model is: I have run the same prompt on four models. The insurer's part is not: the six queues, the complaint rule and a test set with answers written in advance. Will needs change within 12 months? Yes. Google shipped three Flash-Lite generations between July 2025 and July 2026. Engineering capacity? An insurer this size has IT, not an ML team. So: buy the model, own a thin layer around it, meaning the prompt, the test set and a pass/fail gate. That is Connect.</p>
+<h2>The scorecard</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th style="text-align: center;">Score</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data portability</td>
+<td style="text-align: center;">0</td>
+<td>Prompt, test set, log and raw responses sit in my own repo</td>
+</tr>
+<tr>
+<td>API stability</td>
+<td style="text-align: center;">2</td>
+<td>Earliest shutdown 7 May 2027; on 8 Oct 2026 Google automatically routed <code>gemini-3.7-flash</code> calls to a newer model</td>
+</tr>
+<tr>
+<td>Pricing control</td>
+<td style="text-align: center;">2</td>
+<td>List price, 30 days' notice; the named successor costs 24% more per run on my tokens</td>
+</tr>
+<tr>
+<td>Feature dependency</td>
+<td style="text-align: center;">1</td>
+<td>Text in, two lines out; an OpenAI-compatible endpoint exists</td>
+</tr>
+<tr>
+<td>Migration cost</td>
+<td style="text-align: center;">1</td>
+<td>About 3 weeks and €3,300 at insurer scale (est.)</td>
+</tr>
+</tbody>
+</table>
+<p>Total: 6 of 15, moderate. The riskiest row is API stability: a re-route keeps the name and changes the model, so a measured error rate can change without any code changing.</p>
+<h2>The migration path</h2>
+<p>If Google tripled its price, the bill would go from €2.82 to €8.46 a month. Nobody leaves for that. So I tested the exit itself: same prompt, same 12 emails, each run twice, on Llama 3.2 (3B) on a laptop with the wifi off. The API fee was €0, an email took half a second, and no email left the machine. But it got 10 of 24 runs right, against 18 on Gemini. It hid no complaints, yet it called 9 of 14 normal-email runs a complaint and mixed up Dutch and English. So owning the model is not yet a real exit: it fails my gate. The thin wrapper is one function that calls any OpenAI-compatible endpoint. Gemini, Groq and Ollama all offer one.</p>
+<h2>The insight</h2>
+<p>In my beat, lock-in has moved from the contract to the evaluation. Open standards make it cheap to switch the API. They tell you nothing about whether the new model hides complaints. Each model I tested fails in its own direction: Claude hides complaints, Gemini over-flags them, Groq hesitates, Llama sees complaints everywhere. An insurer that owns its test set can leave any vendor in three weeks. One that does not is locked in, even with an open API.</p>
+<h2>The question</h2>
+<p>Should a regulator-facing process like complaint handling be allowed to run on a model the vendor can swap without notice?</p>
+<p><em>AI note: I ran the API calls and the local model myself with scripts, and used Claude to help with the research, the calculations and the structure of this post. The scores, choices and conclusions are mine.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
