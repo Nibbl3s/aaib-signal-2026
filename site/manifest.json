@@ -1453,6 +1453,15 @@
  },
  {
   "week": 7,
+  "title": "The Model Should Be Replaceable. The Workflow Should Not Break.",
+  "author": "Janis Krainis",
+  "beat": "AI and Communication Automation in European Freight Forwarding",
+  "skill": "Lock-in detection",
+  "date": "2026-11-20",
+  "url": "posts/janis-krainis-week-07.html"
+ },
+ {
+  "week": 7,
   "title": "I Ran My Sanctions Screening Tool on My Own PC. It Got 4 Out of 24 Right.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
