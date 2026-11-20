@@ -61,13 +61,49 @@
 <h1>The Model Should Be Replaceable. The Workflow Should Not Break.</h1>
 <div class="byline">Janis Krainis · 2026-11-20</div>
 <h2>The Model Should Be Replaceable. The Workflow Should Not Break.</h2>
-<p>When I started building AI email triage for a European freight-forwarding desk, I treated the model as the main component. The prompt extracts origin, destination, weight and cargo type from incoming transport emails. But Week 7 changed how I look at the system: the model is replaceable; the workflow around it is where lock-in can quietly develop.</p>
-<p>My current test set contains ten synthetic freight messages, each run twice. Across the twenty outputs, seventeen matched the expected result: 85% output-level success. The first run passed eight out of ten; the second passed nine. That headline hides two useful failures. In the Rotterdam–Antwerp example, one run returned “about two tons” while the other normalized the same quantity to “2,000 kg”. The amount was understandable, but the output contract was inconsistent. In the multi-leg Valencia–Madrid example, both runs captured Madrid as the current transit hub but lost the Valencia supplier context. One is a formatting and normalization problem; the other is a context-retention problem.</p>
-<p>These failures matter more than whether a provider has the most impressive model name. If the model changes, the system still needs to return the same fields in the same units, preserve relevant route context, and avoid inventing missing information. My current prompt already tells the model to convert weights to kilograms and write “Not specified” when data is absent. The next step is to move those requirements out of prompt-only logic wherever possible: validate the output schema, normalize units with deterministic code, and send ambiguous records to a person instead of silently accepting them.</p>
-<p>I would put a provider adapter between the workflow and the model. The adapter should accept a normal email and return a provider-neutral structure. The rest of the system should not care whether the extraction came from a hosted API or a local model. I would also keep original emails, normalized results, prompt versions, model identifiers, timestamps and review decisions in storage that the provider does not control. That makes a model change a configuration and evaluation task, not a rebuild of the whole operation.</p>
-<p>There is also a measurement lesson. My existing build log records the outputs and failures, but it does not identify the exact model version and endpoint used for every run. That makes the baseline harder to reproduce and weakens any provider comparison. A proper benchmark must record the model, prompt version, settings, tokens, latency, cost and data path for each run. A low API bill is not proof that the architecture is cheap to leave.</p>
-<p>For Drewes, my recommendation is therefore not “choose the best model and commit to it”. It is to buy or use model capability as a replaceable component, while owning the schema, validation rules, exception queue, audit log and connection to the operational systems. The practical goal is simple: if the provider raises its price, changes a model or becomes unsuitable, the forwarding team should be able to switch without redesigning how work moves through the desk.</p>
-<p><strong>My Week 7 rule:</strong> avoid making the model the system of record. Keep the workflow, data and business rules portable.</p>
+<p>A freight-forwarding team can adopt an AI model in a day and accidentally make it expensive to replace for years. The risk is not just the model price; it is where the operational rules, data and integrations end up living.</p>
+<p>For my beat, I am looking at the email-triage workflow I am prototyping for freight-forwarding operations connected to my upcoming Drewes internship. The prototype reads a transport email and extracts four fields: origin, destination, weight and cargo type. Today, the test set contains ten synthetic messages, each run twice. Seventeen of the twenty outputs matched the expected result: an 85% output-level pass rate. Only eight of the ten cases passed in both runs. In one case, “about two tons” became “2,000 kg” in one run but stayed conversational in the other. In another, the model captured Madrid as the current transit hub but omitted the Valencia supplier context.</p>
+<p>I would not build a new foundation model for this. The extraction capability is increasingly commoditized, so my first answer is <strong>buy the model capability</strong> through an API. But I would connect it through a provider-neutral adapter and keep the workflow, schema, validation rules and operational records under the forwarding team's control. The five-question test leads there: this is not the team's competitive moat; suitable model APIs exist; the business needs a reliable connection to the email inbox and transport system rather than a complete AI suite; provider choice may change; and the project does not yet have evidence of an engineering team that should maintain a model stack from scratch. Buy the commodity capability, own the integration and business logic.</p>
+<p>My prototype's lock-in score is <strong>9/15</strong> (0 = low, 3 = high):</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th style="text-align: right;">Score</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data portability</td>
+<td style="text-align: right;">1</td>
+<td>The prompt, synthetic inputs and outputs are stored in ordinary Markdown in my repository; the cloud request itself still leaves the laptop, and provider-side retention is not recorded.</td>
+</tr>
+<tr>
+<td>API stability</td>
+<td style="text-align: right;">2</td>
+<td>The Build log does not record a model ID, API version or endpoint for every run, so I cannot prove a stable interface or deprecation window.</td>
+</tr>
+<tr>
+<td>Pricing control</td>
+<td style="text-align: right;">2</td>
+<td>Week 6 uses a pricing reference rather than a contract or quote; a provider can change list prices.</td>
+</tr>
+<tr>
+<td>Feature dependency</td>
+<td style="text-align: right;">1</td>
+<td>The system uses a plain text prompt and four text fields, not provider-specific fine-tuning, embeddings or workflow tools.</td>
+</tr>
+<tr>
+<td>Migration cost</td>
+<td style="text-align: right;">3</td>
+<td>There is no provider adapter yet and no recorded local-model result. Switching looks technically small, but its performance cost is unknown until the second model is tested.</td>
+</tr>
+</tbody>
+</table>
+<p>The highest risk is API and provider uncertainty: my own documentation is not good enough to reproduce the cloud baseline. The score is a provisional assessment of my prototype, not a claim that I have audited a specific signed vendor contract. Week 6 records one initial Gemini Flash call, but the later cost projection references a separate course pricing model, so I cannot attribute every test run to one provider.</p>
+<p>If the provider's price tripled tomorrow, I would first preserve the current prompt and test set, route requests through a thin adapter, then run the same ten messages twice against a local model. The migration effort for this small prototype is an estimate, not a measured result: roughly 12–24 hours for endpoint replacement, regression testing and output validation. The impact on accuracy is still unknown. My next 90 days should therefore focus on recording exact model metadata, keeping a local model warm, and testing schema validation and human review before any operational deployment.</p>
+<p>The lesson for freight forwarding is that the model should not become the system of record. Own the rules that decide whether a shipment email is safe to process; rent the text-generation capability only as long as it earns its place.</p>
 <a class="back" href="/">← All posts</a>
 </article>
 <footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
