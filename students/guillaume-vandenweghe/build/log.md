@@ -193,3 +193,63 @@ Rates use run level: 26 runs (13 inputs × 2). 21 of 26 correct = 81% (strict, b
 **Costing with my Week 2 measured rate (the Build costing for Canvas):** 120 hidden complaints/month × €96.60 + 180 UNCLEAR × €0.83 = €11,740 a month, 4,169 × the token bill of €2.82 (Google).
 
 **What I learned:** (1) Via the API, neither model hid a complaint (Claude chat hid #10 in both Week 2 runs; Gemini now labels it COMPLAINT twice), but Gemini over-flags complaints: 5 of 14 non-complaint runs. My COMPLAINT boundary is still the problem; only the direction of the error changed. (2) My Week 4 token guess (1,150 input) was about twice too high: the real prompt plus email is 440–872 tokens on Gemini. (3) A low price per token does not mean a low cost per run: gpt-oss-20b spends 193–1,568 reasoning tokens on a two-line answer. (4) My test set is all angry reviews, which inflates false complaints. For prompt v2 I need calm emails in the test set as well.
+
+## Week 7 — a model I own (local run, Llama 3.2 3B)
+
+**Setup:** prompt v1 unchanged, the 12 inputs of `test-set.md`, expected answers unchanged since Week 2, each run twice (run A, run B), one call per run, default settings. Runner: Ollama 0.40.16 (MIT licence), model `llama3.2` (Meta Llama 3.2, 3.2B parameters, Q4_K_M, 2.0 GB, Llama 3.2 Community License). Run on 2026-11-20 at 10:45 UTC on a MacBook Air (Apple M4, 16 GB, macOS 26.5.2). Wifi **off** during all runs (script check: `network_during_run: OFFLINE`); every call went to `localhost:11434`. Context length not changed (longest input 953 tokens, well under the default). One warm-up call, not counted. No fallback needed. Raw responses: `build/week7-results/`.
+
+### Run table — Llama 3.2 3B, local
+
+| # | Expected | Got A | Got B | Verdict | Failure code | Tokens in+out (A / B) | Seconds (A / B) |
+|---|---|---|---|---|---|---|---|
+| 1 | COMPLAINT, NL | COMPLAINT, NL | COMPLAINT, NL | ✅ |  | 720+11 / 720+11 | 1.1 / 0.3 |
+| 2 | COMPLAINT, NL | COMPLAINT, NL | COMPLAINT, NL | ✅ |  | 953+11 / 953+11 | 1.7 / 0.3 |
+| 3 | COMPLAINT, FR | COMPLAINT, FR | UNCLEAR, MIXED | ½ | F1, F6 | 468+11 / 468+10 | 0.4 / 0.3 |
+| 4 | CLAIM_FOLLOWUP, FR | NEW_CLAIM, FR | COMPLAINT, MIXED | ❌ | F1, F6 | 487+10 / 487+12 | 0.4 / 0.3 |
+| 5 | CLAIM_FOLLOWUP, EN | COMPLAINT, EN | COMPLAINT, EN | ❌ | F1 | 531+11 / 531+11 | 0.5 / 0.3 |
+| 6 | CANCELLATION, MIXED | COMPLAINT, EN | COMPLAINT, EN | ❌ | F1 | 518+11 / 518+11 | 0.5 / 0.3 |
+| 7 | CANCELLATION, NL | COMPLAINT, EN | CANCELLATION, NL | ½ | F1, F6 | 502+11 / 502+11 | 0.5 / 0.3 |
+| 8 | POLICY_CHANGE, NL | CANCELLATION, EN | CANCELLATION, NL | ❌ | F1 | 622+11 / 622+11 | 0.7 / 0.3 |
+| 9 | CLAIM_FOLLOWUP, MIXED | COMPLAINT, MIXED | COMPLAINT, EN | ❌ | F1 | 551+12 / 551+11 | 0.6 / 0.3 |
+| 10 | COMPLAINT, EN | COMPLAINT, EN | COMPLAINT, EN | ✅ |  | 546+11 / 546+11 | 0.6 / 0.3 |
+| 11 | UNCLEAR, EN | COMPLAINT, EN | UNCLEAR, EN | ½ | F1, F6 | 448+11 / 448+9 | 0.5 / 0.2 |
+| 12 | COMPLAINT, NL | COMPLAINT, NL | COMPLAINT, EN | ½ | F1 (language) | 588+11 / 588+11 | 0.6 / 0.3 |
+
+**Score:** 10 of 24 runs correct (42%); category only 11 of 24; language 16 of 24. Hidden complaints 0 of 10; complaint → UNCLEAR 1 of 10; normal emails in a wrong queue 12 of 14 (9 of them to COMPLAINT); inconsistent A ≠ B: #3, #4, #7, #11. No format errors, invented labels or refusals.
+
+### Failures by type
+
+| Code | Count (runs) | Where |
+|---|--:|---|
+| F1 wrong (category) | 13 | #3B, #4 A+B, #5 A+B, #6 A+B, #7A, #8 A+B, #9 A+B, #11A |
+| F1 wrong (language only) | 1 | #12B (NL labelled EN); language also wrong in 7 runs that already had a wrong category |
+| F2 fabricated | 0 | |
+| F3 missed | 0 | |
+| F4 format | 0 | every answer was exactly two parseable lines |
+| F5 refused | 0 | |
+| F6 inconsistent | 4 inputs | #3, #4, #7, #11 |
+
+### Cloud vs local
+
+| | Model A: Google `gemini-3.1-flash-lite` (cloud API, Week 6) | Model B: `llama3.2` (local, Ollama) |
+|---|---|---|
+| Model and size | Closed weights, size not published | Open weights, 3.2B parameters, Q4_K_M |
+| Run date | 2026-10-29 | 2026-11-20 |
+| Success rate (category + language) | 18 of 24 runs (75%) | **10 of 24 runs (42%)** |
+| Category only | 18 of 24 | 11 of 24 |
+| Hidden complaints (the failure that matters) | 0 of 10 | **0 of 10** |
+| Complaint → UNCLEAR (a human still sees it) | 0 of 10 | 1 of 10 |
+| Normal emails in the wrong queue | 5 of 14 | 12 of 14 |
+| Inconsistent A ≠ B (F6) | #9 | #3, #4, #7, #11 |
+| Format errors (F4) / invented labels (F2) | 0 / 0 | 0 / 0 |
+| Avg tokens per run (in / out) | 556 / 9.3 | 578 / 10.9 |
+| Cost per run | $0.000153 = €0.000141 (API) | €0 API · electricity ≈ €0.000001 (est.) |
+| Monthly cost at 20,000 emails | €2.82 tokens | €0 API · ≈ €0.02 electricity (est.: 20 W × run time × €0.30/kWh) · hardware not priced (existing laptop) |
+| Time per email | not measured in Week 6 | avg 0.5 s (range 0.2–1.7 s); time to first token ≈ 0.2 s |
+| Capacity check | n/a | 20,000 emails × 0.47 s ≈ 2.6 hours of laptop time a month: speed is not the problem |
+| Monthly error cost at this rate (est.) | €11,432 | **€27,487** |
+| Where the data went | Google's servers; under the EEA terms not used to improve products, logged for a limited time for abuse detection, may be cached "in any country" where Google has facilities | Stayed on the laptop: wifi was **OFFLINE** during all runs. Only the model download (≈ 2 GB) used the internet |
+| Hardware | none needed | MacBook Air, Apple M4, 16 GB RAM (`Mac16,12`), macOS 26.5.2, Ollama 0.40.16. No slowdown, crash or truncation |
+| Context length | default | Not changed (Ollama default, ≈ 4K per the lab); the model supports 131,072. My longest input is 953 tokens (#2), so nothing was cut off |
+
+**What I learned:** (1) Running a model I own works and is fast: half a second per email on a laptop, €0 API fee, and the emails never left the machine. (2) But the 3B model is not good enough for my task: it labels 18 of 24 runs COMPLAINT, so it fails my gate on normal emails (12 of 14 misrouted vs the ≤ 15% target). (3) It fails in the safe direction (no hidden complaints), like Gemini and Groq, but much more often and less consistently. (4) Owning the weights removes the price, shutdown and data-location risks, but not the need to re-measure: the test set is what makes any exit possible. Next: try a larger open model (7–8B) on the same 12 inputs before counting local as my fallback.
