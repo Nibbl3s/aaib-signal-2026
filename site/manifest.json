@@ -1474,6 +1474,15 @@
  },
  {
   "week": 7,
+  "title": "My Fact-Checker Can Leave Google in One Line of Code. Its Accuracy Can't",
+  "author": "Kirill Kyryllov",
+  "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
+  "skill": "Lock-in detection",
+  "date": "2026-11-20",
+  "url": "posts/kirill-kyryllov-week-07.html"
+ },
+ {
+  "week": 7,
   "title": "Why Owning Your AI Weights Isn't Enough: Avoiding Lock-In in Hospitality AI",
   "author": "Levente Sinka",
   "beat": "",

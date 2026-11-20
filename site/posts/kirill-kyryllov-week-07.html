@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Fact-Checker Can Leave Google in One Line of Code. Its Accuracy Can&#x27;t — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · The Fake Analyst: When AI-Generated Business Reports Get It Wrong</div>
+<h1>My Fact-Checker Can Leave Google in One Line of Code. Its Accuracy Can&#x27;t</h1>
+<div class="byline">Kirill Kyryllov · 2026-11-20</div>
+<p>My beat is about AI claims that sound right and aren't. This week I asked a different<br />
+question about my own fact-checker: if Google changed the deal tomorrow, could I leave? The<br />
+code says yes. The results say not really.</p>
+<h2>The Use Case</h2>
+<p>Vandermeer &amp; Partners, my capstone scenario, is a composite Ghent accounting firm of about<br />
+40 consultants that drafts client reports with AI help. Before sign-off, each factual claim<br />
+goes through my claim-risk classifier, one prompt that labels it "Needs verification" or<br />
+"Safe to trust", so consultants check the three risky claims in a report instead of all<br />
+fifteen. That is about 300 claims a month on Google's <code>gemini-3.1-flash-lite</code>, where the tool<br />
+scored 14 of 15 on my test set at €0.40 a year.</p>
+<h2>The Decision</h2>
+<p>AI is not Vandermeer's competitive advantage; clients pay for judgement (Q1: no). Hallucination<br />
+checkers exist, but they mostly verify text against source documents rather than decide which<br />
+claims need a human (Q2: not quite). It is one capability, not five (Q3: no). But the model<br />
+underneath will change within a year whether the firm wants it or not (Q4: yes). That points<br />
+to a light Connect: own the thin parts, meaning the prompt, the test set and the one line that<br />
+names the model, and rent the model behind them. Building a model makes no sense with zero<br />
+engineers; buying a closed tool would hide the one number they need: how often it is wrong.</p>
+<h2>The Lock-In Scorecard</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th style="text-align: center;">Score</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data portability</td>
+<td style="text-align: center;">0</td>
+<td>Stateless calls; prompt, test set and results live in my own repo</td>
+</tr>
+<tr>
+<td>API stability</td>
+<td style="text-align: center;">2</td>
+<td>No fixed shutdown notice; old model names silently re-routed</td>
+</tr>
+<tr>
+<td>Pricing control</td>
+<td style="text-align: center;">2</td>
+<td>List price, 30 days' notice "unless otherwise specified"</td>
+</tr>
+<tr>
+<td>Feature dependency</td>
+<td style="text-align: center;">0</td>
+<td>Plain text prompt; switching took one URL</td>
+</tr>
+<tr>
+<td>Migration cost</td>
+<td style="text-align: center;">1</td>
+<td>Hours of work, but a large quality drop (below)</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>5/15</strong></td>
+<td><strong>Moderate</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The highest risk is API stability. Google's deprecation page lists only the earliest possible<br />
+shutdown dates, and it already re-routes old names: requests to <code>gemini-3.5-flash</code> now go to<br />
+<code>gemini-3.6-flash</code>, and from 1 December <code>gemini-2.5-flash</code> moves to another model, billed at<br />
+its rate. For a tool whose job is to be consistent, that is the trap: nothing breaks, the<br />
+answers just change.</p>
+<h2>The Migration Path</h2>
+<p>I tested the exit. Changing one URL pointed the same script at Llama 3.2 running on my own<br />
+laptop. The switch took minutes; the quality did not survive: 7 of 15 correct, four claims<br />
+answered differently on two runs, including the CapEx claim, and two risky citations labelled<br />
+safe with a confident reason. A realistic exit is a comparable cloud model behind the same<br />
+wrapper: roughly 4–8 hours of prompt work and one hour to re-run the test set. The test set is<br />
+what makes the switch safe, because it says whether the new model is good enough before a<br />
+client does.</p>
+<h2>The Insight</h2>
+<p>Lock-in in my beat isn't about price: tripling Google's price would cost Vandermeer under a<br />
+euro a year. The dependency is quality, and the danger is not noticing when it changed. A firm<br />
+that keeps its own test set and logs the model ID on every run can leave in a day. A firm that<br />
+doesn't won't even know it was moved.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
