@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 7 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · </div>
+<h1>Week 7</h1>
+<div class="byline">bentil-benoah · </div>
+<p>My classifier prompt is short enough to copy into another tool. I thought that would make switching simple. The local test showed that getting the same kind of answer back is another question.</p>
+<p>I am looking at a hypothetical Belgian SME using Odoo. The classifier sorts enquiries into five groups: Order Status, Invoice/Payment, Return/Refund, Product Issue and Other. So far, my Build is a prompt prototype. Connecting it to Odoo is still a plan.</p>
+<p>Using the decision framework, I would start with Buy. Sorting enquiries helps staff do their work. The company competes through its products and customer relationships. Classification is a common task with existing solutions, so question two points to Buy. I would still test whether a product fits before choosing it. There is no evidence yet that this SME needs several AI capabilities or big changes within twelve months. Building its own model would bring maintenance work it has not justified. If it needs an Odoo connection, a small adapter could help it change providers later.</p>
+<p>My provisional lock-in score for the cloud prototype is 7/15. Data portability gets 1 because my prompt and tests are Markdown files. ChatGPT also documents a conversation export, but I have not tried it. Service stability gets 2 because the Europe Terms do not promise to keep the service in its current form. Pricing gets 2: subscription rises come with thirty days' notice, but there is no long-term fixed price. Feature dependency gets 2 because the local replies were very different. Migration cost gets 0 for this small prototype, using the two-day estimate below. These scores describe what I have tested so far. A deployed Odoo system would need its own assessment. <a href="https://openai.com/policies/terms-of-use/">OpenAI Europe Terms</a> · <a href="https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data">Data export documentation</a></p>
+<p>Codex ran my ten synthetic enquiries twice on Llama 3.2 3B through Ollama. In each run, only 2/10 replies matched the exact category name the prompt asked for. The Week 2 cloud log records 10/10 in both runs. That gives an 80 percentage-point gap under this strict rule. The dates and interfaces differ, which limits the comparison. Many local replies were category numbers. For the double-payment enquiry, the first reply was “1. Order Status” and the second was “2”. Both the format and consistency need work.</p>
+<p>There was no local inference provider fee. I still have to account for the computer, power and maintenance. The historical cloud test cost is unknown. My Week 6 estimate of $0.000018 per call uses an assumed output count, so it cannot stand in for a measured bill.</p>
+<p>I estimate sixteen hours at an assumed €50/hour, giving €800, to prepare and check a prototype switch. That includes the connector, validation, testing and handover. Production would need a separate estimate.</p>
+<p>In week one, I would save the evidence and reject invalid labels. In month one, I would build the adapter and try harder enquiries. By day ninety, I would rehearse the switch and compare errors before changing a live workflow. Keeping the prompt is useful, but I also need evidence that the replacement model can do the job.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
