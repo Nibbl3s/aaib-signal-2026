@@ -29,8 +29,8 @@ The repository does **not** identify the exact model ID and endpoint for all run
 **Conditional finding if the initial call used the Gemini Developer API:**
 - Google's Gemini API Additional Terms are effective 23 March 2026. For paid Gemini API services, prompts and responses are not used to improve Google's products; Google logs them for a limited period for safety, security and legal/regulatory purposes, and they may be stored transiently or cached in countries where Google or its agents maintain facilities.
 - The same terms say paid-service prices may change, normally effective 30 days after the change is posted.
+- For developers in the EEA, Switzerland or UK, Google says the paid-services data-use terms also apply to AI Studio and unpaid Gemini API quota. Separately, Gemini API clients made available to users in those regions must use paid services.
 - Google's deprecation documentation lists model retirement schedules and says shutdown dates are communicated in advance. The reviewed documents do not set one guaranteed minimum notice period for every model.
-- The terms require paid services when Gemini API clients are made available to users in the EEA, Switzerland or UK. Whether this condition applies depends on the product and user arrangement.
 
 **Unresolved:** the actual account tier, endpoint, exact Gemini model version, processing region, and whether all benchmark calls used Gemini. The correct finding is “not recorded”, not a guessed vendor setting.
 
