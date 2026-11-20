@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-826",
+  "object": "chat.completion",
+  "created": 1795169257,
+  "model": "llama3.2",
+  "system_fingerprint": "fp_ollama",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Classification: Needs verification\nReason: The claim references a specific legal case and a three-part test, which could be a novel or untested legal precedent, and its accuracy and implications are uncertain."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 308,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens": 40,
+    "total_tokens": 348
+  }
+}
