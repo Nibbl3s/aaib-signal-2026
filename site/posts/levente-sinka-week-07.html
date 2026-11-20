@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Owning Your AI Weights Isn&#x27;t Enough: Avoiding Lock-In in Hospitality AI — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 7 · </div>
+<h1>Why Owning Your AI Weights Isn&#x27;t Enough: Avoiding Lock-In in Hospitality AI</h1>
+<div class="byline">Levente Sinka · 2026-11-20</div>
+<p>Independent hospitality operators are replacing €2,000/month marketing agencies with AI pipelines for guest reviews and Generative Engine Optimization (GEO). Most optimize for the cheapest API call and never ask what happens when a vendor pulls a model or triples prices. If you cannot leave without rebuilding, you are renting your business.</p>
+<h3>The Use Case</h3>
+<p>Consider a solo hospitality operator running an automated Review Triage and GEO Engine for 20 independent restaurants and cafés, modeled on venues like Turner's in Sárvár. The system classifies multilingual reviews (Hungarian, Dutch, English), flags urgent escalations, and turns daily specials into Schema.org JSON-LD markup. It requires strict JSON formatting, nuanced multilingual judgment, and stable links to menus and review feeds.</p>
+<h3>The Decision</h3>
+<p>Walking the five-question framework leads straight to <strong>Connect</strong>. Is building a foundation LLM our competitive advantage? No, hospitality expertise and local client relationships are the moat (Q1: No). Is multilingual GEO plus escalation triage solved cleanly by one off-the-shelf tool? No, packaged suites either miss local context or trap venue data inside proprietary dashboards (Q2: No). Do we need multiple evolving capabilities (triage, schema generation, social copy) that no single vendor leads in? Yes (Q3: Yes, Q4: Yes), and a technical solo operator can maintain a thin wrapper (Q5: Yes). Buying creates a trap; building an LLM wastes months; connecting lets you swap providers.</p>
+<h3>The Lock-In Scorecard</h3>
+<p>Scoring my own cloud stack (Groq <code>openai/gpt-oss-20b</code> with Google AI Studio fallback) exposes where the real lock-in sits:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Score (0-3)</th>
+<th style="text-align: left;">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Data Portability</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Reviews and JSON-LD live in my own standard JSON/PostgreSQL store.</td>
+</tr>
+<tr>
+<td style="text-align: left;">API Stability</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Groq confirmed in writing (Nov 20, 2026) no guaranteed minimum deprecation notice; <code>llama-3.3-70b-versatile</code> was already gone on Nov 19.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pricing Control</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Groq confirmed zero fixed notice for on-demand price hikes; hidden reasoning tokens amplify bill spikes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feature Dependency</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Standard OpenAI-compatible chat completions keep application code portable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Migration Cost</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Swapping endpoints takes hours, plus prompt regression testing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"><strong>8 / 15</strong></td>
+<td style="text-align: left;"><strong>Moderate Risk</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Pricing Control (3/3) and API Stability (2/3) are the chokepoints. Both cloud providers sell uncontracted list rates with zero binding notice.</p>
+<h3>The Migration Path</h3>
+<p>To test leaving completely, I ran my 8-review multilingual benchmark twice (16 runs) locally on <code>llama3.2</code> (3B) via Ollama on a MacBook Air M1. It cost €0, kept 100% of guest data offline, and hit 100% raw JSON compliance. Yet exact-match accuracy collapsed from 81.3% (13/16) in the cloud to <strong>18.8% (3/16)</strong> locally: it over-escalated every negative review and mangled Hungarian context (turning burnt coffee and hard eggs into "undercooked egg"). A realistic exit therefore means swapping to a second cloud API behind a 50-line OpenAI-compatible wrapper plus MCP tool connections, taking 12 to 16 hours instead of a rebuild, while upgrading a local model for privacy-sensitive drafting.</p>
+<h3>The Insight</h3>
+<p>Independent hospitality cannot survive €400,000 rewrites, nor can it absorb €5/fix alert fatigue from undersized local models. The winning architecture is neither blind cloud loyalty nor pure self-hosting. It is a thin Connect layer: own venue data in open JSON, standardize tool wiring with MCP, run automated weekly evals across two providers, and treat every LLM as a replaceable utility.</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
