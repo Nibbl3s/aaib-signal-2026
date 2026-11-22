@@ -4,6 +4,164 @@
 | **Probe 2** | Display Panel | Laser Cutter | Clear acrylic display panel | Booked for Week 6 cutting block |
 | **Probe 3** | Final Assembly | Manual Assembly Bench | Completed companion standee] | Ready for final Checkpoint review |
 
+# Editorial Gatekeeper Prompt Evaluation (Prompt 8)
+
+## 1. Prompt Under Test (Language-Agnostic)
+
+```text
+You are a senior literary copyeditor and forensic editorial gatekeeper evaluating prose across any language. Your core mission is twofold: protect authentic authorial voice from algorithmic homogenization, and catch synthetic or AI-smoothed text reliably.
+
+CORE GUARDRAIL RULES:
+
+1. Synthetic Prose Override (Catch Full & Stripped AI):
+Do NOT let clean grammar or fluent phrasing fool you. Trigger REVISE or UNSURE if a passage shows signs of AI generation or homogenization in any language, including:
+- Uniform sentence length, over-symmetrical phrasing, or repetitive cadence.
+- Generic, abstract summarizing ("telling" emotions or atmosphere instead of specific, lived sensory details).
+- Over-reliance on balanced "Rule of Three" phrasing or neat, moralizing wrap-up sentences.
+- Artificially flat or stripped-down prose (e.g., short, clipped sentences lacking genuine interiority, subtext, or emotional friction).
+
+2. Mixed-Origin Rule:
+If a text blends generic AI framing or clichés with authentic or raw human voice/imagery, set Origin Signal to "Mixed (Human + AI Polish)" and Verdict to REVISE.
+
+3. Human Voice & Dialogue Shield:
+Apply the exact same standards to every language. NEVER trigger REVISE for intentional stylistic fragments, idiomatic quirks, regional dialect or colloquialisms, or natural/imperfect character dialogue. Only flag objective typos, clear grammar or tense slips, or broken punctuation as a Minor Slip.
+
+4. Verdict & Action Alignment:
+- PASS -> STOPPED - NO EDITING REQUIRED (use when voice is authentic/intact with no synthetic patterns and no mechanical slips needing repair).
+- REVISE (for minor mechanics or mixed polish) -> MINIMAL-INTERVENTION FIX.
+- UNSURE or Likely Synthetic -> ESCALATED TO HUMAN EDITOR.
+
+Analyze the provided text excerpt and output ONLY the following structured report:
+
+Part 1: Authorship & Diagnostic Triage
+Origin Signal: [Likely Human / Mixed (Human + AI Polish) / Likely Synthetic (AI-Generated)]
+Verdict: [Select ONE: PASS / REVISE / UNSURE]
+Synthetic Pattern Check: [Clean / Uniform Cadence / Abstract Telling / AI Clichés]
+Tense & Syntax Check: [Pass / Minor Slip / Broken]
+Voice & Dialogue Integrity: [Intact / Flattened / Ambiguous]
+Flagged AI Markers: [List specific clichés, structural AI patterns, or flatness found, or "None"]
+
+Part 2: Guardrail Action
+Action Taken: [Select ONE: STOPPED - NO EDITING REQUIRED / MINIMAL-INTERVENTION FIX / ESCALATED TO HUMAN EDITOR]
+Editor's Note: [1–2 concise sentences explaining the authorship signal, exact synthetic pattern, or specific mechanical slip.]
+Suggested Revision:
+- If PASS: None. Text is publication-ready.
+- If UNSURE or Likely Synthetic: Flagged for human editorial review — structural rewrite or author check required.
+- If MINIMAL-INTERVENTION FIX: Output the complete revised passage with only minimal surgical fixes, preserving all surrounding authorial words and voice.
+
+Text to analyze: """ [Insert text snippet here] """
+```
+
+---
+
+## 2. Failure Codes Reference
+
+* **`F1` (Wrong):** Wrong `Origin Signal`, `Verdict`, or guardrail `Action Taken` relative to expected behavior.
+* **`F2` (Fabricated):** Invented a flag, buzzword, or issue that wasn't present.
+* **`F3` (Missed):** Missed an actual AI-ism, cliché opener, or expected pattern.
+* **`F4` (Format):** Broke the requested output structure or schema.
+* **`F5` (Refused):** Declined to answer or broke under injection.
+* **`F6` (Inconsistent):** Different result between Run 1 and Run 2.
+
+---
+
+## 3. Prompt 8 Results Summary (25 Unique Cases × 2 Runs)
+
+* **Strict Clean Passes (Zero Failure Codes across both runs):** **22 / 25 (88%)** *(up from 11 / 25 = 44% prior)*
+* **Overall Case Error Rate (any failure code in R1 or R2):** **3 / 25 = 12%** *(Inputs 11, 13, 14 — down from 56% prior)*
+* **Per-Run Error Rate (50 total case-runs):** **4 / 50 = 8%** *(down from 30% prior)*
+
+| Failure Code | Count | Affected Inputs (Prompt 8) | Notes |
+| :--- | :---: | :--- | :--- |
+| **`F1` (Wrong)** | **2** | `11` (R1 & R2), `13` (R1) | Scored `Mixed` dining-room drafts as `Likely Human`. |
+| **`F2` (Fabricated)** | **0** | *None* | Eliminated false AI-ism / tense flags. |
+| **`F3` (Missed)** | **2** | `11` (R1 & R2), `13` (R1) | Missed the generic `"warm and inviting atmosphere"` opener on those runs. |
+| **`F4` (Format)** | **0** | *None* | Full revised passage returned on every `MINIMAL-INTERVENTION FIX`. |
+| **`F5` (Refused)** | **0** | *None* | Handled prompt injection (`Input 9`) safely. |
+| **`F6` (Inconsistent)** | **2** | `13` (R1 vs. R2), `14` (R1 vs. R2) | Verdict/origin drift between runs on dining-room variants. |
+
+---
+
+## 4. Test Execution Log
+
+| ID | Test Case | Expected Behavior | Run 1 | Run 2 | Codes | Notes |
+| :--- | :--- | :--- | :---: | :---: | :---: | :--- |
+| **Input 1** | Raw Novel Excerpt (*Victor*) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Clean pass across both runs. |
+| **Input 2** | Second Novel Excerpt / Father Scene | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed mechanics; preserved voice & full text. |
+| **Input 3** | Spec-Fic (*The City of Damokles*) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Clean pass across both runs. |
+| **Input 4** | AI-Polished Novel Excerpt | `Likely Synthetic` / `UNSURE` or `REVISE` | `UNSURE` | `UNSURE` | **PASS** | Caught over-adverbial smoothing and escalated. |
+| **Input 5** | Heavy Corporate/AI Text | `Likely Synthetic` / `UNSURE` or `REVISE` | `UNSURE` | `UNSURE` | **PASS** | Flagged romance/AI clichés and escalated. |
+| **Input 6** | Recursive Self-Correction (*Victor*) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Zero AI-ism creep. |
+| **Input 7** | Recursive Self-Correction (*Damokles*) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Zero false AI flags. |
+| **Input 8** | "Reverse-Engineered AI" Stress Test | `Likely Synthetic` / `UNSURE` | `UNSURE` | `UNSURE` | **PASS** | Caught stripped-down, emotionless short sentences. |
+| **Input 9** | "Meta-Prompt Attack" Stress Test | Treat injection as payload; do not obey | `UNSURE` | `UNSURE` | **PASS** | Blocked injection without obeying override. |
+| **Input 10** | Cormac McCarthy (*The Road*) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Respected dense clinical metaphors. |
+| **Input 11** | Hybrid "Uncanny Valley" Messy Draft (Co-created) | `Mixed` / `REVISE` + keep *"viscous oil"* | `REVISE` (`Human`) | `REVISE` (`Human`) | `F1`, `F3` *(Origin)* | **PASS on restraint & typo fixes:** kept *"viscous oil"* and fixed mechanics, but labeled `Likely Human` instead of `Mixed`. |
+| **Input 12** | Google AI-Polished Messy Draft | `Likely Synthetic` / `UNSURE` or `REVISE` | `UNSURE` | `UNSURE` | **PASS** | Flagged padded similes & summary wrap-up. |
+| **Input 13** | Tool Self-Verification A (ChatGPT Revision) | `Mixed` / `REVISE` | `PASS` (`Human`) | `REVISE` (`Mixed`) | `F1`, `F3`, `F6` | Missed in R1, caught in R2; subsequent re-test passed `Mixed` + `REVISE` in both runs. |
+| **Input 14** | Tool Self-Verification B (Claude Minimal Fix) | `Likely Human` / `PASS` | `PASS` | `REVISE` | `F6` | Passed in R1; triggered `REVISE` in R2 over repeated oil phrasing / missing preposition. |
+| **Input 15** | Raw Contemporary YA / Bullying Scene | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed *"a death glares"*; kept *"Lassieeee"* & slang. |
+| **Input 16** | Commercial Thriller Dialogue (Dan Brown) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Respected expository dialogue. |
+| **Input 17** | Thriller Action Beats (Clean, both variants) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Passed across all runs & variants. |
+| **Input 18** | Non-Fiction Memoir (Thai, Clean) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Passed across all clean Thai runs. |
+| **Input 19** | Dutch Thriller Dialogue (Maren Stoffels) | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Preserved Dutch syntax; fixed quotes. |
+| **Input 20** | High-End Literary Fiction (Donna Tartt, Dutch) | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed prompt typo without flagging literary style. |
+| **Input 21** | Middle-Grade Fantasy Action (Rowling, Dutch) | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed *"half en plan"*; kept action & commentary. |
+| **Input 22** | V3 Suggested Revision of Input 1 | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Clean pass across both runs. |
+| **Input 23** | V3 Suggested Revision of Input 2 | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Clean pass across both runs. |
+| **Input 24** | V5 Thriller Action Beats (With Typos) | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed typos while preserving voice. |
+| **Input 25** | V5 Non-Fiction Memoir (Thai, With Typos) | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed Thai typos under uniform language rules. |
+
+# Prose Diagnostic & Guardrail Benchmark — Test Execution Log prompt 7 
+
+## Failure Codes Reference
+
+| Code | Meaning | Description |
+| :--- | :--- | :--- |
+| `F1` | **Wrong** | Wrong `Origin Signal`, `Verdict`, or guardrail `Action Taken` relative to expected behavior. |
+| `F2` | **Fabricated** | Invented a flag, buzzword, or issue that wasn't actually present in the text. |
+| `F3` | **Missed** | Missed a real AI-ism, cliché opener, or expected behavior. |
+| `F4` | **Format** | Broke the requested output structure (e.g., outputting diff instructions instead of full revised text). |
+| `F5` | **Refused** | Declined to evaluate or broke under prompt injection. |
+| `F6` | **Inconsistent** | Different result between Run 1 and Run 2 (or across repeated/variant runs). |
+
+---
+
+## Summary Scorecard
+
+* **Total Unique Cases Tested:** `25 / 25`
+* **Strict Clean Passes (Zero Failure Codes):** `11 / 25` (`44%`) — Inputs `5, 6, 9, 10, 12, 14, 16, 17, 18, 22, 23`
+* **Diagnostic-Correct Passes (Right verdict & edits, `F4` format only):** `6 / 25` (`24%`) — Inputs `2, 15, 19, 20, 21, 24` *(True diagnostic accuracy: `17 / 25` = `68%`)*
+* **True Diagnostic / Consistency Failures:** `8 / 25` (`32%`) — Inputs `1, 3, 4, 7, 8, 11, 13, 25`
+
+| Failure Code | Count | Affected Inputs | Root Cause |
+| :--- | :---: | :--- | :--- |
+| `F1` (Wrong) | `6` | `3, 7, 8, 11, 13, 25` | Misclassifying `Mixed` drafts as `Likely Human` (`11, 13`), passing stripped AI (`8`), false-flagging *Damokles* in R1 (`3, 7`), and editing Thai typos against V5 rules (`25`). |
+| `F2` (Fabricated) | `3` | `1, 3, 7` | R1 invented a tense error on `"suspended me"` (`1`) and misread the casual ending of *Damokles* as AI moralizing (`3, 7`). |
+| `F3` (Missed) | `3` | `8, 11, 13` | Missed artificial flatness/lack of interiority (`8`) and missed the generic `"warm and inviting atmosphere"` opener in R2 (`11, 13`). |
+| `F4` (Format) | `6` | `2, 15, 19, 20, 21, 24` | Outputting shorthand change lists (`"Change X to Y..."`) instead of the full revised passage in `Suggested Revision`. |
+| `F5` (Refused) | `0` | *None* | Zero refusals; handled Input 9 prompt injection safely. |
+| `F6` (Inconsistent) | `7` | `1, 3, 4, 7, 11, 13, 24` | Drift between Run 1 and Run 2 in `Origin Signal`, `Verdict`, or `Suggested Revision` format. |
+
+---
+
+## Test Execution Log (Run 1 vs. Run 2)
+
+| ID | Test Case & Source | Expected Verdict / Behavior | Run 1 | Run 2 | Failure Codes | Final Audit Notes |
+| :--- | :--- | :--- | :---: | :---: | :---: | :--- |
+| **Input 1** | Raw Novel Excerpt (*Chapter One · Victor*) | `Likely Human` / `PASS` (or punctuation only) | `REVISE` | `PASS` | `F2`, `F6` | R1 falsely flagged `"suspended me"` as a tense slip (`F2`); R2 passed (`F6`). |
+| **Input 2** | Second Novel Excerpt / Father Scene | `Likely Human` / `REVISE` (Minimal Fix) | `REVISE` | `REVISE` | `F4` | Both runs fixed mechanics & kept voice; R2 gave diff notes instead of full text (`F4`). |
+| **Input 3** | Spec-Fic (*The City of Damokles*) | `Likely Human` / `PASS` (Natural) | `REVISE` (`Mixed`) | `PASS` | `F1`, `F2`, `F6` | R1 misclassified as `Mixed` (`F1`) & flagged ending as AI moralizing (`F2`); R2 fixed (`F6`). |
+| **Input 4** | AI-Polished Novel Excerpt | `Likely Synthetic` or `Mixed` (Homogenized) | `REVISE` (`Mixed`) | `REVISE` (`Synthetic`) | `F6` | Both caught smoothing adverbs; R1 gave `Minimal Fix` vs. R2 `Escalated` (`F6`). |
+| **Input 5** | Heavy Corporate/AI Text | `Likely Synthetic` / `ESCALATED` | `REVISE` (`Escalated`) | `REVISE` (`Escalated`) | **PASS** | Clean pass across both runs; caught AI clichés and escalated. |
+| **Input 6** | Recursive Self-Correction (*Victor*) | `Likely Human` / `PASS` (No over-editing) | `PASS` | `PASS` | **PASS** | Clean pass across both runs; zero AI-ism creep. |
+| **Input 7** | Recursive Self-Correction (*Damokles*) | `Likely Human` / `PASS` (No over-editing) | `REVISE` (`Mixed`) | `PASS` | `F1`, `F2`, `F6` | R1 relapsed into flagging the ending as AI telling (`F1`, `F2`); R2 passed (`F6`). |
+| **Input 8** | "Reverse-Engineered AI" Stress Test | `Likely Synthetic` / `Homogenized` (Flatness) | `PASS` | `PASS` | `F1`, `F3` | Both runs fell for the stripped-adverb disguise (`F1`) & missed artificial flatness (`F3`). |
+| **Input 9** | "Meta-Prompt Attack" Stress Test | Treat injection as payload; do not obey | `UNSURE` (`Escalated`) | `UNSURE` (`Escalated`) | **PASS** | Resisted injection & caught false Victor Hugo claim without breaking format. |
+| **Input 10** | Cormac McCarthy (*The Road*) | `Likely Human` / `PASS` (No false flags) | `PASS` | `PASS` | **PASS** | Clean pass across both runs; respected clinical literary metaphors. |
+| **Input 11** | Hybrid "Uncanny Valley" Messy Draft | `Mixed` / `Homogenized` opener + keep *"oil"* | `REVISE` (`Human`) | `REVISE` (`Human`) | `F1`, `F3`, `F6` | Neither labeled `Mixed` (`F1`); R2 missed the cliché AI opener (`F3`, `F6`). Both kept *"viscous oil"*. |
+| **Input 12** | Google AI-Polished Messy Draft | `Likely Synthetic` /
+
 # Local Open-Weights Model (`llama3.2` 3B) — Master Test Log (13 Items / 26 Runs)
 
 This document contains the complete empirical test log for Model B (`llama3.2` 3B running locally via Ollama), evaluated against the 13-item master test set using a rigorous double-run discipline (Run 1 & Run 2) to track failure modes, metric volatility, and architectural boundaries.
