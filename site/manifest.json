@@ -1483,6 +1483,15 @@
  },
  {
   "week": 7,
+  "title": "What would it cost to switch freight classifiers?",
+  "author": "Kiril Boyakov",
+  "beat": "AI in European Freight Cost Estimation",
+  "skill": "Lock-in detection",
+  "date": "2026-11-22",
+  "url": "posts/kiril-boyakov-week-07.html"
+ },
+ {
+  "week": 7,
   "title": "My Fact-Checker Can Leave Google in One Line of Code. Its Accuracy Can't",
   "author": "Kirill Kyryllov",
   "beat": "The Fake Analyst: When AI-Generated Business Reports Get It Wrong",
