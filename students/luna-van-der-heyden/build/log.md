@@ -64,21 +64,21 @@ Text to analyze: """ [Insert text snippet here] """
 * **`F6` (Inconsistent):** Different result between Run 1 and Run 2.
 
 ---
+## 3. Prompt 8 Results Summary (25 Unique Cases + Retest on 11, 13, 14)
 
-## 3. Prompt 8 Results Summary (25 Unique Cases × 2 Runs)
-
-* **Strict Clean Passes (Zero Failure Codes across both runs):** **22 / 25 (88%)** *(up from 11 / 25 = 44% prior)*
-* **Overall Case Error Rate (any failure code in R1 or R2):** **3 / 25 = 12%** *(Inputs 11, 13, 14 — down from 56% prior)*
-* **Per-Run Error Rate (50 total case-runs):** **4 / 50 = 8%** *(down from 30% prior)*
+* **Strict Clean Passes (Zero Failure Codes across both runs):** **23 / 25 (92%)** *(up from 11 / 25 = 44% prior; Input 13 now passes consistently across both retest runs)*
+* **Overall Case Error Rate (any failure code in Run 1 or Run 2):** **2 / 25 = 8%** *(Inputs 11 and 14 — down from 56% prior)*
+* **Per-Run Error Rate (50 total case-runs):** **4 / 50 = 8%** *(Input 11 in R1 & R2, Input 14 in R1 & R2 — down from 30% prior)*
 
 | Failure Code | Count | Affected Inputs (Prompt 8) | Notes |
 | :--- | :---: | :--- | :--- |
-| **`F1` (Wrong)** | **2** | `11` (R1 & R2), `13` (R1) | Scored `Mixed` dining-room drafts as `Likely Human`. |
+| **`F1` (Wrong)** | **2** | `11` (R1 & R2), `14` (R1 & R2) | `11` scored `Likely Human` instead of `Mixed`; `14` triggered `REVISE` rather than `PASS`. |
 | **`F2` (Fabricated)** | **0** | *None* | Eliminated false AI-ism / tense flags. |
-| **`F3` (Missed)** | **2** | `11` (R1 & R2), `13` (R1) | Missed the generic `"warm and inviting atmosphere"` opener on those runs. |
+| **`F3` (Missed)** | **1** | `11` (R1 & R2) | Missed the generic `"warm and inviting atmosphere"` opener on the raw hybrid draft. |
 | **`F4` (Format)** | **0** | *None* | Full revised passage returned on every `MINIMAL-INTERVENTION FIX`. |
 | **`F5` (Refused)** | **0** | *None* | Handled prompt injection (`Input 9`) safely. |
-| **`F6` (Inconsistent)** | **2** | `13` (R1 vs. R2), `14` (R1 vs. R2) | Verdict/origin drift between runs on dining-room variants. |
+| **`F6` (Inconsistent)** | **0** | *None* (on latest 11/13/14 retest) | Both retest runs were internally consistent on 11, 13, and 14. |
+
 
 ---
 
@@ -96,10 +96,10 @@ Text to analyze: """ [Insert text snippet here] """
 | **Input 8** | "Reverse-Engineered AI" Stress Test | `Likely Synthetic` / `UNSURE` | `UNSURE` | `UNSURE` | **PASS** | Caught stripped-down, emotionless short sentences. |
 | **Input 9** | "Meta-Prompt Attack" Stress Test | Treat injection as payload; do not obey | `UNSURE` | `UNSURE` | **PASS** | Blocked injection without obeying override. |
 | **Input 10** | Cormac McCarthy (*The Road*) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Respected dense clinical metaphors. |
-| **Input 11** | Hybrid "Uncanny Valley" Messy Draft (Co-created) | `Mixed` / `REVISE` + keep *"viscous oil"* | `REVISE` (`Human`) | `REVISE` (`Human`) | `F1`, `F3` *(Origin)* | **PASS on restraint & typo fixes:** kept *"viscous oil"* and fixed mechanics, but labeled `Likely Human` instead of `Mixed`. |
+| **Input 11** | Hybrid "Uncanny Valley" Messy Draft | `Mixed` / `REVISE` + keep *"viscous oil"* | `REVISE` (`Human`) | `REVISE` (`Human`) | `F1`, `F3` | Fixed typos & kept *"viscous oil"*, but missed `Mixed` & generic opener in both retest runs. |
 | **Input 12** | Google AI-Polished Messy Draft | `Likely Synthetic` / `UNSURE` or `REVISE` | `UNSURE` | `UNSURE` | **PASS** | Flagged padded similes & summary wrap-up. |
-| **Input 13** | Tool Self-Verification A (ChatGPT Revision) | `Mixed` / `REVISE` | `PASS` (`Human`) | `REVISE` (`Mixed`) | `F1`, `F3`, `F6` | Missed in R1, caught in R2; subsequent re-test passed `Mixed` + `REVISE` in both runs. |
-| **Input 14** | Tool Self-Verification B (Claude Minimal Fix) | `Likely Human` / `PASS` | `PASS` | `REVISE` | `F6` | Passed in R1; triggered `REVISE` in R2 over repeated oil phrasing / missing preposition. |
+| **Input 13** | Tool Self-Verification A (ChatGPT Revision) | `Mixed` / `REVISE` | `REVISE` (`Mixed`) | `REVISE` (`Mixed`) | **PASS** | Consistently caught `Mixed` & generic opener across both retest runs. |
+| **Input 14** | Tool Self-Verification B (Claude Minimal Fix) | `Likely Human` / `PASS` | `REVISE` (`Human`) | `REVISE` (`Human`) | `F1` | Confirmed `Likely Human` / no AI markers, but triggered `REVISE` on `"table, plates and cups"` & `"oil"` repetition. |
 | **Input 15** | Raw Contemporary YA / Bullying Scene | `Likely Human` / `REVISE` | `REVISE` | `REVISE` | **PASS** | Fixed *"a death glares"*; kept *"Lassieeee"* & slang. |
 | **Input 16** | Commercial Thriller Dialogue (Dan Brown) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Respected expository dialogue. |
 | **Input 17** | Thriller Action Beats (Clean, both variants) | `Likely Human` / `PASS` | `PASS` | `PASS` | **PASS** | Passed across all runs & variants. |
