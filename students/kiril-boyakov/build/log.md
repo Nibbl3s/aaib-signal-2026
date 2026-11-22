@@ -593,3 +593,9 @@ Paid-equivalent cost: $0.0002106/run; 3,000 assumed runs/month = $0.6318/month. 
 Week 2 recorded rate: 0 failures/20 responses on ten repeated descriptions, different model and mixed individual/batch prompts. Extrapolated correction cost at that recorded rate: €0. Planning stress at 5% and €1/correction: €150/month.
 Full scale, integration and break-even calculations: ../week-06-evidence/analysis.md.
 Previous 404/503 availability problems are documented separately; no usage was returned. Earlier log entries must remain intact.
+
+## Week 7 — Local Model Lab, 2026-11-22
+
+Prompt v1, ten existing inputs, two fresh requests per input. Llama 3.2 3B ran on this Mac with llama.cpp in CPU mode after Ollama's Metal initialization failed. **2/20** strict passes and **8/20** correct labels. The ROAD test changed labels across repetitions; service lists were repeatedly misread as single multimodal journeys. External API cost for the local runs was €0. The fresh Gemini requests stopped with HTTP 403 or 401 before producing model responses. The earlier cloud baseline and measured single Gemini call are described separately in the comparison memo.
+
+[Case-by-case results](../week-07-evidence/local-results.md) · [Comparison memo](../week-07-evidence/benchmark-notes.md)
