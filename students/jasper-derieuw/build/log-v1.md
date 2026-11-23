@@ -242,7 +242,7 @@ Run on 11 October 2026 with Janis Krainis's ten freight forwarding inputs, two r
 
 ## Changes
 
-No prompt changes yet; v1 is still the measured version. Three inputs now drive v2, planned for Week 4:
+Prompt v2 was written with these three changes and committed on 14 October 2026, before any v2 call; Runs 3 and 4 re-measure it. The three inputs that drove v2:
 
 1. **Origin rule, written into the prompt.** A port, airport, terminal, warehouse or hub is a routing point, not an origin; if they cannot be told apart, report "unclear". Source: the Week 2 extension (F1 on transshipped inputs D and E) and swap Input 9, where the tool got it right by judgement only.
 2. **A fourth flag value, "cannot be determined"**, for when there is no supplier name to screen. Source: Week 2 Input 12 and all ten swap inputs.
