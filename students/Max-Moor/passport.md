@@ -12,18 +12,24 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 | # | Skill | Rating | Evidence |
 |---|-------|--------|----------|
-| 1 | Cost literacy | 🟡 |My Week 1 EuroShop model shows Premium is cheapest (€9,156 a month) because errors are 82 to 99% of the cost, but I first treated $ and € as equal and had to redo it.|
-| 2 | Capability skepticism | 🟡 |My Week 2 test on 13 real requests gave 5/13 and 8/13 correct, so the two runs differed on 8 inputs; I predicted the contradictory-grid trap but not the invented FDM or the missing quantities.|
-| 3 | Vendor claim detection | 🟡 |I tagged 24 claims in the NexusAI proposal (6 Fact, 4 Aspiration, 14 Avoidance) and found the €252,000 hides about €36,000 to €228,000 of costs, but I was unsure on claims 1, 10 and 15.|
-| 4 | Value quantification | 🟡 |My Build's case (88 form submissions counted, about 12 a month, not the 300 I assumed) loses €175 a year at my measured 50%, but my handling times (5, 2 and 1 minutes) are still estimates.|
+| 1 | Cost literacy | 🟢 |I read the usage object of my own API call (554 tokens in, 79 out) and showed that errors cost 3,243 times more than the tokens.|
+| 2 | Capability skepticism | 🟡 |The same prompt scored 5/13 and 8/13 in Week 2 and 3/13 and 4/13 under strict scoring in Week 7, so I now state how I score before I draw a conclusion.|
+| 3 | Vendor claim detection | 🟢 |I tagged 24 claims in the NexusAI proposal (6 Fact, 4 Aspiration, 14 Avoidance) and showed the €252,000 hides €36,000 to €228,000 of costs, then did the same on Xometry's "AI-native" claims.|
+| 4 | Value quantification | 🟡 |I counted 88 form submissions (12 a month, not 300) and found the break point: failure rate x fix minutes above 1.5 stops paying, but my 2-minute fix time is still not timed.|
 
 ## Checkpoint 2 — end of Week 8
 
-| 5 | Market mechanism thinking | — | |
-| 6 | Cost projection | — | |
-| 7 | Lock-in detection | — | |
-| 8 | Integration & architecture design | — | |
+Build — What can my tool do now? It extracts process, material, quantity, largest dimension and missing info from a free-text request as JSON, for $0.00036 a call.
+Build — What can't it do yet? Stay silent when a value is absent: it still invents values (e.g. "FDM").
+Build — Which number proves it? 3/13 and 4/13 inputs fully right on two runs (Week 7), about 73% failures against a 75% break point; Week 4 was 5/13 and 8/13.
+
+| 5 | Market mechanism thinking | 🟡 |My Week 5 audit scored O&D 3/18 (AI-Invisible) because nothing outside od3d.be mentions it, but I tested with a search engine, not ChatGPT or Perplexity.|
+| 6 | Cost projection | 🟡 |I priced my call at $0.25/$1.50 in Week 6 when the model I called costs $0.30/$2.50 (+42% per call), and caught it a week later.|
+| 7 | Lock-in detection | 🟢 |I scored Google at 6/15 and ran my own 13 inputs on a second model I own instead of guessing how hard leaving is.|
+| 8 | Integration & architecture design | 🟡 |I drew five layers for O&D and costed them at €1,788 with the same components in the sketch and the model, but my best alternative (a better form) is untested.|
 | 9 | Attack surface thinking | — | |
+
+Reflection: In Week 1 I did not know what a token was and a price per million looked like the cost. Now I first ask who fixes the failures and how many minutes it takes, and I check which model I am really calling.
 
 ## Checkpoint 3 — end of Week 12
 

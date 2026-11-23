@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A €1,788 Design for a Tool That Reads 12 Emails a Month. Would the Board Approve It? — AAIB Signal</title>
+<style>
+  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.7; }
+  article { max-width:760px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--amber); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+  h1 { font-size:1.9rem; margin:.6rem 0 1rem; letter-spacing:-0.02em; }
+  .byline { color:var(--dim); margin-bottom:2.5rem; }
+  h2 { color:var(--amber); margin:2rem 0 .8rem; font-size:1.3rem; }
+  p { margin-bottom:1rem; }
+  ul,ol { margin:0 0 1rem 1.5rem; }
+  code { background:var(--card); padding:.1rem .35rem; border-radius:.3rem; font-size:.9em; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:.5rem; padding:1rem; overflow-x:auto; margin-bottom:1rem; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:3px solid var(--amber); padding-left:1rem; color:var(--dim); margin:1rem 0; font-style:italic; }
+  table { border-collapse:collapse; margin-bottom:1rem; width:100%; }
+  th,td { border:1px solid var(--line); padding:.4rem .7rem; text-align:left; }
+  a { color:var(--amber); }
+  .back { display:inline-block; margin-bottom:2rem; color:var(--dim); text-decoration:none; }
+  .back:hover { color:var(--amber); }
+  strong { color:var(--txt); }
+  .assume { border-bottom:1px dotted var(--amber); font-weight:600; white-space:nowrap; }
+</style>
+</head>
+<body>
+<article>
+<a class="back" href="/">← All posts</a>
+<div class="meta">Week 8 · How can AI automation transform the workflow of a digital manufacturing company?</div>
+<h1>A €1,788 Design for a Tool That Reads 12 Emails a Month. Would the Board Approve It?</h1>
+<div class="byline">Max · 2026-11-27</div>
+
+<p>Most small manufacturers that “add AI” start with the model. I started with the model too, in Week 2, and spent six weeks learning that the model is the cheapest box in the drawing. Here is the whole drawing, with every box costed.</p>
+<h2 id="the-company">The Company</h2>
+<p>O&amp;D Impression 3D is a two-partner digital manufacturing shop in Welkenraedt, Belgium (FDM, resin, SLS, CNC, laser cutting). Its website form brings in about 12 quote requests a month, in French, Dutch, German and English, as free text. The partners bill their own time at €46 an hour. The budget for this project is €1,800 in the first year and about 20 hours of build time, with one developer: me. A person must still read every request before a quote leaves.</p>
+<h2 id="the-architecture">The Architecture</h2>
+<p><strong>Data.</strong> Wix form submissions (12 a month) and a Google Sheet holding the price formula. The price stays in the sheet: the AI never prices anything. 3D files stay in Wix.</p>
+<p><strong>Integration.</strong> A Wix automation sends each submission by webhook, in real time, to a 60-line Google Apps Script. The script removes name, email and phone, calls the API, checks that the answer is valid JSON, and logs the call. Build: 20 hours, €920. Maintenance: €230 a year.</p>
+<p><strong>AI model.</strong> gemini-3.5-flash-lite, with the version pinned (never the <code>-latest</code> alias, which changed the model under me in Week 6). My own call measured 554 tokens in and 79 out: $0.00036 a call at $0.30 and $2.50 per million tokens, or €0.05 a year at 144 requests.</p>
+<p><strong>Interface.</strong> One row per request in a Google Sheet: the five extracted fields, what is missing, and the original message beside them. Cost: €0. A person checks every row (1 minute) and fixes failures (2 minutes).</p>
+<p><strong>Governance.</strong> No personal data leaves the shop. Every call is logged. A monthly audit of 10 rows. A stop rule: if failures pass 75%, the tool is switched off, because that is the measured break point. Training for two people: €184.</p>
+<p><strong>Fallback.</strong> If the API fails or the JSON is invalid, the row appears empty with the raw message, and the work continues as it does today.</p>
+<p>Year 1 total: €0.05 + €920 + €184 + €230 + €110 checking + €110 fixing = €1,555, plus 15% contingency (€233) = <strong>€1,788</strong>.</p>
+<h2 id="the-defense">The Defense</h2>
+<p><em>Why not something built in?</em> The honest alternative is a better form: dropdowns for material and quantity. It costs €0, it cannot invent a value, and I have not yet shown it loses. What it cannot read is the customer who writes three lines in Dutch and attaches no file.</p>
+<p><em>What does it cost at 3x?</em> 36 requests a month. Tokens: €0.14 a year. Total: €2,296, because the cost grows with checking, not with tokens. Cost per correctly handled request falls from €24.80 to €10.60.</p>
+<p><em>What if the vendor changes the price or the model?</em> The 3.5 model costs 42% more per call than the one it replaced, which is €0.02 a year. A shutdown costs about one hour: change URL, key and model name, then re-run my 13-input test. The scorecard says 6 out of 15.</p>
+<p><em>Where is it weak?</em> In accuracy. Strictly scored, my prompt got 3 and 4 of 13 inputs fully right on two runs. That is a 73% failure rate, and the tool stops paying at 75%. The design is sound; the Build is not ready.</p>
+<h2 id="the-question">The Question</h2>
+<p>The number I am least sure of is the 2 minutes to fix a failed row, because I have never timed it. If real fixes take over 3 minutes, should O&amp;D build this at all, or just fix the form?</p>
+</article>
+</body>
+</html>
