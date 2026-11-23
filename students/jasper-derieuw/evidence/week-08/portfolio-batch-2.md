@@ -32,7 +32,8 @@ date: 2026-11-16
 - Build Checkpoint 2: [prompt v2](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/build/prompt.md) · [prediction, Runs 3 and 4, checkpoint summary](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/build/log-v1.md)
 - [6 ECTS: a practitioner breaks my design, and the revised architecture](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/practitioner-review.md)
 - [Signal post 8](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/posts/week-08.md)
-- Critique form from the class on 23 November: added after class.
+- Critique forms: none were used in the class on 23 November; the team answered the board's questions verbally, and the board approved the design.
+- Team set (Northwind board defense pack and presentation, 23 November): submitted on Canvas.
 
 ## Contribution
 - Week 6 class (26 October): cancelled, teacher absent.

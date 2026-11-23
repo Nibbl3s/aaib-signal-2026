@@ -118,7 +118,7 @@ Evidence anchors the rating in something real. It is also what your instructor v
 | Market mechanism thinking | — | 🟡 | 🟡 | My 18-answer audit showed what assistants cite, but I still haven't tested whether a fix changes their answers. |
 | Cost projection | — | 🟢 | 🟢 | Unchanged: €360 and €3,600 a year at 10× and 100×, and the bill scales with errors and check time, not tokens. |
 | Lock-in detection | — | 🟢 | 🟢 | Unchanged: the real lock-in is capability (€16,800 a year to switch), and no vendor is signed without three terms in writing. |
-| Design defense | — | 🟡 | 🟡 | Two practitioners broke my design in nine places and I revised it, but I have not yet defended it live to a board. |
+| Design defense | — | 🟡 | 🟢 | Two practitioners broke my design in nine places and I revised it; on 23 Nov a peer board approved my team's Northwind design, and the hardest question was to explain the problem in simple terms without overcomplicating it. |
 
 **6 ECTS — extended evidence:** an IT professional and a customs specialist re-ranked my security threats (access control up, injection down); the chamber of commerce did not answer in 33 days and a trade-compliance specialist told me large firms document "as if it were high-risk", which added outside counsel to my budget; an insider in production IT corrected three of my seven assumptions about factory AI; a deployment probe with 10 people measured how often a human check catches the AI's wrong verdicts (47% quick, 80% deliberate); an evidence index maps all 21 pieces to the memo claim each supports.
 
