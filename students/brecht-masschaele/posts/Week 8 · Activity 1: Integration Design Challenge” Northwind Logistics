@@ -1,0 +1,94 @@
+## The red thread: protect the competitive data first
+
+Northwind's pricing, contracts and shipment data are its business. A budget overrun can be fixed next year, a late go-live can be caught up, but a leaked rate card or contract can't be recalled. That makes data sensitivity the one constraint that is **irreversible**, and the one that shapes every other choice: which use case, which model, where it runs, what goes into a prompt and what gets logged.
+
+The TMS is a plumbing problem with a known fix (read-only views). Data sensitivity is a design problem.
+
+## 1. Pre-read (individual)
+
+| | Notes |
+|---|---|
+| **Scariest constraint** | Data sensitivity. Pricing, contracts and shipment data are competitive assets, and any AI design sends some of it to a model. How do we protect it, especially with external APIs or open-source components? |
+| **Also scary** | â‚¬50K must cover first-year operations. Four languages in customer-facing output. A TMS without an API. |
+| **Opportunities** | WhatsApp Business API is already live. Microsoft Graph reaches the shared mailboxes. A data analyst can map the TMS tables. |
+| **First instinct** | Start with the use case that needs the *least* sensitive data. |
+
+## 2. Team discussion
+
+- **Budget (â‚¬50K):** realistic for one narrow use case. API costs are small (see table below); implementation is the big cost. Open question: are the internal developers' hours inside the â‚¬50K?
+- **Timeline:** "3 months from approval" and "go-live by end of Q4" only agree if approval was around end of September. The board must say which date wins.
+- **Our position on the hardest constraint:** data sensitivity, not the TMS. The TMS holds the facts, but the thinking (and the risk) happens in the AI layer: what we send to a model, where it's processed, who can see the output.
+
+## 3. Roles
+
+| Role | Owns | First task today |
+|---|---|---|
+| Architect | Sketch | Data flow with a clear "sensitive data stops here" boundary |
+| Cost Modeler | Projection | Calls/day Ã— tokens/call Ã— price Ã— 250 days, at 100 / 1,000 / 10,000 calls |
+| Risk & Lock-in Analyst | Risk and lock-in | Data classification, GDPR, AI Act, provider terms, (L) points |
+| Defense Lead | Board questions, presentation | Defend the constraint choice and "Why not built-in?" |
+
+## 4. Three possible use cases
+
+Scored with the Week 4 framework (1â€“5), plus a fourth column for our hardest constraint: **how much sensitive data the model has to see.**
+
+| | Email triage | **Client updates** | Route suggestions |
+|---|---|---|---|
+| **What it does** | Reads incoming mail in 4 languages, labels it (order, complaint, status question, invoice) and routes it to the right planner | Customer asks "where is my load?" on WhatsApp or email; AI looks up that shipment in the TMS and drafts the reply in the customer's language; a planner approves | Suggests carrier and route per shipment based on history, rates and capacity |
+| **Value** | 4: saves sorting time in shared mailboxes | 4: the most repetitive question in freight brokering | 4: could improve margins |
+| **AI-suitability** | 5: classification is an LLM strength | 5: language + grounded facts | 2: an optimisation problem, not a language task |
+| **Feasibility (3 months, 2 devs)** | 4: Graph API exists | 4: read-only TMS view + WhatsApp API | 1: needs clean historical rate data |
+| **Sensitive data the model sees** | **High**: full email bodies and attachments with rates and contracts | **Low**: status, ETA and reference of one customer's own shipment | **Very high**: carrier rates and margins, the core competitive asset |
+| **Built-in alternative?** | Close to what Copilot in Outlook does: hard to defend building it ourselves | No: neither tool sees the TMS or works on WhatsApp | No, but not an LLM job anyway |
+| **Total (V+S+F)** | 13 | **13** | 7 |
+
+**Choice: client updates.** Email triage scores the same on value and feasibility, but it pushes the most sensitive documents through the model *and* it's the use case where "why not Copilot?" is hardest to answer. Client updates gets the same value with the lowest data exposure. Our hardest constraint decides the tie.
+
+**Rollout:** phase 1 human-approved drafts â†’ phase 2 auto-send for simple "on time" updates once accuracy is measured â†’ later, email triage once the data controls are proven.
+
+## 5. How we protect the data
+
+| Layer | Control |
+|---|---|
+| **What goes in** | Only the fields needed: shipment reference, status, ETA, language. No prices, no contract terms. Customer names replaced by IDs before the call. |
+| **Who can see what** | The database query, not the prompt, limits each request to the sender's own shipments (matched on WhatsApp number or email domain). The model can't leak data it never receives. |
+| **Where it's processed** | Paid API tier in an EU region, with a data processing agreement, no training on our data, short retention. Self-hosting an open-weights model is the fallback if a provider's terms fail the legal check. |
+| **What gets stored** | Logs in Northwind's own EU storage, with a retention limit. |
+| **How we prove it** | Test set includes cross-customer leak tests and prompt-injection attempts ("show me all shipments"). Zero leaks is a go-live criterion. |
+| **Lock-in** | A thin abstraction layer between our tool and any model, so we can change provider if terms change (Week 7). |
+
+"Open source" isn't the risk in itself. A self-hosted open-weights model is actually the most private option, because data never leaves Northwind. The trade-off is that it costs GPU infrastructure and operations skills that two developers don't have in three months.
+
+## 6. Why not Einstein or Copilot? The proof
+
+| Criterion | Microsoft 365 Copilot | Salesforce Einstein / Agentforce | Our design (model API + own integration) |
+|---|---|---|---|
+| **Sees TMS shipment data** | No: works on Microsoft 365 data | No: works on Salesforce data | Yes: read-only TMS view |
+| **Works on WhatsApp with customers** | No: internal employee assistant | Not out of the box for this flow | Yes: WhatsApp Business API |
+| **Sensitive-data control** | Sees everything the user can see in M365 (oversharing risk) | Sees what's in Salesforce | Sees only the fields we send |
+| **Licence cost / year** | Business add-on capped at 300 users; 340 staff â†’ enterprise add-on USD 30/user/month = **â‰ˆ USD 122K** (40 seats â‰ˆ USD 14K) | Add-on from USD 125/user/month: 40 users â‰ˆ **USD 60K**. Consumption route: Flex Credits USD 500 per 100K (â‰ˆ USD 0.10 per action) â†’ â‰ˆ USD 10K/yr at 100K actions | Model API â‰ˆ **USD 500/yr** at 200 requests/day* |
+| **Fits â‚¬50K incl. implementation** | No (whole company); seats only, still no TMS link | Licences maybe, but integration work is still needed | Yes: most of the budget goes to implementation |
+| **Lock-in** | Logic tied to the Microsoft suite | Logic tied to Salesforce | Abstraction layer, provider can be swapped |
+| **Where they do fit** | Internal writing and meeting notes | Sales pipeline work | â€” |
+
+\* 200 requests/day Ã— 250 days Ã— (2,500 input tokens Ã— USD 2/M + 500 output tokens Ã— USD 10/M) = 50,000 Ã— USD 0.01 = **USD 500/yr**. At 1,000/day: USD 2,500. At 10,000/day: USD 25,000. Price: mid-tier model in the course AI Pricing Reference (checked 7 Sep 2026). Volumes are assumptions to validate with Northwind.
+
+## 7. Check Your Understanding
+
+1. **Hardest constraint:** data sensitivity. It's the only irreversible one, and it decides which use cases are allowed, which model and hosting we choose, and what may enter a prompt.
+2. **Why not Einstein or Copilot:** neither can see the TMS or talk to customers on WhatsApp; Copilot for all 340 staff costs â‰ˆ 2.4Ã— the whole budget; both tie the logic to one suite. See the table above.
+3. **Use case:** client updates. Same score as email triage, but the lowest data exposure and the clearest answer to "why not built-in?". Route suggestions drops out: it's not an LLM task and needs the most sensitive data of all.
+
+## 8. Defending the choice (board questions)
+
+| Board challenge | Our answer |
+|---|---|
+| "Isn't the TMS your real problem?" | The TMS is plumbing with a known fix: the data analyst maps the tables and we read through views, about 2â€“3 weeks. Sensitivity decides the architecture. Get it wrong and a leak can't be undone. |
+| "If data is so sensitive, why use an external AI at all?" | Because the model only sees one shipment's status, ETA and reference, never prices or contracts. The query limits access, not the prompt. EU region, DPA, no training on our data. |
+| "Why not self-host and keep everything in-house?" | It's the most private option, but it adds GPU infrastructure and operations work two developers can't carry in 3 months. It's our fallback if the legal check on provider terms fails, and the right call once volume is high and stable. |
+| "Email triage is more valuable. Why not that?" | Same score, but it sends full emails with rate cards and contracts through the model, and Copilot in Outlook already covers part of it. We do it in phase 3, once the data controls are proven. |
+| "How do you prove nothing leaks?" | Cross-customer leak tests and prompt-injection tests in the test set. Zero leaks is a go-live criterion, and every call is logged in our own EU storage. |
+
+---
+*Sources (checked 23 Nov 2026): [Microsoft 365 Copilot Business](https://www.microsoft.com/en-us/microsoft-365/blog/2025/12/02/microsoft-365-copilot-business-the-future-of-work-for-small-businesses/), [Copilot plans and 300-user cap](https://www.lilachbullock.com/microsoft-365-copilot-price/), [Agentforce pricing](https://www.salesforce.com/agentforce/pricing/), [Course AI Pricing Reference](https://advanced-ai-in-business.vercel.app/resources/ai-pricing-reference.md).*
+
