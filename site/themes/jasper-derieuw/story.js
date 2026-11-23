@@ -135,8 +135,8 @@
   if (calc) {
     calc.textContent = '';
     const MAX = 10, eur = v => '€' + Math.round(Math.abs(v)).toLocaleString('en-GB');
-    const saving = (t, errors) => 81000 - (12520 + 18000 * 0.75 * (0.7 * t + 0.3 * 6) + errors);
-    const be = errors => ((81000 - 12520 - errors) / 13500 - 1.8) / 0.7;   // minutes where the saving hits zero
+    const saving = (t, errors) => 81000 - (14961 + 18000 * 0.75 * (0.7 * t + 0.3 * 6) + errors);
+    const be = errors => ((81000 - 14961 - errors) / 13500 - 1.8) / 0.7;   // minutes where the saving hits zero
     const beHi = be(0), beLo = be(17982);
     const lab = el('label', '', 'Minutes per AI-assisted check');
     lab.htmlFor = 'ls-mins';
