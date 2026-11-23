@@ -424,7 +424,15 @@ To be completed in Week 10.
 
 ### Checkpoint 3, Week 12
 
-To be completed in Week 12.
+- **Final version:** prompt v2 (committed 14 October 2026) on Claude Sonnet 5.5; no prompt changes after Run 4. The routing rule ("strictest route wins") sits outside the prompt (replay, 16 November).
+- **Complete log:** Runs 1–4 (v1 and v2, every input run twice), the attack runs (Week 9), the routing replay on 140 recorded answers, a second model (llama3.2) and a second provider (Gemini 3 Flash), probe run 1, and the unverified sessions of 20 November. No failure has been removed.
+- **Final performance, with sample size:** 28 of 36 runs correct (77.8%) on 18 unseen inputs, each run twice (Run 4). 24 of 24 on my own 12 inputs (Run 3), which partly reflects a prompt written for those inputs.
+- **The three numbers for the memo:**
+  1. **77.8%** (28/36) on unseen invoices → the memo's error range of 0–22.2% and correction cost of €0–€17,982 a year.
+  2. **€0.0020 per check** (60 calls: 652.6 input and 90.5 output tokens) → tokens under €40 a year: the case is about people's time, not AI prices.
+  3. **0 of 20 attacks and 0 of 32 genuine matches** reach the quick check after the routing fix (140 answers) → the AI may pre-fill, never decide.
+- **Failure types → design consequences:** F3 missed (a sanctioned bank in Chinese script cleared, Run 1) → non-Latin names always go to a full check; F1 confident wrong origin ("Japan" where the documents conflict) → conflicting origins go to a full check (P1); injection through invoice text (llama3.2 cleared a sanctioned bank) → rules decide the route, the strictest route wins; invented supplier (local model, 22 of 36 runs) → no local model; a rubber-stamp check (probe run 1: quick 7/15 vs deliberate 12/15) → the confirmation must be deliberate.
+- **The limitation, in my words:** "My accuracy figure comes from 18 unseen invoices, each run twice: a small sample, written by classmates and practitioners rather than taken from a real importer's inbox. The number I am least confident in is not the accuracy but the time a person needs to check what the AI filled in: I assumed 2 minutes, a customs specialist expects five to ten, and my paper test only timed a name check (19–30 seconds). If an honest check takes more than about 2.5 minutes, the recommendation changes from 'pilot the AI' to 'buy the screening service only'."
 
 ---
 
