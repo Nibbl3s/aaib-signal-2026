@@ -25,14 +25,14 @@ ComplyAdvantage sells AI powered sanctions, watchlist, and adverse media screeni
 
 | # | Claim | Tag | Reasoning |
 |---|---|---|---|
-| 1 | Named customers: ABInBev, AJ Bell, Zoopla, Plaid | Fact | Named, checkable companies, unlike NexusAI's unnamed "200+ companies" |
+| 1 | Named customers: ABInBev, AJ Bell, Zoopla, Plaid | Fact | Named, checkable companies: a buyer can ask any of them for a reference |
 | 2 | AJ Bell, 82% reduction in alert volumes | Fact, weaker than it looks | Named client, specific figure, but no stated period or baseline volume |
 | 3 | Automate 95% of reviews, cut onboarding by 50% | Avoidance | Present tense, no client named, no denominator, no study cited |
 | 4 | Identify sanctioned individuals before official notifications | Aspiration | A forward looking capability claim with no case example or test attached |
 | 5 | Tens of thousands of global data sources | Avoidance | Vague quantifier standing in for an actual number, no sources named |
 | 6 | Mapping to EU and FATF crimes is market leading | Avoidance | Unfalsifiable superlative, no comparison offered |
 
-Two of six claims here are genuinely strong, named clients and a specific, attributable result. That is a meaningfully better ratio than the fictional NexusAI proposal, where at least twelve of sixteen claims were aspirations or avoidances, however the borderline ones are tagged. Real vendors are not uniformly hollow, they mix strong evidence with vague marketing in the same paragraph, and the skill is separating one from the other rather than distrusting the whole page.
+Two of six claims here are genuinely strong, named clients and a specific, attributable result. Real vendors are not uniformly hollow, they mix strong evidence with vague marketing in the same paragraph, and the skill is separating one from the other rather than distrusting the whole page.
 
 **The FOMO Test**
 
@@ -40,7 +40,7 @@ Question 3, can the claims be verified independently, is the most revealing one 
 
 **The Verdict**
 
-Pilot, not buy, and only after the vendor answers what my Week 1 outreach could not. The named client evidence is real and worth taking seriously, unlike NexusAI's entirely unnamed base. But the unattributed efficiency figures need a source before they inform any decision, and the complete silence on pricing at my described volume means total cost of ownership is currently a blank page, not just an incomplete one. A buyer should ask specifically for the AJ Bell case study in full, ask which reviews the 95 percent figure covers, and treat the earlier unanswered pricing email as diagnostic in itself, a vendor unwilling to give a self serve number is a vendor asking you to commit before you can calculate what you are committing to.
+Pilot, not buy, and only after the vendor answers what my Week 1 outreach could not. The named client evidence is real and worth taking seriously. But the unattributed efficiency figures need a source before they inform any decision, and the complete silence on pricing at my described volume means total cost of ownership is currently a blank page, not just an incomplete one. A buyer should ask specifically for the AJ Bell case study in full, ask which reviews the 95 percent figure covers, and treat the earlier unanswered pricing email as diagnostic in itself, a vendor unwilling to give a self serve number is a vendor asking you to commit before you can calculate what you are committing to.
 
 ---
 
@@ -48,8 +48,8 @@ Pilot, not buy, and only after the vendor answers what my Week 1 outreach could 
 
 ---
 
-*AI disclosure: I used Claude to search for ComplyAdvantage's public claims, to draft a first tagging of them and the structure of this post, and to check my NexusAI tagging against the official answer key. I reviewed and kept the results; the final tags and the verdict are mine.*
+*AI disclosure: I used Claude to search for ComplyAdvantage's public claims, to draft a first tagging of them and the structure of this post, and to check my tagging method against the answer key of the course's practice exercise. I reviewed and kept the results; the final tags and the verdict are mine.*
 
 ---
 
-Full NexusAI tagged claims table, top five avoidances, FOMO framework walkthrough, and case comparison: [week-03-evidence.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/week-03-evidence.md)
+Tagging workings from the course's practice exercise, the FOMO framework walkthrough and the case comparison: [week-03-evidence.md](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-03/week-03-evidence.md)
