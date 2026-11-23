@@ -316,6 +316,20 @@ Same 8 cards and briefing as run 1, card order alternated (1→8 and 8→1), plu
 - **P4:** at least 6 of 10 testers hold F2 for the changed bank details; those who miss it spend under 60 seconds on the card.
 - **P5:** no tester's full check exceeds 2.8 minutes, the lower break-even in my memo.
 
+### Probe runs 2–4: three further paper sessions, 20 November 2026 (reported, not verified)
+
+Three further paper sessions of the review test were held on Friday 20 November 2026 in Ghent, each with 10 testers (30 in total), with the run-1 cards and score form. The tester codes on the forms restart at T01 in each session; here they are renumbered T11–T20 (form G), T21–T30 (form C) and T31–T40 (form P). The score-form documents were made on 23 November.
+
+**Provenance:** I typed the results into an AI tool to turn them into score-form documents. That tool added wording to two of the documents calling the data "simulated"; that wording is not mine and does not describe how the data was collected. The handwritten cards were not kept. Because the documents cannot be checked against raw records, these sessions are reported as **unverified** and are not used in the memo, the posts or The Last Check; the measured evidence remains run 1.
+
+| Session | Planted errors caught, quick (A) | Planted errors caught, deliberate (C) | Median seconds, clean card, A / C |
+|---|---|---|---|
+| G (T11–T20) | not recorded on the form | not recorded on the form | 13 / 18 |
+| C (T21–T30) | 10 of 15 | 12 of 15 | 13 / 18 |
+| P (T31–T40) | 10 of 15 | 14 of 15 | 16 / 23 |
+
+**What they suggest, if confirmed:** the same direction as run 1 (the deliberate check catches more, at a few seconds more per card), but with fewer misses in the quick set-up (10 of 15 against 7 of 15 in run 1). These sessions did not follow the run-2 design (no alternated card order, no full-invoice cards F1 and F2), so predictions P1–P5 remain untested.
+
 ## Cost, from Week 6
 
 Measured via the Claude API on 14 October 2026 (`claude-sonnet-5-5`, effort medium, prompt v1, my 12 test invoices × 2 runs): **371.9 input and 402.5 output tokens per call** on average, so **€0.004387 per check** ($2 / $10 per 1M tokens, × 0.92). At my scenario volume of 18,000 checks a year that is **€79 a year in tokens**.
@@ -405,7 +419,7 @@ To be completed in Week 10.
 - **Re-measured:** own set 24/24 (Run 3; was 22/24); unseen inputs 28/36 = 77.8% (Run 4); local llama3.2 18/24 and 5/36.
 - **The delta, explained:** right on P1–P3 and P6 in direction; wrong on size for P4 (output fell 79%, not 30%) and P6 (far too pessimistic); P7 wrong (14/16, not 16/16). The 24/24 was partly overfitting: on unseen inputs the model is cautious ("unclear" on 6 of 6 real origins), not wrong in a dangerous direction.
 - **Costed:** €0.0020 per check over 60 calls (was €0.0044, −54%); the error rate decides the case, with break-even at 35.2% errors ([Week 8 cost model](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/cost-at-scale.md)).
-- **Deployment probe:** planned at the fablab on Wednesday 18 November 2026; what I deployed, what the physical setting showed that the chat window couldn't, what it cost and which failure class it feeds are added here after the probe.
+- **Deployment probe:** probe run 1 (paper version, 16 November 2026) is logged above: the quick check caught 7 of 15 planted errors (47%), the deliberate check 12 of 15 (80%), median 19 s against 30 s on clean cards. Probe run 2 at the fablab (18 November) did not take place; three further paper sessions on 20 November (30 testers) are reported above as unverified, because the raw cards were not kept. The laser-cut desk and the full-invoice check (F1, F2) remain untested, so the check time of a complete invoice is still the memo's weakest number.
 - **The Build inside the design:** the five board questions are answered in the [Week 8 architecture](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-08/architecture.md), section 4.
 
 ### Checkpoint 3, Week 12
