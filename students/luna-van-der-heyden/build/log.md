@@ -1,8 +1,22 @@
+## Deployment probe — from Week 2
+
+**After the intro session (Monday 28 September, 10:25–11:25, at the fablab — machines, safety, file formats):**
+
+| | |
+|---|---|
+| Machine(s) I expect to use, and why | **Laser cutter** (3mm plywood, vector cut + raster etch) & **Assembly Bench** — fast, precise 2D cutting and engraving for interlocking sorting trays and a device standee without unnecessary 3D printing or electronics. |
+| The artifact I'm aiming for (kiosk face, counter mock, standee…) | **Editorial Desk Triage Tray (Counter Mock + Standee)** — three interlocking wooden sorting trays labeled `PASS (PUBLISH-READY)`, `REVISE (MINIMAL FIX)`, and `ESCALATE (FULL REVIEW)`, paired with an engraved device standee running Prompt v8 so testers can physically sort sample manuscript cards. |
+| Which weekly session or OPEN block I'll visit for file-prep, and when | **Week 8 FabLab OPEN / Cutting Session** (pivoted from missed Week 6 slot). |
+
+**Iteration & Probe Log:**
+
 | Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Probe 1** | Prototyping & Structure | FabLab Laser Cutter | Laser-cut plywood standee prototype (slotted base and upright panel) | Booked for Week 6 session |
-| **Probe 2** | Engraving & UI Refinement | FabLab Laser Cutter (Raster Etch) | Final Standee engraved with 3-step workflow, Triage Key, and QR code | Booked for Week 6 session (consecutive) |
-| **Probe 3** | Deployment & Human Interaction Test | Editorial Desk (Real-world context) | Deployed Standee with laptop/tablet running v8 Prompt + Printed Test Cards | Ready for Checkpoint 2 observation |
+| **Probe 1** | Prototyping Base *(Dropped)* | 3D Printer | Tactile standee base/holder | **Failed / Cancelled:** Missed Week 6 booking window; 3D printing was also ill-suited for a flat editorial workflow. |
+| **Probe 2** | Visual Metaphor *(Rejected)* | Laser Cutter / Manual | Miniature dollhouse ("Human Voice vs. AI Cleaning") | **Scrapped before build:** Rejected as a static decorative prop rather than a functional human-in-the-loop test rig. |
+| **Probe 3** | Active Deployment: Editorial Desk Triage Tray | Laser Cutter (vector cut + raster etch) & Assembly Bench | Three interlocking wooden sorting trays (`PASS`, `REVISE`, `ESCALATE`) + engraved device standee running Prompt v8 | **Scheduled for Week 8** (for physical user-testing & workflow friction logging). |
+
+> **Design Pivot Note (Week 6 → Week 8):** Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive deployment. Pivoted to **laser-cut interlocking triage trays + device standee** for Week 8 so testers can physically sort manuscript cards based on Prompt v8 verdicts—exposing real workflow friction and human over-escalation bias.
 
 ## 1. Prompt Under Test (Language-Agnostic)
 
