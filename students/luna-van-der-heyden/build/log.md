@@ -1,10 +1,8 @@
 | Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Probe 1** | Prototyping Base | 3D Printer | Tactile standee base/holder | Booked for Week 6 prototyping block |
-| **Probe 2** | Display Panel | Laser Cutter | Clear acrylic display panel | Booked for Week 6 cutting block |
-| **Probe 3** | Final Assembly | Manual Assembly Bench | Completed companion standee] | Ready for final Checkpoint review |
-
-# Editorial Gatekeeper Prompt Evaluation (Prompt 8)
+| **Probe 1** | Prototyping & Structure | FabLab Laser Cutter | Laser-cut plywood standee prototype (slotted base and upright panel) | Booked for Week 6 session |
+| **Probe 2** | Engraving & UI Refinement | FabLab Laser Cutter (Raster Etch) | Final Standee engraved with 3-step workflow, Triage Key, and QR code | Booked for Week 6 session (consecutive) |
+| **Probe 3** | Deployment & Human Interaction Test | Editorial Desk (Real-world context) | Deployed Standee with laptop/tablet running v8 Prompt + Printed Test Cards | Ready for Checkpoint 2 observation |
 
 ## 1. Prompt Under Test (Language-Agnostic)
 
