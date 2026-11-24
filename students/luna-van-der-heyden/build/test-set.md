@@ -1,5 +1,21 @@
 # Build Test Set
-## 5 more testset with new expectations for prompt 10 
+## 5 more test sets with new expectations for prompt 10 
+## Input 11 
+- **Source:** Dan Brown, *Angels & Demons* page 528, Chapter 130
+- - **Text:**
+  - The camerlengo began to feel the fog of wonder and adrenaline dissipating. As the Swiss Guard helped him down the Royal Staircase toward the Sistine Chapel, the camerlengo heard singing in St. Peter’s Square and he knew that mountains had been moved.
+
+Grazie Dio.
+
+He had prayed for strength, and God had given it to him. At moments when he had doubted, God had spoken. Yours is a Holy mission, God had said. I will give you strength. Even with God’s strength, the camerlengo had felt fear, questioning the righteousness of his path.
+
+If not you, God had challenged, then WHO?
+If not now, then WHEN?
+If not this way, then HOW?
+
+Jesus, God reminded him, had saved them all . . . saved them from their own apathy. With two deeds, Jesus had opened their eyes. Horror and Hope. The crucifixion and the resurrection. He had changed the world.
+- **Expected Answer:**
+- Pass , no chnages , Human , keep the author voice 
 
 ## New Sets
 ## Input 1: Commercial Thriller Action Beats & Melodrama 
