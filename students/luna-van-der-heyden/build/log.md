@@ -59,7 +59,7 @@
 ## Marked Notes
 
 - **What surprised me:** Success rate reached 90.0% (9/10): Input 10 (`bij mij arm` → `bij mijn arm`) is now fixed in both runs, while Input 3 silently normalized `Griffindor` to `Griffoendor` in the style sheet without catching the misspelling in the source text.
-- **Failure that would have mattered most in real use, and why:** `F3` (Missed) on Input 3 (`Griffindor` left unflagged because proper-noun protection shielded a misspelled franchise term) plus verdict/query rule drift on Input 9 (`PASS` vs. `UNSURE` on prompt-injection text).
+- **Failure that would have mattered most in real use, and why:** `F3` (Missed) on Input 3 (`Griffindor` left unflagged because proper-noun protection shielded a misspelled franchise term) plus verdict/query rule drift on Input 9 (`PASS` vs. `UNSURE` on prompt-injection text). I need to test further on other testset to make sure that this prompt is not tailored for these specific test sets and I think it is too that's why it got 90 percent sucess rate.  
 
 ## 1. Prompt Under Test (Language-Agnostic)
 
