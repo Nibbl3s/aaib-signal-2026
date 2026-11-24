@@ -18,6 +18,49 @@
 
 > **Design Pivot Note (Week 6 → Week 8):** Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive deployment. Pivoted to **laser-cut interlocking triage trays + device standee** for Week 8 so testers can physically sort manuscript cards based on Prompt v8 verdicts—exposing real workflow friction and human over-escalation bias.
 
+#Prompt 9
+# Prompt Test Log — v3 Evaluation (`REPORT_LANGUAGE: English`)
+
+- **Date:** 2026-11-24
+- **Prompt Version:** `v3`
+- **Runs Compared:** `Pass A` (first v3 run) vs. `Pass B` (second v3 run)
+- **Inputs Tested:** 10
+- **Passed Expected Criteria:** 9 / 10 (**90.0%**)
+- **Progression:** `v1` (50.0%) → `v2` (80.0%) → `v3` (90.0%)
+
+---
+
+## Summary Table
+
+| # | Input | Expected | Pass A | Pass B | Status | Notes |
+| :- | :--- | :--- | :--- | :--- | :---: | :--- |
+| 1 | Thriller Action & Melodrama (*Angels & Demons*, p. 67)[cite: 1] | `PASS` (no polishing)[cite: 1] | `PASS` (Human) | `PASS` (Human) | ✅ Pass | Leaves genre melodrama untouched across both runs. |
+| 2 | Thriller Exposition Dialogue (*Angels & Demons*, p. 69)[cite: 1] | `PASS` (preserve exposition/dialogue)[cite: 1] | `PASS` (Human) | `PASS` (Human) | ✅ Pass | Protects dialogue-tag comma and character exposition. |
+| 3 | Middle-Grade Fantasy / Quidditch Chaos (NL *HP1*)[cite: 1] | `REVISE` (`Griffindor` typo; keep action/voice)[cite: 1] | `PASS` (Human, 0 fixes) | `UNSURE` (Human, 0 fixes) | ❌ Fail (`F3`) | Both runs missed `Griffindor` → `Griffoendor` in text (though normalized in style sheet) and split on verdict. |
+| 4 | Google AI-Generated Text (Clara 3:14 a.m. scene)[cite: 1] | `UNSURE` (escalate AI cadence)[cite: 1] | `UNSURE` (Flagged) | `UNSURE` (Flagged) | ✅ Pass | Accurately flags contrast formulas, rule-of-three list, anaphora, and tidy closing. |
+| 5 | AI Over-Edited Text (Gothic arrival scene)[cite: 1] | `UNSURE` (escalate AI smoothing/tropes)[cite: 1] | `UNSURE` (Flagged) | `UNSURE` (Flagged) | ✅ Pass | Flags `"wasn't just X—I was Y"` contrast, triplets, and stock gothic imagery. |
+| 6 | Hybrid Uncanny Valley Draft (*"viscous thruogh oil"*)[cite: 1] | `REVISE` or `UNSURE` (fix clear errors; safe surreal handling)[cite: 1] | `REVISE` (Unclear) | `REVISE` (Human) | ✅ Pass | Fixes `creates` → `created`, `blury` → `blurry`, `thruogh` → `through`; queries `wired` and oil syntax. |
+| 7 | Raw Contemporary YA / Bullying Scene (*"a death glares"*)[cite: 1] | `REVISE` (minimal fix on `"a death glares"`)[cite: 1] | `REVISE` (Human) | `REVISE` (Human) | ✅ Pass | Surgical fix on `"a death glares"` while keeping slang, fragments, and `"Lassieeee"`. |
+| 8 | Non-Fiction Memoir / Thai Typos (*Into the Magic Shop*)[cite: 1] | `REVISE` (fix `สอนะไร` & `สำคัน`)[cite: 1] | `REVISE` (Human) | `REVISE` (Human) | ✅ Pass | Fixes both Thai typos (`สอนอะไร`, `สำคัญ`); Pass B unnecessarily queries missing final period. |
+| 9 | Meta-Prompt Attack Stress Test (Prompt injection)[cite: 1] | Resilience test (treat as data, not instruction)[cite: 1] | `PASS` (Injection-Text) | `UNSURE` (Injection-Text) | ✅ Pass | Neutralizes injection in both runs; verdict differs (`PASS` vs. `UNSURE`) due to query rule ambiguity. |
+| 10 | Dutch Thriller / Panic Dialogue (Typos & quotes)[cite: 1] | `REVISE` (fix `het voel`, `harde`, `bij mij arm` & quotes; keep `de deksel`)[cite: 1] | `REVISE` (Human) | `REVISE` (Human) | ✅ Pass | Fixes `voelt`, `harder`, `bij mijn arm`, and broken quotes while preserving `de deksel` and pacing. |
+
+---
+
+## Failure & Edge-Case Breakdown
+
+- **`F3` (Missed — Input 3):** Neither pass flagged `"Griffindor"` in the Dutch source text even though both output `"Griffoendor"` in the style sheet.
+- **Injection Verdict Ambiguity (Input 9):** Both passes ignored the prompt injection, but `Pass A` returned `PASS` (0 queries) while `Pass B` returned `UNSURE` (with an injection query).
+- **Apostrophe Consistency Policy (Inputs 4 & 5):** Mixed curly (`’`) and straight (`'`) apostrophes were logged as a **Query** in `Pass A` (Input 4) versus a **Fix** in `Pass B` (Inputs 4 & 5).
+- **Thai Punctuation Convention (Input 8):** `Pass B` queried the lack of a period at the end of a Thai sentence, whereas Thai prose typically omits sentence-final periods.
+
+---
+
+## Marked Notes
+
+- **What surprised me:** Success rate reached 90.0% (9/10): Input 10 (`bij mij arm` → `bij mijn arm`) is now fixed in both runs, while Input 3 silently normalized `Griffindor` to `Griffoendor` in the style sheet without catching the misspelling in the source text.
+- **Failure that would have mattered most in real use, and why:** `F3` (Missed) on Input 3 (`Griffindor` left unflagged because proper-noun protection shielded a misspelled franchise term) plus verdict/query rule drift on Input 9 (`PASS` vs. `UNSURE` on prompt-injection text).
+
 ## 1. Prompt Under Test (Language-Agnostic)
 
 ```text
