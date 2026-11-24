@@ -3,7 +3,7 @@
 ## Input 11 
 - **Source:** Dan Brown, *Angels & Demons* page 528, Chapter 130
 - - **Text:**
-  - The camerlengo began to feel the fog of wonder and adrenaline dissipating. As the Swiss Guard helped him down the Royal Staircase toward the Sistine Chapel, the camerlengo heard singing in St. Peter’s Square and he knew that mountains had been moved.
+The camerlengo began to feel the fog of wonder and adrenaline dissipating. As the Swiss Guard helped him down the Royal Staircase toward the Sistine Chapel, the camerlengo heard singing in St. Peter’s Square and he knew that mountains had been moved.
 
 Grazie Dio.
 
