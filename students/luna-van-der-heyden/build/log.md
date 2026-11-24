@@ -18,8 +18,8 @@
 
 > **Design Pivot Note (Week 6 → Week 8):** Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive deployment. Pivoted to **laser-cut interlocking triage trays + device standee** for Week 8 so testers can physically sort manuscript cards based on Prompt v8 verdicts—exposing real workflow friction and human over-escalation bias.
 
-#Prompt 9
-# Prompt Test Log — v3 Evaluation (`REPORT_LANGUAGE: English`)
+
+# Prompt 9 Test Log — v3 Evaluation (`REPORT_LANGUAGE: English`)
 
 - **Date:** 2026-11-24
 - **Prompt Version:** `v3`
