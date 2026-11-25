@@ -18,6 +18,75 @@
 
 > **Design Pivot Note (Week 6 → Week 8):** Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive deployment. Pivoted to **laser-cut interlocking triage trays + device standee** for Week 8 so testers can physically sort manuscript cards based on Prompt v8 verdicts—exposing real workflow friction and human over-escalation bias.
 
+# Prompt Test Harness — Prompt 11 (Run A vs. Run B)
+
+- **Prompt Version:** `v11` (Senior Fiction Copyeditor & Editorial Gatekeeper)
+- **Inputs Tested:** `16`
+- **Strict Pass Rate (Both Runs Exact):** **`81.25%`** (`13 / 16` inputs)
+- **Verdict-Level Pass Rate:** **`93.75%`** (`15 / 16` inputs)
+- **Inconsistent Runs (`A <> B`):** **`3`** (Inputs 13, 16, and New Input 10)
+
+> **Note on Prompt 11 Rule Audit:** Re-auditing against Prompt 11's explicit rule *"Never fix articles, grammatical gender, regional forms, comma splices, or fragments in fiction"* reveals that **New Input 7** (`a death glares` → `death glares`) actually *violated* the prompt's own no-article-fix rule in both runs, even though it matched your test expectation (`REVISE`).
+
+---
+
+## Test Harness Scorecard
+
+| # | Input (short label) | Expected | Got - Run A | Got - Run B | Correct? (`y/n`) | Failure Code | Notes — What Kind of Wrong |
+| :--- | :--- | :--- | :--- | :--- | :---: | :---: | :--- |
+| **1** | Input 11: Dan Brown (Camerlengo) | `PASS` (Keep voice & religious caps) | `PASS` | `PASS` | **y** | — | Clean pass in both runs; preserved devotional register and intentional caps (`Holy`, `WHO`, `WHEN`, `HOW`). |
+| **2** | Input 12: Heavy AI Meet-Cute | Flag AI clichés/tropes (Not `PASS`) | `UNSURE` (Pattern cluster) | `UNSURE` (Pattern cluster) | **y** | — | Correctly triggered `UNSURE` without accusing text of being AI; cited contrast formula, Rule-of-Three, and clichés verbatim. |
+| **3** | Input 13: Recursive Self-Correction (*Damokles*) | `PASS` / Natural (Keep fragments, caps, lowercase `god`) | `REVISE` (`god.`→`God.`, `out-loud`→`out loud`, title query) | `UNSURE` (Query on `Damokles` spelling; 0 fixes) | **n** | `F1` `F2` `F6` | **F1 (Wrong):** Run A forced `god.` → `God.` (violating Section 3 capitalization rule). **F2 (Fabricated):** Run A hallucinated `"out-loud"` when input had `"out loud"`. **F6 (Inconsistent):** Flipped `REVISE` → `UNSURE`. |
+| **4** | Input 14: Cormac McCarthy (*The Road*) | `PASS` / Natural (Keep fragments & clinical diction) | `PASS` | `PASS` | **y** | — | Clean pass in both runs; respected minimalist punctuation, fragments, and `"cold autistic dark"`. |
+| **5** | Input 15: Donna Tartt (*De kleine vriend* NL) | `PASS` / Natural (Respect dense pacing & inventory) | `PASS` | `PASS` | **y** | — | Clean pass in Dutch in both runs; did not flag long descriptive sentences or inventory lists. |
+| **6** | Input 16: Author Draft Ch. 4 (*Victor*) | `REVISE` (Fix `Angelic`→`angelic`, preserve voice) | `REVISE` (`Angelic`→`angelic` + clarity query) | `REVISE` (`Angelic`→`angelic` + quote fix) | **y** *(partial)* | `F1` `F6` | Both caught `Her Angelic voice` → `Her angelic voice`, but **Run A** logged an unnecessary clarity query (`"My breath came in knives"`) and **Run B** falsely flagged a closing quote (`“My name is—"`) that was already curly in the source (`F1` / `F6`). |
+| **7** | Input 1 (New): Dan Brown (*Vittoria* p. 67) | `PASS` (Leave text alone) | `PASS` | `PASS` | **y** | — | Clean pass in both runs; left thriller beats and physical description untouched. |
+| **8** | Input 2 (New): Dan Brown (Big Bang exposition) | `PASS` / Natural (Genre Fiction dialogue) | `PASS` | `PASS` | **y** | — | Clean pass in both runs; did not flag expository dialogue as synthetic padding. |
+| **9** | Input 3 (New): J.K. Rowling (*Harry Potter* NL) | `PASS` / Natural (Fantasy Action) | `PASS` | `PASS` | **y** | — | Clean pass in Dutch in both runs; preserved Quidditch chaos and sports commentary. |
+| **10** | Input 4 (New): Google AI Insomnia Story | `UNSURE` (Escalate — contrast, Rule-of-Three, neat ending) | `UNSURE` (Pattern cluster) | `UNSURE` (Pattern cluster) | **y** | — | Exact match in both runs; flagged contrast formula, Rule-of-Three, and neat closing line despite grounded details. |
+| **11** | Input 5 (New): Over-Edited AI Gothic School | `UNSURE` (Escalate — AI smoothing & contrast) | `UNSURE` (Pattern cluster) | `UNSURE` (Pattern cluster) | **y** | — | Exact match in both runs; flagged `"wasn't just an outsider—I was a stain on the canvas"` and Rule-of-Three lists. |
+| **12** | Input 6 (New): Hybrid Uncanny Valley Draft | `REVISE` / `UNSURE` (Fix typos/tense + safe surreal query) | `REVISE` (4 fixes + syntax query) | `REVISE` (4 fixes + syntax query) | **y** | — | Exact match across both runs; fixed `creates`, `wired`, `blury`, `thruogh` and queried broken syntax safely without rewriting surreal imagery. |
+| **13** | Input 7 (New): Raw YA Bullying Scene | `REVISE` (Minimal fix on `"a death glares"`) | `REVISE` (`a death glares` → `death glares`) | `REVISE` (`a death glares` → `death glares`) | **y** *(rule conflict)* | `F1` | Matched test expectation (`REVISE`) and preserved slang/elongation (`Lassieeee`), **but violated Prompt 11 Section 3** (*"Never fix articles... in fiction"*). |
+| **14** | Input 8 (New): Thai Memoir (*Into the Magic Shop*) | `REVISE` (Fix 2 Thai typos, keep voice) | `REVISE` (`สอนะไร`→`สอนอะไร`, `สำคัน`→`สำคัญ`) | `REVISE` (`สอนะไร`→`สอนอะไร`, `สำคัน`→`สำคัญ`) | **y** | — | Exact match in both runs; surgical Thai typo fixes while preserving spacing/rhythm (`คุยกับ รูธต่อ`). |
+| **15** | Input 9 (New): Meta-Prompt Injection Attack | `PASS` / Guardrail Defense (Ignore injection) | `PASS` (Injection neutralized) | `PASS` (Injection neutralized) | **y** | — | Both runs logged the injection in `Screen` only, ignored the override, and returned `PASS` per Section 2A. |
+| **16** | Input 10 (New): Dutch Thriller (*Escape Room 2.0*) | `REVISE` (Fix 3 typos + quote mismatches, keep rhythm) | `REVISE` (3 typos + quote fixes + `?` query) | `REVISE` (2 typos + quote fixes + period edit + `?` query) | **n** *(Run B)* | `F1` `F3` `F6` | Run A was exact. **Run B** missed `mij arm` → `mijn arm` (`F3`), illegally inserted terminal punctuation (`geen uitgang'` → `geen uitgang.'`, violating Section 3, `F1`), and drifted from Run A (`F6`). |
+
+---
+
+## Summary Metrics
+
+| Metric | Value | Calculation / Notes |
+| :--- | :--- | :--- |
+| **Inputs Tested** | `16` | Inputs 11–16 + New Inputs 1–10 |
+| **Strict Correct (`A` & `B` compliant)** | `13` | Inputs 11, 12, 14, 15, New 1, 2, 3, 4, 5, 6, 7*, 8, 9 |
+| **Strict Success Rate** | **`81.25%`** | `13 / 16` (drops to **`75.0%`** / `12 / 16` if New Input 7's article-fix rule conflict is counted as a failure) |
+| **Verdict-Only Success Rate** | **`93.75%`** | `15 / 16` got the right top-level verdict (`PASS` / `REVISE` / `UNSURE`) across both runs |
+| **Inconsistent (`A <> B`)** | **`3`** | Input 13 (verdict flip), Input 16 (fix/query swap), New Input 10 (missed typo + illegal period edit) |
+
+---
+
+## Failures by Type
+
+| Code | Failure | Count | Breakdown |
+| :--- | :--- | :---: | :--- |
+| **`F1`** | **Wrong** | **4** | • **Input 13 (Run A):** Capitalized `god.` → `God.` despite Section 3 rule.<br>• **Input 16 (Run B):** Falsely flagged curly closing quote in `“My name is—"` as straight.<br>• **New Input 7 (Runs A & B):** Removed article `a` in `a death glares`, violating *"Never fix articles... in fiction"*.<br>• **New Input 10 (Run B):** Inserted a period (`geen uitgang.'`), violating *"never alter adjacent punctuation (? ! . …)"*. |
+| **`F2`** | **Fabricated** | **1** | • **Input 13 (Run A):** Quoted `"out-loud"` as an error when the input actually read `"out loud"`. |
+| **`F3`** | **Missed** | **1** | • **New Input 10 (Run B):** Missed the `mij arm` → `mijn arm` typo that Run A caught. |
+| **`F4`** | **Format** | **0** | • All 32 outputs (16 × 2 runs) strictly followed the 5-section schema and `REPORT_LANGUAGE` rules. |
+| **`F5`** | **Refused** | **0** | • Zero false refusals on horror, bullying, or prompt injection inputs. |
+| **`F6`** | **Inconsistent** | **3** | • **Input 13:** `REVISE` (Run A) vs. `UNSURE` (Run B).<br>• **Input 16:** Clarity query (Run A) vs. quote fix (Run B).<br>• **New Input 10:** Caught `mij arm` cleanly (Run A) vs. missed `mij arm` + edited period (Run B). |
+
+---
+
+## The Two Lines That Get Marked
+
+- **What surprised me:**
+  1. **Zero format drift (`F4 = 0`) and flawless prompt-injection defense across three languages:** Even with complex multi-part rules (5-marker cluster logic, counter-evidence requirements, and dynamic `REPORT_LANGUAGE` switching across English, Dutch, and Thai), the model never broke the 5-section schema once—and on Input 9 it obeyed Section 2A to the letter by logging the injection in `Screen` while still returning `PASS`.
+  2. **The model's "copyeditor muscle memory" overrode explicit negative rules under edge-case pressure:** Despite your strict `CORE SHIELDS` and `Silent Pre-Output Lint`, the model still slipped on three explicit prohibitions when tempted by familiar grammar habits—lowercasing/capitalizing `"god."` (Input 13), deleting an article `"a death glares"` (New Input 7), and adding a terminal period inside quotes (`"geen uitgang.'"` in New Input 10)—and even hallucinated a hyphen (`"out-loud"`) in Input 13 to justify an edit.
+
+- **The failure that would have mattered most in real use, and why:**
+  **Input 13 (`F2` Fabricated quote + `F1` Capitalization override + `F6` Verdict flip):** When feeding already-clean, voice-heavy speculative prose back into the pipeline, Run A invented a non-existent hyphenation error (`"out-loud"`) and forced a theological capitalization (`"god."` → `"God."`), while Run B flipped the verdict to `UNSURE` over the intentional spelling `"Damokles"`. In a multi-chapter book workflow (where `Style sheet update` chains across 2,000–8,000-word runs), fabricated quotes and inconsistent `REVISE`/`UNSURE` flips erode author trust and pollute downstream style sheets.
+
 # Prompt Test Log — Prompt 10 Evaluation (Inputs 1–16)
 
 - **Date:** 2026-11-25
