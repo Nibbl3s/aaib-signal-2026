@@ -1,3 +1,12 @@
+---
+week: 1
+title: "Screening AI Costs More Than You Think: A Global Recruiter's Real Numbers"
+author: "Ruben Naessens"
+beat: "AI in international recruitment"
+skill: "Cost literacy"
+date: 2026-09-29
+---
+
 # Screening AI Costs More Than You Think: A Global Recruiter's Real Numbers
 
 #### Hook
