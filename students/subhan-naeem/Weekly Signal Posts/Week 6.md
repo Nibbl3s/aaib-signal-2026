@@ -42,6 +42,9 @@ AI processing is almost free here; trust is the expensive part. With zero errors
 
 How can consulting firms measure whether an AI tool is reliable enough for real market-entry decisions, and how many test cases are enough?
 
+
+
+## Disclaimer
 *Sources: AI Pricing Reference (course snapshot, 7 September 2026) and Google AI pricing, my Risk Detector prompt and Week 2 test results, Week 4 consultant cost assumption. Token counts, subscription price, fixed costs and estimates.*
 
 *AI disclosure: I used ChatGPT and Claude to help structure this document, check the grammar and improve the wording. The use case, assumptions, and the content are my own.*
