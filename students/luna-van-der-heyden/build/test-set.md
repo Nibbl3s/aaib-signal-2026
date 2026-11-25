@@ -271,7 +271,7 @@ Like I’m some bloody dog.
   > Het deksel van de kist is zo zwaar dat ik het nauwelijks kan vasthouden. Zo snel als ik kan, beuk ik hem tegen de deur, maar de achterkant sleept erbij over de grond en het voel als niet meer dan een schouderklopje.
   > Dit is geen uitgang,' klinkt de robotstem opnieuw.
   > "Lexi?'
-  > Ik beuk de deksel voor de tweede keer tegen de deur,
+  > Ik beuk het deksel voor de tweede keer tegen de deur,
   > dit keer harde.
   > Dit is geen uitgang'
   > 'Lexi!' Nordin pakt me bij mij arm beet.
