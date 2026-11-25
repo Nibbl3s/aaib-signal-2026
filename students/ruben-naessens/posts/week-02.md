@@ -4,6 +4,7 @@ title: "Which Part of Recruitment Actually Needs AI?"
 author: "Ruben Naessens"
 beat: "AI in international recruitment"
 skill: "No-AI decision framework"
+date: 2026-11-18
 ---
 
 # Which Part of Recruitment Actually Needs AI?
