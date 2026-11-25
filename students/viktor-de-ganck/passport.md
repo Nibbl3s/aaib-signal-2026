@@ -64,23 +64,23 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Market mechanism thinking | 5 | 🟢 / 🟡 / 🔴 | |
-| Cost projection | 6 | 🟢 / 🟡 / 🔴 | |
-| Lock-in detection | 7 | 🟢 / 🟡 / 🔴 | |
-| Design defense | 8 | 🟢 / 🟡 / 🔴 | |
+| Market mechanism thinking | 5 | 🔴 | I scored Fluere 2/18 (AI-Invisible) on a 6-criterion GEO audit and checked its absence with two ChatGPT runs, but it was one company on one engine and I needed step-by-step help to view the page source, so I could not repeat it cold. |
+| Cost projection | 6 | 🟡 | My own Gemini API call gave EUR 0.0000756 per run and EUR 0.07 a month at 880 runs, against about EUR 1,003 a month in error cost, and Flash-Lite repeated my item 14 error, but 40 items a day and the token count are still estimates. |
+| Lock-in detection | 7 | 🟡 | I scored my Graslei Wealth design 6/15 on the lock-in checklist with evidence in every row and measured that llama3.2 3B got 1 of 15 items right against 9 of 15 for Sonnet, but I never tested which of the five dimensions should weigh most. |
+| Design defense | 8 | 🔴 | I produced a Northwind design, defense checklist and cost model, but they were drafted with Claude, I missed the live class, my critique form is a stand-in, and I have not defended the design aloud, so I would struggle to defend it cold. |
 
-**Re-rate Checkpoint 1.** Do not copy your Week 4 answers down. Four weeks of compounding changes them — sometimes upward, sometimes not, because Week 8 shows you what you did not know you did not know in Week 4.
+**Re-rate Checkpoint 1.**
 
 | Skill | Week 4 rating | Week 8 rating | What changed |
 |-------|:-------------:|:-------------:|--------------|
-| Cost literacy | | | |
-| Capability skepticism | | | |
-| Vendor claim detection | | | |
-| Value quantification | | | |
+| Cost literacy | 🟡 | 🟡 | Token cost is now measured from my own API call (EUR 0.0000756 per run) instead of taken from the price list alone, but labour and integration costs are still assumptions. |
+| Capability skepticism | 🟡 | 🟡 | My Week 4 score of 9 of 15 became 7 of 15 in both runs when the same prompt ran in clean separate processes, so 15 items cannot separate a real change from noise of about 3 answers; v2 scored 8 of 15 and its gain did not repeat on 6 fresh items, but I needed help to design these checks. |
+| Vendor claim detection | 🔴 | 🟡 | I now test a claim myself (a cheaper model scored 1 of 15 on my items against 9 of 15) and record what vendor terms leave undocumented, instead of only tagging claims as fact or aspiration. |
+| Value quantification | 🟡 | 🟡 | My Week 4 post predicted 80% accuracy by Week 8, and I measured 7 to 8 of 15 (47 to 53%), below my own 73% break-even, so the formulas work but my accuracy input was wrong. |
 
-**6 ECTS — extended evidence:**
+**6 ECTS, extended evidence:** not applicable (4 ECTS track).
 
-**Your click:** What did you believe at Checkpoint 1 that you've since replaced? Four weeks of compounding should have produced at least one.
+**Your click:** At Checkpoint 1 I believed my Build had a better accuracy of 60% and that 80% was reachable by Week 8. The same prompt, re-run in clean separate processes, scored 7 of 15 in both runs, and my revision v2 scored 8 of 15 with a gain that did not repeat on 6 new items. I now treat one accuracy number from 15 items as a range of about 3 answers, and my 73% break-even as out of reach for this prompt. In other words I'm still trying to figure out how to better the accuracy and fix my build. Most of the tasks have been completed with 95% help of AI meaning that I have trouble figuring out what specifically everything means and what I should do. But I've definitely become more familiar with how to work with Claude, Claude code and how to prompt correctly.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
