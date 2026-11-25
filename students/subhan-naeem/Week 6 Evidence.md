@@ -1,6 +1,4 @@
-Here is the full content in clean **Markdown (.md) format**, keeping your structure and wording while fixing the duplicated “Pilot volume” line and the broken heading/formatting:
 
-```md
 # Week 6 - Cost Projection
 
 **Advanced AI for Business**  
