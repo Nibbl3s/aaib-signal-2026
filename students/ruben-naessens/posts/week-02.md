@@ -29,4 +29,6 @@ I ran the same v1 prompt on ten public vacancies from Multilingual Jobs Worldwid
 
 I would use AI to draft structured requirements from inconsistent job ads, with a recruiter reviewing the result. For verified facts already in the recruitment system, I would use ordinary rules. The next prompt should keep concrete skills such as coaching and troubleshooting while leaving work conditions and general personality traits out of the skills field. I would retest the same vacancies and then ask whether reviewing those drafts is faster than extracting the requirements manually.
 
+[Supporting evidence: three borderline modality cases](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/ruben-naessens/evidence/week-02.md).
+
 *AI-use disclosure: ChatGPT assisted with the test runs, analysis and drafting.*
