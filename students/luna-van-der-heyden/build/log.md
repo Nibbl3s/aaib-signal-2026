@@ -1,4 +1,4 @@
-## Deployment probe — from Week 2
+## Deployment probe — from Week 2 
 
 **After the intro session (Monday 28 September, 10:25–11:25, at the fablab — machines, safety, file formats):**
 
