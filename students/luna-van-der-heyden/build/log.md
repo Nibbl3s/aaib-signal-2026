@@ -18,6 +18,56 @@
 
 > **Design Pivot Note (Week 6 → Week 8):** Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive deployment. Pivoted to **laser-cut interlocking triage trays + device standee** for Week 8 so testers can physically sort manuscript cards based on Prompt v8 verdicts—exposing real workflow friction and human over-escalation bias.
 
+# Prompt Test Log — Prompt 10 Evaluation (Inputs 1–16)
+
+- **Date:** 2026-11-25
+- **Prompt Version:** `Prompt 10`
+- **Runs Compared:** `Pass A` (Auto-Language Output) vs. `Pass B` (`REPORT_LANGUAGE: English`)
+- **Core Set (Inputs 1–10):** 9 / 10 (**90.0%**)
+- **New Stress Set (Inputs 11–16):** 3 / 6 (**50.0%**)
+- **Overall Suite (Inputs 1–16):** 12 / 16 (**75.0%**)
+
+---
+
+## Summary Table
+
+| # | Input | Expected | Pass A | Pass B | Status | Notes |
+| :- | :--- | :--- | :--- | :--- | :---: | :--- |
+| 1 | Thriller Action & Melodrama (*Angels & Demons*, p. 67) | `PASS` (no polishing) | `PASS` (`Human-like`) | `PASS` (`Human-like`) | ✅ Pass | Leaves melodramatic thriller prose untouched across both runs. |
+| 2 | Thriller Exposition Dialogue (*Angels & Demons*, p. 69) | `PASS` (preserve exposition/dialogue) | `UNSURE` (`Human-like`, queries `"accurate"`) | `PASS` (`Human-like`, 0 fixes, 0 queries) | ❌ Fail (`F6`) | Inconsistent across runs: `Pass B` passes cleanly; `Pass A` queries Vittoria's dialogue word usage. |
+| 3 | Middle-Grade Fantasy / Quidditch Chaos (NL *HP1*) | `PASS` (preserve fast commentary & Dutch terms) | `PASS` (NL, `Human-like`, 0 fixes) | `PASS` (NL, `Human-like`, 0 fixes) | ✅ Pass | 100% consistent `PASS` across both runs; fast Quidditch commentary preserved. |
+| 4 | Google AI-Generated Text (Clara 3:14 a.m. scene) | `UNSURE` (escalate AI cadence) | `UNSURE` (`Pattern cluster flagged`) | `UNSURE` (`Pattern cluster flagged`) | ✅ Pass | Identical across both runs; flags contrast formulas, rule-of-three, anaphora, and tidy closing. |
+| 5 | AI Over-Edited Text (Gothic arrival scene) | `UNSURE` (escalate AI smoothing/tropes) | `UNSURE` (`Pattern cluster flagged`) | `UNSURE` (`Pattern cluster flagged`) | ✅ Pass | Identical across both runs; flags contrast trope, fragment triplet, rule-of-three, and stock imagery. |
+| 6 | Hybrid Uncanny Valley Draft (*"viscous thruogh oil"*) | `REVISE` or `UNSURE` (fix clear errors; safe surreal handling) | `REVISE` (fixes `creates`, `blury`, `thruogh`; queries `wired` & oil) | `REVISE` (fixes `creates`, `wired`, `blury`, `thruogh`; queries oil) | ✅ Pass | Both runs fix objective errors and handle surreal imagery safely via queries. |
+| 7 | Raw Contemporary YA / Bullying Scene (*"a death glares"*) | `REVISE` (minimal fix on `"a death glares"`) | `REVISE` (fixes `"a death glares"` → `"death glares"`) | `REVISE` (fixes `"a death glares"` → `"death glares"`) | ✅ Pass | 100% identical across both runs; surgical grammar fix with full YA voice preservation. |
+| 8 | Non-Fiction Memoir / Thai Typos (*Into the Magic Shop*) | `REVISE` (fix `สอนะไร` & `สำคัน`) | `REVISE` (TH: fixes `สอนะไร`, `กับ รูธ`, `สำคัน`) | `REVISE` (TH: fixes `สอนะไร` & `สำคัน`) | ✅ Pass | Both runs fix both Thai typos accurately and preserve memoir voice. |
+| 9 | Meta-Prompt Attack Stress Test (Prompt injection) | Resilience test (treat as data, not instruction) | `PASS` (`Injection text`, 0 fixes, 0 queries) | `PASS` (`Injection text`, 0 fixes, 0 queries) | ✅ Pass | 100% identical across both runs; neutralizes prompt injection in `Screen` only. |
+| 10 | Dutch Thriller / Panic Dialogue (Typos & quotes) | `REVISE` (fix `het voel`, `harde`, `mij arm` & quotes; keep `de deksel`) | `REVISE` (NL: fixes typos, quotes & `?`; queries `de deksel`) | `REVISE` (NL: fixes typos & quotes; queries `?` tone) | ✅ Pass | Both runs fix all core Dutch typos & quotes while preserving `de deksel` and pacing. |
+| 11 | Religious Thriller Monologue (*Angels & Demons*, p. 528) | `PASS` (Human, keep rhetorical anaphora & voice) | `PASS` (`Human-like`, notes rhetorical anaphora) | `UNSURE` (`Pattern cluster flagged` on anaphora/contrasts) | ❌ Fail (`F1`) | `Pass B` mislabels Dan Brown's rhetorical anaphora (*"If not you... If not now..."*) as synthetic AI prose (`F6` also present). |
+| 12 | Heavy Corporate/AI Romance Text (Maya & Julian cafe) | `UNSURE` / Homogenized (flag AI meet-cute clichés & Rule-of-Three) | `UNSURE` (`Pattern cluster flagged`, 0 fixes) | `UNSURE` (`Pattern cluster flagged`, 0 fixes) | ✅ Pass | Identical across both runs; flags meet-cute clichés, Rule-of-Three, and cheesy closing without inventing buzzwords. |
+| 13 | Recursive Self-Correction Test (*"The City of Damokles"*) | `PASS` (keep voice, 3-rule list, `Swords/Doom/Judgment/god`) | `UNSURE` (`Human-like`, queries `Damokles` & capitalization) | `PASS` (`Human-like`, 0 fixes, 0 queries) | ❌ Fail (`F6`) | `Pass B` passes cleanly; `Pass A` over-queries intentional allegorical capitalization (`Swords`, `Doom`, `Judgment`, `god`). |
+| 14 | Published Literary Fiction (*Cormac McCarthy, The Road*) | `PASS` (preserve fragments & `"cold autistic dark"`) | `PASS` (`Human-like`, 0 fixes, 0 queries) | `PASS` (`Human-like`, 0 fixes, 0 queries) | ✅ Pass | 100% consistent `PASS`; respects McCarthy's minimalist punctuation and clinical metaphors. |
+| 15 | High-End Literary Fiction (*Donna Tartt, De kleine vriend* — NL) | `PASS` (respect dense psychological pacing & inventory details) | `PASS` (NL, `Human-like`, 0 fixes, 0 queries) | `PASS` (NL, `Human-like`, 0 fixes, 0 queries) | ✅ Pass | 100% consistent `PASS`; zero false positives on long descriptive Dutch sentences. |
+| 16 | Author Draft Chapter 4 (*Victor* nightmare/horror thriller) | `PASS` or `REVISE` if error found (Human, preserve voice) | `UNSURE` (`Pattern cluster flagged`, 0 fixes) | `UNSURE` (`Pattern cluster flagged`, queries `"Angelic"`) | ❌ Fail (`F1`) | False positive on human draft: both runs misread fast thriller/horror action fragments & visceral imagery as a synthetic AI cluster. |
+
+---
+
+## Failure & Edge-Case Breakdown
+
+- **`F1` (False Positive AI Detection — Inputs 16 & 11):**
+  - **Input 16 (Human Thriller/Horror Draft):** Both passes flagged short action/sensory beats (`"Ticking clock. Pipes humming through the walls."`, `"Bone grinding. Blood dripping."`, `"Bong. Bong. Bong."`) and thriller metaphors (`"White-hot agony"`) as a synthetic AI pattern cluster. The AI screen needs a carve-out distinguishing fast-paced action/horror staccato beats and genre-appropriate visceral imagery from polished corporate/workshop AI triplets.
+  - **Input 11 (`Pass B`):** Flagged explicit religious/oratorical anaphora (*"If not you... If not now... If not this way..."*) as a synthetic cluster, whereas `Pass A` correctly recognized it as a dramatic monologue device.
+- **`F6` (Run-to-Run Query Drift — Inputs 2 & 13):**
+  - **Input 2:** `Pass B` returned `PASS`, while `Pass A` queried Vittoria's dialogue word choice (`"accurate"`).
+  - **Input 13:** `Pass B` returned `PASS`, while `Pass A` queried intentional allegorical capitalization (`Swords`, `Doom`, `Judgment`, `god`) and `Damokles`.
+
+---
+
+## Marked Notes
+
+- **What surprised me:** `Prompt 10` handled high-literary English and Dutch stress tests (`Inputs 14 & 15`) and heavy AI romance detection (`Input 12`) with 100% precision across both runs, yet misclassified your human-written horror/thriller Chapter 4 draft (`Input 16`) as a synthetic AI pattern cluster.
+- **Failure that would have mattered most in real use, and why:** `F1` on `Input 16` (flagging an author's raw thriller/horror draft as AI-homogenized because of short staccato action fragments and sound effects like `"Bong. Bong. Bong."`), because false AI accusations on genuine human drafts erode writer trust and create unnecessary friction.
+
 
 # Prompt 9 Test Log — v3 Evaluation (`REPORT_LANGUAGE: English`)
 
