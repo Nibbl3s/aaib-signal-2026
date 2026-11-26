@@ -82,11 +82,56 @@ Failure codes: **F1** wrong · **F2** fabricated · **F3** missed · **F4** form
 **The failure that would have mattered most in real use, and why:**
 > T09, dj_gear = `on_site` in both runs. The client writes that there's only a mixer without decks and asks whether I can bring a back-up. The tool says the gear is on site and `missing_for_quote` is empty, so nothing tells me to bring decks. I'd show up to a paid gig with nothing to play on. That's worse than a wrong price, because you can't fix it on the night. The same pattern (trusting the tick box over the free text) happened on T06.
 
+### Run 2 — prompt v2 — 2026-11-26
+
+**Brief:** Does turning my pre-run decisions into rules (remark beats tick box, estimates kept, gear `unknown` unless clearly confirmed, explicit format) fix the judgment errors on Haiku and the format errors on Llama? Prediction written first (see Changes → v2).
+**Models used:** Claude Haiku 4.5, each output a fresh Claude Code sub-agent session that read only one file (prompt v2 + one input); and Llama 3.2 3B via Ollama on my laptop (`../week-08/run_v2_local.py`). Same 15 inputs × 2 runs, same expected answers (1 Oct 2026), same scorer (`../week-08/score_v2.py`). Raw outputs: `../week-08/runs/v2/`.
+**Scoring note:** two Haiku answers name the same thing in other words ("[address] (no town given)" for T04, "rond de 90" for T13 guests). Under my Week 2 wording rule those count as right, like "8870 Izegem" did in Run 1. Without that rule Haiku is 18/30.
+
+| # | Haiku v2 (A / B) | Llama v2 (A / B) | Failure codes (Haiku · Llama) |
+|---|---|---|---|
+| T01 | ✓ ✓ | ✗ ✗ (gear `unknown`, invented sound `not_needed`; B broken JSON) | — · F3, F2, F4 |
+| T02 | ✓ ✓ | ✗ ✗ (A broken JSON; B gear `"self"`) | — · F4 |
+| T03 | ✓ ✓ | ✗ ✗ (gear `"self"`; **02:30 → 14:30**) | — · F4, F1 |
+| T04 | ✓ ✓ | ✗ ✗ (gear `unknown`) | — · F3 |
+| T05 | ✗ ✗ sound `unknown` (want `not_needed`) | ✗ ✗ | F3 · F1, F3 |
+| T06 | ✗ ✗ **gear `on_site`**, sound `unknown` | ✗ ✗ (A broken JSON; **B gear `on_site`**) | **F1**, F3 · F4, **F1** |
+| T07 | ✓ ✓ | ✗ ✗ (**03:00 → 15:00**; **A gear `on_site`**) | — · F1 |
+| T08 | ✓ ✓ | ✗ ✗ (A broken JSON) | — · F4, F1 |
+| T09 | ✗ ✗ type `party_fuif` (want `other`), sound `unknown` — **gear now right** | ✗ ✗ (gear `unknown`, guests 0-100) | F1, F3 · F3 |
+| T10 | ✓ ✓ | ✗ ✗ (type `party_fuif`, gear `unknown`) | — · F1, F3 |
+| T11 | ✓ ✓ | ✗ ✗ (**A venue "Izegem" again**, gear `on_site`; B broken JSON) | — · F2, F4 |
+| T12 | ✓ ✓ | ✓ ✓ | — · — |
+| T13 | ✓ ✓ | ✗ ✗ (A gear `on_site`) | — · F1 |
+| T14 | ✗ ✗ sound `rent_from_dj` (want `unknown`) | ✗ ✓ | F2 · F2 |
+| T15 | ✓ ✓ | ✗ ✗ (municipal shift mail called a company event) | — · F1 |
+
+**Result:** Haiku **22/30 (73%)**, up from 15/30; run A 11/15, run B 11/15; **0 of 15 inputs** differed between runs (was 5). Llama **3/30**, up from 1/30, but 5 broken JSON (was 1) and 12/15 inputs inconsistent. With code doing the mechanical jobs (`../week-08/whatif_v2.py`) Llama drops to **5/30**, down from 12/30 with v1.
+**Cost:** v2 is 56% longer (Llama tokens: 644 → 1,008 in), so a Haiku run goes from ≈ $0.0016 to ≈ **$0.0020** (1,246 in / 154 out at $1/$5 per 1M). At 35 inquiries a year that's $0.07 instead of $0.06. Llama: €0, median 3.9 s per call (was 3.4 s).
+
+**What surprised me:**
+> The same prompt change went in opposite directions on the two models. On Haiku, every rule I added did what it should: T09's gear flipped to `dj_brings`, the estimates in T01, T10 and T13 were kept, and the two runs agreed on every input. On Llama the longer prompt made things worse: more broken JSON, an invented gear value `"self"`, and the gear field right in only 10 of 25 parseable outputs (was 22 of 29). It still turned 02:30 into 14:30 even though the prompt now says that in plain words. A rule in a prompt is a request. Only code enforces it.
+
+**The failure that would matter most now:**
+> T06 on Haiku, both runs: `on_site`, although the prompt now says that a "yes" without saying what is there is `unknown`. The form ticks "Ja" for gear but lists nothing. It's the one dangerous error v2 didn't fix (2/30 = 7%), and no code check catches it because `on_site` is an allowed value. That's why my Week 8 design shows the gear field to me on every draft, whatever the model.
+
 ---
 
 ## Changes
 
-*(none yet — v2 planned for the Week 4 checkpoint)*
+### v2 — 2026-11-26 (prompt in `prompt.md`)
+
+**Reason:** Run 1 showed my prompt contradicting the decisions I wrote down before Run 1 (uncertain → unknown, tick box over remark), and the Week 7 Llama run showed format rules the prompt never stated. v2 turns the pre-run decisions into general rules and states the format. Expected answers unchanged (1 Oct 2026).
+
+**Prediction, written and agreed 26 Nov 2026 before any v2 run:**
+- Haiku 4.5: 15/30 → about **24/30**.
+- Llama 3.2 3B: 1/30 → about **6/30**; format stays its weak point.
+- Dangerous gear error (`on_site` where I must bring decks): Haiku 4/30 → **0–1/30**; Llama stays at **≥ 2/30**.
+- Biggest risk: the "unknown unless clearly confirmed" gear rule pushes correct `dj_brings` answers (T04, T10) to `unknown`.
+
+**Result vs prediction:** Haiku 22/30 (predicted ≈ 24), gear error 2/30 (predicted 0–1); Llama 3/30 (predicted ≈ 6), gear error 4/30 (predicted ≥ 2). The risk I named (T04/T10 going to `unknown`) did not happen on Haiku; it did on Llama (T04, T10 gear `unknown` in both runs). See Run 2.
+
+*(the v1 candidate list below is what v2 was built from)*
 
 Candidate for v2, to be predicted before re-running:
 - Decide the "uncertain" rule properly: an estimate or a range → keep the earliest stated value and add the field to `missing_for_quote`. This should fix T01, T10 and T13 without losing the "ask the client" signal.
@@ -169,7 +214,11 @@ What-if (not a score): if code maps the event label, pads times and builds `miss
 > **What I'd change first:** let a free-text remark override a tick-box answer, and fix the "uncertain" rule (keep the stated estimate and add the field to `missing_for_quote`). Then re-run the same 15 inputs ×2 with a written prediction first: I expect T01, T10 and T13 to flip to correct and T09 to become `dj_brings`.
 
 ### Checkpoint 2 — Week 8
-> *(later)*
+> **What it does now:** reads one booking inquiry and returns the 10 fields plus what to ask, **22/30 fully right on Haiku 4.5 with prompt v2** (was 15/30), with both runs agreeing on all 15 inputs.
+> **Revision and why:** v2 (26 Nov) turned the decisions I'd written before Run 1 into rules, because Run 1 showed my prompt contradicting my own expected answers. Prediction first: Haiku ≈ 24/30, gear error 0–1/30. Measured: 22/30, gear error 2/30 (T06 both runs). Right direction, too optimistic.
+> **The delta explained:** the gains are exactly the rules I added (T01, T10, T13 estimates kept; T09 gear fixed). The leftovers are T06 (a "Ja" tick box still read as gear on site), T05/T09 sound and light, and T14. On Llama the same change backfired (3/30, and 5/30 with code instead of 12/30), so prompt rules don't transfer to small models. Code has to enforce the format.
+> **Costed:** ≈ $0.0020 per Haiku run (+25%), $0.07 a year at my volume. The cost that matters is still the 7% dangerous gear error: one miss ≈ €300.
+> **Where it sits:** the EXTRACT box in my Week 8 Thorax intake design (`../week-08/lab-memo.md`), behind a code validator and in front of a human check on gear/formula/price.
 
 ### Checkpoint 3 — Week 12
 > *(later)*

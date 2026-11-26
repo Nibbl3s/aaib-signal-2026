@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-26T12:56:46.492106Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"party_fuif\",\n  \"event_date\": \"2026-04-18\",\n  \"start_time\": \"00:00\",\n  \"end_time\": \"02:00\",\n  \"venue\": \"Stationsstraat 5b, Lendelede 8860\",\n  \"guest_count\": \"100 - 300\",\n  \"dj_gear\": \"unknown\",\n  \"sound_and_light\": \"not_needed\",\n  \"missing_for_quote\": [\n    \"event_date\",\n    \"start_time\",\n    \"end_time\",\n    \"venue\",\n    \"dj_gear\",\n    \"sound_and_light\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4125816375,
+  "load_duration": 989083,
+  "prompt_eval_count": 986,
+  "prompt_eval_cached_count": 836,
+  "prompt_eval_duration": 379421000,
+  "eval_count": 146,
+  "eval_duration": 3740374000,
+  "wall_seconds": 4.13
+}

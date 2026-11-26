@@ -1,0 +1,32 @@
+haiku-4.5: strict 22/30 correct; run A 11/15, run B 11/15
+T01-A ✓
+T01-B ✓
+T02-A ✓
+T02-B ✓
+T03-A ✓
+T03-B ✓
+T04-A ✓
+T04-B ✓
+T05-A ✗ sound_and_light: got 'unknown' want 'not_needed' ; missing_for_quote: got ['sound_and_light'] want []
+T05-B ✗ sound_and_light: got 'unknown' want 'not_needed' ; missing_for_quote: got ['sound_and_light'] want []
+T06-A ✗ dj_gear: got 'on_site' want 'unknown' ; sound_and_light: got 'unknown' want 'not_needed' ; missing_for_quote: got ['sound_and_light'] want ['dj_gear']
+T06-B ✗ dj_gear: got 'on_site' want 'unknown' ; sound_and_light: got 'unknown' want 'not_needed' ; missing_for_quote: got ['sound_and_light'] want ['dj_gear']
+T07-A ✓
+T07-B ✓
+T08-A ✓
+T08-B ✓
+T09-A ✗ event_type: got 'party_fuif' want 'other' ; sound_and_light: got 'unknown' want 'not_needed' ; missing_for_quote: got ['sound_and_light'] want []
+T09-B ✗ event_type: got 'party_fuif' want 'other' ; sound_and_light: got 'unknown' want 'not_needed' ; missing_for_quote: got ['sound_and_light'] want []
+T10-A ✓
+T10-B ✓
+T11-A ✓
+T11-B ✓
+T12-A ✓
+T12-B ✓
+T13-A ✓
+T13-B ✓
+T14-A ✗ sound_and_light: got 'rent_from_dj' want 'unknown' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'start_time', 'venue'] want ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue']
+T14-B ✗ sound_and_light: got 'rent_from_dj' want 'unknown' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'start_time', 'venue'] want ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue']
+T15-A ✓
+T15-B ✓
+fields right out of 30 parseable outputs: {'is_booking_inquiry': 30, 'event_type': 28, 'event_date': 30, 'start_time': 30, 'end_time': 30, 'venue': 30, 'guest_count': 30, 'dj_gear': 28, 'sound_and_light': 22, 'missing_for_quote': 22}

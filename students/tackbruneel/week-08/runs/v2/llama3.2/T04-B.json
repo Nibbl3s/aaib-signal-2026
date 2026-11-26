@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-26T12:56:42.363426Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"birthday\",\n  \"event_date\": \"2025-09-13\",\n  \"start_time\": \"22:00\",\n  \"end_time\": \"01:00\",\n  \"venue\": \"[address]\",\n  \"guest_count\": \"0 - 100\",\n  \"dj_gear\": \"unknown\",\n  \"sound_and_light\": \"unknown\",\n  \"missing_for_quote\": [\"event_date\", \"start_time\", \"end_time\", \"venue\", \"dj_gear\", \"sound_and_light\"]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3720354708,
+  "load_duration": 1225208,
+  "prompt_eval_count": 1034,
+  "prompt_eval_cached_count": 826,
+  "prompt_eval_duration": 535701000,
+  "eval_count": 120,
+  "eval_duration": 3176232000,
+  "wall_seconds": 3.72
+}

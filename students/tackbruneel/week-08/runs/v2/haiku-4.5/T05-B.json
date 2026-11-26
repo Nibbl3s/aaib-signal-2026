@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"party_fuif\", \"event_date\": \"2026-04-18\", \"start_time\": \"00:00\", \"end_time\": \"02:00\", \"venue\": \"Stationsstraat 5b, Lendelede 8860\", \"guest_count\": \"100 - 300\", \"dj_gear\": \"dj_brings\", \"sound_and_light\": \"unknown\", \"missing_for_quote\": [\"sound_and_light\"]}"
+  }
+}

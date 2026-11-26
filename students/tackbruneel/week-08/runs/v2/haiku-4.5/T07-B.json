@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"wedding\", \"event_date\": \"2026-06-20\", \"start_time\": \"19:00\", \"end_time\": \"03:00\", \"venue\": \"Moen\", \"guest_count\": \"100 - 300\", \"dj_gear\": \"dj_brings\", \"sound_and_light\": \"rent_from_dj\", \"missing_for_quote\": []}"
+  }
+}

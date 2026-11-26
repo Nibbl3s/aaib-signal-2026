@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"wedding\", \"event_date\": \"2027-09-03\", \"start_time\": \"22:00\", \"end_time\": \"03:00\", \"venue\": \"Zaal Amuse in Meulebeke\", \"guest_count\": \"rond de 90\", \"dj_gear\": \"unknown\", \"sound_and_light\": \"not_needed\", \"missing_for_quote\": [\"dj_gear\"]}"
+  }
+}

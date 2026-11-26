@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-26T12:55:40.529595Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"birthday\",\n  \"event_date\": \"2025-10-18\",\n  \"start_time\": \"19:00\",\n  \"end_time\": \"02:30\",\n  \"venue\": \"La Cuisette, Kerkstraat 2, 8570 Anzegem\",\n  \"guest_count\": \"0 - 100\",\n  \"dj_gear\": \"self\",\n  \"sound_and_light\": \"rent_from_dj\",\n  \"missing_for_quote\": [\"event_date\", \"start_time\", \"end_time\", \"venue\", \"dj_gear\", \"sound_and_light\"]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3996798042,
+  "load_duration": 765917,
+  "prompt_eval_count": 978,
+  "prompt_eval_cached_count": 826,
+  "prompt_eval_duration": 371239000,
+  "eval_count": 141,
+  "eval_duration": 3618990000,
+  "wall_seconds": 4.0
+}

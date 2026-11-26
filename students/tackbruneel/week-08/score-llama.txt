@@ -1,0 +1,32 @@
+llama3.2: strict 3/30 correct; run A 1/15, run B 2/15
+T01-A ✗ dj_gear: got 'unknown' want 'dj_brings' ; sound_and_light: got 'not_needed' want 'unknown' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want ['sound_and_light']
+T01-B ✗ UNPARSEABLE JSON
+T02-A ✗ UNPARSEABLE JSON
+T02-B ✗ dj_gear: got 'self' want 'dj_brings' ; sound_and_light: got 'unknown' want 'rent_from_dj' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want []
+T03-A ✗ dj_gear: got 'self' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want []
+T03-B ✗ end_time: got '14:30' want '02:30' ; missing_for_quote: got ['end_time', 'event_date', 'guest_count', 'start_time', 'venue'] want []
+T04-A ✗ dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want ['sound_and_light']
+T04-B ✗ dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want ['sound_and_light']
+T05-A ✗ missing_for_quote: got ['end_time', 'event_date', 'start_time', 'venue'] want []
+T05-B ✗ dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want []
+T06-A ✗ UNPARSEABLE JSON
+T06-B ✗ dj_gear: got 'on_site' want 'unknown' ; missing_for_quote: got ['end_time', 'event_date', 'start_time', 'venue'] want ['dj_gear']
+T07-A ✗ end_time: got '15:00' want '03:00' ; dj_gear: got 'on_site' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want []
+T07-B ✗ end_time: got '15:00' want '03:00' ; dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want []
+T08-A ✗ UNPARSEABLE JSON
+T08-B ✗ missing_for_quote: got ['end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want ['sound_and_light']
+T09-A ✗ event_type: got 'party_fuif' want 'other' ; guest_count: got '0 - 100' want '80-100' ; dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want []
+T09-B ✗ event_type: got 'party_fuif' want 'other' ; guest_count: got '0 - 100' want '80-100' ; dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want []
+T10-A ✗ event_type: got 'party_fuif' want 'wedding' ; dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want []
+T10-B ✗ event_type: got 'party_fuif' want 'wedding' ; dj_gear: got 'unknown' want 'dj_brings' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'sound_and_light', 'start_time', 'venue'] want []
+T11-A ✗ start_time: got '22:00' want 'unknown' ; venue: got 'Izegem' want 'unknown' ; dj_gear: got 'on_site' want 'unknown' ; missing_for_quote: got ['end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want ['dj_gear', 'end_time', 'guest_count', 'sound_and_light', 'start_time', 'venue']
+T11-B ✗ UNPARSEABLE JSON
+T12-A ✓
+T12-B ✓
+T13-A ✗ guest_count: got '90' want '~90' ; dj_gear: got 'on_site' want 'unknown' ; missing_for_quote: got ['end_time', 'event_date', 'venue'] want ['dj_gear']
+T13-B ✗ guest_count: got '90' want '~90' ; missing_for_quote: got ['end_time', 'event_date', 'start_time', 'venue'] want ['dj_gear']
+T14-A ✗ sound_and_light: got 'not_needed' want 'unknown'
+T14-B ✓
+T15-A ✗ is_booking_inquiry: got True want False ; event_type: got 'company_event' want 'unknown' ; venue: got 'Gemeentebestuur Ingelmunster' want 'unknown' ; sound_and_light: got 'not_needed' want 'unknown' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want []
+T15-B ✗ is_booking_inquiry: got True want False ; event_type: got 'company_event' want 'unknown' ; venue: got 'Ingelmunster, Gemeentebestuur' want 'unknown' ; sound_and_light: got 'not_needed' want 'unknown' ; missing_for_quote: got ['dj_gear', 'end_time', 'event_date', 'guest_count', 'sound_and_light', 'start_time', 'venue'] want []
+fields right out of 25 parseable outputs: {'is_booking_inquiry': 23, 'event_type': 19, 'event_date': 25, 'start_time': 24, 'end_time': 22, 'venue': 22, 'guest_count': 21, 'dj_gear': 10, 'sound_and_light': 20, 'missing_for_quote': 4}

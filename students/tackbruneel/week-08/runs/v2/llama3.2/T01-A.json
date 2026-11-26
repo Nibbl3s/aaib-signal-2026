@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-26T12:55:32.407686Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"birthday\",\n  \"event_date\": \"2025-09-27\",\n  \"start_time\": \"21:00\",\n  \"end_time\": \"02:00\",\n  \"venue\": \"Beurtkaai 1, 8800 Roeselare\",\n  \"guest_count\": \"0 - 100\",\n  \"dj_gear\": \"unknown\",\n  \"sound_and_light\": \"not_needed\",\n  \"missing_for_quote\": [\n    \"event_date\",\n    \"start_time\",\n    \"end_time\",\n    \"venue\",\n    \"guest_count\",\n    \"dj_gear\",\n    \"sound_and_light\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8413228500,
+  "load_duration": 2121438375,
+  "prompt_eval_count": 1030,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 2456827000,
+  "eval_count": 148,
+  "eval_duration": 3817063000,
+  "wall_seconds": 8.45
+}

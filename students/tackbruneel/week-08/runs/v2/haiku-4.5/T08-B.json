@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"company_event\", \"event_date\": \"2026-03-18\", \"start_time\": \"18:00\", \"end_time\": \"22:00\", \"venue\": \"Kortrijksestraat 272, 8870 Izegem\", \"guest_count\": \"100 - 300\", \"dj_gear\": \"dj_brings\", \"sound_and_light\": \"unknown\", \"missing_for_quote\": [\"sound_and_light\"]}"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"party_fuif\", \"event_date\": \"2026-03-07\", \"start_time\": \"22:30\", \"end_time\": \"00:00\", \"venue\": \"Dorpsplein, 8880 Ledegem, Sint-Eloois-Winkel, Belgium\", \"guest_count\": \"300 - 1000\", \"dj_gear\": \"on_site\", \"sound_and_light\": \"unknown\", \"missing_for_quote\": [\"sound_and_light\"]}"
+  }
+}

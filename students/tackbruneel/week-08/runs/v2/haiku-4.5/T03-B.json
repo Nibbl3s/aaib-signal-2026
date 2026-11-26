@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"birthday\", \"event_date\": \"2025-10-18\", \"start_time\": \"19:00\", \"end_time\": \"02:30\", \"venue\": \"La Cuisette, Kerkstraat 2, 8570 Anzegem\", \"guest_count\": \"0 - 100\", \"dj_gear\": \"dj_brings\", \"sound_and_light\": \"rent_from_dj\", \"missing_for_quote\": []}"
+  }
+}

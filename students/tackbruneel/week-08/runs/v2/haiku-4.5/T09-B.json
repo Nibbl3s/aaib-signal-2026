@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"party_fuif\", \"event_date\": \"2026-06-25\", \"start_time\": \"23:00\", \"end_time\": \"03:00\", \"venue\": \"Graaf Boudewijn IX-Laan 2, 8500 Kortrijk\", \"guest_count\": \"80-100\", \"dj_gear\": \"dj_brings\", \"sound_and_light\": \"unknown\", \"missing_for_quote\": [\"sound_and_light\"]}"
+  }
+}

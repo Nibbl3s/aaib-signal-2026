@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": true, \"event_type\": \"birthday\", \"event_date\": \"2025-09-27\", \"start_time\": \"21:00\", \"end_time\": \"02:00\", \"venue\": \"Beurtkaai 1, 8800 Roeselare\", \"guest_count\": \"0 - 100\", \"dj_gear\": \"dj_brings\", \"sound_and_light\": \"unknown\", \"missing_for_quote\": [\"sound_and_light\"]}"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-26T12:57:24.315471Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"company_event\",\n  \"event_date\": \"unknown\",\n  \"start_time\": \"unknown\",\n  \"end_time\": \"unknown\",\n  \"venue\": \"Ingelmunster, Gemeentebestuur\",\n  \"guest_count\": \"unknown\",\n  \"dj_gear\": \"unknown\",\n  \"sound_and_light\": \"not_needed\",\n  \"missing_for_quote\": [\"event_date\", \"start_time\", \"end_time\", \"venue\", \"guest_count\", \"dj_gear\", \"sound_and_light\"]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3515016208,
+  "load_duration": 907250,
+  "prompt_eval_count": 972,
+  "prompt_eval_cached_count": 828,
+  "prompt_eval_duration": 378197000,
+  "eval_count": 123,
+  "eval_duration": 3130801000,
+  "wall_seconds": 3.52
+}

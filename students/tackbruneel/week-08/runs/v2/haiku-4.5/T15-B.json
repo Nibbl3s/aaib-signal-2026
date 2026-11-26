@@ -1,0 +1,6 @@
+{
+  "model": "claude-haiku-4.5 (Claude Code sub-agent, fresh session per call)",
+  "message": {
+    "content": "{\"is_booking_inquiry\": false, \"event_type\": \"unknown\", \"event_date\": \"unknown\", \"start_time\": \"unknown\", \"end_time\": \"unknown\", \"venue\": \"unknown\", \"guest_count\": \"unknown\", \"dj_gear\": \"unknown\", \"sound_and_light\": \"unknown\", \"missing_for_quote\": []}"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "model": "llama3.2",
+  "created_at": "2026-11-26T12:56:54.495961Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"is_booking_inquiry\": true,\n  \"event_type\": \"wedding\",\n  \"event_date\": \"2026-06-20\",\n  \"start_time\": \"19:00\",\n  \"end_time\": \"15:00\",\n  \"venue\": \"Moen\",\n  \"guest_count\": \"100 - 300\",\n  \"dj_gear\": \"unknown\",\n  \"sound_and_light\": \"rent_from_dj\",\n  \"missing_for_quote\": [\n    \"event_date\",\n    \"start_time\",\n    \"end_time\",\n    \"venue\",\n    \"dj_gear\",\n    \"sound_and_light\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3907014250,
+  "load_duration": 3113000,
+  "prompt_eval_count": 994,
+  "prompt_eval_cached_count": 826,
+  "prompt_eval_duration": 447969000,
+  "eval_count": 134,
+  "eval_duration": 3448386000,
+  "wall_seconds": 3.91
+}
