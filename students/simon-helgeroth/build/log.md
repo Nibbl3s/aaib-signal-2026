@@ -153,10 +153,10 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 
 | | Model A | Model B |
 |---|---|---|
-| Model | | |
-| Success rate on the same test set |30% 3/10 |67% 6/9 (one ad no longer live) |
-| Cost per run |$0.00054225 | |
-| Notable difference in *how* it failed |High format drift (F4: 1) and run-to-run inconsistency (F6: 5), frequently guessing missing locations or misreading deadlines (F1: 5). |Zero format drift (F4: 0) and lower inconsistency (F6: 2); failures narrowed to edge-case extraction errors (F1: 2) on Caretaker (#5) and Senior accountant (#7), plus run-to-run variance on multi-location ads (#7, #9). |
+| Model | gemini-3.1-flash-lite | Gemini Hydrogen (Standard tier) |
+| Success rate on the same test set | 30% (3/10) | 67% (6/9 — 1 ad URL no longer live) |
+| Cost per run | $0.00054225 | $0.002154 (717 in / ~60 out at $2/$12 Standard tier, 7 Sep 2026) |
+| Notable difference in *how* it failed | High format drift (F4: 1) and run-to-run inconsistency (F6: 5), frequently guessing missing locations or misreading deadlines (F1: 5). | Zero format drift (F4: 0) and lower inconsistency (F6: 2); failures narrowed to edge-case extraction errors (F1: 2) on Caretaker (#5) and Senior accountant (#7), plus run-to-run variance on multi-location ads (#7, #9). |
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
