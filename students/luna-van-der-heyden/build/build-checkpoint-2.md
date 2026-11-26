@@ -51,6 +51,9 @@ Using verified industry copyediting benchmarks (EFA, CIEP, ACES *The Copyeditor'
 - **What I Built:** After pivoting away from a 3D-printed base (Probe 1) and a decorative dollhouse prop (Probe 2), I modeled the tray and dividers in 3D using **Website Atom** and fabricated the interlocking **Editorial Desk Triage Tray** on the FabLab **laser cutter** (`PASS`, `REVISE`, `ESCALATE / UNSURE` slots).
 - **What It Showed:** Having the physical sorting tray on the desk demonstrated how editorial bottlenecks form in practice—`PASS` chunks flow through immediately, while `REVISE` and `ESCALATE / UNSURE` chunks physically stack up in the human review trays. This physical check directly reinforces our cost model: keeping strict error/drift low (`18.75%` → `≤10%`) prevents the human review queue from backing up at 700 books/year.
 
+<img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/79a25085-6cbb-4195-8094-a729ab878b47" />
+
+
 ## 4. Next Fix (Target for Prompt v12)
 To push strict double-run compliance from **81.25%** above **90%** (and cut strict drift from **18.75%** to **≤10%**):
 1. **Add an explicit character-for-character substring check before outputting any `Original` quote:** Eliminates **F2** fabricated quotes like `"out-loud"` and false curly-quote flags (Input 16 Run B).
