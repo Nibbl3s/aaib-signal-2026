@@ -1,3 +1,23 @@
+## Deployment Probe — Week 2 → Week 8 (Completed Physical Artifact)
+After the intro session (Monday 28 September, 10:25–11:25, at the FabLab — machines, safety, file formats):
+
+| Field | Details |
+| :--- | :--- |
+| **Machine(s) & Tools Used** | **3D modeling tool (Website Atomn)** to design the 3D tray and dividers + **Laser Cutter** (3mm plywood, vector cut + raster etch) & **Assembly Bench** — chosen for fast, precise 2D cutting and engraving of interlocking sorting trays and dividers. |
+| **Completed Artifact** | **Editorial Desk Triage Tray (Physical Counter Mock + Dividers)** — three interlocking laser-cut wooden sorting trays with dividers labeled `PASS (PUBLISH-READY)`, `REVISE (MINIMAL FIX)`, and `ESCALATE / UNSURE (FULL REVIEW)` so editors/testers can physically sort sample manuscript cards based on the gatekeeper prompt's verdicts. |
+| **FabLab Session Status** | **Completed in Week 8** (pivoted from missed Week 6 slot; physical prototype cut, assembled, and sitting on desk). |
+
+### Iteration & Probe Log
+
+| Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
+| :---: | :--- | :--- | :--- | :--- |
+| **Probe 1** | Prototyping Base *(Dropped)* | 3D Printer | Tactile standee base/holder | **Failed / Cancelled:** Missed Week 6 booking window; 3D printing was also ill-suited for a flat editorial workflow. |
+| **Probe 2** | Visual Metaphor *(Rejected)* | Laser Cutter / Manual | Miniature dollhouse ("Human Voice vs. AI Cleaning") | **Scrapped before build:** Rejected as a static decorative prop rather than a functional human-in-the-loop test rig. |
+| **Probe 3** | **Active Deployment: Editorial Desk Triage Tray** | **Website Atom (3D CAD) + Laser Cutter (vector cut + raster etch) & Assembly Bench** | **Three interlocking wooden sorting trays + dividers (`PASS`, `REVISE`, `ESCALATE / UNSURE`)** | **Completed (Week 8):** Modeled in 3D via Website Atom, laser-cut and assembled into a working physical desk mock. |
+
+**Design Pivot & Deployment Observation (Week 6 → Week 8):**  
+Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive workflow test. Pivoted to designing the tray and dividers in 3D via Website Atom and laser-cutting interlocking plywood triage trays in Week 8. Having the physical three-slot tray (`PASS` / `REVISE` / `ESCALATE`) on the desk makes the human-in-the-loop bottleneck immediately tangible: `PASS` cards move straight through with zero friction, whereas `REVISE` and `ESCALATE/UNSURE` cards physically pile up in the review trays—confirming why keeping strict error/drift low (`18.75%` → `≤10%`) and keeping human verification fast (`~1.2–1.5 min` per flag) is critical so the editorial desk does not bottleneck at scale.
+
 ## Deployment probe — from Week 2 
 
 **After the intro session (Monday 28 September, 10:25–11:25, at the fablab — machines, safety, file formats):**
