@@ -94,13 +94,13 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 
 ## Changes
 
-### Change 1 — *date*
+### Change 1 — 25/11-2026
 
-**What I changed:** —  
-**Why I thought it would help:** —  
-**What I predicted would happen:** —  
-**What actually happened:** — % → — %  
-**Was I right?** —  
+**What I changed:** Replaced subjective vagueness evaluation with strict factual extraction rules, standardized fallback values ("Missing"), lexical category mappings (employment extent, language names only, structural must/nice-to-have markers), and multi-city location filtering (excluding HQ/background cities).
+**Why I thought it would help:** Removing subjective judgment and enforcing bounded, deterministic rules stops the model from inventing flags, hallucinating formats, and guessing unstated details.
+**What I predicted would happen:** False flags (F1), format drift (F4), and run-to-run inconsistency (F6) would drop sharply, raising overall extraction accuracy across the 7 fields.
+**What actually happened:** 30 % → 67 %  
+**Was I right?** Yes — pass rate more than doubled (+37 percentage points), confirming that strict extraction rules eliminate ambiguity errors, though remaining edge cases still prevent 100% accuracy. 
 
 ---
 
@@ -154,9 +154,9 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 | | Model A | Model B |
 |---|---|---|
 | Model | | |
-| Success rate on the same test set | | |
-| Cost per run | | |
-| Notable difference in *how* it failed | | |
+| Success rate on the same test set |30% 3/10 |67% 6/9 (one ad no longer live) |
+| Cost per run |$0.00054225 | |
+| Notable difference in *how* it failed |High format drift (F4: 1) and run-to-run inconsistency (F6: 5), frequently guessing missing locations or misreading deadlines (F1: 5). |Zero format drift (F4: 0) and lower inconsistency (F6: 2); failures narrowed to edge-case extraction errors (F1: 2) on Caretaker (#5) and Senior accountant (#7), plus run-to-run variance on multi-location ads (#7, #9). |
 
 | # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
 |---|---|---|---|---|---|---|
