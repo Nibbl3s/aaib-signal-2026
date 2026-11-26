@@ -158,6 +158,19 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 | Cost per run | | |
 | Notable difference in *how* it failed | | |
 
+| # | Input (short label) | Expected | Got (run A) | Got (run B) | Verdict | Failure code |
+|---|---|---|---|---|---|---|
+| 1 |Play Area Host | Struggle with percentage| 26 nov| 26 nov|✓| 
+| 2 |Restaurantchef| Start date| 26 nov| 26 nov|✓|
+| 3 |Truck driver |URL Linked gone, ad missing in test.
+| 4 |English teacher |Requirements | 26 nov | 26 nov|✓|
+| 5 |Caretaker |Nothing  | 26 nov| 26 nov|✗|F1|
+| 6 |Administrative officer |Nothing  | 26 nov| 26 nov|✓|
+| 7 |Senior accountant |Workplace location | 26 nov| 26 nov|✗|F1 + F6|
+| 8 |Recruiter |Start date | 26 nov| 26 nov|✓|
+| 9 |Salesperson |Workplace location | 26 nov| 26 nov|✗|F6|
+| 10 |Teacher |Nothing | 26 nov| 26 nov|✓|
+
 **Would switching be a day's work or a rebuild?**
 > —
 
