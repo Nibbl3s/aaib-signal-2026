@@ -6,6 +6,7 @@ author: Andreea Simion
 beat: "The Psychology of AI Adoption in the Workplace"
 skill: "Design defense"
 date: 2026-11-26
+
 ---
 
 # Week 8 Evidence — Northwind Logistics
