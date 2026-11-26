@@ -1671,6 +1671,15 @@
  },
  {
   "week": 8,
+  "title": "Design Defense \u2014 Why Workplace AI Needs an Architecture, Not Just a Model",
+  "author": "Andreea Simion",
+  "beat": "The Psychology of AI Adoption in the Workplace",
+  "skill": "Design defense",
+  "date": "2026-11-26",
+  "url": "posts/andreea-simion-week-08.html"
+ },
+ {
+  "week": 8,
   "title": "I Defended My Own AI Design to a Board. It Shrank My Business Case.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",
