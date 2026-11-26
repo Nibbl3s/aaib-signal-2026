@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Designed the AI Intake for My Own Studio. Then I Decided Not to Build It Yet. — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 8 · AI Cost Decisions for a One-Person DJ &amp; Events Business</div>
+<h1>I Designed the AI Intake for My Own Studio. Then I Decided Not to Build It Yet.</h1>
+<div class="byline">Thor Tack · 2026-11-26</div>
+<p><strong>Hook:</strong> In a one-person business, skipping design doesn't produce a failed IT project. It produces a nice-sounding reply with the wrong price, sent at midnight because you trusted it. I've measured my own extraction tool for eight weeks, so I know which field it gets wrong. This week I designed around that field.</p>
+<p><strong>The Company:</strong> Thorax Studio is my one-person web and app studio in Izegem, the sister brand of my DJ business: same owner, same inbox. It sells websites (€39–€99 a month) and custom apps to local businesses. Today: one paying client, one app offer out, 16 businesses in the pipeline. Requests come in through a step form that writes to Firestore, an Apps Script that mails them to me, a Combell mailbox, WhatsApp, and a Google Form for DJ bookings. My constraint: <strong>€300 cash and 25 hours of my own time in Year 1</strong>, at my €60/h floor rate. Volume: about 7 inquiries a month across both brands.</p>
+<p><strong>The Architecture:</strong> One use case: inquiry → first reply + pre-filled offer, approved by me.</p>
+<ul>
+<li><strong>Data layer.</strong> The three channels I already have: Firestore, Gmail, the DJ form. WhatsApp stays manual (I paste a message in), because the Business API is an extra account and cost for about one message a week. My price table and offer templates stay in my own git repo. Invoices (Accountable) are deliberately not connected.</li>
+<li><strong>AI model layer.</strong> Claude Haiku 4.5 over the API: call 1 extracts the fields (that's my Build, now on prompt v2), call 2 drafts a Dutch reply without prices. €0.0047 per inquiry. I chose it on evidence: <strong>22/30</strong> fully right on my 15 real inquiries, against <strong>3/30</strong> for Llama 3.2 3B on my laptop. A <em>connect</em> decision, provider in config.</li>
+<li><strong>Integration layer.</strong> I extend the Apps Script that already runs: validate the JSON in code, then look up <strong>the price in code from my table, never from the model</strong>, create a Gmail draft and write a log row. On any error it retries once, then falls back to today's plain notification mail. So the AI can't take the business down.</li>
+<li><strong>Interface layer.</strong> A draft in the client's own Gmail thread, with a three-line check block on top: gear or formula, price, date, and any unknown field in red. I press Send. Nothing auto-sends, and the AI never talks to a client.</li>
+<li><strong>Governance layer.</strong> Every call is logged with prompt version, model and whether I edited the draft. The Week 7 test scripts re-run my 30 test calls monthly, and whenever the provider announces a change. EU AI Act: minimal risk, because a human decides and sends.</li>
+</ul>
+<p>Year 1: <strong>€0.46 in cash, 24 hours of my time.</strong> Per correctly handled inquiry it costs €5.14, and €0.005 of that is the model. The rest is my review time and the leftover error risk.</p>
+<p><strong>The Defense:</strong> <em>Why not the AI built into Gmail or a CRM?</em> It writes good text but doesn't know my price table or my "unknown → ask" rule, and a CRM would move a 16-row pipeline out of a file I own. <em>What if the provider triples the price?</em> My bill goes from €0.03 to €0.10 a month. A silent model swap is the real risk, which is why the regression set exists. <em>What about French?</em> My test set is almost all Dutch. I claim 22/30 for Dutch and nothing for French, so French inquiries get the manual path until I've measured them. <em>What's the risk you're not seeing?</em> That I stop reading the check block. Prompt v2 fixed most of my Build's dangerous gear errors, but one survived in both runs: a "yes" tick box with no gear named still comes out as "decks on site", 2 of 30 outputs, about 7%. No code check catches it, because "on site" is an allowed answer. My review is the only control, so the log tracks my edit rate. If it drops to zero while the test set still shows 7%, I'm rubber-stamping.</p>
+<p>The board question I'd ask myself is <em>should you build it at all?</em> At 7 inquiries a month it saves about €84 of my time and costs about €36 in review and risk. That pays back the build in roughly 30 months. At 15 a month it's 14 months. <strong>So I build it when the pipeline reaches 15 inquiries a month.</strong> Until then, my templates and my own reading are the right system. Good design includes when to build.</p>
+<p><strong>The Question:</strong> I'm least sure that a three-minute human check stays a real check at 30 drafts a month. If someone has measured how fast review quality decays on routine AI drafts, that number would change my build gate more than any model price.</p>
+<p><em>AI use: Claude ran the 60 test calls and the scoring, built the cost model script and drafted this post from my lab memo (<code>week-08/lab-memo.md</code>). The company, the use case, the budget cap, the build gate and the v2 prediction are mine. I reviewed it.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
