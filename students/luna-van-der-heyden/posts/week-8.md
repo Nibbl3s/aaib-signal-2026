@@ -1,3 +1,12 @@
+---
+week: 8
+title: Protecting Author Voice at Standaard Uitgeverij: A Copyediting Gatekeeper Design
+author: Luna Van der Heyden
+beat: Algorithmic Homogenization: The Commercial and Brand Toll of AI Editing Tools in Trade Publishing
+skill: Design Defense, Five-Layer Architecture, and Cost-at-Scale Projection
+date: 2026-11-26
+---
+
 # Protecting Author Voice at Standaard Uitgeverij: A Copyediting Gatekeeper Design
 
 **Hook:**
