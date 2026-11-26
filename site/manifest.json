@@ -1719,6 +1719,15 @@
  },
  {
   "week": 8,
+  "title": "Good Enough Is Not Enough: Designing AI for Client Feedback",
+  "author": "Nina Deiter",
+  "beat": "When does AI actually help project managers in creative agencies \u2014 and when does it get in the way?",
+  "skill": "Lock-in detection",
+  "date": "2026-11-26",
+  "url": "posts/nina-deiter-week-08.html"
+ },
+ {
+  "week": 8,
   "title": "I Designed the AI Intake for My Own Studio. Then I Decided Not to Build It Yet.",
   "author": "Thor Tack",
   "beat": "AI Cost Decisions for a One-Person DJ & Events Business",
@@ -1760,15 +1769,6 @@
   "skill": "",
   "date": "",
   "url": "posts/andreea-simion-week-08-evidence.html"
- },
- {
-  "week": 8,
-  "title": "Week 8",
-  "author": "nina-deiter",
-  "beat": "",
-  "skill": "",
-  "date": "",
-  "url": "posts/nina-deiter-week-08.html"
  },
  {
   "week": 9,
