@@ -7,6 +7,8 @@ After the intro session (Monday 28 September, 10:25–11:25, at the FabLab — m
 | **Completed Artifact** | **Editorial Desk Triage Tray (Physical Counter Mock + Dividers)** — three interlocking laser-cut wooden sorting trays with dividers labeled `PASS (PUBLISH-READY)`, `REVISE (MINIMAL FIX)`, and `ESCALATE / UNSURE (FULL REVIEW)` so editors/testers can physically sort sample manuscript cards based on the gatekeeper prompt's verdicts. |
 | **FabLab Session Status** | **Completed in Week 8** (pivoted from missed Week 6 slot; physical prototype cut, assembled, and sitting on desk). |
 
+<img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/aa215249-a5f4-4228-b20a-2e155cbfd9e4" />
+
 ### Iteration & Probe Log
 
 | Probe # | Category / Focus | Machines / Environment | Artifact Tracked | FabLab Session Status |
@@ -17,6 +19,7 @@ After the intro session (Monday 28 September, 10:25–11:25, at the FabLab — m
 
 **Design Pivot & Deployment Observation (Week 6 → Week 8):**  
 Missed the Week 6 booking window and dropped the 3D-printed base. Briefly explored a miniature room comparison ("raw human voice vs. AI over-editing"), but scrapped it because it acted as a static art prop rather than an interactive workflow test. Pivoted to designing the tray and dividers in 3D via Website Atom and laser-cutting interlocking plywood triage trays in Week 8. Having the physical three-slot tray (`PASS` / `REVISE` / `ESCALATE`) on the desk makes the human-in-the-loop bottleneck immediately tangible: `PASS` cards move straight through with zero friction, whereas `REVISE` and `ESCALATE/UNSURE` cards physically pile up in the review trays—confirming why keeping strict error/drift low (`18.75%` → `≤10%`) and keeping human verification fast (`~1.2–1.5 min` per flag) is critical so the editorial desk does not bottleneck at scale.
+
 
 ## Deployment probe — from Week 2 
 
