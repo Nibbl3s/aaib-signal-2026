@@ -1,13 +1,3 @@
-
----
-week: 8
-title: "Week 8 Evidence — Northwind Logistics Architecture and Design Defense"
-author: Andreea Simion
-beat: "The Psychology of AI Adoption in the Workplace"
-skill: "Design defense"
-date: 2026-11-26
----
-
 # Week 8 Evidence — Northwind Logistics
 
 ## 1. Use Case and Justification
@@ -279,7 +269,3 @@ The architecture is intended to fit within the €50,000 first-year ceiling and 
 - [ ] Confirm the data-retention, audit-log and access-control design with the relevant GDPR stakeholders.
 - [ ] Complete and document the EU AI Act classification assessment before deployment.
 - [ ] Confirm which team members own model monitoring, integration support and human-review procedures.
-
----
-
-**Source basis:** Week 8 assignment brief and the team's existing Week 8 Northwind Logistics notes. Cost figures are retained from the team's planning estimates and are explicitly marked as provisional where their underlying breakdown is unavailable.
