@@ -172,7 +172,7 @@ Since my success rate on the Platsbanken ads was already as low as 30%, I think 
 | 10 |Teacher |Nothing | 26 nov| 26 nov|✓|
 
 **Would switching be a day's work or a rebuild?**
-> —
+> **A day's work, not a rebuild.** The tool relies on a single, self-contained prompt with plain text input (raw job ad copy) and a flat 7-line bullet output, with no vendor-specific tool calling, custom API schemas, or fine-tuning. Switching models only requires updating the model endpoint and running a validation pass on the 9-ad test set to confirm that the new model respects the exact `"Missing"` fallback string and outputs no conversational commentary.
 
 ---
 
