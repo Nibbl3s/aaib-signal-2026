@@ -11,7 +11,7 @@ Fill it in *as you go*, not the night before a checkpoint. A log reconstructed f
 ## The job
 
 **What it does, in one sentence:**
-> Classifies one financial news item for a retail investor into event type, asset class, and fact or opinion.
+> Classifies one financial news item for a investor into event type, asset class, and fact or opinion.
 
 **Input:** one headline plus lead, or one opinion piece, in English or Dutch.
 **Output:** three labelled lines.
@@ -251,3 +251,73 @@ Write these at Weeks 4, 8 and 12. Five lines each — they are what gets marked,
 Labels written by me and checked with Claude for consistency with my own rules; prompt v1 drafted with Claude from my rules.
 Run results entered and summarised with Claude; verdicts and conclusions are my own.
 Checkpoint 1 summary lines drafted with Claude from my logged results; the data and the failure judgements are my own.
+
+## Build Checkpoint 2 (Week 8): revision v1 to v2
+
+### Prediction (written Wed 25 Nov 2026, 13:25, before any v2 run)
+My words: "I expect the errors will fall by 15% because of the updated prompt."
+Made specific (confirmed by me): errors in the fields the change targets (event and fact_or_opinion) fall by about 15%, from 10 wrong field-answers in v1 (event 6, fact/opinion 4, out of 60) to about 8 or 9. Asset errors (12 of 30 in v1) should stay about the same, because v2 has no asset rule.
+
+### v1 re-baseline (Claude Code, claude-sonnet-5-5, 25 Nov 2026 13:15)
+7/15 fully correct in both runs (the Week 4 run in the claude.ai chat gave 9/15). Same answer in both runs: 13/15. Event 24/30, asset 18/30, fact/opinion 26/30. Format problems: 0/30.
+
+### Failure coding rule
+An extra asset, or a wrong event or fact_or_opinion, is F1. A missing or incomplete asset list is F3. Different answers between runs on the same item is F6. No F2, F4 or F5 cases so far.
+
+## Build Checkpoint 2 (Week 8): revision v1 to v2
+
+### Revision and reason
+v2 = v1 plus three rules about opinion labels: (1) use event "opinion only" when the item is only someone's forecast or commentary; (2) if the opinion is about a specific company event, keep "company news" and set fact_or_opinion to opinion; (3) probabilities, market expectations and forecasts are opinion even when they contain numbers. Reason: in the v1 baseline, items 11 (Jefferies price target) and 14 (rate odds) were labelled as fact or with the wrong event type, which is the dangerous failure for a retail investor (opinion read as fact).
+
+### Prediction (written before measuring)
+See the prediction written above in this entry.
+
+### Re-measure on the same 15-item test set (same harness, 2 runs per item)
+
+| | v1 (13:15) | v1 (13:29) | v2 |
+|---|---|---|---|
+| Fully correct in both runs | 7/15 | 7/15 | 8/15 |
+| Same answer in both runs | 13/15 | 13/15 | 14/15 |
+| Event correct | 24/30 | 25/30 | 28/30 |
+| Asset correct | 18/30 | 18/30 | 18/30 |
+| Fact/opinion correct | 26/30 | 28/30 | 30/30 |
+| Wrong event + fact/opinion answers | 10 | 7 | 2 |
+
+Chance noise: v1 against itself moved by 3 wrong answers (10 to 7), so differences smaller than about 3 are not evidence.
+
+### Delta (EDIT into your own words)
+I predicted a 15% drop in event and fact/opinion errors. They fell from 7 to 2 (10 to 2 against the first v1 run), so I under-predicted. The new rules target opinion labels and fixed items 11 and 14, which are the items that inspired them. Asset stayed at 18/30, so a longer prompt alone does not reduce errors. The change was one of several options Claude proposed; I chose it because it looked the most valid.
+
+### Out-of-sample check (6 fresh items, answer key written before the run, 2 runs per item)
+
+| | v1 | v2 |
+|---|---|---|
+| Fully correct in both runs | 3/6 | 2/6 |
+| Same answer in both runs | 6/6 | 5/6 |
+| Event correct | 8/12 | 7/12 |
+| Asset correct | 12/12 | 12/12 |
+| Fact/opinion correct | 10/12 | 10/12 |
+| Wrong event + fact/opinion answers | 6/24 | 7/24 |
+
+Result: the improvement from the core test set did not show up on new items. v1 and v2 are equal within noise (7 against 6 wrong answers). This is not evidence that v2 is worse. It is evidence that the core result was partly fitted to items 11 and 14, which motivated the rules.
+
+### Failure coding (fresh items)
+- F1 event, both versions, both runs: model says "regulation", my key says "company news". F1 wrong. The item is an authority decision about a takeover, so my key is arguable.
+- F4 event, both versions, both runs: model says "company news", my key says "regulation" (OPEC+ output decision). F1 wrong.
+- F6 fact/opinion, both versions, both runs: model says "fact" for a bid plus an analyst remark that the premium is too low. F1 wrong, and it is the dangerous direction (opinion read as fact). Mixed item, so my key is arguable. Rule 2 did not trigger.
+- F2 event, v2 run B only: "market move" in one run and "company news" in the other. F6 inconsistent.
+
+### Limitations
+15 core items and 6 fresh items, 2 runs each. Core and fresh keys were written by the same person, and three fresh labels (F2 fact/opinion, F2 asset, F4 event) were changed once after a consistency check against my own earlier key. Fresh asset answers were all correct, but the fresh key follows the item text literally, while the core key also counts assets that are only implied, so asset scores are not comparable between the two sets. Only F5 and F6 test the opinion rules.
+
+### Observation
+Both versions show the same weak spot on new items: the boundary between "regulation" and "company news" when an authority or organisation decides something (F1, F4). Candidate for a v3 rule. It must be tested on new items, not on these six.
+
+### Cost per run (ESTIMATE, not measured)
+One classification call is about 330 input tokens (prompt plus item) and 25 output tokens. At the Standard tier from the AI Pricing Reference (snapshot 7 Sep 2026): 330 x EUR 1.84 / 1M + 25 x EUR 11.04 / 1M = about EUR 0.0009 per item. A full test run (15 items x 2 versions x 2 runs = 60 calls) is about EUR 0.05, the fresh check (24 calls) about EUR 0.02. Claude Sonnet 5.5 is not in the price snapshot, so the Sonnet 5 price (EUR 1.84 / EUR 9.20 per 1M) gives about EUR 0.0008. The headless runs also carry Claude Code overhead, so the real bill for those runs was higher than this estimate.
+
+### Fablab observation
+Not run.
+
+### Decision
+Keep v2, status: not confirmed out of sample. Cost per run is an estimate, not measured.
