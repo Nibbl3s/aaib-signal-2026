@@ -1,50 +1,32 @@
 ---
-title: "AI Integration for a Ghent Boutique Hotel Group: A €15K Connect Design"
+title: "Replacing a €12,600 Restaurant Agency: A 5-Layer Hybrid AI Architecture"
 date: "2026-11-27"
 author: "Levente Sinka"
 week: 8
 ---
 
-# AI Integration for a Ghent Boutique Hotel Group: A €15K Connect Design
+Most independent restaurants treat AI as a software purchase. They bolt on an automated review responder or pay an off-site agency to pair generic captions with stock photos. Skipping integration design creates disconnected tools, wrong online menus, and hidden review labor that erases any cash savings.
 
-Most independent hospitality groups treat AI like a shopping trip. They bolt a chatbot onto the website or sign up for an automated review responder, and then they call it transformation. Without an integration design, you end up with disconnected tools, replies that hurt the brand, and surprise costs when volume grows or a vendor changes its terms.
+### The Company
 
-## The Company
+Rather than using hypothetical agency estimates, this design is built directly on my Week 4 interview with the owner of a real 90-seat casual-dining bistro in Western Hungary. The restaurant previously paid a regional agency €12,600/year (€1,000/month retainer plus €600 in shoot fees). Worse, the owner still burned 12 to 14 hours/month micromanaging briefs and snapping hasty kitchen photos (€4,032/year at €28/hour loaded rate), while agency menu mistakes caused €1,200 to €1,500/year in comped meals. The constraint is tight: replace the €12,600 retainer with a €10,560 Year 1 hybrid budget (€9,000/year local solo creator visiting twice weekly, €960/year software stack, €600 setup), zero in-house engineers, three guest languages (Hungarian, German, English), and EU GDPR compliance.
 
-Meet Korenmarkt Hospitality Group, a composite example: a boutique hotel and bistro operator with three properties across Ghent and Bruges, 38 staff and €4.2M in annual revenue. They run Mews PMS for bookings, Lightspeed POS for the bistro menus, Google Business Profile and Booking.com for reviews, and Microsoft 365 for day-to-day operations. Today they pay an outside marketing agency €2,500 a month, or €30,000 a year.
+### The Architecture
 
-The constraints are tight:
+One focused use case fixes both bottlenecks: a multilingual Guest Review Triage and Local GEO (Generative Engine Optimization) pipeline that turns daily kitchen specials into Schema.org JSON-LD markup and flags urgent complaints before they hurt ratings.
 
-* A €15,000 AI integration budget for Year 1
-* A 3-month rollout
-* No in-house engineers, only a freelance technical integrator
-* Four guest languages: Dutch, French, German and English
-* Strict EU GDPR compliance
+* **Data Layer:** Read-only daily POS menu exports and Google/TripAdvisor review feeds. Accounting and guest payment records stay physically disconnected. Logs live in open JSON inside an EU-hosted PostgreSQL database (€120/year, inside the €960 software stack).
+* **AI Model Layer (ADR-001 Routing):** A Connect setup behind an OpenAI-compatible client. Grounded in the Course AI Pricing Reference (7 September 2026) and my Week 6 live Hungarian API measurements, mission-critical escalation triage and Schema generation route to Groq (`openai/gpt-oss-20b` at €0.000092/run) with Google AI Studio (`gemini-3.1-flash-lite` at €0.000097/run) as backup, already absorbing Groq's +62.6% Hungarian tokenizer tax and 246 hidden reasoning tokens. At 150 monthly calls for this bistro (60 reviews, 90 menu/social updates), raw API spend is under €1/year; even scaling to 20 venues (1,200 reviews/month) costs just €0.11 to €0.12/month.
+* **Integration Layer:** A thin Python wrapper (€600 setup) strips guest PII, enforces strict JSON validation (stopping the Markdown-fence parser crash seen on Gemini in Week 6), runs deterministic keyword overrides for food-poisoning or billing disputes, and auto-fails over to the backup API or manual inbox with zero downtime.
+* **Interface Layer:** No custom dashboard. The solo creator handles routine drafts, while the owner receives only flagged escalations and final menu checks via WhatsApp or email, cutting owner coordination from 13 hours down to 2 hours/month.
+* **Governance Layer:** EU-only processing under Zero-Data-Retention terms, EU AI Act Limited-Risk disclosure on automated FAQs, and mandatory human sign-off on negative replies and live menu prices.
 
-## The Architecture
+### The Defense
 
-I picked one focused use case: a multilingual Guest Review Triage and Local GEO (Generative Engine Optimization) pipeline. It turns the daily Lightspeed menu specials into Schema.org JSON-LD markup, and it flags urgent guest complaints before they damage the ratings.
+Why not buy packaged tools like MARA AI or Microsoft Copilot? MARA locks review history inside a proprietary dashboard, ignores POS-to-GEO menu markup, and cannot fix the owner's core bottleneck: authentic physical presence on the restaurant floor. Lock-in is equally real: on November 20, 2026, Groq Customer Support confirmed in writing zero guaranteed notice for model deprecation or price hikes, so ADR-001 isolates providers behind a swappable wrapper (under 2 days to migrate). Most importantly, human review time drives total cost, not tokens. Applying my Week 2 measured 15% cloud error rate (17/20 clean runs) and the Course Loaded Cost Reference (€33/hour, €5/fix for 10 minutes of review), 60 monthly reviews create 9 fixes: **1.5 hours/month (€45/month, €540/year)** of creator review time, absorbed inside the €9,000 retainer while cutting menu-error comps by €1,000/year. At 20-venue solo-operator scale (1,200 reviews/month), that 15% error rate demands **30 hours/month (€900/month)** in cleanup, 7,745x the €0.12 token bill. Free local `llama3.2` (3B) makes this worse: even after my Week 8 prompt tightening jumped accuracy from 18.8% to 62.5% (+43.7 points across 16 runs), a 37.5% error rate would require **75 hours/month (€2,250/month)** at 20-venue scale, breaking unit economics past my 17.9% ceiling.
 
-**Data layer.** A read-only REST API pulls from Google Business Profile, Booking.com exports and Lightspeed POS (menu items and opening hours only). Mews guest payment records and personal booking histories stay completely disconnected. Logs live as open JSON in an EU-hosted PostgreSQL database, about €120 a year.
+### The Question
 
-**AI model layer.** This is a Connect setup built on a tiered, EU-compliant commercial API. I used the course AI Pricing Reference (7 September 2026) and my own live benchmarks to split the work. The 10% of requests that matter most, escalation triage and Schema generation, run on a Standard-tier reasoning model at roughly €0.0001 per call on Groq or Google AI Studio. The other 90%, low-stakes social posts and FAQ drafts, go to a Budget tier or a local open-weights model. Year 1 API spend stays under €300, even after the multilingual token tax (non-English text uses 62.6% more tokens).
+The one thing I am least sure about is whether kitchen staff will update daily POS specials cleanly enough for automated Schema.org publishing, or whether messy inputs will push creator review time past 1.5 hours/month per venue. If real tracking breaks that ceiling, I would cut automated GEO markup and keep AI strictly on review triage.
 
-**Integration layer.** A thin, 50-line, OpenAI-compatible Python wrapper, built by a freelancer for €7,500, plus €1,500 for an automated 50-case multilingual evaluation harness. It strips guest personal data before anything reaches a prompt, enforces strict JSON validation so stray Markdown can't crash the parser, and connects the tools through MCP. If the primary API fails, it switches to a secondary EU endpoint. If both fail, reviews drop back into the existing manual inbox, so nothing goes down.
-
-**Interface layer.** There's no custom app. Flagged escalations arrive in Microsoft Teams and Outlook, and a manager approves every negative reply and every live Schema update before it's published. Staff training is €2,000.
-
-**Governance layer.** EU-only processing with Zero-Data-Retention contracts, an EU AI Act Limited-Risk disclosure on the automated FAQs, weekly accuracy tracking, and a €3,580 buffer for contingency and compliance. Total Year 1 cost: €15,000.
-
-## The Defense
-
-Why not just switch on the AI already built into Mews, use MARA AI, or roll out Microsoft 365 Copilot? There are three reasons.
-
-**It's expensive and it doesn't fit.** Copilot licenses for 38 people cost €13,680 a year before anyone has built a single workflow. Packaged review tools like MARA AI keep your response history locked in their own dashboards, and they ignore Lightspeed menus and GEO Schema markup altogether.
-
-**Lock-in is real.** On 20 November 2026, Groq Customer Support confirmed to me in writing that their on-demand APIs come with no guaranteed notice before a model is deprecated or a price goes up. If every call goes through an OpenAI-compatible client, switching providers takes under two days.
-
-**Self-hosting a free local model sounds great until you test it.** In Weeks 7 and 8 I benchmarked a local `llama3.2` (3B) across 16 multilingual runs. Tightening the prompt lifted accuracy by 43.7 percentage points, from 18.8% to 62.5%, which is a big jump. But a 37.5% error rate is still unacceptable. At scale, cleaning up mistakes is what drives the budget, not tokens. At 1,200 reviews a month, API tokens cost under €1. A 15% error rate at €5 per fix costs €900 a month. And if silent model drift pushes errors above 17.9%, the economics fall apart completely. That's why humans stay in the loop on every high-stakes escalation: it protects the margin and the brand.
-
-## The Question
-
-The thing I'm least sure about is whether a busy hotel manager can really stay under our 42-hour monthly editing ceiling once drafts start arriving every day. If real time tracking shows more than 42 hours, or if direct bookings drop, I'd drop the in-house triage and go back to a specialist partner.
+*AI-use note: Gemini assisted with structuring and editing the prose; all restaurant interview figures, live API token measurements, local model benchmarks, and vendor support quotes are my own verified primary measurements.*
