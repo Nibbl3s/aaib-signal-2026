@@ -88,3 +88,18 @@ Three of six are detectable in code, including both dangerous ones. That is deli
 4. Report the honest accuracy. 60% diagnosed beats 95% claimed.
 
 **15 inputs, every expected answer written before the prompt existed.**
+
+
+## Checkpoint 2 extension: 27 November 2026
+
+The 15 active Checkpoint 1 inputs and their keys remain unchanged. T13 stays retired. These five new inputs bring the active set to 20. The expected labels are evaluation judgments, not claims about how the studios currently work. Each evidence entry is an example of a valid verbatim span. Only the input text is sent to the classifier.
+
+| ID | Input (verbatim) | Expected `layer` | Expected `exposure` | Example `evidence` | Rationale and source |
+|---|---|---|---|---|---|
+| T17 | Establish and oversee the architecture and technical strategy for game features and systems. | `code` | `human_only` | oversee the architecture and technical strategy | The job in the excerpt is to set and own technical direction, not to draft code or options. [CD PROJEKT RED, Engineering Director](https://jobs.smartrecruiters.com/CDPROJEKTRED/744000159128630-engineering-director) |
+| T18 | Develop the gameplay animation vision | `digital_actor` | `human_only` | Develop the gameplay animation vision | The deliverable is creative direction for gameplay animation, not an animation draft. [Ubisoft, Gameplay Animation Director](https://jobs.smartrecruiters.com/Ubisoft2/744000112493097-gameplay-animation-director-bge2-m-f-nb) |
+| T19 | Design, implement, maintain, and extend gameplay and engine systems focused on NPC animation, locomotion, and navigation. | `code` | `ai_assisted_human_signs_off` | gameplay and engine systems | The deliverable is a gameplay system, not a character animation asset. AI can draft pieces; engineers own integration and testing. [CD PROJEKT RED, Senior Engineer, Gameplay](https://jobs.smartrecruiters.com/CDPROJEKTRED/744000158569250-senior-engineer-gameplay) |
+| T20 | You’ll work from clear specifications, use AI agents to develop features, and carefully verify changes before they reach game production teams. | `code` | `ai_assisted_human_signs_off` | use AI agents to develop features, and carefully verify changes | Feature implementation is the technical task. The posting explicitly describes AI assistance and developer verification; it does not establish that the features can ship autonomously. [Ubisoft, Senior UX and Core Tools C++ Engineer](https://jobs.smartrecruiters.com/Ubisoft2/744000161227538-senior-ux-and-core-tools-c-engineer-snowdrop-) |
+| T21 | Co-creating and transforming the project vision into a playable environment | `world_art` | `ai_assisted_human_signs_off` | transforming the project vision into a playable environment | This excerpt is about implementing a playable space, not setting the overall creative vision. AI can draft layout options; a designer must validate playability. [Techland, Level Designer](https://jobs.smartrecruiters.com/TechlandSA/744000136453239-level-designer) |
+
+Sources retrieved 27 November 2026. T21 is a contiguous excerpt from a longer line. The proposed keys were drafted with AI assistance for Daniel Stefirta’s review. No Checkpoint 2 runs have been made at the time of this test-set revision.
