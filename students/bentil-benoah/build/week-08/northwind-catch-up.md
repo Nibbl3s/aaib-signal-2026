@@ -59,6 +59,8 @@ Implementation proposal: month 1 verify entitlements/data access, baseline rules
 
 I would first check included Salesforce capabilities and price/quality on this exact task; I have not established that a local alternative offers better value. Launch uses only Salesforce, and Microsoft 365 is postponed, so a Copilot/Graph workflow is not silently included. The €20,000 custom development allowance is only justified if a pilot beats simpler rules or an entitled built-in option after review costs.
 
+**The first-year number is against me.** At a constant 300 enquiries/day, the [cost model](northwind-costs.md) gives a first-year cost of €47,020.63 against €37,500 of manual categorisation time. That is **−€9,520.63, a first-year ROI of −20.25%**. Base payback only comes after 13.98 operating months, or 18.36 months with the 15% reserve, so this design does not pay for itself in year 1. Under the added growth schedule ROI becomes +10.89%, but that scenario breaks the €50,000 cap (question 2). Even the €37,500 is weak: it rests on a 60-second manual-handling assumption that I added for sensitivity and never measured at Northwind. My honest board answer is that I cannot ask for a year-1 return. I would ask for a smaller, measured pilot and compare it with rules and included Salesforce features before spending the full €20,000.
+
 ### 2. What happens when volume triples?
 
 The monthly first-year allocation increases from €3,918.39 at 300/day to €6,254.32 at 900/day, while external token charges stay zero; review and correction grow, fixed allowances do not automatically triple. At 900/day, the time assumptions imply 4.875 staff hours/day for review plus correction, and server capacity remains untested. The explicit growing-year schedule breaches the cap by €6,364.38, so I would not approve it under the unchanged €50,000 limit.
@@ -77,7 +79,7 @@ Valid-but-wrong labels can bypass format checks: the Week 8 classifier returned 
 
 ## Budget sensitivity
 
-At €25,000, the constant-launch estimate is unaffordable: restrict to a smaller supervised rules-versus-AI pilot and re-cost rather than claim the same system fits. At €100,000, the €56,364.38 growth scenario has nominal headroom, but extra funding does not establish multilingual accuracy, capacity or justify activating every deferred connection. Neither is a procurement quote.
+Neither budget changes the negative first-year ROI (−20.25%) at launch volume; more money buys scope, not a better return. At €25,000, the constant-launch estimate is unaffordable: restrict to a smaller supervised rules-versus-AI pilot and re-cost rather than claim the same system fits. At €100,000, the €56,364.38 growth scenario has nominal headroom, but extra funding does not establish multilingual accuracy, capacity or justify activating every deferred connection. Neither is a procurement quote.
 
 ## AI assistance and limits
 
