@@ -68,7 +68,7 @@ At the beginning of this course, I was mainly interested in what AI could automa
 - Week 2 Signal: [week-02.md](posts/week-02.md) — “When AI Is Not the Right Tool”.
 - Original Build prompt and tests: [prompt.md](build/prompt.md), [test-set.md](build/test-set.md).
 - Preserved Week 7 assessment: [week-07-evidence.md](build/week-07-evidence.md), including the proposed adapter, validator and human review workflow; the separate Week 8 architecture develops that proposal without claiming deployment.
-- Actual Week 8 experiment: [complete summary](build/checkpoint-summary.md), [raw responses](build/week-08/results.jsonl), [settings](build/week-08/metadata.json), [recorded prediction](build/week-08/prediction.json), [Build log](build/log.md).
+- Actual Week 8 experiment: [complete summary](build/week-08/checkpoint-summary.md), [raw responses](build/week-08/results.jsonl), [settings](build/week-08/metadata.json), [recorded prediction](build/week-08/prediction.json), [Build log](build/log.md).
 - Completed supporting design: [BelSupply architecture and Build placement](build/week-08/belsupply-architecture.md), [cost projections and value model](build/week-08/belsupply-costs.md), [individual Northwind catch-up](build/week-08/northwind-catch-up.md), [Signal 8](posts/week-08.md). No authentic peer critique is available because I missed class.
 
 Ratings are my proposed self-assessment for review, not independently awarded scores. Architecture and financial documents are hypothetical individual design work; written defense preparation does not establish participation in class or a successful live defense. Week 8 re-ratings of skills 1–4 are made at Week 8 and do not change the Checkpoint 1 record above.
