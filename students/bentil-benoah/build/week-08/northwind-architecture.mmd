@@ -1,0 +1,31 @@
+flowchart TD
+  subgraph DATA["1. Data Layer"]
+    Q["Existing Salesforce enquiries (L) / Original ticket and customer records stay here"]
+  end
+  subgraph INT["3. Integration Layer"]
+    A["Python adapter: minimise text; timeout handling / Development €20,000; software €1,200/year"]
+    V["Validate exactly one permitted label / Invalid / timeout: preserve manual queue"]
+  end
+  subgraph MODEL["2. AI Model Layer"]
+    B["BUILD classifier: local Llama 3.2 3B / Ollama / Hardware €2,400; power/infra allowance €1,200/year / €0 external token fee; capacity untested"]
+  end
+  subgraph UI["4. Interface Layer"]
+    M["Existing manual queue / staff classification"]
+    H["Salesforce human review (L) / Approve or correct BEFORE routing / Review €9,375 + correction €2,812.50/year / Training €1,500 upfront"]
+    R["Approved department routing (L) / No automated replies, refunds or ticket closure"]
+  end
+  subgraph GOV["5. Governance Layer"]
+    G["Company audit logs: IDs, model/prompt version, label and correction / Access, retention, language/quality and cost monitoring / Maintenance/monitoring €2,400/year"]
+  end
+  Q -->|"REST / HTTPS + JSON; untrusted enquiry text + ID"| A
+  A -->|"local HTTP JSON /api/chat; minimised text only"| B
+  B -->|"HTTP JSON; proposed category"| V
+  V -->|"REST / HTTPS + JSON; suggestion only"| H
+  Q -.->|"original ticket in existing platform; manual fallback"| M
+  V -.->|"failure state / invalid label; retain ticket"| M
+  M -->|"staff-assigned category in platform"| H
+  H -->|"human-approved category + ticket ID"| R
+  A -.->|"JSON request metadata; no full email copy"| G
+  V -.->|"JSON model/version/validation outcome"| G
+  H -.->|"reviewer correction + final decision"| G
+  F["FUTURE ONLY: Microsoft 365; no launch connection"]

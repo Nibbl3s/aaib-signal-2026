@@ -1,0 +1,144 @@
+{
+  "financial_assumptions_date": "2026-11-27",
+  "rounding": "Decimal ROUND_HALF_UP, full precision until final display",
+  "assumptions": "Financial planning only; error rate 15% is not measured production accuracy. All review/error time is paid by the company. Northwind 60s manual baseline is an added sensitivity assumption.",
+  "scenarios": [
+    {
+      "name": "BelSupply",
+      "queries": 25000,
+      "fixed": "5640.00",
+      "upfront": "4800.00",
+      "annual_review": "3125.00",
+      "annual_correction": "937.50",
+      "subtotal": "9702.50",
+      "contingency": "1455.38",
+      "total": "11157.88",
+      "budget_remaining_from_rounded_total": "3842.12",
+      "manual_baseline": "12500.00",
+      "net_savings": "1342.12",
+      "roi_percent": "12.02850005041282502268577126",
+      "recurring_annual_before_reserve": "4902.50",
+      "payback_months_base": "7.581441263573543928923988155",
+      "payback_months_with_15pct_reserve": "9.652986501994644516093775618",
+      "model_correct_query_cost": "0.5250764705882352941176470588",
+      "hypothetical_all_reviewed_correct_query_cost": "0.44631500000000000000000",
+      "monthly": [
+        {
+          "month": 1,
+          "daily_enquiries": 100,
+          "queries": "2083.333333333333333333333333",
+          "review": "260.42",
+          "correction": "78.13",
+          "allocated_first_year_total": "929.82",
+          "recurring_with_reserve": "469.82"
+        },
+        {
+          "month": 6,
+          "daily_enquiries": 200,
+          "queries": "4166.666666666666666666666667",
+          "review": "520.83",
+          "correction": "156.25",
+          "allocated_first_year_total": "1319.15",
+          "recurring_with_reserve": "859.15"
+        },
+        {
+          "month": 12,
+          "daily_enquiries": 300,
+          "queries": "6250",
+          "review": "781.25",
+          "correction": "234.38",
+          "allocated_first_year_total": "1708.47",
+          "recurring_with_reserve": "1248.47"
+        }
+      ],
+      "growth_queries": "41666.66666666666666666666666",
+      "growth_total": "14272.46",
+      "growth_budget_remaining": "727.54",
+      "growth_payback_months_with_reserve": "7.173507938939092255067136368",
+      "growth_roi_percent": "45.96878019729140331465906073"
+    },
+    {
+      "name": "Northwind",
+      "queries": 75000,
+      "fixed": "28700.00",
+      "upfront": "23900.00",
+      "annual_review": "9375.00",
+      "annual_correction": "2812.50",
+      "subtotal": "40887.50",
+      "contingency": "6133.13",
+      "total": "47020.63",
+      "budget_remaining_from_rounded_total": "2979.37",
+      "manual_baseline": "37500.00",
+      "net_savings": "-9520.63",
+      "roi_percent": "-20.24776361437135299669028219",
+      "recurring_annual_before_reserve": "16987.50",
+      "payback_months_base": "13.98171846435100548446069470",
+      "payback_months_with_15pct_reserve": "18.35967018056570295376265526",
+      "model_correct_query_cost": "0.7375784313725490196078431373",
+      "hypothetical_all_reviewed_correct_query_cost": "0.6269416666666666666666666667",
+      "monthly": [
+        {
+          "month": 1,
+          "daily_enquiries": 300,
+          "queries": "6250",
+          "review": "781.25",
+          "correction": "234.38",
+          "allocated_first_year_total": "3918.39",
+          "recurring_with_reserve": "1627.97"
+        },
+        {
+          "month": 6,
+          "daily_enquiries": 600,
+          "queries": "12500",
+          "review": "1562.50",
+          "correction": "468.75",
+          "allocated_first_year_total": "5086.35",
+          "recurring_with_reserve": "2795.94"
+        },
+        {
+          "month": 12,
+          "daily_enquiries": 900,
+          "queries": "18750",
+          "review": "2343.75",
+          "correction": "703.13",
+          "allocated_first_year_total": "6254.32",
+          "recurring_with_reserve": "3963.91"
+        }
+      ],
+      "growth_queries": "125000",
+      "growth_total": "56364.38",
+      "growth_budget_remaining": "-6364.38",
+      "growth_payback_months_with_reserve": "10.79023794444947073192798335",
+      "growth_roi_percent": "10.88564363571848352793763791"
+    }
+  ],
+  "token_projections": [
+    {
+      "daily_calls": 100,
+      "annual_calls": 25000,
+      "monthly_input_tokens": "271458.3333333333333333333333",
+      "monthly_output_tokens": "7083.333333333333333333333332",
+      "annual_input_tokens": "3257500.0",
+      "annual_output_tokens": "85000.0",
+      "external_token_charge_eur": "0.00"
+    },
+    {
+      "daily_calls": 1000,
+      "annual_calls": 250000,
+      "monthly_input_tokens": "2714583.333333333333333333333",
+      "monthly_output_tokens": "70833.33333333333333333333332",
+      "annual_input_tokens": "32575000.0",
+      "annual_output_tokens": "850000.0",
+      "external_token_charge_eur": "0.00"
+    },
+    {
+      "daily_calls": 10000,
+      "annual_calls": 2500000,
+      "monthly_input_tokens": "27145833.33333333333333333333",
+      "monthly_output_tokens": "708333.3333333333333333333332",
+      "annual_input_tokens": "325750000.0",
+      "annual_output_tokens": "8500000.0",
+      "external_token_charge_eur": "0.00"
+    }
+  ]
+}

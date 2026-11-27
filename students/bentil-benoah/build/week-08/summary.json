@@ -1,0 +1,26 @@
+{
+  "scores_out_of_10": [
+    8,
+    9
+  ],
+  "improvement_vs_week7_pp": [
+    60,
+    70
+  ],
+  "difference_vs_historical_week2_pp": [
+    -20,
+    -10
+  ],
+  "prediction_correct": true,
+  "inconsistent_cases": [
+    6
+  ],
+  "valid_wrong_category_count": 3,
+  "unusable_format_count": 0,
+  "token_totals": {
+    "input_tokens": 2606,
+    "output_tokens": 68
+  },
+  "total_experiment_seconds": 10.065233291999998,
+  "note": "Wrong category is null when format is invalid; inspect raw text for semantic errors. F1 Wrong, F2 Fabricated, F3 Missed, F4 Format, F5 Refused, F6 Inconsistent. Review F2/F3/F5 manually; codes can overlap. Token counts are runtime-reported, not a bill."
+}

@@ -1,0 +1,9 @@
+{
+  "recorded_at_utc": "2026-11-27T19:01:38.873810+00:00",
+  "status": "recorded before creating revised prompt; no Week 8 inference executed",
+  "baseline": "Week 7: 2/10 exact labels per run, two runs",
+  "hypothesis": "Explicitly prohibiting numerical answers and explanations will improve exact category-name matching to at least 8/10 in EACH of two runs.",
+  "acceptance": "Both run scores >=8/10. Trim outer whitespace only; no repair, numeric mapping, retries or selection.",
+  "original_prompt_sha256": "3571b5ba7f71ac724568981047ef387f2990482e789f5146a64c1ede9f08ed00",
+  "test_set_sha256": "5da8a852856b297b459bb409bb5b9028f966426e7abc5ae0286465c3c668237c"
+}

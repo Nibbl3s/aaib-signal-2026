@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1240" viewBox="0 0 1320 1240" role="img" aria-labelledby="title desc">
+<title id="title">Northwind five-layer proposed architecture</title>
+<desc id="desc">Unimplemented local classifier with authenticated platform adapter, exact-label validation, mandatory human review, manual fallback and governance. L marks platform dependency.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker></defs>
+<rect width="1320" height="1240" fill="#f8fafc"/>
+<style>text{font-family:Arial,sans-serif;fill:#0f172a} .title{font-size:25px;font-weight:bold}.label{font-size:15px;font-weight:bold}.small{font-size:13px}.node{fill:white;stroke:#64748b;stroke-width:1.5}.edge{fill:none;stroke:#334155;stroke-width:1.8;marker-end:url(#arrow)}</style>
+<text x="28" y="35" class="title">Northwind: five-layer architecture — proposed, not implemented</text>
+<text x="28" y="58" class="small">(L) = vendor dependency. All euro amounts are planning allowances, not actual expenditure.</text>
+<rect x="15" y="80" width="1290" height="135" rx="9" fill="#e0f2fe"/>
+<text x="30" y="108" class="label">1. Data Layer</text>
+<rect x="15" y="230" width="1290" height="270" rx="9" fill="#eef2ff"/>
+<text x="30" y="258" class="label">3. Integration Layer</text>
+<rect x="15" y="515" width="1290" height="165" rx="9" fill="#dcfce7"/>
+<text x="30" y="543" class="label">2. AI Model Layer</text>
+<rect x="15" y="695" width="1290" height="265" rx="9" fill="#fff7ed"/>
+<text x="30" y="723" class="label">4. Interface Layer</text>
+<rect x="15" y="975" width="1290" height="175" rx="9" fill="#f1f5f9"/>
+<text x="30" y="1003" class="label">5. Governance Layer</text>
+<rect class="node" x="425" y="110" width="440" height="80" rx="8"/>
+<text x="440" y="134" class="label">Salesforce enquiry queue (L)</text>
+<text x="440" y="155" class="small">Ticket ID and customer records remain here</text>
+<text x="440" y="176" class="small">Existing Salesforce cases only</text>
+<rect class="node" x="425" y="275" width="440" height="95" rx="8"/>
+<text x="440" y="299" class="label">Python adapter: minimise text</text>
+<text x="440" y="320" class="small">Development €20,000; supported API required</text>
+<text x="440" y="341" class="small">Software €1,200/year</text>
+<rect class="node" x="925" y="385" width="350" height="95" rx="8"/>
+<text x="940" y="409" class="label">Exact-label validator</text>
+<text x="940" y="430" class="small">Reject invalid labels; handle timeout</text>
+<text x="940" y="451" class="small">No autonomous routing or tool use</text>
+<rect class="node" x="425" y="555" width="440" height="100" rx="8"/>
+<text x="440" y="579" class="label">BUILD: Llama 3.2 3B / local Ollama</text>
+<text x="440" y="600" class="small">Hardware €2,400; power/infra €1,200/year</text>
+<text x="440" y="621" class="small">€0 external token fee; untested capacity</text>
+<text x="440" y="642" class="small">Prototype reference</text>
+<rect class="node" x="40" y="780" width="285" height="95" rx="8"/>
+<text x="55" y="804" class="label">Manual fallback queue</text>
+<text x="55" y="825" class="small">Existing platform; retain original ticket</text>
+<text x="55" y="846" class="small">Staff classify when AI unavailable</text>
+<rect class="node" x="425" y="755" width="440" height="115" rx="8"/>
+<text x="440" y="779" class="label">Salesforce HUMAN APPROVAL (L)</text>
+<text x="440" y="800" class="small">Review/correct every suggestion before routing</text>
+<text x="440" y="821" class="small">Review €9,375; correction €2,812.50/year</text>
+<text x="440" y="842" class="small">Training €1,500 upfront</text>
+<rect class="node" x="425" y="895" width="440" height="50" rx="8"/>
+<text x="440" y="919" class="label">Approved department routing (L)</text>
+<rect class="node" x="425" y="1015" width="790" height="100" rx="8"/>
+<text x="440" y="1039" class="label">Company audit and operational controls</text>
+<text x="440" y="1060" class="small">ID, timestamp, model/prompt version, label, correction, final decision</text>
+<text x="440" y="1081" class="small">Access / retention / language quality / costs; monitoring €2,400/year</text>
+<text x="440" y="1102" class="small">Use existing host/logs; no separate cloud database subscription</text>
+<path class="edge" d="M645 190 L645 275"/>
+<text x="660" y="235" class="small">REST / HTTPS + JSON</text>
+<path class="edge" d="M645 370 L645 555"/>
+<text x="435" y="463" class="small">Local HTTP/JSON: minimised text</text>
+<path class="edge" d="M865 605 L1100 605 L1100 480"/>
+<text x="900" y="635" class="small">HTTP JSON category</text>
+<path class="edge" d="M1100 480 L1210 480 L1210 805 L865 805"/>
+<text x="1025" y="722" class="small">API JSON: suggestion only</text>
+<path class="edge" d="M425 150 L345 150 L345 750 L183 750 L183 780" stroke-dasharray="6 4"/>
+<text x="32" y="735" class="small">Original ticket → manual workflow</text>
+<path class="edge" d="M925 430 L355 430 L355 765 L325 810" stroke-dasharray="6 4"/>
+<text x="32" y="670" class="small">Invalid / timeout → manual queue</text>
+<path class="edge" d="M325 835 L425 835"/>
+<text x="330" y="861" class="small">staff label</text>
+<path class="edge" d="M645 870 L645 895"/>
+<text x="675" y="890" class="small">approved ID + label</text>
+<path class="edge" d="M865 330 L1290 330 L1290 1045 L1215 1045" stroke-dasharray="6 4"/>
+<text x="1030" y="310" class="small">request metadata + validation logs</text>
+<path class="edge" d="M1275 445 L1290 445" stroke-dasharray="6 4"/>
+<path class="edge" d="M865 855 L900 855 L900 1015" stroke-dasharray="6 4"/>
+<text x="915" y="940" class="small">review decision JSON</text>
+<text x="30" y="1180" class="small">Full assumptions, review costs and 15% contingency: see matching cost model. Local hosting ≠ a compliance audit.</text>
+<text x="30" y="1205" class="small">FUTURE ONLY: Microsoft 365, SAP, TMS, WhatsApp and Power BI — no launch connections.</text>
+</svg>
