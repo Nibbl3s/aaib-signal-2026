@@ -44,7 +44,7 @@ In Week 1, I thought that if AI could automate a task, it would automatically be
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |---|:---:|:---:|---|
-| Market mechanism thinking | 5 | 🔴 | No sufficient evidence is currently available to support a stronger rating. |
+| Market mechanism thinking | 5 | 🔴 | In my [Week 5 GEO audit of Odoo](posts/week-05.md) I scored six GEO criteria from 0 to 3 and assessed four vulnerability factors; rating kept at 🔴 until I review it. |
 | Cost projection | 6 | 🟡 | I calculated monthly first-year allocations of €929.82, €1,319.15 and €1,708.47 at 100, 200 and 300 daily enquiries, plus an explicit annual growth forecast, in the [cost projections](build/week-08/belsupply-costs.md). |
 | Lock-in detection | 7 | 🟢 | I compared my historical cloud classifier results with local Llama 3.2 3B results and documented performance differences and switching limitations in my Week 7 evidence. |
 | Design defense | 8 | 🟡 | I prepared a [five-layer Odoo architecture with human review and fallback](build/week-08/belsupply-architecture.md), its [cost model](build/week-08/belsupply-costs.md) and [five Northwind defense answers](build/week-08/northwind-catch-up.md), but missed class and have not delivered a live defense. |
