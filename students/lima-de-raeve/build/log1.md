@@ -160,9 +160,15 @@ The average response time after the revision was 8.79 seconds, with a median of 
 
 ### Cost implications
 
-Using the previous measured token consumption of 167 input tokens and 38 output tokens, and the pricing assumptions established in Week 6, the estimated baseline cost is $0.00009875 per classification, or approximately $0.10 per 1,000 classifications.
+After revising the classifier, I recorded actual API usage metadata showing 642 input tokens and 270 output tokens, resulting in a total of 912 tokens for one classification.
 
-The revised prompt may increase input token consumption. However, updated token measurements were not available in the captured results, so the exact cost difference cannot yet be established.
+Using the pricing assumptions established in Week 6 ($0.25 per million input tokens and $1.50 per million output tokens), the estimated cost increased from $0.00009875 to $0.0005655 per classification.
+
+At a scale of 1,000 customer messages, this represents an increase from approximately $0.10 to $0.57.
+
+Although the estimated cost increased significantly in relative terms, the absolute financial impact remains limited. For a one-person business such as SoloShop, I consider this additional cost acceptable if the improved classification performance is maintained, particularly because incorrect handling of customer complaints and financial disputes could have more significant business consequences.
+
+However, these cost estimates are based on individual token measurements rather than average consumption across the entire dataset. The measurements were not established as a controlled comparison of identical inputs, and the pricing assumptions have not been independently reverified. Further testing would therefore be necessary to determine representative operating costs.
 
 ### Limitations and next steps
 
