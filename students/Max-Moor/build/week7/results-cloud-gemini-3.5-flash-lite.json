@@ -1,0 +1,240 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "label": "cloud",
+ "results": [
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": null,\n  \"quantity\": 1,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"file\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 528,
+   "completion_tokens": 86,
+   "seconds": 6.3,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 1,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": null,\n  \"material\": null,\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"dimensions\",\n    \"file\"\n  ],\n  \"out_of_scope\": true\n}",
+   "prompt_tokens": 528,
+   "completion_tokens": 85,
+   "seconds": 7.3,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 1,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG, ou en PP\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": 554,\n  \"deadline\": null,\n  \"missing_info\": [],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 845,
+   "completion_tokens": 74,
+   "seconds": 9.2,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 2,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": 554,\n  \"deadline\": null,\n  \"missing_info\": [],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 845,
+   "completion_tokens": 75,
+   "seconds": 9.6,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 2,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"résistant\",\n  \"quantity\": 8,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 528,
+   "completion_tokens": 78,
+   "seconds": 8.7,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 3,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"résistant\",\n  \"quantity\": 8,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 528,
+   "completion_tokens": 78,
+   "seconds": 5.2,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 3,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": null,\n  \"quantity\": 5,\n  \"largest_dimension_mm\": 122.0,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 522,
+   "completion_tokens": 86,
+   "seconds": 1.6,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 4,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": null,\n  \"quantity\": 5,\n  \"largest_dimension_mm\": 122.0,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 522,
+   "completion_tokens": 86,
+   "seconds": 1.0,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 4,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"resin\",\n  \"material\": \"résine haute définition\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": 300,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 659,
+   "completion_tokens": 88,
+   "seconds": 9.1,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 5,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"resin\",\n  \"material\": \"résine haute définition\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": 300,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 659,
+   "completion_tokens": 84,
+   "seconds": 7.9,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 5,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": null,\n  \"quantity\": null,\n  \"largest_dimension_mm\": 610,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 489,
+   "completion_tokens": 88,
+   "seconds": 0.9,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 6,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": null,\n  \"quantity\": null,\n  \"largest_dimension_mm\": 610,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 489,
+   "completion_tokens": 88,
+   "seconds": 0.9,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 6,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"ASA/ABS\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": 250,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 530,
+   "completion_tokens": 87,
+   "seconds": 9.5,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 7,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"ASA/ABS\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": 250.0,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 530,
+   "completion_tokens": 84,
+   "seconds": 1.5,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 7,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"ABS\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 593,
+   "completion_tokens": 77,
+   "seconds": 6.7,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 8,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"ABS\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 593,
+   "completion_tokens": 77,
+   "seconds": 0.8,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 8,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"plastique ou autre matière\",\n  \"quantity\": 6,\n  \"largest_dimension_mm\": 531.0,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 530,
+   "completion_tokens": 91,
+   "seconds": 1.0,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 9,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": null,\n  \"material\": \"plastique ou autre matière\",\n  \"quantity\": 6,\n  \"largest_dimension_mm\": 531.0,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 530,
+   "completion_tokens": 86,
+   "seconds": 1.3,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 9,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PLA standard\",\n  \"quantity\": 50,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"file\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 557,
+   "completion_tokens": 91,
+   "seconds": 3.1,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 10,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PLA standard\",\n  \"quantity\": 50,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"dimensions\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 557,
+   "completion_tokens": 91,
+   "seconds": 1.6,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 10,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"quantity\",\n    \"file\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 457,
+   "completion_tokens": 89,
+   "seconds": 2.7,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 11,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"quantity\",\n    \"file\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 457,
+   "completion_tokens": 89,
+   "seconds": 8.7,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 11,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG noir\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": 450,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 551,
+   "completion_tokens": 84,
+   "seconds": 1.0,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 12,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG noir\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": 450.0,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 551,
+   "completion_tokens": 81,
+   "seconds": 6.7,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 12,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": 100.4,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 1062,
+   "completion_tokens": 84,
+   "seconds": 2.7,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 13,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"quantity\",\n    \"file\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 1062,
+   "completion_tokens": 84,
+   "seconds": 2.9,
+   "model_returned": "gemini-3.5-flash-lite",
+   "input": 13,
+   "run": "B"
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "model": "llama3.2",
+ "label": "local",
+ "results": [
+  {
+   "output": "{\"process_requested\": \"FDM\", \"material\": null, \"quantity\": null, \"largest_dimension_mm\": null, \"deadline\": null, \"missing_info\": [\"material\", \"quantity\", \"dimensions\", \"file\"], \"out_of_scope\": true}",
+   "prompt_tokens": 518,
+   "completion_tokens": 55,
+   "seconds": 1.6,
+   "model_returned": "llama3.2",
+   "input": 1,
+   "run": "A"
+  },
+  {
+   "output": "{\"process_requested\": null, \"material\": null, \"quantity\": null, \"largest_dimension_mm\": null, \"deadline\": null, \"missing_info\": [\"file\"], \"out_of_scope\": true}",
+   "prompt_tokens": 518,
+   "completion_tokens": 44,
+   "seconds": 1.2,
+   "model_returned": "llama3.2",
+   "input": 1,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": 228,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\"\n  ],\n  \"out_of_scope\": false",
+   "prompt_tokens": 836,
+   "completion_tokens": 61,
+   "seconds": 2.6,
+   "model_returned": "llama3.2",
+   "input": 2,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": \"484\",\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\",\n    \"file\",\n    \"material\",\n    \"quantity\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 836,
+   "completion_tokens": 75,
+   "seconds": 1.9,
+   "model_returned": "llama3.2",
+   "input": 2,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"resin\",\n  \"material\": \"matériau résistant\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\",\n    \"file\",\n    \"material\",\n    \"quantity\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 536,
+   "completion_tokens": 76,
+   "seconds": 2.2,
+   "model_returned": "llama3.2",
+   "input": 3,
+   "run": "A"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"resin\",\n  \"material\": \"matériel résistant\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\"material\", \"quantity\"],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 536,
+   "completion_tokens": 66,
+   "seconds": 1.7,
+   "model_returned": "llama3.2",
+   "input": 3,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"resin\",\n  \"material\": \"blanche\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": \"4.5\",\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 527,
+   "completion_tokens": 73,
+   "seconds": 2.1,
+   "model_returned": "llama3.2",
+   "input": 4,
+   "run": "A"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"Blanche\",\n  \"quantity\": 5,\n  \"largest_dimension_mm\": \"null\",\n  \"deadline\": \"null\",\n  \"missing_info\": [\n    \"dimensions\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 527,
+   "completion_tokens": 71,
+   "seconds": 1.9,
+   "model_returned": "llama3.2",
+   "input": 4,
+   "run": "B"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"resin\",\n  \"material\": null,\n  \"quantity\": null,\n  \"largest_dimension_mm\": \"30\",\n  \"deadline\": null,\n  \"missing_info\": [\"material\", \"quantity\", \"file\"],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 668,
+   "completion_tokens": 65,
+   "seconds": 2.3,
+   "model_returned": "llama3.2",
+   "input": 5,
+   "run": "A"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"resin\",\n  \"material\": \"argenté, carnation foncée, rubans vives\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": \"30\",\n  \"deadline\": \"null\",\n  \"missing_info\": [\"material\", \"quantity\", \"file\"],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 668,
+   "completion_tokens": 80,
+   "seconds": 2.1,
+   "model_returned": "llama3.2",
+   "input": 5,
+   "run": "B"
+  },
+  {
+   "output": "{\"process_requested\": null, \"material\": null, \"quantity\": null, \"largest_dimension_mm\": null, \"deadline\": null, \"missing_info\": [\"dimensions\"], \"out_of_scope\": false}",
+   "prompt_tokens": 485,
+   "completion_tokens": 44,
+   "seconds": 1.4,
+   "model_returned": "llama3.2",
+   "input": 6,
+   "run": "A"
+  },
+  {
+   "output": "{\"process_requested\": null, \"material\": null, \"quantity\": null, \"largest_dimension_mm\": null, \"deadline\": null, \"missing_info\": [\"material\", \"quantity\", \"dimensions\"], \"out_of_scope\": false}",
+   "prompt_tokens": 485,
+   "completion_tokens": 50,
+   "seconds": 1.3,
+   "model_returned": "llama3.2",
+   "input": 6,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"ASA/ABS\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\"material\", \"quantity\", \"dimensions\", \"file\"],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 534,
+   "completion_tokens": 67,
+   "seconds": 2.0,
+   "model_returned": "llama3.2",
+   "input": 7,
+   "run": "A"
+  },
+  {
+   "output": "{\"process_requested\": \"FDM\", \"material\": \"ASA/ABS\", \"quantity\": null, \"largest_dimension_mm\": null, \"deadline\": null, \"missing_info\": [\"material\", \"quantity\", \"file\"], \"out_of_scope\": false}",
+   "prompt_tokens": 534,
+   "completion_tokens": 55,
+   "seconds": 1.4,
+   "model_returned": "llama3.2",
+   "input": 7,
+   "run": "B"
+  },
+  {
+   "output": "{\"process_requested\": \"FDM\", \"material\": \"ABS\", \"quantity\": 4, \"largest_dimension_mm\": null, \"deadline\": null, \"missing_info\": [\"file\"], \"out_of_scope\": false}",
+   "prompt_tokens": 599,
+   "completion_tokens": 48,
+   "seconds": 1.6,
+   "model_returned": "llama3.2",
+   "input": 8,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"ABS\",\n  \"quantity\": 4,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\",\n    \"dimensions\",\n    \"quantity\",\n    \"material\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 599,
+   "completion_tokens": 77,
+   "seconds": 1.9,
+   "model_returned": "llama3.2",
+   "input": 8,
+   "run": "B"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"plastique ou autre matière\",\n  \"quantity\": 6,\n  \"largest_dimension_mm\": 360,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 531,
+   "completion_tokens": 72,
+   "seconds": 2.1,
+   "model_returned": "llama3.2",
+   "input": 9,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"plastique ou autre matière\",\n  \"quantity\": 6,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 531,
+   "completion_tokens": 75,
+   "seconds": 1.9,
+   "model_returned": "llama3.2",
+   "input": 9,
+   "run": "B"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PLA standard\",\n  \"quantity\": 50,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 545,
+   "completion_tokens": 75,
+   "seconds": 2.2,
+   "model_returned": "llama3.2",
+   "input": 10,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PLA\",\n  \"quantity\": 50,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 545,
+   "completion_tokens": 66,
+   "seconds": 1.7,
+   "model_returned": "llama3.2",
+   "input": 10,
+   "run": "B"
+  },
+  {
+   "output": "{\"process_requested\":\"FDM\",\"material\":\"PETG\",\"quantity\":null,\"largest_dimension_mm\":null,\"deadline\":null,\"missing_info\":[\"material\",\"quantity\",\"dimensions\",\"file\"],\"out_of_scope\":false}",
+   "prompt_tokens": 454,
+   "completion_tokens": 45,
+   "seconds": 1.2,
+   "model_returned": "llama3.2",
+   "input": 11,
+   "run": "A"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\"material\", \"quantity\", \"dimensions\"],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 454,
+   "completion_tokens": 66,
+   "seconds": 1.7,
+   "model_returned": "llama3.2",
+   "input": 11,
+   "run": "B"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG noir\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": 450,\n  \"deadline\": null,\n  \"missing_info\": [\n    \"dimensions\",\n    \"file\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 546,
+   "completion_tokens": 70,
+   "seconds": 2.0,
+   "model_returned": "llama3.2",
+   "input": 12,
+   "run": "A"
+  },
+  {
+   "output": "{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG noir\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": \"450 × 355 × 35 mm\",\n  \"deadline\": null,\n  \"missing_info\": [\n    \"material\",\n    \"quantity\",\n    \"file\",\n    \"dimensions\"\n  ],\n  \"out_of_scope\": false\n}",
+   "prompt_tokens": 546,
+   "completion_tokens": 82,
+   "seconds": 2.1,
+   "model_returned": "llama3.2",
+   "input": 12,
+   "run": "B"
+  },
+  {
+   "output": "```\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": 1,\n  \"largest_dimension_mm\": \"130\",\n  \"deadline\": null,\n  \"missing_info\": [\n    \"file\",\n    \"dimensions\",\n    \"quantity\"\n  ],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 1129,
+   "completion_tokens": 74,
+   "seconds": 3.5,
+   "model_returned": "llama3.2",
+   "input": 13,
+   "run": "A"
+  },
+  {
+   "output": "```json\n{\n  \"process_requested\": \"FDM\",\n  \"material\": \"PETG\",\n  \"quantity\": null,\n  \"largest_dimension_mm\": null,\n  \"deadline\": null,\n  \"missing_info\": [\"file\", \"dimensions\"],\n  \"out_of_scope\": false\n}\n```",
+   "prompt_tokens": 1129,
+   "completion_tokens": 64,
+   "seconds": 1.7,
+   "model_returned": "llama3.2",
+   "input": 13,
+   "run": "B"
+  }
+ ]
+}
