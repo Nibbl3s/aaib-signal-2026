@@ -40,29 +40,29 @@ track: "6 ECTS"
 
 **Your Build, right now** (one line each):
 
-- What can your tool do now?
-- What can't it do yet?
-- Which number proves it?
+- What can your tool do now? My tool can extract 7 standardized factual fields (start date, application deadline, work location/mode, employment extent, language requirements, years of experience, and must-have vs. nice-to-have separation) from job ads into a strict English format without hallucinating or judging text quality.
+- What can't it do yet? It no longer evaluates subjective ad quality or vagueness, and it still fails on 33% of test ads when dates, locations, or employment terms are phrased unusually or implicitly.
+- Which number proves it? Accuracy improved from 30% in Week 4 to 67% in Version 2 after replacing subjective vagueness checks with strict bounded outputs and lexical mapping rules
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Market mechanism thinking | 5 | 🟢 / 🟡 / 🔴 | |
-| Cost projection | 6 | 🟢 / 🟡 / 🔴 | |
-| Lock-in detection | 7 | 🟢 / 🟡 / 🔴 | |
-| Design defense | 8 | 🟢 / 🟡 / 🔴 | |
+| Market mechanism thinking | 5 | 🟡 |I analyzed Teamtailor's AI vulnerability and GEO scorecard (12/18), finding that while AI cannot replace core ATS workflows, missing JSON-LD schemas hurt their AI visibility.|
+| Cost projection | 6 |🟡|For my job ad tool (334 runs/month at Academic Work), I calculated that human error fixes (€1,715/month at a 70% error rate) cost over 10,000 times more than the €0.16 monthly token bill.|
+| Lock-in detection | 7 |🟡 |I scored lock-in risk across OmniRetail (13/15), GhentAccounting (7/15), and my own job ad stack (8/15), and wrote a 90-day exit plan showing how to switch tools using local files and APIs.|
+| Design defense | 8 |🔴|I built a five-layer architecture for Northwind under the €50,000 budget (€28,693 total), but defending complex edge cases to a board is still difficult for me.|
 
 **Re-rate Checkpoint 1.** Do not copy your Week 4 answers down. Four weeks of compounding changes them — sometimes upward, sometimes not, because Week 8 shows you what you did not know you did not know in Week 4.
 
 | Skill | Week 4 rating | Week 8 rating | What changed |
 |-------|:-------------:|:-------------:|--------------|
-| Cost literacy | | | |
-| Capability skepticism | | | |
-| Vendor claim detection | | | |
-| Value quantification | | | |
+| Cost literacy |🟡|🟡 |In Week 4 I only estimated token spend, while in Week 8 I modeled a full €28,693 budget and showed that human edits (€2,700/month) far outweigh token costs (€4.35/month).|
+| Capability skepticism |🔴 |🟡 |In Week 4 I could not explain why outputs failed, while testing my Version 2 prompt raised accuracy from 30% to 67% by extracting 7 clear facts instead of judging text quality.|
+| Vendor claim detection | 🟡 | 🟡 |In Week 4 I only looked at wording in a table, whereas now I check if a vendor tool actually fits real technical limits like old SQL databases and data rules.|
+| Value quantification |🔴 | 🟡 |In Week 4 I had no baseline numbers for my tool, while using a €40/hr wage let me prove that our €0.33 automated update beats the €4.00 manual cost per message.|
 
 **6 ECTS — extended evidence:**
 
-**Your click:** What did you believe at Checkpoint 1 that you've since replaced? Four weeks of compounding should have produced at least one.
+**Your click:** At Checkpoint 1, I believed making an LLM smarter was about asking it to judge text quality and worried mostly about token prices. Over Weeks 5–8, I replaced that view after seeing that human error fixes (€1,715/month at a 70% error rate) cost over 10,000 times more than tokens (€0.16/month), and that restricting my Build to 7 factual fields raised accuracy from 30% to 67%.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
