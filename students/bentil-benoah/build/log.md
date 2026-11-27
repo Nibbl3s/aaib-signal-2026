@@ -80,3 +80,26 @@ The actual experiment remains 17/20 correct (85%) versus 4/20 (20%), +65 percent
 Constant-launch first-year costs including 15% reserve: BelSupply €11,157.88; Northwind €47,020.63. A separately assumed growth schedule produces €14,272.46 and €56,364.38 respectively; Northwind exceeds its cap. See [independent calculations](week-08/financial-checks.json) and [source checks](week-08/source-checks.md). No physical fablab deployment observations are available; no deployment was invented.
 
 Bentil missed class; Northwind is individual catch-up, with no claimed team presentation or peer critique. The current live Hub/rubric and Canvas fields remain unverified; the saved instruction summary supplies the checklist. The complete experiment evidence and raw files remain unchanged, and the log before this addendum is preserved in submission-week-08/build-log-before-financial-addendum.md. No commits, pushes, publication or submission.
+
+
+## Week 7 — local model test (added to this log on 27 November 2026)
+
+*Added afterwards: these Week 7 runs were documented in [week-07-evidence.md](week-07-evidence.md) and [Signal post 7](../posts/week-07.md) (committed 20 November 2026) but never entered in this log. Nothing below is new measurement.*
+
+- **Model:** Llama 3.2 3B (`llama3.2:3b`) through local Ollama. Week 8 used the same model digest ([metadata.json](week-08/metadata.json)).
+- **Prompt and tests:** Version 1 of [prompt.md](prompt.md) and the same ten inputs in [test-set.md](test-set.md), each run twice.
+- **Exact category-name matches:** run 1 **2/10**, run 2 **2/10** (4/20, 20%), against 10/10 in both Week 2 cloud runs. That is an 80 percentage-point gap under strict exact matching, with different dates and interfaces.
+- **Failures:** 16/20 replies did not match the exact label format (F4). Most were category numbers instead of names. Double-payment case 7 returned `1. Order Status` (run 1) and `2` (run 2). Three of ten inputs gave different replies across the two runs (F6), as counted in the [Week 8 checkpoint summary](week-08/checkpoint-summary.md). Exact matching did not show how many replies were semantically right.
+- **Tokens (recovered from raw chunks, reported in the Week 8 summary):** run 1 1,123 input / 34 output; run 2 1,123 input / 30 output.
+- **Raw per-case replies:** not in this repository. Only the two double-payment replies quoted above are documented.
+
+
+## Correction note — 27 November 2026, after publication and Canvas submission
+
+Earlier entries are kept unchanged above, as the course requires ("never delete a failure"). These notes correct statements in them:
+
+1. The entries saying "No commit, push, publication or submission" (and "No commits, pushes, publication or submission") were true when written. Later on 27 November I uploaded the Week 8 files to this repository myself and submitted Week 8 on Canvas.
+2. The Week 8 addendum says the earlier log is preserved in `submission-week-08/build-log-before-financial-addendum.md`, and the checkpoint summary referred to `week-07-raw/` and `checkpoint-summary-before-execution.md`. Those three were local working files and **were never uploaded**, so they are not in this repository. The earlier log content is still above, unchanged, and visible in git history. The pre-execution blocker notes are the "prepared, execution blocked" and "execution retry" entries above. I corrected the [checkpoint summary](week-08/checkpoint-summary.md) to match and removed a local computer path from it.
+3. The addendum says the live Hub and rubric were not verified. After submission I read the live Week 8 page, the Week 8 rubric and the Build rubric. See [source checks](week-08/source-checks.md).
+4. [prompt.md](prompt.md) now ends with a Version 2 history section. Version 1 is byte-for-byte unchanged: its first 388 bytes still give the SHA-256 recorded in [prediction.json](week-08/prediction.json).
+5. No experiment was rerun and no measured result, token count or score was changed.
