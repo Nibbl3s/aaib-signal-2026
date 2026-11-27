@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 8 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 8 · </div>
+<h1>Week 8</h1>
+<div class="byline">dalia-el-ghalid · </div>
+<h2>AI Integration for a Belgian Exam-Prep &amp; Tutoring Platform: A €38K Design</h2>
+<p>Most tutoring companies adding AI make the exact same mistake: they bolt a generic chatbot onto their website and call it "personalized coaching." When students get confident-sounding hallucinations right before exam week, trust collapses and tutors end up spending more time correcting AI drafts than teaching. Designing an integration that actually helps students study requires connecting real course materials, controlling error rates, and keeping humans in charge of academic accuracy.</p>
+<h2>The Company</h2>
+<p><strong>StudieKompas Vlaanderen</strong> is a Ghent-based exam-prep and tutoring organization with 45 employees and €3.2M in annual revenue, supporting roughly 2,400 Flemish higher-education students across business, law, and engineering tracks. They run on <strong>Canvas LMS</strong> (via institutional course exports), <strong>HubSpot CRM</strong>, <strong>Microsoft 365</strong>, and a <strong>custom legacy scheduling and billing portal</strong> built on PostgreSQL with no public API. Management has approved a <strong>€38,000 total Year 1 budget</strong> and a <strong>10-week timeline</strong> (2 internal developers plus 1 academic coordinator) to launch an automated lecture-to-exam study coach—without risking GDPR violations or overwhelming their tutors.</p>
+<h2>The Five-Layer Architecture</h2>
+<p><strong>1. Data Layer:</strong> Students upload messy lecture slide decks (PDF/PPTX) and past exam blueprints inside an authenticated course workspace, while enrollment status and language preferences (Dutch/English) are pulled from HubSpot via REST API. Because the legacy PostgreSQL billing portal has no API, our pipeline queries a <strong>read-only SQL view</strong> once nightly to verify active subscription status—never writing back into the legacy database. All student names and student numbers are stripped locally on an EU server before inference so zero PII leaves Belgium.</p>
+<p><strong>2. AI Model Layer:</strong> Rather than fine-tuning a custom model—which would blow through our €38,000 cap—we connect via an EU-hosted commercial API tier (<strong>Gemini 2.5 Flash</strong>, $0.30/$2.50 per 1M tokens, <em>AI Pricing Reference, 7 September 2026</em>), costing roughly <strong>€0.004 per 40-slide deck</strong> (~€140/month at 1,200 decks/day). Prompts enforce strict extractive grounding ("cite slide numbers or output <code>NOT IN SLIDES</code>") across Dutch and English, wrapped behind an OpenAI-compatible router so StudieKompas can switch providers in under 6 hours.</p>
+<p><strong>3. Integration Layer:</strong> Two internal developers build lightweight Python workers triggered on file upload, parsing slides locally with PyMuPDF before calling the model API—avoiding expensive enterprise middleware. <strong>Fallback path:</strong> If the AI API times out after 5 seconds or goes offline during peak January exam week, the worker automatically bypasses AI synthesis and delivers a deterministic, rule-based keyword-and-heading outline extracted directly from the slide deck so students are never left empty-handed.</p>
+<p><strong>4. Interface Layer:</strong> Generated cheat sheets and practice questions appear inside a clean web view embedded in <strong>Microsoft Teams / Canvas LTI</strong> (tools students and tutors already use, avoiding custom mobile app development). For high-stakes exam packs, a <strong>human-in-the-loop tutor checkpoint</strong> flags low-confidence extractions for a 2-minute tutor spot-check before publishing to the shared course hub, keeping training to one 30-minute tutor onboarding session.</p>
+<p><strong>5. Governance Layer:</strong> Every prompt, slide citation, tutor edit, and token cost is logged in an EU PostgreSQL audit table feeding a <strong>Power BI</strong> dashboard to track monthly spend and hallucination edit rates. Under the <strong>EU AI Act</strong>, this system is classified as <strong>Minimal/Limited Risk</strong> (an assistive study tool with mandatory source citations and tutor review rather than automated grading), while <strong>GDPR</strong> compliance is enforced via EU residency, PII stripping, and zero-data-retention API terms.</p>
+<h2>The Defense</h2>
+<p><strong>Why not just use Microsoft 365 Copilot or built-in LMS AI?</strong> Licensing Copilot across 2,400 students and 45 staff (~€30/user/month) would cost over <strong>€880,000/year</strong>—more than twenty times our €38,000 budget—and generic Copilot neither enforces strict slide-citation rules nor checks subscription eligibility against StudieKompas’s no-API PostgreSQL portal.</p>
+<p><strong>What does this cost at scale and what is the lock-in risk?</strong> Total Year 1 build and run cost is <strong>€34,850</strong> (€24,000 internal dev allocation, €3,600 EU hosting/logging, €1,680 annual API tokens, €1,020 tutor training, and a 15% contingency of €4,550), leaving €3,150 headroom. Even at <strong>3× exam-week volume (3,600 decks/day)</strong>, monthly API spend rises from €140 to <strong>€420/month</strong>, keeping unit economics intact. Lock-in risk is <strong>low</strong>: the three major commercial providers sit within a factor of two of each other at every tier (<em>AI Pricing Reference, 7 September 2026</em>), so swapping providers takes under 6 hours.</p>
+<h2>The Question</h2>
+<p>The one thing I am least sure about is <strong>tutor review fatigue during peak exam weeks</strong>: if 400 students upload decks in the same 48 hours, will tutors start rubber-stamping flagged cheat sheets—and should we gate human review strictly to shared course packs while letting individual student drafts rely on automated slide-number verification?</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
