@@ -37,3 +37,5 @@ Reflection: In Week 1 I did not know what a token was and a price per million lo
 | 11 | Cross-domain transfer | — | |
 | 12 | Synthesis | — | |
 | 13 | Defence | — | |
+
+AI use: Claude helped me draft the evidence sentences and suggested ratings; I reviewed them and the final ratings are mine.
