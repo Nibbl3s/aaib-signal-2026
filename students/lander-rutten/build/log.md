@@ -440,3 +440,62 @@ Apple, Microsoft and Amazon were especially difficult because important informat
 Another surprise was that the AI sometimes gave more information than requested.
 
 More information was not always better because it could make it harder to see which qualifications were actually required.
+
+
+# Build Log — Checkpoint 2 (Week 8)
+
+## 1. Tool Overview & What Changed
+* **Tool:** HR Job Qualification Extractor (extracts mandatory candidate requirements from Dutch, French, German, and English job ads into standardized English JSON lists).
+* **Test Set:** 10 job advertisements, re-measured after upgrading from Prompt V1 to Prompt V2.
+* **Revision Made (Prompt V1 $\rightarrow$ Prompt V2):**
+  * *Old Prompt (V1):* `"Give me all the required qualifications in this job ad."`
+  * *Why I Changed It:* In Checkpoint 1 tests, V1 suffered from **F4 (Format drift)** (writing long job summaries and copying company perks like ski trips in ad #10), **F6 (Inconsistent)** formatting across runs, and **F2/F3 errors** (mixing job duties and "preferred" skills into the required list).
+  * *New Prompt (V2):* Added 5 strict rules forcing a **valid JSON array output in English** and explicitly excluding job tasks, company descriptions, benefits/perks, and "nice-to-have" skills.
+
+---
+
+## 2. Prediction vs. Re-Measurement (The Delta)
+
+### Pre-Measurement Prediction (Written Before Testing V2)
+* **Format & Consistency:** I predicted that enforcing a strict JSON array rule would completely eliminate **F4 (Format drift)** and produce uniform, machine-readable outputs across all 10 job ads.
+* **Accuracy:** I predicted the cloud error rate (`gemini-3.1-flash-lite`) would drop from **15% down to ~5%** because explicit exclusion rules stop "preferred" qualifications, job tasks, and perks from leaking into the output.
+
+### Re-Measurement Results & Delta Explained
+| Metric | Checkpoint 1 (Prompt V1) | Checkpoint 2 (Prompt V2) | Delta (What Changed) |
+| :--- | :---: | :---: | :--- |
+| **Cloud Model Accuracy** | **85%** (15% error rate) | **95%** (5% error rate — 9/10 ads completely clean; 1 minor soft-skill overlap on ad #1) | **+10% accuracy improvement** — eliminated preferred-skill and job-duty leakage. |
+| **Format Consistency (F4 / F6)** | Inconsistent bullet lists; full summary & perks drift on ad #10 | **100% valid English JSON arrays** across all 10 ads | **100% elimination of F4 format drift**; output is now directly usable in an ATS. |
+| **Local Model (`llama3.2` 3B) Baseline** | **0%** error-free (18.75% single-run content accuracy) | Confirmed unsuitable for production due to 3B parameter limits on dense multilingual ads | Confirms architecture decision to use a cloud model behind an abstraction wrapper. |
+
+* **Did my change do what I predicted?** Yes. Forcing a strict JSON array and adding explicit "EXCLUDE" rules completely stopped the AI from copying company perks (such as ski trips and meal vouchers in ads #4 and #10) and separated mandatory requirements from preferred skills (such as in ads #7, #8, and #9).
+
+---
+
+## 3. Cost Impact of the Revision (1,000 Job Ads / Month)
+
+| Cost Component | Prompt V1 (Baseline) | Prompt V2 (Revised) | Cost Delta |
+| :--- | :---: | :---: | :---: |
+| **Input Tokens per Run** | ~650 tokens | ~765 tokens (+115 tokens for rules) | +115 input tokens |
+| **API Token Cost per Run (`gemini-3.1-flash-lite`)** | €0.000165 | €0.000194 | +€0.000029 / run |
+| **Monthly Token Cost (1,000 ads)** | €0.165 / month | €0.194 / month | **+€0.029 / month** |
+| **Error Rate & Manual Fixes (@ €5.00 / error)** | 15% (150 errors) = **€750.00 / month** | 5% (50 errors) = **€250.00 / month** | **-€500.00 / month saved** |
+| **TOTAL MONTHLY COST** | **€750.17 / month** | **€250.19 / month** | **-€499.98 / month net savings** |
+
+* **Key Financial Takeaway:** Spending **€0.029 extra per month** on slightly longer prompt instructions saved **€500.00 per month** in manual recruiter corrections—a return of over **17,000×** on the extra token cost.
+
+---
+
+## 4. Architecture Placement: My Build as One Component (5 Board Questions)
+
+When placed inside a larger recruitment system (such as SAP SuccessFactors):
+
+1. **What feeds it?**  
+   Raw job advertisement text (Dutch, French, German, or English) from the ATS or job board, combined with `prompt_v2.txt`. External job ad text is treated as untrusted input and cleaned before processing.
+2. **What consumes its output, and does a human see it first?**  
+   The ATS screening module consumes the English JSON array to generate a recruiter checklist. **Yes, a human recruiter always reviews and approves the checklist first** before it is used to screen candidates.
+3. **What happens when it is wrong?**  
+   Strict JSON schema validation automatically catches any formatting issues. Because human reviewers can miss subtle **F2 fabrications** when reading fast, the interface displays the exact matching quote from the original job ad next to each extracted requirement so the recruiter can verify it in seconds.
+4. **What happens when it is unavailable?**  
+   If the AI API times out (>10 seconds) or goes offline, the system bypasses the AI layer completely and opens the standard blank qualification form in the ATS so recruiters can copy-paste requirements manually.
+5. **Where does it store what it sees?**  
+   Raw job ads, prompt versions (`V1`/`V2`), and validated JSON outputs are stored locally in our EU-hosted PostgreSQL database and Git benchmark repository—never stored permanently on external AI vendor servers.
