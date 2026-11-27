@@ -81,3 +81,14 @@ Run unit tests from this folder:
     python -m pytest -q
 
 Current status: the user has reported that the interface and tabs are accessible and usable. The unit-test result and the new expected-answer evaluation set still need to be run and recorded; UI access alone does not prove scouting quality or ROI.
+
+
+## Week 8 revision: code compares, model writes
+
+The optional AI summary now receives each player's strongest and weakest metric already calculated in code (`build_prompt(..., precompute=True)`). The Week 7 prompt is still available with `precompute=False`, so both can be measured on the same ten players:
+
+```
+..\..\build\scoutlab\.venv\Scripts\python.exe run_probe.py --model llama3.2:3b --precompute
+```
+
+Run it from `week-07/local-model`. The checker still cannot detect misleading wording around correct numbers. Reason, prediction and results: `../log.md`, Build Checkpoint 2.

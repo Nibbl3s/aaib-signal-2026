@@ -52,3 +52,13 @@ def test_checker_catches_wrong_metric():
     assert not ss.check_answer(wrong, f)["strength_correct"]
     assert "feel" not in ss.FORBIDDEN.pattern  # "fee" must not match inside "feel"
     assert not ss.FORBIDDEN.search("he can feel the game")
+
+
+def test_v2_prompt_adds_extremes_and_v1_is_unchanged():
+    p = make_players()
+    f = ss.build_facts(p, "Forward D")
+    v1, v2 = ss.build_prompt([f]), ss.build_prompt([f], precompute=True)
+    assert "STRONGEST" not in v1 and "WEAKEST" not in v1
+    assert f"STRONGEST (calculated by ScoutLab): {f.strongest()[0]}" in v2
+    assert f"WEAKEST (calculated by ScoutLab): {f.weakest()[0]}" in v2
+    assert "highest percentile, copied exactly" not in v2

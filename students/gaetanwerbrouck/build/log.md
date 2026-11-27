@@ -372,3 +372,85 @@ I could not create a fresh repository clone because direct GitHub access from th
 - Report correction counts alongside the time result; do not treat faster output as better if it introduces more errors.
 
 **Current conclusion:** The timing comparison is outstanding. The ROI figures in the Week 4 memo and Signal Post 4 remain scenario estimates, not measured savings. Do not claim a measured time reduction or positive ROI until these trials have been run.
+
+
+---
+
+## Build Checkpoint 2 (Week 8, 27 November 2026): revision v2, "code compares, model writes"
+
+**Status:** revision made, prediction written, then re-measured on my laptop on 27 November 2026. The prediction below was drafted with AI help, shown to me before the run and left unchanged.
+
+### Reason for the revision
+
+In the Week 7 probe, llama3.2:3b passed 4 of 20 player notes. The main failures were picking the wrong strongest metric (10 of 20) and the wrong weakest metric (14 of 20). One note can fail both. Finding the highest and lowest of about six numbers is something code does exactly, so there is no reason to ask a language model to do it.
+
+### The change
+
+- `scout_summary.py`: with `precompute=True`, each player's block now includes a STRONGEST and a WEAKEST line calculated by ScoutLab, and the instruction tells the model to copy them. The ScoutLab app now uses this version.
+- `precompute=False` still builds the Week 7 prompt. I checked that its exported text matches the Week 7 `prompt.txt` (ignoring Windows line endings).
+- `ask_model` can now collect the token counts the endpoint reports, and `run_probe.py` has a `--precompute` switch and writes those counts into the results file.
+- The checker and the ten players are unchanged. Unit tests: 5 summary tests and 4 core tests passed in a Linux test environment. The Week 7 saved llama answers still score 4 of 20. A fake local endpoint was used only to test that the new code path runs; it says nothing about model quality.
+
+### Prediction (written before any v2 run with a real model)
+
+Baseline: 4 of 20, wrong strongest 10, wrong weakest 14, invented numbers 0, unsupported claims 0, exact format 0 of 20.
+
+1. Success rises to **at least 16 of 20**.
+2. Wrong strongest and wrong weakest each fall to **2 or fewer**.
+3. Invented numbers stay at 0. This is the one I would watch, because the prompt changed.
+4. Exact format may still fail. It is reported separately and does not count toward success.
+5. Misleading prose such as calling a 23rd-percentile figure "above the average" will **not** be fixed. The change does not touch it and the checker cannot detect it.
+
+**Why I expect this:** it moves a calculation out of the language model into code. A related published approach, program-aided language models, also hands the calculating step to a program and reports better results (Gao et al., 2023). Their setup differs from mine (the model writes the program there), so it supports the direction, not my specific numbers.
+
+Gao, L., Madaan, A., Zhou, S., Alon, U., Liu, P., Yang, Y., Callan, J., & Neubig, G. (2023). PAL: Program-aided language models. *Proceedings of the 40th International Conference on Machine Learning, PMLR, 202*, 10764–10799. https://proceedings.mlr.press/v202/gao23f.html
+
+**What a better score will and will not mean:** the strongest and weakest checks now test whether the model can copy a given label, not whether it can reason about the numbers. With temperature 0, the two runs may be identical, which would make 20 notes closer to 10 independent results.
+
+### Re-measurement (same ten players, same checker, two runs each)
+
+Both versions were run one after the other on my laptop with llama3.2:3b at temperature 0. I re-ran v1 to get endpoint-reported token counts. It scored 4 of 20 again, with the same failure counts as in Week 7.
+
+| Measure | v1 (re-run, 27 Nov) | v2 (27 Nov) |
+|---|---:|---:|
+| Success on the checker | 4 / 20 | 20 / 20 |
+| Wrong strongest | 10 | 0 |
+| Wrong weakest | 14 | 0 |
+| Invented numbers | 0 | 0 |
+| Unsupported claims (keyword check) | 0 | 0 |
+| Missing summary | 0 | 0 |
+| Exact format | 0 / 20 | 0 / 20 |
+| Input tokens per run of 10 (reported) | 1,875 | 2,233 |
+| Output tokens per run of 10 (reported) | 1,145 and 1,147 | 801 and 801 |
+| Seconds, run 1 and run 2 | 172.0 and 131.5 | 175.7 and 106.0 |
+| Summaries that quote a stat value or percentile | 18 / 20 | **0 / 20** |
+
+The last row is not part of the checker. I added it after reading the raw answers, by searching each SUMMARY line for a decimal number or the word "percentile". League minutes do not count. The two v2 runs produced identical text, so v2 is really 10 independent notes. The two v1 runs gave the same pass or fail for each player, but their text differed slightly.
+
+### Cost
+
+- **API cost on the laptop:** €0 per call for both versions. Electricity, hardware and my time are not counted.
+- **If billed:** at the course reference price for gpt-5.6-terra ($2 / $12 per 1M tokens, snapshot 7 September 2026, $1 = €0.92), using llama's reported token counts: v1 about €0.0161 per 10 notes, v2 about €0.0130, about 20% less. Input rose by 358 tokens (19%) and output fell by about 345 (30%); output is priced six times higher. This is a what-if at another model's price, not a bill. The Week 7 estimate for input (1,424, characters ÷ 4) was about 24% below the 1,875 reported.
+- **Error cost and who pays it:** the club pays the scout's time to find and fix a bad note. My Week 4 assumption is 10 minutes at €40/hour, €6.67 per error; I have not measured it. By the checker, 16 failed v1 notes would cost about €107 per 20 notes (upper-end scenario) and v2 would cost €0. The €0 is too optimistic: on reading the 10 unique v2 notes (read-through done with AI help), at least 2 draw conclusions the statistics cannot support. At the same assumption that is about €13 per 10 notes, if a scout spots them. The player carries a different cost if a wrong note makes a club overlook him, and I have not priced it. The API provider pays none of it.
+
+### Delta explanation: did the change do what I predicted?
+
+| Prediction | Result |
+|---|---|
+| 1. At least 16 of 20 | Held: 20 of 20. I predicted less than it reached |
+| 2. Wrong strongest and weakest 2 or fewer each | Held: 0 and 0 |
+| 3. Invented numbers stay at 0 | Held on the count, but it means little: the v2 summaries quote no stat values, so there was almost nothing to invent |
+| 4. Exact format may still fail | Held: 0 of 20. The model writes numbered names instead of the PLAYER: line |
+| 5. Misleading prose will not be fixed | Partly right. The "above the average" wording I used as the example, seen in v1, does not appear in v2. Other misleading wording remains |
+
+**Why the score rose:** code now does the comparison. The checker's strongest and weakest tests now mostly measure whether the model can copy a label, so 20 of 20 is not evidence that it reasons better about football data.
+
+**What I did not predict:** the summaries stopped quoting stat values, although the instruction still asks for two sentences using the numbers. Most became "high X, indicating..., but Y is relatively low". The requested caveat became a bare "Sample size: N league minutes". I do not know why this happened. My change added two lines per player and altered two instruction lines, and I did not test them separately. The checker passes these notes because it looks for wrong numbers, not missing ones.
+
+**Examples of remaining errors:** Harry Wilson's low expected goals is read as a sign he may not be clinical in front of goal, but expected goals measures the chances a player gets, not how well he finishes them. His strength is called "high" at the 62nd percentile. Martin Dubravka's saves per 90 are read as ability and his goals conceded as his effectiveness, although both depend heavily on the team's defence and the shots he faces.
+
+**Decision:** keep v2 for picking the strongest and weakest metric. Do not treat its notes as reliable. The next revision, not made yet, should make the checker require the two relevant values in the summary, or have code write that sentence.
+
+### FabLab deployment probe
+
+Not run and not booked, so there is no probe observation in this delta.
