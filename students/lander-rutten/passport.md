@@ -19,10 +19,10 @@ with a post. In Week 12 you will open this file's history and see three versions
 
 ## Checkpoint 2 — end of Week 8
 
-| 5 | Market mechanism thinking | — | |
-| 6 | Cost projection | — | |
-| 7 | Lock-in detection | — | |
-| 8 | Integration & architecture design | — | |
+| 5 | Market mechanism thinking | 🟡 | Analyzed how AI search impacts hiring, but still need more practice with market shifts. |
+| 6 | Cost projection | 🟢 | Built multi-month scale projections proving human error costs outweigh token bills. |
+| 7 | Lock-in detection | 🟡 | Scored vendor lock-in and tested a local model, but haven't coded a live swap yet. |
+| 8 | Integration & architecture design | 🟡 | Designed my first 5-layer architecture for Northwind, still practicing complex legacy setups. |
 | 9 | Attack surface thinking | — | |
 
 ## Checkpoint 3 — end of Week 12
