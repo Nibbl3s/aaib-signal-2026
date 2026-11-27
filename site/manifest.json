@@ -1680,6 +1680,15 @@
  },
  {
   "week": 8,
+  "title": "Can a small local AI model handle customer enquiries in Odoo?",
+  "author": "Bentil Benoah Boakye",
+  "beat": "AI in ERP and Business Process Automation",
+  "skill": "Design defense",
+  "date": "2026-11-27",
+  "url": "posts/bentil-benoah-week-08.html"
+ },
+ {
+  "week": 8,
   "title": "Kojima Productions: Let AI Draft the Handoff, Not Set the Schedule",
   "author": "Daniel Stefirta",
   "beat": "AI in Game Production",
