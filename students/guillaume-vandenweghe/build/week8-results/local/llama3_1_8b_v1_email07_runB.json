@@ -1,0 +1,1 @@
+{"model":"llama3.1:8b","created_at":"2026-11-27T14:46:10.218255Z","message":{"role":"assistant","content":"CATEGORY: CANCELLATION\nLANGUAGE: NL"},"done":true,"done_reason":"stop","total_duration":539983958,"load_duration":370375,"prompt_eval_count":487,"prompt_eval_cached_count":486,"prompt_eval_duration":47878000,"eval_count":11,"eval_duration":490190000}

@@ -1,0 +1,1 @@
+{"model":"llama3.1:8b","created_at":"2026-11-27T14:46:13.699037Z","message":{"role":"assistant","content":"CATEGORY: CLAIM_FOLLOWUP\nLANGUAGE: NL"},"done":true,"done_reason":"stop","total_duration":1200651625,"load_duration":1095583,"prompt_eval_count":536,"prompt_eval_cached_count":422,"prompt_eval_duration":761507000,"eval_count":10,"eval_duration":434411000}

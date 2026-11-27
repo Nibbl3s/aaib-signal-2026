@@ -1,0 +1,7 @@
+network_during_run: OFFLINE
+date_utc: 2026-11-27T14:45:18Z
+models: llama3.2 llama3.1:8b
+machine: Mac16,12
+chip: Apple M4
+memory_bytes: 17179869184
+macos: 27.2.1

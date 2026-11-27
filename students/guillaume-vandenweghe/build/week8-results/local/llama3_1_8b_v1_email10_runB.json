@@ -1,0 +1,1 @@
+{"model":"llama3.1:8b","created_at":"2026-11-27T14:46:15.953839Z","message":{"role":"assistant","content":"CATEGORY: NEW_CLAIM\nLANGUAGE: EN"},"done":true,"done_reason":"stop","total_duration":492850500,"load_duration":493875,"prompt_eval_count":531,"prompt_eval_cached_count":530,"prompt_eval_duration":48116000,"eval_count":10,"eval_duration":442442000}
