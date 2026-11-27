@@ -1680,6 +1680,15 @@
  },
  {
   "week": 8,
+  "title": "Kojima Productions: Let AI Draft the Handoff, Not Set the Schedule",
+  "author": "Daniel Stefirta",
+  "beat": "AI in Game Production",
+  "skill": "Integration design",
+  "date": "2026-11-27",
+  "url": "posts/daniel-stefirta-week-08.html"
+ },
+ {
+  "week": 8,
   "title": "Draw the Checkpoint Before the Model: A Scouting AI Design",
   "author": "Gaetan Werbrouck",
   "beat": "How Football Clubs Use Data to Find Undervalued Players",
