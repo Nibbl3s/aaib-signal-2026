@@ -1680,6 +1680,15 @@
  },
  {
   "week": 8,
+  "title": "Draw the Checkpoint Before the Model: A Scouting AI Design",
+  "author": "Gaetan Werbrouck",
+  "beat": "How Football Clubs Use Data to Find Undervalued Players",
+  "skill": "Design defense",
+  "date": "2026-11-27",
+  "url": "posts/gaetanwerbrouck-week-08.html"
+ },
+ {
+  "week": 8,
   "title": "I Defended My Own AI Design to a Board. It Shrank My Business Case.",
   "author": "Jasper Derieuw",
   "beat": "EU and China Trade Compliance in the AI Era",

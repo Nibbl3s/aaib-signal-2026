@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw the Checkpoint Before the Model: A Scouting AI Design — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 8 · How Football Clubs Use Data to Find Undervalued Players</div>
+<h1>Draw the Checkpoint Before the Model: A Scouting AI Design</h1>
+<div class="byline">Gaetan Werbrouck · 2026-11-27</div>
+<p>A club that bolts an AI writer onto its scouting data can get fluent notes that are wrong, with nobody assigned to catch them. In my first test, a small model passed only 4 of 20 player notes, mostly by naming the wrong strongest or weakest stat. Integration design decides what the model may do, what checks it, and what happens when it fails.</p>
+<h2>The company</h2>
+<p>KV Mechelen plays in the Jupiler Pro League, Belgium's top division. The company running the club <a href="https://www.companyweb.be/en/0479448630/yellow-red-kv-mechelen">reported</a> about €20.9 million turnover, a €2.8 million loss and 155.2 full-time-equivalent staff for 2025. This is my outside proposal. I have not spoken to the club or checked its scouting tools. I assume three scouts review 200 player profiles a month, with a first-year budget of €10,000. The job is to narrow a long list to players worth watching and explain why. People still decide who gets signed. My app, ScoutLab, is a prototype. The production version does not exist yet.</p>
+<h2>The architecture</h2>
+<p><strong>Data.</strong> Today, ScoutLab loads a 339-row Premier League 2023/24 file from a stranger's GitHub repository, with an unclear licence. Production needs a licensed feed covering the leagues the club scouts, imported as CSV, plus scouts' own notes. I have no quote for that feed.</p>
+<p><strong>AI model.</strong> Code calculates position percentiles, similar players, and now each player's strongest and weakest stat. An optional language model writes only the short note. The default is local llama3.2:3b; a paid cloud model is an alternative. After I handed it those two answers, it went from 4 to 20 of 20 on my checker. But its summaries stopped quoting stat values: 18 of 20 did before, none after. The checker missed that, and some conclusions are still unsupported.</p>
+<p><strong>Integration.</strong> CSV import feeds the app. One function calls any OpenAI-compatible endpoint, with address and model name as settings. If it fails, tables and charts still work.</p>
+<p><strong>Interface.</strong> The existing Streamlit screen shows numbers beside the note. A failed check produces a warning, not a block. A scout reads, watches the player, and decides.</p>
+<p><strong>Governance.</strong> An automatic check tests both stat labels, unknown numbers, certain unsupported claims and a missing summary. Still proposed: a log, a named owner, and a monthly error review.</p>
+<p><strong>Costs (assumptions):</strong> development €3,200 (10 days), hosting €600, API allowance €100 and legal check €1,500. That is €5,400, leaving €4,600 for data, which may be too little. At my Week 6 estimate of about €0.011 per report, 200 reports cost about €2 a month. Two review minutes each at €40 an hour is about €267 a month of scout time, outside the cash budget.</p>
+<h2>The defense</h2>
+<p><strong>Why this design?</strong> Comparisons belong in code, and a perfect score still needs reading. On my original prompt, Claude Sonnet 5.5 in the chat app passed 19 of 20 and local llama 4 of 20; I have not tested Claude on the new one. That is a small sample, and the Claude run was not an API test.</p>
+<p><strong>Why not built-in AI?</strong> If the licensed data platform offers its own AI notes, test them on the same players. If they perform as well, protect club data and allow export, buy them.</p>
+<p><strong>Lock-in?</strong> I scored my stack 5/15 in Week 7. The model is configurable; the data link is the weak point. A new provider still needs retesting.</p>
+<p><strong>Scale?</strong> At 600 reports a month, tokens are about €7 and review time is €800. Scouts become the cost long before the model does. Correcting bad notes costs extra: at 5% errors and an assumed ten minutes each, another €200.</p>
+<p><strong>Risk?</strong> The EU AI Act's <a href="https://artificialintelligenceact.eu/annex/3/">Annex III, point 4(a)</a>, lists AI intended for recruiting or selecting people, including evaluating candidates. I cannot rule out that a tool helping a club judge whom to sign falls under it. Player data also needs GDPR handling.</p>
+<h2>The question</h2>
+<p>The thing I am least sure about is whether a lawyer would call this player-evaluation tool high-risk under the AI Act. If the answer is yes, I would pause the AI note and redesign governance before any club relied on it.</p>
+<p><em>Sources: my Week 6 cost work, Week 7 probe and lock-in scorecard, my Week 8 re-run; EU AI Act Annex III (checked 27 November 2026). KV Mechelen company figures: Companyweb summary of the 2025 accounts (checked 27 November 2026). Scouting volumes, project budget, review times and costs are my assumptions or estimates, not club data. This is student work, not affiliated with or endorsed by KV Mechelen.</em></p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
