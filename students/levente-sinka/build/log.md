@@ -140,3 +140,36 @@ For Prompt v3, I added an explicit **Operational Defect Priority Rule**:
 * **Critical safety recall (Inputs 1, 7, 10):** I predict **6/6 (100%)** correct `escalation: YES` flags on acute poisoning, injury, and Visa dispute threats.
 * **Real café subset (Inputs 11 to 18, 16 runs):** Adding the explicit defect-priority rule should recover Inputs 11 and 17, lifting the café subset from v2's **62.5% (10/16)** to at least **75% (12/16)**.
 * **Expected failure mode:** Sarcasm (Input 6) and mixed sentiment calibration (Input 8, Input 18) will still account for most remaining errors on a 3B model.
+
+### Measured Result & Delta (Prompt v3, Logged 2026-11-27)
+* **Exact Run Metadata:** Model `llama3.2` (3B, Ollama local on MacBook Air M1), `temperature: 0.1`, 36 runs in 63.6s, executed on 2026-11-27.
+* **Valid JSON Syntax:** 36/36 (100%).
+* **Strict Schema Match (exact `"YES"`/`"NO"` strings):** **0/36 (0.0%)**, because 34/36 runs drifted to JSON booleans (`true`/`false`) and 2/36 runs (Input 12) returned `"No"` instead of `"NO"`.
+* **Semantic Match (if middleware normalizes booleans/`"No"` to `"YES"`/`"NO"`):**
+  * **Full 18-Input Set (36 runs):** **14/36 (38.9%)**, far below my 65% to 78% prediction.
+  * **Synthetic Edge Cases (Inputs 1 to 10, 20 runs):** **10/20 (50.0%)** (passed: Inputs 3, 5, 6, 7, 9; failed: Inputs 1, 2, 4, 8, 10).
+  * **Real Café Subset (Inputs 11 to 18, 16 runs):** **4/16 (25.0%)** (passed: Inputs 12, 14; failed: Inputs 11, 13, 15, 16, 17, 18).
+  * **Measured Delta on Real Café Subset (v2 to v3):** **-37.5 percentage points** semantically (62.5% down to 25.0%), or **-62.5 percentage points** under strict schema checking.
+* **Cross-Run Stability:** 18/18 (100%) identical `(category, escalation, sentiment)` across Run 1 and Run 2, confirming these are deterministic comprehension limits rather than random sampling noise.
+* **Critical Safety Recall (Inputs 1, 7, 10 = 6 runs):** **4/6 (66.7%)** semantically (caught Input 1 food poisoning and Input 7 Visa dispute, **missed Input 10 physical patio injury on both runs: 2 F1 false negatives**). False alarms on non-escalation cases: 0/30 (0%).
+
+### Diagnosis: Why My Prediction Was Wrong
+My prediction failed on all three targets, revealing three concrete failure modes of small 3B local models under complex rule prompts:
+1. **Schema Type Drift (F3/F5):** Expanding the prompt with multi-clause priority and tie-breaker rules caused `llama3.2` to drop the string constraint on `escalation` (`"YES"`/`"NO"`), silently emitting JSON booleans. Without explicit type-casting in the integration wrapper, this causes a 100% pipeline outage.
+2. **Instruction Overload & Category Collapse (F1):** Adding tie-breaker rules broke category discrimination completely. The model output `Food/Hygiene` **0 out of 36 times**, routing stale bread (Input 13), Dutch overpriced portions (Input 15), and Hungarian burnt coffee (Input 16) into `Facility/Maintenance`, while routing seafood food poisoning (Input 1) into `Service/Staff`. On Hungarian inputs, semantic hallucinations returned (`"towel quality"` / `"broken tablecloth"` on Input 4; `"toaster malfunction"` on Input 16).
+3. **Failure That Matters Most Triggered (F1 Missed Escalation):** Despite explicit safety rules, Input 10 (broken patio plank causing a twisted ankle) returned `escalation: false` twice, failing my core safety gate.
+
+### Costing the v3 Regression (1,200 Reviews/Month, Course Loaded Cost Reference €5/Fix)
+| Version & Scope | Monthly API Cost | Error Rate | Monthly Error Cleanup (1,200 x Error x €5) | Total Monthly Cost | Cost per Correctly Handled Review |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Local `llama3.2` v1 (Real 8, W7)** | €0.00 | 81.2% | €4,872 | €4,872 | €21.65 |
+| **Local `llama3.2` v2 (Real 8, W8)** | €0.00 | 37.5% | €2,250 | €2,250 | €3.00 |
+| **Local `llama3.2` v3 Semantic (Real 8)** | €0.00 | 75.0% | €4,500 | €4,500 | €15.00 |
+| **Local `llama3.2` v3 Semantic (All 18)** | €0.00 | 61.1% | €3,667 | €3,667 | €7.85 |
+| **Local `llama3.2` v3 Strict Schema** | €0.00 | 100.0% | €6,000 (broken) | €6,000 | N/A (0 clean) |
+| **Cloud Baseline (W2/W6 ref, €0.000097/run)** | €0.12 | 15.0% | €900 | €900.12 | €0.88 |
+
+### Engineering Decision (Rollback)
+Prompt v3 doubled projected error-remediation cost on the real café reviews (from €2,250/month to €4,500/month) and failed a physical-injury escalation. **Action taken:** Roll back local prompt to v2, add mandatory boolean-to-string coercion in the Python wrapper, and lock mission-critical triage onto a swappable cloud reasoning model (ADR-001) rather than trying to prompt-engineer around a 3B parameter capacity wall.
+
+*AI-use note: Gemini assisted with generating the Python test-runner harness (`test_cp2_full18.py`) and structuring the log tables; I executed all 36 live local runs on my own machine, verified every output against ground truth, and made the rollback decision.*
