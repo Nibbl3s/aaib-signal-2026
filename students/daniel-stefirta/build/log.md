@@ -275,3 +275,80 @@ Predictions below apply to the two v2 passes: “both” means both passes must 
 **Reference**
 
 Anthropic. (n.d.). *Prompting best practices*. Claude Platform Docs. Retrieved November 27, 2026, from https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices
+
+
+## Build Checkpoint 2: post-run results, 27 November 2026
+
+Both versions got **22/40 joint matches (55%)**. v2 improved from 16/30 to 18/30 on the old cases, but fell from 6/10 to 4/10 on the new cases. Cost at published rates went up 53%.
+
+### Paired results
+
+Each denominator counts scheduled replies, including parser-invalid replies as misses for layer and exposure. Joint match requires both labels to match the frozen key. Evidence is scored separately.
+
+| Subset | Replies per version | Joint v1 → v2 | Layer v1 → v2 | Exposure v1 → v2 | Constant assisted exposure | Parser-valid v1 → v2 |
+|---|---:|---:|---:|---:|---:|---:|
+| Old 15 | 30 | 16 → 18 | 22 → 24 | 20 → 22 | 20/30 | 30 → 30 |
+| New five | 10 | 6 → 4 | 8 → 6 | 6 → 4 | 6/10 | 8 → 6 |
+| All 20 | 40 | 22 → 22 | 30 → 30 | 26 → 26 | 26/40 | 38 → 36 |
+
+- **Improved on both passes:** T03 troubleshooting, T07 graphics research, T15 mixed audio, T16 embedded-instruction robustness. T16 already resisted the requested `ai_can_do_now` in v1; v2 additionally found the correct `assisted` exposure.
+- **Regressed on both passes:** T02 event progression and T11 map design shifted to `human_only`; T12 content placement shifted to `ai_can_do_now` despite the frozen assisted key. T18 used `human_only` in the **layer** field, an invalid enum, even though its raw exposure field was also `human_only`.
+- **Still broken:** T04 cross-title systems and T06 internal tooling remained `out_of_scope / human_only`. T14 changed from the right layer with the wrong exposure to the wrong layer with the right exposure. T19 still overcalled `human_only`; T21 was parser-invalid in both versions, for different reasons (multiple objects in v1, an invalid layer in v2).
+
+### Predictions versus outcomes
+
+`assisted` = `ai_assisted_human_signs_off`. Each row below was checked on both v2 passes; `human_only` is not an allowed layer.
+
+| Case | Predicted pair | Observed pair, both passes | Prediction met? |
+|---|---|---|---|
+| T02 | `code / assisted` | `code / human_only` | No |
+| T03 | `code / assisted` | `code / assisted` | Yes |
+| T04 | `code / human_only` | `out_of_scope / human_only` | No |
+| T06 | `code / assisted` | `out_of_scope / human_only` | No |
+| T07 | `code / human_only` | `code / human_only` | Yes |
+| T14 | `code / assisted` | `out_of_scope / human_only` | No |
+| T15 | `out_of_scope / assisted` | `out_of_scope / assisted` | Yes |
+| T16 | `code / assisted` | `code / assisted` | Yes |
+
+The eight failure-case predictions went **4/8**. On the old cases v2 beat fresh v1 and the exposure baseline but missed the 24/30 joint target. On all cases it only tied the exposure baseline and fresh v1. T17 correctly retained `human_only`; T18 put that value in the exposure field too, but produced no valid joint classification. The predicted v2 label disagreement did not occur on any pair with two valid replies.
+
+### Failures and output contract
+
+| Version / subset | F1 wrong | F2 unsupported quote | F3 wrongly out of scope | F4 parser-invalid | F5 refusal hint | F6 changed labels |
+|---|---:|---:|---:|---:|---:|---:|
+| v1 old | 6 | 0 | 8 | 0 | 0 | 0 |
+| v1 new | 2 | 0 | 0 | 2 | 0 | 0 |
+| v1 all | 8 | 0 | 8 | 2 | 0 | 0 |
+| v2 old | 6 | 0 | 6 | 0 | 0 | 0 |
+| v2 new | 2 | 0 | 0 | 4 | 0 | 0 |
+| v2 all | 8 | 0 | 6 | 4 | 0 | 0 |
+
+- **Evidence:** Normalized checks and the separate exact-substring-or-`none` check each passed 30/30 old and 8/10 new for v1, and 30/30 old and 10/10 new for v2. Each version had eight `none` replies. This does not verify that `none` was justified, that a quote was relevant, or that an otherwise malformed reply was usable. The app's F2 only flags nonempty non-`none` quotes that fail its normalized substring check. T21 v1 was not parsed, so its evidence was unavailable to the check.
+- **Repeats:** v1 had 17 byte-identical pairs, two evidence-only changes (T19, T20), and one pair invalid on both passes. v2 had 12 byte-identical pairs, six raw-text-only changes, and two pairs invalid on both passes. No request or parser-validity disagreements. F6 compares the two valid label pairs; it cannot establish the reliability of consistently invalid cases.
+- **Strict format:** All 80 replies were fenced, so none was a bare, three-field JSON object as requested. The app intentionally scores with its existing permissive parser, which extracts a brace span and validates the two label enums. One v2 reply (T05, pass 1) reached the 256-token cap but its complete object still scored under that parser.
+
+### Cost and payer
+
+| Version | Calls | SDK input tokens | SDK output tokens | Published-rate equivalent | Gateway-reported charge |
+|---|---:|---:|---:|---:|---:|
+| v1 | 40 | 20,932 | 1,619 | US$0.029027 | US$0.00 |
+| v2 | 40 | 24,132 | 4,077 | US$0.044517 | US$0.00 |
+| Total | 80 | 45,064 | 5,696 | US$0.073544 | US$0.00 |
+
+v2 calculation: `(24,132 × $1 + 4,077 × $5) / 1,000,000`. This is **US$0.001113 per v2 reply** or **US$0.002024 per joint match before human work**, at published rates. SDK usage reported no cache reads or writes. Gateway `marketCost` matches those equivalents. All requests resolved to Bedrock using bring-your-own-key routing. Zero gateway charge does not establish zero upstream spend: the Bedrock account holder is the potential upstream payer, and no invoice was inspected.
+
+**Human review and correction (self-reported).** I, Daniel Stefirta, report that I personally timed the ten preselected v2 pass 1 outputs, T01–T10: **4 min 33 s for routine review** and **1 min 40 s for extra correction**, for a total of **6 min 13 s**. These aggregate times match the earlier AI estimates. No per-case stopwatch record was supplied, and the timings were not independently verified. The AI-generated per-case estimates are not observations. Separately, the answer-key-informed AI review found label edits on T02, T04 and T06; it does not establish the human-corrected success rate.
+
+At an assumed US$30/hour loaded rate, the self-reported times imply US$2.28 for routine review and US$0.83 for extra correction; the team using the classifier pays for that work. The ten replies used 5,995 input and 1,062 output tokens, a published-rate equivalent of US$0.011305. The combined modeled cost is `(273 + 100) / 3,600 × $30 + $0.011305 = $3.12` rounded. If the three proposed corrections are applied and accepted against the frozen key, that is approximately US$0.31 per correctly handled query. This is a conditional costing result, not a verified human-corrected success rate. The downstream decision owner bears the risk if an incorrect label drives staffing or purchasing. No Fablab deployment observation is recorded.
+
+### Run record
+
+20 frozen inputs, fresh v1 then v2 for each case in each of two ID-ordered passes. Both versions used the same gateway, `anthropic/claude-haiku-4.5`, temperature 0.3, maximum 256 output tokens and no SDK retries. 80/80 replies, all distinct response IDs, logged from 19:38:15 to 19:40:25 UTC. The [run evidence archive](cp2-run-evidence.zip) contains unmodified model replies, usage, format/scoring details and safe routing metadata. The old September result was 14/30 joint and 18/30 exposure at temperature 0; it is context, not the comparator. This is a diagnostic set, not a blind holdout.
+
+- [Frozen test set commit](https://github.com/Nibbl3s/aaib-signal-2026/commit/c47b8694988f5a80921b30ebce7d3df543ca2b22)
+- [Frozen prompt and prediction commit](https://github.com/Nibbl3s/aaib-signal-2026/commit/f7a54fafe735a5418861dde865b25bf7fe66bbf1)
+- Anthropic. (n.d.). *Claude Haiku 4.5*. Claude Platform Docs. Retrieved November 27, 2026, from https://platform.claude.com/docs/en/models/haiku-4-5/overview
+
+**What I decided.** I am keeping v1 live and not deploying v2. The revision did not improve combined accuracy, made the output less reliable for the existing parser, and cost more at published rates. I agreed with the AI-assisted recommendation. Neither version should make staffing or purchasing decisions without human review.
+
+**AI assistance:** run tooling, scoring, an answer-key-informed review, illustrative labor costing and drafting. The aggregate human timings above are my self-report, not AI measurements. No prompt, test-set, or live app change was made during the post-run work.
