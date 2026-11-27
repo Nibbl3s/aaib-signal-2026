@@ -64,25 +64,33 @@ Evidence anchors the rating in something real. It is also what your instructor v
 
 ## Checkpoint 2 — End of Week 8
 
+### Build status
+
+- **What can my tool do now?** ScoutLab filters, profiles, compares and shortlists players, and can add an optional AI note that code checks against the table; since Week 8 the code also supplies each player's strongest and weakest metric.
+- **What can it not do yet?** It cannot prove a player is undervalued, I have not measured any time saved against a spreadsheet, and the checker cannot catch misleading wording around correct numbers.
+- **Which number proves it?** On the same 10-player test run twice, llama3.2:3b went from 4 of 20 to 20 of 20 on my checker after the Week 8 change, but summaries quoting stat values fell from 18 to 0 of 20; at Week 4 I only had a 339-row dataset size and 15/15 self-reported UI passes.
+
 | Skill | Week | Rating | Evidence (one sentence) |
 |-------|:----:|:------:|-------------------------|
-| Market mechanism thinking | 5 | 🟢 / 🟡 / 🔴 | |
-| Cost projection | 6 | 🟢 / 🟡 / 🔴 | |
-| Lock-in detection | 7 | 🟢 / 🟡 / 🔴 | |
-| Design defense | 8 | 🟢 / 🟡 / 🔴 | |
+| Market mechanism thinking | 5 | 🟡 | In Week 5 I ran the same ChatGPT recommendation prompt twice, saw only SciSports appear both times, and scored Oraca 10/18 with some checks still unverified. |
+| Cost projection | 6 | 🟡 | In Week 6 I measured a Gemini call (137 input and 229 output tokens, $0.000378) and modelled a transfer-window break point, but my volumes and error rates are still assumptions. |
+| Lock-in detection | 7 | 🟡 | In Week 7 I scored ScoutLab 5/15, named the third-party GitHub dataset link as its riskiest dependency and wrote a 90-day exit plan, without testing a real switch to a second provider API. |
+| Design defense | 8 | 🔴 | My Week 8 design file answers the five board questions with figures or named constraints, but I prepared it with AI help and have not yet shown I can defend it without notes. |
 
 **Re-rate Checkpoint 1.** Do not copy your Week 4 answers down. Four weeks of compounding changes them — sometimes upward, sometimes not, because Week 8 shows you what you did not know you did not know in Week 4.
 
 | Skill | Week 4 rating | Week 8 rating | What changed |
 |-------|:-------------:|:-------------:|--------------|
-| Cost literacy | | | |
-| Capability skepticism | | | |
-| Vendor claim detection | | | |
-| Value quantification | | | |
+| Cost literacy | 🟡 | 🟡 | I moved from price calculations to a measured call, but the biggest cost in my Week 8 design, human time and errors, is still unmeasured. |
+| Capability skepticism | 🟡 | 🟡 | The Week 7 test showed a small model often failing to pick the highest and lowest metric; in Week 8 that comparison moved into code, and a read-through with AI help found gaps my checker missed. |
+| Vendor claim detection | 🟡 | 🟡 | In Week 5 my post said Oraca's backtest results were the company's own figures and had not been independently verified. |
+| Value quantification | 🔴 | 🔴 | I still have not run the timed ScoutLab-versus-spreadsheet comparison, so my value figures remain scenarios. |
 
 **6 ECTS — extended evidence:**
 
-**Your click:** What did you believe at Checkpoint 1 that you've since replaced? Four weeks of compounding should have produced at least one.
+**Your click:** At Checkpoint 1, I thought mainly about counting the cost of AI mistakes. Now I also ask whether AI needs to do that step at all. For example, code can find a player's strongest and weakest stat.
+
+**Reflection:** In Week 1, I looked at AI mostly as a model with a price. Now I see it as one part of a system. I also need to think about what data it gets, who checks its answers and what happens when it is wrong or stops working.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
