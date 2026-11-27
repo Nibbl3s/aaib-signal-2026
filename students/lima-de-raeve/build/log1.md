@@ -110,6 +110,69 @@ In the current test, the most notable potential error was the opposite: Gemini e
 
 **Status:** Proposed only. Prompt v1 has not yet been modified or retested.
 
+
+## Week 8 – Build Checkpoint 2
+
+### Objective
+
+The objective of this checkpoint was to improve the reliability of SoloShop's AI-powered customer service classifier, particularly when handling ambiguous messages, complaints and financial claims.
+
+### Baseline testing
+
+I initially tested ten straightforward customer messages twice. All twenty classifications matched the expected categories. However, these messages were relatively simple and did not sufficiently challenge the classifier.
+
+I therefore introduced ten more challenging customer messages, including sarcasm, multilingual complaints, policy exceptions, ambiguous requests and a prompt injection attempt.
+
+The classifier correctly classified eight out of ten messages according to the expected labels, resulting in an 80% agreement rate.
+
+### Identified failures
+
+Two classification errors were identified:
+
+- "It happened again. Please fix it." was unnecessarily escalated to human intervention despite insufficient information about the actual problem.
+- "I want my money back." was classified as insufficient information, although an identifiable financial claim should receive human attention.
+
+The second failure was particularly important because financial disputes and refund requests should not be overlooked by the entrepreneur.
+
+### Revision
+
+I revised the classification prompt in Google AI Studio to establish a clearer distinction between missing information and identifiable high-risk requests.
+
+Refund demands, payment disputes, identifiable complaints, damaged or missing products, legal issues and policy exceptions now explicitly receive priority for human intervention, even when additional information is missing.
+
+Unspecified requests without an identifiable high-risk issue are classified as insufficient information.
+
+The existing interface and three classification categories were maintained.
+
+### Retesting and measured improvement
+
+After implementing the revision, I tested the same ten challenging messages again using Gemini 3.1 Flash-Lite, as displayed by the application.
+
+| Metric | Before | After |
+|---|---:|---:|
+| Correct classifications | 8/10 | 10/10 |
+| Agreement with expected labels | 80% | 100% |
+| Classification errors | 2 | 0 |
+
+The revision resulted in an improvement of 20 percentage points. Both previously identified errors were corrected, while all other classifications remained correct.
+
+The average response time after the revision was 8.79 seconds, with a median of 4.96 seconds. One classification took 43.45 seconds, demonstrating that processing speed can still vary significantly.
+
+### Cost implications
+
+Using the previous measured token consumption of 167 input tokens and 38 output tokens, and the pricing assumptions established in Week 6, the estimated baseline cost is $0.00009875 per classification, or approximately $0.10 per 1,000 classifications.
+
+The revised prompt may increase input token consumption. However, updated token measurements were not available in the captured results, so the exact cost difference cannot yet be established.
+
+### Limitations and next steps
+
+Although the revised classifier achieved 100% agreement on the challenging test dataset, this does not guarantee equivalent performance with real customers. The same messages were used to identify weaknesses and evaluate the revision, and each challenging message was tested only once per version.
+
+The next step would be to test the classifier on previously unseen customer messages during a supervised pilot. Human oversight remains essential before introducing autonomous customer service.
+
+### Conclusion
+
+This experiment demonstrates how a targeted prompt revision can improve the reliability of an AI business application without requiring a different AI provider or a complete redesign. For a one-person business, this could reduce unnecessary manual work while ensuring that important customer complaints receive appropriate attention.
 ### Next steps
 
 1. Confirm the original source URLs for all ten messages.
