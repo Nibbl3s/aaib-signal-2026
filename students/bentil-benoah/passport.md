@@ -38,27 +38,42 @@ In Week 1, I thought that if AI could automate a task, it would automatically be
 
 **Your Build, right now:**
 
-- What can your tool do now?
-- What can't it do yet?
-- Which number proves it?
+- **What can your tool do now?** Classify enquiries into five predefined categories with local Llama 3.2 3B, providing suggestions for a proposed human-reviewed workflow.
+- **What can't it do yet?** Reliably classify every enquiry; the Odoo integration and four-language production performance remain unimplemented or unmeasured.
+- **Which number proves it?** Week 8: 17/20 (85%), with runs of 8/10 and 9/10, versus Week 7: 4/20 (20%); +65 percentage points and zero format failures, but three wrong categories.
 
 | Skill | Week | Rating | Evidence (one sentence) |
 |---|:---:|:---:|---|
-| Market mechanism thinking | 5 | | |
-| Cost projection | 6 | | |
-| Lock-in detection | 7 | | |
-| Design defense | 8 | | |
+| Market mechanism thinking | 5 | 🔴 | No sufficient evidence is currently available to support a stronger rating. |
+| Cost projection | 6 | 🟡 | I calculated monthly first-year allocations of €929.82, €1,319.15 and €1,708.47 at 100, 200 and 300 daily enquiries, plus an explicit annual growth forecast, in the [cost projections](build/week-08/belsupply-costs.md). |
+| Lock-in detection | 7 | 🟢 | I compared my historical cloud classifier results with local Llama 3.2 3B results and documented performance differences and switching limitations in my Week 7 evidence. |
+| Design defense | 8 | 🟡 | I prepared a [five-layer Odoo architecture with human review and fallback](build/week-08/belsupply-architecture.md), its [cost model](build/week-08/belsupply-costs.md) and [five Northwind defense answers](build/week-08/northwind-catch-up.md), but missed class and have not delivered a live defense. |
 
 **Re-rate Checkpoint 1.**
 
 | Skill | Week 4 rating | Week 8 rating | What changed |
 |---|:---:|:---:|---|
-| Cost literacy | 🟡 | | |
-| Capability skepticism | 🟡 | | |
-| Vendor claim detection | 🟡 | | |
-| Value quantification | 🟡 | | |
+| Cost literacy | 🟡 | 🟢 | In my Week 1 Signal, I calculated token and human correction costs for 30,000 ERP emails per month. |
+| Capability skepticism | 🟡 | 🟢 | In my Week 2 Signal, I compared AI with a simple Odoo discount rule, and my classifier experiments exposed limitations even when outputs had the correct format. |
+| Vendor claim detection | 🟡 | 🟡 | More documented practice is needed; I do not currently have sufficient verified work to demonstrate this skill confidently. |
+| Value quantification | 🟡 | 🟡 | I calculated €12,500/year in hypothetical manual categorisation costs against €11,157.88 in first-year AI-assisted costs, with €1,342.12 of potential capacity value, in the [BelSupply value model](build/week-08/belsupply-costs.md). |
 
 **Your click:**
+
+At the beginning of this course, I was mainly interested in what AI could automate. Now I pay more attention to whether AI is actually necessary, how much it costs and what happens when it makes mistakes. My own experiment showed me that even when an AI follows the required output format perfectly, it can still give the wrong answer.
+
+**Evidence for review:**
+
+- Week 1 Signal: [week-01.md](posts/week-01.md) — “What Does AI Actually Cost?”
+- Week 2 Signal: [week-02.md](posts/week-02.md) — “When AI Is Not the Right Tool”.
+- Original Build prompt and tests: [prompt.md](build/prompt.md), [test-set.md](build/test-set.md).
+- Preserved Week 7 assessment: [week-07-evidence.md](build/week-07-evidence.md), including the proposed adapter, validator and human review workflow; the separate Week 8 architecture develops that proposal without claiming deployment.
+- Actual Week 8 experiment: [complete summary](build/checkpoint-summary.md), [raw responses](build/week-08/results.jsonl), [settings](build/week-08/metadata.json), [recorded prediction](build/week-08/prediction.json), [Build log](build/log.md).
+- Completed supporting design: [BelSupply architecture and Build placement](build/week-08/belsupply-architecture.md), [cost projections and value model](build/week-08/belsupply-costs.md), [individual Northwind catch-up](build/week-08/northwind-catch-up.md), [Signal 8](posts/week-08.md). No authentic peer critique is available because I missed class.
+
+Ratings are my proposed self-assessment for review, not independently awarded scores. Architecture and financial documents are hypothetical individual design work; written defense preparation does not establish participation in class or a successful live defense. Week 8 re-ratings of skills 1–4 are made at Week 8 and do not change the Checkpoint 1 record above.
+
+*Assistance:* Codex prepared this draft from my supplied ratings and reflection, the existing Passport template and inspected evidence. Codex verified the saved Week 8 experiment; I executed its runner in my Mac's Terminal.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
 
