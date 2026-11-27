@@ -38,3 +38,5 @@ Year 1 total: €0.05 + €920 + €184 + €230 + €110 checking + €110 fixi
 
 ## The Question
 The number I am least sure of is the 2 minutes to fix a failed row, because I have never timed it. If real fixes take over 3 minutes, should O&D build this at all, or just fix the form?
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

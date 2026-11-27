@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O&amp;D 3D Gets 12 Quote Requests a Month: Why an AI Intake Tool Doesn't Pay (Yet) — AAIB Signal</title>
+<title>O&amp;D 3D Gets 12 Quote Requests a Month: Why an AI Intake Tool Doesn&#x27;t Pay (Yet) — AAIB Signal</title>
 <style>
   :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
   * { box-sizing:border-box; margin:0; padding:0; }
@@ -32,28 +32,14 @@
 <article>
 <a class="back" href="/">← All posts</a>
 <div class="meta">Week 4 · How can AI automation transform the workflow of a digital manufacturing company?</div>
-<h1>O&amp;D 3D Gets 12 Quote Requests a Month: Why an AI Intake Tool Doesn't Pay (Yet)</h1>
+<h1>O&amp;D 3D Gets 12 Quote Requests a Month: Why an AI Intake Tool Doesn&#x27;t Pay (Yet)</h1>
 <div class="byline">Max · 2026-10-18</div>
 
-<p>In Week 1 I wrote that AI could read O&amp;D 3D's quote requests for
-under a dollar a month. That was true and beside the point: a tool can
-cost almost nothing and still lose money. This week I priced the whole
-thing, starting with a number I had never counted.</p>
+<p>In Week 1 I wrote that AI could read O&amp;D 3D’s quote requests for under a dollar a month. That was true and beside the point: a tool can cost almost nothing and still lose money. This week I priced the whole thing, starting with a number I had never counted.</p>
 <h2 id="the-candidate">The candidate</h2>
-<p>The process is quote intake at O&amp;D 3D, my digital manufacturing
-case study. A customer fills in the website form in free text. Someone
-reads it, pulls out process, material, quantity, largest dimension and
-deadline, and lists what is missing before a price is calculated. In the
-value chain it sits at the start of sales and order intake, upstream of
-production. My Build is a prompt that returns that record as JSON. In my
-Week 2 test on 13 real requests, two runs each, it got every field right
-on 5 of 13 in one run and 8 of 13 in the other. The price stays in a
-spreadsheet, as Week 2 argued.</p>
+<p>The process is quote intake at O&amp;D 3D, my digital manufacturing case study. A customer fills in the website form in free text. Someone reads it, pulls out process, material, quantity, largest dimension and deadline, and lists what is missing before a price is calculated. In the value chain it sits at the start of sales and order intake, upstream of production. My Build is a prompt that returns that record as JSON. In my Week 2 test on 13 real requests, two runs each, it got every field right on 5 of 13 in one run and 8 of 13 in the other. The price stays in a spreadsheet, as Week 2 argued.</p>
 <h2 id="the-numbers">The numbers</h2>
-<p>In Week 1 I assumed 300 requests a month. I then counted: the form
-has received 88 submissions since 12 March, about <strong>12 a
-month</strong> (an upper bound, since it also gets questions and spam).
-That one correction changes everything.</p>
+<p>In Week 1 I assumed 300 requests a month. I then counted: the form has received 88 submissions since 12 March, about <strong>12 a month</strong> (an upper bound, since it also gets questions and spam). That one correction changes everything.</p>
 <table>
 <thead>
 <tr class="header">
@@ -115,38 +101,16 @@ That one correction changes everything.</p>
 </tr>
 </tbody>
 </table>
-<p>Tokens are noise: 35 cents a year. The build and the human check are
-the bill. Even a perfect tool (100% success) nets only +€211 a year and
-needs 52 months to repay €920. Bought from an agency at the course
-benchmark of €15,000, it never pays back. Rates and times marked (est.)
-are mine; the volume and the success rate are measured.</p>
+<p>Tokens are noise: 35 cents a year. The build and the human check are the bill. Even a perfect tool (100% success) nets only +€211 a year and needs 52 months to repay €920. Bought from an agency at the course benchmark of €15,000, it never pays back. Rates and times marked (est.) are mine; the volume and the success rate are measured.</p>
 <h2 id="the-pressure-test">The pressure test</h2>
-<p>Halve the benefits, or raise every cost by 50%, and even my V2 target
-of 80% (not built yet) loses €164 or €136 a year. So the case does not
-survive the pressure test. It was already negative on measured
-numbers.</p>
-<p>One unmeasured number could rescue it: minutes per request. At 15
-minutes (est.) and 80% success, the net is +€940 a year and payback is
-11.7 months. At today's volume, a 12-month payback needs 15 minutes per
-request; at 5 minutes it would need about 49 requests a month. So the
-next step is a stopwatch on 10 real requests, not more code.</p>
+<p>Halve the benefits, or raise every cost by 50%, and even my V2 target of 80% (not built yet) loses €164 or €136 a year. So the case does not survive the pressure test. It was already negative on measured numbers.</p>
+<p>One unmeasured number could rescue it: minutes per request. At 15 minutes (est.) and 80% success, the net is +€940 a year and payback is 11.7 months. At today’s volume, a 12-month payback needs 15 minutes per request; at 5 minutes it would need about 49 requests a month. So the next step is a stopwatch on 10 real requests, not more code.</p>
 <h2 id="the-insight">The insight</h2>
-<p>Where is the real ROI? Not in the model price and not in the success
-rate alone, but in volume times minutes, which I had assumed instead of
-measured. Where is the FOMO? In me: I built an AI tool for a task worth
-€552 a year because "AI for quoting" sounded like my beat.</p>
-<p>The cheaper fix is boring. The form I read has fields for name,
-phone, VAT, reason, description, file and email, but none for material,
-quantity or dimensions. Making those required would remove much of the
-extraction work for about an hour of setup. AI earns its place only on
-free text that still arrives by email, and only if that volume is
-real.</p>
-<p>My recommendation is no-go now, and re-open at roughly 50 requests a
-month or if handling time proves to be 15 minutes or more.</p>
-<p><em>Correction, 2026-10-18: this post replaces my Week 1 assumption
-of 300 requests a month with the measured 12. The Week 1 post stays as
-published.</em></p>
-
+<p>Where is the real ROI? Not in the model price and not in the success rate alone, but in volume times minutes, which I had assumed instead of measured. Where is the FOMO? In me: I built an AI tool for a task worth €552 a year because “AI for quoting” sounded like my beat.</p>
+<p>The cheaper fix is boring. The form I read has fields for name, phone, VAT, reason, description, file and email, but none for material, quantity or dimensions. Making those required would remove much of the extraction work for about an hour of setup. AI earns its place only on free text that still arrives by email, and only if that volume is real.</p>
+<p>My recommendation is no-go now, and re-open at roughly 50 requests a month or if handling time proves to be 15 minutes or more.</p>
+<p><em>Correction, 2026-10-18: this post replaces my Week 1 assumption of 300 requests a month with the measured 12. The Week 1 post stays as published.</em></p>
+<p><em>AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.</em></p>
 </article>
 </body>
 </html>

@@ -36,3 +36,5 @@ O&D scores 3/18, AI-Invisible. An AI agent asked to recommend a provider near Li
 This is Week 4 again: the tool I priced saves €552 a year, while the form behind it brings about 12 requests a month, and those depend on being found. In digital manufacturing the platforms are the answer layer, and a small shop is reachable only as a listing on them. For a company this size, being cited matters more than automating.
 
 **The question:** Will AI agents soon request quotes by themselves, and what must a manufacturer's website expose to receive them?
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

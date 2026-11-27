@@ -40,3 +40,5 @@ A pricing page makes the token price look like the decision. Each output token c
 
 ## The question
 If minutes-to-fix decides everything, how do I time it honestly on ten real requests, when I am the one doing both the fixing and the timing?
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

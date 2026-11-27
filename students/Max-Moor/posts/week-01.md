@@ -41,3 +41,5 @@ The biggest benefit may not even be the money saved on tokens — it could be th
 > If AI can analyse a customer request for less than one dollar a month at this scale, how far could we automate the complete journey from customer request to finished product in a digital manufacturing company like O&D 3D?
 
 *One thing I want before Week 2: a real estimate of what it costs, in hours or euros, to connect an AI assistant to O&D 3D's actual pricing rules and material data — since that integration cost, not the token cost, is what will decide whether this is worth building.*
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

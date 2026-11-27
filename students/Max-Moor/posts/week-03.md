@@ -49,3 +49,5 @@ This is real AI delivering real value, but at a scale that is not O&D's. The evi
 ---
 
 **Sources:** Xometry press release (3 March 2026) · Xometry Q1 2026 results (7 May 2026) · Digital Commerce 360, "Xometry tightens grip on AI sourcing" (3 March 2026) · Design News, "AI Tools for Engineers: Xometry" (2 January 2026) · Digital Engineering 24/7, Xometry and Google Cloud.
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

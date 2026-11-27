@@ -47,3 +47,5 @@ The cheaper fix is boring. The form I read has fields for name, phone, VAT, reas
 My recommendation is no-go now, and re-open at roughly 50 requests a month or if handling time proves to be 15 minutes or more.
 
 *Correction, 2026-10-18: this post replaces my Week 1 assumption of 300 requests a month with the measured 12. The Week 1 post stays as published.*
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

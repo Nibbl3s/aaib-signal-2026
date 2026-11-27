@@ -44,3 +44,5 @@ Now the exit test. If Google tripled its price at 400 requests a day, I would pa
 In digital manufacturing the lock-in is not in the price per token. It is in how a model fails: the same prompt invents a process on one model and refuses on another, and no pricing page says so. And customers send us their designs, so where the data goes is part of the contract: on Google's free tier prompts may be read by human reviewers; locally, nothing leaves the machine. Score the exit before you build, and measure the second model yourself.
 
 *Sources: Google Gemini API pricing, deprecations and terms pages (20 November 2026); my own runs.*
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*

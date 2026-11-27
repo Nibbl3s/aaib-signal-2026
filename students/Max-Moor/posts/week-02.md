@@ -62,3 +62,5 @@ If O&D received quote requests with no usable file, only sketches or photos, est
 > If the price comes from a formula, which step in O&D 3D's workflow is the hardest remaining one that genuinely needs AI, and can I measure how well it performs?
 
 *One thing I want before Week 3: a test set of real customer requests with the expected extraction written down first, so I can see where AI actually succeeds at the one job it is suited for.*
+
+*AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.*
