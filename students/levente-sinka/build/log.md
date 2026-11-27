@@ -8,6 +8,8 @@
 ---
 
 ## Test Execution Log (10 Inputs x 2 Runs)
+- Run Date: 2026-09-28 | Model: Cloud LLM baseline (exact model ID was not logged in v1; all Checkpoint 2 runs below log exact model ID, temperature, and timestamp).
+- Failure That Would Matter Most: A missed escalation (F1 false negative) on an acute food-poisoning, physical injury, or credit-card fraud dispute (e.g., Inputs 1, 7, 10), because that creates immediate health, legal, or chargeback liability before the owner sees it.
 
 ### Input 1 (Severe Food Poisoning & Legal Threat)
 - Run 1: Category: Food/Hygiene | Escalation: YES | Root Cause: Seafood platter caused food poisoning | Sentiment: Negative
@@ -117,3 +119,24 @@ Accuracy will jump from the Week 7 baseline of 18.8% (3/16) to between 62.5% and
 
 * **Cost Delta (v1 to v2):** Prompt tightening cut projected monthly error-remediation cost by **€2,622/month (-53.8%)** at €0 extra API cost.
 * **Strategic Conclusion:** Even with a +43.7 point gain, local `llama3.2` (3B) still produces a 37.5% error rate (€2,250/month in cleanup), which is more than double my Week 6 economic break-even ceiling of 17.9% (€1,074/month) and 2.5x more expensive than a paid cloud reasoning model. Local 3B stays restricted to zero-stakes drafting; mission-critical triage remains on a swappable cloud API behind a thin wrapper.
+
+## Checkpoint 2: Prompt Revision (Priority Rule), 18-Input Re-Measurement & Costing
+
+* **Date:** 2026-11-27
+* **Model to Test:** Local `llama3.2` (3B, via Ollama on MacBook Air M1, `temperature: 0.1`, €0 marginal API cost)
+* **Test Set:** Full 18-input set (`test-set.md`: Inputs 1 to 10 synthetic edge cases + Inputs 11 to 18 real public café reviews in EN, NL, HU), run twice = 36 total runs.
+
+### Failure That Would Matter Most
+The single failure that matters most in small hospitality operations is a **missed escalation (F1 false negative) on acute food-poisoning, physical injury, or bank chargeback threats** (such as Inputs 1, 7, and 10). Unlike a minor category mix-up or a language leak, missing an emergency-room food-poisoning complaint or a Visa fraud dispute triggers health-inspector investigations, legal liability, or permanent public reputation damage before the owner ever sees it.
+
+### Revision Made (Prompt v2 to v3: Explicit Priority Rule)
+In Week 7 (v1) and early Week 8 (v2) testing on the 8 real café reviews, local `llama3.2` jumped from 3/16 (18.8%) to 10/16 (62.5%, +43.7 percentage points) after tightening escalation definitions, eliminating all false alarms. However, v2 introduced regressions on mixed-sentiment reviews (Inputs 11 and 17 defaulted to `General/Experience` instead of the specific operational defect, and Input 18 shifted to `Neutral`).
+For Prompt v3, I added an explicit **Operational Defect Priority Rule**:
+1. **Category priority:** Whenever a review contains ANY specific operational defect (unavailable menu items, poor acoustics, broken AC, slow wait, cold food), classify by that specific defect (`Food/Hygiene`, `Service/Staff`, `Facility/Maintenance`) over `General/Experience`, even when the guest praises the atmosphere.
+2. **Escalation priority:** Trigger `escalation: YES` strictly for acute food poisoning/allergies, physical injury, legal/health-inspector threats, or billing fraud/chargeback disputes, and `NO` for all routine complaints or sarcasm.
+
+### Prediction (Recorded Before Running the 36-Run Test)
+* **Overall accuracy (all 18 inputs, 36 runs):** I predict local `llama3.2` v3 will achieve **65% to 78% exact match (23/36 to 28/36)**, with **100% (36/36) valid raw JSON**.
+* **Critical safety recall (Inputs 1, 7, 10):** I predict **6/6 (100%)** correct `escalation: YES` flags on acute poisoning, injury, and Visa dispute threats.
+* **Real café subset (Inputs 11 to 18, 16 runs):** Adding the explicit defect-priority rule should recover Inputs 11 and 17, lifting the café subset from v2's **62.5% (10/16)** to at least **75% (12/16)**.
+* **Expected failure mode:** Sarcasm (Input 6) and mixed sentiment calibration (Input 8, Input 18) will still account for most remaining errors on a 3B model.
