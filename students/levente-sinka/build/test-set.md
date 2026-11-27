@@ -69,3 +69,61 @@
 - Expected Escalation: YES
 - Expected Root Cause: Broken patio plank injury
 - Expected Sentiment: Negative
+
+  ### Real Public Café Reviews (Added for Checkpoint 2, 2026-11-27)
+
+Input 11 (Real Review, Mixed Positive & Stockout)
+"The place is nice with the cozy garden and the coffe was good and delicious the cheesecakes but many of the choices on the menu were not available."
+- Expected Category: Food/Hygiene
+- Expected Escalation: NO
+- Expected Root Cause: Unavailable menu items
+- Expected Sentiment: Neutral
+
+Input 12 (Real Review, Pure Positive Praise)
+"It has been by far our fav place to have breakfast during our days in Ghent. Attention exquisite, food so creative and tasty, and coffee so good either. If we go back to Ghent, for sure, we'll be back in here! From the [Guests from Valencia]."
+- Expected Category: General/Experience
+- Expected Escalation: NO
+- Expected Root Cause: Overall great breakfast experience
+- Expected Sentiment: Positive
+
+Input 13 (Real Review, Food Quality Complaint)
+"Ordered a smoked salmon avocado sandwich. The bread was so stale we each struggled to cut through the crust with our knives. I resent having to pay for stale bread. Would not go again. Options seemed unappetising and not very filling. Very few options with umami flavours."
+- Expected Category: Food/Hygiene
+- Expected Escalation: NO
+- Expected Root Cause: Stale bread and unappetising menu
+- Expected Sentiment: Negative
+
+Input 14 (Real Review, Multi-Issue Service & Billing Frustration)
+"I went here to have breakfast and celebrate our anniversary with a good start of the day which turned into a disaster. The service is extremely slow... brought orange juice and fresh mint tea at the same time... no jam, no butter... eggs were watery... charged 1 eur extra for mint tea. What a shame! Never again! A totally rip off!"
+- Expected Category: Service/Staff
+- Expected Escalation: NO
+- Expected Root Cause: Extremely slow service and order mistakes
+- Expected Sentiment: Negative
+
+Input 15 (Real Review, Dutch, Portion & Price Complaint)
+"We bestelden een broodje zalm (13,5 eur) en een stuk quiche.(13,5 eur) Afbakbroodje met zalm en sla vonden we best wel heel prijzig voor what het was. Zelfde voor het klein stukje quiche dat je krijgt voor 13 eur. Jammer anders wel een mooie en sfeervolle zaak."
+- Expected Category: Food/Hygiene
+- Expected Escalation: NO
+- Expected Root Cause: Overpriced small food portions
+- Expected Sentiment: Negative
+
+Input 16 (Real Review, Hungarian, Coffee & Kitchen Execution)
+"Szép hely, de a kávé kicsit égett ízű, és egy lágytojás láthatóan kihívást jelent. Háromszor kértem, és háromszor kemény tojás volt. A pirítós viszont finom volt."
+- Expected Category: Food/Hygiene
+- Expected Escalation: NO
+- Expected Root Cause: Burnt coffee and overcooked eggs
+- Expected Sentiment: Negative
+
+Input 17 (Real Review, Positive with Acoustic/Facility Defect)
+"Nice place, good food, super friendly staff. If you are sensitive to sounds, I wouldn't go and sit in the back part, the acoustics are not great there. Front part is better that way :-)"
+- Expected Category: Facility/Maintenance
+- Expected Escalation: NO
+- Expected Root Cause: Poor acoustics in back seating area
+- Expected Sentiment: Positive
+
+Input 18 (Real Review, Slow Service with Nice Atmosphere)
+"The service was pretty slow as I think to wait half an hour for the latte is a bit slow. The atmosphere is really nice though. I guess the boss just have to hire one more person for the rush hours in the café."
+- Expected Category: Service/Staff
+- Expected Escalation: NO
+- Expected Root Cause: Slow service during rush hour
+- Expected Sentiment: Negative
