@@ -7,33 +7,41 @@ skill: "Market mechanism thinking"
 date: 2026-10-18
 ---
 
-When a customer asks an AI assistant "who can 3D print a replacement part near Liège?", only a few names come back. I audited one company to see whether it makes that list, and the answer should worry every small manufacturer in Belgium.
+*Updated 28 November 2026. My first audit scored O&D 3/18, but it used a search engine instead of the answer engines. I re-ran the six queries in ChatGPT and Perplexity, and the result changed. This version replaces the first one.*
+
+When a customer asks an AI assistant "who can 3D print a replacement part near Liège?", only a few names come back. I audited one company to see whether it makes that list. The first answer I got was wrong, and why it was wrong is the most useful part.
 
 ## The company
 
-O&D Impression 3D is a 3D printing company in Welkenraedt, in the province of Liège. It offers FDM, SLS, resin, CNC and laser cutting, plus modelling and scanning. I co-founded it and run its website, so I can act on what I find. I chose it because it is exactly the kind of small shop that should appear when someone asks for local custom parts.
+O&D Impression 3D is a 3D printing company with its workshop in Welkenraedt, in the province of Liège (the registered office is still in Baelen). It offers FDM, SLS, resin, CNC and laser cutting, plus modelling and scanning. I co-founded it and run its website, so I can act on what I find. I chose it because it is exactly the kind of small shop that should appear when someone asks for local custom parts.
 
 ## The audit
 
 | Criterion | Score | What I found |
 |---|---|---|
-| Structured data | 0 | No JSON-LD or schema.org on the home page or the FAQ, only the Wix builder's meta tags. |
-| Content parseability | 2 | A clear H1 ("Service d'Impression 3D en Belgique…") and an FAQ with 8 answered questions. No tables, no prices, and the home page says both "plus de 3 ans" and "depuis 2021". |
-| Third-party mentions | 0 | Six searches found no third-party page about O&D. |
-| AI citation presence | 0 | In 4 category queries, in English and French, O&D never appeared. Hubs appeared in all four. |
+| Structured data | 1 | The page source has JSON-LD (`LocalBusiness` with address and phone, `WebSite`), but it is minimal: the business name is a person's name, with no opening hours, no `sameAs`, no `FAQPage`. |
+| Content parseability | 2 | A clear H1 and an FAQ with 8 answered questions. Perplexity read machines, volumes and the 24-hour quote promise correctly. No tables, no prices. |
+| Third-party mentions | 1 | ChatGPT shows the Google profile (4.9/5, 35 reviews). Perplexity mostly cites O&D's own sites. |
+| AI citation presence | 3 | Named in 11 of 12 answers (6 queries, 2 engines); first in 6 of the 8 discovery queries. |
 | Authority signals | 1 | Case-study and guide pages exist, but no named author, credential or certification. |
-| Brand direct search | 0 | Two searches on the exact name returned nothing from od3d.be. |
-| **Total** | **3/18** | **AI-Invisible** |
+| Brand direct search | 2 | Found and described correctly on both engines, but addresses, phone numbers and one build volume differ between sources. |
+| **Total** | **10/18** | **Out of the AI-Invisible band (0 to 6)** |
 
-Competitors are listed where O&D is not: a 3Dnatives directory page, a Craftcloud partner page and a Kompass profile for a Liège rival. My AI test used a search engine, not ChatGPT or Perplexity, and a Google check could lift two criteria by a point each. The total would still be 6 or less.
+Tests: 28 November 2026, private browser window, six queries on each engine, one run per query. ChatGPT was logged out. Perplexity was logged out for two queries, then used with a brand-new account.
+
+## What I got wrong the first time
+
+On 18 October I scored 3/18 and wrote that nothing outside my own site said O&D exists. I had used a search engine as a stand-in for the answer engines, and I had read the page as text, which hid the structured data in the page source. When I asked ChatGPT and Perplexity directly, O&D was named almost every time. They read my site, my Google profile and a second site I had forgotten about, none of which that search engine surfaced. An audit of AI visibility has to question the AI.
 
 ## The verdict
 
-O&D scores 3/18, AI-Invisible. An AI agent asked to recommend a provider near Liège would name Hubs and directory listings, not O&D. The site itself is decent. The gap is that nothing outside od3d.be says O&D exists, so an AI has one source and no corroboration. The most important fix is to get listed on the third-party pages AI reads: the 3Dnatives directory, Craftcloud's partner list and Kompass. Structured data is a one-hour fix that comes second.
+O&D is visible, on thin support. It ranks first for local queries: "Liège", "Welkenraedt" or "Verviers" in the query puts it on top. On a generic Belgian query without a city, Perplexity did not name it at all. ChatGPT did, but only because it guessed my region from my IP address. So the visibility depends on the customer's city, not on the strength of the company's footprint. Structured data exists but is thin, third parties say little, and the facts are inconsistent: the registered office is in Baelen, the workshop in Welkenraedt, and one old page still states the wrong SLS build volume.
+
+The fixes, in order: complete the structured data (company name, opening hours, links to the Google profile, FAQ markup) with both addresses described correctly, align the facts across the sites and the Google profile, then get listed on the directories where competitors already appear (3Dnatives, Craftcloud, Kompass).
 
 ## The insight
 
-This is Week 4 again: the tool I priced saves €552 a year, while the form behind it brings about 12 requests a month, and those depend on being found. In digital manufacturing the platforms are the answer layer, and a small shop is reachable only as a listing on them. For a company this size, being cited matters more than automating.
+This is Week 4 again: the tool I priced saves €552 a year, while the form behind it brings about 12 requests a month, and those depend on being found. For a small manufacturer the answer layer is local first. Being cited does not need a large footprint, but it needs consistent facts and more than one source, so that an AI does not rely on a city name or on a single page.
 
 **The question:** Will AI agents soon request quotes by themselves, and what must a manufacturer's website expose to receive them?
 
