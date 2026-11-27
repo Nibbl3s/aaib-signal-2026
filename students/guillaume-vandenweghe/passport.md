@@ -105,3 +105,45 @@ A rating is easy to fill in without thinking. A line that hangs on a number you 
 **Reflection (Week 1 → Week 8):** In Week 1 I thought about AI as a price per token. Now I think about it as one box in a system, and I start from the question "what happens when this box is wrong or gone?", before I look at the price at all.
 
 **Instructor check:** ☐ Validated ☐ Adjusted — Notes:
+
+## Checkpoint 3 — End of Week 12
+
+**Your Build, right now** (one line each):
+
+- What can your tool do now?
+- What can't it do yet?
+- Which number proves it?
+
+| Skill | Week | Rating | Evidence (one sentence) |
+|-------|:----:|:------:|-------------------------|
+| Attack surface thinking | 9 | 🟢 / 🟡 / 🔴 | |
+| Regulatory reasoning | 10 | 🟢 / 🟡 / 🔴 | |
+| Cross-domain transfer | 11 | 🟢 / 🟡 / 🔴 | |
+| Synthesis | 12 | 🟢 / 🟡 / 🔴 | |
+| Defense | 13 | 🔴 | Not yet demonstrated — complete after your Week 13 defence |
+
+**Re-rate everything.** All twelve prior skills, honestly. This is the version a future employer could read.
+
+| Skill | CP1 | CP2 | CP3 |
+|-------|:---:|:---:|:---:|
+| Cost literacy | | | |
+| Capability skepticism | | | |
+| Vendor claim detection | | | |
+| Value quantification | | | |
+| Market mechanism thinking | — | | |
+| Cost projection | — | | |
+| Lock-in detection | — | | |
+| Design defense | — | | |
+| Attack surface thinking | — | — | |
+| Regulatory reasoning | — | — | |
+| Cross-domain transfer | — | — | |
+| Synthesis | — | — | |
+
+**6 ECTS — extended evidence:**
+
+**Your click:** What did you believe at Checkpoint 2 that you've since replaced? This is the version a future employer could read — make the change nameable.
+
+**Instructor check:** ☐ Validated ☐ Adjusted — Notes:
+
+---
+
