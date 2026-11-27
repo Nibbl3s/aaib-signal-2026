@@ -66,32 +66,34 @@ def main():
                     help="omit for cloud models that restrict it; local default is 0")
     ap.add_argument("--runs", type=int, default=2)
     ap.add_argument("--csv", help="use a local copy of the ScoutLab dataset instead of the URL")
+    ap.add_argument("--precompute", action="store_true",
+                    help="Week 8 revision (v2): give the model the strongest and weakest metric, calculated in code")
     ap.add_argument("--export-prompt")
     ap.add_argument("--score-files", nargs="+")
     ap.add_argument("--label", default=None)
     args = ap.parse_args()
 
     facts = load_facts(args.csv)
-    prompt = ss.build_prompt(facts)
+    prompt = ss.build_prompt(facts, precompute=args.precompute)
     if args.export_prompt:
         Path(args.export_prompt).write_text(prompt, encoding="utf-8")
         print(f"Prompt written to {args.export_prompt}. Paste it into a NEW chat, twice (two separate chats).")
         return
 
-    answers, secs = [], []
+    answers, secs, usage = [], [], []
     if args.score_files:
         answers = [Path(p).read_text(encoding="utf-8") for p in args.score_files]
         label = args.label or "pasted"
     else:
         if not args.model:
             ap.error("give --model, or use --score-files / --export-prompt")
-        label = args.label or args.model
+        label = args.label or (args.model + ("-v2" if args.precompute else ""))
         temp = args.temperature
         if temp is None and "localhost" in args.base_url:
             temp = 0.0
         for i in range(args.runs):
             t = time.time()
-            answers.append(ss.ask_model(prompt, args.base_url, args.model, args.api_key, temp))
+            answers.append(ss.ask_model(prompt, args.base_url, args.model, args.api_key, temp, usage=usage))
             secs.append(time.time() - t)
             print(f"run {i + 1} done in {secs[-1]:.1f}s")
 
@@ -114,6 +116,9 @@ def main():
            f"Cost per run if billed at the lesson reference prices: about EUR {cloud_eur:.3f} (estimate). "
            "A model on your own laptop costs EUR 0.", "",
            "## How it failed (count of failed checks across all runs)", ""]
+    if usage:
+        out[3:3] = ["Measured tokens reported by the endpoint, per run: " + "; ".join(
+            f"{u.get('prompt_tokens', '?')} in, {u.get('completion_tokens', '?')} out" for u in usage) + ".", ""]
     names = {"strength_correct": "Named the wrong strongest metric", "weakness_correct": "Named the wrong weakest metric",
              "no_invented_numbers": "Used a number that is not in the data (invented)",
              "no_unsupported_claims": "Made a claim the data cannot support (money, injury, contract...)",

@@ -39,6 +39,13 @@ SUMMARY: <two sentences using only the numbers given, and one caveat about sampl
 
 Do not write anything else."""
 
+# Week 8 revision (v2): code does the comparison, the model only copies it and writes.
+INSTRUCTIONS_V2 = INSTRUCTIONS.replace(
+    "STRENGTH: <the metric label with the highest percentile, copied exactly>",
+    "STRENGTH: <copy the label on this player's STRONGEST line exactly>").replace(
+    "WEAKNESS: <the metric label with the lowest percentile, copied exactly>",
+    "WEAKNESS: <copy the label on this player's WEAKEST line exactly>")
+
 
 @dataclass
 class Facts:
@@ -77,21 +84,26 @@ def build_facts(players: pd.DataFrame, name: str) -> Facts:
                  float(row["Age"]), float(row["Minutes"]), metrics)
 
 
-def facts_block(f: Facts, number: int | None = None) -> str:
+def facts_block(f: Facts, number: int | None = None, precompute: bool = False) -> str:
     head = f"{number}. " if number else ""
     lines = [f"{head}{f.name} ({f.team}), {f.position}, age {_fmt(f.age)}, {_fmt(f.minutes)} league minutes"]
     for label, raw, pct in f.metrics:
         lines.append(f"   - {label}: {_fmt(raw)} (percentile among {f.position.lower()}s: {pct:.0f})")
+    if precompute and f.metrics:
+        lines.append(f"   STRONGEST (calculated by ScoutLab): {f.strongest()[0]}")
+        lines.append(f"   WEAKEST (calculated by ScoutLab): {f.weakest()[0]}")
     return "\n".join(lines)
 
 
-def build_prompt(facts: list[Facts]) -> str:
-    return INSTRUCTIONS + "\n\nPlayers:\n" + "\n".join(
-        facts_block(f, i) for i, f in enumerate(facts, 1))
+def build_prompt(facts: list[Facts], precompute: bool = False) -> str:
+    """precompute=False is the Week 7 prompt (v1). precompute=True is the Week 8 revision (v2)."""
+    return (INSTRUCTIONS_V2 if precompute else INSTRUCTIONS) + "\n\nPlayers:\n" + "\n".join(
+        facts_block(f, i, precompute) for i, f in enumerate(facts, 1))
 
 
 def ask_model(prompt: str, base_url: str = DEFAULT_BASE_URL, model: str = DEFAULT_MODEL,
-              api_key: str = "ollama", temperature: float | None = 0.0, timeout: int = 600) -> str:
+              api_key: str = "ollama", temperature: float | None = 0.0, timeout: int = 600,
+              usage: list | None = None) -> str:
     """One call to any OpenAI-compatible chat endpoint. This is the only vendor-specific code."""
     body = {"model": model, "messages": [{"role": "user", "content": prompt}], "stream": False}
     if temperature is not None:
@@ -100,7 +112,10 @@ def ask_model(prompt: str, base_url: str = DEFAULT_BASE_URL, model: str = DEFAUL
         base_url.rstrip("/") + "/chat/completions", data=json.dumps(body).encode(),
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.load(r)["choices"][0]["message"]["content"]
+        reply = json.load(r)
+    if usage is not None and reply.get("usage"):
+        usage.append(reply["usage"])  # real token counts, when the endpoint reports them
+    return reply["choices"][0]["message"]["content"]
 
 
 def _norm(s: str) -> str:
@@ -194,7 +209,7 @@ def check_answer(block: str, f: Facts) -> dict:
 def summarise_one(players: pd.DataFrame, name: str, **model_kwargs) -> tuple[str, dict]:
     """Used by the app: one player in, (model text, check results) out."""
     f = build_facts(players, name)
-    text = ask_model(build_prompt([f]), **model_kwargs)
+    text = ask_model(build_prompt([f], precompute=True), **model_kwargs)
     blocks = split_players(text)
     block = next(iter(blocks.values()), text)
     return text, check_answer(block, f)
