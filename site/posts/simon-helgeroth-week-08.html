@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 8 — AAIB Signal</title>
+<script>try { var t = localStorage.getItem('signal-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#faf7f2; --ink:#1d1b18; --muted:#5b554c; --faint:#8a8378; --rule:#d9d2c6; --accent:#b3261e; --panel:#f1ece3; color-scheme:light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#16140f; --ink:#ede6da; --muted:#b5ab9b; --faint:#8a8174; --rule:#3a352d; --accent:#ef6b5f; --panel:#221f19; color-scheme:dark; }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .top { display:flex; justify-content:space-between; align-items:center; max-width:1080px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid var(--ink); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+  .top a { color:var(--ink); text-decoration:none; }
+  .top .brand { font:700 1.15rem Fraunces,serif; letter-spacing:-.01em; text-transform:none; }
+  .theme { background:none; border:1px solid var(--rule); color:var(--ink); border-radius:999px; padding:.3rem .75rem; font:500 .75rem Inter,sans-serif; cursor:pointer; }
+  .theme:hover { border-color:var(--ink); }
+
+  article { max-width:700px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--accent); font:600 .75rem Inter,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
+  h1 { font:700 clamp(2rem,5vw,2.8rem)/1.08 Fraunces,serif; letter-spacing:-.02em; margin:.7rem 0 1rem; }
+  .byline { color:var(--faint); font-size:.85rem; padding-bottom:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule); }
+
+  article p, article li { font:400 1.12rem/1.75 "Source Serif 4",Georgia,serif; }
+  p { margin-bottom:1.2rem; }
+  h2 { font:700 1.5rem/1.25 Fraunces,serif; margin:2.4rem 0 .8rem; }
+  h3 { font:600 1.15rem/1.3 Fraunces,serif; margin:1.8rem 0 .6rem; }
+  strong { font-weight:600; }
+  a { color:var(--accent); text-underline-offset:3px; }
+  ul, ol { margin:0 0 1.2rem 1.4rem; }
+  li { margin-bottom:.35rem; }
+  li::marker { color:var(--accent); }
+  hr { border:0; border-top:1px solid var(--rule); margin:2.5rem 0; }
+  blockquote { border-left:3px solid var(--accent); padding:.2rem 0 .2rem 1.2rem; margin:1.8rem 0; }
+  blockquote p { font:500 1.3rem/1.45 Fraunces,serif; margin:0; }
+  code { background:var(--panel); padding:.1rem .35rem; border-radius:4px; font:.88em ui-monospace,Consolas,monospace; }
+  pre { background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:1rem 1.2rem; overflow-x:auto; margin:0 0 1.4rem; }
+  pre code { background:none; padding:0; }
+  table { display:block; overflow-x:auto; border-collapse:collapse; margin:0 0 1.6rem; font:400 .92rem/1.45 Inter,sans-serif; }
+  th, td { padding:.55rem .8rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+  th { border-bottom:2px solid var(--ink); font-weight:600; }
+  img { max-width:100%; height:auto; }
+
+  .back { display:inline-block; margin-top:3rem; color:var(--muted); font-size:.85rem; text-decoration:none; }
+  .back:hover { color:var(--accent); }
+  footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
+  @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
+<article>
+<div class="meta">Week 8 · </div>
+<h1>Week 8</h1>
+<div class="byline">simon-helgeroth · </div>
+<p>AI Integration for a Mid-Sized Nordic Staffing Agency: A €35K Design</p>
+<p>Most staffing agencies adding AI skip the architecture phase. They buy an expensive ATS add-on or paste job ads into a chatbot without checking where candidate data goes or how errors get fixed. When companies skip design, they end up with hidden labor costs from fixing bad AI outputs and high switching costs. Here is what a realistic integration looks like for a recruitment company.</p>
+<p>NordicStaff AB is a 95-employee staffing and recruitment agency based in Gothenburg, Sweden, generating €14M in annual revenue. The agency publishes roughly 350 job advertisements per month across engineering, IT, and administration. They currently use Teamtailor as their Applicant Tracking System (ATS), Microsoft 365 for internal communication, and a legacy SQL database for client contracts. Their total Year 1 budget for AI is €35,000, with a 2-month implementation timeline. The goal is to automate factual quality checks on draft job ads before publication—catching missing start dates, locations, or employment percentages—without slowing down recruiters.</p>
+<p>The system follows a simple five-layer design costing €22,400 in Year 1 setup and €2,380/year in running costs, staying well within the €35,000 budget. In the data layer, draft job ads are pulled from Teamtailor via its standard REST API when a recruiter marks a draft "Ready for review," while client metadata is read from a read-only SQL view to verify contract terms, keeping all candidate PII untouched inside Teamtailor. For the AI layer, we use Google's gemini-3.1-flash-lite API ($0.25 per 1M input tokens, $1.50 per 1M output tokens, AI Pricing Reference, 7 September 2026) running on a Zero Data Retention EU endpoint. Using a strict, bounded extraction prompt based on my Version 2 Build (which extracts 7 standardized factual fields at 67% accuracy), the model checks start date, application deadline, work location/mode, employment extent, languages, experience, and must-have vs. nice-to-have separation. At ~930 tokens per run and 350 ads/month, API token spend is under €0.25/month. In the integration layer, lightweight Python middleware hosted on an EU cloud server (€80/month) handles API calls, strips any accidental personal names before sending text to the LLM, and parses the JSON response. In the interface layer, instead of forcing recruiters into a new dashboard, the extracted 7-field checklist posts directly back as an internal note in Teamtailor and sends a quick alert in Microsoft Teams if any mandatory field is marked "Missing." Finally, in the governance layer, every prompt and response is logged locally for 90 days, a recruiter always reviews and approves the final text, and if the API goes down, recruiters simply publish ads using their existing manual checklist.</p>
+<p>Why not use Teamtailor's built-in AI features? Built-in ATS tools focus on generating generic ad text rather than enforcing agency-specific compliance rules across 7 strict fields, and storing custom logic inside a vendor's workflow builder increases lock-in. By keeping our prompt as a plain-text file in our own Python middleware, lock-in risk is low—we can switch to OpenAI or Mistral in under one day, and major commercial models sit within a factor of two of each other on token pricing (AI Pricing Reference, 7 September 2026). As for cost at scale: even if NordicStaff grows 3x to 1,050 job ads per month, token costs rise to just €0.75/month. The real cost is human error remediation—at a 33% error rate (347 minor flags to double-check) taking 2 minutes per fix at €44/hr, human review costs roughly €509/month, which still fits easily inside budget and beats manual checking from scratch.</p>
+<p>The one thing I am least sure about is where to draw the line between regex rules and the LLM: could simple keyword rules handle half of these 7 fields (like employment percentage and deadlines) for free, leaving the AI only for trickier fields like work location and experience?</p>
+<a class="back" href="/">← All posts</a>
+</article>
+<footer>AAIB Signal · Arteveldehogeschool · Fall 2026</footer>
+<script>
+document.querySelector('.theme').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
