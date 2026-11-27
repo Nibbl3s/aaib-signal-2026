@@ -236,3 +236,42 @@ No model calls were made during this correction. No prompt, expected answer, raw
 | 2026-09-25 | F2 and F4 stay decided in code, never by my reading. | Held up: the substring check found zero fabrications and I had predicted one on T14, so my judgement would have been the less reliable instrument. |
 | 2026-10-01 | **Retired T13** from the scored set (16 → 15 inputs). Rows kept, marked. | Keeps the set at 15 inputs. T13 duplicated T15's case (same source, same expected answer, same failure). Raises exact match 43.75% → 46.67%; both numbers published. |
 | 2026-10-01 | **Measured a no-AI baseline** before defending the LLM. | The simplest tool has to be measured before the LLM can be defended. Result: LLM wins on layer (73% vs 27%), loses on exposure (60% vs 67% for a constant). Exposure now has a bar to clear. |
+
+
+---
+
+## Build Checkpoint 2: predictions before running, 27 November 2026
+
+### Why revise the prompt?
+
+On the 15 retained cases, v1 got 14/30 joint matches at temperature 0. It put four engineering inputs outside the five production layers on both passes (8 F3 rows). It also chose `human_only` too often for work where an AI draft could be useful. I am testing clearer boundaries: classify the deliverable before considering exposure, treat routine implementation separately from ownership of direction, and do not use `human_only` merely because a person must approve the output. Anthropic (n.d.) recommends direct, specific instructions; I am using that advice to make the decisions explicit, not treating it as evidence that v2 works. No test wording or answer-key rows are inserted into the prompt.
+
+### Predictions for every previously failing active input
+
+Predictions below apply to the two v2 passes: “both” means both passes must return the stated pair. Any split is reported as a failed prediction and a stability finding. `assisted` means `ai_assisted_human_signs_off`; `now` means `ai_can_do_now`.
+
+| Case | Historical v1, both passes | Predicted v2, both passes | Why |
+|---|---|---|---|
+| T02 | `code` / `human_only` | `code` / assisted | Event progression is implementation with useful draft logic, not ownership of direction. |
+| T03 | `out_of_scope` / `human_only` | `code` / assisted | Explicit troubleshooting boundary should recover the layer and permit a reviewed draft diagnosis. |
+| T04 | `out_of_scope` / `human_only` | `code` / `human_only` | The system is technical. I expect the cross-title scope to keep the direction decision human-owned; this is a weaker prediction because the line does not say who owns architecture. |
+| T06 | `out_of_scope` / `human_only` | `code` / assisted | Tool maintenance should be recognised as code. I expect exposure still to miss the historical `now` key because the text does not establish that routine checks are enough. The key stays unchanged. |
+| T07 | `out_of_scope` / `human_only` | `code` / `human_only` | Technical research belongs in code, while choosing a graphics direction is a judgement call. |
+| T14 | `code` / assisted | `code` / assisted | Parameter adjustment stays in code. The vague line gives too little support for a `human_only` call; I expect the mismatch with the fixed key to remain. |
+| T15 | `out_of_scope` / `human_only` | `out_of_scope` / assisted | Audio still dominates the task, but scope and AI assistance are independent. |
+| T16 | `code` / `human_only` | `code` / assisted | Classify the underlying implementation and ignore the non-task instruction; preserve `code` without choosing the requested `now` label. |
+
+**Aggregate predictions.** On the old subset, v2 will get at least 24/30 joint exact matches and beat rerun v1 on joint match. On exposure alone it will exceed the constant assisted baseline on both the old and extended sets: 20/30 (66.7%) and 26/40 (65.0%) respectively. Predict both new direction cases T17 and T18 retain `human_only` on both passes, a check against replacing one default with another. Expect at least one joint-label disagreement across v2 repeats on the full set, most likely on an ambiguous case such as T04 or T14. These are predictions, not results.
+
+### Frozen run and scoring plan
+
+- The extended answer key was published on its own in commit `c47b8694988f5a80921b30ebce7d3df543ca2b22`, before the prompt revision and any Checkpoint 2 runs. The 15 old cases and keys are unchanged; T13 remains visible but retired. The 20 active inputs are a diagnostic set, not a blind holdout: the historical failures informed the rules and the new keys were known when the prompt was drafted.
+- Run v1 and v2 with the same `anthropic/claude-haiku-4.5` gateway endpoint, temperature **0.3**, other request settings held constant, and a fresh request for each input. Run twice in the same ID order for each version, interleaving v1 and v2 for each case within each pass (20 inputs × 2 versions × 2 passes = 80 scheduled calls). Send only the rendered prompt and task text, never keys or posting context. Record raw replies, request errors, timestamps, actual usage and any returned model/provider ID. No selective reruns; log uncompleted calls separately and include them as misses in the scheduled denominator.
+- Use the same existing parser and failure logic on both prompts. Report joint exact match, exposure, format and evidence validity, and F1–F6 counts by version, with the old 15, new five and combined 20 separated. For F6, compare the parsed layer/exposure pair across two valid replies and report evidence-only changes and format or request differences separately. The September scores remain historical context because they were generated at temperature 0.
+- Cost the actual v2 usage at dated prices and distinguish listed price from any billed amount. For review timing, use v2 pass 1 for the first ten active IDs (T01–T10), chosen before seeing results. Daniel times the routine review and any extra correction separately; report incomplete or unavailable outputs and do not substitute unmeasured times. Attribute API charges and human effort to the parties that would pay them. No Fablab observation is claimed here.
+
+**AI assistance:** used to draft v2 and this pre-run plan for Daniel Stefirta’s review. No Checkpoint 2 inference calls have been made.
+
+**Reference**
+
+Anthropic. (n.d.). *Prompting best practices*. Claude Platform Docs. Retrieved November 27, 2026, from https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices
