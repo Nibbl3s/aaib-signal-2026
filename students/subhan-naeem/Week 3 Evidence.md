@@ -12,13 +12,13 @@
 | 6 | Fuel costs can be reduced by 22% | Aspiration | This could happen, but they don't show enough proof of these savings. |
 | 7 | On-time deliveries improve by 35% | Aspiration | There is no clear evidence showing that all customers can get this result. |
 | 8 | Picking time is reduced by 40% in three months | Aspiration | This seems possible, but it probably depends on the warehouse and how it operates. |
-| 9 | The interface works in Dutch, French and English | Aspiration (changed from fact) | (This should be easy to test by using the system in these languages). The vendor claims, but provides no evidence that all three languages are fully supported. It might be true, but the claim needs to be verified. |
+| 9 | The interface works in Dutch, French and English | Fact | This should be easy to test by using the system in these languages. |
 | 10 | The 94% accuracy comes from internal benchmarking | Avoidance | They use their own tests, but don't explain exactly how they tested the system. |
 | 11 | Performance results are reported by clients themselves | Avoidance | Clients might report good results, but there is no independent check. |
 | 12 | Models are trained on over 10 years of European supply-chain data | Aspiration (changed from fact) | This is a specific claim, but It provides no documentation to prove the ownership of the models or the training history. |
 | 13 | The platform uses leading LLM technology | Avoidance | They don't mention which AI model they use, so it is difficult to judge. |
 | 14 | The company has SOC 2 Type II and ISO 27001 | Fact | These can be checked, although we need to see the actual certificates. |
-| 15 | Money-back guarantee if there is no improvement after 90 days | Fact | They are offering a guarantee, but the conditions need to be checked in the contract. |
+| 15 | Money-back guarantee if there is no improvement after 90 days | Avoidance (changed from Fact) | They offer a guarantee, but they don't say how "improvement" is measured or what will be the exact contract wording or conditions.
 | 16 | Only two pilot slots are left for Q2 2026 | Avoidance | This creates pressure to decide quickly, but they don't prove that only two places are left. |
 
 ### Top 5 Avoidances in the NexusAI Proposal
