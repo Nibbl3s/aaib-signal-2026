@@ -4,7 +4,7 @@
 
 | **#** | **Claim** | **Tag** | **Reason** |
 |---:|---|---|---|
-| 1 | Over 200 European companies use NexusAI | Fact | This could be true, but they don't give a list of the companies to prove it. |
+| 1 | Over 200 European companies use NexusAI | Avoidance | This could be true, but they don't give a list of the companies to prove it. |
 | 2 | Cost reductions of 25–30% | Aspiration | It sounds good, but not every company will save this much money. |
 | 3 | Up to 94% forecast accuracy | Aspiration | They say “up to”, so it might only happen in the best situations. |
 | 4 | Proprietary machine-learning models | Fact | They might have their own models, but they don't give much detail about them. |
