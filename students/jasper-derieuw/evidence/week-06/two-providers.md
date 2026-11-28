@@ -35,6 +35,7 @@ date: 2026-10-25
 | Average output tokens | 402.5 | 673.3 |
 | Of which thinking | **0%** (0 of 9,660) | **91%** (14,725 of 16,159) |
 | Price per 1M tokens (in / out) | $2.00 / $10.00 (Anthropic pricing, checked 14 Oct 2026) | $0.50 / $3.00 (course AI Pricing Reference, snapshot 7 Sep 2026; paid-tier rate; my runs were on the free tier, so I actually paid €0) |
+| Sampling settings | Provider defaults: no temperature or top-p set in my script | Provider defaults: no temperature or top-p set in my script |
 | **Cost per check** | (371.9 × 2 + 402.5 × 10) ÷ 1M × 0.92 = **€0.0044** | (229.2 × 0.5 + 673.3 × 3) ÷ 1M × 0.92 = **€0.0020** |
 
 ## 2. How each one failed

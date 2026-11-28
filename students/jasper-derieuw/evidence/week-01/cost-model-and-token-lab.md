@@ -18,7 +18,7 @@ I chose this beat because trade compliance sits exactly where AI's language capa
 
 Tokenizer used: TikToken Tokenizer. Cost basis: $0.03 per 1,000 tokens, quoted per 1,000 documents processed (matching the AI Bill activity convention).
 
-| Document | English Tokens | English Cost | Dutch Tokens | Dutch Cost | Difference | % Increase |
+| Document | English Tokens | English Cost (per 1,000 docs) | Dutch Tokens | Dutch Cost (per 1,000 docs) | Difference (per 1,000 docs) | % Increase |
 |---|---|---|---|---|---|---|
 | Doc 1 — Customer Support Email | 151 | $4.53 | 170 | $5.10 | $0.57 | +12.6% |
 | Doc 2 — Product Description | 98 | $2.94 | 144 | $4.32 | $1.38 | +46.9% |
@@ -37,7 +37,7 @@ Doc 2 (Product Description), +46.9% — the largest jump of the five documents t
 $2.94/year (English) vs. $4.32/year (Dutch) — a **$1.38/year** difference. Note: at this low a volume (1,000/year) the multilingual tax is trivial in absolute terms; it only becomes a meaningful budget line at real business scale (e.g. EuroShop's 30,000 emails/month, see below).
 
 **3. Trade-off — should a Dutch-market chatbot force customers into English to save cost?**
-It depends on the criteria. Forcing English reduces token cost by roughly 30–47% based on the measurements above, but for older or non-English-fluent Dutch customers this creates a real service and accessibility problem — potentially reduced customer satisfaction, complaints, or lost business in a market where Dutch/French are the working languages. The cost saving has to be weighed against the revenue and trust at risk from excluding a segment of the customer base, not treated as a free win.
+It depends on the criteria. Forcing English reduces token cost by roughly 11–32% based on the measurements above (Dutch costs 12.6–46.9% more, so English saves 1 − 1/1.126 = 11.2% to 1 − 1/1.469 = 31.9%; corrected 28 November 2026 after feedback), but for older or non-English-fluent Dutch customers this creates a real service and accessibility problem — potentially reduced customer satisfaction, complaints, or lost business in a market where Dutch/French are the working languages. The cost saving has to be weighed against the revenue and trust at risk from excluding a segment of the customer base, not treated as a free win.
 
 ---
 

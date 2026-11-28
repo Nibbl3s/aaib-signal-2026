@@ -25,11 +25,26 @@ AI-Incompatible for LLMs specifically, AI-Suitable for classical ML. LLM latency
 
 **Problem 2, Medical Diagnosis (doctor vs. self-treat recommendation)**
 
+*(Submitted in Week 2 in place of the hiring case. The course already places medical diagnosis under Incompatible, so it is not a genuine borderline case; the hiring case below replaces it as my third borderline case.)*
+
 AI-Incompatible as an autonomous decision system; AI-Risky at best as a human supervised triage aid. The course's own pattern summary buckets medical and safety decisions under Incompatible outright. Errors can cause serious harm, and "I don't know" is not an acceptable non-answer here, but AI lacks reliable grounding to always know when it has crossed into that territory. As a fully autonomous system this is Incompatible. It only moves into Risky territory once a human clinician reviews every output before it reaches a patient, at which point it is no longer really an AI decision, it is an AI assisted one.
 
 **Problem 9, Regulatory Compliance Check (EU AI Act classification, must be auditable)**
 
 AI-Incompatible as the decision maker; AI-Risky only as a drafting aid with mandatory human sign-off. This is the same failure shape as the Week 2 Frame's Case 7, a live regulatory citation question, exactly the pattern that produced a fabricated article number, an invented safe harbor, and a fake fairness score with total confidence. "Must be auditable for regulators" is the disqualifying phrase: an auditor needs to trust that the stated reasoning actually drove the answer, and classifications are not consistent run to run, a finding my own Build log later confirmed directly (58.3% inconsistency rate). AI can usefully draft a first pass classification for a lawyer to check, but the decision of record has to be owned by a qualified human.
+
+**Hiring: AI screening of job applicants** *(added 28 November 2026 after checkpoint feedback)*
+
+**Bucket: AI-Risky.** It can help a large company get through a high volume of CVs, but there is a real danger that good CVs are skipped and nobody looks at them again. So it is usable, but only under strict limits.
+
+**Why it is not obvious:** it looks AI-Suitable because CVs are repetitive and simple ones are easy to compare on experience and skills. But it can tip towards Incompatible: for specific roles such as sales or technical jobs, how a candidate communicates and comes across only shows in person. And an AI trained on past hiring can learn illegal biases, such as age or appearance, without anyone noticing. Under the EU AI Act, AI used to screen or filter job applications is listed as high-risk (Annex III, point 4(a)).
+
+**Guardrail:**
+- **The AI may:** check basic information (whether the required qualifications and experience are there) and prepare drafts, such as CV summaries or a draft shortlist.
+- **The AI may never:** make final decisions or reject a candidate on its own.
+- **Who checks:** the hiring manager who normally hires, together with HR, checks every result. During an initial test period they also look at the CVs the AI ranked lowest. If that test shows the AI cannot be trusted to sort them, it should not be used at all, because the point of using AI is to save that time.
+
+*The bucket, the reasoning and the guardrails are my own answers; Claude asked me the questions one at a time and formatted them.*
 
 ---
 

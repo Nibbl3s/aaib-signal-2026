@@ -142,4 +142,6 @@ The primary evidence behind this memo (vendor correspondence, practitioner conve
 
 ---
 
+**What I decided myself:** the recommendation (a pilot, not a purchase) and its stop rules; taking the conservative cost option, with the €2,441 for a deliberate confirmation in the totals even though it lowers the saving; reporting the three paper sessions of 20 November as unverified instead of using them; rejecting the local model after it scored 5 of 36; and keeping the memo at five pages rather than cutting further.
+
 *AI disclosure: the recommendation, the evidence gathering and the judgements are mine; I used Claude to assemble this draft from my own evidence files, check every figure against them and structure the memo. Figures marked (est.) are my estimates; measured figures state what was measured and on how many cases.*

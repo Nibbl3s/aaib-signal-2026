@@ -48,6 +48,8 @@ If a provider silently updates the model behind my tool and the error rate moves
 
 ---
 
+*The second-provider comparison (Gemini 3 Flash) is in the evidence file: those runs used Google's free tier and are priced at the paid rate from the course snapshot; both models ran with their default sampling settings (no temperature set in my script).*
+
 *AI disclosure: the API calls were run with my own key on 14 October 2026. I used Claude to write the run script, check the arithmetic and structure this post; the scenario and conclusions are mine.*
 
 Full workings: [cost model](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-06/cost-model.md) · [Build log](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/build/log-v1.md)

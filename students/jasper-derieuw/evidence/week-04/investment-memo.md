@@ -38,4 +38,6 @@ date: 2026-10-14
 
 **What I still don't know (est.):** the real share of risky invoice types, the real minutes per check (practitioner asked on 11 October, no reply yet), and whether a screening tool is already paid for.
 
+**What I decided myself:** the recommendation (a pilot, not a purchase) and the three stop conditions (at least 60% clean invoices, a clean check of 3 minutes or less, no missed match), plus two changes after the class clinic: I replaced my guessed €250,000 error cost with real fines (€50,000–€500,000), and I sorted invoices by pattern so the risky ones always go to a person (an idea from the clinic).
+
 *AI disclosure: I used Claude to draft this memo from my business case and to check the arithmetic; the recommendation and the stop conditions are mine.*
