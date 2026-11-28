@@ -152,6 +152,120 @@
 
 **What would prove me wrong:** a pass rate under 8 / 13 in either run, a new failure on inputs 4, 6, 7 or 11 (a regression caused by my rules), or input 9 passing.
 
+## v2 run log (raw outputs)
+
+**Setup:**
+- Prompt version tested: v2 (see prompt.md), committed with the predictions before any run.
+- Model and interface: Claude Sonnet 5.5 (Anthropic), in claude.ai, temporary (incognito) chats so that account memory was not used.
+- Date of runs: 2026-11-28, between about 10:00 and 10:15 (Brussels time). Run A on inputs 1 to 13, then Run B on inputs 1 to 13.
+- Each of the 26 outputs was produced in its own new conversation (v1 did not record this).
+- Inputs: the same 13 real requests, in the original French or English text of test-set.md. Outputs are pasted as received (reformatted here to one line each; the content is unchanged). Scoring uses the same strict rule and the same expected answers as v1; nothing was corrected after seeing an output.
+
+### Input 1
+- **Run A output:** `{"process_requested":null,"material":null,"quantity":1,"largest_dimension_mm":null,"deadline":null,"missing_info":["material","dimensions","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":null,"quantity":1,"largest_dimension_mm":null,"deadline":null,"missing_info":["material","dimensions","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched. In v1, Run B had marked this out of scope; not in v2.
+
+### Input 2
+- **Run A output:** `{"process_requested":null,"material":"PETG, ou en PP si vous le proposez en grand format","quantity":4,"largest_dimension_mm":554,"deadline":null,"missing_info":[],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"PETG, ou en PP si vous le proposez en grand format","quantity":4,"largest_dimension_mm":554,"deadline":null,"missing_info":[],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched. No process named (v1 Run A had guessed FDM). Material copied as written (PETG, or PP): accepted in meaning.
+
+### Input 3
+- **Run A output:** `{"process_requested":null,"material":null,"quantity":4,"largest_dimension_mm":null,"deadline":null,"missing_info":["material"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":null,"quantity":4,"largest_dimension_mm":null,"deadline":null,"missing_info":["material"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched: quantity 4, 3D files attached so only material is missing (v1 flagged file and dimensions).
+
+### Input 4
+- **Run A output:** `{"process_requested":null,"material":null,"quantity":5,"largest_dimension_mm":122,"deadline":null,"missing_info":["material","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":null,"quantity":5,"largest_dimension_mm":122,"deadline":null,"missing_info":["material","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched (control input, unchanged from v1).
+
+### Input 5
+- **Run A output:** `{"process_requested":"resin","material":"résine haute définition","quantity":1,"largest_dimension_mm":300,"deadline":null,"missing_info":["file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":"resin","material":"résine haute définition","quantity":1,"largest_dimension_mm":300,"deadline":null,"missing_info":["file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched. Not out of scope any more (v1: out of scope in both runs).
+
+### Input 6
+- **Run A output:** `{"process_requested":null,"material":null,"quantity":null,"largest_dimension_mm":610,"deadline":null,"missing_info":["material","quantity","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":null,"quantity":null,"largest_dimension_mm":610,"deadline":null,"missing_info":["material","quantity","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched, quantity stays null (rule 9 did not turn the capability question into 1).
+
+### Input 7
+- **Run A output:** `{"process_requested":null,"material":"ASA/ABS","quantity":1,"largest_dimension_mm":250,"deadline":null,"missing_info":["file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"ASA/ABS","quantity":1,"largest_dimension_mm":250,"deadline":null,"missing_info":["file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched (unchanged from v1).
+
+### Input 8
+- **Run A output:** `{"process_requested":null,"material":"ABS","quantity":4,"largest_dimension_mm":null,"deadline":null,"missing_info":[],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"ABS","quantity":4,"largest_dimension_mm":null,"deadline":null,"missing_info":[],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched: no dimensions flag with the STL attached (v1 Run A flagged it).
+
+### Input 9
+- **Run A output:** `{"process_requested":null,"material":"plastique ou autre matière","quantity":6,"largest_dimension_mm":null,"deadline":null,"missing_info":["dimensions","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"plastique ou autre matière","quantity":6,"largest_dimension_mm":null,"deadline":null,"missing_info":["dimensions","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Fail · Run B: Fail
+- **Failure code(s):** Run A: F1 · Run B: F1
+- **Note:** Both runs: dimensions correctly null (v1 Run A had computed 539), but material kept as "plastique ou autre matière" and not flagged in missing_info (expected null and [material, dimensions, file]). Not fixed on purpose; predicted.
+
+### Input 10
+- **Run A output:** `{"process_requested":null,"material":"PLA standard","quantity":50,"largest_dimension_mm":null,"deadline":null,"missing_info":["dimensions","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"PLA standard","quantity":50,"largest_dimension_mm":null,"deadline":null,"missing_info":["dimensions","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched. No process named (v1 Run A had guessed FDM). Quantity 35 + 12 + 3 = 50.
+
+### Input 11
+- **Run A output:** `{"process_requested":null,"material":"PETG","quantity":null,"largest_dimension_mm":null,"deadline":null,"missing_info":["quantity","dimensions","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"PETG","quantity":null,"largest_dimension_mm":null,"deadline":null,"missing_info":["quantity","dimensions","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched, quantity stays null (rule 9 did not turn "Pièce de remplacement" into 1).
+
+### Input 12
+- **Run A output:** `{"process_requested":null,"material":"PETG noir","quantity":1,"largest_dimension_mm":450,"deadline":null,"missing_info":["file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"PETG noir","quantity":1,"largest_dimension_mm":450,"deadline":null,"missing_info":["file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched: quantity 1 and no FDM (v1 failed in both runs on quantity).
+
+### Input 13
+- **Run A output:** `{"process_requested":null,"material":"PETG","quantity":1,"largest_dimension_mm":null,"deadline":null,"missing_info":["dimensions","file"],"out_of_scope":false}`
+- **Run B output:** `{"process_requested":null,"material":"PETG","quantity":1,"largest_dimension_mm":null,"deadline":null,"missing_info":["dimensions","file"],"out_of_scope":false}`
+- **Result vs expected:** Run A: Pass · Run B: Pass
+- **Failure code(s):** Run A: — · Run B: —
+- **Note:** Both runs matched: quantity 1, material "PETG", 100.4 mm battery not taken as the box size (v1 Run A left quantity null).
+
+## v2 summary
+
+- **Success rate (Run A):** 12 / 13 (92%) (v1: 5 / 13)
+- **Success rate (Run B):** 12 / 13 (92%) (v1: 8 / 13)
+- **Passed in both runs:** 12 / 13 (v1: 4 / 13)
+- **Inputs where A and B differed (F6):** 0 (v1: 8)
+- **Failure counts (instances across both runs):** F1 ×2 (input 9, both runs) · F2 ×0 · F3 ×0 · F4 ×0 · F5 ×0 · F6 ×0
+- **Remaining failure:** input 9. The model keeps "plastique ou autre matière" as the material instead of null with "material" flagged. It is consistent, so a second run does not reveal it, and I had left it unfixed on purpose.
+- **Predictions vs results:** I predicted about 10 / 13 per run, about 8 / 13 passed in both runs, and 2 or 3 inputs differing between runs. The result is better on all three (12, 12, 0). Right on 12 of 13 inputs, including the input 9 failure and the absence of regressions on inputs 4, 6, 7 and 11. Wrong on input 13, which I expected to pass in only one run out of two; it passed in both.
+- **Caveats:**
+  - The four fixes were written after reading the v1 failures on these same 13 inputs, so this measures that the fixes work on the inputs they target. It does not show that v2 holds on new requests. A fresh set of requests would be needed for that.
+  - v1 did not record whether its runs were in separate conversations, so the drop in F6 (8 to 0) is not a strict like-for-like comparison.
+  - Rule 10 ("when in doubt, use false") could not be tested: no input in the set is clearly out of scope.
+
 ## Probe plan (physical deployment probe, 3 rows)
 
 | Row | What to write | My entry |
