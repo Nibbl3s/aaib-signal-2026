@@ -41,7 +41,7 @@
 | **4. Is the price worth the benefits?** | The proposal quotes €252,000 for Year 1, but this leaves out several costs. My rough assumptions: staff time for integration and training about €12,000 (3 employees for 10 days, 8 hours, 50 euro an hour) data preparation about €6,000, LLM usage about €6,000 and retraining about €20,000 (5000 euros each quarter). That brings the estimated Year 1 total to about €296,000, around 17% more than quoted, and switching costs would come on top if the company left after two years. These are my own assumptions, not quotes, so I would ask NexusAI to confirm who pays customer or firm for each of these before signing. |
 | **5. Are there simpler alternatives?** | Yes. The company could improve its existing forecasting tools or warehouse processes first, before paying for a new AI system. |
 
-Verdict: I think I would run a small pilot rather than buy the full system immediately. NexusAI might be useful, but the company needs proof of its results and total costs first.
+Verdict: I think I would go for pilot first and not buy the full system immediately. The proposal quotes €252,000 for Year 1, but my rough estimate with the costs it leaves out is about €296,000, and its results come from internal benchmarking and client self reporting. NexusAI might be useful, but I would first run a small pilot on the company's own data with its own success measures. Only if the pilot proves the results then the company should commit to the full cost.
 
 ## 3. GhentBakery vs. FlandersTextiles
 
