@@ -7,7 +7,7 @@
 | 1 | Over 200 European companies use NexusAI | Avoidance (changed from fact) | This could be true, but they don't give a list of the companies to prove it. |
 | 2 | Cost reductions of 25–30% | Aspiration | It sounds good, but not every company will save this much money. |
 | 3 | Up to 94% forecast accuracy | Aspiration | They say “up to”, so it might only happen in the best situations. |
-| 4 | Proprietary machine-learning models | Aspiration (changed from fact) | They might have their own models, but they don't give much detail about them. |
+| 4 | Proprietary machine-learning models |Avoidance (changed from fact) | "Proprietary" is a category word instead of an answer. It doesn't say what kind of model it is or how it was tested or evaluated, so there's nothing to check. |
 | 5 | The system continuously learns and adapts | Aspiration | It is not clear how the system learns or how often it gets updated. |
 | 6 | Fuel costs can be reduced by 22% | Aspiration | This could happen, but they don't show enough proof of these savings. |
 | 7 | On-time deliveries improve by 35% | Aspiration | There is no clear evidence showing that all customers can get this result. |
@@ -15,10 +15,10 @@
 | 9 | The interface works in Dutch, French and English | Fact | This should be easy to test by using the system in these languages. |
 | 10 | The 94% accuracy comes from internal benchmarking | Avoidance | They use their own tests, but don't explain exactly how they tested the system. |
 | 11 | Performance results are reported by clients themselves | Avoidance | Clients might report good results, but there is no independent check. |
-| 12 | Models are trained on over 10 years of European supply-chain data | Aspiration (changed from fact) | This is a specific claim, but It provides no documentation to prove the ownership of the models or the training history. |
+| 12 | Models are trained on over 10 years of European supply-chain data | Avoidance (changed from fact)| It sounds specific, but it doesn't say whose data, how many companies in which regions, so I can't tell how much it covers. I'd ask where the data came from. |
 | 13 | The platform uses leading LLM technology | Avoidance | They don't mention which AI model they use, so it is difficult to judge. |
 | 14 | The company has SOC 2 Type II and ISO 27001 | Fact | These can be checked, although we need to see the actual certificates. |
-| 15 | Money-back guarantee if there is no improvement after 90 days | Avoidance (changed from Fact) | They offer a guarantee, but they don't say how "improvement" is measured or what will be the exact contract wording or conditions in the contract.
+| 15 | Money-back guarantee if there is no improvement after 90 days | Aspiration (changed from fact) | This is a promise about the future, and "improvement" is not defined. The real conditions would be in the contract.
 | 16 | Only two pilot slots are left for Q2 2026 | Avoidance | This creates pressure to decide quickly, but they don't prove that only two places are left. |
 
 ### Top 5 Avoidances in the NexusAI Proposal
