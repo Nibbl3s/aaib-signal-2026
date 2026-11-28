@@ -4,271 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry&#x27;s AI Claims — AAIB Signal</title>
-<meta name="description" content="Verdict: pilot, don’t copy. Sheet 3 of 12 of Max Moor's AAIB Signal: How can AI automation transform the workflow of a digital manufacturing company?">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-:root{
-  --bg:#0a2038; --paper:#0d2a49; --paper2:#0f3156; --line:#3f6ea3; --line2:#6fa0d6;
-  --text:#e6f0fb; --dim:#9db9d8; --accent:#ffb454; --accent-ink:#ffb454; --code:#071a30;
-  --grid-minor:rgba(111,160,214,.10); --grid-major:rgba(111,160,214,.22);
-}
-:root[data-theme="light"]{
-  --bg:#eef2f7; --paper:#ffffff; --paper2:#f3f6fb; --line:#9db5d3; --line2:#2b5b94;
-  --text:#14243a; --dim:#4f647f; --accent:#d9480f; --accent-ink:#b23a0a; --code:#f1f5fa;
-  --grid-minor:rgba(43,91,148,.09); --grid-major:rgba(43,91,148,.20);
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){
-    --bg:#eef2f7; --paper:#ffffff; --paper2:#f3f6fb; --line:#9db5d3; --line2:#2b5b94;
-    --text:#14243a; --dim:#4f647f; --accent:#d9480f; --accent-ink:#b23a0a; --code:#f1f5fa;
-    --grid-minor:rgba(43,91,148,.09); --grid-major:rgba(43,91,148,.20);
-  }
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{
-  background-color:var(--bg);
-  background-image:
-    linear-gradient(var(--grid-major) 1px,transparent 1px),linear-gradient(90deg,var(--grid-major) 1px,transparent 1px),
-    linear-gradient(var(--grid-minor) 1px,transparent 1px),linear-gradient(90deg,var(--grid-minor) 1px,transparent 1px);
-  background-size:80px 80px,80px 80px,16px 16px,16px 16px;
-  color:var(--text);font-family:'IBM Plex Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.65;
-}
-.mono,.bar,.eyebrow,.titleblock .k,.pl,.index,.notes h2,.block h2,.stat .dim,.zones,.revs th,.revs td.r,.revs td.d,.revs td.st,.node .ni{
-  font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace}
-
-/* sheet frame */
-.sheet{max-width:960px;margin:1.2rem auto;position:relative;border:2px solid var(--line2);padding:8px;background:color-mix(in srgb,var(--bg) 70%,transparent)}
-.inner{border:1px solid var(--line);padding:1rem 1.4rem 2.2rem;background:color-mix(in srgb,var(--bg) 40%,transparent)}
-.zones{display:flex;justify-content:space-around;font-size:.62rem;color:var(--dim);padding:0 8px 4px;letter-spacing:.1em}
-.zones span{flex:1;text-align:center;border-left:1px solid var(--line)}
-.zones span:first-child{border-left:0}
-
-.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.72rem;letter-spacing:.06em;
-  padding:.5rem 0 .8rem;border-bottom:1px solid var(--line)}
-.bar .back{color:var(--dim);text-decoration:none}
-.bar .back:hover{color:var(--accent-ink)}
-.bar .drawing{color:var(--dim);letter-spacing:.14em}
-.theme{background:transparent;color:var(--text);border:1px solid var(--line2);padding:.28rem .75rem;font:inherit;cursor:pointer}
-.theme:hover{border-color:var(--accent);color:var(--accent-ink)}
-.theme:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-.eyebrow{display:flex;align-items:center;gap:.8rem;margin:1.8rem 0 .8rem;color:var(--accent-ink);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase}
-.eyebrow .rule{width:2.4rem;height:2px;background:var(--accent)}
-h1{font-family:'IBM Plex Sans Condensed','IBM Plex Sans',sans-serif;font-weight:700;font-size:clamp(1.9rem,5vw,3rem);
-  line-height:1.08;letter-spacing:-.01em;margin-bottom:1.3rem}
-
-/* title block */
-.titleblock{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--line2);background:var(--paper)}
-.tb{display:flex;flex-direction:column;gap:.15rem;padding:.5rem .75rem;border-left:1px solid var(--line);border-top:1px solid var(--line)}
-.tb.wide{grid-column:1 / -1;border-left:0;border-top:0;background:color-mix(in srgb,var(--accent) 10%,var(--paper))}
-.tb:nth-child(2){border-left:0}
-.titleblock .k{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
-.titleblock .v{font-weight:600;font-size:.92rem}
-.tb.wide .v{font-size:1.05rem;color:var(--accent-ink)}
-
-/* process flow */
-.process{margin:1.6rem 0 1.2rem}
-.pl{font-size:.68rem;letter-spacing:.14em;color:var(--dim);margin-bottom:.6rem}
-.pl em{font-style:normal;color:var(--accent-ink);margin-left:.5rem}
-.flow{display:flex;align-items:stretch;gap:0}
-.node{flex:1;min-width:0;border:1px dashed var(--line);padding:.5rem .55rem;display:flex;flex-direction:column;gap:.2rem;color:var(--dim);background:transparent}
-.node .ni{font-size:.62rem;letter-spacing:.1em}
-.node .nt{font-size:.8rem;line-height:1.25;font-weight:500}
-.node.on{border:1.5px solid var(--accent);color:var(--text);background:color-mix(in srgb,var(--accent) 12%,transparent)}
-.node.on .ni{color:var(--accent-ink)}
-.arr{flex:none;width:18px;align-self:center;height:1px;background:var(--line2);position:relative}
-.arr::after{content:"";position:absolute;right:-1px;top:-4px;border-left:7px solid var(--line2);border-top:4px solid transparent;border-bottom:4px solid transparent}
-
-/* sheet index */
-.index{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin:1.2rem 0 1.6rem;font-size:.68rem;letter-spacing:.14em;color:var(--dim)}
-.sqs{display:flex;gap:4px;flex-wrap:wrap}
-.sq{width:30px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:.66rem;letter-spacing:0;text-decoration:none;
-  border:1px solid var(--line2);color:var(--text);background:transparent}
-.sq.done:hover{background:color-mix(in srgb,var(--accent) 20%,transparent);border-color:var(--accent)}
-.sq.todo{border-style:dashed;border-color:var(--line);color:var(--dim);opacity:.7}
-.sq.now{background:var(--accent);border-color:var(--accent);color:#0a2038;font-weight:600}
-.ic{margin-left:auto}
-
-/* paper */
-.paper{background:var(--paper);border:1.5px solid var(--line2);padding:1.8rem 1.4rem 1.6rem}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.stat{position:relative;padding-top:.2rem}
-.stat .dim{position:relative;height:12px;border-left:1px solid var(--accent);border-right:1px solid var(--accent);margin-bottom:.5rem}
-.stat .dim::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--accent)}
-.stat .dim i{position:absolute;top:50%;margin-top:-4px;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent}
-.stat .dim i:first-child{left:0;border-right:8px solid var(--accent)}
-.stat .dim i:last-child{right:0;border-left:8px solid var(--accent)}
-.sv{font-family:'IBM Plex Sans Condensed','IBM Plex Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.1;overflow-wrap:anywhere}
-.sl{font-size:.82rem;color:var(--dim);margin-top:.3rem;line-height:1.4}
-
-.notes{margin:1.8rem 0 .4rem;border:1px solid var(--line);background:var(--paper2);padding:.9rem 1.1rem}
-.notes h2{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:.5rem}
-.notes ol{list-style:none;counter-reset:n}
-.notes li{counter-increment:n;display:flex;gap:.7rem;margin:.3rem 0}
-.notes li::before{content:counter(n) ".";font-family:'IBM Plex Mono',monospace;color:var(--accent-ink);flex:none;width:1.2rem}
-
-/* prose */
-.prose{margin-top:1.8rem;font-size:1.02rem;counter-reset:sec}
-.prose p{margin-bottom:1.05rem}
-.prose h2{counter-increment:sec;font-family:'IBM Plex Sans Condensed','IBM Plex Sans',sans-serif;font-weight:700;font-size:1.45rem;
-  margin:2.2rem 0 .8rem;display:flex;align-items:center;gap:.8rem}
-.prose h2::before{content:counter(sec,decimal-leading-zero);font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;color:var(--accent-ink);
-  border:1px solid var(--accent);border-radius:50%;width:1.9rem;height:1.9rem;display:inline-flex;align-items:center;justify-content:center;flex:none}
-.prose h2::after{content:"";flex:1;height:1px;background:var(--line)}
-.prose ul,.prose ol{margin:0 0 1.05rem 1.3rem}
-.prose li{margin:.2rem 0}
-.prose li::marker{color:var(--accent-ink)}
-.prose a{color:var(--accent-ink);text-decoration-thickness:1.5px;text-underline-offset:3px}
-.prose code{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.86em;background:var(--code);border:1px solid var(--line);padding:.05rem .3rem}
-.prose pre{background:var(--code);border:1px solid var(--line);border-left:3px solid var(--accent);padding:.9rem 1rem;overflow-x:auto;margin:0 0 1.1rem;font-size:.82rem;line-height:1.55}
-.prose pre code{background:none;border:0;padding:0;font-size:inherit}
-.prose blockquote{border-left:2px solid var(--line2);padding:.2rem 0 .2rem 1rem;color:var(--dim);margin:1.1rem 0;font-style:italic}
-.prose hr{border:0;border-top:1px dashed var(--line);margin:1.6rem 0}
-.tablewrap{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line2)}
-.prose table,.revs{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
-.prose colgroup{display:none}
-.prose th,.revs th{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;text-align:left;
-  background:var(--paper2);color:var(--dim);border-bottom:1px solid var(--line2)}
-.prose th,.prose td,.revs th,.revs td{padding:.55rem .7rem;vertical-align:top}
-.prose td,.revs td{border-top:1px solid var(--line)}
-.prose tr:first-child td{border-top:0}
-.prose tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--paper2) 60%,transparent)}
-.allposts{margin-top:1.8rem;font-weight:600}
-.allposts a{color:var(--dim);text-decoration:none}
-.allposts a:hover{color:var(--accent-ink)}
-
-/* lower blocks */
-.block{margin-top:1.4rem}
-.block h2{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:.6rem}
-.block p{font-size:.95rem}
-.revs{min-width:0;background:var(--paper)}
-.revs td.r{color:var(--accent-ink);font-weight:600;width:3rem}
-.revs td.d,.revs td.st{font-size:.72rem;white-space:nowrap;color:var(--dim)}
-.revs a{display:flex;flex-direction:column;text-decoration:none;color:var(--text)}
-.revs a:hover strong{color:var(--accent-ink)}
-.revs .rs{font-size:.82rem;color:var(--dim)}
-.revs tr.now td{background:color-mix(in srgb,var(--accent) 13%,transparent)}
-.revs tr.now td.st{color:var(--accent-ink);font-weight:600}
-.revs tr.pending{opacity:.55}
-.revs tr.pending strong{font-weight:500}
-
-@media (max-width:700px){
-  .sheet{margin:.5rem;padding:5px}
-  .inner{padding:.8rem .9rem 1.6rem}
-  .zones,.bar .drawing{display:none}
-  .titleblock{grid-template-columns:1fr 1fr}
-  .tb:nth-child(2){border-left:0}
-  .tb:nth-child(4){border-left:0}
-  .flow{flex-direction:column}
-  .arr{width:1px;height:12px;align-self:flex-start;margin-left:1.2rem}
-  .arr::after{right:auto;left:-4px;top:auto;bottom:-1px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:7px solid var(--line2);border-bottom:0}
-  .stats{grid-template-columns:1fr}
-  .paper{padding:1.3rem .9rem 1.2rem}
-  .ic{margin-left:0;width:100%}
-  .revs td.st{display:none}.revs th:last-child{display:none}
-}
-@media print{body{background:#fff;color:#000}.theme{display:none}}
-
+  :root { --bg:#1c1917; --card:#292524; --line:#44403c; --amber:#fbbf24; --txt:#e7e5e4; --dim:#a8a29e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.7; }
+  article { max-width:760px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .meta { color:var(--amber); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+  h1 { font-size:1.9rem; margin:.6rem 0 1rem; letter-spacing:-0.02em; }
+  .byline { color:var(--dim); margin-bottom:2.5rem; }
+  h2 { color:var(--amber); margin:2rem 0 .8rem; font-size:1.3rem; }
+  p { margin-bottom:1rem; }
+  ul,ol { margin:0 0 1rem 1.5rem; }
+  code { background:var(--card); padding:.1rem .35rem; border-radius:.3rem; font-size:.9em; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:.5rem; padding:1rem; overflow-x:auto; margin-bottom:1rem; }
+  pre code { background:none; padding:0; }
+  blockquote { border-left:3px solid var(--amber); padding-left:1rem; color:var(--dim); margin:1rem 0; font-style:italic; }
+  table { border-collapse:collapse; margin-bottom:1rem; width:100%; }
+  th,td { border:1px solid var(--line); padding:.4rem .7rem; text-align:left; }
+  a { color:var(--amber); }
+  .back { display:inline-block; margin-bottom:2rem; color:var(--dim); text-decoration:none; }
+  .back:hover { color:var(--amber); }
+  strong { color:var(--txt); }
+  .assume { border-bottom:1px dotted var(--amber); font-weight:600; white-space:nowrap; }
 </style>
-<script>
-(function(){try{var t=localStorage.getItem('od-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
-</script>
 </head>
 <body>
-<div class="sheet">
-  <div class="zones top" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
-  <div class="inner">
-    <header class="bar">
-      <a class="back" href="/">← All posts</a>
-      <span class="drawing">DRAWING · QUOTE-INTAKE TOOL · O&amp;D 3D</span>
-      <button class="theme" type="button" id="theme" aria-label="Switch theme">◐ Theme</button>
-    </header>
+<article>
+<a class="back" href="/">← All posts</a>
+<div class="meta">Week 3 · How can AI automation transform the workflow of a digital manufacturing company?</div>
+<h1>Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry&#x27;s AI Claims</h1>
+<div class="byline">Max · 2026-10-09</div>
 
-    <div class="eyebrow"><span class="rule"></span>WEEK 3 · Vendor claim detection · SHEET 03 OF 12</div>
-    <h1>Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry&#x27;s AI Claims</h1>
-
-    <div class="titleblock" role="table" aria-label="Title block">
-      <div class="tb wide"><span class="k">Verdict</span><span class="v">Pilot, don’t copy</span></div>
-      <div class="tb"><span class="k">Drawn by</span><span class="v">Max Moor</span></div>
-      <div class="tb"><span class="k">Date</span><span class="v">9 October 2026</span></div>
-      <div class="tb"><span class="k">Week / sheet</span><span class="v">3 · 03 / 12</span></div>
-      <div class="tb"><span class="k">Rev</span><span class="v">A</span></div>
-    </div>
-
-    <section class="process" aria-label="Where this sheet sits in the quote process">
-      <div class="pl">WHERE THIS SHEET SITS IN THE QUOTE PROCESS <em>highlighted = examined here</em></div>
-      <div class="flow">
-<div class="node"><span class="ni">1</span><span class="nt">Customer finds O&amp;D</span></div>
-<span class="arr" aria-hidden="true"></span>
-<div class="node"><span class="ni">2</span><span class="nt">Web form</span></div>
-<span class="arr" aria-hidden="true"></span>
-<div class="node"><span class="ni">3</span><span class="nt">AI extraction</span></div>
-<span class="arr" aria-hidden="true"></span>
-<div class="node"><span class="ni">4</span><span class="nt">Human check</span></div>
-<span class="arr" aria-hidden="true"></span>
-<div class="node"><span class="ni">5</span><span class="nt">Spreadsheet price</span></div>
-<span class="arr" aria-hidden="true"></span>
-<div class="node on"><span class="ni">6</span><span class="nt">Quote out</span></div>
-      </div>
-    </section>
-
-    <div class="index" aria-label="Sheet index">
-      <span class="il">SHEET INDEX</span>
-      <div class="sqs">
-<a class="sq done" href="/posts/Max-Moor-week-01" title="Sheet 01 · Tokens are the cheap part: $0.79 a month">01</a>
-<a class="sq done" href="/posts/Max-Moor-week-02" title="Sheet 02 · The price belongs in a spreadsheet, not an AI">02</a>
-<a class="sq done now" href="/posts/Max-Moor-week-03" title="Sheet 03 · Xometry&#x27;s AI claims: fact, aspiration or avoidance" aria-current="page">03</a>
-<a class="sq done" href="/posts/Max-Moor-week-04" title="Sheet 04 · 12 requests a month: no-go now">04</a>
-<a class="sq done" href="/posts/Max-Moor-week-05" title="Sheet 05 · GEO audit of my own company: 10/18">05</a>
-<a class="sq done" href="/posts/Max-Moor-week-06" title="Sheet 06 · A call costs $0.00026; failures cost 3,243× more">06</a>
-<a class="sq done" href="/posts/Max-Moor-week-07" title="Sheet 07 · Lock-in score 6/15: connect thinly, measure the exit">07</a>
-<a class="sq done" href="/posts/Max-Moor-week-08" title="Sheet 08 · A €1,788 design: the model is the cheapest box">08</a>
-<span class="sq todo" title="Sheet 09 · not issued yet">09</span>
-<span class="sq todo" title="Sheet 10 · not issued yet">10</span>
-<span class="sq todo" title="Sheet 11 · not issued yet">11</span>
-<span class="sq todo" title="Sheet 12 · not issued yet">12</span>
-      </div>
-      <span class="ic">8 issued · 4 to come</span>
-    </div>
-
-    <main class="paper">
-      <div class="stats">
-<div class="stat"><div class="dim"><i></i><i></i></div><div class="sv">6</div><div class="sl">Xometry claims tagged fact, aspiration or avoidance</div></div>
-<div class="stat"><div class="dim"><i></i><i></i></div><div class="sv">$50M</div><div class="sl">Siemens stock purchase: a fact, but not performance evidence</div></div>
-<div class="stat"><div class="dim"><i></i><i></i></div><div class="sv">10</div><div class="sl">of our own past parts to upload as a cheap, honest test</div></div>
-      </div>
-      <aside class="notes"><h2>General notes</h2><ol>
-<li>The strongest claim is the easiest to test; the weakest have the biggest words</li>
-<li>Real AI delivering real value, but at a scale that is not O&amp;D’s</li>
-<li>AI transforms one step (quoting at scale), not the whole workflow</li>
-      </ol></aside>
-      <article class="prose">
-<p>When a digital manufacturing vendor says “AI-powered,” a buyer hears
-cheaper, faster and safer. In digital manufacturing the claim costs
-nothing to make and a lot to check, and a small company like O&amp;D 3D
-is the one who pays when a price or a lead time turns out wrong.</p>
+<p>When a digital manufacturing vendor says “AI-powered,” a buyer hears cheaper, faster and safer. In digital manufacturing the claim costs nothing to make and a lot to check, and a small company like O&amp;D 3D is the one who pays when a price or a lead time turns out wrong.</p>
 <h2 id="the-claim">The claim</h2>
-<p>Xometry (NASDAQ: XMTR) runs an on-demand marketplace that connects
-buyers with suppliers for CNC machining, 3D printing, injection molding
-and more. Its main product is the Instant Quoting Engine, which takes a
-CAD file and returns a price, lead times, process suggestions and
-matched suppliers within seconds.</p>
+<p>Xometry (NASDAQ: XMTR) runs an on-demand marketplace that connects buyers with suppliers for CNC machining, 3D printing, injection molding and more. Its main product is the Instant Quoting Engine, which takes a CAD file and returns a price, lead times, process suggestions and matched suppliers within seconds.</p>
 <p>Three claims stood out in its 2026 communications:</p>
 <ul>
-<li>The company calls itself an <strong>“AI-native marketplace”</strong>
-(March 2026 press release).</li>
-<li>A new machining lead-time model shows a <strong>significant
-improvement</strong> in forecasting error over the previous version,
-with no figure given.</li>
-<li>Siemens is buying about <strong>$50 million of Xometry
-stock</strong>, which the company presents as conviction that AI will
-define industrial software.</li>
+<li>The company calls itself an <strong>“AI-native marketplace”</strong> (March 2026 press release).</li>
+<li>A new machining lead-time model shows a <strong>significant improvement</strong> in forecasting error over the previous version, with no figure given.</li>
+<li>Siemens is buying about <strong>$50 million of Xometry stock</strong>, which the company presents as conviction that AI will define industrial software.</li>
 </ul>
 <h2 id="the-deconstruction">The deconstruction</h2>
-<div class="tablewrap"><table>
+<table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -283,23 +60,19 @@ define industrial software.</li>
 </thead>
 <tbody>
 <tr class="odd">
-<td>The engine returns price, lead time, process and supplier in
-seconds</td>
+<td>The engine returns price, lead time, process and supplier in seconds</td>
 <td><strong>Fact</strong></td>
-<td>Anyone can upload a file and time it. Speed is verifiable;
-correctness is not shown.</td>
+<td>Anyone can upload a file and time it. Speed is verifiable; correctness is not shown.</td>
 </tr>
 <tr class="even">
 <td>“AI-native marketplace”</td>
 <td><strong>Aspiration</strong></td>
-<td>A brand label. It does not say which parts are machine learning and
-which are ordinary software.</td>
+<td>A brand label. It does not say which parts are machine learning and which are ordinary software.</td>
 </tr>
 <tr class="odd">
 <td>Lead-time model: “significant improvement”</td>
 <td><strong>Avoidance</strong></td>
-<td>Compared with its own previous version, with no number, no baseline
-and no customer outcome.</td>
+<td>Compared with its own previous version, with no number, no baseline and no customer outcome.</td>
 </tr>
 <tr class="even">
 <td>Trained on millions of manufacturing data points</td>
@@ -309,87 +82,26 @@ and no customer outcome.</td>
 <tr class="odd">
 <td>Siemens buys about $50M of stock</td>
 <td><strong>Fact + Aspiration</strong></td>
-<td>The purchase is a fact. The belief that AI will define the industry
-is not performance evidence.</td>
+<td>The purchase is a fact. The belief that AI will define the industry is not performance evidence.</td>
 </tr>
 <tr class="even">
-<td>Price tailored per quote by a conversion-rate model using customer
-history</td>
+<td>Price tailored per quote by a conversion-rate model using customer history</td>
 <td><strong>Fact</strong> (disclosed)</td>
-<td>Real machine learning. My reading: it prices for the chance of
-winning the order, not for cost.</td>
+<td>Real machine learning. My reading: it prices for the chance of winning the order, not for cost.</td>
 </tr>
 </tbody>
-</table></div>
-<p>The strongest claim is the one that is easiest to test. The weakest
-are the ones with the biggest words.</p>
+</table>
+<p>The strongest claim is the one that is easiest to test. The weakest are the ones with the biggest words.</p>
 <h2 id="the-fomo-test">The FOMO test</h2>
-<p><strong>Q1: Is there a specific problem?</strong> Yes, and this is
-the pitch’s best part: quoting custom parts used to take days of emails.
-“AI-native” is vague, but “instant quote for a CAD file” is a concrete
-job.</p>
-<p><strong>Q3: Can we verify it?</strong> Only half. I can test speed
-myself. But in the sources I read, there was no public accuracy figure
-for prices or lead times, and no named customer outcome. “Better than
-before” is not “right.”</p>
-<p><strong>Q5: Is there a simpler solution?</strong> For Xometry’s scale
-(thousands of suppliers, many processes, millions of parts), machine
-learning makes sense. For a company with a few machines and materials,
-my Week 2 post showed a spreadsheet formula does the pricing reliably,
-with every line auditable.</p>
+<p><strong>Q1: Is there a specific problem?</strong> Yes, and this is the pitch’s best part: quoting custom parts used to take days of emails. “AI-native” is vague, but “instant quote for a CAD file” is a concrete job.</p>
+<p><strong>Q3: Can we verify it?</strong> Only half. I can test speed myself. But in the sources I read, there was no public accuracy figure for prices or lead times, and no named customer outcome. “Better than before” is not “right.”</p>
+<p><strong>Q5: Is there a simpler solution?</strong> For Xometry’s scale (thousands of suppliers, many processes, millions of parts), machine learning makes sense. For a company with a few machines and materials, my Week 2 post showed a spreadsheet formula does the pricing reliably, with every line auditable.</p>
 <h2 id="the-verdict">The verdict</h2>
-<p>This is real AI delivering real value, but at a scale that is not
-O&amp;D’s. The evidence on offer is speed and investor confidence, not
-accuracy. For my beat, the lesson is that AI transforms one step of the
-workflow, quoting at scale, not the whole workflow.</p>
-<p><strong>Pilot, don’t copy.</strong> O&amp;D should not buy this
-approach or try to rebuild it. A cheap and honest test would be to
-upload 10 of our own past parts and compare the quote and lead time with
-what we actually charged and delivered. If they are close, the claim
-holds. If they are not, we have found the gap the press release
-avoided.</p>
+<p>This is real AI delivering real value, but at a scale that is not O&amp;D’s. The evidence on offer is speed and investor confidence, not accuracy. For my beat, the lesson is that AI transforms one step of the workflow, quoting at scale, not the whole workflow.</p>
+<p><strong>Pilot, don’t copy.</strong> O&amp;D should not buy this approach or try to rebuild it. A cheap and honest test would be to upload 10 of our own past parts and compare the quote and lead time with what we actually charged and delivered. If they are close, the claim holds. If they are not, we have found the gap the press release avoided.</p>
 <hr />
-<p><strong>Sources:</strong> Xometry press release (3 March 2026) ·
-Xometry Q1 2026 results (7 May 2026) · Digital Commerce 360, “Xometry
-tightens grip on AI sourcing” (3 March 2026) · Design News, “AI Tools
-for Engineers: Xometry” (2 January 2026) · Digital Engineering 24/7,
-Xometry and Google Cloud.</p>
-<p><em>AI use: Claude helped draft and structure this post; the data and
-the tests are mine, and I checked the figures.</em></p>
-
-      </article>
-      <p class="allposts"><a href="/">← All posts</a></p>
-    </main>
-
-    <section class="block"><h2>Scope of the series</h2><p>How can AI automation transform the workflow of a digital manufacturing company? Case study: O&amp;D Impression 3D, a two-partner 3D printing shop in Welkenraedt, and its quote-intake tool.</p></section>
-
-    <section class="block"><h2>Revision history</h2>
-      <div class="tablewrap"><table class="revs">
-        <thead><tr><th>Rev</th><th>Sheet</th><th>Date</th><th>Status</th></tr></thead>
-        <tbody>
-<tr><td class="r">01</td><td><a href="/posts/Max-Moor-week-01"><strong>Cost literacy</strong><span class="rs">Tokens are the cheap part: $0.79 a month</span></a></td><td class="d">2026-09-25</td><td class="st">ISSUED</td></tr>
-<tr><td class="r">02</td><td><a href="/posts/Max-Moor-week-02"><strong>Capability skepticism</strong><span class="rs">The price belongs in a spreadsheet, not an AI</span></a></td><td class="d">2026-10-02</td><td class="st">ISSUED</td></tr>
-<tr class="now"><td class="r">03</td><td><a href="/posts/Max-Moor-week-03"><strong>Vendor claim detection</strong><span class="rs">Xometry&#x27;s AI claims: fact, aspiration or avoidance</span></a></td><td class="d">2026-10-09</td><td class="st">CURRENT SHEET</td></tr>
-<tr><td class="r">04</td><td><a href="/posts/Max-Moor-week-04"><strong>Value quantification</strong><span class="rs">12 requests a month: no-go now</span></a></td><td class="d">2026-10-18</td><td class="st">ISSUED</td></tr>
-<tr><td class="r">05</td><td><a href="/posts/Max-Moor-week-05"><strong>Market mechanism thinking</strong><span class="rs">GEO audit of my own company: 10/18</span></a></td><td class="d">2026-10-18 · rev B 2026-11-28</td><td class="st">ISSUED</td></tr>
-<tr><td class="r">06</td><td><a href="/posts/Max-Moor-week-06"><strong>Cost projection</strong><span class="rs">A call costs $0.00026; failures cost 3,243× more</span></a></td><td class="d">2026-10-29</td><td class="st">ISSUED</td></tr>
-<tr><td class="r">07</td><td><a href="/posts/Max-Moor-week-07"><strong>Lock-in detection</strong><span class="rs">Lock-in score 6/15: connect thinly, measure the exit</span></a></td><td class="d">2026-11-20</td><td class="st">ISSUED</td></tr>
-<tr><td class="r">08</td><td><a href="/posts/Max-Moor-week-08"><strong>Design defense</strong><span class="rs">A €1,788 design: the model is the cheapest box</span></a></td><td class="d">2026-11-27</td><td class="st">ISSUED</td></tr>
-<tr class="pending"><td class="r">09</td><td><strong>Not issued yet</strong></td><td class="d">—</td><td class="st">—</td></tr>
-<tr class="pending"><td class="r">10</td><td><strong>Not issued yet</strong></td><td class="d">—</td><td class="st">—</td></tr>
-<tr class="pending"><td class="r">11</td><td><strong>Not issued yet</strong></td><td class="d">—</td><td class="st">—</td></tr>
-<tr class="pending"><td class="r">12</td><td><strong>Not issued yet</strong></td><td class="d">—</td><td class="st">—</td></tr>
-        </tbody></table></div>
-    </section>
-  </div>
-</div>
-<script>
-document.getElementById('theme').addEventListener('click',function(){
-  var r=document.documentElement,cur=r.getAttribute('data-theme');
-  if(!cur)cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-  var next=cur==='dark'?'light':'dark';r.setAttribute('data-theme',next);
-  try{localStorage.setItem('od-theme',next);}catch(e){}
-});
-</script>
+<p><strong>Sources:</strong> Xometry press release (3 March 2026) · Xometry Q1 2026 results (7 May 2026) · Digital Commerce 360, “Xometry tightens grip on AI sourcing” (3 March 2026) · Design News, “AI Tools for Engineers: Xometry” (2 January 2026) · Digital Engineering 24/7, Xometry and Google Cloud.</p>
+<p><em>AI use: Claude helped draft and structure this post; the data and the tests are mine, and I checked the figures.</em></p>
+</article>
 </body>
 </html>
