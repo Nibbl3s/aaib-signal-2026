@@ -63,7 +63,7 @@ First pass 9 of 12; the three misses were corrected after the reveal.
 
 ## 3. Comparison with the Official Reveal
 
-I tagged all sixteen claims myself first and compared them with the official reveal afterwards. Of sixteen claims, 8 match exactly, 2 match half of a mixed label (claims 1 and 12) and 6 differ (claims 2, 5, 7, 8, 11 and 15). My first pass, before I revised six tags while testing my reasoning against the Gauntlet definitions, matched the reveal on 14 of 16. I have left my current tags in the table above rather than overwrite them, and set out below why each difference exists.
+I tagged all sixteen claims myself first and compared them with the official reveal afterwards. Of sixteen claims, 8 match exactly, 2 match half of a mixed label (claims 1 and 12) and 6 differ (claims 2, 5, 7, 8, 11 and 15). My first pass, before I revised six tags while testing my reasoning against the Gauntlet definitions, matched the reveal on 14 of 16. I have left my current tags in the table above rather than overwrite them, and set out below why each difference exists. *My first-pass tags were not saved separately; next time I keep them in a column next to the final tags, so a reader sees my own judgement and what moved it.*
 
 | # | Claim | My tag | Official tag | Result |
 |---|---|---|---|---|

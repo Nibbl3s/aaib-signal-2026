@@ -173,4 +173,24 @@ The practitioner I asked on 11 October replied in writing on 28 October, after t
 
 ---
 
+### Interview record (6 ECTS)
+
+| | |
+|---|---|
+| Who | An accounting manager at a large vehicle logistics company in Belgium (role only, anonymised) |
+| When and how | Email on 11 October 2026, reminder on 13 October; written reply on 28 October, after this week was submitted (the submission recorded silence) |
+| What I asked | (1) How does a supplier or invoice check work, from start to finish? (2) How long does a normal check take, and a difficult one? (3) About how many a week? (4) How often does it go wrong, and what does that look like? (5) Who fixes it, and how long does that take? Closing: what would worry you if this were automated? |
+
+| Question | Their answer (verbatim) | What it does to my estimate |
+|---|---|---|
+| Time per check | "Around 3–5 minutes for a straightforward invoice. A difficult case took 20–30 minutes of actual work" | **A3 (6 min, est.): confirmed, not replaced.** 0.9 × 3–5 + 0.1 × 20–30 = 4.7–7.5 min |
+| Volume | "Roughly 150–200 invoices across the team" a week | My 1,500 a month stays an estimate for my importer; theirs is a different company (about 650–870 a month) |
+| How often it goes wrong | "Perhaps 1 in 10 needed follow-up" | My 30% routed to a full check is conservative against their practice; kept |
+| Who fixes it, how long | "Simple issues were resolved the same day; others took 2–5 working days" | Waiting time, not analyst time; not in my cost model |
+| What would worry them | "Incorrect information being accepted without anyone noticing, especially bank details or duplicate invoices" | **New rule (P9):** any change in bank details goes to a person, never to the quick check |
+
+*Their check is broader than sanctions screening (VAT, bank details, purchase-order match), so it is the closest practice figure I have, not the same task.*
+
+---
+
 *AI disclosure: I used Claude to structure this business case, run the arithmetic and find the enforcement cases and the directive. The assumptions marked (est.), the pattern idea (from the class clinic) and the recommendation are mine.*

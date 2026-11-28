@@ -61,4 +61,16 @@ In the third category question, the one that sounds most like a real SME, ChatGP
 
 ---
 
+## 5. 6 ECTS: asking the company that did not surface
+
+| | |
+|---|---|
+| Who | Gaston Schul, Belgian office (customs broker) |
+| When and how | Email, Wednesday 14 October 2026, 13:53 |
+| What I asked | After sharing that it appeared in 0 of 6 AI answers to my SME question: "are you aware of how Gaston Schul appears when potential clients ask AI assistants for a recommendation, and is it something you track or plan to work on?" |
+| What came back | No reply after 45 days (14 October – 28 November 2026). One short reminder sent on 28 November 2026; any reply will be added here with its date. |
+| What it changed | See the [one-page note](https://github.com/Nibbl3s/aaib-signal-2026/blob/main/students/jasper-derieuw/evidence/week-05/company-note.md). |
+
+---
+
 *AI disclosure: the live query and the three category questions were run by me in Claude, Gemini and ChatGPT. I used Claude to check the page source, search for third-party mentions and verify the companies named, and to structure this audit. The scores are mine.*
