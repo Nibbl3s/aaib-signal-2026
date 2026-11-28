@@ -7,7 +7,7 @@
 | 1 | Over 200 European companies use NexusAI | Avoidance (changed from fact) | This could be true, but they don't give a list of the companies to prove it. |
 | 2 | Cost reductions of 25–30% | Aspiration | It sounds good, but not every company will save this much money. |
 | 3 | Up to 94% forecast accuracy | Aspiration | They say “up to”, so it might only happen in the best situations. |
-| 4 | Proprietary machine-learning models | Fact | They might have their own models, but they don't give much detail about them. |
+| 4 | Proprietary machine-learning models | Aspiration (changed from fact) | They might have their own models, but they don't give much detail about them. |
 | 5 | The system continuously learns and adapts | Aspiration | It is not clear how the system learns or how often it gets updated. |
 | 6 | Fuel costs can be reduced by 22% | Aspiration | This could happen, but they don't show enough proof of these savings. |
 | 7 | On-time deliveries improve by 35% | Aspiration | There is no clear evidence showing that all customers can get this result. |
