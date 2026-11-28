@@ -128,6 +128,30 @@
 - **Inputs that were too easy:** 4, 6, 7 and 11 passed both runs identically; the prompt handles clear single-item requests well.
 - **Caveat:** inputs come from one 3D printing service's real requests; other services may receive different requests. The out_of_scope result for input 1 still depends on a decision I had flagged (can O&D print a full-size car?). For input 5 the decision is confirmed, and the expected quantity of input 3 was corrected after seeing the outputs (see the corrections log in test-set.md).
 
+## Predictions for v2 (written 2026-11-28, before any v2 run)
+
+**Rule:** committed alone, before any run of v2. Scored with the same strict rule as v1 (every field and missing_info must match the expected answers in test-set.md). A prediction is not edited after a run.
+
+| # | v1 result (A / B) | Predicted v2 (both runs) | Why |
+|---|---|---|---|
+| 1 | Pass / Fail (out of scope in B) | Pass | Rule 10 removes the doubt about the size of the object. Medium confidence: this one depends on the model, not on a rule I can check. |
+| 2 | Fail / Pass (FDM in A) | Pass | Rule 1 forbids naming a process from nozzle and layer words. The material text "PETG, or PP" is accepted in meaning. |
+| 3 | Fail / Fail (file, dimensions) | Pass | Rules 3 and 4 name the phrase "je joins". Expected: quantity 4, missing_info [material]. |
+| 4 | Pass / Pass | Pass | No rule touches it. Stays the control input. |
+| 5 | Fail / Fail (out of scope) | Pass | Rule 10 says modelling and painting are in scope. Risk: the material text "résine haute définition (SLA / DLP)". |
+| 6 | Pass / Pass | Pass, but a regression risk | Rule 9 could turn "un fût" into quantity 1. I wrote the exception for capability questions, but I am not sure it holds. |
+| 7 | Pass / Pass | Pass | No rule touches it. |
+| 8 | Fail / Pass (dimensions in A) | Pass | Rule 4 says attached file means no "dimensions". |
+| 9 | Fail / Fail | Fail in both runs | Not fixed on purpose: the contradiction and "plastique ou autre matière" stay. Likely F6 again (539 mm in one run). |
+| 10 | Fail / Pass (FDM in A) | Pass | Rule 1. Quantity 35 + 12 + 3 = 50 was already right. |
+| 11 | Pass / Pass | Pass, but a regression risk | Rule 9 could turn "Pièce de remplacement" into quantity 1. The "no article" exception should stop it. |
+| 12 | Fail / Fail (quantity, FDM in A) | Pass | Rule 9 gives quantity 1 for "un logo mural"; rule 1 removes FDM. |
+| 13 | Fail / Pass (quantity in A) | Pass in one run out of two | Rule 9 helps ("le prototype"), but the material is copied as a long sentence and the run-to-run variation remains. |
+
+**Predicted totals:** about 10 / 13 in each run (v1: 5 and 8), passed in both runs about 8 / 13 (v1: 4). Inputs where A and B differ: 2 or 3 (v1: 8), mostly 9 and 13.
+
+**What would prove me wrong:** a pass rate under 8 / 13 in either run, a new failure on inputs 4, 6, 7 or 11 (a regression caused by my rules), or input 9 passing.
+
 ## Probe plan (physical deployment probe, 3 rows)
 
 | Row | What to write | My entry |
