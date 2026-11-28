@@ -266,6 +266,38 @@
   - v1 did not record whether its runs were in separate conversations, so the drop in F6 (8 to 0) is not a strict like-for-like comparison.
   - Rule 10 ("when in doubt, use false") could not be tested: no input in the set is clearly out of scope.
 
+## v1 vs v2 comparison (input by input)
+
+Strict rule, same 13 inputs, same expected answers, same model. Each cell is Run A / Run B.
+
+| # | v1 | v2 | Change | Which fix | Prediction |
+|---|---|---|---|---|---|
+| 1 | Pass / Fail | Pass / Pass | Repaired | 4 (scope) | Right |
+| 2 | Fail / Pass | Pass / Pass | Repaired | 1 (no guessed process) | Right |
+| 3 | Fail / Fail | Pass / Pass | Repaired | 2 (file attached) | Right |
+| 4 | Pass / Pass | Pass / Pass | Unchanged | none (control) | Right |
+| 5 | Fail / Fail | Pass / Pass | Repaired | 4 (scope) | Right |
+| 6 | Pass / Pass | Pass / Pass | Unchanged, no regression | 3 (exception held) | Right |
+| 7 | Pass / Pass | Pass / Pass | Unchanged | none | Right |
+| 8 | Fail / Pass | Pass / Pass | Repaired | 2 (file attached) | Right |
+| 9 | Fail / Fail | Fail / Fail | Still failing, different failure | none (left on purpose) | Right |
+| 10 | Fail / Pass | Pass / Pass | Repaired | 1 (no guessed process) | Right |
+| 11 | Pass / Pass | Pass / Pass | Unchanged, no regression | 3 (exception held) | Right |
+| 12 | Fail / Fail | Pass / Pass | Repaired | 3 (quantity 1) and 1 | Right |
+| 13 | Fail / Pass | Pass / Pass | Repaired | 3 (quantity 1) | Wrong (I expected one run out of two) |
+
+**Repaired (8 inputs):** 1, 2, 3, 5, 8, 10, 12, 13. Each repair matches the failure the fix was written for.
+
+**Broken by v2 (0 inputs):** none. The two regression risks I wrote down (rule 9 on inputs 6 and 11) did not happen.
+
+**Unchanged and passing (4 inputs):** 4, 6, 7, 11.
+
+**Still failing (1 input):** 9. The failure changed: v1 Run A computed 539 mm on a contradictory grid; v2 returns null in both runs. What remains is the material, "plastique ou autre matière", which v2 keeps instead of null and does not flag. This is a different failure from the one I planned for (the contradiction) and a different fix is needed: a rule that a vague material ("plastique", "ou autre matière") counts as no material.
+
+**What the fixes do and do not show.** Fixes 1 to 4 each repaired the inputs they targeted. The fall in run-to-run differences (8 inputs to 0) is the largest change; my guess is that the explicit rules left the model less room to choose, but I did not test that. The fixes were written from these same 13 inputs, so I cannot say how v2 behaves on new requests.
+
+**Next version (v3), not run:** treat a vague material as null and flag it (input 9), then test v3 on new real requests, not on these 13.
+
 ## Probe plan (physical deployment probe, 3 rows)
 
 | Row | What to write | My entry |
@@ -279,5 +311,6 @@
 | Date | Prompt version | What changed | Why | Re-measured result |
 |---|---|---|---|---|
 | 2026-10-05 | v1 | First version, revised before the first run (process and deadline optional; dimensions not flagged when a 3D file is attached) | Real inputs showed customers rarely name a process or deadline | Run A 5/13, Run B 8/13, passed both 4/13 |
+| 2026-11-28 | v2 | Four fixes: no process unless the customer wrote it; attached 3D file means no "file" or "dimensions" flag; "un logo" / "le prototype" = quantity 1 (not for capability questions or bare nouns); scope stated explicitly (3D modelling and painting offered, size alone is not out of scope) | v1 failures: guessed FDM (inputs 2, 10, 12), ignored attached file (3, 8), quantity null on single objects (12, 13), out_of_scope wrongly true (1, 5) | Run A 12/13, Run B 12/13, passed both 12/13, inputs differing between runs 0 (v1: 5/13, 8/13, passed both 4/13, 8 inputs differing). Remaining failure: input 9 (vague material kept) |
 
 AI use: Claude helped me draft and structure this file; the inputs, the runs and the figures are mine.
