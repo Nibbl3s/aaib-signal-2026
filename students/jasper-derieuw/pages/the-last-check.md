@@ -105,7 +105,7 @@ Shipment: computer hardware, Heihe to Antwerp</div>
 <details class="ls-src"><summary>source</summary><p>Median seconds on the clean cards 1, 3 and 7, five people per set-up.</p></details>
 <p class="ls-why"><b>Why it matters</b> A check that has become a click lets half of the AI's mistakes through. Making people act on purpose costs 15 seconds a card, about €2,441 a year, and catches most of them.</p>
 <details class="ls-src"><summary>source</summary><p>12,600 quick checks a year × 15.5 extra seconds ÷ 3,600 × €45 an hour.</p></details>
-<aside class="ls-next"><p class="ls-label">Still to measure</p><p>The full check of a complete invoice. The fablab session planned for 18 November did not take place; the three-month pilot measures it instead.</p></aside>
+<aside class="ls-next"><p class="ls-label">Still to measure</p><p>The full check of a complete invoice. The sessions so far timed only the name check; the three-month pilot measures the full check.</p></aside>
 <p class="ls-small">Ten people, not trained analysts, on paper. An indication, not proof.</p>
 </section>
 
