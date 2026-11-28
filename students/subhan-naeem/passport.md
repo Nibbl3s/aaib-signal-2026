@@ -24,6 +24,7 @@ with a post. In Week 12 you will open this file's history and see three versions
 | 3 | Vendor claim detection | 🟡 | I analysed NexusAI claims in Week 3, separating facts from aspirations and identifying claims that lacked sufficient supporting evidence. |
 | 4 | Value quantification | 🟡 | I estimated €5,313 in annual time-capacity value per consultant using 40 items per month, 11.5 minutes saved per item and a loaded hourly cost of €57.75, while identifying these figures as assumptions rather than measured results. |
 
+My click: In Week 2 I believed that if my Risk Detector had weak spots, my test cases would show them as wrong answers. It got all 18 right, including 3 hard ones. But in case C01 (a 20% tax rise plus a currency fall), the tool only flagged the tax risk and ignored the currency, because my prompt tells it to pick just one category. That answer still counted as correct. In Week 4 I also realised that 18 cases I wrote myself can't prove my tool never fails. After 18 clean results, the real failure rate could still be up to 16.7% (the Rule of Three). Now I think a perfect score only means my tool works on my own test cases. A correct-looking answer can still miss a risk.
 
 ## Checkpoint 2 — end of Week 8
 
