@@ -14,4 +14,4 @@ STRICT RULES:
 5. Return all extracted items in English (translate if the original job advertisement is in another language).
 
 Job Advertisement:
-[PASTE JOB AD TEXT HERE]
+
