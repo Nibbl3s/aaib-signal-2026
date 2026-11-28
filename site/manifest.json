@@ -171,7 +171,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Cost literacy",
   "date": "2026-09-25",
-  "url": "posts/Max-Moor-week-01.html"
+  "url": "posts/Max-Moor-week-01.html",
+  "meta": {
+   "week": "1",
+   "title": "AI Customer Quotation at O&D 3D Costs Under a Dollar a Month: The Number That Isn't the Question",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Cost literacy",
+   "date": "2026-09-25"
+  }
  },
  {
   "week": 1,
@@ -398,7 +406,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Capability skepticism",
   "date": "2026-10-02",
-  "url": "posts/Max-Moor-week-02.html"
+  "url": "posts/Max-Moor-week-02.html",
+  "meta": {
+   "week": "2",
+   "title": "The Quote Price at O&D 3D Should Come From a Spreadsheet, Not an AI: Where the 'No AI' Test Says Stop",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Capability skepticism",
+   "date": "2026-10-02"
+  }
  },
  {
   "week": 2,
@@ -652,7 +668,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Vendor claim detection",
   "date": "2026-10-09",
-  "url": "posts/Max-Moor-week-03.html"
+  "url": "posts/Max-Moor-week-03.html",
+  "meta": {
+   "week": "3",
+   "title": "Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry's AI Claims",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Vendor claim detection",
+   "date": "2026-10-09"
+  }
  },
  {
   "week": 3,
@@ -897,7 +921,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Value quantification",
   "date": "2026-10-18",
-  "url": "posts/Max-Moor-week-04.html"
+  "url": "posts/Max-Moor-week-04.html",
+  "meta": {
+   "week": "4",
+   "title": "O&D 3D Gets 12 Quote Requests a Month: Why an AI Intake Tool Doesn't Pay (Yet)",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Value quantification",
+   "date": "2026-10-18"
+  }
  },
  {
   "week": 4,
@@ -1142,7 +1174,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Market mechanism thinking",
   "date": "2026-10-18",
-  "url": "posts/Max-Moor-week-05.html"
+  "url": "posts/Max-Moor-week-05.html",
+  "meta": {
+   "week": "5",
+   "title": "Can an AI Find a 3D Printing Shop in Li\u00e8ge? A GEO Audit of My Own Company, O&D 3D",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Market mechanism thinking",
+   "date": "2026-10-18"
+  }
  },
  {
   "week": 5,
@@ -1360,7 +1400,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Cost projection",
   "date": "2026-10-29",
-  "url": "posts/Max-Moor-week-06.html"
+  "url": "posts/Max-Moor-week-06.html",
+  "meta": {
+   "week": "6",
+   "title": "The Token Bill Is \u20ac0.003 a Month. What an AI Quote Tool Really Costs O&D 3D",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Cost projection",
+   "date": "2026-10-29"
+  }
  },
  {
   "week": 6,
@@ -1569,7 +1617,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Lock-in detection",
   "date": "2026-11-20",
-  "url": "posts/Max-Moor-week-07.html"
+  "url": "posts/Max-Moor-week-07.html",
+  "meta": {
+   "week": "7",
+   "title": "I Priced the Wrong Model Last Week. What Leaving Google Would Cost O&D 3D",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Lock-in detection",
+   "date": "2026-11-20"
+  }
  },
  {
   "week": 7,
@@ -1760,7 +1816,15 @@
   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
   "skill": "Design defense",
   "date": "2026-11-27",
-  "url": "posts/Max-Moor-week-08.html"
+  "url": "posts/Max-Moor-week-08.html",
+  "meta": {
+   "week": "8",
+   "title": "A \u20ac1,788 Design for a Tool That Reads 12 Emails a Month. Would the Board Approve It?",
+   "author": "Max",
+   "beat": "How can AI automation transform the workflow of a digital manufacturing company?",
+   "skill": "Design defense",
+   "date": "2026-11-27"
+  }
  },
  {
   "week": 8,

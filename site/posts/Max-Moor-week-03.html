@@ -53,8 +53,9 @@
   footer { max-width:1080px; margin:0 auto; padding:1.5rem; border-top:1px solid var(--rule); color:var(--faint); font-size:.8rem; }
   @media (max-width:640px) { .top, article, footer { padding-left:1rem; padding-right:1rem; } article { padding-top:2rem; } }
 </style>
+<link rel="stylesheet" href="../themes/Max-Moor/theme.css">
 </head>
-<body>
+<body class="themed theme-Max-Moor">
 <nav class="top"><a class="brand" href="/">The Signal</a><button class="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button></nav>
 <article>
 <div class="meta">Week 3 · How can AI automation transform the workflow of a digital manufacturing company?</div>
@@ -133,5 +134,7 @@ document.querySelector('.theme').onclick = () => {
   try { localStorage.setItem('signal-theme', root.dataset.theme); } catch (e) {}
 };
 </script>
+<script type="application/json" id="post-meta">{"week": 3, "title": "Digital Manufacturing: Real Value or FOMO? Deconstructing Xometry's AI Claims", "author": "Max", "beat": "How can AI automation transform the workflow of a digital manufacturing company?", "skill": "Vendor claim detection", "date": "2026-10-09", "folder": "Max-Moor", "slug": "Max-Moor-week-03"}</script>
+<script src="../themes/Max-Moor/theme.js" defer></script>
 </body>
 </html>
