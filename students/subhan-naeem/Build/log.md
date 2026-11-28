@@ -142,8 +142,8 @@ Partly. The tool handled the tested cases consistently, but the challenge cases 
 
 |                                                                       |                                                                                                             |
 | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Machine(s) I expect to use, and why                                   | Not decided yet; I need to consider the available machines and their suitability for the intended artifact. |
-| The artifact I'm aiming for                                           | Not decided yet; this depends on the available Fablab facilities and what can be produced.                  |
+| Machine(s) I expect to use, and why                                   | CNC wood cutter, because the sign is a flat wooden piece that can be cut from 2D drawing, so it can be made in fablab visit.intended artifact. |
+| The artifact I'm aiming for                                           |A small wooden desk sign reading "AI suggests. You decide.", placed on a consultant's desk next to the screen where the Risk Detector is used.  |
 | Which weekly session or OPEN block I'll visit for file-prep, and when | Not decided yet; I will confirm the relevant session or OPEN block.                                         |
 
 **When the artifact exists — the deployment observation:**
