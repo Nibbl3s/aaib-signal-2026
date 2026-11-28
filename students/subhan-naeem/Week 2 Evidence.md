@@ -33,8 +33,8 @@ AI can read a 10-page contract quickly and flag wording that looks unusual, whic
 The AI only flags clauses for review, and it doesn't decide what is risky. A human, ideally a lawyer, reads the flagged clauses and decides which ones are real risks. A person should still skim the parts the AI didn't flag, because a new kind of risk is exactly what it can miss.
 
 
-
-
+**Overall observation:** 
+I chose AI-Risky for all three because AI helps with speed here, but a mistake is costly, so a human decides
 
 
 
