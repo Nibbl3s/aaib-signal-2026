@@ -32,7 +32,7 @@ I ranked **Output A** as the cheapest because it uses basic vocabulary and is wr
 
 #### 3. If you're building a customer service chatbot for your country, should you force all customers to use English to reduce costs? What's the trade-off?
 
-**Conclusion:** Reducing costs is important, but customer accessibility and satisfaction should also be considered. A multilingual chatbot balances affordability with a better customer experience.
+**Conclusion:** Reducing costs is important, but customer accessibility and satisfaction should also be considered. A multilingual chatbot balances affordability with a better customer experience. Forcing English would save only $4.50 a year on Document 1 (at 1,000 runs). That is less than the value of a single customer who leaves if they can't use their own language, so I would not force English as a tiny saving isn't worth the risk of losing customers.
 
 ---
 
